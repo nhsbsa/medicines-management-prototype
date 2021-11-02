@@ -1,7 +1,0 @@
-stages:
-  - test
-
-pushed:
-  stage: test
-  script:
-    - echo "Main pushed"
