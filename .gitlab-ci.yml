@@ -1,6 +1,10 @@
 stages:
   - deploy
 
+before_script:
+  - git config user.email "jamie.briggs@nhs.net"
+  - git config user.name "GitLab CI on behalf of Jamie Briggs"
+
 push_to_heroku:
   stage: deploy
   script:
