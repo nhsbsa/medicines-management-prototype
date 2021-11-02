@@ -1,0 +1,29 @@
+fill-red{
+  fill: #d5281b !important;
+}
+
+fill-blue{
+  fill: #005eb8 !important;
+}
+
+.temporal-not-eligible {
+  background-color: #fff59d;
+}
+.temporal-not-eligible:hover {
+  background-color: #ded373 !important;
+}
+
+.temporal-historic {
+  background-color: #D1D5D7;
+}
+.temporal-historic:hover {
+  background-color: #C0C7C9 !important;
+}
+
+.temporal-future-dated {
+  background-color: #C1DCCB;
+}
+
+.temporal-future-dated:hover {
+  background-color: #B2D2BC !important;
+}
