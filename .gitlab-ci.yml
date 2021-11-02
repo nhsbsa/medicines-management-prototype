@@ -2,6 +2,7 @@ stages:
   - deploy
 
 before_script:
+  - curl https://cli-assets.heroku.com/install.sh | sh
   - git config user.email "jamie.briggs@nhs.net"
   - git config user.name "GitLab CI on behalf of Jamie Briggs"
 
