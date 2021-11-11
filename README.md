@@ -54,24 +54,24 @@ Since Heroku builds itself when a user pushes code to its repository, and the co
 new remotes need to be added to your local project so that when you push code, it pushes to both
 the repository on GitLab and the repository on Heroku.
 
-1. Add Heroku remote to your local repository:
+* Add Heroku remote to your local repository:
 ```shell
 heroku git:remote -a medicines-management-prototype
 ```
-2. Add GitLab origin as remote (This shouldn't be needed as it should already exist but just in case)
+* Add GitLab origin as remote (This shouldn't be needed as it should already exist but just in case)
 ```shell
 git remote add origin git@dps-gitlab.service.nhsbsa:prescriptions/medicines-management-prototype.git
 ```
-3. Add Heroku repository as a push destination
-```shell
+* Add Heroku repository as a push destination
+```shellg
 git remote set-url --push --add origin https://git.heroku.com/medicines-management-prototype.git
 ```
-4. Add GitLab repository as a push destination (required as the previous command overrides 
+* Add GitLab repository as a push destination (required as the previous command overrides 
    the defaults so you need to re-add the GitLab repository):
 ```shell
 git remote set-url --push --add origin git@dps-gitlab.service.nhsbsa:prescriptions/medicines-management-prototype.git
 ```
-5. Finally check your local repository remotes:
+* Finally check your local repository remotes:
 ```shell
 git remote -v
 # Should be similar to the following:
