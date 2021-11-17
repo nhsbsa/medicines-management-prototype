@@ -67,11 +67,11 @@ git remote add origin git@dps-gitlab.service.nhsbsa:prescriptions/medicines-mana
 git remote set-url --push --add origin https://git.heroku.com/medicines-management-prototype.git
 ```
 * Add GitLab repository as a push destination (required as the previous command overrides 
-   the defaults so you need to re-add the GitLab repository):
+   the default, so you need to re-add the GitLab repository):
 ```shell
 git remote set-url --push --add origin git@dps-gitlab.service.nhsbsa:prescriptions/medicines-management-prototype.git
 ```
-* Finally check your local repository remotes:
+* Finally, check your local repository remotes:
 ```shell
 git remote -v
 # Should be similar to the following:
