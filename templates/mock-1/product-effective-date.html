@@ -4,7 +4,7 @@ Supplier submissions hub | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="./home-page">
+  <a class="nhsuk-back-link__link" href="create-new">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
@@ -19,7 +19,7 @@ Supplier submissions hub | NHSBSA
       </h1>
     </legend>
     <div class="nhsuk-hint" id="example-hint">
-      Date should be typed in the format dd mm yyyy. This date cannot be in the past.
+      This cannot be a date in the past and is in the format dd mm yyyy. This is when the product is ready to dispense.
     </div>
 
     <div class="nhsuk-date-input" id="example">
@@ -66,19 +66,24 @@ function store(){
      localStorage.setItem("effective-year", inputYear.value);
     }
 
-<!--var getEffectiveDay = localStorage.getItem("effective-day");-->
-<!--var getEffectiveMonth = localStorage.getItem("effective-month");-->
-<!--var getEffectiveYear = localStorage.getItem("effective-year");-->
+var getEffectiveDay = localStorage.getItem("effective-day");
+var getEffectiveMonth = localStorage.getItem("effective-month");
+var getEffectiveYear = localStorage.getItem("effective-year");
 
-<!--var eDay = document.querySelector("#example-day");-->
-<!--eDay.defaultValue = getEffectiveDay;-->
+var eDay = document.querySelector("#example-day");
+if (getEffectiveDay != null) {
+eDay.defaultValue = getEffectiveDay;
+}
 
-<!--var eMonth = document.querySelector("#example-month");-->
-<!--eMonth.defaultValue = getEffectiveMonth;-->
+var eMonth = document.querySelector("#example-month");
+if (getEffectiveMonth != null) {
+eMonth.defaultValue = getEffectiveMonth;
+}
 
-<!--var eYear = document.querySelector("#example-year");-->
-<!--eYear.defaultValue = getEffectiveYear;-->
-
+var eYear = document.querySelector("#example-year");
+if (getEffectiveYear != null) {
+eYear.defaultValue = getEffectiveYear;
+}
 
 </script>
 {% endblock %}
