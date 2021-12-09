@@ -27,3 +27,19 @@ fill-blue{
 .temporal-future-dated:hover {
   background-color: #B2D2BC !important;
 }
+
+* Conditional */
+.nhsuk-radios__conditional {
+  margin-bottom: 16px;
+  border-left: 4px solid #4c6272;
+  margin-left: 18px;
+  padding-left: 30px; }
+  @media (min-width: 40.0625em) {
+    .nhsuk-radios__conditional {
+      margin-bottom: 24px; } }
+  .nhsuk-radios__conditional > :last-child {
+    margin-bottom: 0; }
+
+.nhsuk-radios__conditional--hidden {
+  display: none; }
+
