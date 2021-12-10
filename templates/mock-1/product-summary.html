@@ -4,7 +4,7 @@ Supplier submissions hub | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="product-spc">
+  <a class="nhsuk-back-link__link" href="product-spc-upload-choice">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
@@ -85,6 +85,94 @@ Supplier submissions hub | NHSBSA
 
   </div>
 
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product has SPC / data sheet
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-spc">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-spc">
+        Change<span class="nhsuk-u-visually-hidden"> product spc/data sheet</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key" id="link-or-upload">
+      Product has link or upload
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-link-upload">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-spc-upload-choice">
+        Change<span class="nhsuk-u-visually-hidden"> product link or upload</span>
+      </a>
+
+    </dd>
+
+  </div>
+</dl>
+
+<dl class="nhsuk-summary-list">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Pack size and type
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-size">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="pack-size-strength">
+        Change<span class="nhsuk-u-visually-hidden"> pack size or type</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Contains subpack
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-subpack">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="pack-subpack">
+        Change<span class="nhsuk-u-visually-hidden"> if contains subpack</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Subpack information
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-subpack-extra">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="pack-subpack-extra">
+        Change<span class="nhsuk-u-visually-hidden"> subpack information</span>
+      </a>
+
+    </dd>
+
+  </div>
+
 </dl>
 
 <a class="nhsuk-button nhsuk-u-margin-top-5"
@@ -112,6 +200,34 @@ document.getElementById("product-strength").innerHTML = getProductStrength + ' '
 
 var getProductPresentation = localStorage.getItem("product-presentation");
 document.getElementById("product-presentation").innerHTML = getProductPresentation;
+
+var getProductHasSPC = localStorage.getItem("product-spc");
+document.getElementById("product-spc").innerHTML = getProductHasSPC;
+
+var getProductLink = localStorage.getItem("product-link-url");
+var getProductUpload = localStorage.getItem("product-upload-file");
+
+if (getProductLink != null) {
+console.log(getProductLink);
+  document.getElementById("product-link-upload").innerHTML = getProductLink;
+  document.getElementById("link-or-upload").innerHTML = 'Product link url';
+} else {
+  document.getElementById("product-link-upload").innerHTML = getProductUpload;
+  document.getElementById("link-or-upload").innerHTML = 'Product upload file';
+}
+
+var getPackSize = localStorage.getItem("pack-size");
+var getPackType = localStorage.getItem("pack-type");
+document.getElementById("pack-size").innerHTML = getPackSize + ' ' + getPackType;
+
+var getPackSubpack = localStorage.getItem("pack-subpack");
+document.getElementById("pack-subpack").innerHTML = getPackSubpack;
+
+var getPackSubpackExtra = localStorage.getItem("pack-subpack-extra");
+document.getElementById("pack-subpack-extra").innerHTML = getPackSubpackExtra
+
+
+console.log(localStorage);
 
 </script>
 {% endblock %}

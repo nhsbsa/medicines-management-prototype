@@ -5,38 +5,32 @@ Supplier submissions hub | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="product-presentation">
+  <a class="nhsuk-back-link__link" href="product-legal-category">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to product presentation</a>
+    Go back to product legal category</a>
 </div>
 
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        Have you got the SPC or data sheet?
+        Is this product to be used in hospitals only?
       </h1>
     </legend>
-    <div class="nhsuk-hint" id="spc-hint">
-      The SPC is a summary of product characteristics for licensed medicines.
-    </div>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
-      The data sheet states the product name, ingredients and how it is taken. This is for unlicensed medicines.
-    </div>
 
-    <div class="nhsuk-radios" id="data-spc-radios">
+    <div class="nhsuk-radios" id="data-usage-radios">
 
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="data-yes" name="data-spc" type="radio" value="yes" />
+        <input class="nhsuk-radios__input" id="data-yes" name="data-usage" type="radio" value="yes" />
         <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
           Yes
         </label>
       </div>
 
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="data-no" name="data-spc" type="radio" value="no" />
+        <input class="nhsuk-radios__input" id="data-no" name="data-usage" type="radio" value="no" />
         <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
           No
         </label>
@@ -48,20 +42,20 @@ Supplier submissions hub | NHSBSA
 
 <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="store()"
    id="continue-button"
-   href="product-no-spc"
+   href="product-add-pack"
    type="submit">
   Continue
 </a>
 
 <script>
 
-var radioButtons = document.getElementsByName("data-spc");
+var radioButtons = document.getElementsByName("data-usage");
 
-var getProductSpc = localStorage.getItem("product-spc");
+var getProductHospUsage = localStorage.getItem("product-hospital-only");
 
-if (getProductSpc != null) {
+if (getProductHospUsage != null) {
 for (var radio of radioButtons) {
-if (getProductSpc === radio.value) {
+if (getProductHospUsage === radio.value) {
      radio.checked = true;
             }
           }
@@ -71,15 +65,12 @@ if (getProductSpc === radio.value) {
 
 
 function store() {
-  var radioButtons = document.getElementsByName("data-spc");
+  var radioButtons = document.getElementsByName("data-usage");
   var buttonLink = document.getElementById("continue-button");
 
   for (var radio of radioButtons) {
       if (radio.checked) {
-          localStorage.setItem("product-spc", radio.value);
-         if (radio.value == 'yes') {
-          buttonLink.href = "product-spc-upload-choice";
-          }
+          localStorage.setItem("product-hospital-only", radio.value);
         }
      }
   }

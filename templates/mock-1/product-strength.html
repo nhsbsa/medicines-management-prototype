@@ -19,7 +19,7 @@ Supplier submissions hub | NHSBSA
         What is the strength of the product?
       </h1>
     </legend>
-    <div class="nhsuk-hint" id="example-hint">
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="example-hint">
       For example, 200mg.
     </div>
 
@@ -27,190 +27,26 @@ Supplier submissions hub | NHSBSA
     <label class="nhsuk-label" for="product-strength">
       Amount
     </label>
-    <input class="nhsuk-input nhsuk-u-margin-bottom-5" id="product-strength" name="strength" type="text" pattern="[0-9]*" inputmode="numeric">
+    <input class="nhsuk-input nhsuk-u-margin-bottom-5" id="product-strength" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
 
     <label class="nhsuk-label" for="product-measurement">
       Measurement
     </label>
     <select class="nhsuk-select" id="product-measurement" name="measurement">
       <option value="-"> - </option>
-      <option value="%v/v">%v/v</option>
-      <option value="%v/w">%v/w</option>
-      <option value="%w/v">%w/v</option>
-      <option value="%w/w">%w/w</option>
-      <option value="actuation">actuation</option>
-      <option value="ampoule">ampoule</option>
-      <option value="Application">Application</option>
-      <option value="applicator">applicator</option>
-      <option value="bag">bag</option>
-      <option value="baguette">baguette</option>
-      <option value="bandage">bandage</option>
-      <option value="bar">bar</option>
-      <option value="blister">blister</option>
-      <option value="bottle">bottle</option>
-      <option value="can">can</option>
-      <option value="capsule">capsule</option>
-      <option value="carton">carton</option>
-      <option value="cartridge">cartridge</option>
-      <option value="catheter">catheter</option>
-      <option value="Cell">Cell</option>
-      <option value="Cell/microlitre">Cell/microlitre</option>
-      <option value="Cell/ml">Cell/ml</option>
-      <option value="cell/square cm">cell/square cm</option>
-      <option value="Cigarette">Cigarette</option>
-      <option value="cm">cm</option>
-      <option value="component">component</option>
-      <option value="container">container</option>
-      <option value="Cup">Cup</option>
-      <option value="cycle">cycle</option>
-      <option value="cylinder">cylinder</option>
-      <option value="device">device</option>
-      <option value="disc">disc</option>
-      <option value="dose">dose</option>
-      <option value="dressing">dressing</option>
-      <option value="drop">drop</option>
-      <option value="dual dose sachet">dual dose sachet</option>
-      <option value="enema">enema</option>
-      <option value="Film">Film</option>
-      <option value="g/actuation">g/actuation</option>
-      <option value="g/application">g/application</option>
-      <option value="g/dose">g/dose</option>
-      <option value="g/l">g/l</option>
-      <option value="g/ml">g/ml</option>
-      <option value="GBq">GBq</option>
-      <option value="GBq/ml">GBq/ml</option>
-      <option value="generator">generator</option>
-      <option value="glove">glove</option>
-      <option value="gram">gram</option>
-      <option value="gram/gram">gram/gram</option>
-      <option value="HEP">HEP</option>
-      <option value="hour">hour</option>
-      <option value="icrolite">icrolite</option>
-      <option value="icrolite/ml">icrolite/ml</option>
-      <option value="icroliter">icroliter</option>
-      <option value="icroliter/g">icroliter/g</option>
-      <option value="icroliter/ml">icroliter/ml</option>
-      <option value="Insert">Insert</option>
-      <option value="iu">iu</option>
-      <option value="iu/g">iu/g</option>
-      <option value="iu/mg">iu/mg</option>
-      <option value="iu/ml">iu/ml</option>
-      <option value="Kallikrein inactivator unit">Kallikrein inactivator unit</option>
-      <option value="Kallikrein inactivator unit/ml">Kallikrein inactivator unit/ml</option>
-      <option value="kBq">kBq</option>
-      <option value="kBq/ml">kBq/ml</option>
-      <option value="kg">kg</option>
-      <option value="kg/l">kg/l</option>
-      <option value="kit">kit</option>
-      <option value="lancet">lancet</option>
-      <option value="Larva">Larva</option>
-      <option value="leech">leech</option>
-      <option value="litre">litre</option>
-      <option value="loaf">loaf</option>
-      <option value="lozenge">lozenge</option>
-      <option value="m">m</option>
-      <option value="MBq">MBq</option>
-      <option value="MBq/ml">MBq/ml</option>
-      <option value="ega unit">mega unit</option>
-      <option value="mega unit/ml">mega unit/ml</option>
-      <option value="mg">mg</option>
-      <option value="mg/16 hours">mg/16 hours</option>
-      <option value="mg/24 hours">mg/24 hours</option>
-      <option value="mg/72 hours">mg/72 hours</option>
-      <option value="mg/actuation">mg/actuation</option>
-      <option value="Mg/application">Mg/application</option>
-      <option value="mg/dose">mg/dose</option>
-      <option value="mg/g">mg/g</option>
-      <option value="mg/kg">mg/kg</option>
-      <option value="mg/l">mg/l</option>
-      <option value="mg/mg">mg/mg</option>
-      <option value="mg/ml">mg/ml</option>
-      <option value="mg/square cm">mg/square cm</option>
+      <option value="%">%</option>
+      <option value="g">g</option>
       <option value="microgram">microgram</option>
-      <option value="microgram/24 hours">microgram/24 hours</option>
-      <option value="microgram/72 hours">microgram/72 hours</option>
-      <option value="microgram/actuation">microgram/actuation</option>
-      <option value="microgram/dose">microgram/dose</option>
-      <option value="microgram/g">microgram/g</option>
-      <option value="microgram/hour">microgram/hour</option>
-      <option value="microgram/ml">microgram/ml</option>
-      <option value="micrograms/square cm">micrograms/square cm</option>
-      <option value="million plaque forming units">million plaque forming units</option>
-      <option value="million plaque forming units/ml">million plaque forming units/ml</option>
-      <option value="ml">ml</option>
-      <option value="ml/gram">ml/gram</option>
-      <option value="ml/kg">ml/kg</option>
-      <option value="ml/l">ml/l</option>
-      <option value="ml/ml">ml/ml</option>
-      <option value="mm">mm</option>
-      <option value="mmol">mmol</option>
-      <option value="mmol/litre">mmol/litre</option>
-      <option value="mmol/ml">mmol/ml</option>
-      <option value="ml/ml">mol/l</option>
-      <option value="molar">molar</option>
-      <option value="month supply">month supply</option>
-      <option value="multipack">multipack</option>
-      <option value="nanogram">nanogram</option>
-      <option value="nanogram/ml">nanogram/ml</option>
-      <option value="nanolitre">nanolitre</option>
-      <option value="nanolitre/ml">nanolitre/ml</option>
-      <option value="nebule">nebule</option>
-      <option value="needle">needle</option>
-      <option value="no value">no value</option>
-      <option value="obsolete-mM">obsolete-mM</option>
-      <option value="pack">pack</option>
-      <option value="Pad">Pad</option>
-      <option value="pastille">pastille</option>
-      <option value="patch">patch</option>
-      <option value="pessary">pessary</option>
-      <option value="piece">piece</option>
-      <option value="pillule">pillule</option>
-      <option value="pizza base">pizza base</option>
-      <option value="plaque forming units">plaque forming units</option>
-      <option value="plaque forming units/ml">plaque forming units/ml</option>
-      <option value="plaster">plaster</option>
-      <option value="pot">pot</option>
-      <option value="Pouch">Pouch</option>
-      <option value="Ppm">Ppm</option>
-      <option value="pre-filled disposable injection">pre-filled disposable injection</option>
-      <option value="roll">roll</option>
-      <option value="sachet">sachet</option>
-      <option value="spoonful">spoonful</option>
-      <option value="SQ-T">SQ-T</option>
-      <option value="square cm">square cm</option>
-      <option value="stocking">stocking</option>
-      <option value="Straw">Straw</option>
-      <option value="strip">strip</option>
-      <option value="suppository">suppository</option>
-      <option value="suture">suture</option>
-      <option value="swab">swab</option>
-      <option value="syringe">syringe</option>
-      <option value="system">system</option>
-      <option value="tablet">tablet</option>
-      <option value="Teragenome copies">Teragenome copies</option>
-      <option value="Teragenome copies/ml">Teragenome copies/ml</option>
-      <option value="truss">truss</option>
-      <option value="tube">tube</option>
-      <option value="tuberculin unit">tuberculin unit</option>
-      <option value="tuberculin units/ML">tuberculin units/ML</option>
-      <option value="unit">unit</option>
-      <option value="unit dose">unit dose</option>
-      <option value="unit/actuation">unit/actuation</option>
-      <option value="unit/dose">unit/dose</option>
-      <option value="unit/drop">unit/drop</option>
-      <option value="unit/gram">unit/gram</option>
-      <option value="unit/mg">unit/mg</option>
-      <option value="unit/ml">unit/ml</option>
-      <option value="unit/square cm">unit/square cm</option>
-      <option value="vial">vial
-      <option value="week supply">week supply</option>
+      <option value="micrograms/dose">micrograms/dose</option>
+      <option value="mg">mg</option>
+      <option value="units">units</option>
     </select>
 
 
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-5" onclick="store()"
+<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="store()"
    href="product-presentation"
    type="submit">
   Continue
