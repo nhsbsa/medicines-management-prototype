@@ -4,11 +4,11 @@ Supplier submissions hub | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="product-spc-upload-choice">
+  <a class="nhsuk-back-link__link" href="product-add-pack">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to product spc/data</a>
+    Go back to add pack</a>
 </div>
 
 <h1>Summary</h1>
@@ -120,6 +120,8 @@ Supplier submissions hub | NHSBSA
   </div>
 </dl>
 
+<h2 id="heading-pack-1">Pack 1</h2>
+
 <dl class="nhsuk-summary-list">
 
   <div class="nhsuk-summary-list__row">
@@ -156,7 +158,7 @@ Supplier submissions hub | NHSBSA
 
   </div>
 
-  <div class="nhsuk-summary-list__row">
+  <div class="nhsuk-summary-list__row" id="subpack-info">
     <dt class="nhsuk-summary-list__key">
       Subpack information
     </dt>
@@ -173,15 +175,241 @@ Supplier submissions hub | NHSBSA
 
   </div>
 
+  <div class="nhsuk-summary-list__row" >
+    <dt class="nhsuk-summary-list__key">
+      GTIN code
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-gtin">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="pack-gtin">
+        Change<span class="nhsuk-u-visually-hidden"> GTIN code</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" >
+    <dt class="nhsuk-summary-list__key">
+      Artwork upload
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-upload-artwork">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="pack-artwork">
+        Change<span class="nhsuk-u-visually-hidden"> uploaded artwork</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" >
+    <dt class="nhsuk-summary-list__key">
+      Product has price
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-should-display-price">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-should-display-price">
+        Change<span class="nhsuk-u-visually-hidden"> if product should have price</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" id="hide-price">
+    <dt class="nhsuk-summary-list__key">
+      Price in pence
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-price">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-price">
+        Change<span class="nhsuk-u-visually-hidden"> product price</span>
+      </a>
+
+    </dd>
+
+  </div>
+
 </dl>
 
-<a class="nhsuk-button nhsuk-u-margin-top-5"
+<h2 id="heading-pack-2">Pack 2</h2>
+
+<dl class="nhsuk-summary-list" id="pack-2-info">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Pack size and type
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-2-size">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="pack-2-size">
+        Change<span class="nhsuk-u-visually-hidden"> pack 2 size</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Contains subpack
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-2-subpack">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="pack-2-subpack">
+        Change<span class="nhsuk-u-visually-hidden"> if contains subpack</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" id="subpack-2-info">
+    <dt class="nhsuk-summary-list__key">
+      Subpack information
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-2-subpack-extra">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="pack-2-subpack-extra">
+        Change<span class="nhsuk-u-visually-hidden"> subpack information</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" >
+    <dt class="nhsuk-summary-list__key">
+      GTIN code
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-2-gtin">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="pack-2-gtin">
+        Change<span class="nhsuk-u-visually-hidden"> GTIN code</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" >
+    <dt class="nhsuk-summary-list__key">
+      Artwork upload
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-2-upload-artwork">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="pack-2-artwork">
+        Change<span class="nhsuk-u-visually-hidden"> uploaded artwork</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" >
+    <dt class="nhsuk-summary-list__key">
+      Product has price
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-2-should-display-price">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-2-should-display-price">
+        Change<span class="nhsuk-u-visually-hidden"> if product should have price</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" id="hide-2-price">
+    <dt class="nhsuk-summary-list__key">
+      Price in pence
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-2-price">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-2-price">
+        Change<span class="nhsuk-u-visually-hidden"> product price</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+</dl>
+
+
+<dl class="nhsuk-summary-list">
+  <div class="nhsuk-summary-list__row" >
+    <dt class="nhsuk-summary-list__key">
+      Legal category
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-legal-category">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-legal-category">
+        Change<span class="nhsuk-u-visually-hidden"> product legal category</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="nhsuk-summary-list__row" >
+    <dt class="nhsuk-summary-list__key">
+      Hospital only product
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-hospital-only">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-usage">
+        Change<span class="nhsuk-u-visually-hidden"> whether product is hospital only</span>
+      </a>
+    </dd>
+  </div>
+</dl>
+
+<a class="nhsuk-button nhsuk-u-margin-top-5" href="confirmation"
    type="submit">
   Submit
 </a>
 
 <a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-5"
-   type="submit">
+   id="save-alert">
   Save for later
 </a>
 
@@ -220,11 +448,114 @@ var getPackSize = localStorage.getItem("pack-size");
 var getPackType = localStorage.getItem("pack-type");
 document.getElementById("pack-size").innerHTML = getPackSize + ' ' + getPackType;
 
+if (localStorage.getItem("product-extra-pack") == 'yes') {
+document.getElementById("heading-pack-1").innerHTML = getPackSize + ' ' + getPackType;
+} else {
+document.getElementById("heading-pack-1").style["display"] = "none";
+}
+
 var getPackSubpack = localStorage.getItem("pack-subpack");
 document.getElementById("pack-subpack").innerHTML = getPackSubpack;
 
+if (getPackSubpack == 'no') {
+document.getElementById("subpack-info").style["display"] = "none";
+}
+
 var getPackSubpackExtra = localStorage.getItem("pack-subpack-extra");
 document.getElementById("pack-subpack-extra").innerHTML = getPackSubpackExtra
+
+var getGtin = localStorage.getItem("pack-gtin");
+document.getElementById("pack-gtin").innerHTML = getGtin;
+
+var getArtwork = localStorage.getItem("pack-upload-artwork");
+document.getElementById("pack-upload-artwork").innerHTML = getArtwork;
+
+var getPackHasPrice = localStorage.getItem("pack-should-display-price");
+document.getElementById("pack-should-display-price").innerHTML = getPackHasPrice;
+
+if (getPackHasPrice == 'no') {
+document.getElementById("hide-price").style["display"] = "none";
+}
+
+var getPackPrice = localStorage.getItem("product-price");
+document.getElementById("product-price").innerHTML = getPackPrice;
+
+var getLegalCategory = localStorage.getItem("product-legal-category");
+document.getElementById("product-legal-category").innerHTML = getLegalCategory;
+
+var getIfHosp = localStorage.getItem("product-hospital-only");
+document.getElementById("product-hospital-only").innerHTML = getIfHosp;
+
+var saveButton = document.getElementById("save-alert");
+saveButton.addEventListener("click", function(){ alert("Work in progress!!"); });
+
+var addExtra = localStorage.getItem("product-extra-pack");
+
+if (addExtra == 'no') {
+document.getElementById("pack-2-info").style["display"] = "none";
+};
+
+getPack2Size = localStorage.getItem("pack-2-size");
+
+if (getPack2Size != null && addExtra != 'no') {
+document.getElementById("pack-2-size").innerHTML = getPack2Size + ' ' + getPackType;
+document.getElementById("heading-pack-2").innerHTML = getPack2Size + ' ' + getPackType;
+} else {
+document.getElementById("pack-2-size").style["display"] = "none";
+document.getElementById("heading-pack-2").style["display"] = "none";
+}
+
+getPack2Subpack = localStorage.getItem("pack-2-subpack");
+
+if (getPack2Subpack != null) {
+document.getElementById("pack-2-subpack").innerHTML = getPack2Subpack;
+} else {
+document.getElementById("pack-2-subpack").style["display"] = "none";
+}
+
+var getPack2SubpackExtra = localStorage.getItem("pack-2-subpack-extra");
+
+if (getPack2SubpackExtra != null) {
+document.getElementById("pack-2-subpack-extra").innerHTML = getPackSubpackExtra;
+} else {
+document.getElementById("pack-2-subpack-extra").style["display"] = "none";
+}
+
+var get2Gtin = localStorage.getItem("pack-2-gtin");
+if (get2Gtin != null) {
+document.getElementById("pack-2-gtin").innerHTML = get2Gtin;
+} else {
+document.getElementById("pack-2-gtin").style["display"] = "none";
+}
+
+var get2Artwork = localStorage.getItem("pack-2-upload-artwork");
+
+if (get2Artwork != null) {
+document.getElementById("pack-2-upload-artwork").innerHTML = get2Artwork;
+} else {
+document.getElementById("pack-2-upload-artwork").style["display"] = "none";
+}
+
+var getPack2HasPrice = localStorage.getItem("pack-2-should-display-price");
+
+if (getPack2HasPrice != null) {
+document.getElementById("pack-2-should-display-price").innerHTML = getPack2HasPrice;
+} else {
+document.getElementById("pack-2-should-display-price").style["display"] = "none";
+}
+
+if (getPack2HasPrice == 'no') {
+document.getElementById("hide-2-price").style["display"] = "none";
+}
+
+var getPack2Price = localStorage.getItem("product-2-price");
+
+if (getPack2Price != null) {
+document.getElementById("product-2-price").innerHTML = getPack2Price;
+} else {
+document.getElementById("product-2-price").style["display"] = "none";
+}
+
 
 
 console.log(localStorage);

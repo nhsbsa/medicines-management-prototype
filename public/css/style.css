@@ -7201,3 +7201,42 @@ ul[role="tree"] {
   vertical-align: bottom;
   display: inline-block;
   cursor: pointer; }
+
+  .nhsuk-panel--confirmation {
+    color: #ffffff;
+    background: #005eb8; }
+
+  .nhsuk-panel__title {
+    margin-top: 0;
+    margin-bottom: 40px;
+    font-weight: 600;
+    font-size: 32px;
+    font-size: 2rem;
+    line-height: 1.25; }
+    @media (min-width: 40.0625em) {
+      .nhsuk-panel__title {
+        font-size: 48px;
+        font-size: 3rem;
+        line-height: 1.16667; } }
+    @media print {
+      .nhsuk-panel__title {
+        font-size: 32pt;
+        line-height: 1.15; } }
+
+  .nhsuk-panel__title:last-child {
+    margin-bottom: 0; }
+
+  .nhsuk-panel__body {
+    font-weight: 400;
+    font-size: 24px;
+    font-size: 1.5rem;
+    line-height: 1.33333; }
+    @media (min-width: 40.0625em) {
+      .nhsuk-panel__body {
+        font-size: 32px;
+        font-size: 2rem;
+        line-height: 1.25; } }
+    @media print {
+      .nhsuk-panel__body {
+        font-size: 24pt;
+        line-height: 1.05; } }

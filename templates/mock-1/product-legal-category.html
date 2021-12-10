@@ -45,18 +45,19 @@ Supplier submissions hub | NHSBSA
 <script>
 
 
-var productPresentation = document.getElementById("product-presentation");
+var legalCategory = document.getElementById("product-legal-category");
 
 function store(){
-     var productPresentation = document.getElementById("product-presentation");
-     localStorage.setItem("product-presentation", productPresentation.value);
+     var legalCategory = document.getElementById("product-legal-category");
+     localStorage.setItem("product-legal-category", legalCategory.value);
     }
 
-var getProductPresentation = localStorage.getItem("product-presentation");
+var getLegalCategory = localStorage.getItem("product-legal-category");
+console.log('getLegalCategory', getLegalCategory);
 
-var prodPres = document.querySelector("#product-presentation");
-if (getProductPresentation != null) {
-prodPres.value = getProductPresentation;
+var legCat = document.querySelector("#product-legal-category");
+if (getLegalCategory != null) {
+legCat.value = getLegalCategory;
 }
 
 </script>
