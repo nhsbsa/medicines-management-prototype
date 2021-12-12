@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}
+Supplier submissions hub | NHSBSA
+{% endblock %}
+{% block content %}
+
+<h1> Portal login</h1>
+
+<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="example">
+    Username
+  </label>
+  <input class="nhsuk-input" id="example" name="example" type="text" style="max-width: 50.8ex;">
+</div>
+
+<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="example">
+    Password
+  </label>
+  <input class="nhsuk-input" id="example" name="example" type="password" style="max-width: 50.8ex;">
+</div>
+
+<a class="nhsuk-button" onclick="store()"
+   href="dashboard"
+   type="submit">
+  Continue
+</a>
+
+<p><a class="nhsuk-link" id="no-password"
+   href="#"
+   type="submit">
+  Forgotton password?
+</a></p>
+
+<script>
+  var passwordMissing = document.getElementById("no-password");
+passwordMissing.addEventListener("click", function(){ alert("Work in progress!!"); });
+
+</script>
+{% endblock %}

@@ -5,22 +5,22 @@ Supplier submissions hub | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="pack-gtin">
+  <a class="nhsuk-back-link__link" href="product-spc-upload-choice">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to pack GTIN code</a>
+    Go back to provide spc/data sheet choice</a>
 </div>
 
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        Upload the pack artwork
+        Upload the SPC or data sheet?
       </h1>
     </legend>
     <div class="nhsuk-hint" id="contact-hint">
-      Files accepted include JPG, BMP, PNG, TIF or PDF. The maximum size of each file is 5 megabytes (MB).
+      File upload can be in Word or PDF formats only. The maximum size is 5MB.
     </div>
     <div class="govuk-form-group">
       <label class="nhsuk-label nhsuk-u-margin-top-5" for="file-upload-1">
@@ -33,19 +33,25 @@ Supplier submissions hub | NHSBSA
 
 <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="store()"
    id="continue-button"
-   href="product-should-display-price"
+   href="../product-pack/pack-size-strength"
    type="submit">
   Continue
 </a>
 
 <script>
 
+var linkUrl = localStorage.getItem("product-link-url");
+
+if (linkUrl != null) {
+localStorage.removeItem("product-link-url");
+}
+
 function store(){
      var uploadFile = document.getElementById("file-upload-1");
-     localStorage.setItem("pack-upload-artwork", uploadFile.value);
+     localStorage.setItem("product-upload-file", uploadFile.value);
     }
 
-var getUploadFile = localStorage.getItem("pack-upload-artwork");
+var getUploadFile = localStorage.getItem("product-upload-file");
 console.log('getUploadFile', getUploadFile);
 
 var fileUp = document.querySelector("#file-upload-1").value;

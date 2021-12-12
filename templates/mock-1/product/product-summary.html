@@ -133,7 +133,7 @@ Supplier submissions hub | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="pack-size-strength">
+      <a href="../product-pack/pack-size-strength">
         Change<span class="nhsuk-u-visually-hidden"> pack size or type</span>
       </a>
 
@@ -150,7 +150,7 @@ Supplier submissions hub | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="pack-subpack">
+      <a href="../product-pack/pack-subpack">
         Change<span class="nhsuk-u-visually-hidden"> if contains subpack</span>
       </a>
 
@@ -167,7 +167,7 @@ Supplier submissions hub | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="pack-subpack-extra">
+      <a href="../product-pack/pack-subpack-extra">
         Change<span class="nhsuk-u-visually-hidden"> subpack information</span>
       </a>
 
@@ -184,7 +184,7 @@ Supplier submissions hub | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="pack-gtin">
+      <a href="../product-pack/pack-gtin">
         Change<span class="nhsuk-u-visually-hidden"> GTIN code</span>
       </a>
 
@@ -201,7 +201,7 @@ Supplier submissions hub | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="pack-artwork">
+      <a href="../product-pack/pack-artwork">
         Change<span class="nhsuk-u-visually-hidden"> uploaded artwork</span>
       </a>
 
@@ -258,7 +258,7 @@ Supplier submissions hub | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="pack-2-size">
+      <a href="../product-pack-extra/pack-2-size">
         Change<span class="nhsuk-u-visually-hidden"> pack 2 size</span>
       </a>
 
@@ -275,7 +275,7 @@ Supplier submissions hub | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="pack-2-subpack">
+      <a href="../product-pack-extra/pack-2-subpack">
         Change<span class="nhsuk-u-visually-hidden"> if contains subpack</span>
       </a>
 
@@ -292,7 +292,7 @@ Supplier submissions hub | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="pack-2-subpack-extra">
+      <a href="../product-pack-extra/pack-2-subpack-extra">
         Change<span class="nhsuk-u-visually-hidden"> subpack information</span>
       </a>
 
@@ -309,7 +309,7 @@ Supplier submissions hub | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="pack-2-gtin">
+      <a href="../product-pack-extra/pack-2-gtin">
         Change<span class="nhsuk-u-visually-hidden"> GTIN code</span>
       </a>
 
@@ -326,7 +326,7 @@ Supplier submissions hub | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="pack-2-artwork">
+      <a href="../product-pack-extra/pack-2-artwork">
         Change<span class="nhsuk-u-visually-hidden"> uploaded artwork</span>
       </a>
 
@@ -343,7 +343,7 @@ Supplier submissions hub | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="product-2-should-display-price">
+      <a href="../product-pack-extra/product-2-should-display-price">
         Change<span class="nhsuk-u-visually-hidden"> if product should have price</span>
       </a>
 
@@ -360,7 +360,7 @@ Supplier submissions hub | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="product-2-price">
+      <a href="../product-pack-extra/product-2-price">
         Change<span class="nhsuk-u-visually-hidden"> product price</span>
       </a>
 
@@ -403,7 +403,7 @@ Supplier submissions hub | NHSBSA
   </div>
 </dl>
 
-<a class="nhsuk-button nhsuk-u-margin-top-5" href="confirmation"
+<a class="nhsuk-button nhsuk-u-margin-top-5" href="../confirmation"
    type="submit">
   Submit
 </a>
@@ -516,7 +516,7 @@ document.getElementById("pack-2-subpack").style["display"] = "none";
 var getPack2SubpackExtra = localStorage.getItem("pack-2-subpack-extra");
 
 if (getPack2SubpackExtra != null) {
-document.getElementById("pack-2-subpack-extra").innerHTML = getPackSubpackExtra;
+document.getElementById("pack-2-subpack-extra").innerHTML = getPack2SubpackExtra;
 } else {
 document.getElementById("pack-2-subpack-extra").style["display"] = "none";
 }
