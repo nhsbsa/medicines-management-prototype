@@ -515,6 +515,10 @@ document.getElementById("pack-2-subpack").style["display"] = "none";
 
 var getPack2SubpackExtra = localStorage.getItem("pack-2-subpack-extra");
 
+if (getPack2Subpack == 'no') {
+document.getElementById("subpack-2-info").style["display"] = "none";
+}
+
 if (getPack2SubpackExtra != null) {
 document.getElementById("pack-2-subpack-extra").innerHTML = getPack2SubpackExtra;
 } else {
