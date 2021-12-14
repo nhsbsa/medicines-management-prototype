@@ -20,12 +20,12 @@ Submit a new product: extra pack GTIN code | Portal | NHSBSA
       </h1>
     </legend>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
-      A GTIN is code found on xxxx and will only contain numbers.
+      A GTIN code contains only numbers. We will accept a 13 or 14 digit GTIN code.
     </div>
 
 
     <label class="nhsuk-label" for="pack-gtin">
-      Code
+     GTIN code
     </label>
     <input class="nhsuk-input nhsuk-u-margin-bottom-2" id="pack-gtin" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 30.8ex;">
 
@@ -57,7 +57,7 @@ packGt.defaultValue = getPackGtin;
 var getSize = localStorage.getItem("pack-2-size");
 var heading = document.getElementById("heading");
 
-if (getPackSubpack != null) {
+if (getSize != null) {
 heading.innerHTML = 'What is the GTIN of the ' + getSize + ' pack?';
 }
 

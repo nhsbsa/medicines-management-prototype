@@ -9,18 +9,18 @@ Submit a new product: subpack required? | Portal | NHSBSA
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to pack size and strength</a>
+    Go back to pack how many units and type</a>
 </div>
 
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
-      <h1 class="nhsuk-fieldset__heading">
+      <h1 class="nhsuk-fieldset__heading" id="heading">
         Is there any subpack information?
       </h1>
     </legend>
     <div class="nhsuk-hint" id="spc-hint">
-      Subpack information is the breakdown of the pack. For example, a pack of 24 tablets may be split as 2 strips of 12 tablets.
+      Subpack information is the breakdown of the pack. For example, a pack of 24 tablets split as 2 strips of 12 tablets.
     </div>
 
     <div class="nhsuk-radios nhsuk-u-margin-top-3" id="data-subpack-radios">
@@ -55,6 +55,14 @@ Submit a new product: subpack required? | Portal | NHSBSA
 var radioButtons = document.getElementsByName("data-subpack");
 
 var getSubpack = localStorage.getItem("pack-subpack");
+
+var getSize = localStorage.getItem("pack-size");
+
+var heading = document.getElementById("heading");
+
+if (getSize != null) {
+heading.innerHTML = 'Is there any subpack information for the ' + getSize + ' pack?';
+}
 
 if (getSubpack != null) {
 for (var radio of radioButtons) {

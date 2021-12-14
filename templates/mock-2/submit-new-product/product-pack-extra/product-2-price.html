@@ -25,7 +25,7 @@ Submit a new product: extra pack price | Portal | NHSBSA
 
 
     <label class="nhsuk-label" for="product-price">
-      Price
+      Price in pence
     </label>
     <input class="nhsuk-input nhsuk-u-margin-bottom-2" id="product-price" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
 
@@ -59,7 +59,7 @@ var getSize = localStorage.getItem("pack-2-size");
 var heading = document.getElementById("heading");
 
 if (getPrice != null) {
-heading.innerHTML = 'What is the price of this ' + getSize + ' pack?';
+heading.innerHTML = 'What is the price of the ' + getSize + ' pack?';
 }
 
 </script>

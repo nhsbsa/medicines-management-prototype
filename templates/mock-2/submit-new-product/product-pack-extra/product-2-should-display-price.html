@@ -20,7 +20,7 @@ Submit a new product: extra pack price required? | Portal | NHSBSA
       </h1>
     </legend>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="spc-hint">
-      This is the NHS list price and excludes VAT. A listed price will only be visible once the product is live on dm+d.
+      The price is the list price of each pack excluding VAT. A listed price will be only visible once approved and live on dm+d.
     </div>
 
     <div class="nhsuk-radios" id="display-price-radios">
@@ -71,7 +71,7 @@ var getSize = localStorage.getItem("pack-2-size");
 var heading = document.getElementById("heading");
 
 if (getArtwork != null) {
-heading.innerHTML = 'Do you want to display the price for this ' + getSize + ' pack?';
+heading.innerHTML = 'Do you want to display the price for the ' + getSize + ' pack?';
 }
 
 

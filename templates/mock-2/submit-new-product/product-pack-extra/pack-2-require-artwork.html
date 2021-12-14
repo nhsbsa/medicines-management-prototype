@@ -20,8 +20,25 @@ Submit a new product: pack artwork | Portal | NHSBSA
       </h1>
     </legend>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="contact-hint-artwork">
-      Packaging, sometimes referred to as artwork, is used for ...... and will not be displayed on dm+d.
+      The packaging is sometimes referred to as artwork. The images will not be displayed on dm+d.
     </div>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      What the images should show
+    </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>The images should display:</p>
+        <ul>
+          <li>name of the product</li>
+          <li>Marketing Authorisation Holder (MAH)</li>
+          <li>GTIN code</li>
+          <li>Product License Number</li>
+        </ul>
+      </div>
+    </details>
 
     <div class="nhsuk-radios" id="display-price-radios">
 
@@ -61,8 +78,8 @@ var getGtin = localStorage.getItem("pack-2-gtin");
 var heading = document.getElementById("heading");
 
 
-if (getGtin != null) {
-heading.innerHTML = 'Do you have the ' + getSize + ' pack artwork to upload?';
+if (getSize != null) {
+heading.innerHTML = 'Do you have images of the packaging to upload for the  ' + getSize + ' pack ?';
 }
 
 

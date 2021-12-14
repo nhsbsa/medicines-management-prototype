@@ -15,13 +15,30 @@ Submit a new product: pack artwork | Portal | NHSBSA
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
-      <h1 class="nhsuk-fieldset__heading">
+      <h1 class="nhsuk-fieldset__heading" id="heading">
         Do you have images of the packaging to upload?
       </h1>
     </legend>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="contact-hint-artwork">
-      Packaging, sometimes referred to as artwork, is used for ...... and will not be displayed on dm+d.
+      The packaging is sometimes referred to as artwork. The images will not be displayed on dm+d.
     </div>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      What the images should show
+    </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>The images should display:</p>
+        <ul>
+          <li>name of the product</li>
+          <li>Marketing Authorisation Holder (MAH)</li>
+          <li>GTIN code</li>
+          <li>Product License Number</li>
+        </ul>
+      </div>
+    </details>
 
     <div class="nhsuk-radios" id="display-price-radios">
 
@@ -55,6 +72,13 @@ Submit a new product: pack artwork | Portal | NHSBSA
 var radioButtons = document.getElementsByName("display-artwork");
 
 var getPackShdDisArtwork= localStorage.getItem("pack-should-display-artwork");
+
+var getSize = localStorage.getItem("pack-size");
+var heading = document.getElementById("heading");
+
+if (getSize != null) {
+heading.innerHTML = 'Do you have images of the packaging to upload for the ' + getSize + ' pack?';
+}
 
 if (getPackShdDisArtwork != null) {
 for (var radio of radioButtons) {

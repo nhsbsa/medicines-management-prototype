@@ -56,8 +56,9 @@ packSubEx.defaultValue = getPackSubpackExtra;
 }
 
 var heading = document.getElementById("heading");
+var getPackSubpack = localStorage.getItem("pack-2-subpack");
 
-if (getPackSubpack != null) {
+if (getSize != null) {
 heading.innerHTML = 'What further subpack information is there for the ' + getSize + ' pack?';
 }
 

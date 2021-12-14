@@ -9,7 +9,7 @@ Submit a new product: spc or data sheet link/upload | Portal | NHSBSA
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to spc/data sheet</a>
+    Go back to spc or data sheet?</a>
 </div>
 
 <div class="nhsuk-form-group">
@@ -19,9 +19,13 @@ Submit a new product: spc or data sheet link/upload | Portal | NHSBSA
         How would you like to provide the SPC or data sheet?
       </h1>
     </legend>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="contact-hint">
-      If upload is chosen, the file can be in Word or PDF formats only. The maximum size is 5 megabytes (MB).
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="contact-link">
+      To provide a SPC, we will need either a file upload or a link to the Electronic Medicines Compendium (EMC). To provide a data sheet, you will need to upload this as a file.
     </div>
+
+<!--    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="contact-hint">-->
+<!--      If upload is chosen, the file can be in Word or PDF formats only. The maximum size is 5 megabytes (MB).-->
+<!--    </div>-->
     <div class="nhsuk-radios nhsuk-radios--conditional">
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="link" name="link" type="radio" value="link" aria-controls="conditional-contact-1" aria-expanded="false">
@@ -32,7 +36,7 @@ Submit a new product: spc or data sheet link/upload | Portal | NHSBSA
       <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="link-url">
-            url
+            EMC website address for SPC
           </label>
           <input class="nhsuk-input nhsuk-u-width-two-thirds" id="link-url" name="link-url" type="text">
         </div>
