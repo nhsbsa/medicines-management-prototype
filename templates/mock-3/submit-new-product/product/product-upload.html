@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
 {% block title %}
-Submit a new product: spc or data sheet link/upload | Portal | NHSBSA
+Supplier submissions hub | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="product-spc">
+  <a class="nhsuk-back-link__link" href="product-presentation">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to product has spc or data sheet?</a>
+    Go back to product presentation</a>
 </div>
 
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
-    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
       <h1 class="nhsuk-fieldset__heading">
-        How would you like to provide the SPC or data sheet?
+        Upload the SPC or data sheet?
       </h1>
     </legend>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="contact-link">
-      To provide a SPC, we will need either a file upload or a link to the Electronic Medicines Compendium (EMC). To provide a data sheet, you will need to upload this as a file.
+    <div class="nhsuk-hint" id="contact-hint">
+      File upload can be in Word or PDF formats only. The maximum size is 5 megabytes (MB).
     </div>
-
-<!--    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="contact-hint">-->
-<!--      If upload is chosen, the file can be in Word or PDF formats only. The maximum size is 5 megabytes (MB).-->
-<!--    </div>-->
     <div class="nhsuk-radios nhsuk-radios--conditional">
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="link" name="link" type="radio" value="link" aria-controls="conditional-contact-1" aria-expanded="false">
@@ -36,7 +32,7 @@ Submit a new product: spc or data sheet link/upload | Portal | NHSBSA
       <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="link-url">
-            EMC website address for SPC
+            url
           </label>
           <input class="nhsuk-input nhsuk-u-width-two-thirds" id="link-url" name="link-url" type="text">
         </div>
@@ -51,7 +47,7 @@ Submit a new product: spc or data sheet link/upload | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
+<a class="nhsuk-button nhsuk-u-margin-top-5" onclick="store()"
    id="continue-button"
    href="product-no-spc"
    type="submit">
@@ -182,23 +178,14 @@ const radioInputs = document.querySelectorAll('.nhsuk-radios--conditional .nhsuk
   });
 
 var radioButtons = document.getElementsByName("link");
-var inputLink = document.getElementById("conditional-contact-1");
-var inputLinkUrl = document.getElementById("link-url");
 
 var getProductLink = localStorage.getItem("product-link-upload");
 
-    if (getProductLink != null) {
-          for (var radio of radioButtons) {
-                if (getProductLink == radio.value) {
-                        radio.checked = true;
-                        console.log(radio);
-
-                    if (radio.value == 'link') {
-                       inputLink.classList.remove("nhsuk-radios__conditional--hidden");
-                       inputLinkUrl.defaultValue = localStorage.getItem("product-link-url")
-                    }
-
-             }
+if (getProductLink != null) {
+for (var radio of radioButtons) {
+if (getProductLink === radio.value) {
+     radio.checked = true;
+            }
           }
       };
 
@@ -208,18 +195,13 @@ var getProductLink = localStorage.getItem("product-link-upload");
 function store() {
   var radioButtons = document.getElementsByName("link");
   var buttonLink = document.getElementById("continue-button");
-  var inputLink = document.getElementById("link-url");
 
   for (var radio of radioButtons) {
       if (radio.checked) {
           localStorage.setItem("product-link-upload", radio.value);
          if (localStorage.getItem("product-link-upload") == 'upload') {
-          buttonLink.href = "product-file-upload";
+          buttonLink.href = "product-summary";
           }
-          if (localStorage.getItem("product-link-upload") == 'link') {
-          localStorage.setItem("product-link-url", inputLink.value);
-          buttonLink.href = "../product-pack/pack-size-strength";
-        }
         }
      }
   }
