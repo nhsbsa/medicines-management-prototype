@@ -9,14 +9,14 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to provide spc or data sheet file upload</a>
+    Go back to provide SmPC or data sheet file upload</a>
 </div>
 
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        SPC or data sheet upload
+        SmPC or data sheet upload
       </h1>
     </legend>
 <!--    <div class="govuk-form-group">-->
@@ -116,17 +116,13 @@ removeLinkOne.addEventListener("click", function(e) {
 	removeLinkOne.setAttribute('href', "product-file-upload-success");
 	removeRowOne.style.display = "none";
 	localStorage.removeItem("product-upload-file");
-	console.log(linkUrl);
-	console.log(linkUrl2);
 
 	if (!linkUrl2) {
-	console.log('working?');
 document.getElementById("hide-table").style.display = "none";
 document.getElementById("add-another-link").style.display = "none";
 document.getElementById("continue-button").style.display = "none";
 document.getElementById("add-link").style.display = "block";
 } else {
-console.log('file 2 still here?');
 document.getElementById("add-link").style.display = "none";
 document.getElementById("add-another-link").style.display = "block";
 document.getElementById("go-to-file-2").setAttribute('href',  "product-file-upload");
@@ -137,13 +133,12 @@ document.getElementById("go-to-file-2").setAttribute('href',  "product-file-uplo
 
 var removeLinkTwo = document.getElementById("remove-file-2");
 var removeRowTwo = document.getElementById("hide-second-file");
-console.log(removeLinkOne);
+
 removeLinkTwo.addEventListener("click", function(e) {
 	// e.target was the clicked element
 	removeLinkTwo.setAttribute('href', "product-file-upload-success");
 	removeRowTwo.style.display = "none";
 	localStorage.removeItem("product-upload-file-2");
-	console.log(localStorage);
 if (!linkUrl) {
 document.getElementById("hide-table").style.display = "none";
 document.getElementById("add-another-link").style.display = "none";
@@ -165,7 +160,6 @@ document.getElementById("add-another-link").setAttribute('href',  "product-file-
 document.getElementById("add-another-link").setAttribute('href',  "product-file-upload");
 }
 
-
 if (!linkUrl && !linkUrl2) {
 document.getElementById("hide-table").style.display = "none";
 document.getElementById("add-another-link").style.display = "none";
@@ -174,9 +168,6 @@ document.getElementById("add-link").style.display = "block";
 } else if (linkUrl && linkUrl2) {
 document.getElementById("add-another-link").style.display = "none";
 }
-
-
-
 
 </script>
 {% endblock %}

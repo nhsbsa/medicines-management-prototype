@@ -484,7 +484,13 @@ console.log(getProductLink);
 
 var getPackSize = localStorage.getItem("pack-size");
 var getPackType = localStorage.getItem("pack-type");
+var getPackTypeOther = localStorage.getItem("pack-type-other");
+
+if (getPackType != "other") {
 document.getElementById("pack-size").innerHTML = getPackSize + ' ' + getPackType;
+} else {
+document.getElementById("pack-size").innerHTML = getPackSize + ' ' + getPackTypeOther;
+}
 
 if (localStorage.getItem("product-extra-pack") == 'yes') {
 document.getElementById("heading-pack-1").innerHTML = getPackSize + ' ' + getPackType;

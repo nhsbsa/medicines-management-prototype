@@ -9,7 +9,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to provide spc or data sheet link or upload</a>
+    Go back to provide SmPC or data sheet link or upload</a>
 </div>
 
 <div class="nhsuk-form-group">
@@ -20,7 +20,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
       </h1>
     </legend>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
-      For example, 14 doses within a pack of 28 tablets or 54 doses within one inhaler.
+      For example, 28 tablets, 500ml, 100 doses.
     </div>
 
 
@@ -43,23 +43,24 @@ Submit a new product: pack size and strength | Portal | NHSBSA
       <option value="ml">ml</option>
       <option value="tablet">tablet</option>
       <option value="vial">vial</option>
+      <option value="other">other</option>
     </select>
   </fieldset>
 </div>
 
 <a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
-   href="pack-subpack"
+   href="pack-subpack" id="continue-button"
    type="submit">
   Continue
 </a>
 
 <script>
 window.onload = function() {
-    var fileUpload = localStorage.getItem("product-upload-file");
-    if (fileUpload) {
+    var fileUpload = localStorage.getItem("product-link-upload");
+    if (fileUpload == "upload") {
     console.log('working?');
     document.getElementById("back-link").setAttribute('href', "../product/product-file-upload-success");
-    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to SPC or data sheet uploaded files";
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to SmPC or data sheet uploaded files";
     } else {
     document.getElementById("back-link").href = '../product/product-spc-upload-choice';
     }
@@ -71,7 +72,12 @@ function store(){
      localStorage.setItem("pack-size", packSize.value);
 
      var packType = document.getElementById("pack-type");
+     var continueButton = document.getElementById("continue-button");
      localStorage.setItem("pack-type", packType.value);
+
+     if (packType.value == "other") {
+         continueButton.setAttribute('href', "pack-strength-other");
+     }
     }
 
 var getPackSize = localStorage.getItem("pack-size");
