@@ -19,7 +19,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
-      Effective date
+      Product effective date
     </dt>
     <dd class="nhsuk-summary-list__value" id="product-effective-date">
     </dd>
@@ -53,40 +53,6 @@ Submit a new product: product summary | Portal | NHSBSA
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
-      Product strength
-    </dt>
-    <dd class="nhsuk-summary-list__value" id="product-strength">
-    </dd>
-
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="product-strength">
-        Change<span class="nhsuk-u-visually-hidden"> product strength</span>
-      </a>
-
-    </dd>
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Product presentation
-    </dt>
-    <dd class="nhsuk-summary-list__value" id="product-presentation">
-    </dd>
-
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="product-presentation">
-        Change<span class="nhsuk-u-visually-hidden"> product presentation</span>
-      </a>
-
-    </dd>
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
       Product has SPC / data sheet
     </dt>
     <dd class="nhsuk-summary-list__value" id="product-spc">
@@ -112,7 +78,24 @@ Submit a new product: product summary | Portal | NHSBSA
     <dd class="nhsuk-summary-list__actions">
 
       <a href="product-spc-upload-choice">
-        Change<span class="nhsuk-u-visually-hidden"> product link or upload</span>
+        Change<span class="nhsuk-u-visually-hidden"> product has link or upload</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key" id="file-or-link">
+      Product display files or url
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="display-file-or-link">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-file-upload-success" id="link-url">
+        Change<span class="nhsuk-u-visually-hidden"> product link or files</span>
       </a>
 
     </dd>
@@ -456,27 +439,48 @@ document.getElementById("product-effective-date").innerHTML = getEffectiveDay + 
 var getProductName = localStorage.getItem("product-name");
 document.getElementById("product-name").innerHTML = getProductName;
 
-var getProductStrength = localStorage.getItem("product-strength");
-var getProductMeasurement = localStorage.getItem("product-measurement");
-document.getElementById("product-strength").innerHTML = getProductStrength + ' ' + getProductMeasurement;
-
-var getProductPresentation = localStorage.getItem("product-presentation");
-document.getElementById("product-presentation").innerHTML = getProductPresentation;
+var getProductHasSPC = localStorage.getItem("product-spc");
+document.getElementById("product-spc").innerHTML = getProductHasSPC;
 
 var getProductHasSPC = localStorage.getItem("product-spc");
 document.getElementById("product-spc").innerHTML = getProductHasSPC;
 
 var getProductLink = localStorage.getItem("product-link-url");
+var getProductUp = localStorage.getItem("product-link-upload");
 var getProductUpload = localStorage.getItem("product-upload-file");
+var getProductUpload2 = localStorage.getItem("product-upload-file-2");
 
 if (getProductLink != null) {
 console.log(getProductLink);
-  document.getElementById("product-link-upload").innerHTML = getProductLink;
-  document.getElementById("link-or-upload").innerHTML = 'Product link url';
-} else {
-  document.getElementById("product-link-upload").innerHTML = getProductUpload;
-  document.getElementById("link-or-upload").innerHTML = 'Product upload file';
-}
+  document.getElementById("product-link-upload").innerHTML = getProductUp;
+  document.getElementById("file-or-link").innerHTML = 'Product link';
+  document.getElementById("display-file-or-link").innerHTML = getProductLink;
+  document.getElementById("link-url").setAttribute('href', "product-spc-upload-choice");
+
+} else if (!getProductLink && (getProductUpload && !getProductUpload2)) {
+  var linkUrlSplit = getProductUpload.split("\\");
+  var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
+  document.getElementById("display-file-or-link").innerHTML = linkUrlFileName;
+  document.getElementById("product-link-upload").innerHTML = getProductUp;
+  document.getElementById("file-or-link").innerHTML = 'Product upload file';
+
+  } else if (!getProductLink && (!getProductUpload && getProductUpload2)) {
+  var linkUrlSplit2 = getProductUpload2.split("\\");
+  var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
+  document.getElementById("display-file-or-link").innerHTML = linkUrlFileName2;
+  document.getElementById("product-link-upload").innerHTML = getProductUp;
+  document.getElementById("file-or-link").innerHTML = 'Product upload file';
+
+  } else if (!getProductLink && (getProductUpload && getProductUpload2)) {
+  var linkUrlSplit = getProductUpload.split("\\");
+  var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
+  var linkUrlSplit2 = getProductUpload2.split("\\");
+  var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
+  document.getElementById("display-file-or-link").innerHTML = linkUrlFileName + '<br>' + linkUrlFileName2;
+  document.getElementById("product-link-upload").innerHTML = getProductUp;
+  document.getElementById("file-or-link").innerHTML = 'Product upload files';
+
+  }
 
 var getPackSize = localStorage.getItem("pack-size");
 var getPackType = localStorage.getItem("pack-type");

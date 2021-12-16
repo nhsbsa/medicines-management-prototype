@@ -23,10 +23,10 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
       File upload can be in Word or PDF formats only. The largest size is 10 megabytes (MB).
     </div>
     <div class="govuk-form-group">
-      <label class="nhsuk-label nhsuk-u-margin-top-3" for="file-upload-1">
+      <label class="nhsuk-label nhsuk-u-margin-top-3" for="file-upload-2">
         Upload a file
       </label>
-      <input class="nhsuk-input " id="file-upload-1" name="file-upload-1" type="file" style="background-color: #ffffff;">
+      <input class="nhsuk-input " id="file-upload-2" name="file-upload-2" type="file" style="background-color: #ffffff;">
     </div>
   </fieldset>
 </div>
@@ -47,14 +47,11 @@ localStorage.removeItem("product-link-url");
 }
 
 function store(){
-     var uploadFile = document.getElementById("file-upload-1");
-     localStorage.setItem("product-upload-file", uploadFile.value);
+     var uploadFile = document.getElementById("file-upload-2");
+     localStorage.setItem("product-upload-file-2", uploadFile.value);
     }
 
-var getUploadFile = localStorage.getItem("product-upload-file");
-console.log('getUploadFile', getUploadFile);
-
-var fileUp = document.querySelector("#file-upload-1").value;
+var fileUp = document.querySelector("#file-upload-2").value;
 console.log(fileUp)
 if (getUploadFile != null) {
 fileUp = getUploadFile;
