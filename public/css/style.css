@@ -5896,15 +5896,15 @@ b {
   margin-bottom: 4px; }
   @media (min-width: 40.0625em) {
     .nhsuk-summary-list__key {
-      width: 30%; } }
+      width: 40% !important; } }
 
 @media (max-width: 40.0525em) {
   .nhsuk-summary-list__value {
-    margin-bottom: 16px; } }
+    margin-bottom: 4px !important; } }
 
 @media (min-width: 40.0625em) {
   .nhsuk-summary-list__value {
-    width: 50%; } }
+    width: 40% !important; } }
 
 .nhsuk-summary-list__value > p {
   margin-bottom: 8px; }
@@ -7240,3 +7240,5 @@ ul[role="tree"] {
       .nhsuk-panel__body {
         font-size: 24pt;
         line-height: 1.05; } }
+
+

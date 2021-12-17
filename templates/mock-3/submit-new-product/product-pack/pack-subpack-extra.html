@@ -22,12 +22,12 @@ Submit a new product: subpack information | Portal | NHSBSA
 
     <div class="nhsuk-form-group">
       <label class="nhsuk-label" for="subpack-extra">
-        Can you provide more detail?
+        How is the pack divided?
       </label>
       <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="subpack-extra-hint">
-        Tell us how the pack is broken down. For example, how many blister strips are there.
+        This is a number. For example, if a 24 pack of tablets splits in to 3 blister strips of 8 tablets then enter 3.
       </div>
-      <textarea class="nhsuk-textarea" id="subpack-extra" name="subpack-extra" rows="5" aria-describedby="example-hint"></textarea>
+      <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="subpack-extra" name="subpack-extra" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
     </div>
 
   </fieldset>

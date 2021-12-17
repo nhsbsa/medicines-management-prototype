@@ -64,3 +64,7 @@ fill-blue{
       }
       }
 
+      @media (min-width: 40.0625em) {
+          .nhsuk-summary-list__key {
+            width: 40% !important; } }
+

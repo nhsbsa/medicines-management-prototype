@@ -5,11 +5,11 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="product-file-upload">
+  <a class="nhsuk-back-link__link" href="product-spc-upload-choice">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to provide SmPC or data sheet file upload</a>
+    Go back to provide SmPC or data sheet choice</a>
 </div>
 
 <div class="nhsuk-form-group">
@@ -82,17 +82,25 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
 
 <script>
 var linkUrl = localStorage.getItem("product-upload-file");
+var linkUrl2 = localStorage.getItem("product-upload-file-2");
+var removeLinkOne = document.getElementById("remove-file-1");
+var removeRowOne = document.getElementById("hide-first-file");
+var removeRowTwo = document.getElementById("hide-second-file");
 
-if (linkUrl) {
+console.log(localStorage);
+console.log(linkUrl);
+console.log(linkUrl2);
+
+if (linkUrl != null) {
 var linkUrlSplit = linkUrl.split("\\");
 console.log(linkUrl.split("\\"));
 var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
 console.log(linkUrlFileName);
 var fileName = document.getElementById("file-upload-name");
 fileName.innerHTML = linkUrlFileName;
+} else {
+removeRowOne.style.display = "none";
 }
-
-var linkUrl2 = localStorage.getItem("product-upload-file-2");
 if (linkUrl2) {
 var linkUrlSplit2 = linkUrl2.split("\\");
 var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
@@ -101,15 +109,10 @@ fileName.innerHTML = linkUrlFileName2;
 
 var addLink = document.getElementById("add-link");
 addLink.style.display = "none";
-
 } else {
-var fileRow = document.getElementById("hide-second-file");
-fileRow.style.display = "none";
-
+removeRowTwo.style.display = "none";
 }
 
-var removeLinkOne = document.getElementById("remove-file-1");
-var removeRowOne = document.getElementById("hide-first-file");
 console.log(removeLinkOne);
 removeLinkOne.addEventListener("click", function(e) {
 	// e.target was the clicked element
@@ -153,14 +156,16 @@ document.getElementById("go-to-file-2").setAttribute('href',  "product-file-uplo
 });
 
 
-if (linkUrl && !linkUrl2) {
-document.getElementById("add-another-link").setAttribute('href',  "product-file-upload-2");
 
-} else if (!linkUrl && linkUrl2) {
-document.getElementById("add-another-link").setAttribute('href',  "product-file-upload");
+if (linkUrl != null && linkUrl2 == null) {
+document.getElementById("go-to-file-2").setAttribute('href',  "product-file-upload-2");
+
+} else if (linkUrl == null && linkUrl2 != null) {
+console.log('working?');
+document.getElementById("go-to-file-2").setAttribute('href',  "product-file-upload");
 }
 
-if (!linkUrl && !linkUrl2) {
+if (linkUrl == null && linkUrl2 == null) {
 document.getElementById("hide-table").style.display = "none";
 document.getElementById("add-another-link").style.display = "none";
 document.getElementById("continue-button").style.display = "none";
