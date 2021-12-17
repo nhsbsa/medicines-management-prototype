@@ -16,17 +16,17 @@ Submit a new product: subpack information | Portal | NHSBSA
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading" id="heading">
-        What further subpack information is there?
+        How many subpacks are in a pack?
       </h1>
     </legend>
 
     <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="subpack-extra">
-        How is the pack divided?
-      </label>
       <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="subpack-extra-hint">
-        This is a number. For example, if a 24 pack of tablets splits in to 3 blister strips of 8 tablets then enter 3.
+        For example, a 24 pack of tablets is made up of 3 subpack blister strips of 8.
       </div>
+      <label class="nhsuk-label" for="subpack-extra">
+        Number of subpacks
+      </label>
       <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="subpack-extra" name="subpack-extra" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
     </div>
 
@@ -58,9 +58,8 @@ var getSize = localStorage.getItem("pack-size");
 var heading = document.getElementById("heading");
 
 if (getSize != null) {
-heading.innerHTML = 'What further subpack information is there for the ' + getSize + ' pack?';
+heading.innerHTML = 'How many subpacks are in the ' + getSize + ' pack?';
 }
-
 
 </script>
 {% endblock %}

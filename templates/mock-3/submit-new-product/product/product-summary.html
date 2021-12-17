@@ -518,8 +518,26 @@ if (notAwaitingArtwork == 'no') {
 document.getElementById("awaiting-artwork").style["display"] = "none";
 }
 
-var getArtwork = localStorage.getItem("pack-upload-artwork");
-document.getElementById("pack-upload-artwork").innerHTML = getArtwork;
+var getProductArtwork = localStorage.getItem("pack-upload-artwork");
+var getProductArtwork2 = localStorage.getItem("pack-upload-artwork-2");
+var getProductArtwork3 = localStorage.getItem("pack-upload-artwork-3");
+var getProductArtwork4 = localStorage.getItem("pack-upload-artwork-4");
+
+var artworkArray = [];
+
+artworkArray.push(getProductArtwork, getProductArtwork2, getProductArtwork3, getProductArtwork4);
+console.log(artworkArray);
+
+var filtered = artworkArray.filter(function (el) {
+return el != null
+});
+
+for (let i = 0; i < filtered.length; i++) {
+var splitUp = filtered[i].split("\\");
+var fileForm = splitUp[splitUp.length - 1];
+document.getElementById("pack-upload-artwork").innerHTML += fileForm + "<br>";
+}
+
 
 var getPackHasPrice = localStorage.getItem("pack-should-display-price");
 document.getElementById("pack-should-display-price").innerHTML = getPackHasPrice;
@@ -590,7 +608,25 @@ document.getElementById("pack-2-has-artwork").innerHTML = notAwaiting2Artwork;
 if (notAwaiting2Artwork == 'no') {
 document.getElementById("awaiting-2-artwork").style["display"] = "none";
 } else {
-document.getElementById("pack-2-upload-artwork").innerHTML = get2Artwork;
+
+var getProduct2Artwork = localStorage.getItem("pack-2-upload-artwork");
+var getProduct2Artwork2 = localStorage.getItem("pack-2-upload-artwork-2");
+var getProduct2Artwork3 = localStorage.getItem("pack-2-upload-artwork-3");
+var getProduct2Artwork4 = localStorage.getItem("pack-2-upload-artwork-4");
+
+var artwork2Array = [];
+
+artwork2Array.push(getProduct2Artwork, getProduct2Artwork2, getProduct2Artwork3, getProduct2Artwork4);
+
+var filtered2 = artwork2Array.filter(function (el) {
+return el != null
+});
+
+for (let i = 0; i < filtered2.length; i++) {
+var splitUp = filtered2[i].split("\\");
+var fileForm = splitUp[splitUp.length - 1];
+document.getElementById("pack-2-upload-artwork").innerHTML += fileForm + "<br>";
+}
 }
 
 var getPack2HasPrice = localStorage.getItem("pack-2-should-display-price");

@@ -36,6 +36,7 @@ Submit a new product: pack artwork | Portal | NHSBSA
           <li>Marketing Authorisation Holder (MAH)</li>
           <li>GTIN code</li>
           <li>Product License Number</li>
+          <li>supplier name</li>
         </ul>
       </div>
     </details>
@@ -71,17 +72,14 @@ Submit a new product: pack artwork | Portal | NHSBSA
 
 var radioButtons = document.getElementsByName("display-artwork");
 
-var getPackShdDisArtwork = localStorage.getItem("pack-2-should-display-artwork");
+var getPackShdDisArtwork= localStorage.getItem("pack-2-should-display-artwork");
 
-var getSize = localStorage.getItem("pack-2-size");
-var getGtin = localStorage.getItem("pack-2-gtin");
+var getSize = localStorage.getItem("pack-size");
 var heading = document.getElementById("heading");
 
-
 if (getSize != null) {
-heading.innerHTML = 'Do you have images of the packaging to upload for the  ' + getSize + ' pack ?';
+heading.innerHTML = 'Do you have images of the packaging to upload for the ' + getSize + ' pack?';
 }
-
 
 if (getPackShdDisArtwork != null) {
 for (var radio of radioButtons) {
