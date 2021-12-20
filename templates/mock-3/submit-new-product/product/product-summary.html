@@ -567,18 +567,19 @@ document.getElementById("pack-2-info").style["display"] = "none";
 };
 
 getPack2Size = localStorage.getItem("pack-2-size");
+console.log('getPack2Size', getPack2Size);
 
 if (addExtra != 'no') {
 if (getPack2Size != null && (getPackType != null && getPackType != 'other')) {
 document.getElementById("pack-2-size").innerHTML = getPack2Size + ' ' + getPackType;
 document.getElementById("heading-pack-2").innerHTML = getPack2Size + ' ' + getPackType;
-} else if (getPack2Size != null && (getPackType != null && getPackType == 'other')) {
+  } else if (getPack2Size != null && (getPackType != null && getPackType == 'other')) {
 document.getElementById("pack-2-size").innerHTML = getPack2Size + ' ' + getPackTypeOther;
 document.getElementById("heading-pack-2").innerHTML = getPack2Size + ' ' + getPackTypeOther;
-} else if (getPack2Size == null) {
+  }
+} else {
 document.getElementById("pack-2-size").style["display"] = "none";
 document.getElementById("heading-pack-2").style["display"] = "none";
-  }
 }
 
 getPack2Subpack = localStorage.getItem("pack-2-subpack");
