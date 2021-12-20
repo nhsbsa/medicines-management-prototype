@@ -492,9 +492,11 @@ document.getElementById("pack-size").innerHTML = getPackSize + ' ' + getPackType
 document.getElementById("pack-size").innerHTML = getPackSize + ' ' + getPackTypeOther;
 }
 
-if (localStorage.getItem("product-extra-pack") == 'yes') {
+if (localStorage.getItem("product-extra-pack") == 'yes' && getPackType != 'other') {
 document.getElementById("heading-pack-1").innerHTML = getPackSize + ' ' + getPackType;
-} else {
+} else if (getPackType == 'other' && localStorage.getItem("product-extra-pack") == 'yes'){
+document.getElementById("heading-pack-1").innerHTML = getPackSize + ' ' + getPackTypeOther;
+} else if (localStorage.getItem("product-extra-pack") == 'no') {
 document.getElementById("heading-pack-1").style["display"] = "none";
 }
 
@@ -566,12 +568,17 @@ document.getElementById("pack-2-info").style["display"] = "none";
 
 getPack2Size = localStorage.getItem("pack-2-size");
 
-if (getPack2Size != null && addExtra != 'no') {
+if (addExtra != 'no') {
+if (getPack2Size != null && (getPackType != null && getPackType != 'other')) {
 document.getElementById("pack-2-size").innerHTML = getPack2Size + ' ' + getPackType;
 document.getElementById("heading-pack-2").innerHTML = getPack2Size + ' ' + getPackType;
-} else {
+} else if (getPack2Size != null && (getPackType != null && getPackType == 'other')) {
+document.getElementById("pack-2-size").innerHTML = getPack2Size + ' ' + getPackTypeOther;
+document.getElementById("heading-pack-2").innerHTML = getPack2Size + ' ' + getPackTypeOther;
+} else if (getPack2Size == null) {
 document.getElementById("pack-2-size").style["display"] = "none";
 document.getElementById("heading-pack-2").style["display"] = "none";
+  }
 }
 
 getPack2Subpack = localStorage.getItem("pack-2-subpack");
