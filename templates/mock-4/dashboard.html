@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}
+Portal dashboard | Medicines Management design prototype | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+
+    <div class="nhsuk-card" style="color: #ffffff; background-color: #005eb8; text-align: center">
+      <div class="nhsuk-card__content">
+        <h1 class="nhsuk-card__heading">
+          Portal dashboard
+        </h1>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-one-half">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link" href="submit-new-product/product/product-check-list">Submit a new product</a>
+        </h2>
+        <p class="nhsuk-card__description">Add a new product.</p>
+      </div>
+    </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-half">
+      <div class="nhsuk-card nhsuk-card--clickable">
+        <div class="nhsuk-card__content">
+          <h2 class="nhsuk-card__heading nhsuk-heading-m">
+            <a class="nhsuk-card__link" href="create-new">Submit a new pack</a>
+          </h2>
+          <p class="nhsuk-card__description">Add a new pack.</p>
+        </div>
+      </div>
+    </div>
+
+      <div class="nhsuk-grid-column-one-half">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link" href="#">Individual price change</a>
+            </h2>
+            <p class="nhsuk-card__description">Make a price change.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-column-one-half">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link" href="#">Discontinuation of product</a>
+            </h2>
+            <p class="nhsuk-card__description">Stop a product.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="nhsuk-grid-column-one-half">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link" href="create-new">Product update submissions</a>
+            </h2>
+            <p class="nhsuk-card__description">Update an existing product.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <a class="nhsuk-button" onclick="clearStorage()" href="#">Clear local storage</a>
+  </div>
+</div>
+<script>
+  function clearStorage() {
+  localStorage.clear();
+  }
+
+  console.log(localStorage);
+</script>
+{% endblock %}
