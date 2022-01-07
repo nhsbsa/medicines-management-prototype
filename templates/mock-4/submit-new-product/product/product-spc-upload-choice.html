@@ -51,13 +51,14 @@ Submit a new product: spc or data sheet link/upload | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeLinkOrUpload()"
    id="continue-button"
    href="product-no-spc"
    type="submit">
   Continue
 </a>
 
+<script src="/js/newProduct.js"></script>
 <script>
 
 /**
@@ -180,50 +181,6 @@ const radioInputs = document.querySelectorAll('.nhsuk-radios--conditional .nhsuk
     });
 
   });
-
-var radioButtons = document.getElementsByName("link");
-var inputLink = document.getElementById("conditional-contact-1");
-var inputLinkUrl = document.getElementById("link-url");
-
-var getProductLink = localStorage.getItem("product-link-upload");
-
-    if (getProductLink != null) {
-          for (var radio of radioButtons) {
-                if (getProductLink == radio.value) {
-                        radio.checked = true;
-                        console.log(radio);
-
-                    if (radio.value == 'link') {
-                       inputLink.classList.remove("nhsuk-radios__conditional--hidden");
-                       inputLinkUrl.defaultValue = localStorage.getItem("product-link-url")
-                    }
-
-             }
-          }
-      };
-
-      console.log(localStorage);
-
-
-function store() {
-  var radioButtons = document.getElementsByName("link");
-  var buttonLink = document.getElementById("continue-button");
-  var inputLink = document.getElementById("link-url");
-
-  for (var radio of radioButtons) {
-      if (radio.checked) {
-          localStorage.setItem("product-link-upload", radio.value);
-         if (localStorage.getItem("product-link-upload") == 'upload') {
-          buttonLink.href = "product-file-upload";
-          }
-          if (localStorage.getItem("product-link-upload") == 'link') {
-          localStorage.setItem("product-link-url", inputLink.value);
-          buttonLink.href = "../product-pack/pack-size-strength";
-        }
-        }
-     }
-  }
-
 
 </script>
 {% endblock %}
