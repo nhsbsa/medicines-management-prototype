@@ -2,6 +2,7 @@ console.log(localStorage);
 
 var getContinueButton = document.getElementsByClassName("nhsuk-button")[0];
 var getPackShdDisPrice= localStorage.getItem("pack-should-display-price");
+var buttonLink = document.getElementById("continue-button");
 
 function storeDate() {
      var inputDay = document.getElementById("example-day");
@@ -122,10 +123,156 @@ function storeSpcYesOrNo() {
            if (localStorage.getItem("product-link-upload") == 'upload') {
             buttonLink.href = "product-file-upload";
             }
-            if (localStorage.getItem("product-link-upload") == 'link') {
+            if (localStorage.getItem("product-link-upload") == 'link' && getPackShdDisPrice == null) {
             localStorage.setItem("product-link-url", inputLink.value);
             buttonLink.href = "../product-pack/pack-size-strength";
           }
-          }
+          if (localStorage.getItem("product-link-upload") == 'link' && getPackShdDisPrice != null) {
+              localStorage.setItem("product-link-url", inputLink.value);
+              buttonLink.href = "product-summary";
+           }
+         }
+      }
+   }
+
+
+   var fileSuccess = document.getElementById("file-success");
+
+   if (fileSuccess) {
+      var linkUrl = localStorage.getItem("product-upload-file");
+      var linkUrl2 = localStorage.getItem("product-upload-file-2");
+      var removeLinkOne = document.getElementById("remove-file-1");
+      var removeRowOne = document.getElementById("hide-first-file");
+      var removeRowTwo = document.getElementById("hide-second-file");
+
+
+   if (linkUrl != null) {
+      var linkUrlSplit = linkUrl.split("\\");
+      var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
+      var fileName = document.getElementById("file-upload-name");
+      fileName.innerHTML = linkUrlFileName;
+     } else {
+      removeRowOne.style.display = "none";
+     }
+
+   if (linkUrl2) {
+   var linkUrlSplit2 = linkUrl2.split("\\");
+   var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
+   var fileName = document.getElementById("file-upload-name-2");
+   fileName.innerHTML = linkUrlFileName2;
+
+   var addLink = document.getElementById("add-link");
+   addLink.style.display = "none";
+      } else {
+   removeRowTwo.style.display = "none";
+    }
+
+    removeLinkOne.addEventListener("click", function(e) {
+   	// e.target was the clicked element
+   	removeLinkOne.setAttribute('href', "product-file-upload-success");
+   	removeRowOne.style.display = "none";
+   	localStorage.removeItem("product-upload-file");
+
+   	var itemTwo = localStorage.getItem("product-upload-file-2");
+   	var hideTable = document.getElementById("hide-table");
+    var addAnotherLink = document.getElementById("add-another-link");
+    console.log(addAnotherLink);
+
+   	if (itemTwo == null) {
+      hideTable.style.display = "none";
+      addAnotherLink.style.display = "none";
+      buttonLink.style.display = "none";
+      addLink.style.display = "block";
+      } else {
+      addLink.style.display = "none";
+      addAnotherLink.style.display = "block";
+      document.getElementById("go-to-file-2").setAttribute('href',  "product-file-upload");
+      }
+   	  e.preventDefault();
+   });
+
+   var removeLinkTwo = document.getElementById("remove-file-2");
+   var removeRowTwo = document.getElementById("hide-second-file");
+
+    removeLinkTwo.addEventListener("click", function(e) {
+   	// e.target was the clicked element
+   	removeLinkTwo.setAttribute('href', "product-file-upload-success");
+   	removeRowTwo.style.display = "none";
+   	localStorage.removeItem("product-upload-file-2");
+   	var itemOne = localStorage.getItem("product-upload-file");
+   if (itemOne == null) {
+   hideTable.style.display = "none";
+   addAnotherLink.style.display = "none";
+   buttonLink.style.display = "none";
+   addLink.style.display = "block";
+   } else {
+   addLink.style.display = "none";
+   addAnotherLink.style.display = "block";
+   document.getElementById("go-to-file-2").setAttribute('href',  "product-file-upload-2");
+   }
+   	e.preventDefault();
+   });
+
+  var addAnotherLink = document.getElementById("add-another-link");
+
+
+   if (linkUrl != null && linkUrl2 == null) {
+   document.getElementById("go-to-file-2").setAttribute('href',  "product-file-upload-2");
+
+   } else if (linkUrl == null && linkUrl2 != null) {
+     document.getElementById("go-to-file-2").setAttribute('href',  "product-file-upload");
+    }
+
+   if (linkUrl == null && linkUrl2 == null) {
+   hideTable.style.display = "none";
+   addAnotherLink.style.display = "none";
+   buttonLink.style.display = "none";
+   addLink.style.display = "block";
+     } else if (linkUrl && linkUrl2) {
+   addAnotherLink.style.display = "none";
+    }
+
+    function uploadSpcFiles() {
+       if (linkUrl && getPackShdDisPrice || linkUrl2 && getPackShdDisPrice) {
+          buttonLink.href = "product-summary";
        }
     }
+
+   }
+
+   var packTy = document.querySelector("#pack-type");
+
+   if (packTy) {
+
+   var continueButton = document.getElementById("continue-button");
+   var getPackSize = localStorage.getItem("pack-size");
+
+   var packSi = document.querySelector("#pack-size");
+   if (getPackSize != null) {
+   packSi.defaultValue = getPackSize;
+   }
+
+   var getPackType = localStorage.getItem("pack-type");
+
+   if (getPackType != null) {
+   packTy.value = getPackType;
+   }
+
+   console.log(continueButton);
+
+   function storeSizeAndStrength(){
+        var packSize = document.getElementById("pack-size");
+        localStorage.setItem("pack-size", packSize.value);
+
+        var packType = document.getElementById("pack-type");
+        localStorage.setItem("pack-type", packType.value);
+
+        if (packType.value == "other") {
+            continueButton.setAttribute('href', "pack-strength-other");
+           }
+        if (packSi && packSize && getPackShdDisPrice) {
+              continueButton.href = "../product/product-summary";
+           }
+       }
+  }
+
