@@ -70,7 +70,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key" id="link-or-upload">
-      SmPC or data sheet link or upload
+      SmPC or data sheet format
     </dt>
     <dd class="nhsuk-summary-list__value" id="product-link-upload">
     </dd>
@@ -78,7 +78,7 @@ Submit a new product: product summary | Portal | NHSBSA
     <dd class="nhsuk-summary-list__actions">
 
       <a href="product-spc-upload-choice">
-        Change<span class="nhsuk-u-visually-hidden"> product has link or upload</span>
+        Change<span class="nhsuk-u-visually-hidden"> SmPC or data sheet format</span>
       </a>
 
     </dd>
@@ -201,7 +201,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="../product-pack/pack-artwork">
+      <a href="../product-pack/pack-artwork-upload-success">
         Change<span class="nhsuk-u-visually-hidden"> uploaded packaging images</span>
       </a>
 
@@ -453,7 +453,7 @@ var getProductUpload2 = localStorage.getItem("product-upload-file-2");
 if (getProductLink != null) {
 console.log(getProductLink);
   document.getElementById("product-link-upload").innerHTML = getProductUp;
-  document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet link web address';
+  document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet web address';
   document.getElementById("display-file-or-link").innerHTML = getProductLink;
   document.getElementById("link-url").setAttribute('href', "product-spc-upload-choice");
 
@@ -479,7 +479,7 @@ console.log(getProductLink);
   document.getElementById("display-file-or-link").innerHTML = linkUrlFileName + '<br>' + linkUrlFileName2;
   document.getElementById("product-link-upload").innerHTML = getProductUp;
   document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet uploaded files';
-
+  document.getElementById("link-url").setAttribute('href', "product-file-upload-success");
   }
 
 var getPackSize = localStorage.getItem("pack-size");

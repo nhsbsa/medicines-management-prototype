@@ -1,17 +1,25 @@
 console.log(localStorage);
 
+var getPackShdDisPrice = localStorage.getItem("pack-should-display-price");
+var getProductHospUsage = localStorage.getItem("product-hospital-only");
+var getProductExtraPack = localStorage.getItem("product-extra-pack");
+var getPackSize = localStorage.getItem("pack-size");
+
 var getContinueButton = document.getElementsByClassName("nhsuk-button")[0];
-var getPackShdDisPrice= localStorage.getItem("pack-should-display-price");
 var buttonLink = document.getElementById("continue-button");
+var continueButton = document.getElementById("continue-button");
+var heading = document.getElementById("heading");
+
+// effective date
 
 function storeDate() {
-     var inputDay = document.getElementById("example-day");
-     var inputMonth = document.getElementById("example-month");
-     var inputYear = document.getElementById("example-year");
-     localStorage.setItem("effective-day", inputDay.value);
-     localStorage.setItem("effective-month", inputMonth.value);
-     localStorage.setItem("effective-year", inputYear.value);
-    }
+    var inputDay = document.getElementById("example-day");
+    var inputMonth = document.getElementById("example-month");
+    var inputYear = document.getElementById("example-year");
+    localStorage.setItem("effective-day", inputDay.value);
+    localStorage.setItem("effective-month", inputMonth.value);
+    localStorage.setItem("effective-year", inputYear.value);
+}
 
 var getEffectiveDay = localStorage.getItem("effective-day");
 var getEffectiveMonth = localStorage.getItem("effective-month");
@@ -23,96 +31,100 @@ var eYear = document.querySelector("#example-year");
 
 if (eDay != null && eMonth != null && eYear != null) {
 
-  if (getEffectiveDay != null) {
-    eDay.defaultValue = getEffectiveDay;
-    console.log(getContinueButton);
-  }
+    if (getEffectiveDay != null) {
+        eDay.defaultValue = getEffectiveDay;
+        console.log(getContinueButton);
+    }
 
-  if (getEffectiveMonth != null) {
-    eMonth.defaultValue = getEffectiveMonth;
-  }
+    if (getEffectiveMonth != null) {
+        eMonth.defaultValue = getEffectiveMonth;
+    }
 
-  if (getEffectiveYear != null) {
-    eYear.defaultValue = getEffectiveYear;
-  }
+    if (getEffectiveYear != null) {
+        eYear.defaultValue = getEffectiveYear;
+    }
 
-  if ((getEffectiveDay != null && getEffectiveMonth != null && getEffectiveYear != null) && getPackShdDisPrice != null) {
-    getContinueButton.href = "product-summary";
-  }
+    if ((getEffectiveDay != null && getEffectiveMonth != null && getEffectiveYear != null) && getProductHospUsage != null) {
+        getContinueButton.href = "product-summary";
+    }
 }
 
-function storeName(){
-     var productName = document.getElementById("product-name");
-     localStorage.setItem("product-name", productName.value);
-    }
+// product name
+
+function storeName() {
+    var productName = document.getElementById("product-name");
+    localStorage.setItem("product-name", productName.value);
+}
 
 var getProductName = localStorage.getItem("product-name");
 var prodName = document.querySelector("#product-name");
 
 if (prodName != null) {
-console.log(prodName);
-  if (getProductName != null) {
-    prodName.defaultValue = getProductName;
-  }
-  if (getProductName != null && getPackShdDisPrice != null) {
-    getContinueButton.href = "product-summary";
-  }
+    if (getProductName != null) {
+        prodName.defaultValue = getProductName;
+    }
+    if (getProductName != null && getProductHospUsage != null) {
+        getContinueButton.href = "product-summary";
+    }
 }
+
+// has spc / data sheet?
 
 var radioButtons = document.getElementsByName("data-spc");
 
 if (radioButtons) {
-var getProductSpc = localStorage.getItem("product-spc");
-var buttonLink = document.getElementById("continue-button");
-  if (getProductSpc != null) {
-    for (var radio of radioButtons) {
-      if (getProductSpc === radio.value) {
-     radio.checked = true;
+    var getProductSpc = localStorage.getItem("product-spc");
+    var buttonLink = document.getElementById("continue-button");
+    if (getProductSpc != null) {
+        for (var radio of radioButtons) {
+            if (getProductSpc === radio.value) {
+                radio.checked = true;
             }
-      if (radio.value == 'yes' && getPackShdDisPrice != null) {
-          buttonLink.href = "product-summary";
+            if (radio.value == 'yes' && getProductHospUsage != null) {
+                buttonLink.href = "product-summary";
             }
-          }
         }
-      };
+    }
+};
 
 function storeSpcYesOrNo() {
-  var radioButtons = document.getElementsByName("data-spc");
-  var buttonLink = document.getElementById("continue-button");
-  console.log(buttonLink);
+    var radioButtons = document.getElementsByName("data-spc");
+    var buttonLink = document.getElementById("continue-button");
 
-  for (var radio of radioButtons) {
-      if (radio.checked) {
-          localStorage.setItem("product-spc", radio.value);
-         if (radio.value == 'yes' && getPackShdDisPrice == null) {
-          buttonLink.href = "product-spc-upload-choice";
-          } else if (radio.value == 'no') {
-          buttonLink.href = "product-no-spc";
-          }
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+            localStorage.setItem("product-spc", radio.value);
+            if (radio.value == 'yes' && getProductHospUsage == null) {
+                buttonLink.href = "product-spc-upload-choice";
+            } else if (radio.value == 'no') {
+                buttonLink.href = "product-no-spc";
+            }
         }
-     }
-  }
+    }
+}
 
-  var radioButtons = document.getElementsByName("link");
+// SmPC as link or upload?
 
-  if (radioButtons != null) {
-  var getProductLink = localStorage.getItem("product-link-upload");
-  var inputLink = document.getElementById("conditional-contact-1");
-  var inputLinkUrl = document.getElementById("link-url");
-      if (getProductLink != null) {
-            for (var radio of radioButtons) {
-                  if (getProductLink == radio.value) {
-                          radio.checked = true;
-                  if (radio.value == 'link') {
-                         inputLink.classList.remove("nhsuk-radios__conditional--hidden");
-                         inputLinkUrl.defaultValue = localStorage.getItem("product-link-url")
-                      }
-                  }
-               }
-           }
-       };
+var radioButtons = document.getElementsByName("link");
 
-  function storeLinkOrUpload() {
+if (radioButtons != null) {
+    var getProductLink = localStorage.getItem("product-link-upload");
+    var inputLink = document.getElementById("conditional-contact-1");
+    var inputLinkUrl = document.getElementById("link-url");
+    if (getProductLink != null) {
+        for (var radio of radioButtons) {
+            if (getProductLink == radio.value) {
+                radio.checked = true;
+                if (radio.value == 'link') {
+                    inputLink.classList.remove("nhsuk-radios__conditional--hidden");
+                    inputLinkUrl.defaultValue = localStorage.getItem("product-link-url")
+                }
+            }
+        }
+    }
+};
+
+function storeLinkOrUpload() {
     var radioButtons = document.getElementsByName("link");
     var buttonLink = document.getElementById("continue-button");
     var inputLink = document.getElementById("link-url");
@@ -120,147 +132,172 @@ function storeSpcYesOrNo() {
     for (var radio of radioButtons) {
         if (radio.checked) {
             localStorage.setItem("product-link-upload", radio.value);
-           if (localStorage.getItem("product-link-upload") == 'upload') {
-            buttonLink.href = "product-file-upload";
+            if (localStorage.getItem("product-link-upload") == 'upload') {
+                buttonLink.href = "product-file-upload";
             }
-            if (localStorage.getItem("product-link-upload") == 'link' && getPackShdDisPrice == null) {
-            localStorage.setItem("product-link-url", inputLink.value);
-            buttonLink.href = "../product-pack/pack-size-strength";
-          }
-          if (localStorage.getItem("product-link-upload") == 'link' && getPackShdDisPrice != null) {
-              localStorage.setItem("product-link-url", inputLink.value);
-              buttonLink.href = "product-summary";
-           }
-         }
-      }
-   }
-
-
-   var fileSuccess = document.getElementById("file-success");
-
-   if (fileSuccess) {
-      var linkUrl = localStorage.getItem("product-upload-file");
-      var linkUrl2 = localStorage.getItem("product-upload-file-2");
-      var removeLinkOne = document.getElementById("remove-file-1");
-      var removeRowOne = document.getElementById("hide-first-file");
-      var removeRowTwo = document.getElementById("hide-second-file");
-
-
-   if (linkUrl != null) {
-      var linkUrlSplit = linkUrl.split("\\");
-      var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
-      var fileName = document.getElementById("file-upload-name");
-      fileName.innerHTML = linkUrlFileName;
-     } else {
-      removeRowOne.style.display = "none";
-     }
-
-   if (linkUrl2) {
-   var linkUrlSplit2 = linkUrl2.split("\\");
-   var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
-   var fileName = document.getElementById("file-upload-name-2");
-   fileName.innerHTML = linkUrlFileName2;
-
-   var addLink = document.getElementById("add-link");
-   addLink.style.display = "none";
-      } else {
-   removeRowTwo.style.display = "none";
+            if (localStorage.getItem("product-link-upload") == 'link' && getProductHospUsage == null) {
+                localStorage.setItem("product-link-url", inputLink.value);
+                buttonLink.href = "../product-pack/pack-size-strength";
+            }
+            if (localStorage.getItem("product-link-upload") == 'link' && getProductHospUsage != null) {
+                localStorage.setItem("product-link-url", inputLink.value);
+                buttonLink.href = "product-summary";
+            }
+        }
     }
+}
 
-    removeLinkOne.addEventListener("click", function(e) {
-   	// e.target was the clicked element
-   	removeLinkOne.setAttribute('href', "product-file-upload-success");
-   	removeRowOne.style.display = "none";
-   	localStorage.removeItem("product-upload-file");
+// SmPC as file upload - upload pages (file-1 and file-2)
 
-   	var itemTwo = localStorage.getItem("product-upload-file-2");
-   	var hideTable = document.getElementById("hide-table");
+var linkUrl = localStorage.getItem("product-link-url");
+var uploadFile = document.getElementById("file-upload-1");
+var uploadFile2 = document.getElementById("file-upload-2");
+var getUploadFile = localStorage.getItem("product-upload-file");
+var getUploadFile2 = localStorage.getItem("product-upload-file-2");
+
+function storeFile() {
+    localStorage.setItem("product-upload-file", uploadFile.value);
+}
+
+function storeFile2() {
+    localStorage.setItem("product-upload-file-2", uploadFile2.value);
+}
+
+// SmPC as file upload - uploads as a table page
+
+var fileSuccess = document.getElementById("file-success");
+
+if (fileSuccess) {
+    var linkUrl = localStorage.getItem("product-link-url");
+    var uploadFile = document.getElementById("file-upload-1");
+    var uploadFile2 = document.getElementById("file-upload-2");
+    var getUploadFile = localStorage.getItem("product-upload-file");
+    var getUploadFile2 = localStorage.getItem("product-upload-file-2");
+
+    var removeFileOne = document.getElementById("remove-file-1");
+    var removeRowOne = document.getElementById("hide-first-file");
+    var removeRowTwo = document.getElementById("hide-second-file");
+    var addLink = document.getElementById("add-link");
     var addAnotherLink = document.getElementById("add-another-link");
-    console.log(addAnotherLink);
-
-   	if (itemTwo == null) {
-      hideTable.style.display = "none";
-      addAnotherLink.style.display = "none";
-      buttonLink.style.display = "none";
-      addLink.style.display = "block";
-      } else {
-      addLink.style.display = "none";
-      addAnotherLink.style.display = "block";
-      document.getElementById("go-to-file-2").setAttribute('href',  "product-file-upload");
-      }
-   	  e.preventDefault();
-   });
-
-   var removeLinkTwo = document.getElementById("remove-file-2");
-   var removeRowTwo = document.getElementById("hide-second-file");
-
-    removeLinkTwo.addEventListener("click", function(e) {
-   	// e.target was the clicked element
-   	removeLinkTwo.setAttribute('href', "product-file-upload-success");
-   	removeRowTwo.style.display = "none";
-   	localStorage.removeItem("product-upload-file-2");
-   	var itemOne = localStorage.getItem("product-upload-file");
-   if (itemOne == null) {
-   hideTable.style.display = "none";
-   addAnotherLink.style.display = "none";
-   buttonLink.style.display = "none";
-   addLink.style.display = "block";
-   } else {
-   addLink.style.display = "none";
-   addAnotherLink.style.display = "block";
-   document.getElementById("go-to-file-2").setAttribute('href',  "product-file-upload-2");
-   }
-   	e.preventDefault();
-   });
-
-  var addAnotherLink = document.getElementById("add-another-link");
 
 
-   if (linkUrl != null && linkUrl2 == null) {
-   document.getElementById("go-to-file-2").setAttribute('href',  "product-file-upload-2");
+    if (getUploadFile && getUploadFile2 == null) {
+        var fileUploadSplit = getUploadFile.split("\\");
+        var fileUploadFileName = fileUploadSplit[fileUploadSplit.length - 1];
+        var fileName = document.getElementById("file-upload-name");
+        fileName.innerHTML = fileUploadFileName;
+        removeRowTwo.style.display = "none";
+    } else if (getUploadFile2 && getUploadFile == null) {
+        var fileUploadSplit2 = getUploadFile2.split("\\");
+        var fileUploadFileName2 = fileUploadSplit2[fileUploadSplit2.length - 1];
+        var fileName2 = document.getElementById("file-upload-name-2");
+        fileName2.innerHTML = fileUploadFileName2;
+        removeRowOne.style.display = "none";
+    } else if (getUploadFile2 && getUploadFile) {
+        var fileUploadSplit = getUploadFile.split("\\");
+        var fileUploadFileName = fileUploadSplit[fileUploadSplit.length - 1];
+        var fileName = document.getElementById("file-upload-name");
+        fileName.innerHTML = fileUploadFileName;
 
-   } else if (linkUrl == null && linkUrl2 != null) {
-     document.getElementById("go-to-file-2").setAttribute('href',  "product-file-upload");
+        var fileUploadSplit2 = getUploadFile2.split("\\");
+        var fileUploadFileName2 = fileUploadSplit2[fileUploadSplit2.length - 1];
+        var fileName2 = document.getElementById("file-upload-name-2");
+        fileName2.innerHTML = fileUploadFileName2;
+
+        addAnotherLink.style.display = "none";
     }
 
-   if (linkUrl == null && linkUrl2 == null) {
-   hideTable.style.display = "none";
-   addAnotherLink.style.display = "none";
-   buttonLink.style.display = "none";
-   addLink.style.display = "block";
-     } else if (linkUrl && linkUrl2) {
-   addAnotherLink.style.display = "none";
+    removeFileOne.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        removeFileOne.setAttribute('href', "product-file-upload-success");
+        removeRowOne.style.display = "none";
+        localStorage.removeItem("product-upload-file");
+
+        var itemTwo = localStorage.getItem("product-upload-file-2");
+        var hideTable = document.getElementById("hide-table");
+
+        if (itemTwo == null) {
+            hideTable.style.display = "none";
+            addAnotherLink.style.display = "none";
+            buttonLink.style.display = "none";
+            addLink.style.display = "block";
+        } else {
+            addLink.style.display = "none";
+            addAnotherLink.style.display = "block";
+            document.getElementById("go-to-file-2").setAttribute('href', "product-file-upload");
+        }
+        e.preventDefault();
+    });
+
+    var removeFileTwo = document.getElementById("remove-file-2");
+    var removeRowTwo = document.getElementById("hide-second-file");
+
+    removeFileTwo.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        removeFileTwo.setAttribute('href', "product-file-upload-success");
+        removeRowTwo.style.display = "none";
+        localStorage.removeItem("product-upload-file-2");
+        var itemOne = localStorage.getItem("product-upload-file");
+        if (itemOne == null) {
+            hideTable.style.display = "none";
+            addAnotherLink.style.display = "none";
+            buttonLink.style.display = "none";
+            addLink.style.display = "block";
+        } else {
+            addLink.style.display = "none";
+            addAnotherLink.style.display = "block";
+            document.getElementById("go-to-file-2").setAttribute('href', "product-file-upload-2");
+        }
+        e.preventDefault();
+    });
+
+    var addAnotherLink = document.getElementById("add-another-link");
+
+
+    if (getUploadFile != null && getUploadFile2 == null) {
+        document.getElementById("go-to-file-2").setAttribute('href', "product-file-upload-2");
+
+    } else if (getUploadFile == null && getUploadFile2 != null) {
+        document.getElementById("go-to-file-2").setAttribute('href', "product-file-upload");
+    }
+
+    if (getUploadFile == null && getUploadFile2 == null) {
+        hideTable.style.display = "none";
+        addAnotherLink.style.display = "none";
+        buttonLink.style.display = "none";
+        addLink.style.display = "block";
+    } else if (uploadFile && uploadFile2) {
+        addAnotherLink.style.display = "none";
     }
 
     function uploadSpcFiles() {
-       if (linkUrl && getPackShdDisPrice || linkUrl2 && getPackShdDisPrice) {
-          buttonLink.href = "product-summary";
-       }
+        localStorage.removeItem("product-link-url");
+        if (getUploadFile && getProductHospUsage || getUploadFile2 && getProductHospUsage) {
+            buttonLink.href = "product-summary";
+        }
+    }
+}
+
+// pack size and type - type is not other (first pack)
+
+var packTy = document.querySelector("#pack-type");
+
+if (packTy) {
+
+    var getPackSize = localStorage.getItem("pack-size");
+
+    var packSi = document.querySelector("#pack-size");
+    if (getPackSize != null) {
+        packSi.defaultValue = getPackSize;
     }
 
-   }
+    var getPackType = localStorage.getItem("pack-type");
 
-   var packTy = document.querySelector("#pack-type");
+    if (getPackType != null) {
+        packTy.value = getPackType;
+    }
 
-   if (packTy) {
-
-   var continueButton = document.getElementById("continue-button");
-   var getPackSize = localStorage.getItem("pack-size");
-
-   var packSi = document.querySelector("#pack-size");
-   if (getPackSize != null) {
-   packSi.defaultValue = getPackSize;
-   }
-
-   var getPackType = localStorage.getItem("pack-type");
-
-   if (getPackType != null) {
-   packTy.value = getPackType;
-   }
-
-   console.log(continueButton);
-
-   function storeSizeAndStrength(){
+    function storeSizeAndStrength() {
         var packSize = document.getElementById("pack-size");
         localStorage.setItem("pack-size", packSize.value);
 
@@ -269,10 +306,517 @@ function storeSpcYesOrNo() {
 
         if (packType.value == "other") {
             continueButton.setAttribute('href', "pack-strength-other");
-           }
-        if (packSi && packSize && getPackShdDisPrice) {
-              continueButton.href = "../product/product-summary";
-           }
-       }
-  }
+        } else if (packSi && packSize && getProductHospUsage) {
+            continueButton.href = "../product/product-summary";
+        }
+    }
+}
 
+// pack type is other (first pack)
+
+var packTypeOther = document.querySelector("#pack-type-other");
+
+if (packTypeOther) {
+    var getPackTypeOther = localStorage.getItem("pack-type-other");
+
+    if (getPackTypeOther != null) {
+        packTypeOther.value = getPackTypeOther;
+    }
+
+    function storePackTypeOther() {
+        localStorage.setItem("pack-type-other", packTypeOther.value);
+
+        if (getProductHospUsage) {
+            continueButton.href = "../product/product-summary";
+        } else {
+            continueButton.href = "pack-subpack";
+        }
+    }
+
+}
+
+// should display subpack info?
+
+var subpackRadioButtons = document.getElementsByName("data-subpack");
+
+if (subpackRadioButtons.length != 0) {
+    var getSubpack = localStorage.getItem("pack-subpack");
+
+    if (getPackSize != null) {
+        heading.innerHTML = 'Is there any subpack information for the ' + getPackSize + ' pack?';
+    }
+
+    if (getSubpack != null) {
+        for (var radio of subpackRadioButtons) {
+            if (getSubpack === radio.value) {
+                radio.checked = true;
+            }
+        }
+    };
+
+
+    function storeSubpackYesOrNo() {
+
+        for (var radio of subpackRadioButtons) {
+            if (radio.checked) {
+                localStorage.setItem("pack-subpack", radio.value);
+                if (radio.value == 'yes') {
+                    buttonLink.href = "pack-subpack-extra";
+                } else if (radio.value == 'no' && getProductHospUsage) {
+                    buttonLink.href = "../product/product-summary";
+                }
+            }
+        }
+    };
+
+}
+
+// subpack info (first pack)
+
+var packSubEx = document.querySelector("#subpack-extra");
+
+if (packSubEx) {
+
+    function storeNumberOfSubpacks() {
+        var packSubpackExtra = document.getElementById("subpack-extra");
+        localStorage.setItem("pack-subpack-extra", packSubpackExtra.value);
+
+        if (getProductHospUsage) {
+            buttonLink.href = "../product/product-summary";
+        }
+    }
+
+    var getPackSubpackExtra = localStorage.getItem("pack-subpack-extra");
+
+
+    if (getPackSubpackExtra != null) {
+        packSubEx.defaultValue = getPackSubpackExtra;
+    }
+
+    if (getPackSize != null) {
+        heading.innerHTML = 'How many subpacks are in the ' + getPackSize + ' pack?';
+    }
+}
+
+// add Gtin (first pack)
+
+var packGtin = document.getElementById("pack-gtin");
+
+if (packGtin) {
+
+    function storeGtin() {
+        var packGtin = document.getElementById("pack-gtin");
+        localStorage.setItem("pack-gtin", packGtin.value);
+
+        if (getProductHospUsage) {
+            buttonLink.href = "../product/product-summary";
+        }
+    }
+
+    var getPackGtin = localStorage.getItem("pack-gtin");
+
+
+    var packGt = document.querySelector("#pack-gtin");
+    if (getPackGtin != null) {
+        packGt.defaultValue = getPackGtin;
+    }
+
+    if (getPackSize != null) {
+        heading.innerHTML = 'What is the GTIN code of the ' + getPackSize + ' pack?';
+    }
+
+}
+
+// should display artwork? (first pack)
+
+var radioArtworkButtons = document.getElementsByName("display-artwork");
+
+if (radioArtworkButtons.length != 0) {
+
+    var getPackShdDisArtwork = localStorage.getItem("pack-should-display-artwork");
+
+    if (getPackSize != null) {
+        heading.innerHTML = 'Do you have images of the packaging to upload for the ' + getPackSize + ' pack?';
+    }
+
+    if (getPackShdDisArtwork != null) {
+        for (var radio of radioArtworkButtons) {
+            if (getPackShdDisArtwork === radio.value) {
+                radio.checked = true;
+            }
+        }
+    };
+
+    function storeArtworkYesOrNo() {
+        for (var radio of radioArtworkButtons) {
+            if (radio.checked) {
+                localStorage.setItem("pack-should-display-artwork", radio.value);
+                if (radio.value == 'yes') {
+                    buttonLink.href = "pack-artwork";
+                } else if (radio.value == 'no' && getProductHospUsage != null) {
+                    buttonLink.href = "../product/product-summary";
+                }
+            }
+        }
+    }
+}
+
+// upload artworks 1-4 (first pack)
+
+var uploadArtwork = document.getElementById("file-upload-1");
+
+if (uploadArtwork) {
+    function storeArtwork() {
+        localStorage.setItem("pack-upload-artwork", uploadArtwork.value);
+    }
+
+    var getUploadArtwork = localStorage.getItem("pack-upload-artwork");
+
+    var artworkFileUp = document.querySelector("#file-upload-1").value;
+    if (getUploadArtwork != null) {
+        artworkFileUp = getUploadArtwork;
+    }
+
+    if (getPackSize != null) {
+        heading.innerHTML = 'Upload images of packaging for the ' + getPackSize + ' pack';
+    }
+}
+
+var uploadArtwork2 = document.getElementById("file-upload-2");
+
+if (uploadArtwork2) {
+    function storeArtwork2() {
+        localStorage.setItem("pack-upload-artwork-2", uploadArtwork2.value);
+    }
+
+    var getUploadArtwork2 = localStorage.getItem("pack-upload-artwork-2");
+
+    var artworkFileUp2 = document.querySelector("#file-upload-2").value;
+    if (getUploadArtwork2 != null) {
+        artworkFileUp2 = getUploadArtwork2;
+    }
+
+    if (getPackSize != null) {
+        heading.innerHTML = 'Upload images of packaging for the ' + getPackSize + ' pack';
+    }
+}
+
+var uploadArtwork3 = document.getElementById("file-upload-3");
+
+if (uploadArtwork3) {
+    function storeArtwork3() {
+        localStorage.setItem("pack-upload-artwork-3", uploadArtwork3.value);
+    }
+
+    var getUploadArtwork3 = localStorage.getItem("pack-upload-artwork-3");
+
+    var artworkFileUp3 = document.querySelector("#file-upload-3").value;
+    if (getUploadArtwork3 != null) {
+        artworkFileUp3 = getUploadArtwork3;
+    }
+
+    if (getPackSize != null) {
+        heading.innerHTML = 'Upload images of packaging for the ' + getPackSize + ' pack';
+    }
+}
+
+var uploadArtwork4 = document.getElementById("file-upload-4");
+
+if (uploadArtwork4) {
+    function storeArtwork4() {
+        localStorage.setItem("pack-upload-artwork-4", uploadArtwork4.value);
+    }
+
+    var getUploadArtwork4 = localStorage.getItem("pack-upload-artwork-4");
+
+    var artworkFileUp4 = document.querySelector("#file-upload-4").value;
+    if (getUploadArtwork4 != null) {
+        artworkFileUp4 = getUploadArtwork4;
+    }
+
+    if (getPackSize != null) {
+        heading.innerHTML = 'Upload images of packaging for the ' + getPackSize + ' pack';
+    }
+}
+
+var artworkLimit = document.getElementById("artwork-limit");
+
+// upload success (first pack)
+
+if (artworkLimit) {
+    var artworkOne = localStorage.getItem("pack-upload-artwork");
+    var artworkTwo = localStorage.getItem("pack-upload-artwork-2");
+    var artworkThree = localStorage.getItem("pack-upload-artwork-3");
+    var artworkFour = localStorage.getItem("pack-upload-artwork-4");
+
+    var removeLinkOne = document.getElementById("remove-file-1");
+    var removeLinkTwo = document.getElementById("remove-file-2");
+    var removeLinkThree = document.getElementById("remove-file-3");
+    var removeLinkFour = document.getElementById("remove-file-4");
+
+    var removeRowOne = document.getElementById("hide-first-file");
+    var removeRowTwo = document.getElementById("hide-second-file");
+    var removeRowThree = document.getElementById("hide-third-file");
+    var removeRowFour = document.getElementById("hide-fourth-file");
+
+    if (artworkOne != null) {
+        var artworkOneSplit = artworkOne.split("\\");
+        var artworkOneFileName = artworkOneSplit[artworkOneSplit.length - 1];
+        console.log(artworkOneFileName);
+        var fileName = document.getElementById("file-upload-name");
+        fileName.innerHTML = artworkOneFileName;
+    } else {
+        removeRowOne.style.display = "none";
+    }
+
+    if (artworkTwo != null) {
+        var artworkTwoSplit = artworkTwo.split("\\");
+        var artworkTwoFileName = artworkTwoSplit[artworkTwoSplit.length - 1];
+        var fileName = document.getElementById("file-upload-name-2");
+        fileName.innerHTML = artworkTwoFileName;
+    } else {
+        removeRowTwo.style.display = "none";
+    }
+
+    if (artworkThree != null) {
+        var artworkThreeSplit = artworkThree.split("\\");
+        var artworkThreeFileName = artworkThreeSplit[artworkThreeSplit.length - 1];
+        var fileName = document.getElementById("file-upload-name-3");
+        fileName.innerHTML = artworkThreeFileName;
+    } else {
+        removeRowThree.style.display = "none";
+    }
+
+    if (artworkFour != null) {
+        var artworkFourSplit = artworkFour.split("\\");
+        var artworkFourFileName = artworkFourSplit[artworkFourSplit.length - 1];
+        var fileName = document.getElementById("file-upload-name-4");
+        fileName.innerHTML = artworkFourFileName;
+
+        var addLink = document.getElementById("add-link");
+        addLink.style.display = "none";
+
+    } else {
+        removeRowFour.style.display = "none";
+    }
+
+    console.log(removeLinkOne);
+    removeLinkOne.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        removeLinkOne.setAttribute('href', "pack-artwork-upload-success");
+        removeRowOne.style.display = "none";
+        localStorage.removeItem("pack-upload-artwork");
+        var itemTwo = localStorage.getItem("pack-upload-artwork-2");
+        var itemThree = localStorage.getItem("pack-upload-artwork-3");
+        var itemFour = localStorage.getItem("pack-upload-artwork-4");
+
+        if (itemTwo == null && itemThree == null && itemFour == null) {
+            document.getElementById("hide-table").style.display = "none";
+            document.getElementById("add-another-link").style.display = "none";
+            document.getElementById("continue-button").style.display = "none";
+            document.getElementById("add-link").style.display = "block";
+        } else {
+            document.getElementById("add-link").style.display = "none";
+            document.getElementById("add-another-link").style.display = "block";
+            document.getElementById("go-to-file-2").setAttribute('href', "pack-artwork");
+        }
+        e.preventDefault();
+
+    });
+
+    removeLinkTwo.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        removeLinkTwo.setAttribute('href', "pack-artwork-upload-success");
+        removeRowTwo.style.display = "none";
+        localStorage.removeItem("pack-upload-artwork-2");
+        var itemOne = localStorage.getItem("pack-upload-artwork");
+        var itemThree = localStorage.getItem("pack-upload-artwork-3");
+        var itemFour = localStorage.getItem("pack-upload-artwork-4");
+        if (itemOne == null && itemThree == null && itemFour == null) {
+            document.getElementById("hide-table").style.display = "none";
+            document.getElementById("add-another-link").style.display = "none";
+            document.getElementById("continue-button").style.display = "none";
+            document.getElementById("add-link").style.display = "block";
+        } else {
+            document.getElementById("add-link").style.display = "none";
+            document.getElementById("add-another-link").style.display = "block";
+            document.getElementById("go-to-file-2").setAttribute('href', "pack-artwork-2");
+        }
+        e.preventDefault();
+    });
+
+    removeLinkThree.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        removeLinkThree.setAttribute('href', "pack-artwork-upload-success");
+        removeRowThree.style.display = "none";
+        localStorage.removeItem("pack-upload-artwork-3");
+        var itemOne = localStorage.getItem("pack-upload-artwork");
+        var itemTwo = localStorage.getItem("pack-upload-artwork-2");
+        var itemFour = localStorage.getItem("pack-upload-artwork-4");
+        if (itemOne == null && itemTwo == null && itemFour == null) {
+            document.getElementById("hide-table").style.display = "none";
+            document.getElementById("add-another-link").style.display = "none";
+            document.getElementById("continue-button").style.display = "none";
+            document.getElementById("add-link").style.display = "block";
+        } else {
+            document.getElementById("add-link").style.display = "none";
+            document.getElementById("add-another-link").style.display = "block";
+            document.getElementById("go-to-file-2").setAttribute('href', "pack-artwork-3");
+        }
+        e.preventDefault();
+    });
+
+
+    removeLinkFour.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        removeLinkFour.setAttribute('href', "pack-artwork-upload-success");
+        removeRowFour.style.display = "none";
+        localStorage.removeItem("pack-upload-artwork-4");
+        var itemOne = localStorage.getItem("pack-upload-artwork");
+        var itemTwo = localStorage.getItem("pack-upload-artwork-2");
+        var itemThree = localStorage.getItem("pack-upload-artwork-3");
+        if (itemOne == null && itemTwo == null && itemThree == null) {
+            document.getElementById("hide-table").style.display = "none";
+            document.getElementById("add-another-link").style.display = "none";
+            document.getElementById("continue-button").style.display = "none";
+            document.getElementById("add-link").style.display = "block";
+        } else {
+            document.getElementById("add-link").style.display = "none";
+            document.getElementById("add-another-link").style.display = "block";
+            document.getElementById("go-to-file-2").setAttribute('href', "pack-artwork-4");
+        }
+        e.preventDefault();
+    });
+
+
+
+    if (artworkOne != null && artworkTwo == null && artworkThree == null && artworkFour == null) {
+        document.getElementById("go-to-file-2").setAttribute('href', "pack-artwork-2");
+    } else if (artworkOne == null && artworkTwo != null && artworkThree == null && artworkFour == null) {
+        document.getElementById("go-to-file-2").setAttribute('href', "pack-artwork");
+    } else if (artworkOne != null && artworkTwo != null && artworkThree == null && artworkFour == null) {
+        document.getElementById("go-to-file-2").setAttribute('href', "pack-artwork-3");
+    } else if (artworkOne != null && artworkTwo != null && artworkThree != null && artworkFour == null) {
+        document.getElementById("go-to-file-2").setAttribute('href', "pack-artwork-4");
+    } else if (artworkOne != null && artworkTwo != null && artworkThree != null && artworkFour != null) {
+        document.getElementById("add-another-link").style.display = "none";
+    } else if (artworkOne == null && artworkTwo == null && artworkThree == null && artworkFour == null) {
+        document.getElementById("hide-table").style.display = "none";
+        document.getElementById("add-another-link").style.display = "none";
+        document.getElementById("continue-button").style.display = "none";
+        document.getElementById("add-link").style.display = "block";
+    }
+
+    function uploadArtworkFiles() {
+        if (artworkOne && getProductHospUsage || artworkTwo && getProductHospUsage || artworkThree && getProductHospUsage || artworkFour && getProductHospUsage) {
+            buttonLink.href = "../product/product-summary";
+        }
+    }
+}
+
+// should display price (first pack)
+
+var radioShouldDisplayPriceButtons = document.getElementsByName("display-price");
+
+if (radioShouldDisplayPriceButtons.length != 0) {
+
+    if (getPackSize != null) {
+        heading.innerHTML = 'Do you want to display a price for the ' + getPackSize + ' pack?';
+    }
+
+    if (getPackShdDisPrice != null) {
+        for (var radio of radioShouldDisplayPriceButtons) {
+            if (getPackShdDisPrice === radio.value) {
+                radio.checked = true;
+            }
+        }
+    };
+
+
+    function storeShouldDisplayPrice() {
+
+        for (var radio of radioShouldDisplayPriceButtons) {
+            if (radio.checked) {
+                localStorage.setItem("pack-should-display-price", radio.value);
+                if (radio.value == 'yes') {
+                    buttonLink.href = "product-price";
+                } else if (radio.value == 'no' && getProductHospUsage) {
+                    buttonLink.href = "product-summary";
+                }
+            }
+        }
+    }
+}
+
+// product price (first pack)
+
+var prodPrice = document.getElementById("product-price");
+
+if (prodPrice) {
+
+    console.log(getProductHospUsage);
+
+    function storePrice() {
+        localStorage.setItem("product-price", prodPrice.value);
+        if (getProductHospUsage) {
+            buttonLink.href = "product-summary";
+        }
+    }
+
+    var getProdPrice = localStorage.getItem("product-price");
+
+    if (getProdPrice != null) {
+        prodPrice.defaultValue = getProdPrice;
+    }
+
+    var getPrice = localStorage.getItem("pack-should-display-price");
+
+    if (getPrice != null) {
+        heading.innerHTML = 'What is the price of the ' + getPackSize + ' pack?';
+    }
+}
+
+var legalCategory = document.getElementById("product-legal-category");
+
+if (legalCategory) {
+
+    function storeLegalCategory() {
+        localStorage.setItem("product-legal-category", legalCategory.value);
+        if (getProductHospUsage) {
+            buttonLink.href = "product-summary";
+        }
+    }
+
+    var getLegalCategory = localStorage.getItem("product-legal-category");
+
+    if (getLegalCategory != null) {
+        legalCategory.value = getLegalCategory;
+    }
+}
+
+// hospital yes/no
+
+var radioUsageButtons = document.getElementsByName("data-usage");
+
+if (radioUsageButtons.length != 0) {
+
+    if (getProductHospUsage != null) {
+        for (var radio of radioUsageButtons) {
+            if (getProductHospUsage === radio.value) {
+                radio.checked = true;
+            }
+        }
+    };
+
+    function storeUsage() {
+
+        for (var radio of radioUsageButtons) {
+            if (radio.checked) {
+                localStorage.setItem("product-hospital-only", radio.value);
+            }
+            if (getProductExtraPack) {
+                buttonLink.href = "product-summary";
+            }
+        }
+    }
+}

@@ -32,25 +32,11 @@ Submit a new product: pack size and strength | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storePackTypeOther()"
    href="pack-subpack" id="continue-button"
    type="submit">
   Continue
 </a>
 
-<script>
-
-function store(){
-     var packType = document.getElementById("pack-type-other");
-     localStorage.setItem("pack-type-other", packType.value);
-    }
-
-var getPackType = localStorage.getItem("pack-type-other");
-
-var packTy = document.querySelector("#pack-type-other");
-if (getPackType != null) {
-packTy.value = getPackType;
-}
-
-</script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}

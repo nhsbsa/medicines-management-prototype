@@ -31,34 +31,14 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeFile2()"
    id="continue-button"
    href="product-file-upload-success"
    type="submit">
   Continue
 </a>
 
-<script>
-
-var linkUrl = localStorage.getItem("product-link-url");
-
-if (linkUrl != null) {
-localStorage.removeItem("product-link-url");
-}
-
-function store(){
-     var uploadFile = document.getElementById("file-upload-2");
-     localStorage.setItem("product-upload-file-2", uploadFile.value);
-    }
-
-var fileUp = document.querySelector("#file-upload-2").value;
-console.log(fileUp)
-if (getUploadFile != null) {
-fileUp = getUploadFile;
-}
-
-
-</script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}
 
 

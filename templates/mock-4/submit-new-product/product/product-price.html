@@ -31,35 +31,11 @@ Submit a new product: pack price | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button" onclick="store()"
-   href="product-legal-category"
+<a class="nhsuk-button" onclick="storePrice()"
+   href="product-legal-category" id="continue-button"
    type="submit">
   Continue
 </a>
 
-<script>
-function store(){
-     var prodPrice = document.getElementById("product-price");
-     localStorage.setItem("product-price", prodPrice.value);
-    }
-
-    var prodPrice= document.getElementById("product-price");
-
-var getProdPrice = localStorage.getItem("product-price");
-
-
-var prodPrice = document.querySelector("#product-price");
-if (getProdPrice != null) {
-prodPrice.defaultValue = getProdPrice;
-}
-
-var getPrice = localStorage.getItem("pack-should-display-price");
-var getSize = localStorage.getItem("pack-size");
-var heading = document.getElementById("heading");
-
-if (getPrice != null) {
-heading.innerHTML = 'What is the price of the ' + getSize + ' pack?';
-}
-
-</script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}

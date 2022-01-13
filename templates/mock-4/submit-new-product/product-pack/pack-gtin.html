@@ -32,8 +32,8 @@ Submit a new product: pack GTIN code | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button" onclick="store()"
-   href="pack-require-artwork"
+<a class="nhsuk-button" onclick="storeGtin()"
+   href="pack-require-artwork" id="continue-button"
    type="submit">
   Continue
 </a>
@@ -47,30 +47,6 @@ window.onload = function() {
     }
 };
 
-
-function store(){
-     var packGtin= document.getElementById("pack-gtin");
-     localStorage.setItem("pack-gtin", packGtin.value);
-    }
-
-    var packGtin= document.getElementById("pack-gtin");
-    console.log(packGtin.value);
-
-var getPackGtin = localStorage.getItem("pack-gtin");
-
-
-var packGt = document.querySelector("#pack-gtin");
-if (getPackGtin != null) {
-packGt.defaultValue = getPackGtin;
-console.log(packGt);
-}
-
-var getSize = localStorage.getItem("pack-size");
-var heading = document.getElementById("heading");
-
-if (getSize != null) {
-heading.innerHTML = 'What is the GTIN code of the ' + getSize + ' pack?';
-}
-
 </script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}

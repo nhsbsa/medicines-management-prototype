@@ -33,35 +33,14 @@ Submit a new product: subpack information | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeNumberOfSubpacks()"
    id="continue-button"
    href="pack-gtin"
    type="submit">
   Continue
 </a>
 
-<script>
-
-function store(){
-     var packSubpackExtra = document.getElementById("subpack-extra");
-     localStorage.setItem("pack-subpack-extra", packSubpackExtra.value);
-    }
-
-var getPackSubpackExtra = localStorage.getItem("pack-subpack-extra");
-
-var packSubEx = document.querySelector("#subpack-extra");
-if (getPackSubpackExtra != null) {
-packSubEx.defaultValue = getPackSubpackExtra;
-}
-
-var getSize = localStorage.getItem("pack-size");
-var heading = document.getElementById("heading");
-
-if (getSize != null) {
-heading.innerHTML = 'How many subpacks are in the ' + getSize + ' pack?';
-}
-
-</script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}
 
 

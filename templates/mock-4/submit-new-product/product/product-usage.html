@@ -40,43 +40,14 @@ Submit a new product: used in hospitals? | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeUsage()"
    id="continue-button"
    href="product-add-pack"
    type="submit">
   Continue
 </a>
 
-<script>
-
-var radioButtons = document.getElementsByName("data-usage");
-
-var getProductHospUsage = localStorage.getItem("product-hospital-only");
-
-if (getProductHospUsage != null) {
-for (var radio of radioButtons) {
-if (getProductHospUsage === radio.value) {
-     radio.checked = true;
-            }
-          }
-      };
-
-      console.log(localStorage);
-
-
-function store() {
-  var radioButtons = document.getElementsByName("data-usage");
-  var buttonLink = document.getElementById("continue-button");
-
-  for (var radio of radioButtons) {
-      if (radio.checked) {
-          localStorage.setItem("product-hospital-only", radio.value);
-        }
-     }
-  }
-
-
-</script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}
 
 
