@@ -23,46 +23,22 @@ Submit a new product: pack artwork | Portal | NHSBSA
       Files accepted are JPG, BMP, PNG, TIFF or PDF. The largest size of each file is 5MB.
     </div>
     <div class="govuk-form-group">
-      <label class="nhsuk-label nhsuk-u-margin-top-3" for="file-upload-1">
+      <label class="nhsuk-label nhsuk-u-margin-top-3" for="extra-pack-file-upload-1">
         Upload a file
       </label>
-      <input class="nhsuk-input " id="file-upload-1" name="file-upload-1" type="file" style="background-color: #ffffff;">
+      <input class="nhsuk-input " id="extra-pack-file-upload-1" name="extra-pack-file-upload-1" type="file" style="background-color: #ffffff;">
     </div>
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeExtraPackFileOneUpload()"
    id="continue-button"
    href="pack-2-artwork-upload-success"
    type="submit">
   Continue
 </a>
 
-<script>
-
-function store(){
-     var uploadFile = document.getElementById("file-upload-1");
-     localStorage.setItem("pack-2-upload-artwork", uploadFile.value);
-    }
-
-var getUploadFile = localStorage.getItem("pack-2-upload-artwork");
-console.log('getUploadFile', getUploadFile);
-
-var fileUp = document.querySelector("#file-upload-1").value;
-console.log(fileUp)
-if (getUploadFile != null) {
-fileUp = getUploadFile;
-}
-
-var getSize = localStorage.getItem("pack-size");
-var heading = document.getElementById("heading");
-
-if (getSize != null) {
-heading.innerHTML = 'Upload images of packaging for the ' + getSize + ' pack';
-}
-
-
-</script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}
 
 

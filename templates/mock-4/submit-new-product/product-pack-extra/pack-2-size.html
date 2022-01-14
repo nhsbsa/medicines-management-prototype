@@ -24,16 +24,16 @@ Submit a new product: extra pack size | Portal | NHSBSA
     </div>
 
 
-    <label class="nhsuk-label" for="pack-size">
+    <label class="nhsuk-label" for="extra-pack-size">
       Pack size
     </label>
-    <input class="nhsuk-input nhsuk-u-margin-bottom-2" id="pack-size" name="size" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
+    <input class="nhsuk-input nhsuk-u-margin-bottom-2" id="extra-pack-size" name="size" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
 
   </fieldset>
 </div>
 
-<a class="nhsuk-button" onclick="store()"
-   href="pack-2-subpack"
+<a class="nhsuk-button" onclick="storeExtraPackSize()"
+   href="pack-2-subpack" id="continue-button"
    type="submit">
   Continue
 </a>
@@ -43,26 +43,11 @@ window.addEventListener('load',
   function() {
   var backLink = document.getElementsByClassName("nhsuk-back-link__link");
   var getUploadFile = localStorage.getItem("product-upload-file");
-  console.log('getUploadFile', getUploadFile);
-  console.log('backLink', backLink);
-  console.log('localStorage', localStorage);
     if (getUploadFile != null) {
    backLink.href = "product-file-upload";
 };
   }, false);
 
-
-function store(){
-     var packSize = document.getElementById("pack-size");
-     localStorage.setItem("pack-2-size", packSize.value);
-    }
-
-var getPackSize = localStorage.getItem("pack-2-size");
-
-var packSi = document.querySelector("#pack-size");
-if (getPackSize != null) {
-packSi.defaultValue = getPackSize;
-}
-
 </script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}

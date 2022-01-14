@@ -24,44 +24,23 @@ Submit a new product: subpack information | Portal | NHSBSA
       <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="subpack-extra-hint">
         For example, a 24 pack of tablets is made up of 3 subpack blister strips of 8.
       </div>
-      <label class="nhsuk-label" for="subpack-extra">
+      <label class="nhsuk-label" for="extra-pack-subpack-extra">
         Number of subpacks
       </label>
-      <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="subpack-extra" name="subpack-extra" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
+      <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="extra-pack-subpack-extra" name="subpack-extra" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
     </div>
 
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeExtraPackSubpackInfo()"
    id="continue-button"
    href="pack-2-gtin"
    type="submit">
   Continue
 </a>
 
-<script>
-
-function store(){
-     var packSubpackExtra = document.getElementById("subpack-extra");
-     localStorage.setItem("pack-2-subpack-extra", packSubpackExtra.value);
-    }
-
-var getPackSubpackExtra = localStorage.getItem("pack-2-subpack-extra");
-
-var packSubEx = document.querySelector("#subpack-extra");
-if (getPackSubpackExtra != null) {
-packSubEx.defaultValue = getPackSubpackExtra;
-}
-
-var getSize = localStorage.getItem("pack-2-size");
-var heading = document.getElementById("heading");
-
-if (getSize != null) {
-heading.innerHTML = 'How many subpacks are in the ' + getSize + ' pack?';
-}
-
-</script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}
 
 

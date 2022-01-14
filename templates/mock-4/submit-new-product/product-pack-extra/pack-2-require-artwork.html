@@ -44,14 +44,14 @@ Submit a new product: pack artwork | Portal | NHSBSA
     <div class="nhsuk-radios" id="display-price-radios">
 
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="data-yes" name="display-artwork" type="radio" value="yes" />
+        <input class="nhsuk-radios__input" id="data-yes" name="extra-pack-display-artwork" type="radio" value="yes" />
         <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
           Yes
         </label>
       </div>
 
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="data-no" name="display-artwork" type="radio" value="no" />
+        <input class="nhsuk-radios__input" id="data-no" name="extra-pack-display-artwork" type="radio" value="no" />
         <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
           No
         </label>
@@ -61,52 +61,14 @@ Submit a new product: pack artwork | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeExtraPackRequireArtwork()"
    id="continue-button"
    href="product-2-should-display-price"
    type="submit">
   Continue
 </a>
 
-<script>
-
-var radioButtons = document.getElementsByName("display-artwork");
-
-var getPackShdDisArtwork= localStorage.getItem("pack-2-should-display-artwork");
-
-var getSize = localStorage.getItem("pack-size");
-var heading = document.getElementById("heading");
-
-if (getSize != null) {
-heading.innerHTML = 'Do you have images of the packaging to upload for the ' + getSize + ' pack?';
-}
-
-if (getPackShdDisArtwork != null) {
-for (var radio of radioButtons) {
-if (getPackShdDisArtwork === radio.value) {
-     radio.checked = true;
-            }
-          }
-      };
-
-
-
-function store() {
-  var radioButtons = document.getElementsByName("display-artwork");
-  var buttonLink = document.getElementById("continue-button");
-
-  for (var radio of radioButtons) {
-      if (radio.checked) {
-          localStorage.setItem("pack-2-should-display-artwork", radio.value);
-         if (radio.value == 'yes') {
-          buttonLink.href = "pack-2-artwork";
-          }
-        }
-     }
-  }
-
-
-</script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}
 
 

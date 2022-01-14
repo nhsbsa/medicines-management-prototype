@@ -24,16 +24,16 @@ Submit a new product: extra pack GTIN code | Portal | NHSBSA
     </div>
 
 
-    <label class="nhsuk-label" for="pack-gtin">
+    <label class="nhsuk-label" for="extra-pack-gtin">
      GTIN code
     </label>
-    <input class="nhsuk-input nhsuk-u-margin-bottom-2" id="pack-gtin" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 30.8ex;">
+    <input class="nhsuk-input nhsuk-u-margin-bottom-2" id="extra-pack-gtin" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 30.8ex;">
 
   </fieldset>
 </div>
 
-<a class="nhsuk-button" onclick="store()"
-   href="pack-2-require-artwork"
+<a class="nhsuk-button" onclick="storeExtraPackGtin()"
+   href="pack-2-require-artwork" id="continue-button"
    type="submit">
   Continue
 </a>
@@ -47,27 +47,6 @@ window.onload = function() {
     }
 };
 
-function store(){
-     var packGtin= document.getElementById("pack-gtin");
-     localStorage.setItem("pack-2-gtin", packGtin.value);
-    }
-
-    var packGtin= document.getElementById("pack-gtin");
-
-var getPackGtin = localStorage.getItem("pack-2-gtin");
-var getPackSubpack = localStorage.getItem("pack-2-subpack");
-
-var packGt = document.querySelector("#pack-gtin");
-if (getPackGtin != null) {
-packGt.defaultValue = getPackGtin;
-}
-
-var getSize = localStorage.getItem("pack-2-size");
-var heading = document.getElementById("heading");
-
-if (getSize != null) {
-heading.innerHTML = 'What is the GTIN code of the ' + getSize + ' pack?';
-}
-
 </script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}

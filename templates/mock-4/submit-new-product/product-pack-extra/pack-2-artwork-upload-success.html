@@ -20,9 +20,9 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
       </h1>
     </legend>
 
-    <p>Files accepted are JPG, BMP, PNG, TIFF or PDF. The largest size of each file is 5MB.</p>
+    <p id="extra-pack-detail">Files accepted are JPG, BMP, PNG, TIFF or PDF. The largest size of each file is 5MB.</p>
 
-    <table role="table" class="nhsuk-table-responsive" id="hide-table">
+    <table role="table" class="nhsuk-table-responsive" id="extra-pack-hide-table">
       <caption class="nhsuk-table__caption">Summary of images of packaging uploads</caption>
       <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
@@ -38,235 +38,67 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
       </tr>
       </thead>
       <tbody class="nhsuk-table__body">
-      <tr role="row" class="nhsuk-table__row" id="hide-first-file">
-        <td role="cell" class="nhsuk-table__cell" id="file-upload-name">
+      <tr role="row" class="nhsuk-table__row" id="extra-pack-hide-first-file">
+        <td role="cell" class="nhsuk-table__cell" id="extra-pack-file-upload-name">
           <span class="nhsuk-table-responsive__heading">File name </span>
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">File size </span>2.3MB
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Action</span><a id="remove-file-1" href="#">Remove</a>
+          <span class="nhsuk-table-responsive__heading">Action</span><a id="extra-pack-remove-file-1" href="#">Remove</a>
         </td>
       </tr>
-      <tr role="row" class="nhsuk-table__row" id="hide-second-file">
-        <td role="cell" class="nhsuk-table__cell" id="file-upload-name-2">
+      <tr role="row" class="nhsuk-table__row" id="extra-pack-hide-second-file">
+        <td role="cell" class="nhsuk-table__cell" id="extra-pack-file-upload-name-2">
           <span class="nhsuk-table-responsive__heading">File name </span>
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">File size </span>2.93MB
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Action</span><a id="remove-file-2" href="#">Remove</a>
+          <span class="nhsuk-table-responsive__heading">Action</span><a id="extra-pack-remove-file-2" href="#">Remove</a>
         </td>
       </tr>
-      <tr role="row" class="nhsuk-table__row" id="hide-third-file">
-        <td role="cell" class="nhsuk-table__cell" id="file-upload-name-3">
+      <tr role="row" class="nhsuk-table__row" id="extra-pack-hide-third-file">
+        <td role="cell" class="nhsuk-table__cell" id="extra-pack-file-upload-name-3">
           <span class="nhsuk-table-responsive__heading">File name </span>
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">File size </span>2.93MB
+          <span class="nhsuk-table-responsive__heading">File size </span>2.75MB
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Action</span><a id="remove-file-3" href="#">Remove</a>
+          <span class="nhsuk-table-responsive__heading">Action</span><a id="extra-pack-remove-file-3" href="#">Remove</a>
         </td>
       </tr>
-      <tr role="row" class="nhsuk-table__row" id="hide-fourth-file">
-        <td role="cell" class="nhsuk-table__cell" id="file-upload-name-4">
+      <tr role="row" class="nhsuk-table__row" id="extra-pack-hide-fourth-file">
+        <td role="cell" class="nhsuk-table__cell" id="extra-pack-file-upload-name-4">
           <span class="nhsuk-table-responsive__heading">File name </span>
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">File size </span>2.93MB
+          <span class="nhsuk-table-responsive__heading">File size </span>3.42MB
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Action</span><a id="remove-file-4" href="#">Remove</a>
+          <span class="nhsuk-table-responsive__heading">Action</span><a id="extra-pack-remove-file-4" href="#">Remove</a>
         </td>
       </tr>
       </tbody>
     </table>
 
-    <p class="nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-1" id="add-another-link"><a class="nhsuk-link" id="go-to-file-2" href="pack-2-artwork-2">Add another file</a></p>
+    <p class="nhsuk-u-margin-top-5 nhsuk-u-margin-bottom-1" id="extra-pack-add-another-link"><a class="nhsuk-link" id="extra-pack-go-to-file-2" href="pack-2-artwork-2">Add another file</a></p>
 
-    <p class="nhsuk-u-margin-bottom-1" id="add-link" style="display: none">No images uploaded. Add an image <a class="nhsuk-link" id="go-to-file-1"  href="pack-2-artwork">here</a></p>
+    <p class="nhsuk-u-margin-bottom-1" id="extra-pack-add-link" style="display: none">No images uploaded. Add an image <a class="nhsuk-link" id="extra-pack-go-to-file-1"  href="pack-2-artwork">here</a></p>
   </fieldset>
 </div>
 
-<a class="nhsuk-button" onclick="store()"
+<a class="nhsuk-button" onclick="uploadExtraPackArtworkFiles()"
    id="continue-button"
    href="product-2-should-display-price"
    type="submit">
   Continue
 </a>
 
-<script>
-var linkUrl = localStorage.getItem("pack-2-upload-artwork");
-var linkUrl2 = localStorage.getItem("pack-2-upload-artwork-2");
-var linkUrl3 = localStorage.getItem("pack-2-upload-artwork-3");
-var linkUrl4 = localStorage.getItem("pack-2-upload-artwork-4");
-
-var removeLinkOne = document.getElementById("remove-file-1");
-var removeLinkTwo = document.getElementById("remove-file-2");
-var removeLinkThree = document.getElementById("remove-file-3");
-var removeLinkFour = document.getElementById("remove-file-4");
-
-var removeRowOne = document.getElementById("hide-first-file");
-var removeRowTwo = document.getElementById("hide-second-file");
-var removeRowThree = document.getElementById("hide-third-file");
-var removeRowFour = document.getElementById("hide-fourth-file");
-
-console.log(localStorage);
-console.log(linkUrl);
-console.log(linkUrl2);
-
-if (linkUrl != null) {
-var linkUrlSplit = linkUrl.split("\\");
-var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
-console.log(linkUrlFileName);
-var fileName = document.getElementById("file-upload-name");
-fileName.innerHTML = linkUrlFileName;
-} else {
-removeRowOne.style.display = "none";
-}
-
-if (linkUrl2 != null) {
-var linkUrlSplit2 = linkUrl2.split("\\");
-var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
-var fileName = document.getElementById("file-upload-name-2");
-fileName.innerHTML = linkUrlFileName2;
-} else {
-removeRowTwo.style.display = "none";
-}
-
-if (linkUrl3 != null) {
-var linkUrlSplit3 = linkUrl3.split("\\");
-var linkUrlFileName3 = linkUrlSplit3[linkUrlSplit3.length - 1];
-var fileName = document.getElementById("file-upload-name-3");
-fileName.innerHTML = linkUrlFileName3;
-} else {
-removeRowThree.style.display = "none";
-}
-
-if (linkUrl4 != null) {
-var linkUrlSplit4 = linkUrl4.split("\\");
-var linkUrlFileName4 = linkUrlSplit4[linkUrlSplit4.length - 1];
-var fileName = document.getElementById("file-upload-name-4");
-fileName.innerHTML = linkUrlFileName4;
-
-var addLink = document.getElementById("add-link");
-addLink.style.display = "none";
-
-} else {
-removeRowFour.style.display = "none";
-}
-
-console.log(removeLinkOne);
-removeLinkOne.addEventListener("click", function(e) {
-	// e.target was the clicked element
-	removeLinkOne.setAttribute('href', "pack-2-artwork-upload-success");
-	removeRowOne.style.display = "none";
-	localStorage.removeItem("pack-2-upload-artwork");
-	var itemTwo = localStorage.getItem("pack-2-upload-artwork-2");
-	var itemThree = localStorage.getItem("pack-2-upload-artwork-3");
-	var itemFour = localStorage.getItem("pack-2-upload-artwork-4");
-
-	if (itemTwo == null && itemThree == null && itemFour == null) {
-document.getElementById("hide-table").style.display = "none";
-document.getElementById("add-another-link").style.display = "none";
-document.getElementById("continue-button").style.display = "none";
-document.getElementById("add-link").style.display = "block";
-} else {
-document.getElementById("add-link").style.display = "none";
-document.getElementById("add-another-link").style.display = "block";
-document.getElementById("go-to-file-2").setAttribute('href',  "pack-2-artwork");
-}
-	e.preventDefault();
-
-});
-
-removeLinkTwo.addEventListener("click", function(e) {
-	// e.target was the clicked element
-	removeLinkTwo.setAttribute('href', "pack-2-artwork-upload-success");
-	removeRowTwo.style.display = "none";
-	localStorage.removeItem("pack-2-upload-artwork-2");
-	var itemOne = localStorage.getItem("pack-2-upload-artwork");
-	var itemThree = localStorage.getItem("pack-2-upload-artwork-3");
-	var itemFour = localStorage.getItem("pack-2-upload-artwork-4");
-if (itemOne == null && itemThree == null && itemFour == null) {
-document.getElementById("hide-table").style.display = "none";
-document.getElementById("add-another-link").style.display = "none";
-document.getElementById("continue-button").style.display = "none";
-document.getElementById("add-link").style.display = "block";
-} else {
-document.getElementById("add-link").style.display = "none";
-document.getElementById("add-another-link").style.display = "block";
-document.getElementById("go-to-file-2").setAttribute('href',  "pack-2-artwork-2");
-}
-	e.preventDefault();
-});
-
-removeLinkThree.addEventListener("click", function(e) {
-	// e.target was the clicked element
-	removeLinkThree.setAttribute('href', "pack-2-artwork-upload-success");
-	removeRowThree.style.display = "none";
-	localStorage.removeItem("pack-2-upload-artwork-3");
-	var itemOne = localStorage.getItem("pack-2-upload-artwork");
-	var itemTwo = localStorage.getItem("pack-2-upload-artwork-2");
-	var itemFour = localStorage.getItem("pack-2-upload-artwork-4");
-if (itemOne == null && itemTwo == null && itemFour == null) {
-document.getElementById("hide-table").style.display = "none";
-document.getElementById("add-another-link").style.display = "none";
-document.getElementById("continue-button").style.display = "none";
-document.getElementById("add-link").style.display = "block";
-} else {
-document.getElementById("add-link").style.display = "none";
-document.getElementById("add-another-link").style.display = "block";
-document.getElementById("go-to-file-2").setAttribute('href',  "pack-2-artwork-3");
-}
-	e.preventDefault();
-});
-
-
-removeLinkFour.addEventListener("click", function(e) {
-	// e.target was the clicked element
-	removeLinkFour.setAttribute('href', "pack-2-artwork-upload-success");
-	removeRowFour.style.display = "none";
-	localStorage.removeItem("pack-upload-artwork-4");
-	var itemOne = localStorage.getItem("pack-2-upload-artwork");
-	var itemTwo = localStorage.getItem("pack-2-upload-artwork-2");
-	var itemThree = localStorage.getItem("pack-2-upload-artwork-3");
-if (itemOne == null && itemTwo == null && itemThree == null) {
-document.getElementById("hide-table").style.display = "none";
-document.getElementById("add-another-link").style.display = "none";
-document.getElementById("continue-button").style.display = "none";
-document.getElementById("add-link").style.display = "block";
-} else {
-document.getElementById("add-link").style.display = "none";
-document.getElementById("add-another-link").style.display = "block";
-document.getElementById("go-to-file-2").setAttribute('href',  "pack-2-artwork-4");
-}
-	e.preventDefault();
-});
-
-
-
-if (linkUrl != null && linkUrl2 == null && linkUrl3 == null && linkUrl3 == null) {
-document.getElementById("go-to-file-2").setAttribute('href',  "pack-2-artwork-2");
-} else if (linkUrl == null && linkUrl2 != null && linkUrl3 == null && linkUrl4 == null) {
-document.getElementById("go-to-file-2").setAttribute('href',  "pack-2-artwork");
-} else if (linkUrl != null && linkUrl2 != null && linkUrl3 == null && linkUrl4 == null) {
-document.getElementById("go-to-file-2").setAttribute('href',  "pack-2-artwork-3");
-} else if (linkUrl != null && linkUrl2 != null && linkUrl3 != null && linkUrl4 == null) {
-document.getElementById("go-to-file-2").setAttribute('href',  "pack-2-artwork-4");
-} else if (linkUrl != null && linkUrl2 != null && linkUrl3 != null && linkUrl4 != null) {
-document.getElementById("add-another-link").style.display = "none";
-} else if (linkUrl == null && linkUrl2 == null && linkUrl3 == null && linkUrl4 == null) {
-document.getElementById("hide-table").style.display = "none";
-document.getElementById("add-another-link").style.display = "none";
-document.getElementById("continue-button").style.display = "none";
-document.getElementById("add-link").style.display = "block";
-}
-
-</script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}
 
 

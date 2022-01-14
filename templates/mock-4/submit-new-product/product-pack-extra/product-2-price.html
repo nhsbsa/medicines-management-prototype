@@ -24,43 +24,19 @@ Submit a new product: extra pack price | Portal | NHSBSA
     </div>
 
 
-    <label class="nhsuk-label" for="product-price">
+    <label class="nhsuk-label" for="extra-pack-product-price">
       Price in pence
     </label>
-    <input class="nhsuk-input nhsuk-u-margin-bottom-2" id="product-price" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
+    <input class="nhsuk-input nhsuk-u-margin-bottom-2" id="extra-pack-product-price" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
 
   </fieldset>
 </div>
 
-<a class="nhsuk-button" onclick="store()"
+<a class="nhsuk-button" onclick="storeExtraPackPrice()"
    href="../product/product-summary"
    type="submit">
   Continue
 </a>
 
-<script>
-function store(){
-     var prodPrice = document.getElementById("product-price");
-     localStorage.setItem("product-2-price", prodPrice.value);
-    }
-
-    var prodPrice= document.getElementById("product-price");
-
-var getProdPrice = localStorage.getItem("product-2-price");
-
-
-var prodPrice = document.querySelector("#product-price");
-if (getProdPrice != null) {
-prodPrice.defaultValue = getProdPrice;
-}
-
-var getPrice = localStorage.getItem("pack-2-should-display-price");
-var getSize = localStorage.getItem("pack-2-size");
-var heading = document.getElementById("heading");
-
-if (getPrice != null) {
-heading.innerHTML = 'What is the price of the ' + getSize + ' pack?';
-}
-
-</script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}

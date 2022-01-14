@@ -1,10 +1,13 @@
 console.log(localStorage);
 
+var summaryPage = localStorage.getItem("summary-page");
 var getPackShdDisPrice = localStorage.getItem("pack-should-display-price");
+var getPackTwoShdDisPrice = localStorage.getItem("pack-2-should-display-price");
 var getProductHospUsage = localStorage.getItem("product-hospital-only");
 var getProductExtraPack = localStorage.getItem("product-extra-pack");
 var getPackSize = localStorage.getItem("pack-size");
 
+var extraPackSize = document.getElementById("extra-pack-size");
 var getContinueButton = document.getElementsByClassName("nhsuk-button")[0];
 var buttonLink = document.getElementById("continue-button");
 var continueButton = document.getElementById("continue-button");
@@ -44,7 +47,7 @@ if (eDay != null && eMonth != null && eYear != null) {
         eYear.defaultValue = getEffectiveYear;
     }
 
-    if ((getEffectiveDay != null && getEffectiveMonth != null && getEffectiveYear != null) && getProductHospUsage != null) {
+    if ((getEffectiveDay != null && getEffectiveMonth != null && getEffectiveYear != null) && summaryPage != null) {
         getContinueButton.href = "product-summary";
     }
 }
@@ -63,7 +66,7 @@ if (prodName != null) {
     if (getProductName != null) {
         prodName.defaultValue = getProductName;
     }
-    if (getProductName != null && getProductHospUsage != null) {
+    if (getProductName != null && summaryPage != null) {
         getContinueButton.href = "product-summary";
     }
 }
@@ -80,7 +83,7 @@ if (radioButtons) {
             if (getProductSpc === radio.value) {
                 radio.checked = true;
             }
-            if (radio.value == 'yes' && getProductHospUsage != null) {
+            if (radio.value == 'yes' && summaryPage != null) {
                 buttonLink.href = "product-summary";
             }
         }
@@ -94,7 +97,7 @@ function storeSpcYesOrNo() {
     for (var radio of radioButtons) {
         if (radio.checked) {
             localStorage.setItem("product-spc", radio.value);
-            if (radio.value == 'yes' && getProductHospUsage == null) {
+            if (radio.value == 'yes' && summaryPage == null) {
                 buttonLink.href = "product-spc-upload-choice";
             } else if (radio.value == 'no') {
                 buttonLink.href = "product-no-spc";
@@ -135,11 +138,11 @@ function storeLinkOrUpload() {
             if (localStorage.getItem("product-link-upload") == 'upload') {
                 buttonLink.href = "product-file-upload";
             }
-            if (localStorage.getItem("product-link-upload") == 'link' && getProductHospUsage == null) {
+            if (localStorage.getItem("product-link-upload") == 'link' && summaryPage == null) {
                 localStorage.setItem("product-link-url", inputLink.value);
                 buttonLink.href = "../product-pack/pack-size-strength";
             }
-            if (localStorage.getItem("product-link-upload") == 'link' && getProductHospUsage != null) {
+            if (localStorage.getItem("product-link-upload") == 'link' && summaryPage != null) {
                 localStorage.setItem("product-link-url", inputLink.value);
                 buttonLink.href = "product-summary";
             }
@@ -272,7 +275,7 @@ if (fileSuccess) {
 
     function uploadSpcFiles() {
         localStorage.removeItem("product-link-url");
-        if (getUploadFile && getProductHospUsage || getUploadFile2 && getProductHospUsage) {
+        if (getUploadFile && summaryPage || getUploadFile2 && summaryPage) {
             buttonLink.href = "product-summary";
         }
     }
@@ -306,7 +309,7 @@ if (packTy) {
 
         if (packType.value == "other") {
             continueButton.setAttribute('href', "pack-strength-other");
-        } else if (packSi && packSize && getProductHospUsage) {
+        } else if (packSi && packSize && summaryPage) {
             continueButton.href = "../product/product-summary";
         }
     }
@@ -326,7 +329,7 @@ if (packTypeOther) {
     function storePackTypeOther() {
         localStorage.setItem("pack-type-other", packTypeOther.value);
 
-        if (getProductHospUsage) {
+        if (summaryPage) {
             continueButton.href = "../product/product-summary";
         } else {
             continueButton.href = "pack-subpack";
@@ -362,7 +365,7 @@ if (subpackRadioButtons.length != 0) {
                 localStorage.setItem("pack-subpack", radio.value);
                 if (radio.value == 'yes') {
                     buttonLink.href = "pack-subpack-extra";
-                } else if (radio.value == 'no' && getProductHospUsage) {
+                } else if (radio.value == 'no' && summaryPage) {
                     buttonLink.href = "../product/product-summary";
                 }
             }
@@ -381,7 +384,7 @@ if (packSubEx) {
         var packSubpackExtra = document.getElementById("subpack-extra");
         localStorage.setItem("pack-subpack-extra", packSubpackExtra.value);
 
-        if (getProductHospUsage) {
+        if (summaryPage) {
             buttonLink.href = "../product/product-summary";
         }
     }
@@ -408,7 +411,7 @@ if (packGtin) {
         var packGtin = document.getElementById("pack-gtin");
         localStorage.setItem("pack-gtin", packGtin.value);
 
-        if (getProductHospUsage) {
+        if (summaryPage) {
             buttonLink.href = "../product/product-summary";
         }
     }
@@ -453,7 +456,7 @@ if (radioArtworkButtons.length != 0) {
                 localStorage.setItem("pack-should-display-artwork", radio.value);
                 if (radio.value == 'yes') {
                     buttonLink.href = "pack-artwork";
-                } else if (radio.value == 'no' && getProductHospUsage != null) {
+                } else if (radio.value == 'no' && summaryPage != null) {
                     buttonLink.href = "../product/product-summary";
                 }
             }
@@ -708,7 +711,7 @@ if (artworkLimit) {
     }
 
     function uploadArtworkFiles() {
-        if (artworkOne && getProductHospUsage || artworkTwo && getProductHospUsage || artworkThree && getProductHospUsage || artworkFour && getProductHospUsage) {
+        if (artworkOne && summaryPage || artworkTwo && summaryPage || artworkThree && summaryPage || artworkFour && summaryPage) {
             buttonLink.href = "../product/product-summary";
         }
     }
@@ -740,7 +743,7 @@ if (radioShouldDisplayPriceButtons.length != 0) {
                 localStorage.setItem("pack-should-display-price", radio.value);
                 if (radio.value == 'yes') {
                     buttonLink.href = "product-price";
-                } else if (radio.value == 'no' && getProductHospUsage) {
+                } else if (radio.value == 'no' && summaryPage) {
                     buttonLink.href = "product-summary";
                 }
             }
@@ -754,11 +757,9 @@ var prodPrice = document.getElementById("product-price");
 
 if (prodPrice) {
 
-    console.log(getProductHospUsage);
-
     function storePrice() {
         localStorage.setItem("product-price", prodPrice.value);
-        if (getProductHospUsage) {
+        if (summaryPage) {
             buttonLink.href = "product-summary";
         }
     }
@@ -782,7 +783,7 @@ if (legalCategory) {
 
     function storeLegalCategory() {
         localStorage.setItem("product-legal-category", legalCategory.value);
-        if (getProductHospUsage) {
+        if (summaryPage) {
             buttonLink.href = "product-summary";
         }
     }
@@ -814,9 +815,463 @@ if (radioUsageButtons.length != 0) {
             if (radio.checked) {
                 localStorage.setItem("product-hospital-only", radio.value);
             }
-            if (getProductExtraPack) {
+            if (summaryPage) {
                 buttonLink.href = "product-summary";
             }
         }
     }
 }
+
+// pack size (second pack)
+
+if (extraPackSize) {
+function storeExtraPackSize(){
+     localStorage.setItem("pack-2-size", extraPackSize.value);
+     if (summaryPage) {
+     buttonLink.href = "../product/product-summary";
+     }
+    }
+
+var getExtraPackSize = localStorage.getItem("pack-2-size");
+
+var exPackSi = document.querySelector("#extra-pack-size");
+if (getExtraPackSize != null) {
+exPackSi.defaultValue = getExtraPackSize;
+}
+}
+
+// any subpack info? (second pack)
+
+var radioExtraPackSubpackButtons = document.getElementsByName("extra-pack-data-subpack");
+
+if (radioExtraPackSubpackButtons.length != 0) {
+
+var getExtraPackSubpack = localStorage.getItem("pack-2-subpack");
+
+if (getExtraPackSize != null) {
+heading.innerHTML = 'Is there any subpack information for the ' + getExtraPackSize + ' pack?';
+}
+
+if (getExtraPackSubpack != null) {
+for (var radio of radioExtraPackSubpackButtons) {
+if (getExtraPackSubpack === radio.value) {
+     radio.checked = true;
+            }
+          }
+      };
+
+function storeHasExtraPackSubpack() {
+
+  for (var radio of radioExtraPackSubpackButtons) {
+      if (radio.checked) {
+          localStorage.setItem("pack-2-subpack", radio.value);
+         if (radio.value == 'yes') {
+          buttonLink.href = "pack-2-subpack-extra";
+           }
+         if (radio.value == 'no' && summaryPage) {
+         buttonLink.href = "../product/product-summary"
+          }
+        }
+     }
+  }
+ }
+
+ var extraPackSubpackExtra = document.getElementById("extra-pack-subpack-extra");
+
+ if (extraPackSubpackExtra) {
+
+ function storeExtraPackSubpackInfo(){
+     localStorage.setItem("pack-2-subpack-extra", extraPackSubpackExtra.value);
+        if (summaryPage) {
+         buttonLink.href = "../product/product-summary";
+        }
+     }
+
+ var getExtraPackSubpackExtra = localStorage.getItem("pack-2-subpack-extra");
+
+ if (getExtraPackSubpackExtra != null) {
+ extraPackSubpackExtra.defaultValue = getExtraPackSubpackExtra;
+ }
+
+ if (getExtraPackSize != null) {
+ heading.innerHTML = 'How many subpacks are in the ' + getExtraPackSize + ' pack?';
+ }
+}
+
+// gtin (second pack)
+
+     var extraPackGtin = document.getElementById("extra-pack-gtin");
+
+     if (extraPackGtin) {
+
+function storeExtraPackGtin(){
+     localStorage.setItem("pack-2-gtin", extraPackGtin.value);
+     if (summaryPage) {
+       buttonLink.href = "../product/product-summary";
+     }
+    }
+
+var getExtraPackGtin = localStorage.getItem("pack-2-gtin");
+
+if (getExtraPackGtin != null) {
+extraPackGtin.defaultValue = getExtraPackGtin;
+}
+
+if (getExtraPackSize != null) {
+heading.innerHTML = 'What is the GTIN code of the ' + getExtraPackSize + ' pack?';
+}
+}
+
+// require artwork? (second pack)
+
+var radioExtraPackRequireArtworkButtons = document.getElementsByName("extra-pack-display-artwork");
+
+if (radioExtraPackRequireArtworkButtons.length != 0) {
+
+var getExtraPackShdDisArtwork= localStorage.getItem("pack-2-should-display-artwork");
+
+if (getExtraPackSize != null) {
+heading.innerHTML = 'Do you have images of the packaging to upload for the ' + getExtraPackSize + ' pack?';
+}
+
+if (getExtraPackShdDisArtwork != null) {
+for (var radio of radioExtraPackRequireArtworkButtons) {
+if (getExtraPackShdDisArtwork === radio.value) {
+     radio.checked = true;
+            }
+          }
+      };
+
+function storeExtraPackRequireArtwork() {
+
+  for (var radio of radioExtraPackRequireArtworkButtons) {
+      if (radio.checked) {
+          localStorage.setItem("pack-2-should-display-artwork", radio.value);
+         if (radio.value == 'yes') {
+          buttonLink.href = "pack-2-artwork";
+          }
+          if (radio.value == 'no' && summaryPage) {
+          buttonLink.href = "../product/product-summary";
+          }
+        }
+     }
+  }
+ }
+
+ // artwork upload file one (second pack)
+
+ var extraPackUploadFile = document.getElementById("extra-pack-file-upload-1");
+ console.log(extraPackUploadFile);
+
+ if (extraPackUploadFile) {
+
+ function storeExtraPackFileOneUpload(){
+      localStorage.setItem("pack-2-upload-artwork", extraPackUploadFile.value);
+     }
+
+ var getExtraPackUploadFile = localStorage.getItem("pack-2-upload-artwork");
+
+ if (getExtraPackUploadFile != null) {
+ extraPackUploadFile.value = getExtraPackUploadFile;
+ }
+
+ if (getExtraPackSize != null) {
+ heading.innerHTML = 'Upload images of packaging for the ' + getExtraPackSize + ' pack';
+ }
+}
+
+// artwork upload file two (second pack)
+
+ var extraPackUploadFile2 = document.getElementById("extra-pack-file-upload-2");
+
+ if (extraPackUploadFile2) {
+
+ function storeExtraPackFileTwoUpload(){
+      localStorage.setItem("pack-2-upload-artwork-2", extraPackUploadFile2.value);
+     }
+
+ var getExtraPackUploadFile2 = localStorage.getItem("pack-2-upload-artwork-2");
+
+ if (getExtraPackUploadFile2 != null) {
+ extraPackUploadFile2.value = getExtraPackUploadFile2;
+ }
+
+ if (getExtraPackSize != null) {
+ heading.innerHTML = 'Upload images of packaging for the ' + getExtraPackSize + ' pack';
+ }
+}
+
+// artwork upload file three (second pack)
+
+ var extraPackUploadFile3 = document.getElementById("extra-pack-file-upload-3");
+
+ if (extraPackUploadFile3) {
+
+ function storeExtraPackFileThreeUpload(){
+      localStorage.setItem("pack-2-upload-artwork-3", extraPackUploadFile3.value);
+     }
+
+ var getExtraPackUploadFile3 = localStorage.getItem("pack-2-upload-artwork-3");
+
+ if (getExtraPackUploadFile3 != null) {
+ extraPackUploadFile3.value = getExtraPackUploadFile3;
+ }
+
+ if (getExtraPackSize != null) {
+ heading.innerHTML = 'Upload images of packaging for the ' + getExtraPackSize + ' pack';
+ }
+}
+
+// artwork upload file four (second pack)
+
+ var extraPackUploadFile4 = document.getElementById("extra-pack-file-upload-4");
+
+ if (extraPackUploadFile4) {
+
+ function storeExtraPackFileFourUpload(){
+      localStorage.setItem("pack-2-upload-artwork-4", extraPackUploadFile4.value);
+     }
+
+ var getExtraPackUploadFile4 = localStorage.getItem("pack-2-upload-artwork-4");
+
+ if (getExtraPackUploadFile4 != null) {
+ extraPackUploadFile4.value = getExtraPackUploadFile4;
+ }
+
+ if (getExtraPackSize != null) {
+ heading.innerHTML = 'Upload images of packaging for the ' + getExtraPackSize + ' pack';
+ }
+}
+
+// upload artwork success page (second pack)
+
+var extraPackDetail = document.getElementById("extra-pack-detail");
+
+if (extraPackDetail) {
+
+var getExtraPackUploadArtwork = localStorage.getItem("pack-2-upload-artwork");
+var getExtraPackUploadArtwork2 = localStorage.getItem("pack-2-upload-artwork-2");
+var getExtraPackUploadArtwork3 = localStorage.getItem("pack-2-upload-artwork-3");
+var getExtraPackUploadArtwork4 = localStorage.getItem("pack-2-upload-artwork-4");
+
+var removeExtraPackFileOne = document.getElementById("extra-pack-remove-file-1");
+var removeExtraPackFileTwo = document.getElementById("extra-pack-remove-file-2");
+var removeExtraPackFileThree = document.getElementById("extra-pack-remove-file-3");
+var removeExtraPackFileFour = document.getElementById("extra-pack-remove-file-4");
+
+var removeExtraPackRowOne = document.getElementById("extra-pack-hide-first-file");
+var removeExtraPackRowTwo = document.getElementById("extra-pack-hide-second-file");
+var removeExtraPackRowThree = document.getElementById("extra-pack-hide-third-file");
+var removeExtraPackRowFour = document.getElementById("extra-pack-hide-fourth-file");
+
+if (getExtraPackUploadArtwork != null) {
+var extraPackUploadArtworkSplit = getExtraPackUploadArtwork.split("\\");
+var extraPackUploadArtworkFileName = extraPackUploadArtworkSplit[extraPackUploadArtworkSplit.length - 1];
+var extraPackFileName = document.getElementById("extra-pack-file-upload-name");
+extraPackFileName.innerHTML = extraPackUploadArtworkFileName;
+} else {
+removeExtraPackRowOne.style.display = "none";
+}
+
+if (getExtraPackUploadArtwork2 != null) {
+var extraPackUploadArtwork2Split = getExtraPackUploadArtwork2.split("\\");
+var extraPackUploadArtworkFileName2 = extraPackUploadArtwork2Split[extraPackUploadArtwork2Split.length - 1];
+var extraPackFileName2 = document.getElementById("extra-pack-file-upload-name-2");
+extraPackFileName2.innerHTML = extraPackUploadArtworkFileName2;
+} else {
+removeExtraPackRowTwo.style.display = "none";
+}
+
+if (getExtraPackUploadArtwork3 != null) {
+var extraPackUploadArtwork3Split = getExtraPackUploadArtwork3.split("\\");
+var extraPackUploadArtworkFileName3 = extraPackUploadArtwork3Split[extraPackUploadArtwork3Split.length - 1];
+var extraPackFileName3 = document.getElementById("extra-pack-file-upload-name-3");
+extraPackFileName3.innerHTML = extraPackUploadArtworkFileName3;
+} else {
+removeExtraPackRowThree.style.display = "none";
+}
+
+if (getExtraPackUploadArtwork4 != null) {
+var extraPackUploadArtwork4Split = getExtraPackUploadArtwork4.split("\\");
+var extraPackUploadArtworkFileName4 = extraPackUploadArtwork4Split[extraPackUploadArtwork4Split.length - 1];
+var extraPackFileName4 = document.getElementById("extra-pack-file-upload-name-4");
+extraPackFileName4.innerHTML = extraPackUploadArtworkFileName4;
+
+var addExtraPackLink = document.getElementById("extra-pack-add-link");
+addExtraPackLink.style.display = "none";
+
+} else {
+removeExtraPackRowFour.style.display = "none";
+}
+
+removeExtraPackFileOne.addEventListener("click", function(e) {
+	// e.target was the clicked element
+	removeExtraPackFileOne.setAttribute('href', "pack-2-artwork-upload-success");
+	removeExtraPackRowOne.style.display = "none";
+	localStorage.removeItem("pack-2-upload-artwork");
+	var itemTwo = localStorage.getItem("pack-2-upload-artwork-2");
+	var itemThree = localStorage.getItem("pack-2-upload-artwork-3");
+	var itemFour = localStorage.getItem("pack-2-upload-artwork-4");
+
+	if (itemTwo == null && itemThree == null && itemFour == null) {
+document.getElementById("extra-pack-hide-table").style.display = "none";
+document.getElementById("extra-pack-add-another-link").style.display = "none";
+document.getElementById("continue-button").style.display = "none";
+document.getElementById("extra-pack-add-link").style.display = "block";
+} else {
+document.getElementById("extra-pack-add-link").style.display = "none";
+document.getElementById("extra-pack-add-another-link").style.display = "block";
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "pack-2-artwork");
+}
+	e.preventDefault();
+
+});
+
+removeExtraPackFileTwo.addEventListener("click", function(e) {
+	// e.target was the clicked element
+	removeExtraPackFileTwo.setAttribute('href', "pack-2-artwork-upload-success");
+	removeExtraPackRowTwo.style.display = "none";
+	localStorage.removeItem("pack-2-upload-artwork-2");
+	var itemOne = localStorage.getItem("pack-2-upload-artwork");
+	var itemThree = localStorage.getItem("pack-2-upload-artwork-3");
+	var itemFour = localStorage.getItem("pack-2-upload-artwork-4");
+if (itemOne == null && itemThree == null && itemFour == null) {
+document.getElementById("extra-pack-hide-table").style.display = "none";
+document.getElementById("extra-pack-add-another-link").style.display = "none";
+document.getElementById("continue-button").style.display = "none";
+document.getElementById("extra-pack-add-link").style.display = "block";
+} else {
+document.getElementById("extra-pack-add-link").style.display = "none";
+document.getElementById("extra-pack-add-another-link").style.display = "block";
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href',  "pack-2-artwork-2");
+}
+	e.preventDefault();
+});
+
+removeExtraPackFileThree.addEventListener("click", function(e) {
+	// e.target was the clicked element
+	removeExtraPackFileThree.setAttribute('href', "pack-2-artwork-upload-success");
+	removeExtraPackRowThree.style.display = "none";
+	localStorage.removeItem("pack-2-upload-artwork-3");
+	var itemOne = localStorage.getItem("pack-2-upload-artwork");
+	var itemTwo = localStorage.getItem("pack-2-upload-artwork-2");
+	var itemFour = localStorage.getItem("pack-2-upload-artwork-4");
+if (itemOne == null && itemTwo == null && itemFour == null) {
+document.getElementById("extra-pack-hide-table").style.display = "none";
+document.getElementById("extra-pack-add-another-link").style.display = "none";
+document.getElementById("continue-button").style.display = "none";
+document.getElementById("extra-pack-add-link").style.display = "block";
+} else {
+document.getElementById("extra-pack-add-link").style.display = "none";
+document.getElementById("extra-pack-add-another-link").style.display = "block";
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href',  "pack-2-artwork-3");
+}
+	e.preventDefault();
+});
+
+
+removeExtraPackFileFour.addEventListener("click", function(e) {
+	// e.target was the clicked element
+	removeExtraPackFileFour.setAttribute('href', "pack-2-artwork-upload-success");
+	removeExtraPackRowFour.style.display = "none";
+	localStorage.removeItem("pack-upload-artwork-4");
+	var itemOne = localStorage.getItem("pack-2-upload-artwork");
+	var itemTwo = localStorage.getItem("pack-2-upload-artwork-2");
+	var itemThree = localStorage.getItem("pack-2-upload-artwork-3");
+if (itemOne == null && itemTwo == null && itemThree == null) {
+document.getElementById("extra-pack-hide-table").style.display = "none";
+document.getElementById("extra-pack-add-another-link").style.display = "none";
+document.getElementById("continue-button").style.display = "none";
+document.getElementById("extra-pack-add-link").style.display = "block";
+} else {
+document.getElementById("extra-pack-add-link").style.display = "none";
+document.getElementById("extra-pack-add-another-link").style.display = "block";
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href',  "pack-2-artwork-4");
+}
+	e.preventDefault();
+});
+
+
+
+if (getExtraPackUploadArtwork != null && getExtraPackUploadArtwork2 == null && getExtraPackUploadArtwork3 == null && getExtraPackUploadArtwork3 == null) {
+document.getElementById("go-to-file-2").setAttribute('href', "pack-2-artwork-2");
+} else if (getExtraPackUploadArtwork == null && getExtraPackUploadArtwork2 != null && getExtraPackUploadArtwork3 == null && getExtraPackUploadArtwork4 == null) {
+document.getElementById("go-to-file-2").setAttribute('href', "pack-2-artwork");
+} else if (getExtraPackUploadArtwork != null && getExtraPackUploadArtwork2 != null && getExtraPackUploadArtwork3 == null && getExtraPackUploadArtwork4 == null) {
+document.getElementById("go-to-file-2").setAttribute('href', "pack-2-artwork-3");
+} else if (getExtraPackUploadArtwork != null && getExtraPackUploadArtwork2 != null && getExtraPackUploadArtwork3 != null && getExtraPackUploadArtwork4 == null) {
+document.getElementById("go-to-file-2").setAttribute('href', "pack-2-artwork-4");
+} else if (getExtraPackUploadArtwork != null && getExtraPackUploadArtwork2 != null && getExtraPackUploadArtwork3 != null && getExtraPackUploadArtwork4 != null) {
+document.getElementById("extra-pack-add-another-link").style.display = "none";
+} else if (getExtraPackUploadArtwork == null && getExtraPackUploadArtwork2 == null && getExtraPackUploadArtwork3 == null && getExtraPackUploadArtwork4 == null) {
+document.getElementById("extra-pack-hide-table").style.display = "none";
+document.getElementById("extra-pack-add-another-link").style.display = "none";
+document.getElementById("continue-button").style.display = "none";
+document.getElementById("extra-pack-add-link").style.display = "block";
+}
+function uploadExtraPackArtworkFiles() {
+        if (getExtraPackUploadArtwork && summaryPage || getExtraPackUploadArtwork2 && summaryPage || getExtraPackUploadArtwork3 && summaryPage || getExtraPackUploadArtwork4 && summaryPage) {
+            buttonLink.href = "../product/product-summary";
+        }
+    }
+}
+
+// should display price (second pack)
+
+var radioExtraPackShouldDisplayPriceButtons = document.getElementsByName("extra-pack-display-price");
+
+if (radioExtraPackShouldDisplayPriceButtons.length != 0) {
+
+var getExtraPackShdDisPrice= localStorage.getItem("pack-2-should-display-price");
+
+if (getExtraPackShdDisPrice != null) {
+for (var radio of radioExtraPackShouldDisplayPriceButtons) {
+if (getExtraPackShdDisPrice === radio.value) {
+     radio.checked = true;
+            }
+          }
+      };
+
+
+if (getExtraPackSize != null) {
+heading.innerHTML = 'Do you want to display the price for the ' + getExtraPackSize + ' pack?';
+}
+
+
+function storeExtraPackShouldDisplayPrice() {
+
+  for (var radio of radioExtraPackShouldDisplayPriceButtons) {
+      if (radio.checked) {
+          localStorage.setItem("pack-2-should-display-price", radio.value);
+         if (radio.value == 'yes') {
+          buttonLink.href = "product-2-price";
+          }
+         if (radio.value == 'no' && summaryPage) {
+          buttonLink.href = "../product/product-summary";
+         }
+        }
+     }
+   }
+ }
+
+ // pack price (second pack)
+
+   var extraPackProdPrice = document.getElementById("extra-pack-product-price");
+
+   if (extraPackProdPrice) {
+
+   function storeExtraPackPrice(){
+       localStorage.setItem("product-2-price", extraPackProdPrice.value);
+    }
+
+ var getExtraPackProdPrice = localStorage.getItem("product-2-price");
+
+
+ if (getExtraPackProdPrice != null) {
+ extraPackProdPrice.defaultValue = getExtraPackProdPrice;
+ }
+
+ if (getExtraPackSize != null) {
+ heading.innerHTML = 'What is the price of the ' + getExtraPackSize + ' pack?';
+ }
+ }

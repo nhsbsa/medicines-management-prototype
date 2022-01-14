@@ -343,7 +343,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="../product-pack-extra/pack-2-artwork">
+      <a href="../product-pack-extra/pack-2-artwork-upload-success">
         Change<span class="nhsuk-u-visually-hidden"> packaging images uploaded files</span>
       </a>
 
@@ -431,6 +431,13 @@ Submit a new product: product summary | Portal | NHSBSA
 </a>
 
 <script>
+let summaryPage = localStorage.getItem("summary-page");
+
+if (summaryPage == null) {
+  localStorage.setItem("summary-page", "yes");
+  summaryPage = localStorage.setItem("summary-page", "yes");
+}
+
 var getEffectiveDay = localStorage.getItem("effective-day");
 var getEffectiveMonth = localStorage.getItem("effective-month");
 var getEffectiveYear = localStorage.getItem("effective-year");

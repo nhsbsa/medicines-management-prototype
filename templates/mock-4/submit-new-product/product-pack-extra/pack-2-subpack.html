@@ -26,14 +26,14 @@ Submit a new product: extra pack subpack required? | Portal | NHSBSA
     <div class="nhsuk-radios nhsuk-u-margin-top-3" id="data-subpack-radios">
 
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="data-yes" name="data-subpack" type="radio" value="yes" />
+        <input class="nhsuk-radios__input" id="data-yes" name="extra-pack-data-subpack" type="radio" value="yes" />
         <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
           Yes
         </label>
       </div>
 
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="data-no" name="data-subpack" type="radio" value="no" />
+        <input class="nhsuk-radios__input" id="data-no" name="extra-pack-data-subpack" type="radio" value="no" />
         <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
           No
         </label>
@@ -43,53 +43,14 @@ Submit a new product: extra pack subpack required? | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeHasExtraPackSubpack()"
    id="continue-button"
    href="pack-2-gtin"
    type="submit">
   Continue
 </a>
 
-<script>
-
-var radioButtons = document.getElementsByName("data-subpack");
-
-var getSubpack = localStorage.getItem("pack-2-subpack");
-var getSize = localStorage.getItem("pack-2-size");
-
-var heading = document.getElementById("heading");
-
-if (getSize != null) {
-heading.innerHTML = 'Is there any subpack information for the ' + getSize + ' pack?';
-}
-
-if (getSubpack != null) {
-for (var radio of radioButtons) {
-if (getSubpack === radio.value) {
-     radio.checked = true;
-            }
-          }
-      };
-
-      console.log(localStorage);
-
-
-function store() {
-  var radioButtons = document.getElementsByName("data-subpack");
-  var buttonLink = document.getElementById("continue-button");
-
-  for (var radio of radioButtons) {
-      if (radio.checked) {
-          localStorage.setItem("pack-2-subpack", radio.value);
-         if (radio.value == 'yes') {
-          buttonLink.href = "pack-2-subpack-extra";
-          }
-        }
-     }
-  }
-
-
-</script>
+<script src="/js/newProduct.js"></script>
 {% endblock %}
 
 
