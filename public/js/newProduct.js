@@ -1,5 +1,15 @@
 console.log(localStorage);
 
+
+function testFun() {
+globalScopeVariable = "hello world";
+}
+
+let globalScopeVariable = "Goodbye";
+
+console.log(testFun());
+
+
 var summaryPage = localStorage.getItem("summary-page");
 var getPackShdDisPrice = localStorage.getItem("pack-should-display-price");
 var getPackTwoShdDisPrice = localStorage.getItem("pack-2-should-display-price");
