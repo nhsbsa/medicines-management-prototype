@@ -20,16 +20,48 @@ Submit a new product: legal category | Portal | NHSBSA
       </h1>
     </legend>
 
-    <label class="nhsuk-label" for="product-legal-category">
-      Legal Category
-    </label>
-    <select class="nhsuk-select" id="product-legal-category" name="presentation">
-      <option value="-"> - </option>
-      <option value="General Sale">General Sales List (GSL)</option>
-      <option value="Pharmacist">Pharmacist / over the counter</option>
-      <option value="Prescription Only Medicine">Prescription Only Medicine</option>
-      <option value="Unlicensed">Unlicensed</option>
-    </select>
+<!--    <label class="nhsuk-label" for="product-legal-category">-->
+<!--      Legal Category-->
+<!--    </label>-->
+<!--    <select class="nhsuk-select" id="product-legal-category" name="presentation">-->
+<!--      <option value="-"> - </option>-->
+<!--      <option value="General Sale">General Sales List (GSL)</option>-->
+<!--      <option value="Pharmacist">Pharmacist / over the counter</option>-->
+<!--      <option value="Prescription Only Medicine">Prescription Only Medicine</option>-->
+<!--      <option value="Unlicensed">Unlicensed</option>-->
+<!--    </select>-->
+
+    <div class="nhsuk-radios" id="data-legal-cat-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-pom" name="data-legal-cat" type="radio" value="POM (Prescription Only Medicine)" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-pom">
+          POM (Prescription Only Medicine)
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-p" name="data-legal-cat" type="radio" value="P (Pharmacy Only)" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-p">
+          P (Pharmacy Only)
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="data-gsl" name="data-legal-cat" type="radio" value="GSL (General Sales List)" />
+      <label class="nhsuk-label nhsuk-radios__label" for="data-gsl">
+        GSL (General Sales List)
+      </label>
+    </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-na" name="data-legal-cat" type="radio" value="Not applicable" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-na">
+          Not applicable
+        </label>
+      </div>
+
+    </div>
   </fieldset>
 </div>
 
@@ -48,20 +80,48 @@ window.onload = function() {
     }
 };
 
-var legalCategory = document.getElementById("product-legal-category");
+<!--var legalCategory = document.getElementById("product-legal-category");-->
 
-function store(){
-     var legalCategory = document.getElementById("product-legal-category");
-     localStorage.setItem("product-legal-category", legalCategory.value);
-    }
+<!--function store(){-->
+<!--     var legalCategory = document.getElementById("product-legal-category");-->
+<!--     localStorage.setItem("product-legal-category", legalCategory.value);-->
+<!--    }-->
+
+<!--var getLegalCategory = localStorage.getItem("product-legal-category");-->
+<!--console.log('getLegalCategory', getLegalCategory);-->
+
+<!--var legCat = document.querySelector("#product-legal-category");-->
+<!--if (getLegalCategory != null) {-->
+<!--legCat.value = getLegalCategory;-->
+<!--}-->
+
+
+var radioButtons = document.getElementsByName("data-legal-cat");
 
 var getLegalCategory = localStorage.getItem("product-legal-category");
-console.log('getLegalCategory', getLegalCategory);
 
-var legCat = document.querySelector("#product-legal-category");
 if (getLegalCategory != null) {
-legCat.value = getLegalCategory;
-}
+for (var radio of radioButtons) {
+if (getLegalCategory === radio.value) {
+     radio.checked = true;
+            }
+          }
+      };
+
+      console.log(localStorage);
+
+
+function store() {
+  var radioButtons = document.getElementsByName("data-legal-cat");
+  var buttonLink = document.getElementById("continue-button");
+
+  for (var radio of radioButtons) {
+      if (radio.checked) {
+          localStorage.setItem("product-legal-category", radio.value);
+        }
+     }
+  }
+
 
 </script>
 {% endblock %}
