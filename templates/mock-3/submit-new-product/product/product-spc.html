@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
 {% block title %}
-Submit a new product: spc or data sheet | Portal | NHSBSA
+Submit a new product: spc or Data Sheet | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
@@ -16,14 +16,14 @@ Submit a new product: spc or data sheet | Portal | NHSBSA
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        Have you got an authorised SmPC or data sheet?
+        Have you got an authorised SmPC or Data Sheet?
       </h1>
     </legend>
     <div class="nhsuk-hint" id="spc-hint">
       An authorised SmPC is a summary of product characteristics for licensed medicines with Parts 8 and 9 completed. The product license number needs to begin with PL or PLGB.
     </div>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
-      A data sheet contains product name, ingredients and route (how it is taken) and is for unlicensed medicines.
+      A Data Sheet contains product name, ingredients and route (how it is taken) and is for unlicensed medicines.
     </div>
 
     <div class="nhsuk-radios" id="data-spc-radios">
@@ -76,11 +76,17 @@ function store() {
   var buttonLink = document.getElementById("continue-button");
   console.log(buttonLink);
 
+  var uploadFile = localStorage.getItem("product-upload-file");
+  var uploadFile2 = localStorage.getItem("product-upload-file-2");
+
+
   for (var radio of radioButtons) {
       if (radio.checked) {
           localStorage.setItem("product-spc", radio.value);
-         if (radio.value == 'yes') {
-          buttonLink.href = "product-spc-upload-choice";
+         if (radio.value == 'yes' && (uploadFile || uploadFile2)) {
+          buttonLink.href = "product-file-upload-success";
+          } else if (radio.value == 'yes' && (!uploadFile && !uploadFile2)) {
+          buttonLink.href = "product-file-upload";
           }
         }
      }

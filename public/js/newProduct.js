@@ -81,7 +81,7 @@ if (prodName != null) {
     }
 }
 
-// has spc / data sheet?
+// has spc / Data Sheet?
 
 var radioButtons = document.getElementsByName("data-spc");
 
@@ -108,7 +108,7 @@ function storeSpcYesOrNo() {
         if (radio.checked) {
             localStorage.setItem("product-spc", radio.value);
             if (radio.value == 'yes' && summaryPage == null) {
-                buttonLink.href = "product-spc-upload-choice";
+                buttonLink.href = "product-file-upload";
             } else if (radio.value == 'no') {
                 buttonLink.href = "product-no-spc";
             }

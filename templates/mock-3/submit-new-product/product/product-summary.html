@@ -53,7 +53,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
-      Product has SmPC or data sheet
+      Product has SmPC or Data Sheet
     </dt>
     <dd class="nhsuk-summary-list__value" id="product-spc">
     </dd>
@@ -61,33 +61,33 @@ Submit a new product: product summary | Portal | NHSBSA
     <dd class="nhsuk-summary-list__actions">
 
       <a href="product-spc">
-        Change<span class="nhsuk-u-visually-hidden"> product SmPC/data sheet</span>
+        Change<span class="nhsuk-u-visually-hidden"> product SmPC/Data Sheet</span>
       </a>
 
     </dd>
 
   </div>
 
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key" id="link-or-upload">
-      SmPC or data sheet link or upload
-    </dt>
-    <dd class="nhsuk-summary-list__value" id="product-link-upload">
-    </dd>
+<!--  <div class="nhsuk-summary-list__row">-->
+<!--    <dt class="nhsuk-summary-list__key" id="link-or-upload">-->
+<!--      SmPC or Data Sheet link or upload-->
+<!--    </dt>-->
+<!--    <dd class="nhsuk-summary-list__value" id="product-link-upload">-->
+<!--    </dd>-->
 
-    <dd class="nhsuk-summary-list__actions">
+<!--    <dd class="nhsuk-summary-list__actions">-->
 
-      <a href="product-spc-upload-choice">
-        Change<span class="nhsuk-u-visually-hidden"> product has link or upload</span>
-      </a>
+<!--      <a href="product-spc-upload-choice">-->
+<!--        Change<span class="nhsuk-u-visually-hidden"> product has link or upload</span>-->
+<!--      </a>-->
 
-    </dd>
+<!--    </dd>-->
 
-  </div>
+<!--  </div>-->
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key" id="file-or-link">
-      SmPC or data sheet uploaded files or url
+      SmPC or Data Sheet uploaded files
     </dt>
     <dd class="nhsuk-summary-list__value" id="display-file-or-link">
     </dd>
@@ -95,7 +95,7 @@ Submit a new product: product summary | Portal | NHSBSA
     <dd class="nhsuk-summary-list__actions">
 
       <a href="product-file-upload-success" id="link-url">
-        Change<span class="nhsuk-u-visually-hidden"> SmPC or data sheet link or files</span>
+        Change<span class="nhsuk-u-visually-hidden"> SmPC or Data Sheet link or files</span>
       </a>
 
     </dd>
@@ -461,14 +461,14 @@ console.log(getProductLink);
   var linkUrlSplit = getProductUpload.split("\\");
   var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
   document.getElementById("display-file-or-link").innerHTML = linkUrlFileName;
-  document.getElementById("product-link-upload").innerHTML = getProductUp;
+<!--  document.getElementById("product-link-upload").innerHTML = getProductUp;-->
   document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet uploaded file';
 
   } else if (!getProductLink && (!getProductUpload && getProductUpload2)) {
   var linkUrlSplit2 = getProductUpload2.split("\\");
   var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
   document.getElementById("display-file-or-link").innerHTML = linkUrlFileName2;
-  document.getElementById("product-link-upload").innerHTML = getProductUp;
+<!--  document.getElementById("product-link-upload").innerHTML = getProductUp;-->
   document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet uploaded file';
 
   } else if (!getProductLink && (getProductUpload && getProductUpload2)) {
@@ -477,7 +477,7 @@ console.log(getProductLink);
   var linkUrlSplit2 = getProductUpload2.split("\\");
   var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
   document.getElementById("display-file-or-link").innerHTML = linkUrlFileName + '<br>' + linkUrlFileName2;
-  document.getElementById("product-link-upload").innerHTML = getProductUp;
+<!--  document.getElementById("product-link-upload").innerHTML = getProductUp;-->
   document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet uploaded files';
 
   }
