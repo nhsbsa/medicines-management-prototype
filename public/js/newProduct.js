@@ -804,12 +804,12 @@ if (radioLegalButtons.length != 0) {
 
     function storeLegalCategory() {
         for (var radio of radioLegalButtons) {
-                    if (radio.checked) {
+                  if (radio.checked) {
                         localStorage.setItem("product-legal-category", radio.value);
-                    }
-                    if (summaryPage) {
+                  }
+                  if (summaryPage) {
                         buttonLink.href = "product-summary";
-                    }
+                  }
                 }
 }
 
