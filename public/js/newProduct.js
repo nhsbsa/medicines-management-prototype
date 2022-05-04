@@ -842,6 +842,8 @@ if (radioUsageButtons.length != 0) {
 
 // pack size (second pack)
 
+var getExtraPackSize = localStorage.getItem("pack-2-size");
+
 if (extraPackSize) {
 function storeExtraPackSize(){
      localStorage.setItem("pack-2-size", extraPackSize.value);
@@ -849,8 +851,6 @@ function storeExtraPackSize(){
      buttonLink.href = "../product/product-summary";
      }
     }
-
-var getExtraPackSize = localStorage.getItem("pack-2-size");
 
 var exPackSi = document.querySelector("#extra-pack-size");
 if (getExtraPackSize != null) {

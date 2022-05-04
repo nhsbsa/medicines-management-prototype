@@ -474,8 +474,10 @@ if (summaryPage == null) {
 
 var getEffectiveDay = localStorage.getItem("effective-day");
 var getEffectiveMonth = localStorage.getItem("effective-month");
+var getLongMonth = Intl.DateTimeFormat('en', { month: 'long' }).format(new Date(getEffectiveMonth));
 var getEffectiveYear = localStorage.getItem("effective-year");
-document.getElementById("product-effective-date").innerHTML = getEffectiveDay + '/' + getEffectiveMonth + '/' + getEffectiveYear;
+
+document.getElementById("product-effective-date").innerHTML = getEffectiveDay + ' ' + getLongMonth + ' ' + getEffectiveYear;
 
 var getProductName = localStorage.getItem("product-name");
 document.getElementById("product-name").innerHTML = getProductName;

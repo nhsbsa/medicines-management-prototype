@@ -20,7 +20,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
     <div class="nhsuk-card nhsuk-card--clickable">
       <div class="nhsuk-card__content">
         <h2 class="nhsuk-card__heading nhsuk-heading-m">
-          <a class="nhsuk-card__link" href="submit-new-product/product/product-check-list">New product</a>
+          <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="submit-new-product/product/product-check-list">New product</a>
         </h2>
         <p class="nhsuk-card__description">Submit a new product.</p>
       </div>
@@ -31,7 +31,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
       <div class="nhsuk-card nhsuk-card--clickable">
         <div class="nhsuk-card__content">
           <h2 class="nhsuk-card__heading nhsuk-heading-m">
-            <a class="nhsuk-card__link" href="create-new">New pack</a>
+            <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="create-new">New pack</a>
           </h2>
           <p class="nhsuk-card__description">Add a pack to an existing product.</p>
         </div>
@@ -42,7 +42,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <div class="nhsuk-card nhsuk-card--clickable">
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
-              <a class="nhsuk-card__link" href="#">Price change</a>
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="#">Price change</a>
             </h2>
             <p class="nhsuk-card__description">Change a current price.</p>
           </div>
@@ -53,7 +53,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <div class="nhsuk-card nhsuk-card--clickable">
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
-              <a class="nhsuk-card__link" href="#">Discontinue a product</a>
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="#">Discontinue a product</a>
             </h2>
             <p class="nhsuk-card__description">Stop a product.</p>
           </div>
@@ -64,7 +64,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <div class="nhsuk-card nhsuk-card--clickable">
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
-              <a class="nhsuk-card__link" href="create-new">Product list</a>
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="create-new">Product list</a>
             </h2>
             <p class="nhsuk-card__description">Displays all live products.</p>
           </div>
@@ -75,7 +75,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <div class="nhsuk-card nhsuk-card--clickable">
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
-              <a class="nhsuk-card__link" href="create-new">Product submissions</a>
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="create-new">Product submissions</a>
             </h2>
             <p class="nhsuk-card__description">Displays a list of all submissions.</p>
           </div>
@@ -83,14 +83,9 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
       </div>
 
     </div>
-    <a class="nhsuk-button" onclick="clearStorage()" href="#">Clear local storage</a>
   </div>
 </div>
 <script>
-  function clearStorage() {
   localStorage.clear();
-  }
-
-  console.log(localStorage);
 </script>
 {% endblock %}
