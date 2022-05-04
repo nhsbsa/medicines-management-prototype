@@ -14,10 +14,12 @@ var summaryPage = localStorage.getItem("summary-page");
 var getPackShdDisPrice = localStorage.getItem("pack-should-display-price");
 var getPackTwoShdDisPrice = localStorage.getItem("pack-2-should-display-price");
 var getProductHospUsage = localStorage.getItem("product-hospital-only");
+var getProductLegalCat = localStorage.getItem("product-legal-category");
 var getProductExtraPack = localStorage.getItem("product-extra-pack");
 var getPackSize = localStorage.getItem("pack-size");
 
 var extraPackSize = document.getElementById("extra-pack-size");
+var getExtraPackShdDisPrice = localStorage.getItem("pack-2-should-display-price");
 var getContinueButton = document.getElementsByClassName("nhsuk-button")[0];
 var buttonLink = document.getElementById("continue-button");
 var continueButton = document.getElementById("continue-button");
@@ -753,8 +755,6 @@ if (radioShouldDisplayPriceButtons.length != 0) {
                 localStorage.setItem("pack-should-display-price", radio.value);
                 if (radio.value == 'yes') {
                     buttonLink.href = "product-price";
-                } else if (radio.value == 'no' && summaryPage) {
-                    buttonLink.href = "product-summary";
                 }
             }
         }
@@ -787,22 +787,30 @@ if (prodPrice) {
     }
 }
 
-var legalCategory = document.getElementById("product-legal-category");
+// legal category
 
-if (legalCategory) {
+var radioLegalButtons = document.getElementsByName("data-legal-cat");
+
+if (radioLegalButtons.length != 0) {
+
+    if (getProductLegalCat != null) {
+        for (var radio of radioLegalButtons) {
+            if (getProductLegalCat === radio.value) {
+                radio.checked = true;
+            }
+        }
+      }
+    };
 
     function storeLegalCategory() {
-        localStorage.setItem("product-legal-category", legalCategory.value);
-        if (summaryPage) {
-            buttonLink.href = "product-summary";
-        }
-    }
-
-    var getLegalCategory = localStorage.getItem("product-legal-category");
-
-    if (getLegalCategory != null) {
-        legalCategory.value = getLegalCategory;
-    }
+        for (var radio of radioLegalButtons) {
+                    if (radio.checked) {
+                        localStorage.setItem("product-legal-category", radio.value);
+                    }
+                    if (summaryPage) {
+                        buttonLink.href = "product-summary";
+                    }
+                }
 }
 
 // hospital yes/no
@@ -837,7 +845,7 @@ if (radioUsageButtons.length != 0) {
 if (extraPackSize) {
 function storeExtraPackSize(){
      localStorage.setItem("pack-2-size", extraPackSize.value);
-     if (summaryPage) {
+     if (summaryPage && getExtraPackShdDisPrice) {
      buttonLink.href = "../product/product-summary";
      }
     }
@@ -878,7 +886,7 @@ function storeHasExtraPackSubpack() {
          if (radio.value == 'yes') {
           buttonLink.href = "pack-2-subpack-extra";
            }
-         if (radio.value == 'no' && summaryPage) {
+         if (radio.value == 'no' && (summaryPage && getExtraPackShdDisPrice) ) {
          buttonLink.href = "../product/product-summary"
           }
         }
@@ -892,7 +900,7 @@ function storeHasExtraPackSubpack() {
 
  function storeExtraPackSubpackInfo(){
      localStorage.setItem("pack-2-subpack-extra", extraPackSubpackExtra.value);
-        if (summaryPage) {
+        if (summaryPage && getExtraPackShdDisPrice) {
          buttonLink.href = "../product/product-summary";
         }
      }
@@ -916,7 +924,7 @@ function storeHasExtraPackSubpack() {
 
 function storeExtraPackGtin(){
      localStorage.setItem("pack-2-gtin", extraPackGtin.value);
-     if (summaryPage) {
+     if (summaryPage && getExtraPackShdDisPrice) {
        buttonLink.href = "../product/product-summary";
      }
     }
@@ -960,7 +968,7 @@ function storeExtraPackRequireArtwork() {
          if (radio.value == 'yes') {
           buttonLink.href = "pack-2-artwork";
           }
-          if (radio.value == 'no' && summaryPage) {
+          if (radio.value == 'no' && (summaryPage && getExtraPackShdDisPrice) ) {
           buttonLink.href = "../product/product-summary";
           }
         }
@@ -1204,13 +1212,13 @@ document.getElementById("extra-pack-go-to-file-2").setAttribute('href',  "pack-2
 
 
 if (getExtraPackUploadArtwork != null && getExtraPackUploadArtwork2 == null && getExtraPackUploadArtwork3 == null && getExtraPackUploadArtwork3 == null) {
-document.getElementById("go-to-file-2").setAttribute('href', "pack-2-artwork-2");
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "pack-2-artwork-2");
 } else if (getExtraPackUploadArtwork == null && getExtraPackUploadArtwork2 != null && getExtraPackUploadArtwork3 == null && getExtraPackUploadArtwork4 == null) {
-document.getElementById("go-to-file-2").setAttribute('href', "pack-2-artwork");
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "pack-2-artwork");
 } else if (getExtraPackUploadArtwork != null && getExtraPackUploadArtwork2 != null && getExtraPackUploadArtwork3 == null && getExtraPackUploadArtwork4 == null) {
-document.getElementById("go-to-file-2").setAttribute('href', "pack-2-artwork-3");
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "pack-2-artwork-3");
 } else if (getExtraPackUploadArtwork != null && getExtraPackUploadArtwork2 != null && getExtraPackUploadArtwork3 != null && getExtraPackUploadArtwork4 == null) {
-document.getElementById("go-to-file-2").setAttribute('href', "pack-2-artwork-4");
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "pack-2-artwork-4");
 } else if (getExtraPackUploadArtwork != null && getExtraPackUploadArtwork2 != null && getExtraPackUploadArtwork3 != null && getExtraPackUploadArtwork4 != null) {
 document.getElementById("extra-pack-add-another-link").style.display = "none";
 } else if (getExtraPackUploadArtwork == null && getExtraPackUploadArtwork2 == null && getExtraPackUploadArtwork3 == null && getExtraPackUploadArtwork4 == null) {
@@ -1219,8 +1227,9 @@ document.getElementById("extra-pack-add-another-link").style.display = "none";
 document.getElementById("continue-button").style.display = "none";
 document.getElementById("extra-pack-add-link").style.display = "block";
 }
+
 function uploadExtraPackArtworkFiles() {
-        if (getExtraPackUploadArtwork && summaryPage || getExtraPackUploadArtwork2 && summaryPage || getExtraPackUploadArtwork3 && summaryPage || getExtraPackUploadArtwork4 && summaryPage) {
+        if (getExtraPackUploadArtwork && (summaryPage && getExtraPackShdDisPrice) || getExtraPackUploadArtwork2 && (summaryPage && getExtraPackShdDisPrice) || getExtraPackUploadArtwork3 && (summaryPage && getExtraPackShdDisPrice) || getExtraPackUploadArtwork4 && (summaryPage && getExtraPackShdDisPrice)) {
             buttonLink.href = "../product/product-summary";
         }
     }
@@ -1231,8 +1240,6 @@ function uploadExtraPackArtworkFiles() {
 var radioExtraPackShouldDisplayPriceButtons = document.getElementsByName("extra-pack-display-price");
 
 if (radioExtraPackShouldDisplayPriceButtons.length != 0) {
-
-var getExtraPackShdDisPrice= localStorage.getItem("pack-2-should-display-price");
 
 if (getExtraPackShdDisPrice != null) {
 for (var radio of radioExtraPackShouldDisplayPriceButtons) {
@@ -1256,9 +1263,6 @@ function storeExtraPackShouldDisplayPrice() {
          if (radio.value == 'yes') {
           buttonLink.href = "product-2-price";
           }
-         if (radio.value == 'no' && summaryPage) {
-          buttonLink.href = "../product/product-summary";
-         }
         }
      }
    }

@@ -243,6 +243,23 @@ Submit a new product: product summary | Portal | NHSBSA
 
   </div>
 
+  <div class="nhsuk-summary-list__row" id="hide-reason-no-price">
+    <dt class="nhsuk-summary-list__key">
+      Reason for no price
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-reason-no-price">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="../product/product-reason-no-price">
+        Change<span class="nhsuk-u-visually-hidden"> reason for not providing a price</span>
+      </a>
+
+    </dd>
+
+  </div>
+
 </dl>
 
 <h2 id="heading-pack-2">Pack 2</h2>
@@ -385,6 +402,23 @@ Submit a new product: product summary | Portal | NHSBSA
 
   </div>
 
+  <div class="nhsuk-summary-list__row" id="hide-2-reason-no-price">
+    <dt class="nhsuk-summary-list__key">
+      Reason for no price
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-2-reason-no-price">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="../product-pack-extra/pack-2-reason-no-price">
+        Change<span class="nhsuk-u-visually-hidden"> reason for not providing a price</span>
+      </a>
+
+    </dd>
+
+  </div>
+
 </dl>
 
 
@@ -453,7 +487,7 @@ var getProductUpload2 = localStorage.getItem("product-upload-file-2");
 if (getProductLink != null) {
 console.log(getProductLink);
   document.getElementById("product-link-upload").innerHTML = getProductUp;
-  document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet link web address';
+  document.getElementById("file-or-link").innerHTML = 'SmPC or Data Sheet link web address';
   document.getElementById("display-file-or-link").innerHTML = getProductLink;
   document.getElementById("link-url").setAttribute('href', "product-spc-upload-choice");
 
@@ -462,14 +496,14 @@ console.log(getProductLink);
   var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
   document.getElementById("display-file-or-link").innerHTML = linkUrlFileName;
 <!--  document.getElementById("product-link-upload").innerHTML = getProductUp;-->
-  document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet uploaded file';
+  document.getElementById("file-or-link").innerHTML = 'SmPC or Data Sheet uploaded file';
 
   } else if (!getProductLink && (!getProductUpload && getProductUpload2)) {
   var linkUrlSplit2 = getProductUpload2.split("\\");
   var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
   document.getElementById("display-file-or-link").innerHTML = linkUrlFileName2;
 <!--  document.getElementById("product-link-upload").innerHTML = getProductUp;-->
-  document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet uploaded file';
+  document.getElementById("file-or-link").innerHTML = 'SmPC or Data Sheet uploaded file';
 
   } else if (!getProductLink && (getProductUpload && getProductUpload2)) {
   var linkUrlSplit = getProductUpload.split("\\");
@@ -542,10 +576,18 @@ document.getElementById("pack-upload-artwork").innerHTML += fileForm + "<br>";
 
 
 var getPackHasPrice = localStorage.getItem("pack-should-display-price");
+var getReasonPackNoPrice = localStorage.getItem("product-reason-no-price");
+var getOtherReasonPackNoPrice = localStorage.getItem("product-reason-other");
 document.getElementById("pack-should-display-price").innerHTML = getPackHasPrice;
 
-if (getPackHasPrice == 'no') {
+if (getPackHasPrice == 'no' && !getOtherReasonPackNoPrice) {
 document.getElementById("hide-price").style["display"] = "none";
+document.getElementById("product-reason-no-price").innerHTML = getReasonPackNoPrice;
+} else if (getPackHasPrice == 'no' && getOtherReasonPackNoPrice) {
+document.getElementById("hide-price").style["display"] = "none";
+document.getElementById("product-reason-no-price").innerHTML = getOtherReasonPackNoPrice;
+} else if (getPackHasPrice == 'yes') {
+  document.getElementById("hide-reason-no-price").style["display"] = "none";
 }
 
 var getPackPrice = localStorage.getItem("product-price");
@@ -645,8 +687,18 @@ document.getElementById("pack-2-should-display-price").innerHTML = getPack2HasPr
 document.getElementById("pack-2-should-display-price").style["display"] = "none";
 }
 
-if (getPack2HasPrice == 'no') {
+var getOtherReasonPack2NoPrice = localStorage.getItem("pack-2-reason-other");
+var getReasonPack2NoPrice = localStorage.getItem("pack-2-reason-no-price");
+document.getElementById("pack-2-should-display-price").innerHTML = getPack2HasPrice;
+
+if (getPack2HasPrice == 'no' && !getOtherReasonPack2NoPrice) {
 document.getElementById("hide-2-price").style["display"] = "none";
+document.getElementById("pack-2-reason-no-price").innerHTML = getReasonPack2NoPrice;
+} else if (getPack2HasPrice == 'no' && getOtherReasonPack2NoPrice) {
+document.getElementById("hide-2-price").style["display"] = "none";
+document.getElementById("pack-2-reason-no-price").innerHTML = getOtherReasonPack2NoPrice;
+} else if (getPack2HasPrice == 'yes') {
+  document.getElementById("hide-2-reason-no-price").style["display"] = "none";
 }
 
 var getPack2Price = localStorage.getItem("product-2-price");

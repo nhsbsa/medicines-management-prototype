@@ -65,7 +65,7 @@ Submit a new product: pack price | Portal | NHSBSA
 </div>
 
 <a class="nhsuk-button" onclick="store()"
-   href="product-legal-category"
+   href="../product/product-summary"
    type="submit">
   Continue
 </a>
@@ -73,17 +73,12 @@ Submit a new product: pack price | Portal | NHSBSA
 <script>
 var radioButtons = document.getElementsByName("reason-no-price");
 
-var getProductReasonNoPrice = localStorage.getItem("product-reason-no-price");
-var getExactOtherReason = localStorage.getItem("product-reason-other");
+var getProductReasonNoPrice = localStorage.getItem("pack-2-reason-no-price");
+var getExactOtherReason = localStorage.getItem("pack-2-reason-other");
 var otherReason = document.getElementById("conditional-reason");
 var getOtherReason = document.getElementById("with-hint");
 console.log('getOtherReason', getOtherReason.value);
 console.log('innerHTML', document.getElementById("with-hint"));
-
-<!--if (getExactOtherReason) {-->
-<!--getOtherReason.defaultValue = getExactOtherReason;-->
-<!--}-->
-
 
 
 if (getProductReasonNoPrice != null) {
@@ -91,18 +86,13 @@ for (var radio of radioButtons) {
     console.log('radio', radio.value);
 if (getProductReasonNoPrice === radio.value) {
      radio.checked = true;
-
             if (radio.value == 'Other') {
                        otherReason.classList.remove("nhsuk-radios__conditional--hidden");
-                       getOtherReason.defaultValue = localStorage.getItem("product-reason-other")
+                       getOtherReason.defaultValue = localStorage.getItem("pack-2-reason-other")
                     }
                }
           }
       };
-
-      console.log(localStorage);
-      console.log(getOtherReason.value);
-
 
 
 function store() {
@@ -112,20 +102,13 @@ function store() {
 
   for (var radio of radioButtons) {
         if (radio.checked) {
-         localStorage.setItem("product-reason-no-price", radio.value);
-         if (localStorage.getItem("product-reason-no-price") == 'Other') {
-          localStorage.setItem("product-reason-other", document.getElementById("with-hint").value)
-          } else if (localStorage.getItem("product-reason-no-price") != 'Other') {
-            localStorage.removeItem("product-reason-other");
+         localStorage.setItem("pack-2-reason-no-price", radio.value);
+         if (localStorage.getItem("pack-2-reason-no-price") == 'Other') {
+          localStorage.setItem("pack-2-reason-other", document.getElementById("with-hint").value)
+          } else if (localStorage.getItem("pack-2-reason-no-price") != 'Other') {
+            localStorage.removeItem("pack-2-reason-other");
           }
         }
-
-<!--      if (radio.checked) {-->
-<!--          localStorage.setItem("product-reason-no-price", radio.value);-->
-<!--        }-->
-<!--      if (radio.checked && radio.value == 'Other') {-->
-<!--          localStorage.setItem("product-reason-other", getOtherReason.value);-->
-<!--         }-->
       }
   }
 

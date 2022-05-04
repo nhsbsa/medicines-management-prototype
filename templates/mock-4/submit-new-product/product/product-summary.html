@@ -68,22 +68,22 @@ Submit a new product: product summary | Portal | NHSBSA
 
   </div>
 
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key" id="link-or-upload">
-      SmPC or Data Sheet format
-    </dt>
-    <dd class="nhsuk-summary-list__value" id="product-link-upload">
-    </dd>
+<!--  <div class="nhsuk-summary-list__row">-->
+<!--    <dt class="nhsuk-summary-list__key" id="link-or-upload">-->
+<!--      SmPC or Data Sheet format-->
+<!--    </dt>-->
+<!--    <dd class="nhsuk-summary-list__value" id="product-link-upload">-->
+<!--    </dd>-->
 
-    <dd class="nhsuk-summary-list__actions">
+<!--    <dd class="nhsuk-summary-list__actions">-->
 
-      <a href="product-spc-upload-choice">
-        Change<span class="nhsuk-u-visually-hidden">&nbsp;SmPC or Data Sheet format</span>
-      </a>
+<!--      <a href="product-spc-upload-choice">-->
+<!--        Change<span class="nhsuk-u-visually-hidden">&nbsp;SmPC or Data Sheet format</span>-->
+<!--      </a>-->
 
-    </dd>
+<!--    </dd>-->
 
-  </div>
+<!--  </div>-->
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key" id="file-or-link">
@@ -243,6 +243,23 @@ Submit a new product: product summary | Portal | NHSBSA
 
   </div>
 
+  <div class="nhsuk-summary-list__row" id="hide-reason-no-price">
+    <dt class="nhsuk-summary-list__key">
+      Reason for no price
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-reason-no-price">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="../product/product-reason-no-price">
+        Change<span class="nhsuk-u-visually-hidden"> reason for not providing a price</span>
+      </a>
+
+    </dd>
+
+  </div>
+
 </dl>
 
 <h2 id="heading-pack-2">Pack 2</h2>
@@ -385,6 +402,23 @@ Submit a new product: product summary | Portal | NHSBSA
 
   </div>
 
+  <div class="nhsuk-summary-list__row" id="hide-2-reason-no-price">
+    <dt class="nhsuk-summary-list__key">
+      Reason for no price
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-2-reason-no-price">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="../product-pack-extra/pack-2-reason-no-price">
+        Change<span class="nhsuk-u-visually-hidden"> reason for not providing a price</span>
+      </a>
+
+    </dd>
+
+  </div>
+
 </dl>
 
 
@@ -453,13 +487,11 @@ var getProductHasSPC = localStorage.getItem("product-spc");
 document.getElementById("product-spc").innerHTML = getProductHasSPC;
 
 var getProductLink = localStorage.getItem("product-link-url");
-var getProductUp = localStorage.getItem("product-link-upload");
 var getProductUpload = localStorage.getItem("product-upload-file");
 var getProductUpload2 = localStorage.getItem("product-upload-file-2");
 
 if (getProductLink != null) {
 console.log(getProductLink);
-  document.getElementById("product-link-upload").innerHTML = getProductUp;
   document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet web address';
   document.getElementById("display-file-or-link").innerHTML = getProductLink;
   document.getElementById("link-url").setAttribute('href', "product-spc-upload-choice");
@@ -468,14 +500,12 @@ console.log(getProductLink);
   var linkUrlSplit = getProductUpload.split("\\");
   var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
   document.getElementById("display-file-or-link").innerHTML = linkUrlFileName;
-  document.getElementById("product-link-upload").innerHTML = getProductUp;
   document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet uploaded file';
 
   } else if (!getProductLink && (!getProductUpload && getProductUpload2)) {
   var linkUrlSplit2 = getProductUpload2.split("\\");
   var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
   document.getElementById("display-file-or-link").innerHTML = linkUrlFileName2;
-  document.getElementById("product-link-upload").innerHTML = getProductUp;
   document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet uploaded file';
 
   } else if (!getProductLink && (getProductUpload && getProductUpload2)) {
@@ -484,7 +514,6 @@ console.log(getProductLink);
   var linkUrlSplit2 = getProductUpload2.split("\\");
   var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
   document.getElementById("display-file-or-link").innerHTML = linkUrlFileName + '<br>' + linkUrlFileName2;
-  document.getElementById("product-link-upload").innerHTML = getProductUp;
   document.getElementById("file-or-link").innerHTML = 'SmPC or date sheet uploaded files';
   document.getElementById("link-url").setAttribute('href', "product-file-upload-success");
   }
@@ -549,10 +578,18 @@ document.getElementById("pack-upload-artwork").innerHTML += fileForm + "<br>";
 
 
 var getPackHasPrice = localStorage.getItem("pack-should-display-price");
+var getOtherReasonPackNoPrice = localStorage.getItem("product-reason-other");
+var getReasonPackNoPrice = localStorage.getItem("product-reason-no-price");
 document.getElementById("pack-should-display-price").innerHTML = getPackHasPrice;
 
-if (getPackHasPrice == 'no') {
+if (getPackHasPrice == 'no' && !getOtherReasonPackNoPrice) {
 document.getElementById("hide-price").style["display"] = "none";
+document.getElementById("product-reason-no-price").innerHTML = getReasonPackNoPrice;
+} else if (getPackHasPrice == 'no' && getOtherReasonPackNoPrice) {
+document.getElementById("hide-price").style["display"] = "none";
+document.getElementById("product-reason-no-price").innerHTML = getOtherReasonPackNoPrice;
+} else if (getPackHasPrice == 'yes') {
+  document.getElementById("hide-reason-no-price").style["display"] = "none";
 }
 
 var getPackPrice = localStorage.getItem("product-price");
@@ -645,15 +682,18 @@ document.getElementById("pack-2-upload-artwork").innerHTML += fileForm + "<br>";
 }
 
 var getPack2HasPrice = localStorage.getItem("pack-2-should-display-price");
-
-if (getPack2HasPrice != null) {
+var getOtherReasonPack2NoPrice = localStorage.getItem("pack-2-reason-other");
+var getReasonPack2NoPrice = localStorage.getItem("pack-2-reason-no-price");
 document.getElementById("pack-2-should-display-price").innerHTML = getPack2HasPrice;
-} else {
-document.getElementById("pack-2-should-display-price").style["display"] = "none";
-}
 
-if (getPack2HasPrice == 'no') {
+if (getPack2HasPrice == 'no' && !getOtherReasonPack2NoPrice) {
 document.getElementById("hide-2-price").style["display"] = "none";
+document.getElementById("pack-2-reason-no-price").innerHTML = getReasonPack2NoPrice;
+} else if (getPack2HasPrice == 'no' && getOtherReasonPack2NoPrice) {
+document.getElementById("hide-2-price").style["display"] = "none";
+document.getElementById("pack-2-reason-no-price").innerHTML = getOtherReasonPack2NoPrice;
+} else if (getPack2HasPrice == 'yes') {
+  document.getElementById("hide-2-reason-no-price").style["display"] = "none";
 }
 
 var getPack2Price = localStorage.getItem("product-2-price");

@@ -65,7 +65,7 @@ Submit a new product: pack price | Portal | NHSBSA
 </div>
 
 <a class="nhsuk-button" onclick="store()"
-   href="product-legal-category"
+   href="product-legal-category" id="continue-button"
    type="submit">
   Continue
 </a>
@@ -77,6 +77,7 @@ var getProductReasonNoPrice = localStorage.getItem("product-reason-no-price");
 var getExactOtherReason = localStorage.getItem("product-reason-other");
 var otherReason = document.getElementById("conditional-reason");
 var getOtherReason = document.getElementById("with-hint");
+
 console.log('getOtherReason', getOtherReason.value);
 console.log('innerHTML', document.getElementById("with-hint"));
 
@@ -109,13 +110,17 @@ function store() {
   var radioButtons = document.getElementsByName("reason-no-price");
   var buttonLink = document.getElementById("continue-button");
   var getOtherReason = document.getElementById("with-hint");
+  var summaryPage = localStorage.getItem("summary-page");
 
   for (var radio of radioButtons) {
         if (radio.checked) {
          localStorage.setItem("product-reason-no-price", radio.value);
+         if (summaryPage) {
+            buttonLink.href = "product-summary";
+          }
          if (localStorage.getItem("product-reason-no-price") == 'Other') {
           localStorage.setItem("product-reason-other", document.getElementById("with-hint").value)
-          } else if (localStorage.getItem("product-reason-no-price") != 'Other') {
+         } else if (localStorage.getItem("product-reason-no-price") != 'Other') {
             localStorage.removeItem("product-reason-other");
           }
         }
@@ -128,6 +133,8 @@ function store() {
 <!--         }-->
       }
   }
+
+
 
 </script>
 {% endblock %}
