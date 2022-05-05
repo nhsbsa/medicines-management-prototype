@@ -63,7 +63,7 @@ heroku git:remote -a medicines-management-prototype
 git remote add origin git@dps-gitlab.service.nhsbsa:prescriptions/medicines-management-prototype.git
 ```
 * Add Heroku repository as a push destination
-```shellg
+```shell
 git remote set-url --push --add origin https://git.heroku.com/medicines-management-prototype.git
 ```
 * Add GitLab repository as a push destination (required as the previous command overrides 
