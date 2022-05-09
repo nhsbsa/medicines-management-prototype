@@ -769,8 +769,12 @@ if (prodPrice) {
 
     function storePrice() {
         localStorage.setItem("product-price", prodPrice.value);
-        if (summaryPage) {
-            buttonLink.href = "product-summary";
+        var priceToNumber = parseInt(localStorage.getItem("product-price"));
+
+        if (summaryPage && (priceToNumber < 100)) {
+           buttonLink.href = "product-summary";
+        } else if (priceToNumber >= 100) {
+           buttonLink.href = "product-price-confirm";
         }
     }
 
@@ -782,8 +786,58 @@ if (prodPrice) {
 
     var getPrice = localStorage.getItem("pack-should-display-price");
 
-    if (getPrice != null) {
+    if (getPackSize != null) {
         heading.innerHTML = 'What is the price of the ' + getPackSize + ' pack?';
+    } else {
+
+    }
+}
+
+// price confirmation
+
+ localStorage.removeItem("product-price-confirm"); // removing localStorage as want the user to select every time they land on page
+
+var productPrice = localStorage.getItem("product-price");
+
+var formatter = new Intl.NumberFormat('en-GB', {
+  style: 'currency',
+  currency: 'GBP',
+  });
+
+var penceToPound = productPrice / 100;
+var poundVersion = formatter.format(penceToPound);
+
+var priceAmountHint = document.getElementById("price-amount-hint");
+
+if (priceAmountHint) {
+    priceAmountHint.innerHTML = 'The price you have entered is ' + productPrice + ' pence or ' + poundVersion + '.'
+    }
+
+    var getConfPrice = localStorage.getItem("product-price-confirm");
+
+    var radioConfPriceButtons = document.getElementsByName("data-price");
+
+    if (getConfPrice != null) {
+         for (var radio of radioConfPriceButtons) {
+                     if (getConfPrice === radio.value) {
+                         radio.checked = true;
+                     }
+                 }
+        }
+
+function storeCorrectPriceYesOrNo() {
+    var radioButtons = document.getElementsByName("data-price");
+    var buttonLink = document.getElementById("continue-button");
+
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+            localStorage.setItem("product-price-confirm", radio.value);
+            if (radio.value == 'no') {
+                buttonLink.href = "product-price";
+            } else if (radio.value == 'yes' && summaryPage) {
+                buttonLink.href = "product-summary";
+            }
+        }
     }
 }
 
@@ -1276,6 +1330,12 @@ function storeExtraPackShouldDisplayPrice() {
 
    function storeExtraPackPrice(){
        localStorage.setItem("product-2-price", extraPackProdPrice.value);
+       var extraPackPrice = parseInt(localStorage.getItem("product-2-price"));
+
+       if (extraPackPrice >= 100) {
+          buttonLink.href = "product-2-price-confirm";
+       }
+
     }
 
  var getExtraPackProdPrice = localStorage.getItem("product-2-price");
@@ -1287,5 +1347,53 @@ function storeExtraPackShouldDisplayPrice() {
 
  if (getExtraPackSize != null) {
  heading.innerHTML = 'What is the price of the ' + getExtraPackSize + ' pack?';
+    }
  }
+
+ // extra pack price confirmation
+
+ localStorage.removeItem("product-2-price-confirm"); // removing localStorage as want the user to select every time they land on page
+
+ var productExtraPrice = localStorage.getItem("product-2-price");
+
+ var formatter = new Intl.NumberFormat('en-GB', {
+   style: 'currency',
+   currency: 'GBP',
+   });
+
+ var penceToPoundExtra = productExtraPrice / 100;
+ var poundVersionExtra = formatter.format(penceToPoundExtra);
+
+ var priceAmountExtraHint = document.getElementById("price-amount-extra-hint");
+
+ if (priceAmountExtraHint) {
+     priceAmountExtraHint.innerHTML = 'The price you have entered is ' + productExtraPrice + ' pence or ' + poundVersionExtra + '.'
+    }
+
+     var getConfPriceExtra = localStorage.getItem("product-2-price-confirm");
+
+     var radioConfPriceExtraButtons = document.getElementsByName("data-price-extra");
+
+     if (getConfPriceExtra != null) {
+          for (var radio of radioConfPriceExtraButtons) {
+                      if (getConfPriceExtra === radio.value) {
+                          radio.checked = true;
+                      }
+                  }
+         }
+
+ function storeCorrectPriceExtraYesOrNo() {
+     var radioButtons = document.getElementsByName("data-price-extra");
+     var buttonLink = document.getElementById("continue-button");
+
+     for (var radio of radioButtons) {
+         if (radio.checked) {
+             localStorage.setItem("product-2-price-confirm", radio.value);
+             if (radio.value == 'no') {
+                 buttonLink.href = "product-2-price";
+             } else if (radio.value == 'yes' && summaryPage) {
+                 buttonLink.href = "product-summary";
+             }
+         }
+     }
  }
