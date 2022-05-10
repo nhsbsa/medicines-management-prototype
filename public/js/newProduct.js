@@ -769,13 +769,6 @@ if (prodPrice) {
 
     function storePrice() {
         localStorage.setItem("product-price", prodPrice.value);
-        var priceToNumber = parseInt(localStorage.getItem("product-price"));
-
-        if (summaryPage && (priceToNumber < 100)) {
-           buttonLink.href = "product-summary";
-        } else if (priceToNumber >= 100) {
-           buttonLink.href = "product-price-confirm";
-        }
     }
 
     var getProdPrice = localStorage.getItem("product-price");
@@ -1330,12 +1323,6 @@ function storeExtraPackShouldDisplayPrice() {
 
    function storeExtraPackPrice(){
        localStorage.setItem("product-2-price", extraPackProdPrice.value);
-       var extraPackPrice = parseInt(localStorage.getItem("product-2-price"));
-
-       if (extraPackPrice >= 100) {
-          buttonLink.href = "product-2-price-confirm";
-       }
-
     }
 
  var getExtraPackProdPrice = localStorage.getItem("product-2-price");
@@ -1382,7 +1369,7 @@ function storeExtraPackShouldDisplayPrice() {
                   }
          }
 
- function storeCorrectPriceExtraYesOrNo() {
+ function storeCorrectPriceExtraPackYesOrNo() {
      var radioButtons = document.getElementsByName("data-price-extra");
      var buttonLink = document.getElementById("continue-button");
 
@@ -1391,8 +1378,6 @@ function storeExtraPackShouldDisplayPrice() {
              localStorage.setItem("product-2-price-confirm", radio.value);
              if (radio.value == 'no') {
                  buttonLink.href = "product-2-price";
-             } else if (radio.value == 'yes' && summaryPage) {
-                 buttonLink.href = "product-summary";
              }
          }
      }
