@@ -11,9 +11,9 @@ Design prototype medicines management | NHSBSA
         Go back</a>
 </div>
 <h1>Medicines Management Service</h1>
-<p>Once you've registered, you can sign in to gain access to various different services.</p>
+<p>Once you have registered, you can sign in to gain access to various services.</p>
 <div class="nhsuk-do-dont-list">
-    <h3 class="nhsuk-do-dont-list__label">Services</h3>
+    <h2 class="nhsuk-do-dont-list__label">Services</h2>
     <ul class="nhsuk-list nhsuk-list--tick">
         <li>
             <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
@@ -30,10 +30,25 @@ Design prototype medicines management | NHSBSA
     </ul>
 </div>
 
-<a class="nhsuk-button" href="../login-journey/2factor-setup-true/enter-username.html">Login to service</a>
-<p>If you do not have an account, but the supplier you represent already has access to this service, then you will have to request access
-    via someone in your company already on the system.</p>
-<p>If the supplier you represent does not have access yet, you must submit a request for your company to be added.</p>
+<p>If you do not have an account, but your company has access to this service, then you will have to request access via a colleague who is already registered. </p>
+<p>If the company you represent does not have access, you must submit a request for your company to be added.</p>
+
+<div class="nhsuk-grid-row">
+<div class="nhsuk-grid-column-one-half">
+    <h2>Login</h2>
+<div class="nhsuk-action-link">
+    <a class="nhsuk-action-link__link" href="../login-journey/2factor-setup-true/enter-username.html">
+        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+        </svg>
+        <span class="nhsuk-action-link__text">Login to service</span>
+    </a>
+</div>
+</div>
+
+<div class="nhsuk-grid-column-one-half">
+    <h2>Company not registered</h2>
 <div class="nhsuk-action-link">
     <a class="nhsuk-action-link__link" href="register-setup">
         <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
@@ -42,5 +57,7 @@ Design prototype medicines management | NHSBSA
         </svg>
         <span class="nhsuk-action-link__text">Request access</span>
     </a>
+</div>
+</div>
 </div>
 {% endblock %}
