@@ -55,6 +55,7 @@ fill-blue{
       max-width: 100%;
       margin-left: -5px;
       padding: 5px;
+      }
 
       @media (min-width: 40.0625em) {
       .govuk-file-upload {
@@ -64,7 +65,161 @@ fill-blue{
       }
       }
 
-      @media (min-width: 40.0625em) {
-          .nhsuk-summary-list__key {
-            width: 40% !important; } }
+.autocomplete-container {
+  display: inline-block;
+  z-index: 1;
+  /* [9] */ }
+  @media (max-width: 40.0525em) {
+    .autocomplete-container {
+      display: inline;
+      width: 100%; } }
+
+@media (max-width: 40.0525em) {
+  /* duplicate of .nhsuk-search__input in _header.scss, for non javascript version */
+  .autocomplete__input {
+    -ms-flex-positive: 2;
+    /* [1] */
+    -webkit-appearance: listbox;
+    border-bottom: 1px solid #aeb7bd;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-left: 1px solid #aeb7bd;
+    border-right: 0;
+    border-top: 1px solid #aeb7bd;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 0;
+    flex-grow: 2;
+    font-size: inherit;
+    height: 52px;
+    /* [3] */
+    margin: 0;
+    outline: none;
+    padding: 0 16px;
+    width: 100%;
+    /* [3] */ }
+    .autocomplete__input:focus {
+      border: 4px solid #212b32;
+      box-shadow: 0 0 0 4px #ffeb3b;
+      outline: 4px solid transparent;
+      outline-offset: 4px;
+      padding: 0 13px;
+      /* [10] */ } }
+
+@media (min-width: 40.0625em) {
+  /* duplicate of .nhsuk-search__input in _header.scss, for non javascript version */
+  .autocomplete__input {
+    -webkit-appearance: listbox;
+    border: 1px solid #ffffff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 0;
+    font-size: 16px;
+    height: 40px;
+    /* [3] */
+    padding: 0 12px;
+    /* [9] */
+    width: 200px;
+    /* [3] */ }
+    .autocomplete__input:focus {
+      border: 2px solid #212b32;
+      box-shadow: 0 0 0 4px #ffeb3b;
+      outline: 4px solid transparent;
+      outline-offset: 4px;
+      padding: 0 11px;
+      /* [10] */ }
+    .autocomplete__input::placeholder {
+      color: #768692;
+      font-size: 16px; } }
+
+@media (min-width: 48.0625em) {
+  .autocomplete__input {
+    width: 235px; } }
+
+.autocomplete__menu {
+  -moz-box-shadow: 0 3px 5px rgba(66, 84, 98, 0.5);
+  /* [6] */
+  -webkit-box-shadow: 0 3px 5px rgba(66, 84, 98, 0.5);
+  /* [6] */
+  background-color: #ffffff;
+  border-bottom: 1px solid #d8dde0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: 1px solid #d8dde0;
+  border-right: 1px solid #d8dde0;
+  box-shadow: 0 0 3px 0 rgba(66, 84, 98, 0.5);
+  /* [6] */
+  list-style: none;
+  margin-top: 2px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 16px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1;
+  /* [7] */ }
+  @media (max-width: 40.0525em) {
+    .autocomplete__menu {
+      border: 0;
+      box-shadow: none;
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative; } }
+
+.autocomplete__menu--visible {
+  display: block; }
+
+.autocomplete__menu--hidden {
+  display: none; }
+
+.autocomplete__option {
+  border-bottom: 1px solid #f0f4f5;
+  color: #005eb8;
+  cursor: pointer;
+  font-size: 16px;
+  padding-bottom: 12px;
+  /* [8] */
+  text-align: left;
+  text-decoration: underline; }
+  .autocomplete__option .nhsuk-icon__search {
+    fill: #aeb7bd;
+    float: left;
+    height: 22px;
+    /* [4] */
+    margin: 2px 4px 0 0;
+    /* [5] */
+    width: 22px;
+    /* [4] */ }
+  .autocomplete__option:hover, .autocomplete__option:active {
+    text-decoration: none; }
+  .autocomplete__option:focus {
+    outline: 1px solid transparent;
+    text-decoration: none; }
+    .autocomplete__option:focus a {
+      background-color: #ffeb3b;
+      box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+      color: #212b32;
+      outline: 4px solid transparent;
+      text-decoration: none; }
+  @media (min-width: 40.0625em) {
+    .autocomplete__option:last-child {
+      border-bottom: 0; } }
+
+.autocomplete__option--no-results {
+  border-bottom: 0;
+  color: #212b32;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none; }
+  @media (max-width: 40.0525em) {
+    .autocomplete__option--no-results {
+      padding: 16px 0; } }
+
+
 

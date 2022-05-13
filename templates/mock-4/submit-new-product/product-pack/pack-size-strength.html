@@ -4,6 +4,7 @@
 Submit a new product: pack size and strength | Portal | NHSBSA
 {% endblock %}
 {% block content %}
+
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
   <a class="nhsuk-back-link__link" id="back-link" href="../product/product-spc-upload-choice">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
@@ -16,11 +17,11 @@ Submit a new product: pack size and strength | Portal | NHSBSA
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        How many units are in the pack and what type are they?
+        Pack size and unit of measure (UOM)
       </h1>
     </legend>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
-      For example, 28 tablets, 500ml, 100 doses.
+      For example, 28 tablets has a pack size of 28 and a UOM of tablet.
     </div>
 
 
@@ -30,10 +31,13 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="pack-size" name="size" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
 
     <label class="nhsuk-label" for="pack-type">
-      Type
+      UOM
     </label>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="uom-hint">
+      If the size of the UOM is required, choose your selection and proceed to the next step. If the UOM you require does not appear, choose &#39;other&#39;.
+    </div>
     <select class="nhsuk-select" id="pack-type" name="type">
-      <option value="-"> - </option>
+      <option value=""></option>
       <option value="ampoule">ampoule</option>
       <option value="bottle">bottle</option>
       <option value="capsule">capsule</option>
@@ -64,6 +68,18 @@ window.onload = function() {
     document.getElementById("back-link").href = '../product/product-spc-upload-choice';
     }
 };
+
+let allSelectIds = document.querySelectorAll('select[id]');
+let allInputIds = document.querySelectorAll('input[id]');
+
+console.log(allSelectIds);
+
+accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: "",
+            autoselect: false,
+            showAllValues: true,
+            selectElement: document.querySelector("#pack-type"),
+        });
 </script>
 <script src="/js/newProduct.js"></script>
 
