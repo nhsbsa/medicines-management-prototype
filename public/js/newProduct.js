@@ -353,6 +353,10 @@ if (packTypeOther) {
         }
     }
 
+    if (getPackSize != null) {
+             heading.innerHTML = 'Detail the UOM for the ' + getPackSize + ' pack';
+           }
+
 }
 
 // pack type needs further detail (first pack)
