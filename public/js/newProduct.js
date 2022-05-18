@@ -321,7 +321,12 @@ if (packTy) {
 
         if (packType.value == "other") {
             continueButton.setAttribute('href', "pack-strength-other");
-        } else if (packSi && packSize && summaryPage) {
+        } else if (packType.value == "ampoule" || packType.value == "bottle" || packType.value == "dose" || packType.value == "vial") {
+            continueButton.setAttribute('href', "pack-strength-further");
+        } else if (packType.value != "ampoule" && packType.value != "bottle" && packType.value != "dose" && packType.value != "vial" && packType.value != "other") {
+            localStorage.removeItem("pack-type-further");
+        }
+        if (packType.value != "ampoule" && packType.value != "bottle" && packType.value != "dose" && packType.value != "vial" && packType.value != "other" && summaryPage) {
             continueButton.href = "../product/product-summary";
         }
     }
@@ -348,6 +353,31 @@ if (packTypeOther) {
         }
     }
 
+}
+
+// pack type needs further detail (first pack)
+
+var packTypeFurther = document.querySelector("#pack-type-further");
+
+if (packTypeFurther) {
+    var getPackTypeFurther = localStorage.getItem("pack-type-further");
+
+    if (getPackTypeFurther != null) {
+        packTypeFurther.value = getPackTypeFurther;
+    }
+
+    function storePackTypeFurther() {
+        localStorage.setItem("pack-type-further", packTypeFurther.value);
+
+        if (summaryPage) {
+            continueButton.href = "../product/product-summary";
+        } else {
+            continueButton.href = "pack-subpack";
+        }
+    }
+    if (getPackSize != null) {
+         heading.innerHTML = 'Detail the full UOM for the ' + getPackSize + ' pack';
+       }
 }
 
 // should display subpack info?

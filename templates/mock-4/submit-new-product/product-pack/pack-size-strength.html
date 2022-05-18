@@ -33,9 +33,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     <label class="nhsuk-label" for="pack-type">
       UOM
     </label>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="uom-hint">
-      If the size of the UOM is required, choose your selection and proceed to the next step. If the UOM you require does not appear, choose &#39;other&#39;.
-    </div>
+
     <select class="nhsuk-select" id="pack-type" name="type">
       <option value=""></option>
       <option value="ampoule">ampoule</option>
@@ -49,6 +47,18 @@ Submit a new product: pack size and strength | Portal | NHSBSA
       <option value="vial">vial</option>
       <option value="other">other</option>
     </select>
+
+    <details class="nhsuk-details nhsuk-u-margin-top-5">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      What to do if the UOM is not listed
+    </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>In addition to the UOM, you may need to display the quantity. For example, instead of 'vial' it should read 'vial 10ml'. If so, select the appropriate UOM and continue to the next stage.</p>
+        <p>If the UOM does not appear choose 'other' and continue to the next stage to capture this.</p>
+      </div>
+    </details>
   </fieldset>
 </div>
 
@@ -69,17 +79,22 @@ window.onload = function() {
     }
 };
 
-<!--let allSelectIds = document.querySelectorAll('select[id]');-->
-<!--let allInputIds = document.querySelectorAll('input[id]');-->
+let allSelectIds = document.querySelectorAll('select[id]');
+let allInputIds = document.querySelectorAll('input[id]');
 
-<!--console.log(allSelectIds);-->
+console.log(allSelectIds);
 
-<!--accessibleAutocomplete.enhanceSelectElement({-->
-<!--            defaultValue: "",-->
-<!--            autoselect: false,-->
-<!--            showAllValues: true,-->
-<!--            selectElement: document.querySelector("#pack-type"),-->
-<!--        });-->
+accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: "",
+            autoselect: false,
+            showAllValues: true,
+            confirmOnBlur: false,
+            showNoOptionsFound: true,
+            selectElement: document.querySelector("#pack-type"),
+        });
+
+   var listBox = document.querySelector("#pack-type__listbox");
+
 </script>
 <script src="/js/newProduct.js"></script>
 

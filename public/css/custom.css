@@ -221,5 +221,9 @@ fill-blue{
     .autocomplete__option--no-results {
       padding: 16px 0; } }
 
+      .display-no-select {
+         display: none;
+      }
+
 
 
