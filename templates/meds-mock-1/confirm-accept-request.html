@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}
+Portal dashboard | Medicines Management design prototype | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="grid-row">
+  <div class="nhsuk-back-link">
+    <a class="nhsuk-back-link__link" href="search-supplier.html">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg"
+           viewBox="0 0 24 24"
+           aria-hidden="true" height="24" width="24">
+        <path
+            d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <span class="nhsuk-caption-l">Pfizer Ltd</span>
+  <h1>
+    Confirm request
+  </h1>
+
+  <h2>Request summary</h2>
+  <dl class="nhsuk-summary-list">
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Name
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        John Smith
+      </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Company
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Pfizer Ltd
+      </dd>
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Email
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        john.smith@pfizer.org
+      </dd>
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        Additional notes
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+      </dd>
+
+    </div>
+
+  </dl>
+  <h2>Extra details</h2>
+  <dl class="nhsuk-summary-list">
+    <div class="nhsuk-summary-list__row">
+      <dt class="nhsuk-summary-list__key">
+        CDR Supplier
+      </dt>
+      <dd class="nhsuk-summary-list__value">
+        Pfizer Ltd
+      </dd>
+      <dd class="nhsuk-summary-list__actions">
+        <a href="search-supplier.html">
+          Change<span class="nhsuk-u-visually-hidden"> CDR Supplier</span>
+        </a>
+      </dd>
+    </div>
+  </dl>
+
+  <div class="nhsuk-grid-row">
+    <a class="nhsuk-button" href="confirmation.html">Confirm</a>
+  </div>
+
+
+</div>
+
+{% endblock %}
