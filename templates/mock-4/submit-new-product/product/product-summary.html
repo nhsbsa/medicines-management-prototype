@@ -522,12 +522,15 @@ console.log(getProductLink);
 
 var getPackSize = localStorage.getItem("pack-size");
 var getPackType = localStorage.getItem("pack-type");
+var getPackFurther = localStorage.getItem("pack-type-further");
 var getPackTypeOther = localStorage.getItem("pack-type-other");
 
-if (getPackType != "other") {
+if (getPackType != "other" && !getPackFurther) {
 document.getElementById("pack-size").innerHTML = getPackSize + ' ' + getPackType;
-} else {
+} else if (getPackType == "other" && !getPackFurther) {
 document.getElementById("pack-size").innerHTML = getPackSize + ' ' + getPackTypeOther;
+} else if (getPackFurther) {
+document.getElementById("pack-size").innerHTML = getPackSize + ' ' + getPackFurther;
 }
 
 if (localStorage.getItem("product-extra-pack") == 'yes' && getPackType != 'other') {
