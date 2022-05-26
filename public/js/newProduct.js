@@ -900,6 +900,10 @@ var radioUsageButtons = document.getElementsByName("data-usage");
 
 if (radioUsageButtons.length != 0) {
 
+    if (getPackSize != null) {
+    heading.innerHTML = 'Is this ' + getPackSize + ' pack to be used in hospitals only';
+    }
+
     if (getProductHospUsage != null) {
         for (var radio of radioUsageButtons) {
             if (getProductHospUsage === radio.value) {
