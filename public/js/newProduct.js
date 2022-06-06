@@ -1,15 +1,5 @@
 console.log(localStorage);
 
-
-function testFun() {
-globalScopeVariable = "hello world";
-}
-
-let globalScopeVariable = "Goodbye";
-
-console.log(testFun());
-
-
 var summaryPage = localStorage.getItem("summary-page");
 var getPackShdDisPrice = localStorage.getItem("pack-should-display-price");
 var getPackTwoShdDisPrice = localStorage.getItem("pack-2-should-display-price");
@@ -874,6 +864,10 @@ var radioLegalButtons = document.getElementsByName("data-legal-cat");
 
 if (radioLegalButtons.length != 0) {
 
+if (getPackSize != null) {
+    heading.innerHTML = 'What is the legal category of the ' + getPackSize + ' pack?';
+    }
+
     if (getProductLegalCat != null) {
         for (var radio of radioLegalButtons) {
             if (getProductLegalCat === radio.value) {
@@ -894,36 +888,37 @@ if (radioLegalButtons.length != 0) {
                 }
 }
 
-// hospital yes/no
+ // hospital yes/no extra pack
 
-var radioUsageButtons = document.getElementsByName("data-usage");
+ var radioUsageButtons = document.getElementsByName("data-usage");
+ var getProductHospUsage = localStorage.getItem("product-hospital-only");
 
-if (radioUsageButtons.length != 0) {
+ if (radioUsageButtons.length != 0) {
 
-    if (getPackSize != null) {
-    heading.innerHTML = 'Is this ' + getPackSize + ' pack to be used in hospitals only';
-    }
+     if (getPackSize != null) {
+     heading.innerHTML = 'Is this ' + getPackSize + ' pack to be used in hospitals only';
+     }
 
-    if (getProductHospUsage != null) {
-        for (var radio of radioUsageButtons) {
-            if (getProductHospUsage === radio.value) {
-                radio.checked = true;
-            }
-        }
-    };
+     if (getProductHospUsage != null) {
+         for (var radio of radioUsageButtons) {
+             if (getProductHospUsage === radio.value) {
+                 radio.checked = true;
+             }
+         }
+     };
 
-    function storeUsage() {
+     function storeUsage() {
 
-        for (var radio of radioUsageButtons) {
-            if (radio.checked) {
-                localStorage.setItem("product-hospital-only", radio.value);
-            }
-            if (summaryPage) {
-                buttonLink.href = "product-summary";
-            }
-        }
-    }
-}
+         for (var radio of radioUsageButtons) {
+             if (radio.checked) {
+                 localStorage.setItem("product-hospital-only", radio.value);
+             }
+             if (summaryPage) {
+                 buttonLink.href = "product-summary";
+             }
+         }
+     }
+ }
 
 // pack size (second pack)
 
@@ -1416,6 +1411,69 @@ function storeExtraPackShouldDisplayPrice() {
              localStorage.setItem("product-2-price-confirm", radio.value);
              if (radio.value == 'no') {
                  buttonLink.href = "product-2-price";
+             }
+         }
+     }
+ }
+
+ // legal category pack 2
+
+ var radioLegalButtonsExtra = document.getElementsByName("data-legal-cat-extra");
+ var getProductLegalCatExtra = localStorage.getItem("pack-2-legal-category");
+
+ if (radioLegalButtonsExtra.length != 0) {
+
+ if (getExtraPackSize != null) {
+     heading.innerHTML = 'What is the legal category of the ' + getExtraPackSize + ' pack?';
+     }
+
+     if (getProductLegalCatExtra != null) {
+         for (var radio of radioLegalButtonsExtra) {
+             if (getProductLegalCatExtra === radio.value) {
+                 radio.checked = true;
+             }
+         }
+       }
+     };
+
+     function storeLegalCategoryExtra() {
+         for (var radio of radioLegalButtonsExtra) {
+                   if (radio.checked) {
+                         localStorage.setItem("pack-2-legal-category", radio.value);
+                   }
+                   if (summaryPage) {
+                         buttonLink.href = "../product/product-summary";
+                   }
+                 }
+ }
+
+ // hospital yes/no extra pack
+
+ var radioUsageButtonsExtra = document.getElementsByName("data-usage-extra");
+ var getProductHospUsageExtra = localStorage.getItem("pack-2-hospital-only");
+
+ if (radioUsageButtonsExtra.length != 0) {
+
+     if (getExtraPackSize != null) {
+     heading.innerHTML = 'Is this ' + getExtraPackSize + ' pack to be used in hospitals only';
+     }
+
+     if (getProductHospUsageExtra != null) {
+         for (var radio of radioUsageButtonsExtra) {
+             if (getProductHospUsageExtra === radio.value) {
+                 radio.checked = true;
+             }
+         }
+     };
+
+     function storeUsageExtra() {
+
+         for (var radio of radioUsageButtonsExtra) {
+             if (radio.checked) {
+                 localStorage.setItem("pack-2-hospital-only", radio.value);
+             }
+             if (summaryPage) {
+                 buttonLink.href = "../product/product-summary";
              }
          }
      }
