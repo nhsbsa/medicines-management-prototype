@@ -11,20 +11,20 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
       </svg>
       Go back</a>
   </div>
-  <span class="nhsuk-caption-l">Pfizer Ltd</span>
-  <h1>
-    Link CDR Supplier
-  </h1>
-
-
-  <p>In order to add a company to the service, they need to be linked to a supplier on CDR in order to be able
-    to manage the correct products.</p>
 
   <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="search-input">
-      Search
-    </label>
-    <input class="nhsuk-input" id="search-input" name="search-input" type="text" value="Pfizer">
+    <h1 class="nhsuk-label-wrapper">
+      <span class="nhsuk-caption-l">Pfizer Ltd</span>
+      <label class="nhsuk-label nhsuk-label--l" for="example-heading">
+        Link Common Drug Reference (CDR) Supplier
+      </label>
+    </h1>
+    <div class="nhsuk-hint" id="example-with-hint-text-hint">
+      In order to add a company to the service, they need to be linked to a supplier on the Common Drug Reference (CDR)
+      in order to be able
+      to manage the correct products. Use the input below to search for suppliers.
+    </div>
+    <input class="nhsuk-input" id="example-heading" name="example-heading" type="text">
   </div>
 
   <a class="nhsuk-button" href="search-supplier-results.html">Search</a>
@@ -39,12 +39,14 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
     <p>In the context of this prototype, the option 'Pfizer Ltd' has already been linked in the system
       so the journey should result in being redirected to the 'Already linked' page.</p>
   </div>
+
+
   <table class="nhsuk-table">
     <caption class="nhsuk-table__caption">CDR Suppliers</caption>
     <thead role="rowgroup" class="nhsuk-table__head">
     <tr role="row">
       <th role="columnheader" class="" scope="col">
-        Supplier Name
+        Supplier name
       </th>
       <th role="columnheader" class="" scope="col">
         Link
