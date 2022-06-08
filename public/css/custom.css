@@ -225,5 +225,158 @@ fill-blue{
          display: none;
       }
 
+    .js-table-sortable .sorting-asc:after, .js-table-sortable .sorting-desc:after
+    	{
+    	margin-left: 4px;
+    	position: absolute;
+    }
+
+    .js-table-sortable .sorting-desc:after {
+    	content: '▼';
+    }
+
+    .js-table-sortable .sorting-desc:after {
+        	content: '▼';
+        }
+
+    .js-table-sortable .sortable {
+    	-moz-user-select: -moz-none;
+    	-ms-user-select: none;
+    	-webkit-user-select: none;
+    	user-select: none;
+    	cursor: pointer;
+    	position: relative;
+    }
+
+    .link, .js-table-sortable .sortable {
+    	color: #005ea5;
+    }
+
+/*
+    .js-table-sortable .sortable:before {
+        	    content: " ▼";
+              position: absolute;
+              right: -1px;
+              top: 9px;
+              font-size: .5em;
+        }
+
+        .js-table-sortable .sortable:after {
+                	   content: " ▲";
+                     position: absolute;
+                     right: -1px;
+                     top: 1px;
+                     font-size: .5em;
+                }
+                */
+
+    .js-table-sortable .sorting-asc:after {
+    	content: '▲';
+    }
+
+    .sortAble {
+    	content: '▼';
+    }
 
 
+/* from MOJ */
+
+[aria-sort] button,
+[aria-sort] button:hover {
+  background-color: transparent;
+  border-width: 0;
+  -webkit-box-shadow: 0 0 0 0;
+  -moz-box-shadow: 0 0 0 0;
+  box-shadow: 0 0 0 0;
+  color: #005ea5;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0 10px 0 0;
+  position: relative;
+  text-align: inherit;
+  font-size: 1em;
+  margin: 0;
+}
+
+[aria-sort] button:focus {
+      background-color: #fd0;
+      color: #0b0c0c;
+      box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+      outline: none;
+}
+
+[aria-sort]:first-child button {
+  right: auto;
+}
+
+[aria-sort] button:before {
+  content: " \25bc";
+  position: absolute;
+  right: -1px;
+  top: 9px;
+  font-size: 0.5em;
+}
+
+[aria-sort] button:after {
+  content: " \25b2";
+  position: absolute;
+  right: -1px;
+  top: 1px;
+  font-size: 0.5em;
+}
+
+[aria-sort="ascending"] button:before,
+[aria-sort="descending"] button:before {
+  content: none;
+}
+
+[aria-sort="ascending"] button:after {
+  content: " \25b2";
+  font-size: .8em;
+  position: absolute;
+  right: -5px;
+  top: 2px;
+}
+
+[aria-sort="descending"] button:after {
+  content: " \25bc";
+  font-size: .8em;
+  position: absolute;
+  right: -5px;
+  top: 2px;
+}
+
+@media (min-width: 48.0525em) {
+.row-max {
+    max-width: 250px;
+    }
+.show-mobile {
+    display: none !important;
+   }
+ .js-enabled .assistive-table-hint {
+    display: block;
+ }
+}
+
+.govuk-visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+}
+
+@media (min-width: 48.0625em) and (max-width: 58.0525em) {
+.nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td {
+    padding-right: 4px !important;
+    text-align: left !important;
+   }
+}
