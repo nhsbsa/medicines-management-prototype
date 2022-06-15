@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}
+Design prototype medicines management | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link">
+    <a class="nhsuk-back-link__link" href="companyType.html">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back</a>
+</div>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <form>
+
+            <div class="nhsuk-form-group">
+
+                <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+                        <h1 class="nhsuk-fieldset__heading">
+                            <span class="nhsuk-caption-l">Register Company Access</span>
+                            Please select the product types which your company holds
+                        </h1>
+                    </legend>
+
+                    <div class="nhsuk-hint" id="contact-hint">
+                        Select at least one option.
+                    </div>
+
+                    <div class="nhsuk-checkboxes">
+
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+                                Licensed
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-2">
+                                Unlicensed
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-3">
+                                Parallel Imports
+                            </label>
+                        </div>
+
+                        <div class="nhsuk-checkboxes__item">
+                            <input class="nhsuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="text message">
+                            <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-3">
+                                Appliances
+                            </label>
+                        </div>
+
+                    </div>
+                </fieldset>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <a class="nhsuk-button" href="email">Continue</a>
+    </div>
+</div>
+
+{% endblock %}
