@@ -49,10 +49,22 @@ gulp.task('moj-toolkit-install-js', () => {
   .pipe(gulp.dest('./public/js'));
 });
 
+gulp.task('gov-toolkit-install-scss', () => {
+  return gulp.src('node_modules/govuk-frontend/govuk/all.scss')
+  .pipe(rename("gov.min.scss"))
+  .pipe(gulp.dest('./public/css'));
+});
+
 gulp.task('moj-toolkit-install-scss', () => {
   return gulp.src('node_modules/@ministryofjustice/frontend/moj/all.scss')
   .pipe(rename("moj.min.scss"))
   .pipe(gulp.dest('./public/css'));
+});
+
+gulp.task('gov-toolkit-install-js', () => {
+  return gulp.src('node_modules/govuk-frontend/govuk/all.js')
+  .pipe(rename("gov.min.js"))
+  .pipe(gulp.dest('./public/js'));
 });
 
 gulp.task('nhs-toolkit-install-js', () => {
@@ -82,7 +94,7 @@ gulp.task('nhs-toolkit-install-logos', () => {
   .pipe(gulp.dest('./public/images/logos/'));
 });
 
-gulp.task('nhs-toolkit-install', gulp.series('moj-toolkit-install-js', 'moj-toolkit-install-scss', 'nhs-toolkit-install-js', 'nhs-toolkit-install-css', 'nhs-toolkit-install-favicons', 'nhs-toolkit-install-icons', 'nhs-toolkit-install-logos'));
+gulp.task('nhs-toolkit-install', gulp.series('moj-toolkit-install-js', 'moj-toolkit-install-scss', 'gov-toolkit-install-scss', 'gov-toolkit-install-js', 'nhs-toolkit-install-js', 'nhs-toolkit-install-css', 'nhs-toolkit-install-favicons', 'nhs-toolkit-install-icons', 'nhs-toolkit-install-logos'));
 
 // BrowserSync task:
 // calls nodemon tasks and pass itself as callback
@@ -92,6 +104,6 @@ gulp.task('browser-sync', () => {
   browserSync.init({proxy: 'localhost:8080/',});
 });
 
-gulp.task('build', gulp.series(['install-jquery', 'nhs-toolkit-install']));
+gulp.task('build', gulp.series(['install-jquery', 'nhs-toolkit-install', 'gov-toolkit-install-scss']));
 gulp.task('default', gulp.series(['build', 'nodemon']));
 gulp.task('watch', gulp.series(['build', 'nodemon', 'browser-sync']));

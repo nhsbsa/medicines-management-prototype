@@ -162,7 +162,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
   <div class="nhsuk-summary-list__row" >
     <dt class="nhsuk-summary-list__key">
-      Pack GTIN code
+      Pack GTIN
     </dt>
     <dd class="nhsuk-summary-list__value" id="pack-gtin">
     </dd>
@@ -170,7 +170,7 @@ Submit a new product: product summary | Portal | NHSBSA
     <dd class="nhsuk-summary-list__actions">
 
       <a href="../product-pack/pack-gtin">
-        Change<span class="nhsuk-u-visually-hidden">&nbsp;pack GTIN code</span>
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;pack GTIN</span>
       </a>
 
     </dd>
@@ -351,7 +351,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
   <div class="nhsuk-summary-list__row" >
     <dt class="nhsuk-summary-list__key">
-      Pack GTIN code
+      Pack GTIN
     </dt>
     <dd class="nhsuk-summary-list__value" id="pack-2-gtin">
     </dd>
@@ -359,7 +359,7 @@ Submit a new product: product summary | Portal | NHSBSA
     <dd class="nhsuk-summary-list__actions">
 
       <a href="../product-pack-extra/pack-2-gtin">
-        Change<span class="nhsuk-u-visually-hidden">&nbsp;pack GTIN code</span>
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;pack GTIN</span>
       </a>
 
     </dd>
@@ -586,7 +586,22 @@ var getPackSubpackExtra = localStorage.getItem("pack-subpack-extra");
 document.getElementById("pack-subpack-extra").innerHTML = getPackSubpackExtra
 
 var getGtin = localStorage.getItem("pack-gtin");
-document.getElementById("pack-gtin").innerHTML = getGtin;
+var getGtin2 = localStorage.getItem("pack-gtin-2");
+var getGtin3 = localStorage.getItem("pack-gtin-3");
+
+var gtinArray = [];
+
+gtinArray.push(getGtin, getGtin2, getGtin3);
+
+var filteredGtin = gtinArray.filter(function (el) {
+return el != null;
+});
+
+for (let i = 0; i < filteredGtin.length; i++) {
+var splitUpGtin = filteredGtin[i].split("\\");
+var gtinForm = splitUpGtin[splitUpGtin.length - 1] + "<br>";
+document.getElementById("pack-gtin").innerHTML += gtinForm;
+}
 
 var notAwaitingArtwork = localStorage.getItem("pack-should-display-artwork");
 document.getElementById("pack-has-artwork").innerHTML = notAwaitingArtwork;
@@ -694,12 +709,30 @@ document.getElementById("pack-2-subpack-extra").innerHTML = getPack2SubpackExtra
 document.getElementById("pack-2-subpack-extra").style["display"] = "none";
 }
 
-var get2Gtin = localStorage.getItem("pack-2-gtin");
-if (get2Gtin != null) {
-document.getElementById("pack-2-gtin").innerHTML = get2Gtin;
-} else {
-document.getElementById("pack-2-gtin").style["display"] = "none";
+var getExtraGtin = localStorage.getItem("pack-2-gtin");
+var getExtraGtin2 = localStorage.getItem("pack-2-gtin-2");
+var getExtraGtin3 = localStorage.getItem("pack-2-gtin-3");
+
+var gtinExtraArray = [];
+
+gtinExtraArray.push(getExtraGtin, getExtraGtin2, getExtraGtin3);
+
+var filteredExtraGtin = gtinExtraArray.filter(function (el) {
+return el != null;
+});
+
+for (let i = 0; i < filteredExtraGtin.length; i++) {
+var splitUpExtraGtin = filteredExtraGtin[i].split("\\");
+var gtinExtraForm = splitUpExtraGtin[splitUpExtraGtin.length - 1] + "<br>";
+document.getElementById("pack-2-gtin").innerHTML += gtinExtraForm;
 }
+
+<!--var get2Gtin = localStorage.getItem("pack-2-gtin");-->
+<!--if (get2Gtin != null) {-->
+<!--document.getElementById("pack-2-gtin").innerHTML = get2Gtin;-->
+<!--} else {-->
+<!--document.getElementById("pack-2-gtin").style["display"] = "none";-->
+<!--}-->
 
 var notAwaiting2Artwork = localStorage.getItem("pack-2-should-display-artwork");
 var get2Artwork = localStorage.getItem("pack-2-upload-artwork");

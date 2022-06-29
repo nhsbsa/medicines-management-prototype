@@ -444,8 +444,21 @@ var packGtin = document.getElementById("pack-gtin");
 if (packGtin) {
 
     function storeGtin() {
+
         var packGtin = document.getElementById("pack-gtin");
         localStorage.setItem("pack-gtin", packGtin.value);
+
+        var packGtin2 = document.getElementById("pack-gtin-2");
+        localStorage.setItem("pack-gtin-2", packGtin2.value);
+        if (packGtin2.value == ""){
+        localStorage.removeItem("pack-gtin-2");
+        }
+
+        var packGtin3 = document.getElementById("pack-gtin-3");
+        localStorage.setItem("pack-gtin-3", packGtin3.value);
+        if (packGtin3.value == ""){
+        localStorage.removeItem("pack-gtin-3");
+        }
 
         if (summaryPage) {
             buttonLink.href = "../product/product-summary";
@@ -458,6 +471,20 @@ if (packGtin) {
     var packGt = document.querySelector("#pack-gtin");
     if (getPackGtin != null) {
         packGt.defaultValue = getPackGtin;
+    }
+
+    var getPackGtin2 = localStorage.getItem("pack-gtin-2");
+
+    var packGt2 = document.querySelector("#pack-gtin-2");
+    if (getPackGtin2 != null) {
+        packGt2.defaultValue = getPackGtin2;
+    }
+
+    var getPackGtin3 = localStorage.getItem("pack-gtin-3");
+
+    var packGt3 = document.querySelector("#pack-gtin-3");
+    if (getPackGtin3 != null) {
+        packGt3.defaultValue = getPackGtin3;
     }
 
     if (getPackSize != null) {
@@ -1000,24 +1027,56 @@ function storeHasExtraPackSubpack() {
 
      var extraPackGtin = document.getElementById("extra-pack-gtin");
 
-     if (extraPackGtin) {
+if (extraPackGtin) {
 
-function storeExtraPackGtin(){
-     localStorage.setItem("pack-2-gtin", extraPackGtin.value);
-     if (summaryPage && getExtraPackShdDisPrice) {
-       buttonLink.href = "../product/product-summary";
-     }
+    function storeExtraPackGtin() {
+
+        var extraPackGtin = document.getElementById("extra-pack-gtin");
+        localStorage.setItem("pack-2-gtin", extraPackGtin.value);
+
+        var extraPackGtin2 = document.getElementById("extra-pack-gtin-2");
+        localStorage.setItem("pack-2-gtin-2", extraPackGtin2.value);
+        if (extraPackGtin2.value == ""){
+        localStorage.removeItem("pack-2-gtin-2");
+        }
+
+        var extraPackGtin3 = document.getElementById("extra-pack-gtin-3");
+        localStorage.setItem("pack-2-gtin-3", extraPackGtin3.value);
+        if (extraPackGtin3.value == ""){
+        localStorage.removeItem("pack-2-gtin-3");
+        }
+
+        if (summaryPage) {
+            buttonLink.href = "../product/product-summary";
+        }
     }
 
-var getExtraPackGtin = localStorage.getItem("pack-2-gtin");
+    var getExtraPackGtin = localStorage.getItem("pack-2-gtin");
 
-if (getExtraPackGtin != null) {
-extraPackGtin.defaultValue = getExtraPackGtin;
-}
 
-if (getExtraPackSize != null) {
-heading.innerHTML = 'What is the GTIN code of the ' + getExtraPackSize + ' pack?';
-}
+    var extraPackGt = document.querySelector("#extra-pack-gtin");
+    if (getExtraPackGtin != null) {
+        extraPackGt.defaultValue = getExtraPackGtin;
+    }
+
+    var getExtraPackGtin2 = localStorage.getItem("pack-2-gtin-2");
+
+    var extraPackGt2 = document.querySelector("#extra-pack-gtin-2");
+    if (getExtraPackGtin2 != null) {
+        extraPackGt2.defaultValue = getExtraPackGtin2;
+    }
+
+    var getExtraPackGtin3 = localStorage.getItem("pack-2-gtin-3");
+
+    var extraPackGt3 = document.querySelector("#extra-pack-gtin-3");
+    if (getExtraPackGtin3 != null) {
+        extraPackGt3.defaultValue = getExtraPackGtin3;
+    }
+
+    if (getPackSize != null) {
+        heading.innerHTML = 'What is the GTIN code of the ' + getPackSize + ' pack?';
+    }
+
 }
 
 // require artwork? (second pack)

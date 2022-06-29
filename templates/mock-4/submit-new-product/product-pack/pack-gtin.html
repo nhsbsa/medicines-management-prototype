@@ -13,24 +13,57 @@ Submit a new product: pack GTIN code | Portal | NHSBSA
 </div>
 
 <div class="nhsuk-form-group">
-  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+  <fieldset class="nhsuk-fieldset" id="gtin" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading" id="heading">
-        What is the GTIN code of the pack?
+        What is the GTIN of the pack?
       </h1>
     </legend>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
-      A GTIN code contains only numbers. We will accept a 13 or 14 digit GTIN code.
+      A GTIN contains only numbers and we will accept 13 or 14 digit versions. Add one, or more, GTINs as required.
     </div>
 
 
     <label class="nhsuk-label" for="pack-gtin">
-      GTIN code
+      GTIN
     </label>
-    <input class="nhsuk-input nhsuk-u-margin-bottom-2" id="pack-gtin" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 30.8ex;">
+    <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="pack-gtin" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 30.8ex;">
+
+    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0" id="button-group" >
+      <button class="govuk-button secondary-color" id="first-add-button">Add another GTIN</button>
+    </div>
+
+    <div class="hide nhsuk-u-margin-top-2" id="second-gtin">
+    <label class="nhsuk-label" for="pack-gtin-2">
+      GTIN
+    </label>
+      <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="pack-gtin-2" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 30.8ex;">
+
+    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0" id="button-group-2">
+      <button class="govuk-button govuk-button--warning nhsuk-u-margin-right-2 nhsuk-u-margin-bottom-4" id="delete-gtin2-button">Delete GTIN</button>
+      <button class="govuk-button secondary-color" id="second-add-button">Add another GTIN</button>
+    </div>
+    </div>
+
+    <div class="hide" id="third-gtin">
+      <label class="nhsuk-label" for="pack-gtin-2">
+        GTIN
+      </label>
+      <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="pack-gtin-3" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 30.8ex;">
+
+      <div class="nhsuk-form-group nhsuk-u-margin-bottom-0" id="button-group-3">
+        <button class="govuk-button govuk-button--warning nhsuk-u-margin-right-2" id="delete-gtin3-button">Delete GTIN</button>
+        <button class="govuk-button secondary-color" id="third-add-button">Add another GTIN</button>
+      </div>
+    </div>
 
   </fieldset>
 </div>
+
+
+
+
+
 
 <a class="nhsuk-button" onclick="storeGtin()"
    href="pack-require-artwork" id="continue-button"
@@ -38,6 +71,7 @@ Submit a new product: pack GTIN code | Portal | NHSBSA
   Continue
 </a>
 
+<script src="/js/gov.min.js"></script>
 <script>
 window.onload = function() {
     var hasSubpack = localStorage.getItem("pack-subpack");
@@ -46,6 +80,95 @@ window.onload = function() {
     document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to how many subpacks";
     }
 };
+</script>
+<script defer>
+
+        if (localStorage.getItem("pack-gtin-2") && !localStorage.getItem("pack-gtin-3")) {
+        let buttonGroup = document.querySelector("#button-group");
+        let secondGtin = document.querySelector("#second-gtin");
+        secondGtin.classList.remove("hide");
+        buttonGroup.classList.add("hide");
+        } else if (localStorage.getItem("pack-gtin-3") && !localStorage.getItem("pack-gtin-2")) {
+        let buttonGroup = document.querySelector("#button-group");
+        let thirdGtin = document.querySelector("#third-gtin");
+        buttonGroup.classList.add("hide");
+        thirdGtin.classList.remove("hide");
+        } else if (localStorage.getItem("pack-gtin-3") && localStorage.getItem("pack-gtin-2")) {
+        let buttonGroup = document.querySelector("#button-group");
+        let addButton2 = document.querySelector("#second-add-button");
+        let thirdGtin = document.querySelector("#third-gtin");
+        let secondGtin = document.querySelector("#second-gtin");
+        secondGtin.classList.remove("hide");
+        buttonGroup.classList.add("hide");
+        thirdGtin.classList.remove("hide");
+        addButton2.style.display = "none";
+        } else if (!localStorage.getItem("pack-gtin-3") && !localStorage.getItem("pack-gtin-2")) {
+        let buttonGroup = document.querySelector("#button-group");
+        buttonGroup.classList.remove("hide");
+        }
+
+        let addAnotherGtin = document.querySelector("#first-add-button");
+
+        addAnotherGtin.addEventListener("keydown", eventHandler, false);
+        addAnotherGtin.addEventListener("click", eventHandler, false);
+
+        function eventHandler(event) {
+        let buttonGroup = document.querySelector("#button-group");
+        let secondGtin = document.querySelector("#second-gtin");
+        secondGtin.classList.remove("hide");
+        buttonGroup.classList.add("hide");
+        };
+
+        let deleteGtin2 = document.querySelector("#delete-gtin2-button");
+
+        deleteGtin2.addEventListener("keydown", eventHandlerDelete, false);
+        deleteGtin2.addEventListener("click", eventHandlerDelete, false);
+
+        function eventHandlerDelete(event) {
+        let buttonGroup = document.querySelector("#button-group");
+        let secondGtin = document.querySelector("#second-gtin");
+        let packGtin2Input = document.querySelector("#pack-gtin-2");
+        let packGtin3Input = document.querySelector("#pack-gtin-3");
+        secondGtin.classList.add("hide");
+        packGtin2Input.value = "";
+        if (packGtin3Input.value != "" || packGtin3Input.value != "") {
+        let buttonGroup = document.querySelector("#button-group");
+        buttonGroup.classList.add("hide");
+        } else {
+        buttonGroup.classList.remove("hide");
+        }
+        };
+
+        let addAThirdGtin = document.querySelector("#second-add-button");
+
+        addAThirdGtin.addEventListener("keydown", eventHandlerAdd, false);
+        addAThirdGtin.addEventListener("click", eventHandlerAdd, false);
+
+        function eventHandlerAdd(event) {
+        let addButton2 = document.querySelector("#second-add-button");
+        let thirdGtin = document.querySelector("#third-gtin");
+        thirdGtin.classList.remove("hide");
+        addButton2.style.display = "none";
+        };
+
+        let deleteGtin3 = document.querySelector("#delete-gtin3-button");
+
+        deleteGtin3.addEventListener("keydown", eventHandlerDeleteLast, false);
+        deleteGtin3.addEventListener("click", eventHandlerDeleteLast, false);
+
+        function eventHandlerDeleteLast(event) {
+        let addButton2 = document.querySelector("#second-add-button");
+        let thirdGtin = document.querySelector("#third-gtin");
+        let packGtin3Input = document.querySelector("#pack-gtin-3");
+        let packGtin2Input = document.querySelector("#pack-gtin-2");
+        addButton2.style.display = "inline-block";
+        thirdGtin.classList.add("hide");
+        packGtin3Input.value = "";
+        if (packGtin2Input.value == "") {
+        let buttonGroup = document.querySelector("#button-group");
+        buttonGroup.classList.remove("hide");
+        }
+        };
 
 </script>
 <script src="/js/newProduct.js"></script>
