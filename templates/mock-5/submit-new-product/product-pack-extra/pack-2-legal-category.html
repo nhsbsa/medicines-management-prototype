@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: legal category | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="product-reason-no-price" id="back-link">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to reason for no price</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading" id="heading">
+        What is the legal category of the pack?
+      </h1>
+    </legend>
+
+    <!--    <label class="nhsuk-label" for="product-legal-category">-->
+    <!--      Legal Category-->
+    <!--    </label>-->
+    <!--    <select class="nhsuk-select" id="product-legal-category" name="presentation">-->
+    <!--      <option value="-"> - </option>-->
+    <!--      <option value="General Sale">General Sales List (GSL)</option>-->
+    <!--      <option value="Pharmacist">Pharmacist / over the counter</option>-->
+    <!--      <option value="Prescription Only Medicine">Prescription Only Medicine</option>-->
+    <!--      <option value="Unlicensed">Unlicensed</option>-->
+    <!--    </select>-->
+
+    <div class="nhsuk-hint" id="reason-hint">
+      Select one option
+    </div>
+
+    <div class="nhsuk-radios" id="data-legal-cat-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-pom" name="data-legal-cat-extra" type="radio" value="POM (Prescription Only Medicine)" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-pom">
+          POM (Prescription Only Medicine)
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-p" name="data-legal-cat-extra" type="radio" value="P (Pharmacy Only)" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-p">
+          P (Pharmacy Only)
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-gsl" name="data-legal-cat-extra" type="radio" value="GSL (General Sales List)" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-gsl">
+          GSL (General Sales List)
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-na" name="data-legal-cat-extra" type="radio" value="Not applicable" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-na">
+          Not applicable
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeLegalCategoryExtra()"
+   href="pack-2-usage" id="continue-button"
+   type="submit">
+  Continue
+</a>
+<script src="/js/newProduct.js"></script>
+<!---->
+<script>
+window.onload = function() {
+    var hasPrice = localStorage.getItem("pack-2-should-display-price");
+    var priceToNumber = parseInt(localStorage.getItem("product-2-price"));
+
+    if (hasPrice == 'yes') {
+    document.getElementById("back-link").setAttribute('href', "product-2-price");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to product price";
+    }
+    if (priceToNumber >= 100) {
+    document.getElementById("back-link").setAttribute('href', "product-2-price-confirm");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to confirm price";
+    }
+};
+</script>
+{% endblock %}
+
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Supplier submissions hub | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="product-presentation">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to product presentation</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+      <h1 class="nhsuk-fieldset__heading">
+        Upload the SPC or Data Sheet?
+      </h1>
+    </legend>
+    <div class="nhsuk-hint" id="contact-hint">
+      File upload can be in Word or PDF formats only. The maximum size is 5 megabytes (MB).
+    </div>
+    <div class="nhsuk-radios nhsuk-radios--conditional">
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="link" name="link" type="radio" value="link" aria-controls="conditional-contact-1" aria-expanded="false">
+        <label class="nhsuk-label nhsuk-radios__label" for="link">
+          Link
+        </label>
+      </div>
+      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="link-url">
+            url
+          </label>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="link-url" name="link-url" type="text">
+        </div>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="upload" name="link" type="radio" value="upload" />
+        <label class="nhsuk-label nhsuk-radios__label" for="upload">
+          Upload
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-5" onclick="store()"
+   id="continue-button"
+   href="product-no-spc"
+   type="submit">
+  Continue
+</a>
+
+<script>
+
+/**
+ * Get an array of an HTML elements classes
+ * @param {HTMLElement} element
+ * @returns {string[]} string array of class names
+*/
+ const getClasses = (element) => {
+  // Return without error if element or class are missing
+  if (!element) return [];
+  return element.className.split(' ').filter(Boolean);
+};
+
+/**
+ * Does a class exist on an element
+ * @param {HTMLElement} element
+ * @returns {Boolean} true if element has class
+*/
+ const hasClass = (element, className) => {
+  // Return without error if element or class are missing
+  if (!element || !className) return false;
+  return getClasses(element).includes(className);
+};
+
+/**
+ * Remove a class on a HTML element
+ * @param {HTMLElement} element
+ * @param {string} className
+*/
+ const removeClass = (element, className) => {
+  // Return without error if element or class are missing
+  if (!element || !className) return;
+  if (hasClass(element, className)) {
+    // Array of all existing classes
+    const existingClasses = getClasses(element, className);
+    // String of existing classes minus the class to remove
+    const newClasses = existingClasses.filter((existingClass) => existingClass !== className).join(' ');
+    // Set class attribute to the new classes
+    element.setAttribute('class', newClasses);
+  }
+};
+
+/**
+ * Add a class on a HTML element
+ * @param {HTMLElement} element
+ * @param {string} className
+*/
+ const addClass = (element, className) => {
+  // Return without error if element or class are missing
+  if (!element || !className) return;
+  if (!hasClass(element, className)) {
+    // Set class attribute to the new classes
+    element.setAttribute('class', `${element.className} ${className}`.trim());
+  }
+};
+
+/**
+ * Toggle a class on a HTML element
+ * @param {HTMLElement} element
+ * @param {string} className
+*/
+ const toggleClass = (element, className) => {
+  if (!element || !className) return;
+  if (hasClass(element, className)) {
+    removeClass(element, className);
+  } else {
+    addClass(element, className);
+  }
+};
+
+/**
+ * Toggle a boolean attribute on a HTML element
+ * @param {HTMLElement} element
+ * @param {string} attr
+*/
+ const toggleAttribute = (element, attr) => {
+  // Return without error if element or attr are missing
+  if (!element || !attr) return;
+  // Toggle attribute value. Treat no existing attr same as when set to false
+  const value = (element.getAttribute(attr) === 'true') ? 'false' : 'true';
+  element.setAttribute(attr, value);
+};
+
+/**
+ * Toggle a toggle a class on conditional content for an input based on checked state
+ * @param {HTMLElement} input input element
+ * @param {string} className class to toggle
+*/
+ const toggleConditionalInput = (input, className) => {
+  // Return without error if input or class are missing
+  if (!input || !className) return;
+  // If the input has conditional content it had a data-aria-controls attribute
+  const conditionalId = input.getAttribute('aria-controls');
+  if (conditionalId) {
+    // Get the conditional element from the input data-aria-controls attribute
+    const conditionalElement = document.getElementById(conditionalId);
+    if (conditionalElement) {
+      toggleClass(conditionalElement, className);
+      toggleAttribute(input, 'aria-expanded');
+    }
+  }
+};
+
+
+const radioInputs = document.querySelectorAll('.nhsuk-radios--conditional .nhsuk-radios__input');
+  // All conditional content inside a conditional form group
+  const conditionalInputs = document.querySelectorAll('.nhsuk-radios--conditional .nhsuk-radios__conditional');
+
+<!--  // Add event listener to every radio button-->
+  Array.prototype.slice.call(radioInputs).forEach((radioButton) => {
+    radioButton.addEventListener('change', (e) => {
+    console.log('e', e);
+<!--      // Hide all conditional content on all input clicks-->
+      radioInputs.forEach((input) => input.setAttribute('aria-expanded', 'false'));
+
+      Array.prototype.slice.call(conditionalInputs).forEach((input) => addClass(input, 'nhsuk-radios__conditional--hidden'));
+<!--      // Toggle conditional content based on checked state-->
+      toggleConditionalInput(e.target, 'nhsuk-radios__conditional--hidden');
+       console.log('e.target', e.target)
+    });
+
+  });
+
+var radioButtons = document.getElementsByName("link");
+
+var getProductLink = localStorage.getItem("product-link-upload");
+
+if (getProductLink != null) {
+for (var radio of radioButtons) {
+if (getProductLink === radio.value) {
+     radio.checked = true;
+            }
+          }
+      };
+
+      console.log(localStorage);
+
+
+function store() {
+  var radioButtons = document.getElementsByName("link");
+  var buttonLink = document.getElementById("continue-button");
+
+  for (var radio of radioButtons) {
+      if (radio.checked) {
+          localStorage.setItem("product-link-upload", radio.value);
+         if (localStorage.getItem("product-link-upload") == 'upload') {
+          buttonLink.href = "product-summary";
+          }
+        }
+     }
+  }
+
+
+</script>
+{% endblock %}
+
+
