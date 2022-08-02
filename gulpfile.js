@@ -101,7 +101,7 @@ gulp.task('nhs-toolkit-install', gulp.series('moj-toolkit-install-js', 'moj-tool
 gulp.task('browser-sync', () => {
   watch(['./templates/**/*'], (done) => {gulp.series(['reload'])(done)});
   watch(['./public/**/*'], (done) => {gulp.series(['reload'])(done)});
-  browserSync.init({proxy: 'localhost:8080/',});
+  browserSync.init({proxy: 'localhost:3000/',port: 3002});
 });
 
 gulp.task('build', gulp.series(['install-jquery', 'nhs-toolkit-install', 'gov-toolkit-install-scss']));
