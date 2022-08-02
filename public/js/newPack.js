@@ -309,7 +309,7 @@ if (packTy) {
         var packType = document.getElementById("pack-type");
         localStorage.setItem("pack-type", packType.value);
 
-        if (packType.value == "other") {
+        /*if (packType.value == "other") {
             continueButton.setAttribute('href', "pack-strength-other");
         } else if (packType.value == "ampoule" || packType.value == "bottle" || packType.value == "dose" || packType.value == "vial") {
             continueButton.setAttribute('href', "pack-strength-further");
@@ -318,7 +318,7 @@ if (packTy) {
         }
         if (packType.value != "ampoule" && packType.value != "bottle" && packType.value != "dose" && packType.value != "vial" && packType.value != "other" && summaryPage) {
             continueButton.href = "../product/product-summary";
-        }
+        }*/
     }
 }
 
