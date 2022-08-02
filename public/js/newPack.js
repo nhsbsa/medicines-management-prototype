@@ -805,7 +805,7 @@ if (radioShouldDisplayPriceButtons.length != 0) {
             if (radio.checked) {
                 localStorage.setItem("pack-should-display-price", radio.value);
                 if (radio.value == 'yes') {
-                    buttonLink.href = "product-price";
+                    buttonLink.href = "pack-price";
                 }
             }
         }
@@ -877,7 +877,7 @@ function storeCorrectPriceYesOrNo() {
         if (radio.checked) {
             localStorage.setItem("product-price-confirm", radio.value);
             if (radio.value == 'no') {
-                buttonLink.href = "product-price";
+                buttonLink.href = "pack-price";
             } else if (radio.value == 'yes' && summaryPage) {
                 buttonLink.href = "product-summary";
             }
