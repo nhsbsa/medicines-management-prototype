@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" id="back-link" href="select-product">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back </a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-uom-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        Pack size and unit of measure (UOM)
+      </h1>
+    </legend>
+    <p>
+      For example, 28 tablets has a pack size of 28 and a UOM of tablet.
+    </p>
+
+
+    <label class="nhsuk-label" for="pack-size">
+      Pack size
+    </label>
+    <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="pack-size" name="size" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
+
+    <label class="nhsuk-label" for="pack-type">
+      UOM
+    </label>
+
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-uom-hint">
+    If the UOM does not appear choose 'other' and continue to the next stage to capture this.
+    </div>
+
+    <select class="nhsuk-select" id="pack-type" name="type">
+      <option value=""></option>
+      <option value="ampoule">ampoule</option>
+      <option value="bottle">bottle</option>
+      <option value="capsule">capsule</option>
+      <option value="dose">dose</option>
+      <option value="gram">gram</option>
+      <option value="litre">litre</option>
+      <option value="ml">ml</option>
+      <option value="tablet">tablet</option>
+      <option value="vial">vial</option>
+      <option value="other">other</option>
+    </select>
+
+  </fieldset>
+</div>
+
+<!--<table class="govuk-table" data-module="moj-sortable-table">-->
+
+<!--  <thead class="govuk-table__head">-->
+<!--  <tr class="govuk-table__row">-->
+
+<!--    <th scope="col" class="govuk-table__header" aria-sort="ascending">Name</th>-->
+
+<!--    <th scope="col" class="govuk-table__header" aria-sort="none">Elevation</th>-->
+
+<!--    <th scope="col" class="govuk-table__header" aria-sort="none">Continent</th>-->
+
+<!--    <th scope="col" class="govuk-table__header govuk-table__header&#45;&#45;numeric" aria-sort="none">First summit</th>-->
+
+<!--  </tr>-->
+<!--  </thead>-->
+
+<!--  <tbody class="govuk-table__body">-->
+
+<!--  <tr class="govuk-table__row">-->
+
+<!--    <td class="govuk-table__cell">Aconcagua</td>-->
+
+<!--    <td class="govuk-table__cell" data-sort-value="6961">6,961 meters</td>-->
+
+<!--    <td class="govuk-table__cell">South America</td>-->
+
+<!--    <td class="govuk-table__cell govuk-table__cell&#45;&#45;numeric" data-sort-value="1897">1897</td>-->
+
+<!--  </tr>-->
+
+<!--  <tr class="govuk-table__row">-->
+
+<!--    <td class="govuk-table__cell">Denali</td>-->
+
+<!--    <td class="govuk-table__cell" data-sort-value="6194">6,194 meters</td>-->
+
+<!--    <td class="govuk-table__cell">North America</td>-->
+
+<!--    <td class="govuk-table__cell govuk-table__cell&#45;&#45;numeric" data-sort-value="1913">1913</td>-->
+
+<!--  </tr>-->
+
+<!--  <tr class="govuk-table__row">-->
+
+<!--    <td class="govuk-table__cell">Elbrus</td>-->
+
+<!--    <td class="govuk-table__cell" data-sort-value="5642">5,642 meters</td>-->
+
+<!--    <td class="govuk-table__cell">Europe</td>-->
+
+<!--    <td class="govuk-table__cell govuk-table__cell&#45;&#45;numeric" data-sort-value="1874">1874</td>-->
+
+<!--  </tr>-->
+
+<!--  <tr class="govuk-table__row">-->
+
+<!--    <td class="govuk-table__cell">Everest</td>-->
+
+<!--    <td class="govuk-table__cell" data-sort-value="8850">8,850 meters</td>-->
+
+<!--    <td class="govuk-table__cell">Asia</td>-->
+
+<!--    <td class="govuk-table__cell govuk-table__cell&#45;&#45;numeric" data-sort-value="1953">1953</td>-->
+
+<!--  </tr>-->
+
+<!--  <tr class="govuk-table__row">-->
+
+<!--    <td class="govuk-table__cell">Kilimanjaro</td>-->
+
+<!--    <td class="govuk-table__cell" data-sort-value="5895">5,895 meters</td>-->
+
+<!--    <td class="govuk-table__cell">Africa</td>-->
+
+<!--    <td class="govuk-table__cell govuk-table__cell&#45;&#45;numeric" data-sort-value="1889">1889</td>-->
+
+<!--  </tr>-->
+
+<!--  <tr class="govuk-table__row">-->
+
+<!--    <td class="govuk-table__cell">Puncak Jaya</td>-->
+
+<!--    <td class="govuk-table__cell" data-sort-value="4884">4,884 meters</td>-->
+
+<!--    <td class="govuk-table__cell">Australia</td>-->
+
+<!--    <td class="govuk-table__cell govuk-table__cell&#45;&#45;numeric" data-sort-value="1962">1962</td>-->
+
+<!--  </tr>-->
+
+<!--  <tr class="govuk-table__row">-->
+
+<!--    <td class="govuk-table__cell">Vinson</td>-->
+
+<!--    <td class="govuk-table__cell" data-sort-value="4897">4,897 meters</td>-->
+
+<!--    <td class="govuk-table__cell">Antarctica</td>-->
+
+<!--    <td class="govuk-table__cell govuk-table__cell&#45;&#45;numeric" data-sort-value="1966">1966</td>-->
+
+<!--  </tr>-->
+
+<!--  </tbody>-->
+<!--</table>-->
+
+
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeSizeAndStrength()"
+   href="#" id="continue-button"
+   type="submit">
+  Continue
+</a>
+
+<script>
+/*window.onload = function() {
+    var fileUpload = localStorage.getItem("product-link-upload");
+    if (fileUpload == "upload") {
+    document.getElementById("back-link").setAttribute('href', "../product/product-file-upload-success");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to SmPC or Data Sheet uploaded files";
+    } else {
+    document.getElementById("back-link").href = '../product/product-spc-upload-choice';
+    }
+};*/
+
+let allSelectIds = document.querySelectorAll('select[id]');
+let allInputIds = document.querySelectorAll('input[id]');
+
+console.log(allSelectIds);
+
+accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: "",
+            autoselect: true,
+            showAllValues: true,
+            confirmOnBlur: false,
+            showNoOptionsFound: true,
+            selectElement: document.querySelector("#pack-type"),
+        });
+
+        let parentDiv = document.querySelector("#pack-type").parentNode;
+        let newLabel = document.createElement("label");
+        newLabel.innerHTML = "Company";
+        newLabel.style.display = "none";
+        newLabel.setAttribute("for", document.querySelector("#pack-type-select").id);
+        console.log(newLabel);
+        parentDiv.appendChild(newLabel);
+
+
+</script>
+
+<script src="/js/newPack.js"></script>
+
+{% endblock %}

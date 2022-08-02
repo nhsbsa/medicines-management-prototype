@@ -310,14 +310,7 @@ if (packTy) {
         localStorage.setItem("pack-type", packType.value);
 
         if (packType.value == "other") {
-            continueButton.setAttribute('href', "pack-strength-other");
-        } else if (packType.value == "ampoule" || packType.value == "bottle" || packType.value == "dose" || packType.value == "vial") {
-            continueButton.setAttribute('href', "pack-strength-further");
-        } else if (packType.value != "ampoule" && packType.value != "bottle" && packType.value != "dose" && packType.value != "vial" && packType.value != "other") {
-            localStorage.removeItem("pack-type-further");
-        }
-        if (packType.value != "ampoule" && packType.value != "bottle" && packType.value != "dose" && packType.value != "vial" && packType.value != "other" && summaryPage) {
-            continueButton.href = "../product/product-summary";
+          continueButton.setAttribute('href', "pack-type-other");
         }
     }
 }
@@ -335,12 +328,6 @@ if (packTypeOther) {
 
     function storePackTypeOther() {
         localStorage.setItem("pack-type-other", packTypeOther.value);
-
-        if (summaryPage) {
-            continueButton.href = "../product/product-summary";
-        } else {
-            continueButton.href = "pack-subpack";
-        }
     }
 
     if (getPackSize != null) {
