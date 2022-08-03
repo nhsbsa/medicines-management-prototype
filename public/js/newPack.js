@@ -992,10 +992,10 @@ function storeHasExtraPackSubpack() {
       if (radio.checked) {
           localStorage.setItem("pack-2-subpack", radio.value);
          if (radio.value == 'yes') {
-          buttonLink.href = "pack-2-subpack-extra";
+          buttonLink.href = "subpack-extra-2";
            }
          if (radio.value == 'no' && (summaryPage && getExtraPackShdDisPrice) ) {
-         buttonLink.href = "../product/product-summary"
+         buttonLink.href = "../product-summary"
           }
         }
      }
@@ -1009,7 +1009,7 @@ function storeHasExtraPackSubpack() {
  function storeExtraPackSubpackInfo(){
      localStorage.setItem("pack-2-subpack-extra", extraPackSubpackExtra.value);
         if (summaryPage && getExtraPackShdDisPrice) {
-         buttonLink.href = "../product/product-summary";
+         buttonLink.href = "../product-summary";
         }
      }
 
