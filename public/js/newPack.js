@@ -1047,9 +1047,9 @@ if (extraPackGtin) {
         localStorage.removeItem("pack-2-gtin-3");
         }
 
-        if (summaryPage) {
-            buttonLink.href = "../product/product-summary";
-        }
+        /*if (summaryPage) {
+            buttonLink.href = "../summary";
+        }*/
     }
 
     var getExtraPackGtin = localStorage.getItem("pack-2-gtin");
