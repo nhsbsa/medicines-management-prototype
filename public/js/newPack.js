@@ -934,6 +934,20 @@ if (getPackSize != null) {
      }
  }
 
+  function store() {
+  var radioButtons = document.getElementsByName("data-extra-pack");
+  var buttonLink = document.getElementById("continue-button");
+
+  for (var radio of radioButtons) {
+      if (radio.checked) {
+          localStorage.setItem("product-extra-pack", radio.value);
+          if (radio.value == 'yes') {
+          buttonLink.href = "extra-pack/pack-size-2";
+          }
+        }
+     }
+  }
+
 // pack size (second pack)
 
 var getExtraPackSize = localStorage.getItem("pack-2-size");

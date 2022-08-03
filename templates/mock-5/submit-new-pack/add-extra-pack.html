@@ -35,7 +35,7 @@ Submit a new product: add extra pack? | Portal | NHSBSA
 
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="data-no" name="data-extra-pack" type="radio" value="no" />
-        <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
+        <label class="nhsuk-label nhsuk-radios__label" for="data-no">
           No
         </label>
       </div>
@@ -44,13 +44,13 @@ Submit a new product: add extra pack? | Portal | NHSBSA
   </fieldset>
 </div>
 
-<!--onclick="store()"-->
-
 <a class="nhsuk-button nhsuk-u-margin-top-2"
-   id="continue-button"
+   id="continue-button" onclick="store()"
    href="summary"
    type="submit">
   Continue
 </a>
+
+<script src="/js/newPack.js"></script>
 
 {% endblock %}
