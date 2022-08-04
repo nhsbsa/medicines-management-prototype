@@ -100,9 +100,9 @@ function storeSpcYesOrNo() {
         if (radio.checked) {
             localStorage.setItem("product-spc", radio.value);
             if (radio.value == 'yes' && summaryPage == null) {
-                buttonLink.href = "product-file-upload";
+                buttonLink.href = "pack-file-upload";
             } else if (radio.value == 'no') {
-                buttonLink.href = "product-no-spc";
+                buttonLink.href = "pack-no-spc";
             }
         }
     }
@@ -138,11 +138,11 @@ function storeLinkOrUpload() {
         if (radio.checked) {
             localStorage.setItem("product-link-upload", radio.value);
             if (localStorage.getItem("product-link-upload") == 'upload') {
-                buttonLink.href = "product-file-upload";
+                buttonLink.href = "pack-file-upload";
             }
             if (localStorage.getItem("product-link-upload") == 'link' && summaryPage == null) {
                 localStorage.setItem("product-link-url", inputLink.value);
-                buttonLink.href = "../product-pack/pack-size-strength";
+                buttonLink.href = "pack-size-and-type";
             }
             if (localStorage.getItem("product-link-upload") == 'link' && summaryPage != null) {
                 localStorage.setItem("product-link-url", inputLink.value);
@@ -214,7 +214,7 @@ if (fileSuccess) {
 
     removeFileOne.addEventListener("click", function(e) {
         // e.target was the clicked element
-        removeFileOne.setAttribute('href', "product-file-upload-success");
+        removeFileOne.setAttribute('href', "pack-file-upload-success");
         removeRowOne.style.display = "none";
         localStorage.removeItem("product-upload-file");
 
@@ -239,7 +239,7 @@ if (fileSuccess) {
 
     removeFileTwo.addEventListener("click", function(e) {
         // e.target was the clicked element
-        removeFileTwo.setAttribute('href', "product-file-upload-success");
+        removeFileTwo.setAttribute('href', "pack-file-upload-success");
         removeRowTwo.style.display = "none";
         localStorage.removeItem("product-upload-file-2");
         var itemOne = localStorage.getItem("product-upload-file");
@@ -251,7 +251,7 @@ if (fileSuccess) {
         } else {
             addLink.style.display = "none";
             addAnotherLink.style.display = "block";
-            document.getElementById("go-to-file-2").setAttribute('href', "product-file-upload-2");
+            document.getElementById("go-to-file-2").setAttribute('href', "pack-file-upload-2");
         }
         e.preventDefault();
     });
@@ -260,10 +260,10 @@ if (fileSuccess) {
 
 
     if (getUploadFile != null && getUploadFile2 == null) {
-        document.getElementById("go-to-file-2").setAttribute('href', "product-file-upload-2");
+        document.getElementById("go-to-file-2").setAttribute('href', "pack-file-upload-2");
 
     } else if (getUploadFile == null && getUploadFile2 != null) {
-        document.getElementById("go-to-file-2").setAttribute('href', "product-file-upload");
+        document.getElementById("go-to-file-2").setAttribute('href', "pack-file-upload");
     }
 
     if (getUploadFile == null && getUploadFile2 == null) {

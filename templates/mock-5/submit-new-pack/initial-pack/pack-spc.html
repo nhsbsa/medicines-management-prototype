@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: spc or Data Sheet | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="select-product">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to product name</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        Have you got an authorised SmPC or Data Sheet?
+      </h1>
+    </legend>
+    <div class="nhsuk-hint" id="spc-hint">
+      An authorised SmPC is a summary of product characteristics for licensed medicines with Parts 8 and 9 completed. The product license number needs to begin with PL or PLGB.
+    </div>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
+      A Data Sheet contains product name, ingredients and route (how it is taken) and is for unlicensed medicines.
+    </div>
+
+    <div class="nhsuk-radios" id="data-spc-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-yes" name="data-spc" type="radio" value="yes" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
+          Yes
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-no" name="data-spc" type="radio" value="no" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
+          No
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeSpcYesOrNo()"
+   id="continue-button"
+   href="pack-no-spc"
+   type="submit">
+  Continue
+</a>
+
+<script src="/js/newPack.js"></script>
+
+{% endblock %}
+
+
