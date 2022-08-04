@@ -1106,7 +1106,7 @@ function storeExtraPackRequireArtwork() {
       if (radio.checked) {
           localStorage.setItem("pack-2-should-display-artwork", radio.value);
          if (radio.value == 'yes') {
-          buttonLink.href = "pack-2-artwork";
+          buttonLink.href = "extra-pack-2-artwork";
           }
           if (radio.value == 'no' && (summaryPage && getExtraPackShdDisPrice) ) {
           buttonLink.href = "../product/product-summary";
@@ -1264,7 +1264,7 @@ removeExtraPackRowFour.style.display = "none";
 
 removeExtraPackFileOne.addEventListener("click", function(e) {
 	// e.target was the clicked element
-	removeExtraPackFileOne.setAttribute('href', "pack-2-artwork-upload-success");
+	removeExtraPackFileOne.setAttribute('href', "extra-pack-2-artwork-upload-success");
 	removeExtraPackRowOne.style.display = "none";
 	localStorage.removeItem("pack-2-upload-artwork");
 	var itemTwo = localStorage.getItem("pack-2-upload-artwork-2");
@@ -1279,7 +1279,7 @@ document.getElementById("extra-pack-add-link").style.display = "block";
 } else {
 document.getElementById("extra-pack-add-link").style.display = "none";
 document.getElementById("extra-pack-add-another-link").style.display = "block";
-document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "pack-2-artwork");
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "extra-pack-2-artwork");
 }
 	e.preventDefault();
 
@@ -1287,7 +1287,7 @@ document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "pack-2-
 
 removeExtraPackFileTwo.addEventListener("click", function(e) {
 	// e.target was the clicked element
-	removeExtraPackFileTwo.setAttribute('href', "pack-2-artwork-upload-success");
+	removeExtraPackFileTwo.setAttribute('href', "extra-pack-2-artwork-upload-success");
 	removeExtraPackRowTwo.style.display = "none";
 	localStorage.removeItem("pack-2-upload-artwork-2");
 	var itemOne = localStorage.getItem("pack-2-upload-artwork");
@@ -1301,14 +1301,14 @@ document.getElementById("extra-pack-add-link").style.display = "block";
 } else {
 document.getElementById("extra-pack-add-link").style.display = "none";
 document.getElementById("extra-pack-add-another-link").style.display = "block";
-document.getElementById("extra-pack-go-to-file-2").setAttribute('href',  "pack-2-artwork-2");
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href',  "extra-pack-2-artwork-2");
 }
 	e.preventDefault();
 });
 
 removeExtraPackFileThree.addEventListener("click", function(e) {
 	// e.target was the clicked element
-	removeExtraPackFileThree.setAttribute('href', "pack-2-artwork-upload-success");
+	removeExtraPackFileThree.setAttribute('href', "extra-pack-2-artwork-upload-success");
 	removeExtraPackRowThree.style.display = "none";
 	localStorage.removeItem("pack-2-upload-artwork-3");
 	var itemOne = localStorage.getItem("pack-2-upload-artwork");
@@ -1322,7 +1322,7 @@ document.getElementById("extra-pack-add-link").style.display = "block";
 } else {
 document.getElementById("extra-pack-add-link").style.display = "none";
 document.getElementById("extra-pack-add-another-link").style.display = "block";
-document.getElementById("extra-pack-go-to-file-2").setAttribute('href',  "pack-2-artwork-3");
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href',  "extra-pack-2-artwork-3");
 }
 	e.preventDefault();
 });
@@ -1330,7 +1330,7 @@ document.getElementById("extra-pack-go-to-file-2").setAttribute('href',  "pack-2
 
 removeExtraPackFileFour.addEventListener("click", function(e) {
 	// e.target was the clicked element
-	removeExtraPackFileFour.setAttribute('href', "pack-2-artwork-upload-success");
+	removeExtraPackFileFour.setAttribute('href', "extra-pack-2-artwork-upload-success");
 	removeExtraPackRowFour.style.display = "none";
 	localStorage.removeItem("pack-upload-artwork-4");
 	var itemOne = localStorage.getItem("pack-2-upload-artwork");
@@ -1344,7 +1344,7 @@ document.getElementById("extra-pack-add-link").style.display = "block";
 } else {
 document.getElementById("extra-pack-add-link").style.display = "none";
 document.getElementById("extra-pack-add-another-link").style.display = "block";
-document.getElementById("extra-pack-go-to-file-2").setAttribute('href',  "pack-2-artwork-4");
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href',  "extra-pack-2-artwork-4");
 }
 	e.preventDefault();
 });
@@ -1352,13 +1352,13 @@ document.getElementById("extra-pack-go-to-file-2").setAttribute('href',  "pack-2
 
 
 if (getExtraPackUploadArtwork != null && getExtraPackUploadArtwork2 == null && getExtraPackUploadArtwork3 == null && getExtraPackUploadArtwork3 == null) {
-document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "pack-2-artwork-2");
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "extra-pack-2-artwork-2");
 } else if (getExtraPackUploadArtwork == null && getExtraPackUploadArtwork2 != null && getExtraPackUploadArtwork3 == null && getExtraPackUploadArtwork4 == null) {
-document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "pack-2-artwork");
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "extra-pack-2-artwork");
 } else if (getExtraPackUploadArtwork != null && getExtraPackUploadArtwork2 != null && getExtraPackUploadArtwork3 == null && getExtraPackUploadArtwork4 == null) {
-document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "pack-2-artwork-3");
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "extra-pack-2-artwork-3");
 } else if (getExtraPackUploadArtwork != null && getExtraPackUploadArtwork2 != null && getExtraPackUploadArtwork3 != null && getExtraPackUploadArtwork4 == null) {
-document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "pack-2-artwork-4");
+document.getElementById("extra-pack-go-to-file-2").setAttribute('href', "extra-pack-2-artwork-4");
 } else if (getExtraPackUploadArtwork != null && getExtraPackUploadArtwork2 != null && getExtraPackUploadArtwork3 != null && getExtraPackUploadArtwork4 != null) {
 document.getElementById("extra-pack-add-another-link").style.display = "none";
 } else if (getExtraPackUploadArtwork == null && getExtraPackUploadArtwork2 == null && getExtraPackUploadArtwork3 == null && getExtraPackUploadArtwork4 == null) {
@@ -1370,7 +1370,7 @@ document.getElementById("extra-pack-add-link").style.display = "block";
 
 function uploadExtraPackArtworkFiles() {
         if (getExtraPackUploadArtwork && (summaryPage && getExtraPackShdDisPrice) || getExtraPackUploadArtwork2 && (summaryPage && getExtraPackShdDisPrice) || getExtraPackUploadArtwork3 && (summaryPage && getExtraPackShdDisPrice) || getExtraPackUploadArtwork4 && (summaryPage && getExtraPackShdDisPrice)) {
-            buttonLink.href = "../product/product-summary";
+            buttonLink.href = "../product-summary";
         }
     }
 }
