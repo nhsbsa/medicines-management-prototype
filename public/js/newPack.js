@@ -50,7 +50,7 @@ if (eDay != null && eMonth != null && eYear != null) {
     }
 
     if ((getEffectiveDay != null && getEffectiveMonth != null && getEffectiveYear != null) && summaryPage != null) {
-        getContinueButton.href = "product-summary";
+        getContinueButton.href = "summary";
     }
 }
 
@@ -69,7 +69,7 @@ if (prodName != null) {
         prodName.defaultValue = getProductName;
     }
     if (getProductName != null && summaryPage != null) {
-        getContinueButton.href = "product-summary";
+        getContinueButton.href = "summary";
     }
 }
 
@@ -86,7 +86,7 @@ if (radioButtons) {
                 radio.checked = true;
             }
             if (radio.value == 'yes' && summaryPage != null) {
-                buttonLink.href = "product-summary";
+                buttonLink.href = "summary";
             }
         }
     }
@@ -146,7 +146,7 @@ function storeLinkOrUpload() {
             }
             if (localStorage.getItem("product-link-upload") == 'link' && summaryPage != null) {
                 localStorage.setItem("product-link-url", inputLink.value);
-                buttonLink.href = "product-summary";
+                buttonLink.href = "summary";
             }
         }
     }
@@ -278,7 +278,7 @@ if (fileSuccess) {
     function uploadSpcFiles() {
         localStorage.removeItem("product-link-url");
         if (getUploadFile && summaryPage || getUploadFile2 && summaryPage) {
-            buttonLink.href = "product-summary";
+            buttonLink.href = "summary";
         }
     }
 }
@@ -351,7 +351,7 @@ if (packTypeFurther) {
         localStorage.setItem("pack-type-further", packTypeFurther.value);
 
         if (summaryPage) {
-            continueButton.href = "../product/product-summary";
+            continueButton.href = "../summary";
         } else {
             continueButton.href = "pack-subpack";
         }
@@ -389,7 +389,7 @@ if (subpackRadioButtons.length != 0) {
                 if (radio.value == 'yes') {
                     buttonLink.href = "pack-subpack-extra";
                 } else if (radio.value == 'no' && summaryPage) {
-                    buttonLink.href = "../product/product-summary";
+                    buttonLink.href = "../summary";
                 }
             }
         }
@@ -408,7 +408,7 @@ if (packSubEx) {
         localStorage.setItem("pack-subpack-extra", packSubpackExtra.value);
 
         if (summaryPage) {
-            buttonLink.href = "../product/product-summary";
+            buttonLink.href = "../summary";
         }
     }
 
@@ -448,7 +448,7 @@ if (packGtin) {
         }
 
         if (summaryPage) {
-            buttonLink.href = "../product/product-summary";
+            buttonLink.href = "../summary";
         }
     }
 
@@ -507,7 +507,7 @@ if (radioArtworkButtons.length != 0) {
                 if (radio.value == 'yes') {
                     buttonLink.href = "pack-artwork";
                 } else if (radio.value == 'no' && summaryPage != null) {
-                    buttonLink.href = "../product/product-summary";
+                    buttonLink.href = "../summary";
                 }
             }
         }
@@ -762,7 +762,7 @@ if (artworkLimit) {
 
     function uploadArtworkFiles() {
         if (artworkOne && summaryPage || artworkTwo && summaryPage || artworkThree && summaryPage || artworkFour && summaryPage) {
-            buttonLink.href = "../product/product-summary";
+            buttonLink.href = "../summary";
         }
     }
 }
@@ -866,7 +866,7 @@ function storeCorrectPriceYesOrNo() {
             if (radio.value == 'no') {
                 buttonLink.href = "pack-price";
             } else if (radio.value == 'yes' && summaryPage) {
-                buttonLink.href = "product-summary";
+                buttonLink.href = "summary";
             }
         }
     }
@@ -897,7 +897,7 @@ if (getPackSize != null) {
                         localStorage.setItem("product-legal-category", radio.value);
                   }
                   if (summaryPage) {
-                        buttonLink.href = "product-summary";
+                        buttonLink.href = "summary";
                   }
                 }
 }
@@ -928,7 +928,7 @@ if (getPackSize != null) {
                  localStorage.setItem("product-hospital-only", radio.value);
              }
              if (summaryPage) {
-                 buttonLink.href = "product-summary";
+                 buttonLink.href = "summary";
              }
          }
      }
@@ -956,7 +956,7 @@ if (extraPackSize) {
 function storeExtraPackSize(){
      localStorage.setItem("pack-2-size", extraPackSize.value);
      if (summaryPage && getExtraPackShdDisPrice) {
-     buttonLink.href = "../product/product-summary";
+     buttonLink.href = "../summary";
      }
     }
 
@@ -995,7 +995,7 @@ function storeHasExtraPackSubpack() {
           buttonLink.href = "subpack-extra-2";
            }
          if (radio.value == 'no' && (summaryPage && getExtraPackShdDisPrice) ) {
-         buttonLink.href = "../product-summary"
+         buttonLink.href = "../summary"
           }
         }
      }
@@ -1009,7 +1009,7 @@ function storeHasExtraPackSubpack() {
  function storeExtraPackSubpackInfo(){
      localStorage.setItem("pack-2-subpack-extra", extraPackSubpackExtra.value);
         if (summaryPage && getExtraPackShdDisPrice) {
-         buttonLink.href = "../product-summary";
+         buttonLink.href = "../summary";
         }
      }
 
@@ -1109,7 +1109,7 @@ function storeExtraPackRequireArtwork() {
           buttonLink.href = "extra-pack-2-artwork";
           }
           if (radio.value == 'no' && (summaryPage && getExtraPackShdDisPrice) ) {
-          buttonLink.href = "../product/product-summary";
+          buttonLink.href = "../summary";
           }
         }
      }
@@ -1370,7 +1370,7 @@ document.getElementById("extra-pack-add-link").style.display = "block";
 
 function uploadExtraPackArtworkFiles() {
         if (getExtraPackUploadArtwork && (summaryPage && getExtraPackShdDisPrice) || getExtraPackUploadArtwork2 && (summaryPage && getExtraPackShdDisPrice) || getExtraPackUploadArtwork3 && (summaryPage && getExtraPackShdDisPrice) || getExtraPackUploadArtwork4 && (summaryPage && getExtraPackShdDisPrice)) {
-            buttonLink.href = "../product-summary";
+            buttonLink.href = "../summary";
         }
     }
 }
@@ -1502,7 +1502,7 @@ function storeExtraPackShouldDisplayPrice() {
                          localStorage.setItem("pack-2-legal-category", radio.value);
                    }
                    if (summaryPage) {
-                         buttonLink.href = "../product/product-summary";
+                         buttonLink.href = "../summary";
                    }
                  }
  }
@@ -1515,7 +1515,7 @@ function storeExtraPackShouldDisplayPrice() {
  if (radioUsageButtonsExtra.length != 0) {
 
      if (getExtraPackSize != null) {
-     heading.innerHTML = 'Is this ' + getExtraPackSize + ' pack to be used in hospitals only';
+     heading.innerHTML = 'Is this ' + getExtraPackSize + ' pack to be used in hospitals only?';
      }
 
      if (getProductHospUsageExtra != null) {
@@ -1533,7 +1533,7 @@ function storeExtraPackShouldDisplayPrice() {
                  localStorage.setItem("pack-2-hospital-only", radio.value);
              }
              if (summaryPage) {
-                 buttonLink.href = "../product/product-summary";
+                 buttonLink.href = "../summary";
              }
          }
      }
