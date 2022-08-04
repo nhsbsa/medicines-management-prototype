@@ -1381,6 +1381,7 @@ var radioExtraPackShouldDisplayPriceButtons = document.getElementsByName("extra-
 
 if (radioExtraPackShouldDisplayPriceButtons.length != 0) {
 
+
 if (getExtraPackShdDisPrice != null) {
 for (var radio of radioExtraPackShouldDisplayPriceButtons) {
 if (getExtraPackShdDisPrice === radio.value) {
@@ -1400,7 +1401,7 @@ function storeExtraPackShouldDisplayPrice() {
   for (var radio of radioExtraPackShouldDisplayPriceButtons) {
       if (radio.checked) {
           localStorage.setItem("pack-2-should-display-price", radio.value);
-         if (radio.value == 'yes') {
+         if (radio.value === 'yes') {
           buttonLink.href = "product-2-price";
           }
         }
