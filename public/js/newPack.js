@@ -100,7 +100,7 @@ function storeSpcYesOrNo() {
         if (radio.checked) {
             localStorage.setItem("product-spc", radio.value);
             if (radio.value == 'yes' && summaryPage == null) {
-                buttonLink.href = "pack-file-upload";
+                buttonLink.href = "pack-spc-upload-choice";
             } else if (radio.value == 'no') {
                 buttonLink.href = "pack-no-spc";
             }
