@@ -105,7 +105,7 @@ function storeSpcYesOrNo() {
       if (radio.value == 'yes' && summaryPage == null) {
         buttonLink.href = "pack-spc-upload-choice";
       } else if (radio.value == 'no') {
-        buttonLink.href = "pack-size-and-type";
+        buttonLink.href = "pack-no-spc";
       }
     }
   }
