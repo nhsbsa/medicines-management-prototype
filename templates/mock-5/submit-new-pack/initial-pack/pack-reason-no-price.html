@@ -116,7 +116,7 @@ function store() {
         if (radio.checked) {
          localStorage.setItem("product-reason-no-price", radio.value);
          if (summaryPage) {
-            buttonLink.href = "product-summary";
+            buttonLink.href = "../summary";
           }
          if (localStorage.getItem("product-reason-no-price") == 'Other') {
           localStorage.setItem("product-reason-other", document.getElementById("with-hint").value)
