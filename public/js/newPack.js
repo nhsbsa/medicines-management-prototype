@@ -1064,9 +1064,6 @@ if (extraPackSubpackExtra) {
 
   function storeExtraPackSubpackInfo() {
     localStorage.setItem("pack-2-subpack-extra", extraPackSubpackExtra.value);
-    if (summaryPage && getExtraPackShdDisPrice) {
-      buttonLink.href = "../summary";
-    }
   }
 
   var getExtraPackSubpackExtra = localStorage.getItem("pack-2-subpack-extra");
@@ -1080,6 +1077,14 @@ if (extraPackSubpackExtra) {
         + ' pack?';
   }
 }
+
+// subpack confirmation page, checking if summary page
+
+function storeExtraPackSubpackConfirmation() {
+    if (summaryPage) {
+      continueButton.href = "../summary";
+    }
+  }
 
 // gtin (second pack)
 
@@ -1104,9 +1109,9 @@ if (extraPackGtin) {
       localStorage.removeItem("pack-2-gtin-3");
     }
 
-    /*if (summaryPage) {
+    if (summaryPage) {
         buttonLink.href = "../summary";
-    }*/
+    }
   }
 
   var getExtraPackGtin = localStorage.getItem("pack-2-gtin");
@@ -1584,16 +1589,18 @@ if (getConfPriceExtra != null) {
 }
 
 function storeCorrectPriceExtraPackYesOrNo() {
-  var radioButtons = document.getElementsByName("data-price-extra");
+  var radioButtons = document.getElementsByName("data-price-confirm-extra");
   var buttonLink = document.getElementById("continue-button");
 
   for (var radio of radioButtons) {
     if (radio.checked) {
-      localStorage.setItem("product-2-price-confirm", radio.value);
-      if (radio.value == 'no') {
-        buttonLink.href = "product-2-price";
-      }
-    }
+          localStorage.setItem("product-2-price-confirm", radio.value);
+          if (radio.value == 'no') {
+            buttonLink.href = "product-2-price";
+          } else if (radio.value == 'yes' && summaryPage) {
+            buttonLink.href = "../summary";
+        }
+     }
   }
 }
 

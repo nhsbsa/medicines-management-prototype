@@ -73,8 +73,8 @@ Submit a new product: pack price | Portal | NHSBSA
 <script>
 var radioButtons = document.getElementsByName("reason-no-price");
 
-var getProductReasonNoPrice = localStorage.getItem("product-reason-no-price");
-var getExactOtherReason = localStorage.getItem("product-reason-other");
+var getProductReasonNoPrice = localStorage.getItem("product-2-reason-no-price");
+var getExactOtherReason = localStorage.getItem("product-2-reason-other");
 var otherReason = document.getElementById("conditional-reason");
 var getOtherReason = document.getElementById("with-hint");
 
@@ -95,7 +95,7 @@ if (getProductReasonNoPrice === radio.value) {
 
             if (radio.value == 'Other') {
                        otherReason.classList.remove("nhsuk-radios__conditional--hidden");
-                       getOtherReason.defaultValue = localStorage.getItem("product-reason-other")
+                       getOtherReason.defaultValue = localStorage.getItem("product-2-reason-other")
                     }
                }
           }
@@ -114,14 +114,14 @@ function store() {
 
   for (var radio of radioButtons) {
         if (radio.checked) {
-         localStorage.setItem("product-reason-no-price", radio.value);
+         localStorage.setItem("product-2-reason-no-price", radio.value);
          if (summaryPage) {
-            buttonLink.href = "product-summary";
+            buttonLink.href = "../summary";
           }
-         if (localStorage.getItem("product-reason-no-price") == 'Other') {
-          localStorage.setItem("product-reason-other", document.getElementById("with-hint").value)
-         } else if (localStorage.getItem("product-reason-no-price") != 'Other') {
-            localStorage.removeItem("product-reason-other");
+         if (localStorage.getItem("product-2-reason-no-price") == 'Other') {
+          localStorage.setItem("product-2-reason-other", document.getElementById("with-hint").value)
+         } else if (localStorage.getItem("product-2-reason-no-price") != 'Other') {
+            localStorage.removeItem("product-2-reason-other");
           }
         }
 

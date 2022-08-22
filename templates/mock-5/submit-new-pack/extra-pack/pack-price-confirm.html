@@ -19,7 +19,7 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
         Confirm the price
       </h1>
     </legend>
-    <div class="nhsuk-hint" id="price-amount-hint">
+    <div class="nhsuk-hint" id="price-amount-extra-hint">
       The price you have entered is 100 pence, or £1.
     </div>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="price-correct-hint">
@@ -29,14 +29,14 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
     <div class="nhsuk-radios" id="data-price-radios">
 
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="data-yes" name="data-price" type="radio" value="yes" />
+        <input class="nhsuk-radios__input" id="data-yes" name="data-price-confirm-extra" type="radio" value="yes" />
         <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
           Yes
         </label>
       </div>
 
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="data-no" name="data-price" type="radio" value="no" />
+        <input class="nhsuk-radios__input" id="data-no" name="data-price-confirm-extra" type="radio" value="no" />
         <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
           No
         </label>
@@ -46,7 +46,7 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeCorrectPriceYesOrNo()"
+<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeCorrectPriceExtraPackYesOrNo()"
    id="continue-button"
    href="legal-category"
    type="submit">

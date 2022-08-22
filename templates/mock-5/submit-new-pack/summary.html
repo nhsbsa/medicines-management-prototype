@@ -307,7 +307,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="../product-pack-extra/pack-2-size">
+      <a href="extra-pack/pack-size-2">
         Change<span class="nhsuk-u-visually-hidden">&nbsp;pack size and type</span>
       </a>
 
@@ -324,7 +324,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="../product-pack-extra/pack-2-subpack">
+      <a href="extra-pack/subpack-2">
         Change<span class="nhsuk-u-visually-hidden">&nbsp;if pack has subpack</span>
       </a>
 
@@ -341,7 +341,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="../product-pack-extra/pack-2-subpack-extra">
+      <a href="extra-pack/subpack-extra-2">
         Change<span class="nhsuk-u-visually-hidden">&nbsp;number of subpacks</span>
       </a>
 
@@ -358,7 +358,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="../product-pack-extra/pack-2-gtin">
+      <a href="extra-pack/gtin-2">
         Change<span class="nhsuk-u-visually-hidden">&nbsp;pack GTIN</span>
       </a>
 
@@ -375,7 +375,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="../product-pack-extra/pack-2-require-artwork">
+      <a href="extra-pack/extra-pack-2-require-artwork">
         Change<span class="nhsuk-u-visually-hidden">&nbsp;if pack has packaging images</span>
       </a>
 
@@ -392,7 +392,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="../product-pack-extra/pack-2-artwork-upload-success">
+      <a href="extra-pack/extra-pack-2-artwork-upload-success">
         Change<span class="nhsuk-u-visually-hidden">&nbsp;packaging images uploaded files</span>
       </a>
 
@@ -409,7 +409,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="../product-pack-extra/product-2-should-display-price">
+      <a href="extra-pack/pack-should-display-price">
         Change<span class="nhsuk-u-visually-hidden">&nbsp;if product should have price</span>
       </a>
 
@@ -426,7 +426,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="../product-pack-extra/product-2-price">
+      <a href="extra-pack/pack-price">
         Change<span class="nhsuk-u-visually-hidden">&nbsp;product price</span>
       </a>
 
@@ -443,7 +443,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="../product-pack-extra/pack-2-reason-no-price">
+      <a href="extra-pack/pack-reason-no-price">
         Change<span class="nhsuk-u-visually-hidden">&nbsp;reason for not providing a price</span>
       </a>
 
@@ -460,7 +460,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
       <dd class="nhsuk-summary-list__actions">
 
-        <a href="../product-pack-extra/pack-2-legal-category">
+        <a href="extra-pack/legal-category">
           Change <span class="nhsuk-u-visually-hidden">&nbsp;extra pack legal category</span>
         </a>
       </dd>
@@ -475,7 +475,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
       <dd class="nhsuk-summary-list__actions">
 
-        <a href="../product-pack-extra/pack-2-usage">
+        <a href="extra-pack/hospitals-only-2">
           Change<span class="nhsuk-u-visually-hidden">&nbsp;whether extra pack is hospital only</span>
         </a>
       </dd>
@@ -763,8 +763,8 @@ document.getElementById("pack-2-upload-artwork").innerHTML += fileForm + "<br>";
 }
 
 var getPack2HasPrice = localStorage.getItem("pack-2-should-display-price");
-var getOtherReasonPack2NoPrice = localStorage.getItem("pack-2-reason-other");
-var getReasonPack2NoPrice = localStorage.getItem("pack-2-reason-no-price");
+var getOtherReasonPack2NoPrice = localStorage.getItem("product-2-reason-no-price");
+var getReasonPack2NoPrice = localStorage.getItem("product-2-reason-no-price");
 document.getElementById("pack-2-should-display-price").innerHTML = getPack2HasPrice;
 
 if (getPack2HasPrice == 'no' && !getOtherReasonPack2NoPrice) {
