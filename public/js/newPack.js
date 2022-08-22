@@ -1596,7 +1596,7 @@ function storeCorrectPriceExtraPackYesOrNo() {
     if (radio.checked) {
           localStorage.setItem("product-2-price-confirm", radio.value);
           if (radio.value == 'no') {
-            buttonLink.href = "product-2-price";
+            buttonLink.href = "pack-price";
           } else if (radio.value == 'yes' && summaryPage) {
             buttonLink.href = "../summary";
         }
