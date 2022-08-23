@@ -309,6 +309,8 @@ if (packTy) {
   if (getPackType != null) {
     packTy.value = getPackType;
   }
+  var packType = document.getElementById("pack-type");
+  console.log(packType.value)
 
   function storeSizeAndStrength() {
     var packSize = document.getElementById("pack-size");
@@ -317,10 +319,18 @@ if (packTy) {
     var packType = document.getElementById("pack-type");
     localStorage.setItem("pack-type", packType.value);
 
-    if (packType.value == "other") {
+    let packTypeStorage = localStorage.getItem("pack-type");
+
+    if (packTypeStorage == "other") {
         continueButton.setAttribute('href', "pack-type-other");
-        } else if (packType.value != "other" && summaryPage) {
-        continueButton.href = "../summary";
+        } else if (packTypeStorage == "ampoule" || packTypeStorage == "bottle" || packTypeStorage == "dose" || packTypeStorage == "vial") {
+           continueButton.setAttribute('href', "pack-strength-further");
+        } else if (packTypeStorage != "ampoule" && packTypeStorage != "bottle" && packTypeStorage != "dose" && packTypeStorage != "vial" && packTypeStorage != "other") {
+           localStorage.removeItem("pack-type-further");
+           continueButton.href = "pack-subpack"
+        }
+    if (packTypeStorage != "ampoule" && packTypeStorage != "bottle" && packTypeStorage != "dose" && packTypeStorage != "vial" && packTypeStorage != "other" && summaryPage) {
+       continueButton.href = "../summary";
     }
   }
 }
