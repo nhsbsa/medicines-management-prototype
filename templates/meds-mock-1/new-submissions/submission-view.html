@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+    <a class="nhsuk-back-link__link" id="back-link" href="submissions">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to summary of new submissions</a>
+</div>
+
+<h1>New product submission</h1>
+
+<h2>Product</h2>
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Product name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            100mg paracetamol tablets
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Reference
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            56465452
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Date received
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            1 May 2022
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Effective date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            1 June 2022
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Status
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            <strong class="nhsuk-tag nhsuk-tag--green">
+                Ready
+            </strong>
+        </dd>
+
+    </div>
+</dl>
+
+<h2>Supplier contact</h2>
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Supplier
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            AstraZeneca
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Submitted by
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            Jane Smith
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Contact details
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            <p>07700 900362</p>
+            <p>jane.smith@example.com</p>
+        </dd>
+
+    </div>
+
+</dl>
+
+<div class="nhsuk-action-link">
+    <a class="nhsuk-action-link__link" href="update-submission-status">
+        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+            <path d="M0 0h24v24H0z" fill="none"></path>
+            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+        </svg>
+        <span class="nhsuk-action-link__text">Update the submission status</span>
+    </a>
+</div>
+
+{% endblock %}

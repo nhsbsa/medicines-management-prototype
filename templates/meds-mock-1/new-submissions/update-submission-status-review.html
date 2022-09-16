@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+    <a class="nhsuk-back-link__link" id="back-link" href="update-submission-status-notes">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to how do you want to notify the supplier of this change?</a>
+</div>
+
+<h1>Update new product review</h1>
+
+<h2>Product</h2>
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Product name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            100mg paracetamol tablets
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Reference
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            56465452
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Date received
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            1 May 2022
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Effective date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            1 June 2022
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Status
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            <strong class="nhsuk-tag nhsuk-tag--red">
+                Rejected
+            </strong>
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Notes
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            <p class="nhsuk-body-s nhsuk-u-secondary-text-color nhsuk-u-margin-bottom-0">
+                Note added: 16 September 2022
+            </p>
+            <p>This submission has been rejected due to certain circumstances.</p>
+        </dd>
+
+    </div>
+</dl>
+
+<!--<div class="nhsuk-do-dont-list">-->
+<!--    <h3 class="nhsuk-do-dont-list__label">Amendments</h3>-->
+<!--    <dl class="nhsuk-summary-list">-->
+
+<!--        <div class="nhsuk-summary-list__row">-->
+<!--            <dt class="nhsuk-summary-list__key">-->
+<!--                Status-->
+<!--            </dt>-->
+<!--            <dd class="nhsuk-summary-list__value">-->
+<!--                <strong class="nhsuk-tag nhsuk-tag&#45;&#45;red">-->
+<!--                    Rejected-->
+<!--                </strong>-->
+<!--            </dd>-->
+
+<!--        </div>-->
+
+<!--        <div class="nhsuk-summary-list__row">-->
+<!--            <dt class="nhsuk-summary-list__key">-->
+<!--                Notes-->
+<!--            </dt>-->
+<!--            <dd class="nhsuk-summary-list__value">-->
+<!--                This product submission has been rejected as is does not fulfil certain conditions.-->
+<!--            </dd>-->
+
+<!--        </div>-->
+
+<!--    </dl>-->
+<!--</div>-->
+
+
+<a class="nhsuk-button nhsuk-u-margin-top-4" href="update-submission-status-review" id="continue-button" type="submit">
+    Save and notify
+</a>
+
+
+
+
+
+{% endblock %}
