@@ -20,32 +20,21 @@ Submit a new product: pack size and strength | Portal | NHSBSA
         <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
             <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
                 <h1 class="nhsuk-u-margin-bottom-4">
-                    Would you like to add notes for the supplier?
+                    Would you like to add a message for the supplier?
                 </h1>
             </legend>
 
-            <div class="nhsuk-radios nhsuk-radios--conditional">
+            <div class="nhsuk-radios">
 
                 <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+                    <input class="nhsuk-radios__input" id="contact-1" name="notes" type="radio" value="Yes" aria-controls="conditional-contact-1" aria-expanded="false">
                     <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
                         Yes
                     </label>
                 </div>
 
-                <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
-
-                    <div class="nhsuk-form-group">
-                        <label class="nhsuk-label" for="email">
-                            Notes
-                        </label>
-                        <textarea class="nhsuk-textarea" id="example" name="example" rows="5" aria-describedby="example-hint"></textarea>
-                    </div>
-
-                </div>
-
                 <div class="nhsuk-radios__item">
-                    <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" aria-controls="conditional-contact-2" aria-expanded="false">
+                    <input class="nhsuk-radios__input" id="contact-2" name="notes" type="radio" value="No" aria-controls="conditional-contact-2" aria-expanded="false">
                     <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
                         No
                     </label>
@@ -58,8 +47,35 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
 </fieldset>
 
-<a class="nhsuk-button nhsuk-u-margin-top-4" href="update-submission-status-contact" id="continue-button" type="submit">
+<a class="nhsuk-button nhsuk-u-margin-top-4" href="update-submission-notes-detail"
+   onclick="requireNotes()" id="continue-button" type="submit">
     Continue
 </a>
+
+<script>
+
+    var radioButtons = document.getElementsByName("notes");
+
+    function requireNotes() {
+    var buttonLink = document.getElementById("continue-button");
+
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+        localStorage.setItem("product-notes-require", radio.value);
+        if (radio.value == 'No') {
+           buttonLink.href = "update-submission-review";
+        }
+      }
+    }
+}
+
+if (localStorage.getItem("product-notes-require") != null) {
+    for (var radio of radioButtons) {
+             if (localStorage.getItem("product-notes-require") === radio.value) {
+                 radio.checked = true;
+             }
+         }
+       }
+</script>
 
 {% endblock %}

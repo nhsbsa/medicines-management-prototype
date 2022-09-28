@@ -1,4 +1,4 @@
-function Tabs() {
+(function() {
     // Get relevant elements and collections
     const tabbed = document.querySelector('.tabbed');
     if(tabbed === null){return;}
@@ -73,4 +73,4 @@ function Tabs() {
     tabs[0].removeAttribute('tabindex');
     tabs[0].setAttribute('aria-selected', 'true');
     panels[0].hidden = false;
-}
+  })();
