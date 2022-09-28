@@ -208,6 +208,12 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     commentDetailInput.innerHTML = localStorage.getItem("comment-detail");
     }
 
+    if (localStorage.getItem("comment-detail") == null) {
+    commentDetail.style["display"] = "none";
+    }
+
+
+
 
 
 
