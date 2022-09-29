@@ -111,14 +111,26 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
         </td>
         <td>
-          <div class="nhsuk-checkboxes">
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="example">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
-                <span class="nhsuk-u-visually-hidden">Email</span>
-              </label>
-            </div>
+<!--          this is NHS large checkbox -->
+<!--          <div class="nhsuk-checkboxes">-->
+<!--            <div class="nhsuk-checkboxes__item">-->
+<!--              <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="example">-->
+<!--              <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">-->
+<!--                <span class="nhsuk-u-visually-hidden">Email</span>-->
+<!--              </label>-->
+<!--            </div>-->
+<!--          </div>-->
+
+          <!--          this is Gov small checkbox -->
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+                <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  <span class="nhsuk-u-visually-hidden">HM Revenue and Customs (HMRC)</span>
+                </label>
+              </div>
           </div>
+
         </td>
       </tr>
       </tbody>
