@@ -17,6 +17,18 @@ Submit a new product | Portal | NHSBSA
 <p>Some descriptive text as to what this is will be here.</p>
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="example">
+        What is your name?
+      </label>
+      <input class="nhsuk-input" id="example" name="example" type="text">
+    </div>
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>You can report any suspected side effect to the <a href="https://yellowcard.mhra.gov.uk/" title="External website">UK safety scheme</a>.</p>
+    </div>
+    <a class="nhsuk-button secondar nhsuk-u-float-right">Deselect all</a>
+    <a class="nhsuk-button nhsuk-u-float-right nhsuk-u-margin-right-3">Select all</a>
     <table role="table" class="nhsuk-table-responsive">
       <caption class="nhsuk-table__caption">Any caption that might be needed</caption>
       <thead role="rowgroup" class="nhsuk-table__head">
@@ -32,6 +44,10 @@ Submit a new product | Portal | NHSBSA
         </th>
         <th role="columnheader" class="" scope="col">
           Price
+        </th>
+        <th>Discontinued</th>
+        <th role="columnheader" class="" scope="col">
+          Select
         </th>
       </tr>
       </thead>
@@ -49,6 +65,7 @@ Submit a new product | Portal | NHSBSA
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>299</span>p</span>
         </td>
+        <td><input type="checkbox"></td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
         <td role="cell" class="nhsuk-table__cell">
@@ -63,6 +80,7 @@ Submit a new product | Portal | NHSBSA
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>23</span>p</span>
         </td>
+        <td><input type="checkbox"></td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
         <td role="cell" class="nhsuk-table__cell">
@@ -77,6 +95,7 @@ Submit a new product | Portal | NHSBSA
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
         </td>
+        <td><input type="checkbox"></td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
         <td role="cell" class="nhsuk-table__cell">
@@ -90,6 +109,13 @@ Submit a new product | Portal | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
+        </td>
+        <td>
+          <div class="nhsuk-checkboxes">
+            <div class="nhsuk-checkboxes__item">
+              <input class="nhsuk-checkboxes__input" id="example-1" name="example" type="checkbox" value="example">
+            </div>
+          </div>
         </td>
       </tr>
       </tbody>
