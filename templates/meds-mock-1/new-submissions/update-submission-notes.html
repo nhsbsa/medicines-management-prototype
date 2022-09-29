@@ -64,6 +64,8 @@ Submit a new product: pack size and strength | Portal | NHSBSA
         localStorage.setItem("product-notes-require", radio.value);
         if (radio.value == 'No') {
            buttonLink.href = "update-submission-review";
+        } else {
+           buttonLink.href = "update-submission-notes-detail";
         }
       }
     }

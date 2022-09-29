@@ -82,6 +82,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
     var radioButtons = document.getElementsByName("notes-title");
     let notesDetail = document.getElementById("notes-detail");
+    let notesTitleOther = document.getElementById("notes-title-other");
 
     function storeNotes() {
     var notesTitle = document.getElementById("notes-title");
@@ -113,6 +114,12 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
     if (getNotesDetail != null) {
       notesDetail.defaultValue = getNotesDetail;
+    }
+
+    var getNotesTitle = localStorage.getItem("notes-title-other");
+
+    if (getNotesTitle != null) {
+      notesTitleOther.defaultValue = getNotesTitle;
     }
 </script>
 
