@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" id="back-link" href="../dashboard">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path
+          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to meds dashboard</a>
+</div>
+
+<h1>Search all submissions</h1>
+
+<p>Use two dates to search for all submissions.</p>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-form-group nhsuk-grid-column-one-half">
+    <fieldset class="nhsuk-fieldset" aria-describedby="start-date-hint" role="group">
+      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+        <label class="nhsuk-fieldset__heading">
+          From date
+        </label>
+      </legend>
+      <div class="nhsuk-hint" id="start-date-hint">
+        For example, 15 3 1984. Leave empty for start of time
+      </div>
+
+      <div class="nhsuk-date-input" id="start-date">
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="start-date-day">
+              Day
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-date-day"
+                   name="start-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="start-date-month">
+              Month
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                   id="start-date-month" name="start-date-month" type="text" pattern="[0-9]*"
+                   inputmode="numeric">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="start-date-year">
+              Year
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                   id="start-date-year" name="start-date-year" type="text" pattern="[0-9]*"
+                   inputmode="numeric">
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+  </div>
+
+  <div class="nhsuk-form-group nhsuk-grid-column-one-half">
+    <fieldset class="nhsuk-fieldset" aria-describedby="end-date-hint" role="group">
+      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+        <label class="nhsuk-fieldset__heading">
+          End date
+        </label>
+      </legend>
+      <div class="nhsuk-hint" id="end-date-hint">
+        For example, 15 3 1984. Leave empty for end of time
+      </div>
+
+      <div class="nhsuk-date-input" id="end-date">
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="end-date-day">
+              Day
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="end-date-day"
+                   name="end-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="end-date-month">
+              Month
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                   id="end-date-month" name="end-date-month" type="text" pattern="[0-9]*"
+                   inputmode="numeric">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="end-date-year">
+              Year
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                   id="end-date-year" name="end-date-year" type="text" pattern="[0-9]*"
+                   inputmode="numeric">
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+  </div>
+</div>
+
+<a class="nhsuk-button" aria-role="button" href="search-results">Search</a>
+<a class="nhsuk-button nhsuk-button--secondary" aria-role="button" href="search">Clear</a>
+
+<h2>Search results</h2>
+
+<div class="nhsuk-body-m flex--space-between" style="display: flex">
+  <div class="nhsuk-u-visually-hidden">Currently viewing</div>
+  <div id="pageAndResultCount">Page 1 of 1 (5 results)</div>
+  <div class="nhsuk-u-text-align--right show-mobile" style="display: flex">
+    <div id="tableSortControls">
+      <span>Sort:</span>
+      <span><a aria-label="Sort results by eligibility" href="">type</a></span>
+
+      <span> | </span>
+
+      <span class="nhsuk-u-font-weight-bold">date received </span>
+    </div>
+  </div>
+</div>
+
+
+<table class="govuk-table nhsuk-table-responsive" data-module="moj-sortable-table">
+  <caption class="govuk-table__caption nhsuk-u-visually-hidden" id="submission-caption">Summary of all submissions</caption>
+  <span id="table__assistiveHint" class="assistive-table-hint nhsuk-u-visually-hidden">
+    Summary of all submissions. Each heading in the table can be sorted in ascending or descending order. Selecting Enter or clicking the mouse on the heading button, or by touch if using a touch device, will achieve this.</span>
+  <thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+
+    <th scope="col" class="govuk-table__header" aria-sort="ascending">Date received</th>
+
+    <th scope="col" class="govuk-table__header" aria-sort="none">Type</th>
+
+    <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+
+    <th scope="col" class="govuk-table__header" aria-sort="none">Company</th>
+
+    <th scope="col" class="govuk-table__header" aria-sort="none">Effective date</th>
+
+    <th scope="col" class="govuk-table__header" aria-sort="none">Reference</th>
+  </tr>
+  </thead>
+
+  <tbody class="nhsuk-table__body">
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Product</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--grey">
+        Actioned
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell row-max">
+      <span class="nhsuk-table-responsive__heading">Supplier</span>
+      AstraZeneca </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="56465452">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      <a href="submission-view.html" class="nhsuk-link nhsuk-link--no-visited-state">56465452</a></td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Product</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--grey">
+        Actioned
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell row-max">
+      <span class="nhsuk-table-responsive__heading">Supplier</span>
+      Amgen</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="56465452">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      56465452</td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Product</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--red">
+        Rejected
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell row-max">
+      <span class="nhsuk-table-responsive__heading">Supplier</span>
+      Amgen</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="56465452">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      56465452</td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Product</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--orange">
+        Failed
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell row-max">
+      <span class="nhsuk-table-responsive__heading">Supplier</span>
+      Curium</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="56465452">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      56465452</td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="2">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      02-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Product</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--purple">
+        Cancelled
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell row-max">
+      <span class="nhsuk-table-responsive__heading">Supplier</span>
+      Chiesi Farmaceutici</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="2">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      31-05-2022</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="78787575">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      78787575</td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      20-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Pack</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--orange">
+        Failed
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell row-max">
+      <span class="nhsuk-table-responsive__heading">Supplier</span>
+      GlaxoSmithKline Consumer Healthcare UK Ltd</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      22-05-2022</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="54887331">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      54887331</td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="4">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      22-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Pack
+    </td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--orange">
+        Failed
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell row-max">
+      <span class="nhsuk-table-responsive__heading">Supplier</span>
+      Boots Ltd</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="47532545">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      47532545</td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="5">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      27-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Discontinued</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--red">
+        Rejected
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell row-max">
+      <span class="nhsuk-table-responsive__heading">Supplier</span>
+      Lloyds Pharmacy Ltd</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="4">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      03-06-2022</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="69843354">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      69843354</td>
+
+  </tr>
+
+  </tbody>
+</table>
+
+<div id="pagination ">
+  <nav aria-label="Pagination Navigation">
+    <ul class="pagination nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4">
+      <!-- Previous Button -->
+      <li class="pagination__item">Previous</li>
+      <li class="pagination__item">|</li>
+      <!-- First Page -->
+      <!-- Page Numbers -->
+      <li class="pagination__item">
+        <!-- Not this page! -->
+        <!-- This page! -->
+        <p class="pagination__link nhsuk-u-font-weight-bold" aria-current="true" id="1">1</p>
+      </li>
+      <li class="pagination__item">
+        <!-- Not this page! -->
+        <a class="pagination__link" href="#" id="2">2</a>
+        <!-- This page! -->
+      </li>
+
+      <!-- Next Page -->
+
+      <li class="pagination__item">|</li>
+
+      <!-- Next Button -->
+      <li class="pagination__item"><a href="#">Next</a></li>
+
+    </ul>
+  </nav>
+</div>
+
+<script src="/js/MOJ.js" defer></script>
+<script src="../../js/dialog.js"></script>
+
+
+{% endblock %}
