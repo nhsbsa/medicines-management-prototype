@@ -12,55 +12,16 @@ Submit a new product | Portal | NHSBSA
     Go back to price effective date</a>
 </div>
 
-<h1>Product List</h1>
 
-<p>This list contains all products currently listed on dm+d, any recently actioned submissions and all discontinued lines</p>
+<h1>Products</h1>
+<p>This page contains a list of all products currently selected.</p>
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-    <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="example">
-        Search for a product
-      </label>
-      <input class="nhsuk-input" id="example" name="example" type="text">
-    </div>
-    <details class="nhsuk-details">
-      <summary class="nhsuk-details__summary">
-    <span class="nhsuk-details__summary-text">
-      Refine search
-    </span>
-      </summary>
-      <div class="nhsuk-details__text">
-        <p>Filter by</p>
-        <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-one-half">
-            <div class="nhsuk-checkboxes">
-              <div class="nhsuk-checkboxes__item">
-                <input class="nhsuk-checkboxes__input" id="active" name="example" type="checkbox" checked value="example">
-                <label class="nhsuk-label nhsuk-checkboxes__label" for="active">
-                  <span class="nhsuk-u-visually-hidden">Active</span>Active
-                </label>
-              </div>
-            </div>
-          </div>
-          <div class="nhsuk-grid-column-one-half">
-            <div class="nhsuk-checkboxes__item">
-              <input class="nhsuk-checkboxes__input" id="discontinued" name="example" type="checkbox" checked value="example">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="discontinued">
-                <span class="nhsuk-u-visually-hidden">Discontinued</span>Discontinued
-              </label>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </details>
     <div class="nhsuk-inset-text">
       <span class="nhsuk-u-visually-hidden">Information: </span>
-      <p>Here you can <a href="https://yellowcard.mhra.gov.uk/" title="External website">select all</a>.</p>
-      <p>Here you can <a href="https://yellowcard.mhra.gov.uk/" title="External website">deselect all</a>.</p>
+      <p>Click <a href="product-list-none-selected.html" title="External website">here</a> to remove all from list.</p>
     </div>
     <table role="table" class="nhsuk-table-responsive">
-      <caption class="nhsuk-table__caption">Any caption that might be needed</caption>
       <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
         <th role="columnheader" class="" scope="col">
@@ -70,17 +31,16 @@ Submit a new product | Portal | NHSBSA
           Pack size
         </th>
         <th role="columnheader" class="" scope="col">
-          Subpack info
+          UOM
         </th>
         <th role="columnheader" class="" scope="col">
-          UOM
+        Subpack info
         </th>
         <th role="columnheader" class="" scope="col">
           Price
         </th>
-        <th>Status</th>
         <th role="columnheader" class="" scope="col">
-          Select
+          Remove
         </th>
       </tr>
       </thead>
@@ -93,26 +53,16 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Pack size </span>30
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Subpack info </span>text
+          <span class="nhsuk-table-responsive__heading">UOM </span>Capsules
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">UOM </span>Capsules
+          <span class="nhsuk-table-responsive__heading">Subpack info </span>2x15
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>299</span>p</span>
         </td>
         <td>
-
-        </td>
-        <td>
-          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                <span class="nhsuk-u-visually-hidden">Discontinued</span>
-              </label>
-            </div>
-          </div>
+          <span class="nhsuk-table-responsive__heading">Remove </span><a href="#">Remove</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -123,28 +73,16 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Pack size </span>28
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Subpack info </span>text
+          <span class="nhsuk-table-responsive__heading">UOM </span>Pills
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">UOM </span>Pills
+          <span class="nhsuk-table-responsive__heading">Subpack info </span>2x14
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>23</span>p</span>
         </td>
         <td>
-          <strong class="nhsuk-tag nhsuk-tag--red">
-            Discontinued
-          </strong>
-        </td>
-        <td>
-          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                <span class="nhsuk-u-visually-hidden">Discontinued</span>
-              </label>
-            </div>
-          </div>
+          <span class="nhsuk-table-responsive__heading">Remove </span><a href="#">Remove</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -155,26 +93,16 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Pack size </span>1
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Subpack info </span>text
+          <span class="nhsuk-table-responsive__heading">UOM </span>Box
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">UOM </span>Box
+          <span class="nhsuk-table-responsive__heading">Subpack info </span>
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
         </td>
         <td>
-
-        </td>
-        <td>
-          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                <span class="nhsuk-u-visually-hidden">Discontinued</span>
-              </label>
-            </div>
-          </div>
+          <span class="nhsuk-table-responsive__heading">Remove </span><a href="#">Remove</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -185,26 +113,16 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Pack size </span>30
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Subpack info </span>text
+          <span class="nhsuk-table-responsive__heading">UOM </span>pills
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">UOM </span>pills
+          <span class="nhsuk-table-responsive__heading">Subpack info </span>3x10
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
         </td>
         <td>
-
-        </td>
-        <td style="">
-          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
-                <span class="nhsuk-u-visually-hidden">Discontinued</span>
-              </label>
-            </div>
-          </div>
+          <span class="nhsuk-table-responsive__heading">Remove </span><a href="#">Remove</a>
         </td>
       </tr>
       </tbody>
@@ -244,6 +162,8 @@ Submit a new product | Portal | NHSBSA
         </svg></a>
       </div>
     </nav>
+    <a href="product-list-add.html"><button class="nhsuk-button nhsuk-button--secondary">Search for products</button></a>
+    <button class="nhsuk-button nhsuk-u-margin-right-0 nhsuk-u-margin-left-3">Continue</button>
   </div>
 </div>
 
