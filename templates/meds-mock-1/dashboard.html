@@ -15,34 +15,71 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
       </div>
     </div>
 
+    <h2>Submissions</h2>
+    <p>From here, you can view existing submissions which are new or require action. You can also
+      view any submission which was completed in the last 30 days.</p>
+
     <ul class="nhsuk-grid-row nhsuk-card-group">
-      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+      <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+
         <div class="nhsuk-card nhsuk-card--clickable">
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
-              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="new-submissions/submissions">New submissions</a>
+                <span class="nhsuk-card__link">
+                  <span class="nhsuk-u-font-size-32">5</span>
+                  <br>
+                  <a class="nhsuk-card__link nhsuk-u-font-size-19 nhsuk-link--no-visited-state"
+                     href="new-submissions/submissions">new or existing submissions</a>
+                </span>
             </h2>
-            <p class="nhsuk-card__description">View all new submissions which are yet to be actioned or require more detail.</p>
           </div>
         </div>
       </li>
+      <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                <span class="nhsuk-card__link">
+                  <span class="nhsuk-u-font-size-32">8</span>
+                  <br>
+                    <a class="nhsuk-card__link nhsuk-u-font-size-19 nhsuk-link--no-visited-state"
+                       href="complete-submissions/submissions">completed submissions in last 30 days</a>
+                </span>
+            </h2>
+          </div>
+        </div>
+      </li>
+      <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                <span class="nhsuk-card__link">
+                  <span class="nhsuk-u-font-size-32">All</span>
+                  <br>
+                  <span class="nhsuk-u-font-size-19">
+                    <a class="nhsuk-card__link nhsuk-link--no-visited-state"
+                       href="all-submissions/search">select from a date range to view all submissions</a>
+                  </span>
+                </span>
+            </h2>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <h2>Other areas</h2>
+
+    <ul class="nhsuk-grid-row nhsuk-card-group">
 
       <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
         <div class="nhsuk-card nhsuk-card--clickable">
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
-              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="complete-submissions/submissions">Complete submissions</a>
-            </h2>
-            <p class="nhsuk-card__description">This includes submissions which have been actioned, rejected or cancelled.</p>
-          </div>
-        </div>
-      </li>
-
-      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-        <div class="nhsuk-card nhsuk-card--clickable">
-          <div class="nhsuk-card__content">
-            <h2 class="nhsuk-card__heading nhsuk-heading-m">
-              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="#">Manage companies</a>
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="#">Manage
+                companies</a>
             </h2>
             <p class="nhsuk-card__description">Manage companies and their users.</p>
           </div>
@@ -53,7 +90,8 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <div class="nhsuk-card nhsuk-card--clickable">
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
-              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="#">Manage meds users</a>
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="#">Manage meds
+                users</a>
             </h2>
             <p class="nhsuk-card__description">Manage all meds users.</p>
           </div>
@@ -64,7 +102,8 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <div class="nhsuk-card nhsuk-card--clickable">
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
-              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="company-request/new-company-requests.html">New company requests</a>
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state"
+                 href="company-request/new-company-requests.html">New company requests</a>
             </h2>
             <p class="nhsuk-card__description">View all company requests.</p>
           </div>
@@ -72,14 +111,16 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
       </li>
 
       <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-      <div class="nhsuk-card nhsuk-card--clickable">
-        <div class="nhsuk-card__content">
-          <h2 class="nhsuk-card__heading nhsuk-heading-m">
-            <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="company-directory/directory">Company directory</a>
-          </h2>
-          <p class="nhsuk-card__description">View all companies registered to the medicines management portal.</p>
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state"
+                 href="company-directory/directory">Company directory</a>
+            </h2>
+            <p class="nhsuk-card__description">View all companies registered to the medicines
+              management portal.</p>
+          </div>
         </div>
-      </div>
       </li>
     </ul>
 
