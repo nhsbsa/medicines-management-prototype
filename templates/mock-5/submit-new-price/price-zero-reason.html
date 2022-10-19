@@ -1,0 +1,121 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="check-prices">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to price update review</a>
+</div>
+
+<fieldset class="nhsuk-fieldset">
+  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+    <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-4">
+      Reason for zero price
+    </h1>
+  </legend>
+
+  <p>Review the following price update.</p>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="price-update-summary">
+            Product name
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            Bromocriptine 2.5mg tablets
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="price-update-summary">
+            Pack size and UOM
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            100 tablet
+          </dd>
+
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="price-update-summary">
+            Price
+          </dt>
+          <dd class="nhsuk-summary-list__value">
+            0
+          </dd>
+
+        </div>
+
+      </dl>
+    </div>
+  </div>
+
+
+  <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+    As the price is set to zero, a reason must be chosen. Choose from one of the following.
+  </div>
+
+  <div class="nhsuk-radios nhsuk-radios--conditional">
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+      <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+        Price matched Part VIII in the Drug Tariff
+      </label>
+    </div>
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" aria-controls="conditional-contact-2" aria-expanded="false">
+      <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+        Price no longer agreed
+      </label>
+    </div>
+
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="contact-3" name="contact" type="radio" value="text" aria-controls="conditional-contact-3" aria-expanded="false">
+      <label class="nhsuk-label nhsuk-radios__label" for="contact-3">
+        Other reason
+      </label>
+    </div>
+
+    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-3">
+
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="mobile">
+          Other reason
+        </label>
+        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text">
+      </div>
+
+    </div>
+
+    <div class="nhsuk-radios__divider">or</div>
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-divider-4" name="example-divider" type="radio" value="create-account">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-divider-4">
+        This should not be zero price, remove it from the list
+      </label>
+    </div>
+
+  </div>
+
+</fieldset>
+
+<a class="nhsuk-button nhsuk-u-margin-top-5" onclick="" href="check-zero-prices" id="continue-button" type="submit">
+  Continue
+</a>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,229 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="price-variance-check">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to confirm the price</a>
+</div>
+
+<h1>Price update review</h1>
+
+<p>Review the price updates and edit where necessary. This will only show packs with prices that are set above zero.</p>
+<p class="nhsuk-u-margin-bottom-6">The effective date for this change is set as <strong>1st February 2023</strong>.</p>
+
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-3">
+      <caption class="nhsuk-table__caption">Packs with price changes</caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+      <tr role="row">
+        <th role="columnheader" class="" scope="col">
+          Product name
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Pack size
+        </th>
+        <th role="columnheader" class="" scope="col">
+          UOM
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Subpack
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Price
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Price (£)
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Edit
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Remove
+        </th>
+      </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Product name </span>Aciclovir 200mg dispersible tablets
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Pack size </span>25
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">UOM </span>tablet
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Subpack size</span>5
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Price </span><span>299p</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Price (£)</span><span>£2.99</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+          <span class="nhsuk-table-responsive__heading">Edit</span>
+          <a href="#">Edit</a>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+          <span class="nhsuk-table-responsive__heading">Remove</span>
+          <a href="#">Remove</a>
+        </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Product name </span>Bromocriptine 2.5mg tablets
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Pack size </span>100
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">UOM </span>tablet
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Subpack size</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Price </span><span>825p</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Price (£) </span><span>£8.25</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+          <span class="nhsuk-table-responsive__heading">Edit</span>
+          <a href="#">Edit</a>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+          <span class="nhsuk-table-responsive__heading">Remove</span>
+          <a href="#">Remove</a>
+        </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Product name </span>Diazepam 2mg tablets
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Pack size </span>1000
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">UOM </span>tablet
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Subpack size</span>10
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Price </span><span>1011p</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Price </span><span>£10.11</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+          <span class="nhsuk-table-responsive__heading">Edit</span>
+          <a href="#">Edit</a>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+          <span class="nhsuk-table-responsive__heading">Remove</span>
+          <a href="#">Remove</a>
+        </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Product name </span>Hydrocortisone 0.5% cream
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Pack size </span>15
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">UOM </span>gram
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Subpack size</span>3
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Price </span><span>600p</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Price (£)</span><span>£6.00</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+          <span class="nhsuk-table-responsive__heading">Edit</span>
+          <a href="#">Edit</a>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+          <span class="nhsuk-table-responsive__heading">Remove</span>
+          <a href="#">Remove</a>
+        </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Product name </span>Liquid paraffin liquid
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Pack size </span>200
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">UOM </span>ml
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Subpack size</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Price </span><span>555p</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Price (£)</span><span>£5.55</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+          <span class="nhsuk-table-responsive__heading">Edit</span>
+          <a href="#">Edit</a>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+          <span class="nhsuk-table-responsive__heading">Remove</span>
+          <a href="#">Remove</a>
+        </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Product name </span>Methadone 50mg/5ml solution for injection ampoules
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Pack size </span>10
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">UOM </span>ampoule
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Subpack size</span>2
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Price </span><span>329p</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+          <span class="nhsuk-table-responsive__heading">Price (£)</span><span>£3.29</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+          <span class="nhsuk-table-responsive__heading">Edit</span>
+          <a href="#">Edit</a>
+        </td>
+        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+          <span class="nhsuk-table-responsive__heading">Remove</span>
+          <a href="#">Remove</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+
+<a class="nhsuk-button nhsuk-u-margin-top-5" onclick="" href="price-zero-reason" id="continue-button" type="submit">
+  Confirm and continue
+</a>
+
+
+
+
+{% endblock %}

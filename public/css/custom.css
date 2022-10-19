@@ -395,3 +395,33 @@ fill-blue{
 .show {
  display: block;
 }
+
+.skip-to-bottom-link {
+  transform: rotate(90deg) !important; }
+
+/* this is to display the price update product at top of screen */
+
+.price-update-summary {
+  font-weight: 600;
+  margin-bottom: 4px;
+  margin: 0;
+  vertical-align: top;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  }
+
+.nhsuk-summary-list--no-border .price-update-summary {
+  border: 0; }
+
+@media (min-width: 40.0625em) {
+.price-update-summary {
+    width: 20% !important;
+    border-bottom: 1px solid #d8dde0;
+    display: table-cell;
+    padding-bottom: 8px;
+    padding-right: 24px;
+    padding-top: 8px;
+   }
+}
+
+/* end of summary list custom style
