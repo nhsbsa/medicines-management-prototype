@@ -15,7 +15,7 @@ Submit a new product | Portal | NHSBSA
 <fieldset class="nhsuk-fieldset">
   <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
     <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-4">
-      Confirm the price
+      Confirm the price change
     </h1>
   </legend>
 
@@ -45,7 +45,7 @@ Submit a new product | Portal | NHSBSA
 
     <div class="nhsuk-summary-list__row">
       <dt class="price-update-summary">
-        Price
+        New price
       </dt>
       <dd class="nhsuk-summary-list__value">
         566p or £5.66
@@ -68,32 +68,35 @@ Submit a new product | Portal | NHSBSA
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="example-hints-1" name="example-hints" type="radio" value="yes">
         <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">
-          Yes, this is the correct price
+          Yes, this is the correct price change
         </label>
       </div>
 
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="contact-3" name="example-hints" type="radio" value="text" aria-controls="conditional-contact-3" aria-expanded="false">
         <label class="nhsuk-label nhsuk-radios__label" for="contact-3">
-          No, I want to amend this price
+          No, I want to amend this price change
         </label>
       </div>
 
       <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-3">
 
         <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="mobile">
+          <label class="nhsuk-label" for="example-with-hint-text">
             Price in pence
           </label>
-          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text">
+          <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+            <div class="govuk-input__suffix" aria-hidden="true">pence</div>
+          </div>
         </div>
 
       </div>
 
+      <div class="nhsuk-radios__divider">or</div>
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="example-hints-2" name="example-hints" type="radio" value="no">
         <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
-          No, I want to remove this price update
+          No, I want to remove this price change
         </label>
       </div>
 

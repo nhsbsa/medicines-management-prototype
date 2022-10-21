@@ -19,7 +19,7 @@ Submit a new product | Portal | NHSBSA
     </h1>
   </legend>
 
-  <p>Review the following price update.</p>
+  <p>Review the following product, set to zero price.</p>
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
@@ -30,7 +30,7 @@ Submit a new product | Portal | NHSBSA
             Product name
           </dt>
           <dd class="nhsuk-summary-list__value">
-            Bromocriptine 2.5mg tablets
+            Hydrocortisone 0.5% cream
           </dd>
         </div>
 
@@ -39,17 +39,17 @@ Submit a new product | Portal | NHSBSA
             Pack size and UOM
           </dt>
           <dd class="nhsuk-summary-list__value">
-            100 tablet
+            15 gram
           </dd>
 
         </div>
 
         <div class="nhsuk-summary-list__row">
-          <dt class="price-update-summary">
-            Price
+          <dt class="nhsuk-summary-list__key">
+            Subpack
           </dt>
           <dd class="nhsuk-summary-list__value">
-            0
+            3 &times; 5
           </dd>
 
         </div>
@@ -88,20 +88,25 @@ Submit a new product | Portal | NHSBSA
     </div>
 
     <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-3">
-
+      <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="100">
       <div class="nhsuk-form-group">
-        <label class="nhsuk-label" for="mobile">
-          Other reason
+        <label class="nhsuk-label" for="with-hint">
+          Provide a reason
         </label>
-        <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text">
+        <!--          <input class="nhsuk-input nhsuk-u-width-two-thirds" type="text">-->
+        <textarea class="nhsuk-textarea govuk-js-character-count" id="with-hint" name="with-hint"  rows="2" aria-describedby="with-hint-info"></textarea>
+        <!--          <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>-->
+        <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+          You can enter up to 100 characters
+        </div>
       </div>
-
+      </div>
     </div>
 
     <div class="nhsuk-radios__divider">or</div>
 
     <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-divider-4" name="example-divider" type="radio" value="create-account">
+      <input class="nhsuk-radios__input" id="example-divider-4" name="contact" type="radio" value="create-account">
       <label class="nhsuk-label nhsuk-radios__label" for="example-divider-4">
         This should not be zero price, remove it from the list
       </label>
