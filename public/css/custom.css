@@ -446,7 +446,7 @@ fill-blue{
   vertical-align: middle;
 }
 
-/* make sure status tag has enough space around box on mobile view */
+/* make sure status tag has enough space around box on mobile view and line up headings */
 
 @media (max-width: 48.0525em) {
   .mobile-tag {
