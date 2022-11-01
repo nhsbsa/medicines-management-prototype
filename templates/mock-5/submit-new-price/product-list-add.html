@@ -15,8 +15,6 @@ Submit a new product | Portal | NHSBSA
 <h1>Add products</h1>
 
 <p>This search contains all products currently listed on dm+d, any recently actioned submissions and all discontinued lines. You may hide the discontinued products using the filter.</p>
-<!--<div class="nhsuk-grid-row">-->
-<!--  <div class="nhsuk-grid-column-full">-->
 
     <div class="nhsuk-form-group">
       <div class="nhsuk-hint nhsuk-u-margin-bottom-4">Filter the products by choosing from one of the following.</div>
@@ -41,7 +39,7 @@ Submit a new product | Portal | NHSBSA
         <div class="nhsuk-grid-column-one-third">
           <div class="nhsuk-radios__item">
             <input class="nhsuk-radios__input" id="example-3" name="example" type="radio" value="no">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-3">
               Show discontinued
             </label>
           </div>
@@ -61,10 +59,14 @@ Submit a new product | Portal | NHSBSA
     <div class="nhsuk-inset-text nhsuk-u-margin-top-4">
       <span class="nhsuk-u-visually-hidden">Information: </span>
       <p>Use this link to <a href="#" onclick="checkAllBoxes()">select all</a> products from the search results.</p>
+<!--      can the 'remove all' only be shown if user has selected all? Same as, if user has 'selected all', can this be hidden from view? YML 31/10/22-->
       <p>Use this link to <a href="#" onclick="removeAllBoxes()">remove all</a> products from the search results.</p>
 <!--      not sure if we need this extra detail? MPL 20/10/2022  -->
       <p>Please note that items that are already checked/ unchecked but aren't visible due to your search criteria will not be affected by these options.</p>
     </div>
+
+<!-- using smaller govuk checkboxes. If required, we can revert to nhs checkbox MPL 31/10/2022  -->
+
     <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
       <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
@@ -88,30 +90,30 @@ Submit a new product | Portal | NHSBSA
       </thead>
       <tbody class="nhsuk-table__body">
       <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Product name </span>Alprazolam
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Pack </span>30
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>2 &times; 15
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>299</span>p</span>
         </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Status </span>
-          <strong class="nhsuk-tag nhsuk-tag--blue">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
+          <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
             Active
           </strong>
         </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Select </span>
+        <td >
+          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <label class="govuk-label govuk-checkboxes__label table-checkboxes" for="organisation">
                 <span class="nhsuk-u-visually-hidden">Product name</span>
               </label>
             </div>
@@ -119,32 +121,33 @@ Submit a new product | Portal | NHSBSA
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Product name </span>Bupenorphine 100mg capsules
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Pack </span>28
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>
 <!--          need to make sure empty table cells announce something MPL 20/10/22-->
           <span class="nhsuk-u-visually-hidden">No Subpack information</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>23</span>p</span>
         </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Status</span>
-          <strong class="nhsuk-tag nhsuk-tag--red">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading select-tag">Status</span>
+          <strong class="nhsuk-tag nhsuk-tag--red mobile-tag">
             Discontinued
           </strong>
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Select </span>
+          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <input class="govuk-checkboxes__input" id="product-name-1" name="product-name-1" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label table-checkboxes" for="product-name-1">
+<!--                label is hidden to save space YML 31/10/22 -->
                 <span class="nhsuk-u-visually-hidden">Product name</span>
               </label>
             </div>
@@ -152,32 +155,32 @@ Submit a new product | Portal | NHSBSA
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Product name </span>Protein cornflakes
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Pack </span>1
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>
           <!--          need to make sure empty table cells announce something MPL 20/10/22-->
           <span class="nhsuk-u-visually-hidden">No Subpack information</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
         </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Status </span>
-          <strong class="nhsuk-tag nhsuk-tag--blue">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
+          <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
             Active
           </strong>
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Select </span>
+          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <input class="govuk-checkboxes__input" id="product-name-2" name="product-name-2" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label table-checkboxes" for="product-name-2">
                 <span class="nhsuk-u-visually-hidden">Product name</span>
               </label>
             </div>
@@ -185,30 +188,30 @@ Submit a new product | Portal | NHSBSA
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Product name </span>Cymbalta
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Pack </span>30
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>3 &times; 10
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
         </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Status </span>
-          <strong class="nhsuk-tag nhsuk-tag--blue">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
+          <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
             Active
           </strong>
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Select </span>
+          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <input class="govuk-checkboxes__input" id="product-name-3" name="product-name-3" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label table-checkboxes" for="product-name-3">
                 <span class="nhsuk-u-visually-hidden">Product name</span>
               </label>
             </div>
@@ -216,30 +219,30 @@ Submit a new product | Portal | NHSBSA
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Product name </span>Alprazolam
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Pack </span>30
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>2 &times; 15
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>299</span>p</span>
         </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Status </span>
-          <strong class="nhsuk-tag nhsuk-tag--blue">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
+          <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
             Active
           </strong>
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Select </span>
+          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <input class="govuk-checkboxes__input" id="product-name-4" name="product-name-4" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label table-checkboxes" for="product-name-4">
                 <span class="nhsuk-u-visually-hidden">Product name</span>
               </label>
             </div>
@@ -247,30 +250,30 @@ Submit a new product | Portal | NHSBSA
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Product name </span>Bupenorphine 100mg capsules
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Pack </span>28
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>2 &times; 14
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>23</span>p</span>
         </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Status </span>
-          <strong class="nhsuk-tag nhsuk-tag--red">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
+          <strong class="nhsuk-tag nhsuk-tag--red mobile-tag">
             Discontinued
           </strong>
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Select </span>
+          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <input class="govuk-checkboxes__input" id="product-name-5" name="product-name-5" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label table-checkboxes" for="product-name-5">
                 <span class="nhsuk-u-visually-hidden">Product name</span>
               </label>
             </div>
@@ -278,32 +281,32 @@ Submit a new product | Portal | NHSBSA
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Product name </span>Protein cornflakes
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Pack </span>1
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>
           <!--          need to make sure empty table cells announce something MPL 20/10/22-->
           <span class="nhsuk-u-visually-hidden">No subpack information</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
         </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Status </span>
-          <strong class="nhsuk-tag nhsuk-tag--blue">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
+          <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
             Active
           </strong>
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Select </span>
+          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <input class="govuk-checkboxes__input" id="product-name-6" name="product-name-6" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label table-checkboxes" for="product-name-6">
                 <span class="nhsuk-u-visually-hidden">Product name</span>
               </label>
             </div>
@@ -311,30 +314,30 @@ Submit a new product | Portal | NHSBSA
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Product name </span>Cymbalta
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Pack </span>30
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>3 &times; 10
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
         </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Status </span>
-          <strong class="nhsuk-tag nhsuk-tag--blue">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
+          <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
             Active
           </strong>
         </td>
         <td style="">
-          <span class="nhsuk-table-responsive__heading">Select </span>
+          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <input class="govuk-checkboxes__input" id="product-name-7" name="product-name-7" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label table-checkboxes" for="product-name-7">
                 <span class="nhsuk-u-visually-hidden">Product name</span>
               </label>
             </div>
@@ -342,32 +345,32 @@ Submit a new product | Portal | NHSBSA
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Product name </span>Alprazolam
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Pack </span>30
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>
           <!--          need to make sure empty table cells announce something MPL 20/10/22-->
           <span class="nhsuk-u-visually-hidden">No subpack information</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>299</span>p</span>
         </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Status </span>
-          <strong class="nhsuk-tag nhsuk-tag--blue">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
+          <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
             Active
           </strong>
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Select </span>
+          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <input class="govuk-checkboxes__input" id="product-name-8" name="product-name-8" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label table-checkboxes" for="product-name-8">
                 <span class="nhsuk-u-visually-hidden">Product name</span>
               </label>
             </div>
@@ -375,30 +378,30 @@ Submit a new product | Portal | NHSBSA
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Product name </span>Bupenorphine 100mg capsules
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Pack </span>28
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>2 &times; 14
         </td>
-        <td role="cell" class="nhsuk-table__cell">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>23</span>p</span>
         </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Status </span>
-          <strong class="nhsuk-tag nhsuk-tag--red">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
+          <strong class="nhsuk-tag nhsuk-tag--red mobile-tag">
             Discontinued
           </strong>
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Select </span>
+          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <input class="govuk-checkboxes__input" id="product-name-9" name="product-name-9" type="checkbox" value="hmrc">
+              <label class="govuk-label govuk-checkboxes__label table-checkboxes" for="product-name-9">
                 <span class="nhsuk-u-visually-hidden">Product name</span>
               </label>
             </div>
@@ -409,6 +412,9 @@ Submit a new product | Portal | NHSBSA
     </table>
 <!--  </div>-->
 <!--</div>-->
+
+<!-- pagination taken from https://design-system.service.gov.uk/components/pagination/ MPL 31/10/22 -->
+
 <div class="nhsuk-grid-row nhsuk-u-margin-top-3">
   <div class="nhsuk-grid-column-full">
     <nav class="govuk-pagination" role="navigation" aria-label="results">
@@ -443,8 +449,13 @@ Submit a new product | Portal | NHSBSA
       </div>
     </nav>
 <!--    not sure if we need this back button? back link might suffice MPL 20/10/2022 -->
-    <a href="product-list.html"><button class="nhsuk-button nhsuk-button--secondary">Go back</button></a>
-    <a href="product-list.html"><button class="nhsuk-button nhsuk-u-float-right" style="float: right">Add selected</button></a>
+<!--    <a href="product-list.html"><button class="nhsuk-button nhsuk-button&#45;&#45;secondary">Go back</button></a>-->
+
+<!--    remove back button as back link works more effectively and keeping it may cause confusion YML 31/10/22-->
+
+
+<!--    button floated right to line up with checkboxes. YML 31/10/22-->
+    <a href="product-list.html"><button class="nhsuk-button nhsuk-u-float-right" style="float: right">Add selected products</button></a>
   </div>
 </div>
 
