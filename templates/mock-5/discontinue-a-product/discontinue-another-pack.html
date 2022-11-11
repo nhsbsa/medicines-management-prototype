@@ -16,50 +16,31 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        Reason for discontinuation
+        Discontinue another pack?
       </h1>
     </legend>
     <div class="nhsuk-hint" id="spc-hint">
       Add descriptive text here
     </div>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
-      Select the reason for this product being discontinued. You can only select one reason at a time.
+      Select whether you would like to discontinue another pack
     </div>
 
     <div class="nhsuk-radios" id="data-spc-radios">
 
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="no-longer-manufactured" name="data-spc" type="radio" value="pack-list-add" />
+        <input class="nhsuk-radios__input" id="no-longer-manufactured" name="data-spc" type="radio" value="discontinue-check-list" />
         <label class="nhsuk-label nhsuk-radios__label" for="no-longer-manufactured">
-          No longer manufactured
+          Yes
         </label>
       </div>
 
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="temporarily-out-of-stock" name="data-spc" type="radio" value="how-long-oos" />
+        <input class="nhsuk-radios__input" id="temporarily-out-of-stock" name="data-spc" type="radio" value="../dashboard" />
         <label class="nhsuk-label nhsuk-radios__label" for="temporarily-out-of-stock">
-          Out of stock
+          No
         </label>
       </div>
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="company-merger" name="data-spc" type="radio" value="email-meds-man" />
-        <label class="nhsuk-label nhsuk-radios__label" for="company-merger">
-          Company merger
-        </label>
-      </div>
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="product-divestment" name="data-spc" type="radio" value="contact-details-for-new-company/supplier-name.html" />
-        <label class="nhsuk-label nhsuk-radios__label" for="product-divestment">
-          Product divestment
-        </label>
-      </div>
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="takeover" name="data-spc" type="radio" value="contact-details-for-new-company/supplier-name.html" />
-        <label class="nhsuk-label nhsuk-radios__label" for="takeover">
-          Takeover
-        </label>
-      </div>
-
     </div>
   </fieldset>
 </div>
