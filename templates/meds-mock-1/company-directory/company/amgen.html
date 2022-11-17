@@ -6,9 +6,11 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 {% block content %}
 
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" id="back-link" href="../directory">
-    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+  <a class="nhsuk-back-link__link" href="../directory" id="back-link">
+    <svg aria-hidden="true" class="nhsuk-icon nhsuk-icon__chevron-left"
+         height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+      <path
+          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
     Go back to company directory</a>
 </div>
@@ -20,68 +22,333 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     <h1>Amgen</h1>
 
     <div class="nhsuk-grid-row">
-      <div class="nhsuk-grid-column-two-thirds">
-        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+      <div class="tabs tabbed">
+        <div class="tabs-nav">
+          <ul class="tabs-list">
+            <li id="heading-tab-information"><a href="#tab-users">General information</a></li>
+            <li id="heading-tab-users"><a href="#tab-users">Users</a></li>
+            <li id="heading-tab-submissions"><a href="#tab-submissions">Submissions</a></li>
+          </ul>
+        </div>
+        <div class="tabs-content">
+          <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-information">
+            <div class="tabs-panel-inner">
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                  <dl class="nhsuk-summary-list"><!--nhsuk-summary-list&#45;&#45;no-border-->
 
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Company name
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              Amgen
-            </dd>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Company name
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        Amgen
+                      </dd>
 
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Primary user
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        Jane Smith
+                      </dd>
+
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Primary user contact
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        <p>07700 900362</p>
+                        <p>jane.smith@example.com</p>
+                      </dd>
+
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Secondary user
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        David Jones
+                      </dd>
+
+                    </div>
+
+                    <div class="nhsuk-summary-list__row">
+                      <dt class="nhsuk-summary-list__key">
+                        Secondary user contact
+                      </dt>
+                      <dd class="nhsuk-summary-list__value">
+                        <p>07700 905456</p>
+                        <p>david.smith@example.com</p>
+                      </dd>
+
+                    </div>
+
+                  </dl>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-users">
+            <div class="tabs-panel-inner">
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                  <table class="nhsuk-table-responsive" role="table">
+                    <!--                    <h1>Summary of all Amgen's users</h1>-->
+                    <thead class="nhsuk-table__head" role="rowgroup">
+                    <tr role="row">
+                      <th class="" role="columnheader" scope="col">
+                        Name
+                      </th>
+                      <th class="" role="columnheader" scope="col">
+                        Email
+                      </th>
+                    </tr>
+                    </thead>
+                    <tbody class="nhsuk-table__body">
+                    <tr class="nhsuk-table__row" role="row">
+                      <td class="nhsuk-table__cell" role="cell">
+                        <span class="nhsuk-table-responsive__heading">Name </span>Jane Smith
+                      </td>
+                      <td class="nhsuk-table__cell" role="cell">
+                        <span class="nhsuk-table-responsive__heading">Email </span>jane.smith@example.com
+                      </td>
+                    </tr>
+                    <tr class="nhsuk-table__row" role="row">
+                      <td class="nhsuk-table__cell" role="cell">
+                        <span class="nhsuk-table-responsive__heading">Name </span>David Jones
+                      </td>
+                      <td class="nhsuk-table__cell" role="cell">
+                        <span class="nhsuk-table-responsive__heading">Email </span>david.smith@example.com
+                      </td>
+                    </tr>
+
+                    <tr class="nhsuk-table__row" role="row">
+                      <td class="nhsuk-table__cell" role="cell">
+                        <span class="nhsuk-table-responsive__heading">Name </span>Marcin Wisniewski
+                      </td>
+                      <td class="nhsuk-table__cell" role="cell">
+                        <span class="nhsuk-table-responsive__heading">Email </span>marcin.wisniewski@example.com
+                      </td>
+                    </tr>
+
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-submissions">
+            <div id="pageAndResultCount">Page 1 of 1 (2 results)</div>
+            <div class="tabs-panel-inner">
+              <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+
+                  <table class="govuk-table nhsuk-table-responsive"
+                         data-module="moj-sortable-table">
+                    <!--                    <h1>Summary of all Amgen's submissions</h1>-->
+                    <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+
+                      <th aria-sort="ascending" class="govuk-table__header" scope="col">Date
+                        received
+                      </th>
+
+                      <th aria-sort="none" class="govuk-table__header" scope="col">Type</th>
+
+                      <th aria-sort="none" class="govuk-table__header" scope="col">Product name</th>
+
+                      <th aria-sort="none" class="govuk-table__header" scope="col">Effective date
+                      </th>
+
+                      <th aria-sort="none" class="govuk-table__header" scope="col">Reference</th>
+                    </tr>
+                    </thead>
+
+                    <tbody class="nhsuk-table__body">
+
+                    <tr class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell" data-sort-value="1">
+                        <span class="nhsuk-table-responsive__heading">Date received</span>
+                        01-05-2022
+                      </td>
+                      <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+                        Product
+                      </td>
+                      <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+                        Paracetamol 200mg tablets
+                      </td>
+                      <td class="nhsuk-table__cell" data-sort-value="3">
+                        <span class="nhsuk-table-responsive__heading">Effective date</span>
+                        01-06-2022
+                      </td>
+                      <td class="nhsuk-table__cell" data-sort-value="56465452">
+                        <span class="nhsuk-table-responsive__heading">Reference</span>
+                        56414253</td>
+                      </td>
+                    </tr>
+
+                    <tr class="nhsuk-table__row">
+                      <td class="nhsuk-table__cell" data-sort-value="1">
+                        <span class="nhsuk-table-responsive__heading">Date received</span>
+                        11-05-2022
+                      </td>
+                      <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+                        Product
+                      </td>
+                      <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+                        Ibuprofen 10% gel
+                      </td>
+                      <td class="nhsuk-table__cell" data-sort-value="3">
+                        <span class="nhsuk-table-responsive__heading">Effective date</span>
+                        22-06-2022
+                      </td>
+                      <td class="nhsuk-table__cell" data-sort-value="56465452">
+                        <span class="nhsuk-table-responsive__heading">Reference</span>
+                        56462353</td>
+                      </td>
+                    </tr>
+
+
+                    </tbody>
+                  </table>
+                  <div id="pagination ">
+                    <nav aria-label="Pagination Navigation">
+                      <ul class="pagination nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4">
+                        <!-- Previous Button -->
+                        <li class="pagination__item">Previous</li>
+                        <li class="pagination__item">|</li>
+                        <!-- First Page -->
+                        <!-- Page Numbers -->
+                        <li class="pagination__item">
+                          <!-- Not this page! -->
+                          <!-- This page! -->
+                          <p aria-current="true" class="pagination__link nhsuk-u-font-weight-bold"
+                             id="1">1</p>
+                        </li>
+                        <!-- Next Page -->
+                        <li class="pagination__item">|</li>
+                        <!-- Next Button -->
+                        <li class="pagination__item">Next</li>
+
+                      </ul>
+                    </nav>
+                  </div>
+
+                </div>
+              </div>
+            </div>
           </div>
 
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Primary user
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              Jane Smith
-            </dd>
-
-          </div>
-
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Primary user contact
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              <p>07700 900362</p>
-              <p>jane.smith@example.com</p>
-            </dd>
-
-          </div>
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Secondary user
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              David Jones
-            </dd>
-
-          </div>
-
-          <div class="nhsuk-summary-list__row">
-            <dt class="nhsuk-summary-list__key">
-              Secondary user contact
-            </dt>
-            <dd class="nhsuk-summary-list__value">
-              <p>07700 905456</p>
-              <p>david.smith@example.com</p>
-            </dd>
-
-          </div>
-
-        </dl>
-
+        </div>
       </div>
     </div>
 
+    <!--    <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-two-thirds">
+            <dl class="nhsuk-summary-list nhsuk-summary-list&#45;&#45;no-border">
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Company name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Amgen
+                </dd>
+    
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Primary user
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  Jane Smith
+                </dd>
+    
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Primary user contact
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>07700 900362</p>
+                  <p>jane.smith@example.com</p>
+                </dd>
+    
+              </div>
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Secondary user
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  David Jones
+                </dd>
+    
+              </div>
+    
+              <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                  Secondary user contact
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                  <p>07700 905456</p>
+                  <p>david.smith@example.com</p>
+                </dd>
+    
+              </div>
+    
+            </dl>
+    
+          </div>
+        </div>
+    
+        <div class="grid-row">
+          <div class="column-two-thirds">
+    
+            <h2>View users and submissions</h2>
+    
+            <ul class="nhsuk-grid-row nhsuk-card-group">
+    
+              <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+                <div class="nhsuk-card nhsuk-card&#45;&#45;clickable">
+                  <div class="nhsuk-card__content">
+                    <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                      <a class="nhsuk-card__link nhsuk-link&#45;&#45;no-visited-state"
+                         href="amgen/amgen-users.html">Users</a>
+                    </h2>
+                    <p class="nhsuk-card__description">View Amgen's users.</p>
+                  </div>
+                </div>
+              </li>
+    
+              <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+                <div class="nhsuk-card nhsuk-card&#45;&#45;clickable">
+                  <div class="nhsuk-card__content">
+                    <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                      <a class="nhsuk-card__link nhsuk-link&#45;&#45;no-visited-state"
+                         href="amgen/amgen-submissions.html">Submissions</a>
+                    </h2>
+                    <p class="nhsuk-card__description">View Amgen's submissions.</p>
+                  </div>
+                </div>
+              </li>
+    
+            </ul>
+    
+          </div>
+        </div>-->
 
   </main>
 </div>
+<script defer src="/js/MOJ.js"></script>
+<script src="../../js/dialog.js"></script>
 
 
 {% endblock %}
