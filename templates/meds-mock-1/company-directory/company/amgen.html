@@ -15,9 +15,9 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     Go back to company directory</a>
 </div>
 
-<div class="nhsuk-width-container">
 
-  <main class="nhsuk-main-wrapper" id="maincontent" role="main">
+<main class="nhsuk-main-wrapper" id="maincontent" role="main">
+  <div class="nhsuk-width-container">
 
     <h1>Amgen</h1>
 
@@ -35,7 +35,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
             <div class="tabs-panel-inner">
               <div class="nhsuk-grid-row">
                 <div class="nhsuk-grid-column-full">
-                  <dl class="nhsuk-summary-list"><!--nhsuk-summary-list&#45;&#45;no-border-->
+                  <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
 
                     <div class="nhsuk-summary-list__row">
                       <dt class="nhsuk-summary-list__key">
@@ -99,7 +99,9 @@ Submit a new product: pack size and strength | Portal | NHSBSA
               <div class="nhsuk-grid-row">
                 <div class="nhsuk-grid-column-full">
                   <table class="nhsuk-table-responsive" role="table">
-                    <!--                    <h1>Summary of all Amgen's users</h1>-->
+                    <!--
+                                        <caption class="nhsuk-table__caption">Amgen's users</caption>
+                    -->
                     <thead class="nhsuk-table__head" role="rowgroup">
                     <tr role="row">
                       <th class="" role="columnheader" scope="col">
@@ -107,6 +109,9 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                       </th>
                       <th class="" role="columnheader" scope="col">
                         Email
+                      </th>
+                      <th class="" role="columnheader" scope="col">
+                        Role
                       </th>
                     </tr>
                     </thead>
@@ -118,6 +123,12 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                       <td class="nhsuk-table__cell" role="cell">
                         <span class="nhsuk-table-responsive__heading">Email </span>jane.smith@example.com
                       </td>
+                      <td class="nhsuk-table__cell" role="cell">
+                        <span class="nhsuk-table-responsive__heading">Role </span><strong
+                          class="nhsuk-tag nhsuk-tag--white">
+                        Admin
+                      </strong>
+                      </td>
                     </tr>
                     <tr class="nhsuk-table__row" role="row">
                       <td class="nhsuk-table__cell" role="cell">
@@ -125,6 +136,9 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                       </td>
                       <td class="nhsuk-table__cell" role="cell">
                         <span class="nhsuk-table-responsive__heading">Email </span>david.smith@example.com
+                      </td>
+                      <td class="nhsuk-table__cell" role="cell">
+                        <span class="nhsuk-table-responsive__heading">Role </span>
                       </td>
                     </tr>
 
@@ -134,6 +148,9 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                       </td>
                       <td class="nhsuk-table__cell" role="cell">
                         <span class="nhsuk-table-responsive__heading">Email </span>marcin.wisniewski@example.com
+                      </td>
+                      <td class="nhsuk-table__cell" role="cell">
+                        <span class="nhsuk-table-responsive__heading">Role </span>
                       </td>
                     </tr>
 
@@ -189,7 +206,8 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                       </td>
                       <td class="nhsuk-table__cell" data-sort-value="56465452">
                         <span class="nhsuk-table-responsive__heading">Reference</span>
-                        56414253</td>
+                        56414253
+                      </td>
                       </td>
                     </tr>
 
@@ -210,7 +228,8 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                       </td>
                       <td class="nhsuk-table__cell" data-sort-value="56465452">
                         <span class="nhsuk-table-responsive__heading">Reference</span>
-                        56462353</td>
+                        56462353
+                      </td>
                       </td>
                     </tr>
 
@@ -248,105 +267,8 @@ Submit a new product: pack size and strength | Portal | NHSBSA
         </div>
       </div>
     </div>
-
-    <!--    <div class="nhsuk-grid-row">
-          <div class="nhsuk-grid-column-two-thirds">
-            <dl class="nhsuk-summary-list nhsuk-summary-list&#45;&#45;no-border">
-    
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Company name
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  Amgen
-                </dd>
-    
-              </div>
-    
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Primary user
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  Jane Smith
-                </dd>
-    
-              </div>
-    
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Primary user contact
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  <p>07700 900362</p>
-                  <p>jane.smith@example.com</p>
-                </dd>
-    
-              </div>
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Secondary user
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  David Jones
-                </dd>
-    
-              </div>
-    
-              <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                  Secondary user contact
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                  <p>07700 905456</p>
-                  <p>david.smith@example.com</p>
-                </dd>
-    
-              </div>
-    
-            </dl>
-    
-          </div>
-        </div>
-    
-        <div class="grid-row">
-          <div class="column-two-thirds">
-    
-            <h2>View users and submissions</h2>
-    
-            <ul class="nhsuk-grid-row nhsuk-card-group">
-    
-              <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-                <div class="nhsuk-card nhsuk-card&#45;&#45;clickable">
-                  <div class="nhsuk-card__content">
-                    <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                      <a class="nhsuk-card__link nhsuk-link&#45;&#45;no-visited-state"
-                         href="amgen/amgen-users.html">Users</a>
-                    </h2>
-                    <p class="nhsuk-card__description">View Amgen's users.</p>
-                  </div>
-                </div>
-              </li>
-    
-              <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-                <div class="nhsuk-card nhsuk-card&#45;&#45;clickable">
-                  <div class="nhsuk-card__content">
-                    <h2 class="nhsuk-card__heading nhsuk-heading-m">
-                      <a class="nhsuk-card__link nhsuk-link&#45;&#45;no-visited-state"
-                         href="amgen/amgen-submissions.html">Submissions</a>
-                    </h2>
-                    <p class="nhsuk-card__description">View Amgen's submissions.</p>
-                  </div>
-                </div>
-              </li>
-    
-            </ul>
-    
-          </div>
-        </div>-->
-
-  </main>
-</div>
+  </div>
+</main>
 <script defer src="/js/MOJ.js"></script>
 <script src="../../js/dialog.js"></script>
 
