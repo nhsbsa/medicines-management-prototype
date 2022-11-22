@@ -28,7 +28,7 @@ fill-blue{
   background-color: #B2D2BC !important;
 }
 
-* Conditional */
+/* Conditional */
 .nhsuk-radios__conditional {
   margin-bottom: 16px;
   border-left: 4px solid #4c6272;
@@ -455,4 +455,9 @@ fill-blue{
   .select-tag {
     margin-top: 4px;
   }
+}
+
+
+.govuk-link{
+    font-family: Frutiger W01, Arial, Sans-serif !important;
 }
