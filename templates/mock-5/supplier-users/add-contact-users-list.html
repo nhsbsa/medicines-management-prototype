@@ -1,22 +1,19 @@
 {% extends "base.html" %}
 {% block title %}
-Submit a new product | Portal | NHSBSA
+Users list | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="../dashboard.html">
+  <a class="nhsuk-back-link__link" href="add-contact-existing-user">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to dashboard</a>
+    Go back to existing user</a>
 </div>
-<span class="nhsuk-caption-l">
-  AstraZeneca
-</span>
-<h1>Supplier users</h1>
-<!--<div class="nhsuk-grid-row">-->
-<!--  <div class="nhsuk-grid-column-full">-->
+<h1>Users list</h1>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
     <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
       <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
@@ -27,7 +24,7 @@ Submit a new product | Portal | NHSBSA
           Email
         </th>
         <th role="columnheader" class="" scope="col">
-        Role
+          Role
         </th>
         <th role="columnheader" class="" scope="col">
           Action
@@ -46,7 +43,7 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Role </span>Administrator
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Action </span><a href="edit-supplier-main.html">Edit</a>
+          <span class="nhsuk-table-responsive__heading">Action </span><a href="add-contact-summary">Select</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -54,14 +51,14 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Name </span>Sarah Brown
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Pack </span>sarahbrown@nhs.net
+          <span class="nhsuk-table-responsive__heading">Email </span>sarahbrown@nhs.net
         </td>
         <td>
           <span class="nhsuk-table-responsive__heading">Role </span>User
         </td>
         <td>
           <span class="nhsuk-table-responsive__heading">Action </span>
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">Edit</a>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">Select</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -76,13 +73,13 @@ Submit a new product | Portal | NHSBSA
         </td>
         <td>
           <span class="nhsuk-table-responsive__heading">Action </span>
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">Edit</a>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">Select</a>
         </td>
       </tr>
       </tbody>
     </table>
-<!--  </div>-->
-<!--</div>-->
+  </div>
+</div>
 <div class="nhsuk-grid-row nhsuk-u-margin-top-3">
   <div class="nhsuk-grid-column-full">
     <nav class="govuk-pagination" role="navigation" aria-label="results">
@@ -116,11 +113,7 @@ Submit a new product | Portal | NHSBSA
         </svg></a>
       </div>
     </nav>
-    <a class="nhsuk-button nhsuk-u-margin-right-0 nhsuk-u-float-right" href="add-supplier-first-name.html">Add supplier user</a>
   </div>
 </div>
-
-
-
 
 {% endblock %}
