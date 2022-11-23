@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: spc or Data Sheet | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="supplier-name.html">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to supplier name</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        Additional information
+      </h1>
+    </legend>
+
+    <div class="nhsuk-do-dont-list">
+      <h3 class="nhsuk-do-dont-list__label">The following fields are optional</h3>
+      <ul class="nhsuk-list nhsuk-list--tick">
+        <li>
+          <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+          </svg>
+          Contact name
+        </li>
+        <li>
+          <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+          </svg>
+          Email address
+        </li>
+        <li>
+          <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+          </svg>
+          Phone number
+        </li>
+      </ul>
+    </div>
+
+    <div class="nhsuk-radios" id="data-spc-radios">
+      <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
+        Do you have information for any of these fields?
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="2" name="data-spc" type="radio" value="contact-details-for-new-company/contact-name" />
+        <label class="nhsuk-label nhsuk-radios__label" for="1">
+          Yes
+        </label>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="2" name="data-spc" type="radio" value="contact-details-for-new-company/submission.html" />
+        <label class="nhsuk-label nhsuk-radios__label" for="2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<input type="button" onclick="navigate" class="nhsuk-button nhsuk-u-margin-top-3"
+       value="Continue"
+       id="next"
+       name="next">
+</input>
+
+<script type="text/javascript">
+
+
+
+  const continueBtn = document.getElementById("next")
+
+  continueBtn.addEventListener("click", navigate);
+
+
+  function navigate() {
+    const selected = document.querySelector('input[name="data-spc"]:checked').value;
+    console.log(selected)
+    location.href="/mock-5/discontinue-a-product/" + selected
+  }
+
+
+
+</script>
+
+{% endblock %}
+
+
