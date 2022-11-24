@@ -44,8 +44,8 @@ Company details | Portal | NHSBSA
           Primary user contact
         </dt>
         <dd class="nhsuk-summary-list__value">
-          <p id="primary-user-number">07700 900362</p>
           <p id="primary-user-email">johnsmith@nhs.net</p>
+          <p id="primary-user-number">07700 900362</p>
         </dd>
       </div>
 
@@ -57,7 +57,7 @@ Company details | Portal | NHSBSA
           David Jones
         </dd>
         <dd class="nhsuk-summary-list__actions">
-          <a href="#">
+          <a href="edit-contact-secondary">
             Edit<span class="nhsuk-u-visually-hidden"> name</span>
           </a>
         </dd>
@@ -67,8 +67,8 @@ Company details | Portal | NHSBSA
           Secondary user contact
         </dt>
         <dd class="nhsuk-summary-list__value">
-          <p id="secondary-user-number">07700 905456</p>
           <p id="secondary-user-email">david.jones@example.com</p>
+          <p id="secondary-user-number">07700 905456</p>
         </dd>
       </div>
     </dl>
@@ -83,9 +83,6 @@ Company details | Portal | NHSBSA
 
 <div>
   <a id="primary-contact-button" class="nhsuk-button" href="add-contact-existing-user">Add primary contact</a>
-</div>
-<div id="clear-storage">
-  <a onclick="clearLocalStorage()" href="">Reset (prototype purposes only)</a>
 </div>
 
 <script src="/js/companyAddContactInfo.js" onload="displayAddContactMessage(); displayContacts();"></script>
