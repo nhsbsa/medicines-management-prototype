@@ -18,71 +18,119 @@ Company details | Portal | NHSBSA
     <h1>Company details</h1>
     <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
       <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
+        <dt class="nhsuk-summary-list__key nhsuk-heading-s">
           Company name
         </dt>
         <dd class="nhsuk-summary-list__value">
           AstraZeneca
         </dd>
       </div>
-
-      <div class="nhsuk-summary-list__row primary-user-data">
-        <dt class="nhsuk-summary-list__key">
-          Primary user
-        </dt>
-        <dd class="nhsuk-summary-list__value" id="primary-user-name">
-          John Smith
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="edit-contact-main">
-            Edit<span class="nhsuk-u-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row primary-user-data">
-        <dt class="nhsuk-summary-list__key">
-          Primary user contact
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <p id="primary-user-email">johnsmith@nhs.net</p>
-          <p id="primary-user-number">07700 900362</p>
-        </dd>
-      </div>
-
-      <div class="nhsuk-summary-list__row secondary-user-data">
-        <dt class="nhsuk-summary-list__key">
-          Secondary user
-        </dt>
-        <dd class="nhsuk-summary-list__value" id="secondary-user-name">
-          David Jones
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="edit-contact-secondary">
-            Edit<span class="nhsuk-u-visually-hidden"> name</span>
-          </a>
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row secondary-user-data">
-        <dt class="nhsuk-summary-list__key">
-          Secondary user contact
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          <p id="secondary-user-email">david.jones@example.com</p>
-          <p id="secondary-user-number">07700 905456</p>
-        </dd>
-      </div>
     </dl>
   </div>
 </div>
 
-<div class="nhsuk-grid-row" id="message-container">
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <table role="table" class="nhsuk-table-responsive primary-user-data">
+      <caption class="nhsuk-table__caption">Primary contact</caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+      <tr role="row">
+        <th role="columnheader" class="" scope="col">
+          Name
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Email
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Phone number
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Action
+        </th>
+      </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Name </span>John Smith
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Email </span>john.smith@nhs.net
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Phone number </span>07700 900362
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Action</span><a href="edit-contact-main">Edit</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row nhsuk-u-margin-top-6">
+  <div class="nhsuk-grid-column-full">
+    <table role="table" class="nhsuk-table-responsive secondary-user-data">
+      <caption class="nhsuk-table__caption">Secondary contacts</caption>
+      <thead role="rowgroup" class="nhsuk-table__head">
+      <tr role="row">
+        <th role="columnheader" class="" scope="col">
+          Name
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Email
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Phone number
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Action
+        </th>
+      </tr>
+      </thead>
+      <tbody class="nhsuk-table__body">
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Name </span>David Jones
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Email </span>david.jones@nhs.net
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Phone number </span>07700 905456
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Action</span><a href="edit-contact-secondary">Edit</a>
+        </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Name </span>John Doe
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Email </span>john.doe@test.com
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Phone number </span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+          <span class="nhsuk-table-responsive__heading">Action</span><a href="#">Edit</a>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="nhsuk-grid-row nhsuk-u-margin-top-4" id="message-container">
   <div class="nhsuk-grid-column-full">
     <h2 id="not-submitted-message">You have not added a primary user contact</h2>
   </div>
 </div>
 
 <div>
-  <a id="primary-contact-button" class="nhsuk-button" href="add-contact-existing-user">Add primary contact</a>
+  <a id="primary-contact-button" class="nhsuk-button nhsuk-u-margin-top-6" href="add-contact-existing-user">Add primary contact</a>
 </div>
 
 <script src="/js/companyAddContactInfo.js" onload="displayAddContactMessage(); displayContacts();"></script>

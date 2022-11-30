@@ -41,7 +41,7 @@ Review information | Portal | NHSBSA
           johnsmith@nhs.net
         </dd>
         <dd class="nhsuk-summary-list__actions">
-          <a href="#">
+          <a class="hide-existing-user" href="#">
             Change<span class="nhsuk-u-visually-hidden"> email</span>
           </a>
         </dd>
@@ -79,6 +79,6 @@ Review information | Portal | NHSBSA
 <a href="view-company-details" class="nhsuk-button nhsuk-u-margin-top-3" id="next"
    onclick="userAdded()">Submit</a>
 
-<script src="/js/companyAddContactInfo.js"></script>
+<script src="/js/companyAddContactInfo.js" onload="displayChangeLinks()"></script>
 
 {% endblock %}
