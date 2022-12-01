@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% block title %}
+Portal dashboard | Medicines Management design prototype | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="grid-row">
+  <div class="nhsuk-back-link">
+    <a class="nhsuk-back-link__link" href="view-company-request.html">
+      <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+        <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+      </svg>
+      Go back</a>
+  </div>
+
+  <div class="nhsuk-form-group">
+    <h1 class="nhsuk-label-wrapper">
+      <span class="nhsuk-caption-l">Pfizer Ltd</span>
+      <label class="nhsuk-label nhsuk-label--l" for="example-heading">
+        Link Common Drug Reference (CDR) Supplier
+      </label>
+    </h1>
+    <div class="nhsuk-hint" id="example-with-hint-text-hint">
+      In order to add a company to the service, they need to be linked to a supplier on the Common Drug Reference (CDR)
+      in order to be able
+      to manage the correct products. Use the input below to search for suppliers.
+    </div>
+    <input class="nhsuk-input" id="example-heading" name="example-heading" type="text">
+  </div>
+
+  <a class="nhsuk-button" href="search-supplier-results.html">Search</a>
+
+  <div class="nhsuk-warning-callout">
+    <h3 class="nhsuk-warning-callout__label">
+    <span role="text">
+      <span class="nhsuk-u-visually-hidden">Important: </span>
+      Prototype Note
+    </span>
+    </h3>
+    <p>In the context of this prototype, the option 'Pfizer Ltd' has already been linked in the system
+      so the journey should result in being redirected to the 'Already linked' page.</p>
+  </div>
+
+
+  <table class="nhsuk-table">
+    <caption class="nhsuk-table__caption">CDR Suppliers</caption>
+    <thead role="rowgroup" class="nhsuk-table__head">
+    <tr role="row">
+      <th role="columnheader" class="" scope="col">
+        Supplier name
+      </th>
+      <th role="columnheader" class="" scope="col">
+        Link
+      </th>
+    </tr>
+    </thead>
+    <tbody class="nhsuk-table__body">
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Pfizer-BioNTech</td>
+      <td class="nhsuk-table__cell">
+        <a href="confirm-accept-request.html">Link</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Pfizer Ltd</td>
+      <td class="nhsuk-table__cell">
+        <a href="existing-company.html">Link</a>
+      </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+      <td class="nhsuk-table__cell">Pfizer Consumer Healthcare Ltd</td>
+      <td class="nhsuk-table__cell">
+        <a href="confirm-accept-request.html">Link</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../product/product-spc-upload-choice">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to provide spc/Data Sheet</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        What is the pack size and type?
+      </h1>
+    </legend>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
+      This reflects how many units are in the pack and what type they are. For example, 28 tablets or 200 doses.
+    </div>
+
+
+    <label class="nhsuk-label" for="pack-size">
+      Pack size
+    </label>
+    <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="pack-size" name="size" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
+
+    <label class="nhsuk-label" for="pack-type">
+      Type
+    </label>
+    <select class="nhsuk-select" id="pack-type" name="type">
+      <option value="-"> - </option>
+      <option value="ampoule">ampoule</option>
+      <option value="bottle">bottle</option>
+      <option value="capsule">capsule</option>
+      <option value="dose">dose</option>
+      <option value="gram">gram</option>
+      <option value="litre">litre</option>
+      <option value="ml">ml</option>
+      <option value="tablet">tablet</option>
+      <option value="vial">vial</option>
+    </select>
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
+   href="pack-subpack"
+   type="submit">
+  Continue
+</a>
+
+<script>
+window.addEventListener('load',
+  function() {
+  var backLink = document.getElementsByClassName("nhsuk-back-link__link");
+  var getUploadFile = localStorage.getItem("product-upload-file");
+  console.log('getUploadFile', getUploadFile);
+  console.log('backLink', backLink);
+  console.log('localStorage', localStorage);
+    if (getUploadFile != null) {
+   backLink.href = "product-file-upload";
+};
+  }, false);
+
+
+function store(){
+     var packSize = document.getElementById("pack-size");
+     localStorage.setItem("pack-size", packSize.value);
+
+     var packType = document.getElementById("pack-type");
+     localStorage.setItem("pack-type", packType.value);
+    }
+
+var getPackSize = localStorage.getItem("pack-size");
+
+var packSi = document.querySelector("#pack-size");
+if (getPackSize != null) {
+packSi.defaultValue = getPackSize;
+}
+
+var getPackType = localStorage.getItem("pack-type");
+
+var packTy = document.querySelector("#pack-type");
+if (getPackType != null) {
+packTy.value = getPackType;
+}
+
+</script>
+{% endblock %}

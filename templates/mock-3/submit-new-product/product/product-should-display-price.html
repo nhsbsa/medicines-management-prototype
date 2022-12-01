@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: display price? | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../product-pack/pack-require-artwork" id="back-link">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to pack has images of packaging?</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading" id="heading">
+        Do you want to display a price for this product pack?
+      </h1>
+    </legend>
+<!--    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="spc-hint">-->
+<!--      The price is the list price of each pack excluding VAT. A listed price will be only visible once accepted and live on dm+d.-->
+<!--    </div>-->
+
+    <div class="nhsuk-radios" id="display-price-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-yes" name="display-price" type="radio" value="yes" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
+          Yes
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-no" name="display-price" type="radio" value="no" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
+          No
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="store()"
+   id="continue-button"
+   href="product-reason-no-price"
+   type="submit">
+  Continue
+</a>
+
+<script>
+window.onload = function() {
+    var hasArtwork = localStorage.getItem("pack-should-display-artwork");
+    if (hasArtwork == 'yes') {
+    document.getElementById("back-link").setAttribute('href', "../product-pack/pack-artwork-upload-success");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to images of packaging uploaded files";
+    }
+};
+
+var radioButtons = document.getElementsByName("display-price");
+
+var getPackShdDisPrice= localStorage.getItem("pack-should-display-price");
+
+var getSize = localStorage.getItem("pack-size");
+var heading = document.getElementById("heading");
+
+if (getSize != null) {
+heading.innerHTML = 'Do you want to display a price for the ' + getSize + ' pack?';
+}
+
+if (getPackShdDisPrice != null) {
+for (var radio of radioButtons) {
+if (getPackShdDisPrice === radio.value) {
+     radio.checked = true;
+            }
+          }
+      };
+
+      console.log(localStorage);
+
+
+function store() {
+  var radioButtons = document.getElementsByName("display-price");
+  var buttonLink = document.getElementById("continue-button");
+
+  for (var radio of radioButtons) {
+      if (radio.checked) {
+          localStorage.setItem("pack-should-display-price", radio.value);
+         if (radio.value == 'yes') {
+          buttonLink.href = "product-price";
+          }
+        }
+     }
+  }
+
+
+</script>
+{% endblock %}
+
+

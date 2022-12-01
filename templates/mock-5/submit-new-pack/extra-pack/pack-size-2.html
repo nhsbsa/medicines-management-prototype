@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: extra pack size | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../add-extra-pack">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to add another pack</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading" id="heading">
+        What is the additional pack size?
+      </h1>
+    </legend>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
+      For example, 28, 500, 100.
+    </div>
+
+
+    <label class="nhsuk-label" for="extra-pack-size">
+      Additional pack size
+    </label>
+    <input class="nhsuk-input nhsuk-u-margin-bottom-2" id="extra-pack-size" name="size" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
+
+  </fieldset>
+</div>
+
+<a class="nhsuk-button" onclick="storeExtraPackSize()"
+   href="subpack-2" id="continue-button"
+   type="submit">
+  Continue
+</a>
+
+<script src="/js/newPack.js"></script>
+{% endblock %}

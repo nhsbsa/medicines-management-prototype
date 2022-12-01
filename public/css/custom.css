@@ -1,0 +1,463 @@
+fill-red{
+  fill: #d5281b !important;
+}
+
+fill-blue{
+  fill: #005eb8 !important;
+}
+
+.temporal-not-eligible {
+  background-color: #fff59d;
+}
+.temporal-not-eligible:hover {
+  background-color: #ded373 !important;
+}
+
+.temporal-historic {
+  background-color: #D1D5D7;
+}
+.temporal-historic:hover {
+  background-color: #C0C7C9 !important;
+}
+
+.temporal-future-dated {
+  background-color: #C1DCCB;
+}
+
+.temporal-future-dated:hover {
+  background-color: #B2D2BC !important;
+}
+
+/* Conditional */
+.nhsuk-radios__conditional {
+  margin-bottom: 16px;
+  border-left: 4px solid #4c6272;
+  margin-left: 18px;
+  padding-left: 30px; }
+  @media (min-width: 40.0625em) {
+    .nhsuk-radios__conditional {
+      margin-bottom: 24px; } }
+  .nhsuk-radios__conditional > :last-child {
+    margin-bottom: 0; }
+
+.nhsuk-radios__conditional--hidden {
+  display: none; }
+
+  .govuk-file-upload {
+      font-family: "GDS Transport",arial,sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-weight: 400;
+      font-size: 16px;
+      font-size: 1rem;
+      line-height: 1.25;
+      color: #0b0c0c;
+      max-width: 100%;
+      margin-left: -5px;
+      padding: 5px;
+      }
+
+      @media (min-width: 40.0625em) {
+      .govuk-file-upload {
+          font-size: 19px;
+          font-size: 1.1875rem;
+          line-height: 1.31579;
+      }
+      }
+
+.autocomplete-container {
+  display: inline-block;
+  z-index: 1;
+  /* [9] */ }
+  @media (max-width: 40.0525em) {
+    .autocomplete-container {
+      display: inline;
+      width: 100%; } }
+
+@media (max-width: 40.0525em) {
+  /* duplicate of .nhsuk-search__input in _header.scss, for non javascript version */
+  .autocomplete__input {
+    -ms-flex-positive: 2;
+    /* [1] */
+    -webkit-appearance: listbox;
+    border-bottom: 1px solid #aeb7bd;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-left: 1px solid #aeb7bd;
+    border-right: 0;
+    border-top: 1px solid #aeb7bd;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 0;
+    flex-grow: 2;
+    font-size: inherit;
+    height: 52px;
+    /* [3] */
+    margin: 0;
+    outline: none;
+    padding: 0 16px;
+    width: 100%;
+    /* [3] */ }
+    .autocomplete__input:focus {
+      border: 4px solid #212b32;
+      box-shadow: 0 0 0 4px #ffeb3b;
+      outline: 4px solid transparent;
+      outline-offset: 4px;
+      padding: 0 13px;
+      /* [10] */ } }
+
+@media (min-width: 40.0625em) {
+  /* duplicate of .nhsuk-search__input in _header.scss, for non javascript version */
+  .autocomplete__input {
+    -webkit-appearance: listbox;
+    border: 1px solid #ffffff;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-right: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 0;
+    font-size: 16px;
+    height: 40px;
+    /* [3] */
+    padding: 0 12px;
+    /* [9] */
+    width: 200px;
+    /* [3] */ }
+    .autocomplete__input:focus {
+      border: 2px solid #212b32;
+      box-shadow: 0 0 0 4px #ffeb3b;
+      outline: 4px solid transparent;
+      outline-offset: 4px;
+      padding: 0 11px;
+      /* [10] */ }
+    .autocomplete__input::placeholder {
+      color: #768692;
+      font-size: 16px; } }
+
+@media (min-width: 48.0625em) {
+  .autocomplete__input {
+    width: 235px; } }
+
+.autocomplete__menu {
+  -moz-box-shadow: 0 3px 5px rgba(66, 84, 98, 0.5);
+  /* [6] */
+  -webkit-box-shadow: 0 3px 5px rgba(66, 84, 98, 0.5);
+  /* [6] */
+  background-color: #ffffff;
+  border-bottom: 1px solid #d8dde0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  border-left: 1px solid #d8dde0;
+  border-right: 1px solid #d8dde0;
+  box-shadow: 0 0 3px 0 rgba(66, 84, 98, 0.5);
+  /* [6] */
+  list-style: none;
+  margin-top: 2px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 16px;
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  z-index: 1;
+  /* [7] */ }
+  @media (max-width: 40.0525em) {
+    .autocomplete__menu {
+      border: 0;
+      box-shadow: none;
+      margin: 0;
+      padding-left: 0;
+      padding-right: 0;
+      position: relative; } }
+
+.autocomplete__menu--visible {
+  display: block; }
+
+.autocomplete__menu--hidden {
+  display: none; }
+
+.autocomplete__option {
+  border-bottom: 1px solid #f0f4f5;
+  color: #005eb8;
+  cursor: pointer;
+  font-size: 16px;
+  padding-bottom: 12px;
+  /* [8] */
+  text-align: left;
+  text-decoration: underline; }
+  .autocomplete__option .nhsuk-icon__search {
+    fill: #aeb7bd;
+    float: left;
+    height: 22px;
+    /* [4] */
+    margin: 2px 4px 0 0;
+    /* [5] */
+    width: 22px;
+    /* [4] */ }
+  .autocomplete__option:hover, .autocomplete__option:active {
+    text-decoration: none; }
+  .autocomplete__option:focus {
+    outline: 1px solid transparent;
+    text-decoration: none; }
+    .autocomplete__option:focus a {
+      background-color: #ffeb3b;
+      box-shadow: 0 -2px #ffeb3b, 0 4px #212b32;
+      color: #212b32;
+      outline: 4px solid transparent;
+      text-decoration: none; }
+  @media (min-width: 40.0625em) {
+    .autocomplete__option:last-child {
+      border-bottom: 0; } }
+
+.autocomplete__option--no-results {
+  border-bottom: 0;
+  color: #212b32;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-decoration: none; }
+  @media (max-width: 40.0525em) {
+    .autocomplete__option--no-results {
+      padding: 16px 0; } }
+
+      .display-no-select {
+         display: none;
+      }
+
+    .js-table-sortable .sorting-asc:after, .js-table-sortable .sorting-desc:after
+    	{
+    	margin-left: 4px;
+    	position: absolute;
+    }
+
+    .js-table-sortable .sorting-desc:after {
+    	content: '▼';
+    }
+
+    .js-table-sortable .sorting-desc:after {
+        	content: '▼';
+        }
+
+    .js-table-sortable .sortable {
+    	-moz-user-select: -moz-none;
+    	-ms-user-select: none;
+    	-webkit-user-select: none;
+    	user-select: none;
+    	cursor: pointer;
+    	position: relative;
+    }
+
+    .link, .js-table-sortable .sortable {
+    	color: #005ea5;
+    }
+
+/*
+    .js-table-sortable .sortable:before {
+        	    content: " ▼";
+              position: absolute;
+              right: -1px;
+              top: 9px;
+              font-size: .5em;
+        }
+
+        .js-table-sortable .sortable:after {
+                	   content: " ▲";
+                     position: absolute;
+                     right: -1px;
+                     top: 1px;
+                     font-size: .5em;
+                }
+                */
+
+    .js-table-sortable .sorting-asc:after {
+    	content: '▲';
+    }
+
+    .sortAble {
+    	content: '▼';
+    }
+
+
+/* from MOJ */
+
+[aria-sort] button,
+[aria-sort] button:hover {
+  background-color: transparent;
+  border-width: 0;
+  -webkit-box-shadow: 0 0 0 0;
+  -moz-box-shadow: 0 0 0 0;
+  box-shadow: 0 0 0 0;
+  color: #005ea5;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0 10px 0 0;
+  position: relative;
+  text-align: inherit;
+  font-size: 1em;
+  margin: 0;
+}
+
+[aria-sort] button:focus {
+      background-color: #fd0;
+      color: #0b0c0c;
+      box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+      outline: none;
+}
+
+[aria-sort]:first-child button {
+  right: auto;
+}
+
+[aria-sort] button:before {
+  content: " \25bc";
+  position: absolute;
+  right: -1px;
+  top: 9px;
+  font-size: 0.5em;
+}
+
+[aria-sort] button:after {
+  content: " \25b2";
+  position: absolute;
+  right: -1px;
+  top: 1px;
+  font-size: 0.5em;
+}
+
+[aria-sort="ascending"] button:before,
+[aria-sort="descending"] button:before {
+  content: none;
+}
+
+[aria-sort="ascending"] button:after {
+  content: " \25b2";
+  font-size: .8em;
+  position: absolute;
+  right: -5px;
+  top: 2px;
+}
+
+[aria-sort="descending"] button:after {
+  content: " \25bc";
+  font-size: .8em;
+  position: absolute;
+  right: -5px;
+  top: 2px;
+}
+
+@media (min-width: 48.0525em) {
+.row-max {
+    max-width: 250px;
+    }
+.show-mobile {
+    display: none !important;
+   }
+ .js-enabled .assistive-table-hint {
+    display: block;
+ }
+}
+
+.govuk-visually-hidden {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+}
+
+@media (min-width: 48.0625em) and (max-width: 58.0525em) {
+.nhsuk-table-responsive .nhsuk-table__body .nhsuk-table__row td {
+    padding-right: 4px !important;
+    text-align: left !important;
+   }
+}
+
+.secondary-color {
+  background-color: #4c6272 !important;
+  box-shadow: 0 2px 0 #263139 !important; }
+
+.secondary-color:hover {
+  background-color: #374953 !important; }
+
+.hide {
+ display: none;
+}
+
+.show {
+ display: block;
+}
+
+.skip-to-bottom-link {
+  transform: rotate(90deg) !important; }
+
+/* this is to display the price update product at top of screen */
+
+.price-update-summary {
+  font-weight: 600;
+  margin-bottom: 4px;
+  margin: 0;
+  vertical-align: top;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  }
+
+.nhsuk-summary-list--no-border .price-update-summary {
+  border: 0; }
+
+@media (min-width: 40.0625em) {
+.price-update-summary {
+    width: 20% !important;
+    border-bottom: 1px solid #d8dde0;
+    display: table-cell;
+    padding-bottom: 8px;
+    padding-right: 24px;
+    padding-top: 8px;
+   }
+}
+
+/* end of summary list custom style */
+
+/* make sure action links stay in blue */
+.nhsuk-link--no-visited-state:visited {
+  color: #005eb8; }
+
+.nhsuk-action-link--no-visited-state:visited {
+  color: #005eb8; }
+
+/* make sure checkboxes have enough padding */
+
+.table-checkboxes {
+  padding: 16px 0px 16px 1px !important;
+  margin-top: 4px !important;
+}
+
+/* make sure table cells are centered alongside checkbox */
+
+.center-table-row {
+  vertical-align: middle;
+}
+
+/* make sure status tag has enough space around box on mobile view and line up headings */
+
+@media (max-width: 48.0525em) {
+  .mobile-tag {
+    margin: 4px 0 4px 0 !important;
+  }
+  .select-tag {
+    margin-top: 4px;
+  }
+}
+
+
+.govuk-link{
+    font-family: Frutiger W01, Arial, Sans-serif !important;
+}

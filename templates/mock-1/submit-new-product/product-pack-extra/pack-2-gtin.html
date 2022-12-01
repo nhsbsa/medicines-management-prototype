@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: extra pack GTIN code | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="pack-2-subpack">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to subpack information</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading" id="heading">
+        What is the GTIN of the pack?
+      </h1>
+    </legend>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
+      A GTIN is code found on xxxx and will only contain numbers.
+    </div>
+
+
+    <label class="nhsuk-label" for="pack-gtin">
+      Code
+    </label>
+    <input class="nhsuk-input nhsuk-u-margin-bottom-2" id="pack-gtin" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 30.8ex;">
+
+  </fieldset>
+</div>
+
+<a class="nhsuk-button" onclick="store()"
+   href="pack-2-artwork"
+   type="submit">
+  Continue
+</a>
+
+<script>
+function store(){
+     var packGtin= document.getElementById("pack-gtin");
+     localStorage.setItem("pack-2-gtin", packGtin.value);
+    }
+
+    var packGtin= document.getElementById("pack-gtin");
+
+var getPackGtin = localStorage.getItem("pack-2-gtin");
+var getPackSubpack = localStorage.getItem("pack-2-subpack");
+
+var packGt = document.querySelector("#pack-gtin");
+if (getPackGtin != null) {
+packGt.defaultValue = getPackGtin;
+}
+
+var getSize = localStorage.getItem("pack-2-size");
+var heading = document.getElementById("heading");
+
+if (getPackSubpack != null) {
+heading.innerHTML = 'What is the GTIN of the ' + getSize + ' pack?';
+}
+
+</script>
+{% endblock %}

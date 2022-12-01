@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" id="back-link" href="../dashboard">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path
+          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to meds dashboard</a>
+</div>
+
+<h1>Search all submissions</h1>
+
+<p>Use two dates to search for all submissions.</p>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-form-group nhsuk-grid-column-one-half">
+    <fieldset class="nhsuk-fieldset" aria-describedby="start-date-hint" role="group">
+      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+        <label class="nhsuk-fieldset__heading">
+          From date
+        </label>
+      </legend>
+      <div class="nhsuk-hint" id="start-date-hint">
+        For example, 15 3 1984. Leave empty for start of time
+      </div>
+
+      <div class="nhsuk-date-input" id="start-date">
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="start-date-day">
+              Day
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="start-date-day"
+                   name="start-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="start-date-month">
+              Month
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                   id="start-date-month" name="start-date-month" type="text" pattern="[0-9]*"
+                   inputmode="numeric">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="start-date-year">
+              Year
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                   id="start-date-year" name="start-date-year" type="text" pattern="[0-9]*"
+                   inputmode="numeric">
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+  </div>
+
+  <div class="nhsuk-form-group nhsuk-grid-column-one-half">
+    <fieldset class="nhsuk-fieldset" aria-describedby="end-date-hint" role="group">
+      <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+        <label class="nhsuk-fieldset__heading">
+          End date
+        </label>
+      </legend>
+      <div class="nhsuk-hint" id="end-date-hint">
+        For example, 15 3 1984. Leave empty for end of time
+      </div>
+
+      <div class="nhsuk-date-input" id="end-date">
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="end-date-day">
+              Day
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="end-date-day"
+                   name="end-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="end-date-month">
+              Month
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2"
+                   id="end-date-month" name="end-date-month" type="text" pattern="[0-9]*"
+                   inputmode="numeric">
+          </div>
+        </div>
+        <div class="nhsuk-date-input__item">
+          <div class="nhsuk-form-group">
+            <label class="nhsuk-label nhsuk-date-input__label" for="end-date-year">
+              Year
+            </label>
+            <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4"
+                   id="end-date-year" name="end-date-year" type="text" pattern="[0-9]*"
+                   inputmode="numeric">
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+  </div>
+</div>
+
+<a class="nhsuk-button" type="submit" aria-role="button" href="search-results">Search</a>
+<a class="nhsuk-button nhsuk-button--secondary" aria-role="button" href="search">Clear</a>
+
+
+<script src="/js/MOJ.js" defer></script>
+<script src="../../js/dialog.js"></script>
+
+
+{% endblock %}

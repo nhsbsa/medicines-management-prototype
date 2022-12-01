@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../../dashboard">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to portal dashboard</a>
+</div>
+
+<h1>Submit a new product</h1>
+
+<p>You should make your product submission at least 2 to 4 weeks before the effective date (date the product is available in the warehouse).</p>
+
+<h2 class="nhsuk-heading-l">Submission process</h2>
+<p>Dictionary of Medicines and Devices (dm+d) is updated each Thursday. Updates to dm+d can be viewed on the following Monday. Only products that have reached their effective date will be published in dm+d. Once accepted, it can take up to 6 days to appear on dm+d due to the weekly update schedule.</p>
+  <p>If a submission is made less than 2 weeks before the effective date, it could take up to 3 weeks to appear on dm+d.</p>
+
+<div class="nhsuk-do-dont-list nhsuk-u-margin-bottom-5">
+  <h3 class="nhsuk-do-dont-list__label">Checklist</h3>
+  <p>In order to complete a submission you will need the following information.</p>
+  <ul class="nhsuk-list nhsuk-list--tick">
+    <li>
+      <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+        <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+      </svg>
+      Effective date
+    </li>
+    <li>
+      <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+        <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+      </svg>
+      Authorised Summary of Product Characteristics (SmPC) or Data Sheet
+    </li>
+    <li>
+      <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+        <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+      </svg>
+      Pack information, such as pack size and type/form
+    </li>
+    <li>
+      <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+        <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+      </svg>
+      GB Global Trade Item Number (GTIN)
+    </li>
+    <li>
+      <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+        <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+      </svg>
+      Images of packaging (if available)
+    </li>
+    <li>
+      <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
+        <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+      </svg>
+      Pricing information (if available)
+    </li>
+
+  </ul>
+</div>
+
+
+  <a class="nhsuk-button" href="product-effective-date " type="submit">
+    Start
+  </a>
+
+
+  {% endblock %}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack price | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="product-should-display-price">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to pack should display price?</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="reason-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading" id="heading">
+        Reason for not providing a price
+      </h1>
+    </legend>
+
+    <div class="nhsuk-hint" id="reason-hint">
+      Select one option
+    </div>
+
+    <div class="nhsuk-radios nhsuk-radios--conditional">
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="price-match" name="reason-no-price" type="radio" value="Price matches Part VIII in the Drug Tariff" />
+        <label class="nhsuk-label nhsuk-radios__label" for="price-match">
+          Price matches Part VIII in the Drug Tariff
+        </label>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="price-not-agreed" name="reason-no-price" type="radio" value="Price not yet agreed" />
+        <label class="nhsuk-label nhsuk-radios__label" for="price-not-agreed">
+          Price not yet agreed
+        </label>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="other-reason" name="reason-no-price" type="radio" value="Other" aria-controls="conditional-reason">
+        <label class="nhsuk-label nhsuk-radios__label" for="other-reason">
+          Other
+        </label>
+      </div>
+      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-reason">
+        <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="100">
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="with-hint">
+            Provide a reason
+          </label>
+<!--          <input class="nhsuk-input nhsuk-u-width-two-thirds" type="text">-->
+          <textarea class="nhsuk-textarea govuk-js-character-count" id="with-hint" name="with-hint"  rows="2" aria-describedby="with-hint-info"></textarea>
+<!--          <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>-->
+          <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+            You can enter up to 100 characters
+          </div>
+
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+<a class="nhsuk-button" onclick="store()"
+   href="product-legal-category" id="continue-button"
+   type="submit">
+  Continue
+</a>
+
+<script>
+var radioButtons = document.getElementsByName("reason-no-price");
+
+var getProductReasonNoPrice = localStorage.getItem("product-reason-no-price");
+var getExactOtherReason = localStorage.getItem("product-reason-other");
+var otherReason = document.getElementById("conditional-reason");
+var getOtherReason = document.getElementById("with-hint");
+
+console.log('getOtherReason', getOtherReason.value);
+console.log('innerHTML', document.getElementById("with-hint"));
+
+<!--if (getExactOtherReason) {-->
+<!--getOtherReason.defaultValue = getExactOtherReason;-->
+<!--}-->
+
+
+
+if (getProductReasonNoPrice != null) {
+for (var radio of radioButtons) {
+    console.log('radio', radio.value);
+if (getProductReasonNoPrice === radio.value) {
+     radio.checked = true;
+
+            if (radio.value == 'Other') {
+                       otherReason.classList.remove("nhsuk-radios__conditional--hidden");
+                       getOtherReason.defaultValue = localStorage.getItem("product-reason-other")
+                    }
+               }
+          }
+      };
+
+      console.log(localStorage);
+      console.log(getOtherReason.value);
+
+
+
+function store() {
+  var radioButtons = document.getElementsByName("reason-no-price");
+  var buttonLink = document.getElementById("continue-button");
+  var getOtherReason = document.getElementById("with-hint");
+  var summaryPage = localStorage.getItem("summary-page");
+
+  for (var radio of radioButtons) {
+        if (radio.checked) {
+         localStorage.setItem("product-reason-no-price", radio.value);
+         if (summaryPage) {
+            buttonLink.href = "product-summary";
+          }
+         if (localStorage.getItem("product-reason-no-price") == 'Other') {
+          localStorage.setItem("product-reason-other", document.getElementById("with-hint").value)
+         } else if (localStorage.getItem("product-reason-no-price") != 'Other') {
+            localStorage.removeItem("product-reason-other");
+          }
+        }
+
+<!--      if (radio.checked) {-->
+<!--          localStorage.setItem("product-reason-no-price", radio.value);-->
+<!--        }-->
+<!--      if (radio.checked && radio.value == 'Other') {-->
+<!--          localStorage.setItem("product-reason-other", getOtherReason.value);-->
+<!--         }-->
+      }
+  }
+
+
+
+</script>
+{% endblock %}

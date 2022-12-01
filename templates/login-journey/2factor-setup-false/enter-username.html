@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+Design prototype medicines management | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-form-group">
+            <h1 class="nhsuk-label-wrapper">
+                <span class="nhsuk-caption-l">Login</span>
+                <label class="nhsuk-label nhsuk-label--l" for="username">
+                    What is your username?
+                </label>
+            </h1>
+            <div class="nhsuk-hint" id="example-with-hint-text-hint">
+                Your username should be your email address.
+            </div>
+            <input class="nhsuk-input nhsuk-input--width-20"
+                   id="username" name="username" type="text"/>
+        </div>
+    </div>
+</div>
+
+<a class="nhsuk-button" href="enter-password.html" id="submit" type="submit">
+    Continue
+</a>
+{% endblock %}

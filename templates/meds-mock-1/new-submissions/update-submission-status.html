@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+    <a class="nhsuk-back-link__link" id="back-link" href="submission-view">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to view submission</a>
+</div>
+
+<fieldset class="nhsuk-fieldset">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+        <h1 class="nhsuk-u-margin-bottom-4">
+            What is the new status?
+        </h1>
+    </legend>
+
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+        The current status of the new product submission is 'Ready'.
+    </div>
+
+    <div class="nhsuk-form-group">
+
+        <div class="nhsuk-radios">
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="status-actioned" name="status" type="radio" value="Actioned">
+                <label class="nhsuk-label nhsuk-radios__label" for="status-actioned">
+                    Actioned
+                </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="status-rejected" name="status" type="radio" value="Rejected">
+                <label class="nhsuk-label nhsuk-radios__label" for="status-rejected">
+                    Rejected
+                </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="status-cancelled" name="status" type="radio" value="Cancelled">
+                <label class="nhsuk-label nhsuk-radios__label" for="status-cancelled">
+                   Cancelled
+                </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="status-more-detail" name="status" type="radio" value="More detail required">
+                <label class="nhsuk-label nhsuk-radios__label" for="status-more-detail">
+                   More detail required
+                </label>
+            </div>
+
+        </div>
+    </div>
+
+</fieldset>
+
+<a class="nhsuk-button nhsuk-u-margin-top-4" href="update-submission-notes"
+   onclick="storeStatus()" id="continue-button" type="submit">
+    Continue
+</a>
+
+<script>
+
+    var radioButtons = document.getElementsByName("status");
+
+    function storeStatus() {
+    var buttonLink = document.getElementById("continue-button");
+
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+        localStorage.setItem("submission-status", radio.value);
+      }
+    }
+}
+
+ if (localStorage.getItem("submission-status") != null) {
+    for (var radio of radioButtons) {
+             if (localStorage.getItem("submission-status") === radio.value) {
+                 radio.checked = true;
+             }
+         }
+       }
+</script>
+
+{% endblock %}

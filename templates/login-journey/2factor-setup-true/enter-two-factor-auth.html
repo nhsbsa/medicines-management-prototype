@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}
+Design prototype medicines management | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-form-group">
+      <h1 class="nhsuk-label-wrapper">
+        <span class="nhsuk-caption-l">Login</span>
+        <label class="nhsuk-label nhsuk-label--l" for="password">
+          Please enter an authentication code for your login.
+        </label>
+      </h1>
+      <div class="nhsuk-hint" id="example-with-hint-text-hint">
+        This will be found on your preferred authenticator app.
+      </div>
+      <input class="nhsuk-input nhsuk-input--width-20" id="password" name="password" type="password">
+    </div>
+  </div>
+</div>
+<a class="nhsuk-button nhsuk-button--secondary" href="enter-password.html">
+  Go back
+</a>
+<a class="nhsuk-button" href="../../index.html" id="submit" type="submit">
+  Continue
+</a>
+{% endblock %}
+
