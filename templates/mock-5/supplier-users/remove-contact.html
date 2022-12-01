@@ -1,6 +1,7 @@
+<!DOCTYPE html>
 {% extends "base.html" %}
 {% block title %}
-What is the contact's phone number? | Portal | NHSBSA
+Do you want to delete this contact? | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
@@ -8,42 +9,40 @@ What is the contact's phone number? | Portal | NHSBSA
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to edit summary</a>
+    Go back to view contact</a>
 </div>
 
 <div class="nhsuk-form-group">
-  <fieldset class="nhsuk-fieldset" role="group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        Does the contact have a phone number?
+        Are you sure you want to remove this contact?
       </h1>
     </legend>
-    <div class="nhsuk-radios nhsuk-radios--conditional">
+    <div class="nhsuk-radios">
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="yes" name="contact" type="radio" aria-controls="phone-input" aria-expanded="false">
+        <input class="nhsuk-radios__input" id="yes" name="delete" type="radio" value="yes">
         <label class="nhsuk-label nhsuk-radios__label" for="yes">
           Yes
         </label>
-      </div>
-      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="phone-input">
-        <div class="nhsuk-form-group">
-          <label class="nhsuk-label" for="phone">
-            Phone number
-          </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="phone" type="text" value="07700 900362">
-        </div>
+        <p class="nhsuk-hint nhsuk-radios__hint">
+          By selecting yes, the associated pack will be deleted
+        </p>
       </div>
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="no" name="contact" type="radio" value="text">
+        <input class="nhsuk-radios__input" id="no" name="delete" type="radio" value="no">
         <label class="nhsuk-label nhsuk-radios__label" for="no">
           No
         </label>
       </div>
     </div>
   </fieldset>
-
-  <a class="nhsuk-button nhsuk-u-margin-top-5" href="edit-contact-main" id="continue-button" type="submit">
-    Submit
-  </a>
 </div>
+<a id="removeButton" class="nhsuk-button nhsuk-u-margin-top-5" href="replace-primary-contact"
+   onclick="removeContactYesOrNo()">Continue</a>
+
+<script src="/js/companyAddContactInfo.js"></script>
+
 {% endblock %}
+
+

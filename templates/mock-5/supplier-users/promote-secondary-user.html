@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 {% block title %}
-Users list | Portal | NHSBSA
+Select secondary contact | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="add-contact-existing-user">
+  <a class="nhsuk-back-link__link" href="replace-primary-contact">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to existing user</a>
+    Go back to replace primary contact</a>
 </div>
-<h1>Users list</h1>
+<h1>Select secondary contact</h1>
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
     <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
@@ -43,7 +43,7 @@ Users list | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Role </span>Administrator
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Action </span><a href="add-contact-phone-number">Select</a>
+          <span class="nhsuk-table-responsive__heading">Action </span><a href="add-contact-summary">Select</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -115,7 +115,5 @@ Users list | Portal | NHSBSA
     </nav>
   </div>
 </div>
-
-<script src="/js/companyAddContactInfo.js"></script>
 
 {% endblock %}

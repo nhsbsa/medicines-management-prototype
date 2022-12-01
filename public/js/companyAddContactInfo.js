@@ -7,8 +7,10 @@ function storeExistingUserYesOrNo() {
         localStorage.setItem("existing-user", radio.value);
         if (radio.value == 'yes') {
             buttonLink.href = "add-contact-users-list";
+            existingUser('true');
         } else if (radio.value == 'no') {
             buttonLink.href = "add-contact-name";
+            existingUser('false');
         }
     }
   }
@@ -29,20 +31,16 @@ function displayAddContactMessage() {
   var getPrimaryUser = localStorage.getItem("primary-user");
   var getSecondaryUser = localStorage.getItem("secondary-user");
   var buttonText = document.getElementById("primary-contact-button");
-  var clearStorageLink = document.getElementById("clear-storage");
 
   if (getSecondaryUser == "true") {
     messageContainer.style.display = "none";
-    buttonText.style.display = "none";
-    clearStorageLink.style.display = "block";
+    buttonText.innerHTML = "Add secondary contact";
   } else if (getPrimaryUser == "true") {
     messageText.innerHTML = "You have not added a secondary contact";
     buttonText.innerHTML = "Add secondary contact";
-    clearStorageLink.style.display = "none";
   } else {
     messageText.innerHTML = "You have not added a primary or secondary contact";
     buttonText.innerHTML = "Add primary contact";
-    clearStorageLink.style.display = "none";
   }
 }
 
@@ -54,7 +52,7 @@ function displayContacts() {
 
   if (getPrimaryUser == "true") {
     for (let i = 0; i < primaryContact.length; i++) {
-      primaryContact[i].style.display = "table-row";
+      primaryContact[i].style.display = "table";
     }
   } else {
     for (let i = 0; i < primaryContact.length; i++) {
@@ -64,7 +62,7 @@ function displayContacts() {
 
   if (getSecondaryUser == "true") {
     for (let i = 0; i < secondaryContact.length; i++) {
-      secondaryContact[i].style.display = "table-row";
+      secondaryContact[i].style.display = "table";
     }
   } else {
     for (let i = 0; i < secondaryContact.length; i++) {
@@ -73,6 +71,58 @@ function displayContacts() {
   }
 }
 
-function clearLocalStorage() {
-  localStorage.clear();
+function promoteSecondaryContactYesOrNo() {
+  var radioButtons = document.getElementsByName("replace");
+  var buttonLink = document.getElementById("continue-button");
+
+  for (var radio of radioButtons) {
+    if (radio.checked) {
+        if (radio.value == 'yes') {
+            buttonLink.href = "promote-secondary-user";
+        } else if (radio.value == 'no') {
+            buttonLink.href = "add-contact-existing-user";
+        }
+    }
+  }
+}
+
+function lastContact(value) {
+  localStorage.setItem("lastContact", value);
+}
+
+function removeContactYesOrNo() {
+  var radioButtons = document.getElementsByName("delete");
+  var buttonLink = document.getElementById("removeButton");
+
+  for (var radio of radioButtons) {
+    if (radio.checked) {
+        if (radio.value == 'yes') {
+            removeContact();
+        } else if (radio.value == 'no') {
+            buttonLink.href = "edit-contact-main";
+        }
+    }
+  }
+}
+
+function removeContact() {
+  var lastContact = localStorage.getItem("lastContact");
+  var buttonLink = document.getElementById("removeButton");
+
+  if (lastContact == 'true') {
+    buttonLink.href = "replace-last-contact";
+  }
+}
+
+function existingUser(value) {
+  localStorage.setItem("existingUser", value);
+}
+
+function displayChangeLinks() {
+  var changeLinks = document.getElementsByClassName("hide-existing-user");
+  if (localStorage.getItem("existingUser") == 'true') {
+    for (let i = 0; i < changeLinks.length; i++) {
+      changeLinks[i].style.display = "none";
+    }
+  }
 }

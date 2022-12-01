@@ -182,7 +182,6 @@ window.onload = function() {
 let allSelectIds = document.querySelectorAll('select[id]');
 let allInputIds = document.querySelectorAll('input[id]');
 
-console.log(allSelectIds);
 
 accessibleAutocomplete.enhanceSelectElement({
             defaultValue: "",
@@ -199,6 +198,7 @@ accessibleAutocomplete.enhanceSelectElement({
         newLabel.style.display = "none";
         newLabel.setAttribute("for", document.querySelector("#pack-type-select").id);
         parentDiv.appendChild(newLabel);
+
 
 
 </script>
