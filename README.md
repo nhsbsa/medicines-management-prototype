@@ -4,11 +4,11 @@
 ### Cloning the project
 Clone the project using git:
 ```shell
-git clone https://dps-gitlab.service.nhsbsa/prescriptions/medicines-management-prototype.git
+git clone https://github.com/nhsbsa/medicines-management-prototype.git
 ```
 or
 ```shell
-git clone git@dps-gitlab.service.nhsbsa:prescriptions/medicines-management-prototype.git
+git clone git@github.com:nhsbsa/medicines-management-prototype.git
 ```
 ### NPM Setup
 Once the project is cloned, run the following command to download and install node dependencies:
