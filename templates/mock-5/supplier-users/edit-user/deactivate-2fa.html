@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: spc or Data Sheet | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        Do you want to deactivate two-factor authentication for this user?
+      </h1>
+    </legend>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
+      If deactivated, the user will be asked to set up two-factor authentication upon next accessing the portal.
+    </div>
+
+    <div class="nhsuk-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+          Yes
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+          No
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+<a class="nhsuk-button" href="edit-supplier-main">Save change and review</a>
+
+{% endblock %}
+
+

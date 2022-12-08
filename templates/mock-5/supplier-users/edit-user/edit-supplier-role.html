@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
 {% block title %}
-What is the new user's role? | Portal | NHSBSA
+Submit a new product: spc or Data Sheet | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="add-supplier-email.html">
+  <a class="nhsuk-back-link__link" href="edit-supplier-main.html">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to new user's email address</a>
+    Go back to portal user information</a>
 </div>
 
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        What is the new user's role?
+        What is the new role of the existing portal user?
       </h1>
     </legend>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
       Select one option.
     </div>
 
@@ -43,10 +43,10 @@ What is the new user's role? | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a href="add-supplier-review.html" class="nhsuk-button nhsuk-u-margin-top-3"
+<a href="edit-supplier-main.html" class="nhsuk-button nhsuk-u-margin-top-3"
        value="Continue"
        id="next"
-       >Continue
+       >Save change and review
 </a>
 
 
