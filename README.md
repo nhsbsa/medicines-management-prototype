@@ -43,3 +43,12 @@ Browser sync settings can be accessed on http://localhost:3001.
 ```shell
 pa11y-ci -c pa11y.json
 ```
+
+## Procedure for merging branches
+Pull in the latest version of main locally using 
+
+```git pull origin main```
+
+Create a local branch using your initials followed by /. The describe the change, using the Jira ticket number if you have it
+For example, mpl/MM-700-discontinuation-journey
+
