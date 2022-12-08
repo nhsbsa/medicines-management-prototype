@@ -29,6 +29,7 @@ strict-ssl=false
 ### Install the live reload plugin
 Install the live reload plugin for your browser
 * [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/related)
+
 &ensp;
 ***
 &ensp;
