@@ -49,6 +49,16 @@ Pull in the latest version of main locally using
 
 ```git pull origin main```
 
-Create a local branch using your initials followed by /. The describe the change, using the Jira ticket number if you have it
-For example, mpl/MM-700-discontinuation-journey
+Create a local branch using your initials followed by /. The describe the change, using the Jira ticket number if you have it.
+
+```For example, mpl/MM-700-discontinuation-journey```
+
+Make your changes locally and then push up to Github using your IDE commit tab, or using the following commands in your terminal:
+
+```
+git add .
+git commit -m "change comments go here"
+git push origin local-branch-name
+```
+
 
