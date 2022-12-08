@@ -1,5 +1,5 @@
 # Medicines Management Prototype
-
+&ensp;
 ## Project Setup
 ### Cloning the project
 Clone the project using git:
@@ -14,6 +14,7 @@ git clone git@github.com:nhsbsa/medicines-management-prototype.git
 Once the project is cloned, run the following command to download and install node dependencies:
 ```shell
 npm install
+npm install gulp
 ```
 If there are issues downloading dependencies, you may need to add the nhsbsa npm repository.
 To do this:
@@ -27,7 +28,9 @@ strict-ssl=false
 ### Install the live reload plugin
 Install the live reload plugin for your browser
 * [Chrome](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei/related)
-
+&ensp;
+***
+&ensp;
 ## Running the Prototype locally
 To run the prototype locally, use gulp:
 ```shell
@@ -43,7 +46,9 @@ Browser sync settings can be accessed on http://localhost:3001.
 ```shell
 pa11y-ci -c pa11y.json
 ```
-
+&ensp;
+***
+&ensp;
 ## Procedure for merging branches
 Pull in the latest version of main locally using 
 
@@ -60,5 +65,4 @@ git add .
 git commit -m "change comments go here"
 git push origin local-branch-name
 ```
-
 
