@@ -16,11 +16,27 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
     <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
       In the event a user needs this to be deactivated with immediate effect, this option can be disabled on their behalf. The user can reactivate this if they need to.
     </div>
-    <a class="nhsuk-button secondary-color" href="edit-supplier-main.html">Go back</a>
-    <a class="nhsuk-button" href="deactivate-2fa-confirmation.html">Deactivate</a>
+
+    <div class="nhsuk-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+          Yes
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+          No
+        </label>
+      </div>
+
+    </div>
   </fieldset>
 </div>
-<p>Return to the <a class="nhsuk-link nhsuk-link--no-visited-state" href="../dashboard">portal dashboard</a>.</p>
+<a class="nhsuk-button" href="edit-supplier-main">Save change and review</a>
 
 {% endblock %}
 

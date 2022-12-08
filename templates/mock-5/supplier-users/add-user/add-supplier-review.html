@@ -5,17 +5,17 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="supplier-users.html">
+  <a class="nhsuk-back-link__link" href="add-supplier-role.html">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Cancel changes and return to supplier users</a>
+    Go back to what is the role of the new portal user?</a>
 </div>
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        Edit information
+        Review new portal user
       </h1>
     </legend>
 
@@ -31,8 +31,8 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="edit-supplier-first-name.html">
-        Edit<span class="nhsuk-u-visually-hidden"> first name</span>
+      <a class="nhsuk-link nhsuk-link--no-visited-state" href="add-supplier-name">
+        Change<span class="nhsuk-u-visually-hidden"> name</span>
       </a>
 
     </dd>
@@ -49,8 +49,8 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="edit-supplier-last-name.html">
-        Edit<span class="nhsuk-u-visually-hidden"> last name</span>
+      <a class="nhsuk-link nhsuk-link--no-visited-state" href="add-supplier-name">
+        Change<span class="nhsuk-u-visually-hidden"> name</span>
       </a>
 
     </dd>
@@ -67,8 +67,8 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="edit-supplier-email.html">
-        Edit<span class="nhsuk-u-visually-hidden"> email</span>
+      <a href="add-supplier-email.html">
+        Change<span class="nhsuk-u-visually-hidden"> email</span>
       </a>
 
     </dd>
@@ -85,27 +85,8 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="edit-supplier-role.html">
-        Edit<span class="nhsuk-u-visually-hidden"> role</span>
-      </a>
-
-    </dd>
-
-  </div>
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Two factor authentication
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      <strong class="nhsuk-tag nhsuk-tag--green">
-        Activated
-      </strong>
-    </dd>
-
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="deactivate-2fa.html">
-        Deactivate<span class="nhsuk-u-visually-hidden"> two factor authentication</span>
+      <a href="add-supplier-role.html">
+        Change<span class="nhsuk-u-visually-hidden"> role</span>
       </a>
 
     </dd>
@@ -116,12 +97,10 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a href="add-supplier-confirmation.html" class="nhsuk-button nhsuk-u-margin-top-3"
+<a href="add-supplier-confirmation.html" class="nhsuk-button"
+   value="Continue"
    id="next"
->Submit
-</a>
-<a href="delete-user.html" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-3 nhsuk-u-float-right"
->Delete user
+>Submit new portal user
 </a>
 
 

@@ -14,9 +14,9 @@ Submit a new product | Portal | NHSBSA
 <span class="nhsuk-caption-l">
   AstraZeneca
 </span>
-<h1>Supplier users</h1>
-<!--<div class="nhsuk-grid-row">-->
-<!--  <div class="nhsuk-grid-column-full">-->
+<h1>Portal users</h1>
+
+   <div id="pageAndResultCount">Page 1 of 1 (3 results)</div>
     <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
       <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
@@ -46,7 +46,7 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Role </span>Administrator
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Action </span><a href="edit-supplier-main.html">Edit</a>
+          <span class="nhsuk-table-responsive__heading">Action </span><a href="edit-user/edit-supplier-main">Edit</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -81,8 +81,7 @@ Submit a new product | Portal | NHSBSA
       </tr>
       </tbody>
     </table>
-<!--  </div>-->
-<!--</div>-->
+<!-- only show pagination if over 1 page of results returned MPL 7/12/22 -->
 <div class="nhsuk-grid-row nhsuk-u-margin-top-3">
   <div class="nhsuk-grid-column-full">
     <nav class="govuk-pagination" role="navigation" aria-label="results">
@@ -116,7 +115,8 @@ Submit a new product | Portal | NHSBSA
         </svg></a>
       </div>
     </nav>
-    <a class="nhsuk-button nhsuk-u-margin-right-0 nhsuk-u-float-right" href="add-supplier-name.html">Add supplier user</a>
+<!--    should this go to full name or first name? -->
+    <a class="nhsuk-button" href="add-user/add-supplier-first-name">Add portal user</a>
   </div>
 </div>
 
