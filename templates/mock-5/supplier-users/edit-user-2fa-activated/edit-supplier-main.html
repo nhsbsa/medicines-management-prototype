@@ -104,16 +104,18 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
       Two-factor authentication
     </dt>
     <dd class="nhsuk-summary-list__value">
-      <strong class="nhsuk-tag nhsuk-tag--green">
+      <strong class="nhsuk-tag nhsuk-tag--green" id="2fa-tag">
         Activated
       </strong>
     </dd>
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="deactivate-2fa.html">
-        Deactivate<span class="nhsuk-u-visually-hidden"> two-factor authentication</span>
+      <a class="nhsuk-link" href="deactivate-2fa.html" id="2fa-action">
+        Reset<span class="nhsuk-u-visually-hidden"> two-factor authentication</span>
       </a>
+
+      <p id="2fa-no-action" class="nhsuk-u-margin-bottom-1" style="display: none;">User to set up</p>
 
     </dd>
 
@@ -127,6 +129,32 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
    id="next"
 >Submit changes
 </a>
+
+<script>
+  console.log(localStorage);
+
+  let twoFATag = document.getElementById("2fa-tag");
+  let twoFAAction = document.getElementById("2fa-action");
+  let twoFANoAction = document.getElementById("2fa-no-action");
+  let twoFADeactivated = localStorage.getItem("2fa-deactivated")
+
+  console.log(twoFATag.innerHTML);
+  console.log(twoFAAction.innerHTML);
+  console.log(twoFADeactivated);
+
+  if (twoFADeactivated == 'yes') {
+  twoFATag.className = "nhsuk-tag nhsuk-tag--blue";
+  twoFATag.innerHTML = "Requires set up";
+  twoFAAction.style.display = "none";
+  twoFANoAction.style.display = "block";
+  } else if (twoFADeactivated == 'no' || !twoFADeactivated) {
+  twoFATag.className = "nhsuk-tag nhsuk-tag--green";
+  twoFATag.innerHTML = "Activated";
+  twoFAAction.style.display = "block";
+  twoFANoAction.style.display = "none";
+  }
+
+</script>
 
 {% endblock %}
 

@@ -46,7 +46,8 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Role </span>Administrator
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Action </span><a class="nhsuk-link nhsuk-link--no-visited-state" href="edit-user/edit-supplier-main">Edit</a>
+          <span class="nhsuk-table-responsive__heading">Action </span>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="edit-user-2fa-activated/edit-supplier-main">Edit</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -61,8 +62,9 @@ Submit a new product | Portal | NHSBSA
         </td>
         <td>
           <span class="nhsuk-table-responsive__heading">Action </span>
-          <!--          the below <p> should be an <a> link but I do not want it to appear as a link on the prototype MPL 08Dec22-->
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="edit-user-2fa-not-set-up/edit-supplier-main">
           <p class="nhsuk-u-margin-bottom-0">Edit</p>
+          </a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -77,8 +79,9 @@ Submit a new product | Portal | NHSBSA
         </td>
         <td>
           <span class="nhsuk-table-responsive__heading">Action </span>
-<!--          the below <p> should be an <a> link but I do not want it to appear as a link on the prototype MPL 08Dec22-->
+<!--          <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="edit-user-2fa-not-set-up/edit-supplier-main">-->
           <p class="nhsuk-u-margin-bottom-0">Edit</p>
+          </a>
         </td>
       </tr>
       </tbody>
@@ -122,7 +125,9 @@ Submit a new product | Portal | NHSBSA
   </div>
 </div>
 
-
+<script>
+  localStorage.clear();
+</script>
 
 
 {% endblock %}

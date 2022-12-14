@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: spc or Data Sheet | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        Do you want to delete this user?
+      </h1>
+    </legend>
+
+    <div class="nhsuk-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-hints-1" name="example-hints" type="radio" value="yes" aria-describedby="example-hints-1-item-hint">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">
+         Yes
+        </label>
+        <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+          This will delete the user and cannot be undone.
+        </div>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-hints-2" name="example-hints" type="radio" value="no" aria-describedby="example-hints-2-item-hint">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
+          No
+        </label>
+        <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-2-item-hint">
+          Do not delete this user and return to edit existing portal user.
+        </div>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+<a class="nhsuk-button" href="edit-supplier-main" id="continue-button"
+onclick="deleteUser()">Save and continue</a>
+
+<script>
+
+let radioButtons = document.getElementsByName("example-hints");
+  let continueButton = document.getElementById("continue-button");
+
+function deleteUser () {
+  let radioButtons = document.getElementsByName("example-hints");
+  let continueButton = document.getElementById("continue-button");
+  console.log(continueButton);
+       for (var radio of radioButtons) {
+           if (radio.value == 'yes' && radio.checked == true) {
+              continueButton.setAttribute("href", "../supplier-users");
+           }
+         }
+       }
+</script>
+
+{% endblock %}
+
+
