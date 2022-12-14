@@ -9,7 +9,7 @@
   "scripts": {
     "build": "gulp build",
     "postinstall": "npm run build",
-    "start": "node app.js",
+    "start": "node index.js",
     "test": "",
     "prewatch": "gulp build",
     "watch": "gulp",
