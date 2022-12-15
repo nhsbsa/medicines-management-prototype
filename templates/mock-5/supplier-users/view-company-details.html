@@ -54,7 +54,9 @@ Company details | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Phone number </span>07700 900362
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Action</span><a href="edit-contact-main">Edit</a>
+          <span class="nhsuk-table-responsive__heading">Action</span>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="edit-user-2fa-not-set-up/edit-contact-main">Edit</a><span> | </span>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="remove-contact" onclick="lastContact('false')">Remove</a>
         </td>
       </tr>
       </tbody>
@@ -94,7 +96,9 @@ Company details | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Phone number </span>07700 905456
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Action</span><a href="edit-contact-secondary">Edit</a>
+          <span class="nhsuk-table-responsive__heading">Action</span>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="edit-user-2fa-activated/edit-contact-secondary">Edit</a><span> | </span>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="remove-contact" onclick="lastContact('true')">Remove</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -108,7 +112,9 @@ Company details | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Phone number </span>
         </td>
         <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Action</span><a href="#">Edit</a>
+          <span class="nhsuk-table-responsive__heading">Action</span>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">Edit</a><span> | </span>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">Remove</a>
         </td>
       </tr>
       </tbody>
@@ -116,10 +122,9 @@ Company details | Portal | NHSBSA
   </div>
 </div>
 
-<div class="nhsuk-grid-row nhsuk-u-margin-top-4" id="message-container">
-  <div class="nhsuk-grid-column-full">
-    <h2 id="not-submitted-message">You have not added a primary user contact</h2>
-  </div>
+<div class="nhsuk-inset-text" id="message-container">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p id="not-submitted-message">You have not added a primary user contact</p>
 </div>
 
 <div>

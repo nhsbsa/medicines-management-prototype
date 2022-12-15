@@ -9,7 +9,7 @@ function storeExistingUserYesOrNo() {
             buttonLink.href = "add-contact-users-list";
             existingUser('true');
         } else if (radio.value == 'no') {
-            buttonLink.href = "add-contact-name";
+            buttonLink.href = "add-contact-first-name";
             existingUser('false');
         }
     }
@@ -80,7 +80,7 @@ function promoteSecondaryContactYesOrNo() {
         if (radio.value == 'yes') {
             buttonLink.href = "promote-secondary-user";
         } else if (radio.value == 'no') {
-            buttonLink.href = "add-contact-existing-user";
+            buttonLink.href = "add-user/add-contact-existing-user";
         }
     }
   }
@@ -99,7 +99,7 @@ function removeContactYesOrNo() {
         if (radio.value == 'yes') {
             removeContact();
         } else if (radio.value == 'no') {
-            buttonLink.href = "edit-contact-main";
+            buttonLink.href = "view-company-details";
         }
     }
   }
