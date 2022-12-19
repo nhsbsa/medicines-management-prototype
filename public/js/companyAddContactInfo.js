@@ -9,7 +9,7 @@ function storeExistingUserYesOrNo() {
             buttonLink.href = "add-contact-users-list";
             existingUser('true');
         } else if (radio.value == 'no') {
-            buttonLink.href = "add-contact-name";
+            buttonLink.href = "add-contact-first-name";
             existingUser('false');
         }
     }
@@ -28,6 +28,7 @@ function userAdded() {
 function displayAddContactMessage() {
   var messageContainer = document.getElementById("message-container");
   var messageText = document.getElementById("not-submitted-message");
+  var secondaryHeader = document.getElementById("no-secondary-header");
   var getPrimaryUser = localStorage.getItem("primary-user");
   var getSecondaryUser = localStorage.getItem("secondary-user");
   var buttonText = document.getElementById("primary-contact-button");
@@ -36,10 +37,13 @@ function displayAddContactMessage() {
     messageContainer.style.display = "none";
     buttonText.innerHTML = "Add secondary contact";
   } else if (getPrimaryUser == "true") {
-    messageText.innerHTML = "You have not added a secondary contact";
+    messageText.innerHTML = "No secondary contacts currently exist.";
     buttonText.innerHTML = "Add secondary contact";
+    secondaryHeader.style.display = "table";
   } else {
-    messageText.innerHTML = "You have not added a primary or secondary contact";
+    messageContainer.classList.add("nhsuk-inset-text");
+    messageContainer.classList.add("nhsuk-u-margin-top-0");
+    messageText.innerHTML = "You have not added a primary or secondary contact.";
     buttonText.innerHTML = "Add primary contact";
   }
 }
@@ -80,7 +84,7 @@ function promoteSecondaryContactYesOrNo() {
         if (radio.value == 'yes') {
             buttonLink.href = "promote-secondary-user";
         } else if (radio.value == 'no') {
-            buttonLink.href = "add-contact-existing-user";
+            buttonLink.href = "add-user/add-contact-existing-user";
         }
     }
   }
@@ -99,7 +103,7 @@ function removeContactYesOrNo() {
         if (radio.value == 'yes') {
             removeContact();
         } else if (radio.value == 'no') {
-            buttonLink.href = "edit-contact-main";
+            buttonLink.href = "view-company-details";
         }
     }
   }
@@ -120,9 +124,14 @@ function existingUser(value) {
 
 function displayChangeLinks() {
   var changeLinks = document.getElementsByClassName("hide-existing-user");
+  var submitButton = document.getElementById("next");
   if (localStorage.getItem("existingUser") == 'true') {
     for (let i = 0; i < changeLinks.length; i++) {
       changeLinks[i].style.display = "none";
     }
+  }
+
+  if (localStorage.getItem("primary-user") == "true") {
+    submitButton.innerHTML = "Save as secondary contact";
   }
 }
