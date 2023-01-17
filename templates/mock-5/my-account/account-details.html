@@ -1,0 +1,85 @@
+{% extends "supplier-navbar-base.html" %}
+{% block title %}
+Account details | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        Account details
+      </h1>
+    </legend>
+
+    <dl class="nhsuk-summary-list">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          John
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="edit-first-name" class="nhsuk-link nhsuk-link--no-visited-state">
+            Edit<span class="nhsuk-u-visually-hidden"> first name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          Smith
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="edit-last-name" class="nhsuk-link nhsuk-link--no-visited-state">
+            Edit<span class="nhsuk-u-visually-hidden"> last name</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>johnsmith@nhs.net</p>
+          <p class="nhsuk-tag">Pending confirmation</p>
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="edit-email" class="nhsuk-link nhsuk-link--no-visited-state">
+            Edit<span class="nhsuk-u-visually-hidden"> email</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Password
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          **********
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="enter-current-password" class="nhsuk-link nhsuk-link--no-visited-state">
+            Edit<span class="nhsuk-u-visually-hidden"> password</span>
+          </a>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Two-factor authentication
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <p>Deactivated</p>
+        </dd>
+        <dd class="nhsuk-summary-list__actions">
+          <a href="configure-two-factor-auth" class="nhsuk-link nhsuk-link--no-visited-state">
+            Enable<span class="nhsuk-u-visually-hidden"> two-factor</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+  </fieldset>
+</div>
+
+{% endblock %}
