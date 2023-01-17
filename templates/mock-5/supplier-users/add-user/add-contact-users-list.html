@@ -14,6 +14,7 @@ List of portal users | Portal | NHSBSA
 <h1>List of portal users</h1>
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
+<!--    need to make sure empty table cells have visually hidden text to give AT context MPL 3/01/2023 -->
     <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
       <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
@@ -25,6 +26,9 @@ List of portal users | Portal | NHSBSA
         </th>
         <th role="columnheader" class="" scope="col">
           Role
+        </th>
+        <th role="columnheader" class="" scope="col">
+          Contact
         </th>
         <th role="columnheader" class="" scope="col">
           Action
@@ -43,7 +47,11 @@ List of portal users | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Role </span>Administrator
         </td>
         <td>
-          <span class="nhsuk-table-responsive__heading">Action </span><a href="add-contact-phone-number">Select</a>
+          <span class="nhsuk-table-responsive__heading">Contact </span>
+          <span class="nhsuk-u-visually-hidden">This user is not listed as a contact</span>
+        </td>
+        <td>
+          <span class="nhsuk-table-responsive__heading">Action </span><a class="nhsuk-link nhsuk-link--no-visited-state" href="add-contact-phone-number">Select</a>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -57,8 +65,12 @@ List of portal users | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Role </span>User
         </td>
         <td>
+          <span class="nhsuk-table-responsive__heading">Contact </span>
+          <span class="nhsuk-tag">Primary</span>
+        </td>
+        <td>
           <span class="nhsuk-table-responsive__heading">Action </span>
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">Select</a>
+          <span class="nhsuk-u-visually-hidden">This user is already a contact so cannot be selected again</span>
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row">
@@ -72,8 +84,12 @@ List of portal users | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Role </span>User
         </td>
         <td>
+          <span class="nhsuk-table-responsive__heading">Contact </span>
+          <span class="nhsuk-tag nhsuk-tag--grey">Secondary</span>
+        </td>
+        <td>
           <span class="nhsuk-table-responsive__heading">Action </span>
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">Select</a>
+          <span class="nhsuk-u-visually-hidden">This user is already a contact so cannot be selected again</span>
         </td>
       </tr>
       </tbody>
