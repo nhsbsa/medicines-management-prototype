@@ -467,3 +467,15 @@ fill-blue{
 .file-size-width {
   width: 20%;
 }
+
+.nhsuk-card__disabled {
+    color: #c5c5c5;
+}
+
+.nhsuk-card__disabled p {
+    color: #525252 !important;
+}
+
+.nhsuk-card__disabled h3 {
+    color: #525252 !important;
+}
