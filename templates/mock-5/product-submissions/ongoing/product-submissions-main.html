@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" id="back-link" href="../../dashboard">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to portal dashboard</a>
+</div>
+
+<span class="nhsuk-caption-l">
+  AstraZeneca
+</span>
+<h1>Ongoing submissions</h1>
+
+<p class="nhsuk-u-margin-bottom-6">To view a record, select the reference number linked to the relevant submission.</p>
+
+<div class="nhsuk-body-m flex--space-between" style="display: flex">
+  <div class="nhsuk-u-visually-hidden">Currently viewing</div>
+  <div id="pageAndResultCount">Page 1 of 1 (6 results)</div>
+  <div class="nhsuk-u-text-align--right show-mobile" style="display: flex">
+  <div id="tableSortControls">
+    <span>Sort:</span>
+    <span><a aria-label="Sort results by eligibility" href="">type</a></span>
+
+    <span> | </span>
+
+    <span class="nhsuk-u-font-weight-bold">date received </span>
+  </div>
+</div>
+</div>
+
+
+<table class="govuk-table nhsuk-table-responsive" data-module="moj-sortable-table">
+  <caption class="govuk-table__caption nhsuk-u-visually-hidden" id="submission-caption">Summary of all submissions</caption>
+  <span id="table__assistiveHint" class="assistive-table-hint nhsuk-u-visually-hidden">
+    Summary of all submissions. Each heading in the table can be sorted in ascending or descending order. Selecting Enter or clicking the mouse on the heading button, or by touch if using a touch device, will achieve this.</span>
+  <thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+
+    <th scope="col" class="govuk-table__header" aria-sort="ascending">Date received</th>
+
+    <th scope="col" class="govuk-table__header" aria-sort="none">Type</th>
+
+    <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
+
+    <th scope="col" class="govuk-table__header" aria-sort="none">Effective date</th>
+
+    <th scope="col" class="govuk-table__header" aria-sort="none">Reference</th>
+  </tr>
+  </thead>
+
+  <tbody class="nhsuk-table__body">
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      New product</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--green">
+        Under review
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="56465452">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      <a href="new-product-submission-view" class="nhsuk-link nhsuk-link--no-visited-state">56465452</a></td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      New product</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--white">
+        More detail
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="56465452">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      56465453
+    </td>
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      New pack</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--white">
+        More detail
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="56465452">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      <a href="new-pack-submission-view-more-detail" class="nhsuk-link nhsuk-link--no-visited-state">56465455</a></td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Price change</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--green">
+        Under review
+      </strong>
+    </td>
+
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="56465452">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      56465452</td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="2">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      02-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Discontinued</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--green">
+        Under review
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="2">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      31-05-2022</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="78787575">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      78787575</td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      20-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      New pack</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--green">
+        Under review
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      22-05-2022</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="54887331">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      54887331</td>
+
+  </tr>
+
+
+
+  </tbody>
+</table>
+
+<div id="pagination ">
+  <nav aria-label="Pagination Navigation">
+    <ul class="pagination nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4">
+      <!-- Previous Button -->
+      <li class="pagination__item">Previous</li>
+      <li class="pagination__item">|</li>
+      <!-- First Page -->
+      <!-- Page Numbers -->
+      <li class="pagination__item">
+        <!-- Not this page! -->
+        <!-- This page! -->
+        <p class="pagination__link nhsuk-u-font-weight-bold" aria-current="true" id="1">1</p>
+      </li>
+      <li class="pagination__item">
+        <!-- Not this page! -->
+        <a class="pagination__link" href="#" id="2">2</a>
+        <!-- This page! -->
+      </li>
+
+      <!-- Next Page -->
+
+      <li class="pagination__item">|</li>
+
+      <!-- Next Button -->
+      <li class="pagination__item"><a href="#">Next</a></li>
+
+    </ul>
+  </nav>
+</div>
+
+<script src="/js/MOJ.js" defer></script>
+<script src="../../js/dialog.js"></script>
+<script>
+  localStorage.clear();
+
+  let captionTextElement = document.querySelector("#submission-caption");
+  captionTextElement.innerHTML = "Summary of all submissions. Each heading in the table can be sorted in ascending or descending order. Selecting Enter or clicking the mouse on the heading button, or by touch if using a touch device, will achieve this.";
+
+  window.addEventListener('resize', function(event) {
+     console.log(window.innerWidth);
+     if (window.innerWidth < 770) {
+     captionTextElement.innerHTML = "Summary of all submissions."
+     } else {
+     captionTextElement.innerHTML = "Summary of all submissions. Each heading in the table can be sorted in ascending or descending order. Selecting Enter or clicking the mouse on the heading button, or by touch if using a touch device, will achieve this.";
+     }
+}, true);
+
+</script>
+
+
+{% endblock %}
