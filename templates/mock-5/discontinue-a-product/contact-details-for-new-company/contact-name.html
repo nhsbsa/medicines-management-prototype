@@ -18,15 +18,28 @@ Submit a new product: effective date | Portal | NHSBSA
         What supplier is the product going to?
       </h1>
     </legend>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
-      Who is the contact for this supplier?
-    </div>
-
-    <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="example">
-        Contact name
-      </label>
-      <input class="nhsuk-input" id="example" name="example" type="text">
+    <div class="nhsuk-radios" id="data-spc-radios">
+      <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
+        Do you have a contact name?
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="1" name="data-spc" type="radio" value="contact-details-for-new-company/contact-name" />
+        <label class="nhsuk-label nhsuk-radios__label" for="1">
+          Yes
+        </label>
+      </div>
+      <div class="nhsuk-inset-text">
+        <label class="nhsuk-label" for="example">
+          Contact name
+        </label>
+        <input class="nhsuk-input" id="example" name="example" type="text">
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="2" name="data-spc" type="radio" value="contact-details-for-new-company/submission.html" />
+        <label class="nhsuk-label nhsuk-radios__label" for="2">
+          No
+        </label>
+      </div>
     </div>
 
   </fieldset>

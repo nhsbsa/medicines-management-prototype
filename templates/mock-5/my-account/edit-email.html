@@ -18,9 +18,13 @@ Edit email address | Portal | NHSBSA
         Edit email address
       </h1>
     </legend>
+    <div class="nhsuk-body-m">
+      After submitting the change, you will receive an email to confirm the change of email address.
+    </div>
     <div class="nhsuk-inset-text">
       <span class="nhsuk-u-visually-hidden">Information: </span>
-      <p>You will receive an email to confirm the change of email address.</p>
+      <p>Please note that an update to an email address will only be confirmed once the confirmation
+        email has been responded to.</p>
     </div>
     <div class="nhsuk-form-group">
       <label class="nhsuk-label" for="example">
@@ -31,8 +35,11 @@ Edit email address | Portal | NHSBSA
 
   </fieldset>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" href="account-details" id="continue-button" type="submit">
+  <a class="nhsuk-button nhsuk-u-margin-top-5" href="account-details" id="continue-button"
+     type="submit" onclick="changeEmail()">
     Submit
   </a>
 </div>
+
+<script src="/js/editUser.js"></script>
 {% endblock %}

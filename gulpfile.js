@@ -94,7 +94,7 @@ gulp.task('nhs-toolkit-install-logos', () => {
   .pipe(gulp.dest('./public/images/logos/'));
 });
 
-gulp.task('nhs-toolkit-install', gulp.series('moj-toolkit-install-js', 'moj-toolkit-install-scss', 'gov-toolkit-install-scss', 'gov-toolkit-install-js', 'nhs-toolkit-install-js', 'nhs-toolkit-install-css', 'nhs-toolkit-install-favicons', 'nhs-toolkit-install-icons', 'nhs-toolkit-install-logos'));
+gulp.task('nhs-toolkit-install', gulp.series('moj-toolkit-install-js', 'moj-toolkit-install-scss', 'gov-toolkit-install-scss', 'gov-toolkit-install-js', 'nhs-toolkit-install-css', 'nhs-toolkit-install-js', 'nhs-toolkit-install-favicons', 'nhs-toolkit-install-icons', 'nhs-toolkit-install-logos'));
 
 // BrowserSync task:
 // calls nodemon tasks and pass itself as callback

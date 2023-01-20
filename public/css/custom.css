@@ -461,3 +461,9 @@ fill-blue{
 .govuk-link{
     font-family: Frutiger W01, Arial, Sans-serif !important;
 }
+
+/* filer size width so lines up with table above/below */
+
+.file-size-width {
+  width: 20%;
+}
