@@ -19,6 +19,14 @@ Edit user | Portal | NHSBSA
       </h1>
     </legend>
 
+    <p>Choose to edit one or more elements of this user record. Please note, if you do not submit
+      these changes then any amendments made will not be saved. </p>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>If you need to remove all access you can <a class="nhsuk-link nhsuk-link--no-visited-state" href="delete-user">delete this user from the portal</a>.</p>
+    </div>
+
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
@@ -68,10 +76,12 @@ Edit user | Portal | NHSBSA
           Two-factor authentication
         </dt>
         <dd class="nhsuk-summary-list__value">
-          <p>Activated</p>
+          <p class="nhsuk-tag nhsuk-tag--green">Activated</p>
+          <p id="reset-2fa-message">Two-factor authentication will be reset after submitting
+            changes</p>
         </dd>
         <dd class="nhsuk-summary-list__actions">
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="reset-2fa">
             Reset<span class="nhsuk-u-visually-hidden"> two-factor authentication</span>
           </a>
         </dd>
@@ -84,9 +94,13 @@ Edit user | Portal | NHSBSA
   <a href="../company/amgen" class="nhsuk-button nhsuk-u-margin-top-3">
     Submit changes</a>
 </div>
-<div>
-  <a href="#" class="nhsuk-button nhsuk-button--secondary">
-    Delete user</a>
-</div>
+
+<script src="/js/medsUserEditSupplier.js" onload="display2faReset()"></script>
+
+<script type="text/javascript">
+  window.onunload = function() {
+   localStorage.clear();
+ };
+</script>
 
 {% endblock %}
