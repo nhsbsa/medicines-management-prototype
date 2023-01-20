@@ -44,7 +44,7 @@ Account details | Portal | NHSBSA
         </dt>
         <dd class="nhsuk-summary-list__value">
           <p>johnsmith@nhs.net</p>
-          <p class="nhsuk-tag">Pending confirmation</p>
+          <p class="nhsuk-tag" id="pending-tag">Pending confirmation</p>
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a href="edit-email" class="nhsuk-link nhsuk-link--no-visited-state">
@@ -57,7 +57,7 @@ Account details | Portal | NHSBSA
           Password
         </dt>
         <dd class="nhsuk-summary-list__value">
-          **********
+          &bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;
         </dd>
         <dd class="nhsuk-summary-list__actions">
           <a href="enter-current-password" class="nhsuk-link nhsuk-link--no-visited-state">
@@ -82,4 +82,11 @@ Account details | Portal | NHSBSA
   </fieldset>
 </div>
 
+<script src="/js/editUser.js" onload="displayPendingMessage()" ></script>
+
+<script type="text/javascript">
+  window.onunload = function() {
+   localStorage.clear();
+ };
+</script>
 {% endblock %}
