@@ -1,4 +1,24 @@
 {% extends "base.html" %}
+{% block accountLinks %}
+<!--For mobile version, add links to menu with rest of tabs-->
+<div class="nhsuk-header__content" id="content-header">
+  <div class="nhsuk-header__menu">
+    <button class="nhsuk-header__menu-toggle" style="margin-top: 52px;" id="toggle-menu" aria-controls="header-navigation" aria-label="Open menu">Menu</button>
+    <div class="header-sub-links">
+          <span class="header-sub-links--content">
+            <span class="header-sub-links--content-body">
+              <span class="nhsuk-u-visually-hidden">Logged in as </span>
+                <a href="/mock-5/my-account/account-details" class="header-sub-links--content-body header-sub-links--content-link">Supplier user</a>
+            </span>
+          </span>
+      <strong aria-hidden="true"> | </strong>
+      <span class="header-sub-links--content">
+        <a href="/index" class="header-sub-links--content-body header-sub-links--content-link" id="account-logout" tabindex="0"> Log out </a>
+      </span>
+    </div>
+  </div>
+</div>
+{% endblock %}
 {% block navbar %}
 <nav class="nhsuk-header__navigation" id="header-navigation"
      role="navigation" aria-label="Primary navigation" aria-labelledby="label-navigation">
@@ -47,26 +67,6 @@
       <li class="nhsuk-header__navigation-item">
         <a class="nhsuk-header__navigation-link" href="#">
           Users
-          <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg"
-               viewBox="0 0 24 24" aria-hidden="true">
-            <path
-                d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-          </svg>
-        </a>
-      </li>
-      <li class="nhsuk-header__navigation-item">
-        <a class="nhsuk-header__navigation-link" href="/mock-5/my-account/account-details">
-          My account
-          <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg"
-               viewBox="0 0 24 24" aria-hidden="true">
-            <path
-                d="M15.5 12a1 1 0 0 1-.29.71l-5 5a1 1 0 0 1-1.42-1.42l4.3-4.29-4.3-4.29a1 1 0 0 1 1.42-1.42l5 5a1 1 0 0 1 .29.71z"></path>
-          </svg>
-        </a>
-      </li>
-      <li class="nhsuk-header__navigation-item">
-        <a class="nhsuk-header__navigation-link" href="#">
-          Logout
           <svg class="nhsuk-icon nhsuk-icon__chevron-right" xmlns="http://www.w3.org/2000/svg"
                viewBox="0 0 24 24" aria-hidden="true">
             <path
