@@ -68,13 +68,13 @@ gulp.task('gov-toolkit-install-js', () => {
 });
 
 gulp.task('nhs-toolkit-install-js', () => {
-  return gulp.src('node_modules/nhsuk-frontend/dist/nhsuk-6.1.2.min.js')
+  return gulp.src('node_modules/nhsuk-frontend/dist/nhsuk-7.0.0-alpha.2.min.js')
   .pipe(rename("nhsuk.min.js"))
   .pipe(gulp.dest('./public/js'));
 });
 
 gulp.task('nhs-toolkit-install-css', () => {
-  return gulp.src('node_modules/nhsuk-frontend/dist/nhsuk-6.1.2.min.css')
+  return gulp.src('node_modules/nhsuk-frontend/dist/nhsuk-7.0.0-alpha.2.min.css')
   .pipe(rename("nhsuk.min.css"))
   .pipe(gulp.dest('./public/css'));
 });
