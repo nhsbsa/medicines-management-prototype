@@ -17,3 +17,14 @@ function display2faReset() {
       resetMessage.style.display = "none";
   }
 }
+
+function deleteUser () {
+  let radioButtons = document.getElementsByName("delete-radio");
+  let continueButton = document.getElementById("continue-button");
+
+  for (var radio of radioButtons) {
+    if (radio.value == 'yes' && radio.checked == true) {
+      continueButton.setAttribute("href", "delete-confirmation");
+    }
+  }
+}
