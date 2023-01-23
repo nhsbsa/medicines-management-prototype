@@ -101,6 +101,26 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
   </div>
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
+      Account status
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      <strong class="nhsuk-tag nhsuk-tag--white" id="account-status-tag">
+        Live
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a class="nhsuk-link" href="deactivate-account.html" id="account-status-action">
+        Edit<span class="nhsuk-u-visually-hidden"> account status</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
       Two-factor authentication
     </dt>
     <dd class="nhsuk-summary-list__value">
@@ -139,10 +159,6 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
   let twoFANoAction = document.getElementById("2fa-no-action");
   let twoFADeactivated = localStorage.getItem("2fa-deactivated")
 
-  console.log(twoFATag.innerHTML);
-  console.log(twoFAAction.innerHTML);
-  console.log(twoFADeactivated);
-
   if (twoFADeactivated == 'yes') {
   twoFATag.className = "nhsuk-tag nhsuk-tag--blue";
   twoFATag.innerHTML = "Requires set up";
@@ -153,6 +169,20 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
   twoFATag.innerHTML = "Activated";
   twoFAAction.style.display = "block";
   twoFANoAction.style.display = "none";
+  }
+
+  let accountStatusTag = document.getElementById("account-status-tag");
+  let accountStatusAction = document.getElementById("account-status-action");
+  let accountStatusDeactivated = localStorage.getItem("account-deactivated")
+  let accountStatusActivated = localStorage.getItem("account-activated")
+
+  if (accountStatusDeactivated == 'yes' || accountStatusActivated == 'no') {
+  accountStatusTag.className = "nhsuk-tag nhsuk-tag--grey";
+  accountStatusTag.innerHTML = "Inactive";
+  }
+  if (accountStatusDeactivated == 'no' || accountStatusActivated == 'yes') {
+  accountStatusTag.className = "nhsuk-tag nhsuk-tag--white";
+  accountStatusTag.innerHTML = "Active";
   }
 
 </script>

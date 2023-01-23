@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "supplier-navbar-base.html" %}
 {% block title %}
 Portal dashboard | Medicines Management design prototype | NHSBSA
 {% endblock %}
@@ -72,9 +72,20 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </div>
 
       </li>
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state"
+                 href="product-change/checklist">Product change</a>
+            </h2>
+            <p class="nhsuk-card__description">Change one or more current products.</p>
+          </div>
+        </div>
+      </li>
     </ul>
 
-    <h2>Track submissions</h2>
+    <h2>Track my submissions</h2>
 
     <ul class="nhsuk-grid-row nhsuk-card-group">
       <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
@@ -82,9 +93,21 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <div class="nhsuk-card nhsuk-card--clickable">
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
-              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="product-submissions/product-submissions-main">Submissions</a>
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="product-submissions/ongoing/product-submissions-main">Ongoing submissions</a>
             </h2>
-            <p class="nhsuk-card__description">Observe a list of all submissions, as well as viewing message and status updates.</p>
+            <p class="nhsuk-card__description">A list of submissions which are under review or awaiting further information.</p>
+          </div>
+        </div>
+
+      </li>
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="product-submissions/complete/product-submissions-main">Complete submissions</a>
+            </h2>
+            <p class="nhsuk-card__description">A list of submissions which do not need further action.</p>
           </div>
         </div>
 
@@ -97,7 +120,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
               <a class="nhsuk-card__link nhsuk-link--no-visited-state"
                  href="drafts/drafts">Drafts</a>
             </h2>
-            <p class="nhsuk-card__description">View or update new product and new pack drafts.</p>
+            <p class="nhsuk-card__description">View or update new product and new pack drafts which have not been submitted.</p>
           </div>
         </div>
 
