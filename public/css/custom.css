@@ -467,3 +467,45 @@ fill-blue{
 .file-size-width {
   width: 20%;
 }
+
+.header-sub-links {
+  display: none;
+}
+
+@media (min-width: 990px) {
+  .header-sub-links {
+    display: inline-block !important;
+    float: right;
+    color: #ffffff !important;
+  }
+}
+.header-sub-links--content {
+  margin: 0;
+}
+
+.header-sub-links--content-body {
+  padding: 0.5em;
+  text-decoration: none;
+}
+
+.header-sub-links--content-link {
+  display: inline-block;
+  color: #ffffff;
+}
+
+.header-sub-links--content-link:visited {
+  color: #ffffff;
+}
+
+.header-sub-links--content-link:hover {
+  background: #003d78 !important;
+  box-shadow: none !important;
+  color: #ffffff !important;
+  text-decoration: underline !important;
+}
+
+@media (min-width: 990px) {
+  .nhsuk-header__navigation-item__mobile-only {
+    display: none;
+  }
+}
