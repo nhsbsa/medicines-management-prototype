@@ -10,11 +10,16 @@ function requireYesOrNo() {
 
 function display2faReset() {
   var resetMessage = document.getElementById("reset-2fa-message");
+  var resetLink = document.getElementById("reset-link");
+  var setUpMessage = document.getElementById("set-up-message");
 
   if (localStorage.getItem("two-fa-reset") == "true") {
-      resetMessage.style.display = "block";
+      resetMessage.classList.add("nhsuk-tag--blue");
+      resetMessage.innerHTML = "Requires set up";
+      setUpMessage.style.display = "block";
+      resetLink.style.display = "none";
   } else {
-      resetMessage.style.display = "none";
+      resetMessage.classList.add("nhsuk-tag--green");
   }
 }
 
