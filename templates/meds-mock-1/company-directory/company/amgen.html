@@ -114,6 +114,9 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                         Role
                       </th>
                       <th class="" role="columnheader" scope="col">
+                        Status
+                      </th>
+                      <th class="" role="columnheader" scope="col">
                         Edit
                       </th>
                     </tr>
@@ -129,6 +132,11 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                       <td class="nhsuk-table__cell" role="cell">
                         <span class="nhsuk-table-responsive__heading">Role </span>
                         Admin
+                      </td>
+                      <td>
+                        <strong class="nhsuk-tag nhsuk-tag--white" id="account-status-tag-1">
+                          Live <span class="nhsuk-u-visually-hidden"> account</span>
+                        </strong>
                       </td>
                       <td class="nhsuk-table__cell" role="cell">
                         <span class="nhsuk-table-responsive__heading">Edit </span>
@@ -148,6 +156,11 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                         <span class="nhsuk-table-responsive__heading">Role </span>
                         User
                       </td>
+                      <td>
+                        <strong class="nhsuk-tag nhsuk-tag--grey" id="account-status-tag-2">
+                          Inactive <span class="nhsuk-u-visually-hidden"> account</span>
+                        </strong>
+                      </td>
                       <td class="nhsuk-table__cell" role="cell">
                         <span class="nhsuk-table-responsive__heading">Edit </span>
                         <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">
@@ -166,6 +179,11 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                       <td class="nhsuk-table__cell" role="cell">
                         <span class="nhsuk-table-responsive__heading">Role </span>
                         User
+                      </td>
+                      <td>
+                        <strong class="nhsuk-tag nhsuk-tag--white" id="account-status-tag-3">
+                          Live <span class="nhsuk-u-visually-hidden"> account</span>
+                        </strong>
                       </td>
                       <td class="nhsuk-table__cell" role="cell">
                         <span class="nhsuk-table-responsive__heading">Edit </span>
@@ -189,7 +207,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
                   <table class="govuk-table nhsuk-table-responsive"
                          data-module="moj-sortable-table">
-                    <!--                    <h1>Summary of all Amgen's submissions</h1>-->
+                    <caption class="nhsuk-table__caption">Only submissions which have been actioned will appear in this table.</caption>
                     <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
 
@@ -200,8 +218,6 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                       <th aria-sort="none" class="govuk-table__header" scope="col">Type</th>
 
                       <th aria-sort="none" class="govuk-table__header" scope="col">Product name</th>
-
-                      <th aria-sort="none" class="govuk-table__header" scope="col">Status</th>
 
                       <th aria-sort="none" class="govuk-table__header" scope="col">Effective date
                       </th>
@@ -220,13 +236,8 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                       <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
                         Product
                       </td>
-                      <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+                      <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Product name</span>
                         Paracetamol 200mg tablets
-                      </td>
-                      <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
-                        <strong class="nhsuk-tag nhsuk-tag--grey">
-                          Actioned
-                        </strong>
                       </td>
                       <td class="nhsuk-table__cell" data-sort-value="3">
                         <span class="nhsuk-table-responsive__heading">Effective date</span>
@@ -248,11 +259,6 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                       </td>
                       <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
                         Ibuprofen 10% gel
-                      </td>
-                      <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
-                        <strong class="nhsuk-tag nhsuk-tag--red">
-                          Rejected
-                        </strong>
                       </td>
                       <td class="nhsuk-table__cell" data-sort-value="3">
                         <span class="nhsuk-table-responsive__heading">Effective date</span>
