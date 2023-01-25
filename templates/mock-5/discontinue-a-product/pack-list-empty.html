@@ -1,36 +1,29 @@
 {% extends "base.html" %}
 {% block title %}
-Submit a new product: effective date | Portal | NHSBSA
+Submit a new product | Portal | NHSBSA
 {% endblock %}
 {% block content %}
+
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="how-long-oos.html">
+  <a class="nhsuk-back-link__link" href="reason">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to how long will the product be out of stock</a>
+    Go back to reason</a>
 </div>
 
-<div class="nhsuk-form-group">
-    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
-      <h1 class="nhsuk-fieldset__heading">
-        <span class="nhsuk-caption-l" id="discontinue-reason">
-                Discontinue
+<h1><span class="nhsuk-caption-l" id="discontinue-reason">
+            Discontinue
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        Not valid to discontinue
-      </h1>
-    </legend>
+  Review selected packs</h1>
+<p>There are no packs chosen to discontinue.</p>
 
-  <p>Products or packs cannot be discontinued unless they are going to be out of stock for more than 3 months.</p>
-  <p>Please resubmit in the future if your products or packs match this stipulation.</p>
+    <a href="pack-list-add.html"><button class="nhsuk-button nhsuk-button--secondary">Add packs</button></a><br>
 
-  <p>Return to the  <a class="nhsuk-link nhsuk-link--no-visited-state" href="../dashboard.html" >Portal dashboard</a>.</p>
-  <script src="/js/newProduct.js"></script>
-</div>
 
 <script>
-  let discontinueReason = localStorage.getItem("discontinue-reason");
+    let discontinueReason = localStorage.getItem("discontinue-reason");
 
   let discontinueTitle = document.getElementById("discontinue-reason");
 

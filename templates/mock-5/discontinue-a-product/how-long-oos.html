@@ -16,12 +16,13 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        How long will the product be out of stock?
+        <span class="nhsuk-caption-l" id="discontinue-reason">
+                Discontinue
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        How long will the product or pack be out of stock?
       </h1>
     </legend>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
-      Select how long this product is going to be out of stock
-    </div>
 
     <div class="nhsuk-radios" id="data-spc-radios">
 
@@ -64,7 +65,13 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
     location.href="/mock-5/discontinue-a-product/" + selected
   }
 
+let discontinueReason = localStorage.getItem("discontinue-reason");
 
+  let discontinueTitle = document.getElementById("discontinue-reason");
+
+  if (discontinueReason || discontinueReason != null || discontinueReason != "") {
+    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue' + ' - ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
 
 </script>
 

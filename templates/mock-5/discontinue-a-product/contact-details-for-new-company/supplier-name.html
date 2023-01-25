@@ -16,6 +16,10 @@ Submit a new product: effective date | Portal | NHSBSA
 
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="discontinue-reason">
+                Discontinue
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
         What is the supplier name?
       </h1>
     </legend>
@@ -31,11 +35,22 @@ Submit a new product: effective date | Portal | NHSBSA
   </fieldset>
 
   <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeDate()" href="extra-information.html" id="continue-button" type="submit">
-    Continue
+    Save and continue
   </a>
   <script src="/js/newProduct.js"></script>
   <script type="text/javascript">
 
   </script>
 </div>
+
+<script>
+  let discontinueReason = localStorage.getItem("discontinue-reason");
+
+  let discontinueTitle = document.getElementById("discontinue-reason");
+
+  if (discontinueReason || discontinueReason != null || discontinueReason != "") {
+    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue' + ' - ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+</script>
+
 {% endblock %}

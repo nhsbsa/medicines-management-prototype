@@ -5,17 +5,21 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="contact-name.html">
+  <a class="nhsuk-back-link__link" href="phone-number">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to ...</a>
+    Go back to do you have a contact phone number for the supplier?</a>
 </div>
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        Edit information
+        <span class="nhsuk-caption-l" id="discontinue-reason">
+                Discontinue
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Review supplier information
       </h1>
     </legend>
 
@@ -23,7 +27,7 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
-      Company name
+      Supplier name
     </dt>
     <dd class="nhsuk-summary-list__value">
       AstraZeneca
@@ -31,44 +35,8 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="edit-supplier-first-name.html">
+      <a href="supplier-name.html">
         Edit<span class="nhsuk-u-visually-hidden"> Company name</span>
-      </a>
-
-    </dd>
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Company name
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      John Smith
-    </dd>
-
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="edit-supplier-last-name.html">
-        Edit<span class="nhsuk-u-visually-hidden"> company name</span>
-      </a>
-
-    </dd>
-
-  </div>
-
-  <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
-      Contact email
-    </dt>
-    <dd class="nhsuk-summary-list__value">
-      johnsmith@nhs.net
-    </dd>
-
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="edit-supplier-email.html">
-        Edit<span class="nhsuk-u-visually-hidden"> contact email</span>
       </a>
 
     </dd>
@@ -80,12 +48,48 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
       Contact name
     </dt>
     <dd class="nhsuk-summary-list__value">
+      John Smith
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="contact-name">
+        Edit<span class="nhsuk-u-visually-hidden"> company name</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Contact email address
+    </dt>
+    <dd class="nhsuk-summary-list__value">
+      johnsmith@nhs.net
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="email-address">
+        Edit<span class="nhsuk-u-visually-hidden"> contact email</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Contact phone number
+    </dt>
+    <dd class="nhsuk-summary-list__value">
       <p>0191 1234567</p>
     </dd>
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="edit-supplier-role.html">
+      <a href="phone-number">
         Edit<span class="nhsuk-u-visually-hidden"> contact number</span>
       </a>
 
@@ -93,11 +97,22 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 
   </div>
 </dl>
+    <a href="../pack-list-add" class="nhsuk-button nhsuk-u-margin-top-3"
+    >Save and continue to select packs
+    </a>
+  </fieldset>
 
-<a href="submission.html" class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-float-right"
->Continue
-</a>
+</div>
 
+    <script>
+  let discontinueReason = localStorage.getItem("discontinue-reason");
+
+  let discontinueTitle = document.getElementById("discontinue-reason");
+
+  if (discontinueReason || discontinueReason != null || discontinueReason != "") {
+    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue' + ' - ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+</script>
 
 {% endblock %}
 

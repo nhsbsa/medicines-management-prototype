@@ -15,25 +15,39 @@ Submit a new product: effective date | Portal | NHSBSA
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="discontinue-reason">
+                Discontinue
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
         Please contact us
       </h1>
     </legend>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
+
       <p>Please email <a href="mailto:nhsbsa.dmdportfolio@nhs.net">nhsbsa.dmdportfolio@nhs.net</a> with details of the merger.</p>
       <p>Providing as much detail as possible, please include (where applicable):</p>
       <ul>
-        <li>Which companies/ suppliers are included in the merger</li>
-        <li>New company name</li>
-        <li>Contact name</li>
-        <li>Contact email address</li>
-        <li>Contact telephone number</li>
+        <li>which companies or suppliers are included in the merger</li>
+        <li>the new company name</li>
+        <li>a contact name or names</li>
+        <li>a contact email address or addresses</li>
+        <li>a contact telephone number or numbers</li>
       </ul>
-      The Medicines Management team will respond to your email within two weeks of receipt.
-    </div>
+    <p>The Medicines Management team will respond to your email within two weeks of receipt.</p>
   </fieldset>
   <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeDate()" href="../dashboard.html" id="continue-button" type="submit">
     Return to dashboard
   </a>
   <script src="/js/newProduct.js"></script>
 </div>
+
+<script>
+  let discontinueReason = localStorage.getItem("discontinue-reason");
+
+  let discontinueTitle = document.getElementById("discontinue-reason");
+
+  if (discontinueReason || discontinueReason != null || discontinueReason != "") {
+    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue' + ' - ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+</script>
+
 {% endblock %}

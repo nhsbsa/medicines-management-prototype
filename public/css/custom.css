@@ -509,3 +509,17 @@ fill-blue{
     display: none;
   }
 }
+
+/* align table cell to middle for checkbox */
+
+.align-middle {
+  vertical-align: middle;
+}
+
+/* align checkbox in table for tablet & mobile */
+
+@media (max-width: 40.0625em) {
+ .table-checkbox {
+ padding: 0 0 0 16px !important;
+ }
+}
