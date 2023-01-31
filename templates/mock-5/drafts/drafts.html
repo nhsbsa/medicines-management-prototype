@@ -18,32 +18,6 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 </span>
 <h1>Drafts</h1>
 
-<div class="nhsuk-grid-row">
-  <div class="nhsuk-grid-column-full">
-    <div class="nhsuk-form-group">
-      <h2 class="nhsuk-card__heading nhsuk-heading-s">Search for a submission</h2>
-      <dl class="nhsuk-summary-list" id="current-search-criteria" style="display:none;">
-        <div class="nhsuk-summary-list__row">
-          <dt class="nhsuk-summary-list__key">
-            Current search criteria
-          </dt>
-          <dd class="nhsuk-summary-list__value">
-            5646
-          </dd>
-        </div>
-      </dl>
-
-      <label class="nhsuk-label" for="reference-search">
-        Filter by reference
-      </label>
-      <input id="reference-search" class="nhsuk-input" type="text"/>
-
-      <button onclick="filter()" class="nhsuk-button nhsuk-u-margin-top-5">Filter search</button>
-      <a href="drafts" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-5">Reset filters</a>
-    </div>
-  </div>
-</div>
-
 <p class="nhsuk-u-margin-bottom-6">A selection of drafts, if previously saved, are displayed. To resume the new product or new pack draft, select the reference number linked to it. This will direct you to the new product or new pack summary page where you can pick up from where you left off.  </p>
 
 <!-- This page will also require a 'no results found' text when there are no drafts saved MPL 19DEC22-->
@@ -78,8 +52,6 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     <th scope="col" class="govuk-table__header" aria-sort="none">Product name</th>
 
     <th scope="col" class="govuk-table__header" aria-sort="none">Effective date</th>
-
-    <th scope="col" class="govuk-table__header" aria-sort="none">Reference</th>
   </tr>
   </thead>
 
@@ -101,10 +73,6 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     <td class="nhsuk-table__cell" data-sort-value="3">
       <span class="nhsuk-table-responsive__heading">Effective date</span>
       01 06 2022 </td>
-
-    <td class="nhsuk-table__cell" data-sort-value="56465452">
-      <span class="nhsuk-table-responsive__heading">Reference</span>
-      <a href="product-summary" class="nhsuk-link nhsuk-link--no-visited-state">56465452</a></td>
   </tr>
 
   <tr class="nhsuk-table__row">
@@ -123,11 +91,6 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     <td class="nhsuk-table__cell" data-sort-value="3">
       <span class="nhsuk-table-responsive__heading">Effective date</span>
       01 06 2022 </td>
-
-    <td class="nhsuk-table__cell" data-sort-value="56465452">
-      <span class="nhsuk-table-responsive__heading">Reference</span>
-      56465452</td>
-
   </tr>
 
   <tr class="nhsuk-table__row">
@@ -146,14 +109,9 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     <td class="nhsuk-table__cell" data-sort-value="3">
       <span class="nhsuk-table-responsive__heading">Effective date</span>
       01 06 2022 </td>
-
-    <td class="nhsuk-table__cell" data-sort-value="56465452">
-      <span class="nhsuk-table-responsive__heading">Reference</span>
-      56465452</td>
-
   </tr>
 
-  <tr class="nhsuk-table__row hide-filter">
+  <tr class="nhsuk-table__row">
 
     <td class="nhsuk-table__cell" data-sort-value="1">
       <span class="nhsuk-table-responsive__heading">Date received</span>
@@ -170,14 +128,9 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     <td class="nhsuk-table__cell" data-sort-value="3">
       <span class="nhsuk-table-responsive__heading">Effective date</span>
       01 06 2022 </td>
-
-    <td class="nhsuk-table__cell" data-sort-value="56465452">
-      <span class="nhsuk-table-responsive__heading">Reference</span>
-      56465452</td>
-
   </tr>
 
-  <tr class="nhsuk-table__row hide-filter">
+  <tr class="nhsuk-table__row">
 
     <td class="nhsuk-table__cell" data-sort-value="2">
       <span class="nhsuk-table-responsive__heading">Date received</span>
@@ -193,11 +146,6 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     <td class="nhsuk-table__cell" data-sort-value="2">
       <span class="nhsuk-table-responsive__heading">Effective date</span>
       31 05 2022</td>
-
-    <td class="nhsuk-table__cell" data-sort-value="78787575">
-      <span class="nhsuk-table-responsive__heading">Reference</span>
-      78787575</td>
-
   </tr>
 
 
@@ -249,17 +197,6 @@ Submit a new product: pack size and strength | Portal | NHSBSA
      captionTextElement.innerHTML = "Summary of all submissions. Each heading in the table can be sorted in ascending or descending order. Selecting Enter or clicking the mouse on the heading button, or by touch if using a touch device, will achieve this.";
      }
 }, true);
-
-function filter() {
-  var hiddenRows = document.getElementsByClassName("hide-filter");
-  var currentSearchCriteria = document.getElementById("current-search-criteria");
-
-  for (let i = 0; i < hiddenRows.length; i++) {
-    hiddenRows[i].style.display = "none";
-  }
-
-  currentSearchCriteria.style.display = "block";
-}
 
 </script>
 
