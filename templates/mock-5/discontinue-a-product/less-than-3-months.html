@@ -8,22 +8,35 @@ Submit a new product: effective date | Portal | NHSBSA
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to option</a>
+    Go back to how long will the product be out of stock</a>
 </div>
 
 <div class="nhsuk-form-group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        Message
+        <span class="nhsuk-caption-l" id="discontinue-reason">
+                Discontinue
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Not valid to discontinue
       </h1>
     </legend>
 
-  <p>The product cannot be discontinued unless it is going to be out of stock for more than three months.</p>
-  <p>If, at a later date, the product is going out of stock for more than 3 months, please resubmit your request to discontinue the product</p>
+  <p>Products or packs cannot be discontinued unless they are going to be out of stock for more than 3 months.</p>
+  <p>Please resubmit in the future if your products or packs match this stipulation.</p>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeDate()" href="../dashboard.html" id="continue-button" type="submit">
-    Return to dashboard
-  </a>
+  <p>Return to the  <a class="nhsuk-link nhsuk-link--no-visited-state" href="../dashboard.html" >Portal dashboard</a>.</p>
   <script src="/js/newProduct.js"></script>
 </div>
+
+<script>
+  let discontinueReason = localStorage.getItem("discontinue-reason");
+
+  let discontinueTitle = document.getElementById("discontinue-reason");
+
+  if (discontinueReason || discontinueReason != null || discontinueReason != "") {
+    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+</script>
+
 {% endblock %}

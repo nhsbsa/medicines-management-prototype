@@ -16,26 +16,60 @@ Submit a new product: effective date | Portal | NHSBSA
 
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="discontinue-reason">
+                Discontinue
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
         What is the supplier name?
       </h1>
     </legend>
 
-    <p>If the reason for discontinuing a product is takeover or divestment, the name of the supplier it is being transferred to is required. </p>
+    <p>If the reason for discontinuing a product or pack is &#39;takeover&#39; or &#39;product divestment&#39;, the name of the supplier it is being transferred to is required. </p>
     <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="example">
+      <label class="nhsuk-label" for="supplier-name">
         Supplier name
       </label>
-      <input class="nhsuk-input" id="example" name="example" type="text">
+      <input class="nhsuk-input" id="supplier-name" name="example" type="text">
     </div>
 
   </fieldset>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeDate()" href="extra-information.html" id="continue-button" type="submit">
-    Continue
+  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeName()" href="extra-information.html" id="continue-button" type="submit">
+    Save and continue
   </a>
-  <script src="/js/newProduct.js"></script>
-  <script type="text/javascript">
 
-  </script>
 </div>
+
+<script>
+  console.log(localStorage);
+
+  let discontinueReason = localStorage.getItem("discontinue-reason");
+
+  let discontinueTitle = document.getElementById("discontinue-reason");
+
+  if (discontinueReason || discontinueReason != null || discontinueReason != "") {
+    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+  let summaryPage = localStorage.getItem("supplier-summary");
+
+  function storeName() {
+    var supplierName = document.getElementById("supplier-name");
+    localStorage.setItem("supplier-name", supplierName.value);
+}
+
+var getSupplierName = localStorage.getItem("supplier-name");
+var suppName = document.querySelector("#supplier-name");
+
+if (suppName != null) {
+    if (getSupplierName != null) {
+        suppName.defaultValue = getSupplierName;
+    }
+    if (getSupplierName != null && summaryPage != null) {
+        document.getElementById("continue-button").href = "../pack-list";
+    }
+}
+
+</script>
+
 {% endblock %}
