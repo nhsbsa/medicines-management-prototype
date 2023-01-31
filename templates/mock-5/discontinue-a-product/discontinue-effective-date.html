@@ -16,7 +16,7 @@ Submit a new product: effective date | Portal | NHSBSA
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
         <span class="nhsuk-caption-l">
-                Discontinue
+                Discontinue submission
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
         What is the effective date of the discontinuation?
@@ -27,8 +27,8 @@ Submit a new product: effective date | Portal | NHSBSA
     </p>
 
     <div class="nhsuk-inset-text nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-6">
-      <sspan class="nhsuk-u-visually-hidden">Information: </sspan>
-      <p>If submitting many products or packs at a time, each must have the same effective date. Otherwise, a separate submission must be made. </p>
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>If submitting many products or packs, each must have the same effective date. Otherwise, a separate discontinue submission must be made. </p>
     </div>
 
     <p>Enter each element of the date as a number in the format <strong>dd mm yyyy</strong>.</p>
@@ -62,8 +62,52 @@ Submit a new product: effective date | Portal | NHSBSA
   </fieldset>
 
   <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeDate()" href="reason.html" id="continue-button" type="submit">
-    Continue
+    Save and continue
   </a>
-  <script src="/js/newProduct.js"></script>
+  <script >
+  console.log(localStorage);
+
+
+  var summaryPage = localStorage.getItem("supplier-summary");
+  var continueButton = document.getElementById("continue-button");
+  var getContinueButton = document.getElementsByClassName("nhsuk-button")[0];
+
+    function storeDate() {
+    var inputDay = document.getElementById("example-day");
+    var inputMonth = document.getElementById("example-month");
+    var inputYear = document.getElementById("example-year");
+    localStorage.setItem("effective-day", inputDay.value);
+    localStorage.setItem("effective-month", inputMonth.value);
+    localStorage.setItem("effective-year", inputYear.value);
+}
+
+var getEffectiveDay = localStorage.getItem("effective-day");
+var getEffectiveMonth = localStorage.getItem("effective-month");
+var getEffectiveYear = localStorage.getItem("effective-year");
+
+var eDay = document.querySelector("#example-day");
+var eMonth = document.querySelector("#example-month");
+var eYear = document.querySelector("#example-year");
+
+if (eDay != null && eMonth != null && eYear != null) {
+
+    if (getEffectiveDay != null) {
+        eDay.defaultValue = getEffectiveDay;
+        console.log(getContinueButton);
+    }
+
+    if (getEffectiveMonth != null) {
+        eMonth.defaultValue = getEffectiveMonth;
+    }
+
+    if (getEffectiveYear != null) {
+        eYear.defaultValue = getEffectiveYear;
+    }
+
+    if ((getEffectiveDay != null && getEffectiveMonth != null && getEffectiveYear != null) && summaryPage != null) {
+        getContinueButton.href = "pack-list";
+    }
+}
+  </script>
 </div>
 {% endblock %}

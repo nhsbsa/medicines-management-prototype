@@ -32,13 +32,13 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 
     <div class="nhsuk-radios" id="data-spc-radios">
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="1" name="data-spc" type="radio" value="contact-details-for-new-company/contact-name" />
+        <input class="nhsuk-radios__input" id="1" name="data-extra-info" type="radio" value="yes" />
         <label class="nhsuk-label nhsuk-radios__label" for="1">
           Yes
         </label>
       </div>
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="2" name="data-spc" type="radio" value="contact-details-for-new-company/submission.html" />
+        <input class="nhsuk-radios__input" id="2" name="data-extra-info" type="radio" value="no" />
         <label class="nhsuk-label nhsuk-radios__label" for="2">
           No
         </label>
@@ -47,23 +47,42 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
   </fieldset>
 </div>
 
-<input type="button" onclick="navigate" class="nhsuk-button nhsuk-u-margin-top-3"
-       value="Continue"
+<a onclick="navigate()" class="nhsuk-button nhsuk-u-margin-top-3"
        id="next"
-       name="next">
-</input>
+       name="next">Save and continue
+</a>
 
 <script type="text/javascript">
+  console.log(localStorage);
 
-  const continueBtn = document.getElementById("next")
+  var radioButtons = document.getElementsByName("data-extra-info");
 
-  continueBtn.addEventListener("click", navigate);
+if (radioButtons) {
+    var getExtraInfo = localStorage.getItem("supplier-extra-info");
+        for (var radio of radioButtons) {
+            if (getExtraInfo === radio.value) {
+                radio.checked = true;
+        }
+    }
+};
 
 
   function navigate() {
-    const selected = document.querySelector('input[name="data-spc"]:checked').value;
-    console.log(selected)
-    location.href="/mock-5/discontinue-a-product/" + selected
+    let continueBtn = document.getElementById("next")
+    var getExtraInfo = localStorage.getItem("supplier-extra-info");
+    var radioButtons = document.getElementsByName("data-extra-info");
+
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+            localStorage.setItem("supplier-extra-info", radio.value);
+            if (radio.value == 'yes') {
+                continueBtn.href = "contact-name";
+            } else if (radio.value == 'no') {
+                continueBtn.href = "../pack-list-add";
+            }
+        }
+    }
+
   }
 
   let discontinueReason = localStorage.getItem("discontinue-reason");
@@ -71,7 +90,7 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
   let discontinueTitle = document.getElementById("discontinue-reason");
 
   if (discontinueReason || discontinueReason != null || discontinueReason != "") {
-    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue' + ' - ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
   }
 
 </script>

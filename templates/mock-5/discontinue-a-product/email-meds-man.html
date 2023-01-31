@@ -34,9 +34,7 @@ Submit a new product: effective date | Portal | NHSBSA
       </ul>
     <p>The Medicines Management team will respond to your email within two weeks of receipt.</p>
   </fieldset>
-  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeDate()" href="../dashboard.html" id="continue-button" type="submit">
-    Return to dashboard
-  </a>
+  <p>Return to the  <a class="nhsuk-link nhsuk-link--no-visited-state" href="../dashboard.html" >Portal dashboard</a>.</p>
   <script src="/js/newProduct.js"></script>
 </div>
 
@@ -46,7 +44,7 @@ Submit a new product: effective date | Portal | NHSBSA
   let discontinueTitle = document.getElementById("discontinue-reason");
 
   if (discontinueReason || discontinueReason != null || discontinueReason != "") {
-    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue' + ' - ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
   }
 </script>
 

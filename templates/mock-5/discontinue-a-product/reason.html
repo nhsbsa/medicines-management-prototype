@@ -17,14 +17,14 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
         <span class="nhsuk-caption-l">
-                Discontinue
+                Discontinue submission
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
         Reason for discontinuation
       </h1>
     </legend>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
-      Select the reason for this product being discontinued. You can only select one reason at a time.
+      Select one reason. All products or packs being discontinued must fall under the same reason.
     </div>
 
     <div class="nhsuk-radios" id="data-discontinue-reason-radios">
@@ -70,7 +70,23 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
        name="next">Continue
 </a>
 
+<script>
+  window.onload = function () {
+  var radios = document.getElementsByName("data-discontinue-reason");
+  for (var i = 0, length = radios.length; i < length; i++) {
+     console.log('working?');
+      if (radios[i].checked) {
+        console.log('not working?');
+        localStorage.removeItem("supplier-summary");
+      }
+   }
+ }
+</script>
+
 <script type="text/javascript">
+
+
+
 
   const continueBtn = document.getElementById("next")
 
