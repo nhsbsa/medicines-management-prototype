@@ -523,3 +523,9 @@ fill-blue{
  padding: 0 0 0 16px !important;
  }
 }
+
+/* give inner tabs spacing */
+
+.inner-tabs-padding {
+  padding: 0 32px 0 0;
+}
