@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="reason">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to reason</a>
+</div>
+
+<h1><span class="nhsuk-caption-l" id="discontinue-reason">
+            Discontinue
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+  Review selected packs</h1>
+<p>There are no packs chosen to discontinue.</p>
+
+    <a href="pack-list-add.html"><button class="nhsuk-button nhsuk-button--secondary">Add packs</button></a><br>
+
+
+<script>
+    let discontinueReason = localStorage.getItem("discontinue-reason");
+
+  let discontinueTitle = document.getElementById("discontinue-reason");
+
+  if (discontinueReason || discontinueReason != null || discontinueReason != "") {
+    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue' + ' - ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+</script>
+
+{% endblock %}
