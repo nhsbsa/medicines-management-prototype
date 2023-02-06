@@ -31,20 +31,20 @@ function displayAddContactMessage() {
   var secondaryHeader = document.getElementById("no-secondary-header");
   var getPrimaryUser = localStorage.getItem("primary-user");
   var getSecondaryUser = localStorage.getItem("secondary-user");
-  var buttonText = document.getElementById("primary-contact-button");
+//  var buttonText = document.getElementById("primary-contact-button");
 
   if (getSecondaryUser == "true") {
     messageContainer.style.display = "none";
     buttonText.innerHTML = "Add secondary contact";
   } else if (getPrimaryUser == "true") {
-    messageText.innerHTML = "No secondary contacts currently exist.";
-    buttonText.innerHTML = "Add secondary contact";
+    messageText.innerHTML = "No secondary contacts currently exist. Add a secondary contact <a id='primary-contact-button' href='add-user/add-contact-existing-user'>here</a>.</p>";
+//    buttonText.innerHTML = "Add secondary contact";
     secondaryHeader.style.display = "table";
   } else {
-    messageContainer.classList.add("nhsuk-inset-text");
+//    messageContainer.classList.add("nhsuk-inset-text");
     messageContainer.classList.add("nhsuk-u-margin-top-0");
-    messageText.innerHTML = "You have not added a primary or secondary contact.";
-    buttonText.innerHTML = "Add primary contact";
+    messageText.innerHTML = "<p>You have not added a primary or secondary contact. Add a primary contact <a id='primary-contact-button' class='nhsuk-link nhsuk-link--no-visited-state' href='add-user/add-contact-existing-user'>here</a>.</p>";
+//    buttonText.innerHTML = "Add primary contact";
   }
 }
 

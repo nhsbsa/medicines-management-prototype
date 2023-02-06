@@ -24,16 +24,19 @@ Reason for company name change | Portal | NHSBSA
 
     <div class="nhsuk-radios nhsuk-radios--conditional" id="name-change-radios">
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="merger" name="name-change" type="radio" value="/mock-5/discontinue-a-product/email-meds-man"/>
+        <input class="nhsuk-radios__input" id="merger" name="name-change" type="radio" value="company merger"/>
         <label class="nhsuk-label nhsuk-radios__label" for="merger">
-          Name changed due to merger
+          Due to company merger
         </label>
       </div>
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="takeover" name="name-change" type="radio" value="/mock-5/discontinue-a-product/contact-details-for-new-company/supplier-name"/>
+        <input class="nhsuk-radios__input" id="takeover" name="name-change" type="radio" value="takeover"/>
         <label class="nhsuk-label nhsuk-radios__label" for="takeover">
-          Name changed due to takeover
+          Due to takeover
         </label>
+        <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+          A name change due to takeover will direct you to complete a discontinue submission
+        </div>
       </div>
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="other" name="name-change"
@@ -57,15 +60,43 @@ Reason for company name change | Portal | NHSBSA
   </fieldset>
 </div>
 
-<button onclick="navigate()" class="nhsuk-button nhsuk-u-margin-top-3">Continue</button>
+<a onclick="navigate()" class="nhsuk-button nhsuk-u-margin-top-3" id="next">Continue</a>
 
 <script type="text/javascript">
+   console.log(localStorage);
+
+  localStorage.removeItem("supplier-summary");
+
   function navigate() {
-    localStorage.setItem("change-company-name", 'true');
-    console.log(localStorage.getItem("change-company-name"));
-    const selected = document.querySelector('input[name="name-change"]:checked').value;
-    location.href=selected;
+    let continueBtn = document.getElementById("next")
+    var getExtraInfo = localStorage.getItem("discontinue-reason");
+    var radioButtons = document.getElementsByName("name-change");
+
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+            localStorage.setItem("discontinue-reason", radio.value);
+            localStorage.setItem("change-company-name", radio.value);
+            if (radio.value == 'company merger') {
+                continueBtn.href = "/mock-5/discontinue-a-product/email-meds-man";
+            } if (radio.value == 'takeover') {
+                continueBtn.href = "/mock-5/discontinue-a-product/contact-details-for-new-company/supplier-name";
+            } else if (radio.value == 'other') {
+                continueBtn.href = "confirmation";
+            }
+        }
+    }
   }
+
+    var radioButtons = document.getElementsByName("name-change");
+
+  if (radioButtons) {
+    var getChangeReason = localStorage.getItem("change-company-name");
+        for (var radio of radioButtons) {
+            if (getChangeReason === radio.value) {
+                radio.checked = true;
+        }
+    }
+};
 </script>
 
 {% endblock %}
