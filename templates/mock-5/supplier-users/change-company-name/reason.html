@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}
+Reason for company name change | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../view-company-details">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to company details</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="reason-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        Reason for company name change
+      </h1>
+    </legend>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="reason-hint">
+      Select the reason for the company name being changed. You can only select one reason at a time.
+    </div>
+
+    <div class="nhsuk-radios nhsuk-radios--conditional" id="name-change-radios">
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="merger" name="name-change" type="radio" value="company merger"/>
+        <label class="nhsuk-label nhsuk-radios__label" for="merger">
+          Due to company merger
+        </label>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="takeover" name="name-change" type="radio" value="takeover"/>
+        <label class="nhsuk-label nhsuk-radios__label" for="takeover">
+          Due to takeover
+        </label>
+        <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+          A name change due to takeover will direct you to complete a discontinue submission
+        </div>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="other" name="name-change"
+               type="radio" value="other" aria-controls="other-input" aria-expanded="false"/>
+        <label class="nhsuk-label nhsuk-radios__label" for="other">
+          Other
+        </label>
+      </div>
+      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="other-input">
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="reason">
+            Reason for company name change
+          </label>
+          <div class="nhsuk-hint" id="other-hint">
+            Include the full new supplier name and any contact details that may have changed
+          </div>
+          <textarea class="nhsuk-textarea nhsuk-u-width-two-thirds" id="reason" rows="5"></textarea>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<a onclick="navigate()" class="nhsuk-button nhsuk-u-margin-top-3" id="next">Continue</a>
+
+<script type="text/javascript">
+   console.log(localStorage);
+
+  localStorage.removeItem("supplier-summary");
+
+  function navigate() {
+    let continueBtn = document.getElementById("next")
+    var getExtraInfo = localStorage.getItem("discontinue-reason");
+    var radioButtons = document.getElementsByName("name-change");
+
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+            localStorage.setItem("discontinue-reason", radio.value);
+            localStorage.setItem("change-company-name", radio.value);
+            if (radio.value == 'company merger') {
+                continueBtn.href = "/mock-5/discontinue-a-product/email-meds-man";
+            } if (radio.value == 'takeover') {
+                continueBtn.href = "/mock-5/discontinue-a-product/contact-details-for-new-company/supplier-name";
+            } else if (radio.value == 'other') {
+                continueBtn.href = "confirmation";
+            }
+        }
+    }
+  }
+
+    var radioButtons = document.getElementsByName("name-change");
+
+  if (radioButtons) {
+    var getChangeReason = localStorage.getItem("change-company-name");
+        for (var radio of radioButtons) {
+            if (getChangeReason === radio.value) {
+                radio.checked = true;
+        }
+    }
+};
+</script>
+
+{% endblock %}
+
+

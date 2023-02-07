@@ -89,8 +89,14 @@ if (radioButtons) {
 
   let discontinueTitle = document.getElementById("discontinue-reason");
 
+   let mergerProductChange = localStorage.getItem("change-company-name");
+
   if (discontinueReason || discontinueReason != null || discontinueReason != "") {
     discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+  if (mergerProductChange) {
+     discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Company name change : company merger<span class="nhsuk-u-visually-hidden"> - </span></span>';
   }
 
 </script>

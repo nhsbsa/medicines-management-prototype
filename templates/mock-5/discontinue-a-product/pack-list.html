@@ -22,7 +22,7 @@ Submit a new product | Portal | NHSBSA
 
 <dl class="nhsuk-summary-list nhsuk-u-margin-top-6">
 
-  <div class="nhsuk-summary-list__row">
+  <div class="nhsuk-summary-list__row" id="effective-date">
     <dt class="nhsuk-summary-list__key">
       Effective date
     </dt>
@@ -42,16 +42,16 @@ Submit a new product | Portal | NHSBSA
       then do not actually change it then they can return to the review page MPL 31JAN23-->
 
   <div class="nhsuk-summary-list__row">
-    <dt class="nhsuk-summary-list__key">
+    <dt class="nhsuk-summary-list__key" id="discontinue-title">
       Discontinue reason
     </dt>
-    <dd class="nhsuk-summary-list__value" id="discontinue-reason-add">
+    <dd class="nhsuk-summary-list__value" id="discontinue-reason-add" >
       No reason listed
     </dd>
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="reason">
+      <a href="reason" id="reason">
         Change<span class="nhsuk-u-visually-hidden">&nbsp; reason for discontinue</span>
       </a>
 
@@ -298,9 +298,10 @@ console.log(tableLine.innerHTML);
 
   let discontinueTitle = document.getElementById("discontinue-reason");
 
+  let mergerProductChange = localStorage.getItem("change-company-name");
+
   if (discontinueReason || discontinueReason != null || discontinueReason != "") {
     discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
-    document.getElementById("discontinue-reason-add").innerHTML = discontinueReason;
   }
 
 var getEffectiveDay = localStorage.getItem("effective-day");
@@ -312,9 +313,17 @@ console.log('setting month');
 var getLongMonth = Intl.DateTimeFormat('en', { month: 'long' }).format(new Date(getEffectiveMonth));
 let formalDate = getEffectiveDay + ' ' + getLongMonth + ' ' + getEffectiveYear;
 document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' ' + getLongMonth + ' ' + getEffectiveYear;
-} else {
+} if (getEffectiveDay == '' || getEffectiveMonth == '' || getEffectiveYear == '') {
   document.getElementById("pack-effective-date").innerHTML = '15 November 2023';
+} else if (!getEffectiveDay|| !getEffectiveMonth || !getEffectiveYear) {
+  document.getElementById("effective-date").style.display = 'none';
 }
+
+ if (mergerProductChange) {
+  document.getElementById("discontinue-title").innerHTML = 'Company name change reason';
+  document.getElementById("discontinue-reason-add").innerHTML = mergerProductChange;
+  document.getElementById("reason").href = '../supplier-users/change-company-name/reason';
+ }
 
  let supplierName = localStorage.getItem("supplier-name");
  let contactName = localStorage.getItem("contact-name");
@@ -322,7 +331,7 @@ document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' '
  let ukPhone = localStorage.getItem("contact-uk-phone");
  let intPhone = localStorage.getItem("contact-int-phone");
 
- let reasonForDiscontinue = localStorage.getItem("discontinue-reason");
+  let reasonForDiscontinue = localStorage.getItem("discontinue-reason");
 
   document.getElementById("supplier-name").style.display = 'none';
   document.getElementById("contact-name").style.display = 'none';
