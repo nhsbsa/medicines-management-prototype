@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-What is the contact's email address? | Portal | NHSBSA
+What is the contact's first name? | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
@@ -15,19 +15,20 @@ What is the contact's email address? | Portal | NHSBSA
   <fieldset class="nhsuk-fieldset" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        What is the contact's email address?
+        What is the contact's first name?
       </h1>
     </legend>
-    <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="example">
-        Email address
-      </label>
-      <input class="nhsuk-input" id="example" name="example" type="text" value="johnsmith@nhs.net">
-    </div>
-
   </fieldset>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" href="edit-contact-main" id="continue-button" type="submit">
+  <div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="first-name-input">
+      First name
+    </label>
+    <input class="nhsuk-input nhsuk-input--width-20" id="first-name-input"
+           name="example-with-hint-text" type="text" value="John">
+  </div>
+
+  <a class="nhsuk-button nhsuk-u-margin-top-5" href="edit-contact-secondary" id="continue-button" type="submit">
     Save and review
   </a>
 </div>

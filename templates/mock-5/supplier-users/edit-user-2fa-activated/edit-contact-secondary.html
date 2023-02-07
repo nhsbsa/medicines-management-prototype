@@ -9,15 +9,17 @@ Edit information | Portal | NHSBSA
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Cancel changes and return to company details</a>
+    Go back to company details</a>
 </div>
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        Edit information
+        Edit contact information
       </h1>
     </legend>
+
+    <p>Choose to edit one or more elements of this contact. Please note, if you do not submit these changes then any amendments made will not be saved.</p>
 
     <dl class="nhsuk-summary-list">
       <div class="nhsuk-summary-list__row">
@@ -28,7 +30,7 @@ Edit information | Portal | NHSBSA
           David
         </dd>
         <dd class="nhsuk-summary-list__actions">
-          <a href="#">
+          <a href="edit-contact-last-name">
             Edit<span class="nhsuk-u-visually-hidden"> first name</span>
           </a>
         </dd>
@@ -41,7 +43,7 @@ Edit information | Portal | NHSBSA
           Jones
         </dd>
         <dd class="nhsuk-summary-list__actions">
-          <a href="#">
+          <a href="edit-contact-first-name">
             Edit<span class="nhsuk-u-visually-hidden"> last name</span>
           </a>
         </dd>
@@ -54,21 +56,8 @@ Edit information | Portal | NHSBSA
           david.jones@example.com
         </dd>
         <dd class="nhsuk-summary-list__actions">
-          <a href="#">
+          <a href="edit-contact-email">
             Edit<span class="nhsuk-u-visually-hidden"> email</span>
-          </a>
-        </dd>
-      </div>
-      <div class="nhsuk-summary-list__row">
-        <dt class="nhsuk-summary-list__key">
-          Has phone number?
-        </dt>
-        <dd class="nhsuk-summary-list__value">
-          Yes
-        </dd>
-        <dd class="nhsuk-summary-list__actions">
-          <a href="#">
-            Edit<span class="nhsuk-u-visually-hidden"> has phone number</span>
           </a>
         </dd>
       </div>
@@ -80,8 +69,8 @@ Edit information | Portal | NHSBSA
           07700 905456
         </dd>
         <dd class="nhsuk-summary-list__actions">
-          <a href="#">
-            Edit<span class="nhsuk-u-visually-hidden"> has phone number</span>
+          <a href="edit-contact-phone-number">
+            Edit<span class="nhsuk-u-visually-hidden"> phone number</span>
           </a>
         </dd>
       </div>
@@ -89,8 +78,8 @@ Edit information | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a href="../view-company-details" class="nhsuk-button nhsuk-u-margin-top-3"
-   id="next">Submit</a>
+<a href="../view-company-details" class="nhsuk-button"
+   id="next">Submit changes</a>
 
 <script src="/js/companyAddContactInfo.js"></script>
 
