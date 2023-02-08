@@ -57,11 +57,13 @@ function displayAddContactMessage() {
 
 function primarySave() {
    localStorage.setItem("primary-user", "true");
+   localStorage.setItem("primary-user-summary", "true");
 }
 
 function secondarySave() {
    localStorage.setItem("secondary-user", "true");
    localStorage.setItem("lastContact", "false");
+   localStorage.setItem("secondary-user-summary", "true");
 }
 
 function displayContacts() {
