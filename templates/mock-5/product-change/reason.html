@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: spc or Data Sheet | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="discontinue-effective-date.html">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to what is the effective date</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l">
+                Submit a product change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Reason for change
+      </h1>
+    </legend>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
+      Select one reason.
+    </div>
+
+    <div class="nhsuk-radios" id="data-discontinue-reason-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="no-longer-manufactured" name="data-discontinue-reason" type="radio" value="no longer manufactured" />
+        <label class="nhsuk-label nhsuk-radios__label" for="no-longer-manufactured">
+          Change the product name
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="temporarily-out-of-stock" name="data-discontinue-reason" type="radio" value="out of stock" />
+        <label class="nhsuk-label nhsuk-radios__label" for="temporarily-out-of-stock">
+        Change the Market Authorisation number
+        </label>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="company-merger" name="data-discontinue-reason" type="radio" value="company merger" />
+        <label class="nhsuk-label nhsuk-radios__label" for="company-merger">
+        Change the license route
+        </label>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="product-divestment" name="data-discontinue-reason" type="radio" value="product divestment" />
+        <label class="nhsuk-label nhsuk-radios__label" for="product-divestment">
+        Change the licensing authority
+        </label>
+      </div>
+      
+
+    </div>
+  </fieldset>
+</div>
+
+<a onclick="navigate()" class="nhsuk-button nhsuk-u-margin-top-3"
+       id="next" href="amend-product"
+       name="next">Save and continue
+</a>
+
+<script>
+  window.onload = function () {
+  var radios = document.getElementsByName("data-discontinue-reason");
+  for (var i = 0, length = radios.length; i < length; i++) {
+     console.log('working?');
+      if (radios[i].checked) {
+        console.log('not working?');
+        localStorage.removeItem("supplier-summary");
+      }
+   }
+ }
+</script>
+
+<script type="text/javascript">
+
+
+
+
+  const continueBtn = document.getElementById("next")
+
+  function navigate() {
+    var radioButtons = document.getElementsByName("data-discontinue-reason");
+
+    for (var radio of radioButtons) {
+      if (radio.checked) {
+          localStorage.setItem("discontinue-reason", radio.value);
+        if (radio.value == "no longer manufactured") {
+          continueBtn.href = "pack-list-add";
+        } else if (radio.value == "out of stock") {
+          continueBtn.href = "how-long-oos";
+        } else if (radio.value == "company merger") {
+          continueBtn.href = "email-meds-man";
+        } else if (radio.value == "product divestment") {
+          continueBtn.href = "contact-details-for-new-company/supplier-name";
+        } else if (radio.value == "takeover") {
+          continueBtn.href = "contact-details-for-new-company/supplier-name";
+        }
+       }
+     }
+  }
+
+var radioButtons = document.getElementsByName("data-discontinue-reason");
+
+var discontinueReason = localStorage.getItem("discontinue-reason");
+
+if (discontinueReason != null) {
+for (var radio of radioButtons) {
+if (discontinueReason === radio.value) {
+     radio.checked = true;
+            }
+          }
+      };
+
+      console.log(localStorage);
+
+
+
+
+</script>
+
+{% endblock %}
+
+
