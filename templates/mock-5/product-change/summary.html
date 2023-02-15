@@ -1,24 +1,24 @@
 {% extends "base.html" %}
 {% block title %}
-Submit a new product | Portal | NHSBSA
+Review details | Submit a product change | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="pack-list-add">
+  <a class="nhsuk-back-link__link" href="reason">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to select product to be amended</a>
+    Go back to select reason for product change</a>
 </div>
 
 <h1><span class="nhsuk-caption-l">
     Submit a product change
   <span class="nhsuk-u-visually-hidden"> - </span>
 </span>
-  Confirm products</h1>
+  Review details</h1>
 
-<p>Before reviewing chosen products, please check that the following details are correct. </p>
+<p>Before continuing with this product change, please check that the following details are correct. </p>
 
 <dl class="nhsuk-summary-list nhsuk-u-margin-top-6">
 
@@ -31,21 +31,37 @@ Submit a new product | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="discontinue-effective-date">
+      <a href="effective-date">
         Change<span class="nhsuk-u-visually-hidden">&nbsp; effective date</span>
       </a>
 
     </dd>
 
   </div>
-<!--  if user changes reason then they must follow journey steps. If they go to change the reason and
-      then do not actually change it then they can return to the review page MPL 31JAN23-->
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product name
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-name">
+      No product name
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="amend-product">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;product name</span>
+      </a>
+
+    </dd>
+
+  </div>
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
       Product change reason
     </dt>
-    <dd class="nhsuk-summary-list__value" id="discontinue-reason-add">
+    <dd class="nhsuk-summary-list__value" id="product-change-reason">
       No reason listed
     </dd>
 
@@ -59,189 +75,23 @@ Submit a new product | Portal | NHSBSA
 
   </div>
   
-  
-  
-
-  
 </dl>
 
-
-<p>After reviewing selected products, if you need to make any additions to the list select the 'Add more products' button below the table. Alternatively, if single product need to be removed from the list then this can be actioned via the table.</p>
-
-<!--<div class="nhsuk-grid-row">-->
-<!--  <div class="nhsuk-grid-column-full">-->
-    <div class="nhsuk-inset-text">
-      <span class="nhsuk-u-visually-hidden">Information: </span>
-      <p>Use this link to <a class="nhsuk-link nhsuk-link--no-visited-state" href="pack-list-empty.html" title="External website">remove all</a> selected product from list.</p>
-    </div>
-
-<div class="nhsuk-body-m flex--space-between" style="display: flex">
-  <div class="nhsuk-u-visually-hidden">Currently viewing</div>
-  <div id="pageAndResultCount">Page 1 of 1 (4 results)</div>
-</div>
-
-    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
-      <thead role="rowgroup" class="nhsuk-table__head">
-      <tr role="row">
-        <th role="columnheader" class="" scope="col">
-          Product name
-        </th>
-        <th role="columnheader" class="" scope="col">
-          Pack size
-        </th>
-        <th role="columnheader" class="" scope="col">
-        Subpack
-        </th>
-        <th role="columnheader" class="" scope="col">
-          Existing price
-        </th>
-        <th role="columnheader" class="" scope="col">
-          Action
-        </th>
-      </tr>
-      </thead>
-      <tbody class="nhsuk-table__body">
-      <tr role="row" class="nhsuk-table__row" id="delete-row">
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Alprazolam
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Pack </span>30
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Subpack </span>2 &times; 15
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Price </span><span><span>299</span>p</span>
-        </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Action </span><a class="nhsuk-link nhsuk-link--no-visited-state " href="#" onclick="removeLine()">Remove</a>
-        </td>
-      </tr >
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Bupenorphine 100mg capsules
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Pack </span>28
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Subpack </span>2 &times; 14
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Price </span><span><span>23</span>p</span>
-        </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Action </span>
-          <p class="nhsuk-u-margin-bottom-0">Remove</p>
-        </td>
-      </tr>
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Protein cornflakes
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Pack </span>1
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Subpack </span>
-          <!--          need to make sure empty table cells announce something MPL 20/10/22-->
-          <span class="nhsuk-u-visually-hidden">No Subpack information</span>
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
-        </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Action </span>
-          <p class="nhsuk-u-margin-bottom-0" >Remove</p>
-        </td>
-      </tr>
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Boots Strawberry Pain Relief 3 Months Plus Paracetamol 120mg/5ml oral suspension
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Pack </span>30
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Subpack </span>3 &times; 10
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
-        </td>
-        <td>
-          <span class="nhsuk-table-responsive__heading">Action </span>
-          <p class="nhsuk-link nhsuk-link--no-visited-state nhsuk-u-margin-bottom-0">Remove</p>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-<!--  </div>-->
-<!--</div>-->
-<div class="nhsuk-grid-row nhsuk-u-margin-top-3">
-  <div class="nhsuk-grid-column-full">
-    <nav class="govuk-pagination" role="navigation" aria-label="results">
-      <div class="govuk-pagination__prev">
-        <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
-          <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-            <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-          </svg>
-          <span class="govuk-pagination__link-title">Previous</span></a>
-      </div>
-      <ul class="govuk-pagination__list">
-        <li class="govuk-pagination__item">
-          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
-            1
-          </a>
-        </li>
-        <li class="govuk-pagination__item govuk-pagination__item--current">
-          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
-            2
-          </a>
-        </li>
-        <li class="govuk-pagination__item">
-          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
-            3
-          </a>
-        </li>
-      </ul>
-      <div class="govuk-pagination__next">
-        <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-        </svg></a>
-      </div>
-    </nav>
-    <a href="amend-product.html"><button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-right-5 nhsuk-u-margin-top-5">Add more products</button></a>
-    <a class="nhsuk-button nhsuk-u-margin-right-0 nhsuk-u-margin-top-5" href="discontinue-confirmation.html">Save</a>
-  </div>
-</div>
+    <a class="nhsuk-button nhsuk-u-margin-right-0" href="#" id="continue-button">Continue with product change</a>
 
 
 <script>
-localStorage.setItem("supplier-summary", "supplier-summary");
+localStorage.setItem("product-change-summary", "product-change-summary");
 
 console.log(localStorage);
-
-let tableLine = document.getElementById("delete-row");
-console.log(tableLine.innerHTML);
-
-  function removeLine() {
-  let tableLine = document.getElementById("delete-row");
-     tableLine.innerHTML = "";
-  }
-
-  let discontinueReason = localStorage.getItem("discontinue-reason");
-
-  let discontinueTitle = document.getElementById("discontinue-reason");
-
-  if (discontinueReason || discontinueReason != null || discontinueReason != "") {
-    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
-    document.getElementById("discontinue-reason-add").innerHTML = discontinueReason;
-  }
 
 var getEffectiveDay = localStorage.getItem("effective-day");
 var getEffectiveMonth = localStorage.getItem("effective-month");
 var getEffectiveYear = localStorage.getItem("effective-year");
+var getProductName = localStorage.getItem("product-name");
+var getProductChangeReason = localStorage.getItem("product-change-reason");
+
+var continueButton = document.getElementById("continue-button");
 
 if (getEffectiveDay != '' || getEffectiveMonth != '' || getEffectiveYear != '') {
 console.log('setting month');
@@ -252,44 +102,19 @@ document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' '
   document.getElementById("pack-effective-date").innerHTML = '15 November 2023';
 }
 
- let supplierName = localStorage.getItem("supplier-name");
- let contactName = localStorage.getItem("contact-name");
- let emailName = localStorage.getItem("contact-email");
- let ukPhone = localStorage.getItem("contact-uk-phone");
- let intPhone = localStorage.getItem("contact-int-phone");
 
- let reasonForDiscontinue = localStorage.getItem("discontinue-reason");
+   if (getProductName) {
+    document.getElementById("product-name").innerHTML = getProductName;
+   }
+   if (getProductChangeReason) {
+    document.getElementById("product-change-reason").innerHTML = getProductChangeReason;
+   }
 
-  document.getElementById("supplier-name").style.display = 'none';
-  document.getElementById("contact-name").style.display = 'none';
-  document.getElementById("contact-email").style.display = 'none';
-  document.getElementById("contact-phone").style.display = 'none';
+   if (getProductChangeReason == 'product name') {
+     continueButton.href = "reason-product-name/product-name"
+   }
 
- if (reasonForDiscontinue == 'product divestment' || reasonForDiscontinue == 'takeover') {
-   document.getElementById("supplier-name").style.display = 'table-row';
-   document.getElementById("contact-name").style.display = 'table-row';
-   document.getElementById("contact-email").style.display = 'table-row';
-   document.getElementById("contact-phone").style.display = 'table-row';
-   document.getElementById("supplier-name-detail").innerHTML = 'Test Supplier Name';
-   document.getElementById("contact-name-detail").innerHTML = 'None';
-   document.getElementById("contact-email-detail").innerHTML = 'None';
-   document.getElementById("contact-phone-detail").innerHTML = 'None';
 
-   if (supplierName) {
-    document.getElementById("supplier-name-detail").innerHTML = supplierName;
-   }
-   if (contactName) {
-    document.getElementById("contact-name-detail").innerHTML = contactName;
-   }
-   if (emailName) {
-    document.getElementById("contact-email-detail").innerHTML = emailName;
-   }
-   if (ukPhone) {
-    document.getElementById("contact-phone-detail").innerHTML = ukPhone;
-   } else if (intPhone) {
-    document.getElementById("contact-phone-detail").innerHTML = intPhone;
-   }
- }
 
 
 

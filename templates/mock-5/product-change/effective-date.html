@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-What is the effective date of the product change? | Portal | NHSBSA
+What is the effective date of the product? | Submit a product change | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
@@ -24,12 +24,6 @@ What is the effective date of the product change? | Portal | NHSBSA
     </legend>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
       The date the product is available in the warehouse and cannot be in the past. It can take up to 2 full weeks to show on dm+d. The extract day for dm+d is usually every Thursday.
-    </div>
-
-    <div class="nhsuk-inset-text nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-6" style="max-width: 45em;">
-      <span class="nhsuk-u-visually-hidden">Important information: </span>
-      <p>A bulk change for multiple products can only be made if each product has the same effective
-        date and has the same reason for the change. Otherwise, a new submission must be made.</p>
     </div>
 
     <div class="nhsuk-hint nhsuk-u-margin-bottom-5" id="format-hint">Enter each element of the date as a number in the format <strong>dd mm yyyy</strong>.</div>
@@ -62,8 +56,55 @@ What is the effective date of the product change? | Portal | NHSBSA
     </div>
   </fieldset>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" href="reason" id="continue-button">
-    Continue
+  <a class="nhsuk-button nhsuk-u-margin-top-5" href="amend-product" id="continue-button"
+  onclick="storeDate()">
+    Save and continue
   </a>
 </div>
+
+<script >
+  console.log(localStorage);
+
+
+  var summaryPage = localStorage.getItem("product-change-summary");
+  var continueButton = document.getElementById("continue-button");
+  var getContinueButton = document.getElementsByClassName("nhsuk-button")[0];
+
+    function storeDate() {
+    var inputDay = document.getElementById("example-day");
+    var inputMonth = document.getElementById("example-month");
+    var inputYear = document.getElementById("example-year");
+    localStorage.setItem("effective-day", inputDay.value);
+    localStorage.setItem("effective-month", inputMonth.value);
+    localStorage.setItem("effective-year", inputYear.value);
+}
+
+var getEffectiveDay = localStorage.getItem("effective-day");
+var getEffectiveMonth = localStorage.getItem("effective-month");
+var getEffectiveYear = localStorage.getItem("effective-year");
+
+var eDay = document.querySelector("#example-day");
+var eMonth = document.querySelector("#example-month");
+var eYear = document.querySelector("#example-year");
+
+if (eDay != null && eMonth != null && eYear != null) {
+
+    if (getEffectiveDay != null) {
+        eDay.defaultValue = getEffectiveDay;
+        console.log(getContinueButton);
+    }
+
+    if (getEffectiveMonth != null) {
+        eMonth.defaultValue = getEffectiveMonth;
+    }
+
+    if (getEffectiveYear != null) {
+        eYear.defaultValue = getEffectiveYear;
+    }
+
+    if ((getEffectiveDay != null && getEffectiveMonth != null && getEffectiveYear != null) && summaryPage != null) {
+        getContinueButton.href = "summary";
+    }
+}
+  </script>
 {% endblock %}
