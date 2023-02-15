@@ -17,7 +17,7 @@ Submit a new product | Portal | NHSBSA
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>Select discontinued packs</h1>
 
-<p>This search contains all packs currently listed on dm+d. If you need to discontinue a product you must select all packs relating to that product from the search results.</p>
+<p>This search contains all packs currently listed on dm+d. If you need to choose a whole product you must select all packs relating to that product from the search results.</p>
 
      <div class="nhsuk-form-group">
 
@@ -63,7 +63,7 @@ Submit a new product | Portal | NHSBSA
           Subpack
         </th>
         <th role="columnheader" class="" scope="col">
-          Existing price
+          Price
         </th>
         <th role="columnheader" class="" scope="col">
           Select
@@ -260,6 +260,8 @@ Submit a new product | Portal | NHSBSA
 <script>
 <!-- sort back link -->
 
+   let mergerProductChangeLink = localStorage.getItem("change-company-name");
+
 window.onload = function() {
     let whichReason = localStorage.getItem("discontinue-reason");
     if (whichReason == 'no longer manufactured') {
@@ -268,10 +270,13 @@ window.onload = function() {
     } else if (whichReason == 'out of stock') {
     document.getElementById("back-link").setAttribute('href', "how-long-oos");
     document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to how long will the product or pack be out of stock";
-    } else if ((whichReason == 'product divestment' || whichReason == 'takeover') && localStorage.getItem("supplier-extra-info") == 'yes') {
+    } else if ((whichReason == 'product divestment' || whichReason == 'takeover' || mergerProductChangeLink) && localStorage.getItem("supplier-extra-info") == 'yes') {
     document.getElementById("back-link").setAttribute('href', "contact-details-for-new-company/phone-number");
     document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to do you have a contact phone number for the supplier?";
-    } else if ((whichReason == 'product divestment' || whichReason == 'takeover') && localStorage.getItem("supplier-extra-info") == 'no') {
+    } else if ((whichReason == 'product divestment' || whichReason == 'takeover' || mergerProductChangeLink) && localStorage.getItem("supplier-extra-info") == 'no') {
+    document.getElementById("back-link").setAttribute('href', "contact-details-for-new-company/extra-information");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to additional supplier information";
+    } else if ((whichReason == 'product divestment' || whichReason == 'takeover' || mergerProductChangeLink) && localStorage.getItem("supplier-extra-info") == 'no') {
     document.getElementById("back-link").setAttribute('href', "contact-details-for-new-company/extra-information");
     document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to additional supplier information";
     }
@@ -313,8 +318,14 @@ window.onload = function() {
 
   let discontinueTitle = document.getElementById("discontinue-reason");
 
+  let mergerProductChange = localStorage.getItem("change-company-name");
+
   if (discontinueReason || discontinueReason != null || discontinueReason != "") {
     discontinueTitle.innerHTML = 'Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span>';
+  }
+
+  if (mergerProductChange) {
+     discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Company name change : company merger<span class="nhsuk-u-visually-hidden"> - </span></span>';
   }
 </script>
 

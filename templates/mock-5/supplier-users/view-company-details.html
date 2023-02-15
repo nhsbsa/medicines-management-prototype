@@ -22,9 +22,39 @@ Company details | Portal | NHSBSA
   </div>
 </div>
 
+<h2>Name</h2>
+
+<p class="nhsuk-u-font-size-32">AstraZeneca</p>
+
+<p>The company name can be changed <a class="nhsuk-link nhsuk-link--no-visited-state" href="change-company-name/reason">
+  here</a>.</p>
+
+<!--<div class="nhsuk-grid-row">-->
+<!--  <div class="nhsuk-grid-column-two-thirds">-->
+<!--    <dl class="nhsuk-summary-list">-->
+<!--      <div class="nhsuk-summary-list__row">-->
+<!--        <dt class="nhsuk-summary-list__key">-->
+<!--          Name-->
+<!--        </dt>-->
+<!--        <dd class="nhsuk-summary-list__value">-->
+<!--          Amgen-->
+<!--        </dd>-->
+<!--        <dd class="nhsuk-summary-list__actions">-->
+<!--          <a href="change-company-name/reason">-->
+<!--            Change<span class="nhsuk-u-visually-hidden"> company name</span>-->
+<!--          </a>-->
+<!--        </dd>-->
+<!--      </div>-->
+<!--    </dl>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<h2>Contacts</h2>
+
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-    <table role="table" class="nhsuk-table-responsive primary-user-data">
+    <table role="table" class="nhsuk-table-responsive primary-user-data nhsuk-u-margin-bottom-5">
       <caption class="nhsuk-table__caption">Primary contact</caption>
       <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
@@ -56,7 +86,7 @@ Company details | Portal | NHSBSA
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Action</span>
           <a class="nhsuk-link nhsuk-link--no-visited-state" href="edit-user-2fa-not-set-up/edit-contact-main">Edit</a><span> | </span>
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="remove-contact" onclick="lastContact('false')">Remove</a>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="remove-contact" onclick="lastContact('true')">Remove</a>
         </td>
       </tr>
       </tbody>
@@ -64,9 +94,9 @@ Company details | Portal | NHSBSA
   </div>
 </div>
 
-<div class="nhsuk-grid-row nhsuk-u-margin-top-6">
+<div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-full">
-    <table role="table" class="nhsuk-table-responsive secondary-user-data">
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5 secondary-user-data">
       <caption class="nhsuk-table__caption">Secondary contacts</caption>
       <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
@@ -79,7 +109,7 @@ Company details | Portal | NHSBSA
         <th role="columnheader" class="" scope="col">
           Phone number
         </th>
-        <th role="columnheader" class="" scope="col">
+        <th role="columnheader" class="file-size-width" scope="col">
           Action
         </th>
       </tr>
@@ -98,25 +128,25 @@ Company details | Portal | NHSBSA
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Action</span>
           <a class="nhsuk-link nhsuk-link--no-visited-state" href="edit-user-2fa-activated/edit-contact-secondary">Edit</a><span> | </span>
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="remove-contact" onclick="lastContact('true')">Remove</a>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="remove-contact" onclick="lastContact('false')">Remove</a>
         </td>
       </tr>
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Name </span>John Doe
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Email </span>john.doe@test.com
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Phone number </span>
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-          <span class="nhsuk-table-responsive__heading">Action</span>
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">Edit</a><span> | </span>
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">Remove</a>
-        </td>
-      </tr>
+<!--      <tr role="row" class="nhsuk-table__row">-->
+<!--        <td role="cell" class="nhsuk-table__cell">-->
+<!--          <span class="nhsuk-table-responsive__heading">Name </span>John Doe-->
+<!--        </td>-->
+<!--        <td role="cell" class="nhsuk-table__cell">-->
+<!--          <span class="nhsuk-table-responsive__heading">Email </span>john.doe@test.com-->
+<!--        </td>-->
+<!--        <td role="cell" class="nhsuk-table__cell">-->
+<!--          <span class="nhsuk-table-responsive__heading">Phone number </span>-->
+<!--        </td>-->
+<!--        <td role="cell" class="nhsuk-table__cell">-->
+<!--          <span class="nhsuk-table-responsive__heading">Action</span>-->
+<!--          <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">Edit</a><span> | </span>-->
+<!--          <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">Remove</a>-->
+<!--        </td>-->
+<!--      </tr>-->
       </tbody>
     </table>
   </div>
@@ -128,13 +158,14 @@ Company details | Portal | NHSBSA
          class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
     <caption class="nhsuk-table__caption">Secondary contacts</caption>
   </table>
-  <p id="not-submitted-message">You have not added a primary user contact.</p>
+  <p id="not-submitted-message">No contacts.</p>
 </div>
+<p id="add-another-secondary-user" style="display: none;">Add another secondary contact <a href="add-user/add-contact-existing-user">here</a>.</p>
 
-<div>
-  <a id="primary-contact-button" class="nhsuk-button nhsuk-u-margin-top-6" href="add-user/add-contact-existing-user">Add primary contact</a>
-</div>
 
-<script src="/js/companyAddContactInfo.js" onload="displayAddContactMessage(); displayContacts();"></script>
+
+<script src="/js/companyAddContactInfo.js" onload="displayAddContactMessage(); displayContacts();">
+
+</script>
 
 {% endblock %}

@@ -93,8 +93,14 @@ Submit a new product: effective date | Portal | NHSBSA
 
   let discontinueTitle = document.getElementById("discontinue-reason");
 
+  let mergerProductChange = localStorage.getItem("change-company-name");
+
   if (discontinueReason || discontinueReason != null || discontinueReason != "") {
     discontinueTitle.innerHTML = 'Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span>';
+  }
+
+  if (mergerProductChange) {
+     discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Company name change : company merger<span class="nhsuk-u-visually-hidden"> - </span></span>';
   }
 
   var radioButtons = document.getElementsByName("contact-phone");

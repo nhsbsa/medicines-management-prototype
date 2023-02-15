@@ -4,11 +4,11 @@ Submit a new product: effective date | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="../reason.html">
+  <a id="back-link" class="nhsuk-back-link__link" href="../reason.html">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to reason for discontinuation</a>
+    <span id="back-link-text">Go back to reason for discontinuation</span></a>
 </div>
 
 <div class="nhsuk-form-group">
@@ -47,9 +47,12 @@ Submit a new product: effective date | Portal | NHSBSA
 
   let discontinueTitle = document.getElementById("discontinue-reason");
 
+   let mergerProductChange = localStorage.getItem("change-company-name");
+
   if (discontinueReason || discontinueReason != null || discontinueReason != "") {
     discontinueTitle.innerHTML = 'Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span>';
   }
+
 
   let summaryPage = localStorage.getItem("supplier-summary");
 
@@ -69,6 +72,14 @@ if (suppName != null) {
         document.getElementById("continue-button").href = "../pack-list";
     }
 }
+
+if (localStorage.getItem("change-company-name")) {
+    var backLinkText = document.getElementById("back-link-text");
+    backLinkText.innerHTML = "Go back to reason for company name change";
+
+    var backLink = document.getElementById("back-link");
+    backLink.href = "/mock-5/supplier-users/change-company-name/reason";
+  }
 
 </script>
 
