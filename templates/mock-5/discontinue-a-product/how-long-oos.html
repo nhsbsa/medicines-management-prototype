@@ -13,7 +13,7 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 </div>
 
 <div class="nhsuk-form-group">
-  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+  <fieldset class="nhsuk-fieldset" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
         <span class="nhsuk-caption-l" id="discontinue-reason">
@@ -87,7 +87,7 @@ let discontinueReason = localStorage.getItem("discontinue-reason");
   let discontinueTitle = document.getElementById("discontinue-reason");
 
   if (discontinueReason || discontinueReason != null || discontinueReason != "") {
-    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+    discontinueTitle.innerHTML = 'Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span>';
   }
 
 </script>

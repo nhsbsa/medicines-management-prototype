@@ -13,7 +13,7 @@ Submit a new product: effective date | Portal | NHSBSA
 
 <div class="nhsuk-form-group">
 
-  <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+  <fieldset class="nhsuk-fieldset">
     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
       <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-5">
         <span class="nhsuk-caption-l" id="discontinue-reason">
@@ -96,7 +96,7 @@ Submit a new product: effective date | Portal | NHSBSA
   let mergerProductChange = localStorage.getItem("change-company-name");
 
   if (discontinueReason || discontinueReason != null || discontinueReason != "") {
-    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+    discontinueTitle.innerHTML = 'Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span>';
   }
 
   if (mergerProductChange) {
