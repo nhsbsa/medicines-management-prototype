@@ -22,7 +22,7 @@
     "@babel/types": "^7.13.17",
     "@ministryofjustice/frontend": "^1.4.2",
     "accessible-autocomplete": "^2.0.4",
-    "babel-loader": "^8.2.5",
+    "babel-loader": "^9.1.2",
     "basic-auth": "^2.0.1",
     "browser-sync": "^2.27.10",
     "dotenv": "^8.6.0",
