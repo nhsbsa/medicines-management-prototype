@@ -29,11 +29,20 @@ Review submission | Portal | NHSBSA
     <div class="nhsuk-radios nhsuk-radios--conditional">
 
       <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+        <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+          Insert new VMPP
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
         <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
           Select an existing VMPP
         </label>
       </div>
+
+<!--      Please note, if select dropdown has over 10 options then we will need to use an accessible autocomplete MPL 16FEB23-->
 
       <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
 
@@ -50,12 +59,6 @@ Review submission | Portal | NHSBSA
 
       </div>
 
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
-        <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
-          Insert new VMPP
-        </label>
-      </div>
 
 
 
