@@ -19,6 +19,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/core": "^7.18.13",
+    "@babel/types": "^7.13.17",
     "@ministryofjustice/frontend": "^1.4.2",
     "accessible-autocomplete": "^2.0.4",
     "babel-loader": "^8.2.5",
