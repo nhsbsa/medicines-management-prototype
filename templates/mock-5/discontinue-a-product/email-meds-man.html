@@ -4,36 +4,59 @@ Submit a new product: effective date | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="reason.html">
+  <a id="back-link" class="nhsuk-back-link__link" href="reason.html">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to reason for discontinuation</a>
+    <spa id="back-link-text">Go back to reason for discontinuation</span></a>
 </div>
 
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="discontinue-reason">
+                Discontinue
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
         Please contact us
       </h1>
     </legend>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
+
       <p>Please email <a href="mailto:nhsbsa.dmdportfolio@nhs.net">nhsbsa.dmdportfolio@nhs.net</a> with details of the merger.</p>
       <p>Providing as much detail as possible, please include (where applicable):</p>
       <ul>
-        <li>Which companies/ suppliers are included in the merger</li>
-        <li>New company name</li>
-        <li>Contact name</li>
-        <li>Contact email address</li>
-        <li>Contact telephone number</li>
+        <li>which companies or suppliers are included in the merger</li>
+        <li>the new company name</li>
+        <li>a contact name or names</li>
+        <li>a contact email address or addresses</li>
+        <li>a contact telephone number or numbers</li>
       </ul>
-      The Medicines Management team will respond to your email within two weeks of receipt.
-    </div>
+    <p>The Medicines Management team will respond to your email within two weeks of receipt.</p>
   </fieldset>
-  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeDate()" href="../dashboard.html" id="continue-button" type="submit">
-    Return to dashboard
-  </a>
+  <p>Return to the  <a class="nhsuk-link nhsuk-link--no-visited-state" href="../dashboard.html" >Portal dashboard</a>.</p>
   <script src="/js/newProduct.js"></script>
 </div>
+
+<script>
+  let discontinueReason = localStorage.getItem("discontinue-reason");
+
+  let discontinueTitle = document.getElementById("discontinue-reason");
+
+  let mergerProductChange = localStorage.getItem("change-company-name");
+
+  if (discontinueReason || discontinueReason != null || discontinueReason != "") {
+    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+  if (mergerProductChange) {
+    var backLinkText = document.getElementById("back-link-text");
+    backLinkText.innerHTML = "Go back to reason for company name change";
+
+    var backLink = document.getElementById("back-link");
+    backLink.href = "/mock-5/supplier-users/change-company-name/reason";
+  }
+</script>
+
+
 {% endblock %}

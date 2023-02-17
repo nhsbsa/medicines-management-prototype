@@ -21,252 +21,324 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
     <h1>Amgen</h1>
 
-    <div class="nhsuk-grid-row">
-      <div class="tabs tabbed">
-        <div class="tabs-nav">
-          <ul class="tabs-list">
-            <li id="heading-tab-information"><a href="#tab-users">General information</a></li>
-            <li id="heading-tab-users"><a href="#tab-users">Users</a></li>
-            <li id="heading-tab-submissions"><a href="#tab-submissions">Submissions</a></li>
-          </ul>
+    <div class="nhsuk-tabs" data-module="nhsuk-tabs">
+      <h2 class="nhsuk-tabs__title">Contents</h2>
+      <ul class="nhsuk-tabs__list">
+        <li class="nhsuk-tabs__list-item nhsuk-tabs__lt-item--selected"
+            id="heading-tab-information"
+            role="presentation"><a class="nhsuk-tabs__tab" href="#tab-information" role="tab"
+                                   id="submission-panel" aria-selected="true">General Information</a>
+        </li>
+        <li class="nhsuk-tabs__list-item" id="heading-tab-users" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-users" role="tab" id="message-panel">Users
+          </a></li>
+        <li class="nhsuk-tabs__list-item" id="heading-tab-submissions" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-submissions" role="tab" id="summary-panel">Submissions</a>
+        </li>
+      </ul>
+
+      <div class="nhsuk-tabs__panel" id="tab-information" role="tabpanel" tabindex="-1"
+           aria-labelledby="tab1">
+        <div class="nhsuk-tabs-panel-inner inner-tabs-padding">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-two-thirds">
+              <h2 id="general-information-heading">General information</h2>
+
+              <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Company name
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Amgen
+                  </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Primary contact name
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    Jane Smith
+                  </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Primary contact media
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p>07700 900362</p>
+                    <p>jane.smith@example.com</p>
+                  </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Secondary contact name
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    David Jones
+                  </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                  <dt class="nhsuk-summary-list__key">
+                    Secondary contact media
+                  </dt>
+                  <dd class="nhsuk-summary-list__value">
+                    <p>07700 905456</p>
+                    <p>david.smith@example.com</p>
+                  </dd>
+
+                </div>
+
+              </dl>
+
+            </div>
+          </div>
         </div>
-        <div class="tabs-content">
-          <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-information">
-            <div class="tabs-panel-inner">
-              <div class="nhsuk-grid-row">
-                <div class="nhsuk-grid-column-full">
-                  <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+      </div>
+      <div class="nhsuk-tabs__panel" id="tab-users" role="tabpanel" tabindex="-1"
+           aria-labelledby="tab1">
+        <div class="nhsuk-tabs-panel-inner inner-tabs-padding">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <h2 id="users-heading">Users</h2>
 
-                    <div class="nhsuk-summary-list__row">
-                      <dt class="nhsuk-summary-list__key">
-                        Company name
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        Amgen
-                      </dd>
+              <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-4" role="table">
+                <!--
+                                    <caption class="nhsuk-table__caption">Amgen's users</caption>
+                -->
+                <thead class="nhsuk-table__head" role="rowgroup">
+                <tr role="row">
+                  <th class="" role="columnheader" scope="col">
+                    Name
+                  </th>
+                  <th class="" role="columnheader" scope="col">
+                    Email
+                  </th>
+                  <th class="" role="columnheader" scope="col">
+                    Role
+                  </th>
+                  <th class="" role="columnheader" scope="col">
+                    Status
+                  </th>
+                  <th class="" role="columnheader" scope="col">
+                    Edit
+                  </th>
+                </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                <tr class="nhsuk-table__row" role="row">
+                  <td class="nhsuk-table__cell" role="cell">
+                    <span class="nhsuk-table-responsive__heading">Name </span>Jane Smith
+                  </td>
+                  <td class="nhsuk-table__cell" role="cell">
+                    <span class="nhsuk-table-responsive__heading">Email </span>jane.smith@example.com
+                  </td>
+                  <td class="nhsuk-table__cell" role="cell">
+                    <span class="nhsuk-table-responsive__heading">Role </span>
+                    Admin
+                  </td>
+                  <td>
+                    <strong class="nhsuk-tag nhsuk-tag--white" id="account-status-tag-1">
+                      Live <span class="nhsuk-u-visually-hidden"> account</span>
+                    </strong>
+                  </td>
+                  <td class="nhsuk-table__cell" role="cell">
+                    <span class="nhsuk-table-responsive__heading">Edit </span>
+                    <a class="nhsuk-link nhsuk-link--no-visited-state" href="../edit-company-user/edit-user-main">
+                      Edit<span class="nhsuk-u-visually-hidden"> user</span>
+                    </a>
+                  </td>
+                </tr>
+                <tr class="nhsuk-table__row" role="row">
+                  <td class="nhsuk-table__cell" role="cell">
+                    <span class="nhsuk-table-responsive__heading">Name </span>David Jones
+                  </td>
+                  <td class="nhsuk-table__cell" role="cell">
+                    <span class="nhsuk-table-responsive__heading">Email </span>david.smith@example.com
+                  </td>
+                  <td class="nhsuk-table__cell" role="cell">
+                    <span class="nhsuk-table-responsive__heading">Role </span>
+                    User
+                  </td>
+                  <td>
+                    <strong class="nhsuk-tag nhsuk-tag--grey" id="account-status-tag-2">
+                      Inactive <span class="nhsuk-u-visually-hidden"> account</span>
+                    </strong>
+                  </td>
+                  <td class="nhsuk-table__cell" role="cell">
+                    <span class="nhsuk-table-responsive__heading">Edit </span>
+                    <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">
+                      Edit<span class="nhsuk-u-visually-hidden"> user</span>
+                    </a>
+                  </td>
+                </tr>
 
-                    </div>
+                <tr class="nhsuk-table__row" role="row">
+                  <td class="nhsuk-table__cell" role="cell">
+                    <span class="nhsuk-table-responsive__heading">Name </span>Marcin Wisniewski
+                  </td>
+                  <td class="nhsuk-table__cell" role="cell">
+                    <span class="nhsuk-table-responsive__heading">Email </span>marcin.wisniewski@marcinwisniewski.nhsbsa
+                  </td>
+                  <td class="nhsuk-table__cell" role="cell">
+                    <span class="nhsuk-table-responsive__heading">Role </span>
+                    User
+                  </td>
+                  <td>
+                    <strong class="nhsuk-tag nhsuk-tag--white" id="account-status-tag-3">
+                      Live <span class="nhsuk-u-visually-hidden"> account</span>
+                    </strong>
+                  </td>
+                  <td class="nhsuk-table__cell" role="cell">
+                    <span class="nhsuk-table-responsive__heading">Edit </span>
+                    <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">
+                      Edit<span class="nhsuk-u-visually-hidden"> user</span>
+                    </a>
+                  </td>
+                </tr>
 
-                    <div class="nhsuk-summary-list__row">
-                      <dt class="nhsuk-summary-list__key">
-                        Primary user
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        Jane Smith
-                      </dd>
-
-                    </div>
-
-                    <div class="nhsuk-summary-list__row">
-                      <dt class="nhsuk-summary-list__key">
-                        Primary user contact
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>07700 900362</p>
-                        <p>jane.smith@example.com</p>
-                      </dd>
-
-                    </div>
-                    <div class="nhsuk-summary-list__row">
-                      <dt class="nhsuk-summary-list__key">
-                        Secondary user
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        David Jones
-                      </dd>
-
-                    </div>
-
-                    <div class="nhsuk-summary-list__row">
-                      <dt class="nhsuk-summary-list__key">
-                        Secondary user contact
-                      </dt>
-                      <dd class="nhsuk-summary-list__value">
-                        <p>07700 905456</p>
-                        <p>david.smith@example.com</p>
-                      </dd>
-
-                    </div>
-
-                  </dl>
-
-                </div>
-              </div>
+                </tbody>
+              </table>
             </div>
           </div>
-          <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-users">
-            <div class="tabs-panel-inner">
-              <div class="nhsuk-grid-row">
-                <div class="nhsuk-grid-column-full">
-                  <table class="nhsuk-table-responsive" role="table">
-                    <!--
-                                        <caption class="nhsuk-table__caption">Amgen's users</caption>
-                    -->
-                    <thead class="nhsuk-table__head" role="rowgroup">
-                    <tr role="row">
-                      <th class="" role="columnheader" scope="col">
-                        Name
-                      </th>
-                      <th class="" role="columnheader" scope="col">
-                        Email
-                      </th>
-                      <th class="" role="columnheader" scope="col">
-                        Role
-                      </th>
-                    </tr>
-                    </thead>
-                    <tbody class="nhsuk-table__body">
-                    <tr class="nhsuk-table__row" role="row">
-                      <td class="nhsuk-table__cell" role="cell">
-                        <span class="nhsuk-table-responsive__heading">Name </span>Jane Smith
-                      </td>
-                      <td class="nhsuk-table__cell" role="cell">
-                        <span class="nhsuk-table-responsive__heading">Email </span>jane.smith@example.com
-                      </td>
-                      <td class="nhsuk-table__cell" role="cell">
-                        <span class="nhsuk-table-responsive__heading">Role </span>
-                        Admin
-                      </td>
-                    </tr>
-                    <tr class="nhsuk-table__row" role="row">
-                      <td class="nhsuk-table__cell" role="cell">
-                        <span class="nhsuk-table-responsive__heading">Name </span>David Jones
-                      </td>
-                      <td class="nhsuk-table__cell" role="cell">
-                        <span class="nhsuk-table-responsive__heading">Email </span>david.smith@example.com
-                      </td>
-                      <td class="nhsuk-table__cell" role="cell">
-                        <span class="nhsuk-table-responsive__heading">Role </span>
-                        User
-                      </td>
-                    </tr>
+        </div>
+      </div>
+      <div class="nhsuk-tabs__panel" id="tab-submissions" role="tabpanel" tabindex="-1"
+           aria-labelledby="tab1">
+        <div class="nhsuk-tabs-panel-inner inner-tabs-padding">
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <h2 id="submissions-heading">Submissions</h2>
 
-                    <tr class="nhsuk-table__row" role="row">
-                      <td class="nhsuk-table__cell" role="cell">
-                        <span class="nhsuk-table-responsive__heading">Name </span>Marcin Wisniewski
-                      </td>
-                      <td class="nhsuk-table__cell" role="cell">
-                        <span class="nhsuk-table-responsive__heading">Email </span>marcin.wisniewski@marcinwisniewski.nhsbsa
-                      </td>
-                      <td class="nhsuk-table__cell" role="cell">
-                        <span class="nhsuk-table-responsive__heading">Role </span>
-                        User
-                      </td>
-                    </tr>
+              <p>Only submissions which have been actioned will appear in the submissions table.</p>
+              <div id="pageAndResultCount" class="nhsuk-u-margin-bottom-3">Page 1 of 1 (2 results)</div>
 
-                    </tbody>
-                  </table>
+              <table class="govuk-table nhsuk-table-responsive"
+                     data-module="moj-sortable-table">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+
+                  <th aria-sort="ascending" class="govuk-table__header" scope="col">Date
+                    received
+                  </th>
+
+                  <th aria-sort="none" class="govuk-table__header" scope="col">Type</th>
+
+                  <th aria-sort="none" class="govuk-table__header" scope="col">Product name</th>
+
+                  <th aria-sort="none" class="govuk-table__header" scope="col">Effective date
+                  </th>
+
+                  <th aria-sort="none" class="govuk-table__header" scope="col">Reference</th>
+                </tr>
+                </thead>
+
+                <tbody class="nhsuk-table__body">
+
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell" data-sort-value="1">
+                    <span class="nhsuk-table-responsive__heading">Date received</span>
+                    01-05-2022
+                  </td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+                    Product
+                  </td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Product name</span>
+                    Paracetamol 200mg tablets
+                  </td>
+                  <td class="nhsuk-table__cell" data-sort-value="3">
+                    <span class="nhsuk-table-responsive__heading">Effective date</span>
+                    01-06-2022
+                  </td>
+                  <td class="nhsuk-table__cell" data-sort-value="56465452">
+                    <span class="nhsuk-table-responsive__heading">Reference</span>
+                    56414253
+                  </td>
+                </tr>
+
+                <tr class="nhsuk-table__row">
+                  <td class="nhsuk-table__cell" data-sort-value="1">
+                    <span class="nhsuk-table-responsive__heading">Date received</span>
+                    11-05-2022
+                  </td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+                    Product
+                  </td>
+                  <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+                    Ibuprofen 10% gel
+                  </td>
+                  <td class="nhsuk-table__cell" data-sort-value="3">
+                    <span class="nhsuk-table-responsive__heading">Effective date</span>
+                    22-06-2022
+                  </td>
+                  <td class="nhsuk-table__cell" data-sort-value="56465452">
+                    <span class="nhsuk-table-responsive__heading">Reference</span>
+                    56462353
+                  </td>
+                </tr>
+
+
+                </tbody>
+              </table>
+              <nav class="govuk-pagination" role="navigation" aria-label="results">
+                <div class="govuk-pagination__prev">
+                  <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                      <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                    </svg>
+                    <span class="govuk-pagination__link-title">Previous</span></a>
                 </div>
-              </div>
+                <ul class="govuk-pagination__list">
+                  <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                      1
+                    </a>
+                  </li>
+                  <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
+                  <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 6">
+                      6
+                    </a>
+                  </li>
+                  <li class="govuk-pagination__item govuk-pagination__item--current">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 7" aria-current="page">
+                      7
+                    </a>
+                  </li>
+                  <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 8">
+                      8
+                    </a>
+                  </li>
+                  <li class="govuk-pagination__item govuk-pagination__item--ellipses">&ctdot;</li>
+                  <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 42">
+                      42
+                    </a>
+                  </li>
+                </ul>
+                <div class="govuk-pagination__next">
+                  <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                  </svg></a>
+                </div>
+              </nav>
+
             </div>
           </div>
-          <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-submissions">
-            <div id="pageAndResultCount">Page 1 of 1 (2 results)</div>
-            <div class="tabs-panel-inner">
-              <div class="nhsuk-grid-row">
-                <div class="nhsuk-grid-column-full">
-
-                  <table class="govuk-table nhsuk-table-responsive"
-                         data-module="moj-sortable-table">
-                    <!--                    <h1>Summary of all Amgen's submissions</h1>-->
-                    <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-
-                      <th aria-sort="ascending" class="govuk-table__header" scope="col">Date
-                        received
-                      </th>
-
-                      <th aria-sort="none" class="govuk-table__header" scope="col">Type</th>
-
-                      <th aria-sort="none" class="govuk-table__header" scope="col">Product name</th>
-
-                      <th aria-sort="none" class="govuk-table__header" scope="col">Effective date
-                      </th>
-
-                      <th aria-sort="none" class="govuk-table__header" scope="col">Reference</th>
-                    </tr>
-                    </thead>
-
-                    <tbody class="nhsuk-table__body">
-
-                    <tr class="nhsuk-table__row">
-                      <td class="nhsuk-table__cell" data-sort-value="1">
-                        <span class="nhsuk-table-responsive__heading">Date received</span>
-                        01-05-2022
-                      </td>
-                      <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
-                        Product
-                      </td>
-                      <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
-                        Paracetamol 200mg tablets
-                      </td>
-                      <td class="nhsuk-table__cell" data-sort-value="3">
-                        <span class="nhsuk-table-responsive__heading">Effective date</span>
-                        01-06-2022
-                      </td>
-                      <td class="nhsuk-table__cell" data-sort-value="56465452">
-                        <span class="nhsuk-table-responsive__heading">Reference</span>
-                        56414253
-                      </td>
-                      </td>
-                    </tr>
-
-                    <tr class="nhsuk-table__row">
-                      <td class="nhsuk-table__cell" data-sort-value="1">
-                        <span class="nhsuk-table-responsive__heading">Date received</span>
-                        11-05-2022
-                      </td>
-                      <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
-                        Product
-                      </td>
-                      <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
-                        Ibuprofen 10% gel
-                      </td>
-                      <td class="nhsuk-table__cell" data-sort-value="3">
-                        <span class="nhsuk-table-responsive__heading">Effective date</span>
-                        22-06-2022
-                      </td>
-                      <td class="nhsuk-table__cell" data-sort-value="56465452">
-                        <span class="nhsuk-table-responsive__heading">Reference</span>
-                        56462353
-                      </td>
-                      </td>
-                    </tr>
-
-
-                    </tbody>
-                  </table>
-                  <div id="pagination ">
-                    <nav aria-label="Pagination Navigation">
-                      <ul class="pagination nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4">
-                        <!-- Previous Button -->
-                        <li class="pagination__item">Previous</li>
-                        <li class="pagination__item">|</li>
-                        <!-- First Page -->
-                        <!-- Page Numbers -->
-                        <li class="pagination__item">
-                          <!-- Not this page! -->
-                          <!-- This page! -->
-                          <p aria-current="true" class="pagination__link nhsuk-u-font-weight-bold"
-                             id="1">1</p>
-                        </li>
-                        <!-- Next Page -->
-                        <li class="pagination__item">|</li>
-                        <!-- Next Button -->
-                        <li class="pagination__item">Next</li>
-
-                      </ul>
-                    </nav>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
+
+
   </div>
 </main>
 <script defer src="/js/MOJ.js"></script>

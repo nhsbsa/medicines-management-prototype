@@ -3,6 +3,7 @@
 What is the contact's phone number? | Portal | NHSBSA
 {% endblock %}
 {% block content %}
+
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
   <a class="nhsuk-back-link__link" href="edit-contact-main">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
@@ -20,19 +21,38 @@ What is the contact's phone number? | Portal | NHSBSA
     </legend>
     <div class="nhsuk-radios nhsuk-radios--conditional">
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="yes" name="contact" type="radio" aria-controls="phone-input" aria-expanded="false">
+        <input class="nhsuk-radios__input" id="yes" name="contact" type="radio" aria-controls="phone-input" aria-expanded="true" checked>
         <label class="nhsuk-label nhsuk-radios__label" for="yes">
-          Yes
+          Yes, I want to add a UK phone number
         </label>
       </div>
       <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="phone-input">
         <div class="nhsuk-form-group">
           <label class="nhsuk-label" for="phone">
-            Phone number
+            UK phone number
           </label>
-          <input class="nhsuk-input nhsuk-input--width-20" id="phone" type="text" value="07700 900362">
+          <input class="nhsuk-input nhsuk-input--width-20" id="phone" type="text" value="07700 905456">
         </div>
       </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="international" name="contact" type="radio" aria-controls="international-phone-input" aria-expanded="false">
+        <label class="nhsuk-label nhsuk-radios__label" for="international">
+          Yes, I want to add an international phone number
+        </label>
+      </div>
+      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="international-phone-input">
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="international-phone">
+            International phone number
+          </label>
+          <div class="nhsuk-hint" id="hint-text">
+            <span>Enter + and then your country code before your phone number.</span>
+            <p><span>For example, </span><strong>+353</strong><span>7777888555</span></p>
+          </div>
+          <input class="nhsuk-input nhsuk-input--width-20" id="international-phone" type="text">
+        </div>
+      </div>
+      <div class="nhsuk-radios__divider">or</div>
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="no" name="contact" type="radio" value="text">
         <label class="nhsuk-label nhsuk-radios__label" for="no">
@@ -42,8 +62,12 @@ What is the contact's phone number? | Portal | NHSBSA
     </div>
   </fieldset>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" href="edit-contact-main" id="continue-button" type="submit">
-    Submit
+  <a class="nhsuk-button nhsuk-u-margin-top-5" href="edit-contact-secondary" id="continue-button" type="submit">
+    Save and review
   </a>
 </div>
+
+<script>
+
+</script>
 {% endblock %}

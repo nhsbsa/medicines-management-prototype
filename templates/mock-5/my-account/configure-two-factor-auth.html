@@ -1,0 +1,80 @@
+{% extends "supplier-navbar-base.html" %}
+{% block title %}
+Design prototype medicines management | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="account-details">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to account details</a>
+</div>
+
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-form-group">
+      <h1 class="nhsuk-label-wrapper nhsuk-u-margin-bottom-4">
+        <label for="password">
+          Scan your QR code
+        </label>
+      </h1>
+      <p>To set up two-factor authentication, you need to download Authy or Google Authenticator. We recommend Authy as it will back up your code.</p>
+      <p>An authenticator is a secure method of keeping your account safe. The authenticator will generate a 6-digit code, and when you log in you will be prompted to enter your password as well as this code.</p>
+
+      <div class="nhsuk-expander-group">
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+      <span class="nhsuk-details__summary-text">
+       Where can I get Authy?
+      </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <P>You can download Authy from the  <a href="#" target="_blank" title="External website">Google Play Store</a> or the <a href="#" target="_blank" title="External website">Apple App Store</a>.</p>
+          </div>
+        </details>
+
+        <details class="nhsuk-details nhsuk-expander">
+          <summary class="nhsuk-details__summary">
+      <span class="nhsuk-details__summary-text">
+        Where can I get Google Authenticator?
+      </span>
+          </summary>
+          <div class="nhsuk-details__text">
+            <P>You can download Google Authenticator from the  <a href="#" target="_blank" title="External website">Google Play Store</a> or the <a href="#" target="_blank" title="External website">Apple App Store</a>.</p>
+          </div>
+        </details>
+
+      </div>
+      <p>You <strong>do not</strong> currently have two-factor authentication enabled on your account. To enable it, please follow the steps below:</p>
+    <ol>
+      <li>Download and install your preferred authenticator app on your device.</li>
+      <li>Scan the <a href="#qr">QR code</a> or enter <a href="#code">this code</a> on the app you have downloaded.</li>
+      <li>Enter the 6-digit code which the app generates below to enable.</li>
+    </ol>
+    <figure class="nhsuk-image">
+      <img class="nhsuk-image__img" src="/images/qr-code.png" alt="QR Code" id="qr">
+      <figcaption class="nhsuk-image__caption">
+        Scan the QR code.
+      </figcaption>
+    </figure>
+      <h2>Don't have a camera?</h2>
+      <p>Enter the below code:</p>
+      <div class="nhsuk-inset-text nhsuk-u-margin-top-4"><span id="code"><strong>JBSWY3DPEHPK3PXP</strong></span></div>
+      </div>
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="password">
+        Enter your code.
+      </label>
+      <input class="nhsuk-input nhsuk-input--width-20" id="password" name="password" type="text">
+    </div>
+      <br>
+    <a class="nhsuk-button" type="submit" href="account-details">
+      Activate
+    </a>
+  </div>
+</div>
+
+{% endblock %}
+

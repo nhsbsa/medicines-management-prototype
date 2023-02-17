@@ -1,3 +1,5 @@
+console.log(localStorage);
+
 function storeExistingUserYesOrNo() {
   var radioButtons = document.getElementsByName("existing-user");
   var buttonLink = document.getElementById("continue-button");
@@ -18,34 +20,50 @@ function storeExistingUserYesOrNo() {
 
 function userAdded() {
   var getPrimaryUser = localStorage.getItem("primary-user");
-  if (getPrimaryUser == "true") {
-    localStorage.setItem("secondary-user", "true");
-  } else {
-    localStorage.setItem("primary-user", "true");
-  }
+//  if (getPrimaryUser == "true") {
+//    localStorage.setItem("secondary-user", "true");
+//  } else {
+//    localStorage.setItem("primary-user", "true");
+//  }
 }
 
 function displayAddContactMessage() {
   var messageContainer = document.getElementById("message-container");
   var messageText = document.getElementById("not-submitted-message");
+  var secondaryLink = document.getElementById("add-another-secondary-user");
   var secondaryHeader = document.getElementById("no-secondary-header");
   var getPrimaryUser = localStorage.getItem("primary-user");
   var getSecondaryUser = localStorage.getItem("secondary-user");
-  var buttonText = document.getElementById("primary-contact-button");
 
-  if (getSecondaryUser == "true") {
+//  var buttonText = document.getElementById("primary-contact-button");
+
+  console.log(getPrimaryUser, getSecondaryUser);
+
+  if (getSecondaryUser == "true" && getPrimaryUser == "true") {
+  console.log('working?', secondaryLink);
     messageContainer.style.display = "none";
-    buttonText.innerHTML = "Add secondary contact";
-  } else if (getPrimaryUser == "true") {
-    messageText.innerHTML = "No secondary contacts currently exist.";
-    buttonText.innerHTML = "Add secondary contact";
+    secondaryLink.style.display = 'block';
+  } else if (getPrimaryUser == "true" && getSecondaryUser != "true") {
+    messageText.innerHTML = "No secondary contacts currently exist. Add a secondary contact <a id='primary-contact-button' onclick='secondarySave()' href='add-user/add-contact-existing-user'>here</a>.</p>";
+//    buttonText.innerHTML = "Add secondary contact";
     secondaryHeader.style.display = "table";
-  } else {
-    messageContainer.classList.add("nhsuk-inset-text");
+  } else if (getPrimaryUser != "true" && getSecondaryUser != "true"){
+//    messageContainer.classList.add("nhsuk-inset-text");
     messageContainer.classList.add("nhsuk-u-margin-top-0");
-    messageText.innerHTML = "You have not added a primary or secondary contact.";
-    buttonText.innerHTML = "Add primary contact";
+    messageText.innerHTML = "<p>You have not added a primary or secondary contact. Add a primary contact <a id='primary-contact-button' class='nhsuk-link nhsuk-link--no-visited-state' href='add-user/add-contact-existing-user' onclick='primarySave()'>here</a>.</p>";
+//    buttonText.innerHTML = "Add primary contact";
   }
+}
+
+function primarySave() {
+   localStorage.setItem("primary-user", "true");
+   localStorage.setItem("primary-user-summary", "true");
+}
+
+function secondarySave() {
+   localStorage.setItem("secondary-user", "true");
+   localStorage.setItem("lastContact", "false");
+   localStorage.setItem("secondary-user-summary", "true");
 }
 
 function displayContacts() {
@@ -83,8 +101,12 @@ function promoteSecondaryContactYesOrNo() {
     if (radio.checked) {
         if (radio.value == 'yes') {
             buttonLink.href = "promote-secondary-user";
+            localStorage.setItem("primary-user", "true");
+            localStorage.setItem("secondary-user", "false");
         } else if (radio.value == 'no') {
             buttonLink.href = "add-user/add-contact-existing-user";
+            localStorage.setItem("primary-user", "true");
+            localStorage.setItem("secondary-user", "true");
         }
     }
   }
@@ -113,8 +135,17 @@ function removeContact() {
   var lastContact = localStorage.getItem("lastContact");
   var buttonLink = document.getElementById("removeButton");
 
-  if (lastContact == 'true') {
-    buttonLink.href = "replace-last-contact";
+  if (lastContact == 'false') {
+      localStorage.setItem("secondary-user", "false");
+      buttonLink.href = "view-company-details";
+  }
+
+  if (lastContact == 'true' && localStorage.getItem("secondary-user") == "true") {
+    localStorage.setItem("primary-user", "false");
+    buttonLink.href = "replace-primary-contact";
+  } else if (lastContact == 'true' && localStorage.getItem("secondary-user") == "false") {
+    localStorage.setItem("primary-user", "false");
+    buttonLink.href = "view-company-details";
   }
 }
 
@@ -131,7 +162,15 @@ function displayChangeLinks() {
     }
   }
 
-  if (localStorage.getItem("primary-user") == "true") {
+if (localStorage.getItem("lastContact") == "true") {
+   if (localStorage.getItem("primary-user") == "true") {
+       submitButton.innerHTML = "Save as primary contact";
+     }
+   }
+
+   if (localStorage.getItem("lastContact") == "false" && localStorage.getItem("primary-user") == "true") {
     submitButton.innerHTML = "Save as secondary contact";
-  }
+  } else if (localStorage.getItem("lastContact") == "false" && localStorage.getItem("primary-user") == "false") {
+    submitButton.innerHTML = "Save as primary contact";
+ }
 }

@@ -1,0 +1,21 @@
+{
+  "defaults": {
+    "runners": ["axe", "htmlcs"],
+    "standard": "WCAG2AA",
+    "timeout": 10000,
+    "viewport": {
+      "width": 1000,
+      "height": 1000
+    }
+  },
+
+  "urls": [
+    "http://localhost:3000/mock-5/discontinue-a-product/discontinue-check-list.html",
+    "http://localhost:3000/mock-5/discontinue-a-product/discontinue-effective-date",
+    "http://localhost:3000/mock-5/discontinue-a-product/how-long-oos",
+    "http://localhost:3000/mock-5/discontinue-a-product/less-than-3-months",
+    "http://localhost:3000/mock-5/discontinue-a-product/contact-details-for-new-company/supplier-name",
+    "http://localhost:3000/mock-5/discontinue-a-product/contact-details-for-new-company/extra-information.html",
+    "http://localhost:3000/mock-5/discontinue-a-product/contact-details-for-new-company/contact-name"
+  ]
+}

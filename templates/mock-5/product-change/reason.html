@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Select a reason | Submit a product change | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="amend-product">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to select product</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l">
+                Submit a product change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Select a reason
+      </h1>
+    </legend>
+
+    <div class="nhsuk-radios" id="data-discontinue-reason-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="product-name" name="data-product-change-reason" type="radio" value="product name" />
+        <label class="nhsuk-label nhsuk-radios__label" for="product-name">
+          Change the product name
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="market-authorisation-number" name="data-product-change-reason" type="radio" value="Market authorisation Number" />
+        <label class="nhsuk-label nhsuk-radios__label" for="market-authorisation-number">
+        Change the Market authorisation number
+        </label>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="license-route" name="data-product-change-reason" type="radio" value="license route" />
+        <label class="nhsuk-label nhsuk-radios__label" for="license-route">
+        Change the license route
+        </label>
+      </div>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="licensing-authority" name="data-product-change-reason" type="radio" value="licensing authority" />
+        <label class="nhsuk-label nhsuk-radios__label" for="licensing-authority">
+        Change the licensing authority
+        </label>
+      </div>
+      
+
+    </div>
+  </fieldset>
+</div>
+
+<a onclick="saveReason()" class="nhsuk-button nhsuk-u-margin-top-3"
+       id="next" href="summary"
+       name="next">Save and continue
+</a>
+
+<script type="text/javascript">
+
+  const continueBtn = document.getElementById("next")
+
+  function saveReason() {
+    var radioButtons = document.getElementsByName("data-product-change-reason");
+
+    for (var radio of radioButtons) {
+      if (radio.checked) {
+          localStorage.setItem("product-change-reason", radio.value);
+       }
+     }
+  }
+
+var radioReasonButtons = document.getElementsByName("data-product-change-reason");
+
+if (radioReasonButtons.length != 0) {
+
+var getProductChangeReason = localStorage.getItem("product-change-reason");
+
+    if (getProductChangeReason != null) {
+        for (var radio of radioReasonButtons) {
+            if (getProductChangeReason === radio.value) {
+                radio.checked = true;
+            }
+        }
+      }
+    };
+
+
+
+
+</script>
+
+{% endblock %}
+
+

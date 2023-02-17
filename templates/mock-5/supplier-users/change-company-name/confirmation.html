@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: product confirmation | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="govuk-panel govuk-panel--confirmation nhsuk-u-margin-bottom-5">
+          <h1 class="govuk-panel__title">
+            We have received your submission for review
+          </h1>
+          <div class="govuk-panel__body">
+            Your reference number<br><strong>HDJ2123F</strong>
+          </div>
+        </div>
+        <h2>Next Steps</h2>
+        <p>You will receive a response via email once we have reviewed your submission. The Meds team may be in contact with you through email to verify contents.</p>
+        <p>Return to <a href="../../dashboard">
+           portal dashboard
+        </a></p>
+      </div>
+    </div>
+
+
+
+
+<script>
+
+var getProductName = localStorage.getItem("product-name");
+var getProductStrength = localStorage.getItem("product-strength");
+var getProductMeasurement = localStorage.getItem("product-measurement");
+document.getElementById("product-name").innerHTML = getProductName;
+
+
+
+</script>
+
+
+{% endblock %}

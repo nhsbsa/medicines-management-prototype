@@ -8,45 +8,120 @@ Submit a new product: effective date | Portal | NHSBSA
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to additional information</a>
+    <span id="back-link-text">Go back to additional information</span></a>
 </div>
 
-<div class="nhsuk-form-group">
-  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
-      <h1 class="nhsuk-fieldset__heading">
-        What supplier is the product going to?
-      </h1>
-    </legend>
-    <div class="nhsuk-radios" id="data-spc-radios">
-      <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
-        Do you have a contact name?
-      </div>
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="1" name="data-spc" type="radio" value="contact-details-for-new-company/contact-name" />
-        <label class="nhsuk-label nhsuk-radios__label" for="1">
-          Yes
-        </label>
-      </div>
-      <div class="nhsuk-inset-text">
-        <label class="nhsuk-label" for="example">
-          Contact name
-        </label>
-        <input class="nhsuk-input" id="example" name="example" type="text">
-      </div>
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="2" name="data-spc" type="radio" value="contact-details-for-new-company/submission.html" />
-        <label class="nhsuk-label nhsuk-radios__label" for="2">
-          No
-        </label>
-      </div>
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-5">
+            <span class="nhsuk-caption-l" id="discontinue-reason">
+                Discontinue
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+            Do you have a contact name for the supplier?
+          </h1>
+        </legend>
+
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+              Yes
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="contact-name">
+                Contact name
+              </label>
+              <input class="nhsuk-input nhsuk-u-width-two-thirds" id="contact-name" name="email" type="text">
+            </div>
+
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
     </div>
 
-  </fieldset>
-
-  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeDate()" href="email-address.html" id="continue-button" type="submit">
-    Continue
+  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeContactNameYesOrNo()" href="email-address.html" id="continue-button" type="submit">
+    Save and continue
   </a>
-  <script src="/js/newProduct.js"></script>
-</div>
+
+<script>
+  console.log(localStorage);
+
+  let discontinueReason = localStorage.getItem("discontinue-reason");
+
+  let discontinueTitle = document.getElementById("discontinue-reason");
+
+  let mergerProductChange = localStorage.getItem("change-company-name");
+
+  if (discontinueReason || discontinueReason != null || discontinueReason != "") {
+    discontinueTitle.innerHTML = 'Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span>';
+  }
+
+  if (mergerProductChange) {
+     discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Company name change : company merger<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+  var radioButtons = document.getElementsByName("contact");
+  let summaryPage = localStorage.getItem("supplier-summary");
+
+   var getContactName = localStorage.getItem("contact-name");
+    var contName = document.querySelector("#contact-name");
+
+if (contName != null) {
+    if (getContactName != null) {
+        contName.defaultValue = getContactName;
+    }
+  }
+
+if (radioButtons) {
+    var getSuppName = localStorage.getItem("supplier-contact-name");
+    var buttonLink = document.getElementById("continue-button");
+    if (getSuppName != null) {
+        for (var radio of radioButtons) {
+            if (getSuppName === radio.value) {
+                radio.checked = true;
+            }
+            if (radio.value == 'yes' && summaryPage != null) {
+                buttonLink.href = "../pack-list";
+            }
+        }
+    }
+};
+
+function storeContactNameYesOrNo() {
+    var radioButtons = document.getElementsByName("contact");
+    var buttonLink = document.getElementById("continue-button");
+
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+            localStorage.setItem("supplier-contact-name", radio.value);
+            if (radio.value == 'yes') {
+              var contactName = document.getElementById("contact-name");
+              localStorage.setItem("contact-name", contactName.value);
+            } else if (radio.value == 'no') {
+              localStorage.removeItem("contact-name");
+            }
+            if (summaryPage != null) {
+              buttonLink.href = "../pack-list";
+            }
+        }
+    }
+}
+</script>
+
 {% endblock %}

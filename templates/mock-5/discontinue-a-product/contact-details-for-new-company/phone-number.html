@@ -8,32 +8,192 @@ Submit a new product: effective date | Portal | NHSBSA
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to email address</a>
+    Go back to do you have a contact email address for the supplier</a>
 </div>
 
 <div class="nhsuk-form-group">
-  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
-      <h1 class="nhsuk-fieldset__heading">
-        What supplier is the product going to?
+
+  <fieldset class="nhsuk-fieldset">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+      <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-5">
+        <span class="nhsuk-caption-l" id="discontinue-reason">
+                Discontinue
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Do you have a contact phone number for the supplier?
       </h1>
     </legend>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
-      What is the phone number for this contact?
-    </div>
 
-    <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="example">
-        Contact phone number
-      </label>
-      <input class="nhsuk-input" id="example" name="example" type="number">
-    </div>
+    <div class="nhsuk-radios nhsuk-radios--conditional">
 
+      <div class="nhsuk-hint" id="contact-hint">
+        Select one option
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="yes-uk" name="contact-phone" type="radio" value="uk" aria-controls="conditional-contact-1" aria-expanded="false">
+        <label class="nhsuk-label nhsuk-radios__label" for="yes-uk">
+          Yes, I want to add a UK phone number
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="cont-uk-phone">
+            UK phone number
+          </label>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="cont-uk-phone" name="email" type="text">
+        </div>
+
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="yes-int" name="contact-phone" type="radio" value="international" aria-controls="conditional-contact-3" aria-expanded="false">
+        <label class="nhsuk-label nhsuk-radios__label" for="yes-int">
+          Yes, I want to add an international phone number
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-3">
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="cont-int-phone">
+            International phone number
+          </label>
+          <div class="nhsuk-hint nhsuk-radios__hint nhsuk-u-padding-left-0" id="example-hints-1-item-hint">
+            Enter + then the country code before the phone number. For example, +3537777888555
+          </div>
+          <input class="nhsuk-input nhsuk-u-width-two-thirds" id="cont-int-phone" name="email" type="text">
+        </div>
+
+      </div>
+
+      <div class="nhsuk-radios__divider">or</div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="no-phone" name="contact-phone" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+        <label class="nhsuk-label nhsuk-radios__label" for="no-phone">
+          No
+        </label>
+      </div>
+    </div>
   </fieldset>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeDate()" href="edit-information-confirmation.html" id="continue-button" type="submit">
-    Continue
-  </a>
-  <script src="/js/newProduct.js"></script>
 </div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storePhoneNumberYesOrNo()" href="../pack-list-add" id="continue-button" type="submit">
+  Save and continue to select packs
+</a>
+
+<script>
+   console.log(localStorage);
+
+  let discontinueReason = localStorage.getItem("discontinue-reason");
+
+  let discontinueTitle = document.getElementById("discontinue-reason");
+
+  let mergerProductChange = localStorage.getItem("change-company-name");
+
+  if (discontinueReason || discontinueReason != null || discontinueReason != "") {
+    discontinueTitle.innerHTML = 'Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span>';
+  }
+
+  if (mergerProductChange) {
+     discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Company name change : company merger<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+  var radioButtons = document.getElementsByName("contact-phone");
+  let summaryPage = localStorage.getItem("supplier-summary");
+
+   var getUKPhone = localStorage.getItem("contact-uk-phone");
+   var getIntPhone = localStorage.getItem("contact-int-phone");
+   var contUKPhone = document.querySelector("#cont-uk-phone");
+   var contIntPhone = document.querySelector("#cont-int-phone");
+   var yesUK = document.querySelector("#yes-uk");
+   var yesInt = document.querySelector("#yes-int");
+   var noPhone = document.querySelector("#no-phone");
+   var getYesUK = localStorage.getItem("yes-uk");
+   var getYesInt = localStorage.getItem("yes-int");
+
+   console.log('yesUK', yesUK.value);
+
+if (contUKPhone != null) {
+    if (getUKPhone != null) {
+        contUKPhone.defaultValue = getUKPhone;
+    }
+  }
+
+  if (contIntPhone != null) {
+    if (getIntPhone != null) {
+        contIntPhone.defaultValue = getIntPhone;
+    }
+  }
+
+
+if (radioButtons) {
+    var getUKPhone = localStorage.getItem("contact-uk-phone");
+    var getIntPhone = localStorage.getItem("contact-int-phone");
+
+    var buttonLink = document.getElementById("continue-button");
+
+        for (var radio of radioButtons) {
+          console.log('radio', radio.value);
+          if (getYesUK) {
+            if (yesUK.value === radio.value) {
+                radio.checked = true;
+           }
+          } if (getYesInt) {
+              if (yesInt.value === radio.value) {
+                radio.checked = true;
+          }
+         } else if (!getYesUK && !getYesInt) {
+             if (noPhone.value === radio.value) {
+                radio.checked = true;
+          }
+         }
+      }
+            if (summaryPage != null) {
+                buttonLink.href = "../pack-list";
+            } else if (summaryPage == null){
+                buttonLink.href = "../pack-list-add";
+            }
+        };
+
+function storePhoneNumberYesOrNo() {
+    var radioButtons = document.getElementsByName("contact-phone");
+    var buttonLink = document.getElementById("continue-button");
+
+    for (var radio of radioButtons) {
+     if (radio.checked) {
+        if (radio.value == 'uk') {
+              var contactUKPhoneNumber = document.getElementById("cont-uk-phone");
+              localStorage.setItem("contact-uk-phone", contactUKPhoneNumber.value);
+              localStorage.setItem("yes-uk", yesUK.value);
+              localStorage.removeItem("contact-int-phone");
+              localStorage.removeItem("yes-int");
+            }
+           if (radio.value == 'international') {
+              var contactIntPhoneNumber = document.getElementById("cont-int-phone");
+              localStorage.setItem("contact-int-phone", contactIntPhoneNumber.value);
+              localStorage.setItem("yes-int", yesInt.value);
+              localStorage.removeItem("contact-uk-phone");
+              localStorage.removeItem("yes-uk");
+            }
+           if (radio.value == 'no') {
+              var contactNoPhoneNumber = document.getElementById("no-phone");
+              localStorage.setItem("contact-no-phone", contactNoPhoneNumber.value);
+              localStorage.removeItem("contact-int-phone");
+              localStorage.removeItem("yes-int");
+              localStorage.removeItem("contact-uk-phone");
+              localStorage.removeItem("yes-uk");
+           } else if (summaryPage != null) {
+              buttonLink.href = "../pack-list"
+            }
+          }
+        }
+    }
+
+</script>
+
 {% endblock %}

@@ -13,27 +13,28 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 </div>
 
 <div class="nhsuk-form-group">
-  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+  <fieldset class="nhsuk-fieldset" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        How long will the product be out of stock?
+        <span class="nhsuk-caption-l" id="discontinue-reason">
+                Discontinue
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        How long will the product or pack be out of stock?
       </h1>
     </legend>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="data-sheet-hint">
-      Select how long this product is going to be out of stock
-    </div>
 
     <div class="nhsuk-radios" id="data-spc-radios">
 
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="no-longer-manufactured" name="data-spc" type="radio" value="pack-list-add" />
+        <input class="nhsuk-radios__input" id="no-longer-manufactured" name="reason-oot" type="radio" value="more" />
         <label class="nhsuk-label nhsuk-radios__label" for="no-longer-manufactured">
           More than 3 months
         </label>
       </div>
 
       <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="temporarily-out-of-stock" name="data-spc" type="radio" value="less-than-3-months" />
+        <input class="nhsuk-radios__input" id="temporarily-out-of-stock" name="reason-oot" type="radio" value="less" />
         <label class="nhsuk-label nhsuk-radios__label" for="temporarily-out-of-stock">
           Less than 3 months
         </label>
@@ -43,28 +44,51 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
   </fieldset>
 </div>
 
-<input type="button" onclick="navigate" class="nhsuk-button nhsuk-u-margin-top-3"
-       value="Continue"
+<a onclick="navigate()" class="nhsuk-button nhsuk-u-margin-top-3"
        id="next"
-       name="next">
-</input>
+       name="next">Save and continue
+</a>
 
 <script type="text/javascript">
 
+  console.log(localStorage);
 
+  var radioButtons = document.getElementsByName("reason-oot");
 
-  const continueBtn = document.getElementById("next")
-
-  continueBtn.addEventListener("click", navigate);
+if (radioButtons) {
+    var getHowLong = localStorage.getItem("how-long-oot");
+        for (var radio of radioButtons) {
+            if (getHowLong === radio.value) {
+                radio.checked = true;
+        }
+    }
+};
 
 
   function navigate() {
-    const selected = document.querySelector('input[name="data-spc"]:checked').value;
-    console.log(selected)
-    location.href="/mock-5/discontinue-a-product/" + selected
+    let continueBtn = document.getElementById("next")
+    var radioButtons = document.getElementsByName("reason-oot");
+
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+            localStorage.setItem("how-long-oot", radio.value);
+            if (radio.value == 'less') {
+                continueBtn.href = "less-than-3-months";
+            } else if (radio.value == 'more') {
+                continueBtn.href = "pack-list-add";
+            }
+        }
+    }
+
   }
 
+let discontinueReason = localStorage.getItem("discontinue-reason");
 
+  let discontinueTitle = document.getElementById("discontinue-reason");
+
+  if (discontinueReason || discontinueReason != null || discontinueReason != "") {
+    discontinueTitle.innerHTML = 'Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span>';
+  }
 
 </script>
 

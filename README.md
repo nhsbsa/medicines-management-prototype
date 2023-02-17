@@ -75,7 +75,7 @@ These contents can be changed, such as the viewport width and height. You can al
 &ensp;
 Then run the following command in your terminal to activate pa11y. 
 ```shell
-pa11y-ci -c pa11y.json
+pa11y-ci -c .pa11yci.json
 ```
 For more information please visit [pa11y](https://www.npmjs.com/package/pa11y-ci)
 

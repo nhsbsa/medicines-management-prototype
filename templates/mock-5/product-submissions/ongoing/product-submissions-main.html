@@ -18,7 +18,33 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 </span>
 <h1>Ongoing submissions</h1>
 
-<p class="nhsuk-u-margin-bottom-6">To view a record, select the reference number linked to the relevant submission.</p>
+<p class="nhsuk-u-margin-bottom-6">A list of your ongoing submissions is displayed in the table. You can refine this list by searching for a reference number. In both instances, to view a submission in more detail select the link under the reference column.</p>
+
+<div class="nhsuk-form-group">
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+<!--      <dl class="nhsuk-summary-list" id="current-search-criteria" style="display:none;">-->
+<!--        <div class="nhsuk-summary-list__row">-->
+<!--          <dt class="nhsuk-summary-list__key">-->
+<!--            Current search criteria-->
+<!--          </dt>-->
+<!--          <dd class="nhsuk-summary-list__value">-->
+<!--            5646-->
+<!--          </dd>-->
+<!--        </div>-->
+<!--      </dl>-->
+
+      <label class="nhsuk-label" for="reference-search">
+        Search for reference
+      </label>
+      <input id="reference-search" class="nhsuk-input nhsuk-input--width-20" type="text"/>
+    </div>
+  <div class="nhsuk-grid-column-full">
+      <button onclick="filter()" class="nhsuk-button nhsuk-u-margin-top-5 nhsuk-u-margin-right-5">Search for reference</button>
+      <a href="product-submissions-main" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-5">Reset search</a>
+    </div>
+  </div>
+</div>
 
 <div class="nhsuk-body-m flex--space-between" style="display: flex">
   <div class="nhsuk-u-visually-hidden">Currently viewing</div>
@@ -57,7 +83,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
   <tbody class="nhsuk-table__body">
 
-  <tr class="nhsuk-table__row">
+  <tr class="nhsuk-table__row ">
 
     <td class="nhsuk-table__cell" data-sort-value="1">
       <span class="nhsuk-table-responsive__heading">Date received</span>
@@ -82,32 +108,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
   </tr>
 
-  <tr class="nhsuk-table__row">
-
-    <td class="nhsuk-table__cell" data-sort-value="1">
-      <span class="nhsuk-table-responsive__heading">Date received</span>
-      01-05-2022</td>
-
-    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
-      New product</td>
-
-    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
-      <strong class="nhsuk-tag nhsuk-tag--white">
-        More detail
-      </strong>
-    </td>
-
-    <td class="nhsuk-table__cell" data-sort-value="3">
-      <span class="nhsuk-table-responsive__heading">Effective date</span>
-      01-06-2022 </td>
-
-    <td class="nhsuk-table__cell" data-sort-value="56465452">
-      <span class="nhsuk-table-responsive__heading">Reference</span>
-      56465453
-    </td>
-  </tr>
-
-  <tr class="nhsuk-table__row">
+  <tr class="nhsuk-table__row hide-filter">
 
     <td class="nhsuk-table__cell" data-sort-value="1">
       <span class="nhsuk-table-responsive__heading">Date received</span>
@@ -132,7 +133,33 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
   </tr>
 
-  <tr class="nhsuk-table__row">
+  <tr class="nhsuk-table__row hide-filter">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Price change</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--white">
+        More detail
+      </strong>
+    </td>
+
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="56465452">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      <a class="nhsuk-link nhsuk-link--no-visited-state" href="price-change-only-submission-view">56465452</a></td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row hide-filter">
 
     <td class="nhsuk-table__cell" data-sort-value="1">
       <span class="nhsuk-table-responsive__heading">Date received</span>
@@ -154,18 +181,44 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
     <td class="nhsuk-table__cell" data-sort-value="56465452">
       <span class="nhsuk-table-responsive__heading">Reference</span>
-      56465452</td>
+      <a class="nhsuk-link nhsuk-link--no-visited-state" href="price-change-zero-submission-view">56465477</a></td>
 
   </tr>
 
-  <tr class="nhsuk-table__row">
+  <tr class="nhsuk-table__row hide-filter">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      03-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Price change</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--green">
+        Under review
+      </strong>
+    </td>
+
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="56465452">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+      <a class="nhsuk-link nhsuk-link--no-visited-state" href="price-change-both-submission-view">56465488</a></td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row hide-filter">
 
     <td class="nhsuk-table__cell" data-sort-value="2">
       <span class="nhsuk-table-responsive__heading">Date received</span>
       02-05-2022</td>
 
     <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
-      Discontinued</td>
+      Discontinue</td>
 
     <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
       <strong class="nhsuk-tag nhsuk-tag--green">
@@ -179,18 +232,43 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
     <td class="nhsuk-table__cell" data-sort-value="78787575">
       <span class="nhsuk-table-responsive__heading">Reference</span>
-      78787575</td>
+     <a class="nhsuk-link nhsuk-link--no-visited-state" href="discontinue-not-manuf-submission-view">78787575</a> </td>
 
   </tr>
 
-  <tr class="nhsuk-table__row">
+  <tr class="nhsuk-table__row hide-filter">
 
-    <td class="nhsuk-table__cell" data-sort-value="3">
+    <td class="nhsuk-table__cell" data-sort-value="2">
       <span class="nhsuk-table-responsive__heading">Date received</span>
-      20-05-2022</td>
+      10-05-2022</td>
 
     <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
-      New pack</td>
+      Discontinue</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--white">
+        More detail
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="2">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      23-08-2022</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="78787575">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+     <a class="nhsuk-link nhsuk-link--no-visited-state" href="discontinue-oos-submission-view">78787599</a> </td>
+
+  </tr>
+
+  <tr class="nhsuk-table__row hide-filter">
+
+    <td class="nhsuk-table__cell" data-sort-value="2">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      22-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Discontinue</td>
 
     <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
       <strong class="nhsuk-tag nhsuk-tag--green">
@@ -198,50 +276,76 @@ Submit a new product: pack size and strength | Portal | NHSBSA
       </strong>
     </td>
 
-    <td class="nhsuk-table__cell" data-sort-value="1">
+    <td class="nhsuk-table__cell" data-sort-value="2">
       <span class="nhsuk-table-responsive__heading">Effective date</span>
-      22-05-2022</td>
+      12-07-2022</td>
 
-    <td class="nhsuk-table__cell" data-sort-value="54887331">
+    <td class="nhsuk-table__cell" data-sort-value="78787575">
       <span class="nhsuk-table-responsive__heading">Reference</span>
-      54887331</td>
+     <a class="nhsuk-link nhsuk-link--no-visited-state" href="discontinue-divestment-submission-view">78787511</a> </td>
 
   </tr>
 
+  <tr class="nhsuk-table__row hide-filter">
 
+    <td class="nhsuk-table__cell" data-sort-value="2">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      24-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
+      Discontinue</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Status</span>
+      <strong class="nhsuk-tag nhsuk-tag--green">
+        Under review
+      </strong>
+    </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="2">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      05-07-2022</td>
+
+    <td class="nhsuk-table__cell" data-sort-value="78787575">
+      <span class="nhsuk-table-responsive__heading">Reference</span>
+     <a class="nhsuk-link nhsuk-link--no-visited-state" href="discontinue-takeover-submission-view">78787533</a> </td>
+
+  </tr>
 
   </tbody>
 </table>
 
-<div id="pagination ">
-  <nav aria-label="Pagination Navigation">
-    <ul class="pagination nhsuk-u-margin-bottom-0 nhsuk-u-margin-top-4">
-      <!-- Previous Button -->
-      <li class="pagination__item">Previous</li>
-      <li class="pagination__item">|</li>
-      <!-- First Page -->
-      <!-- Page Numbers -->
-      <li class="pagination__item">
-        <!-- Not this page! -->
-        <!-- This page! -->
-        <p class="pagination__link nhsuk-u-font-weight-bold" aria-current="true" id="1">1</p>
-      </li>
-      <li class="pagination__item">
-        <!-- Not this page! -->
-        <a class="pagination__link" href="#" id="2">2</a>
-        <!-- This page! -->
-      </li>
+<nav class="govuk-pagination hide-filter" role="navigation" aria-label="results">
+  <div class="govuk-pagination__prev">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      <span class="govuk-pagination__link-title">Previous</span></a>
+  </div>
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+        2
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+        3
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+      <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+    </svg></a>
+  </div>
+</nav>
 
-      <!-- Next Page -->
-
-      <li class="pagination__item">|</li>
-
-      <!-- Next Button -->
-      <li class="pagination__item"><a href="#">Next</a></li>
-
-    </ul>
-  </nav>
-</div>
 
 <script src="/js/MOJ.js" defer></script>
 <script src="../../js/dialog.js"></script>
@@ -259,6 +363,17 @@ Submit a new product: pack size and strength | Portal | NHSBSA
      captionTextElement.innerHTML = "Summary of all submissions. Each heading in the table can be sorted in ascending or descending order. Selecting Enter or clicking the mouse on the heading button, or by touch if using a touch device, will achieve this.";
      }
 }, true);
+
+function filter() {
+  var hiddenRows = document.getElementsByClassName("hide-filter");
+  var currentSearchCriteria = document.getElementById("current-search-criteria");
+
+  for (let i = 0; i < hiddenRows.length; i++) {
+    hiddenRows[i].style.display = "none";
+  }
+
+  currentSearchCriteria.style.display = "block";
+}
 
 </script>
 

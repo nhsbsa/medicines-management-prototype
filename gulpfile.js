@@ -7,6 +7,7 @@ const rename = require("gulp-rename");
 const watch = require('gulp-watch');
 const webpackConfig = "./webpack.config.js";
 
+
 function reload(done) {
   return new Promise((resolve, reject) => {
     webpack(require(webpackConfig), (err, stats) => {

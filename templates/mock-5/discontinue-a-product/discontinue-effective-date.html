@@ -8,26 +8,30 @@ Submit a new product: effective date | Portal | NHSBSA
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to submit a new discontinuation</a>
+    Go back to discontinue information</a>
 </div>
 
 <div class="nhsuk-form-group">
-  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+  <fieldset class="nhsuk-fieldset" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l">
+                Discontinue submission
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
         What is the effective date of the discontinuation?
       </h1>
     </legend>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
-      The date the product/ pack is no longer available. This date cannot be in the past.
-    </div>
+    <p>
+      The date the product or pack is no longer available. This date cannot be in the past.
+    </p>
 
-    <div class="nhsuk-inset-text nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-6" style="max-width: 45em;">
+    <div class="nhsuk-inset-text nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-6">
       <span class="nhsuk-u-visually-hidden">Information: </span>
-      <p>Discontinuations with different effective dates must be submitted separately.</p>
+      <p>If submitting many products or packs, each must have the same effective date. Otherwise, a separate discontinue submission must be made. </p>
     </div>
 
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-5" id="format-hint">Enter each element of the date as a number in the format <strong>dd mm yyyy</strong>.</div>
+    <p>Enter each element of the date as a number in the format <strong>dd mm yyyy</strong>.</p>
 
     <div class="nhsuk-date-input" id="example">
       <div class="nhsuk-date-input__item">
@@ -58,8 +62,52 @@ Submit a new product: effective date | Portal | NHSBSA
   </fieldset>
 
   <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeDate()" href="reason.html" id="continue-button" type="submit">
-    Continue
+    Save and continue
   </a>
-  <script src="/js/newProduct.js"></script>
+  <script >
+  console.log(localStorage);
+
+
+  var summaryPage = localStorage.getItem("supplier-summary");
+  var continueButton = document.getElementById("continue-button");
+  var getContinueButton = document.getElementsByClassName("nhsuk-button")[0];
+
+    function storeDate() {
+    var inputDay = document.getElementById("example-day");
+    var inputMonth = document.getElementById("example-month");
+    var inputYear = document.getElementById("example-year");
+    localStorage.setItem("effective-day", inputDay.value);
+    localStorage.setItem("effective-month", inputMonth.value);
+    localStorage.setItem("effective-year", inputYear.value);
+}
+
+var getEffectiveDay = localStorage.getItem("effective-day");
+var getEffectiveMonth = localStorage.getItem("effective-month");
+var getEffectiveYear = localStorage.getItem("effective-year");
+
+var eDay = document.querySelector("#example-day");
+var eMonth = document.querySelector("#example-month");
+var eYear = document.querySelector("#example-year");
+
+if (eDay != null && eMonth != null && eYear != null) {
+
+    if (getEffectiveDay != null) {
+        eDay.defaultValue = getEffectiveDay;
+        console.log(getContinueButton);
+    }
+
+    if (getEffectiveMonth != null) {
+        eMonth.defaultValue = getEffectiveMonth;
+    }
+
+    if (getEffectiveYear != null) {
+        eYear.defaultValue = getEffectiveYear;
+    }
+
+    if ((getEffectiveDay != null && getEffectiveMonth != null && getEffectiveYear != null) && summaryPage != null) {
+        getContinueButton.href = "pack-list";
+    }
+}
+  </script>
 </div>
 {% endblock %}
