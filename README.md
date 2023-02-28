@@ -52,11 +52,15 @@ install pa11y-ci using npm:
 ```shell
 npm install -g pa11y-ci
 ```
-then set up a json file with the name pa11y.json, with the below contents.
+then set up a json file with the name pa11yci.json, with the below contents.
 
 ```shell
 {
   "defaults": {
+    "reporters": [
+      ["json", { "fileName": "./pa11y-results-example.json" }]
+    ],
+    "runners": ["axe", "htmlcs"],
     "standard": "WCAG2AA",
     "timeout": 10000,
     "viewport": {
@@ -64,18 +68,27 @@ then set up a json file with the name pa11y.json, with the below contents.
       "height": 1000
     }
   },
-
+  
   "urls": [
-    "http://localhost:3000/"
+    "http://localhost:3000/",
+    "http://localhost:3000/index"
   ]
 }
 ```
 
 These contents can be changed, such as the viewport width and height. You can also add all of your pages in the urls section.
 &ensp;
-Then run the following command in your terminal to activate pa11y. 
+
+Finally, add pa11y reporter with the following command
+
 ```shell
-pa11y-ci -c .pa11yci.json
+npm install pa11y-reporter-html --save
+```
+
+Then run the following command in your terminal to activate pa11y.
+
+```shell
+pa11y-ci
 ```
 For more information please visit [pa11y](https://www.npmjs.com/package/pa11y-ci)
 
