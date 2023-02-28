@@ -90,6 +90,13 @@ Then run the following command in your terminal to activate pa11y.
 ```shell
 pa11y-ci
 ```
+
+The results will be added to a json file in your directory, and will look something like this. 
+
+![image](https://user-images.githubusercontent.com/111366792/221890954-13c6eeaf-5b19-4290-8eb0-3a47846d7e3d.png)
+
+From here you can assess the results, make changes and then re run pa11y-ci until all errors are fixed. Then save these reports in your project to show accessibility errors have been fixed. 
+
 For more information please visit [pa11y](https://www.npmjs.com/package/pa11y-ci)
 
 &ensp;
