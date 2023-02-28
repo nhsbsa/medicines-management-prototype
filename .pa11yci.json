@@ -1,5 +1,8 @@
 {
   "defaults": {
+    "reporters": [
+      ["json", { "fileName": "./pa11y-results-example.json" }]
+    ],
     "runners": ["axe", "htmlcs"],
     "standard": "WCAG2AA",
     "timeout": 10000,
