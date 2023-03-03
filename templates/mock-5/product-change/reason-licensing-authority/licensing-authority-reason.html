@@ -4,11 +4,11 @@ What is the reason for changing the product name? | Submit a product change | Po
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="product-name">
+  <a class="nhsuk-back-link__link" href="licensing-authority">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to detail the change to the product name</a>
+    Go back to detail the change to the licensing authority</a>
 </div>
 
 <div class="nhsuk-form-group">
@@ -19,17 +19,17 @@ What is the reason for changing the product name? | Submit a product change | Po
                 Submit a product change
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        What is the reason for changing the product name?
+        What is the reason for changing the licensing authority?
       </h1>
     </legend>
 
 
 
     <div class="nhsuk-form-group">
-      <label class="nhsuk-label" for="product-reason">
+      <label class="nhsuk-label" for="licensing-authority-reason">
         Provide your reason
       </label>
-      <textarea class="nhsuk-textarea" name="example" rows="5" id="product-reason"></textarea>
+      <textarea class="nhsuk-textarea" name="example" rows="5" id="licensing-authority-reason"></textarea>
     </div>
   </fieldset>
 </div>
@@ -40,7 +40,7 @@ What is the reason for changing the product name? | Submit a product change | Po
   </a>
 
 <script>
-  let productName = localStorage.getItem("product-name");
+  console.log(localStorage);
 
   let productChangeReason = localStorage.getItem("product-change-reason");
 
@@ -51,16 +51,16 @@ What is the reason for changing the product name? | Submit a product change | Po
   }
 
   function storeReason() {
-    var productReason = document.getElementById("product-reason");
-    localStorage.setItem("product-name-reason", productReason.value);
+    var licensingAuthorityReason = document.getElementById("licensing-authority-reason");
+    localStorage.setItem("licensing-authority-reason", licensingAuthorityReason.value);
    }
 
-  var getProductReason = localStorage.getItem("product-name-reason");
-  var prodReason= document.querySelector("#product-reason");
+  var getLicensedAuthorityReason = localStorage.getItem("licensing-authority-reason");
+  var licAuthorityReason= document.querySelector("#licensing-authority-reason");
 
-  if (prodReason != null) {
-    if (getProductReason != null) {
-        prodReason.defaultValue = getProductReason;
+  if (licAuthorityReason != null) {
+    if (getLicensedAuthorityReason != null) {
+        licAuthorityReason.defaultValue = getLicensedAuthorityReason;
     }
   }
 
