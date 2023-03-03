@@ -13,12 +13,17 @@
   },
 
   "urls": [
-    "http://localhost:3000/mock-5/discontinue-a-product/discontinue-check-list.html",
-    "http://localhost:3000/mock-5/discontinue-a-product/discontinue-effective-date",
-    "http://localhost:3000/mock-5/discontinue-a-product/how-long-oos",
-    "http://localhost:3000/mock-5/discontinue-a-product/less-than-3-months",
-    "http://localhost:3000/mock-5/discontinue-a-product/contact-details-for-new-company/supplier-name",
-    "http://localhost:3000/mock-5/discontinue-a-product/contact-details-for-new-company/extra-information.html",
-    "http://localhost:3000/mock-5/discontinue-a-product/contact-details-for-new-company/contact-name"
+    "http://localhost:3000/mock-5/product-change/checklist",
+    "http://localhost:3000/mock-5/product-change/effective-date",
+    "http://localhost:3000/mock-5/product-change/amend-product",
+    "http://localhost:3000/mock-5/product-change/reason",
+    "http://localhost:3000/mock-5/product-change/summary",
+    "http://localhost:3000/mock-5/product-change/reason-product-name/product-name",
+    "http://localhost:3000/mock-5/product-change/reason-product-name/product-name-reason",
+    "http://localhost:3000/mock-5/product-change/reason-product-name/product-spc",
+    "http://localhost:3000/mock-5/product-change/reason-product-name/product-no-spc",
+    "http://localhost:3000/mock-5/product-change/reason-product-name/product-file-upload",
+    "http://localhost:3000/mock-5/product-change/reason-product-name/product-file-upload-success",
+    "http://localhost:3000/mock-5/product-change/reason-product-name/product-file-upload-2"
   ]
 }
