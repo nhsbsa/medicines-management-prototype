@@ -20,10 +20,12 @@
     "http://localhost:3000/mock-5/product-change/summary",
     "http://localhost:3000/mock-5/product-change/reason-product-name/product-name",
     "http://localhost:3000/mock-5/product-change/reason-product-name/product-name-reason",
-    "http://localhost:3000/mock-5/product-change/reason-product-name/product-spc",
-    "http://localhost:3000/mock-5/product-change/reason-product-name/product-no-spc",
-    "http://localhost:3000/mock-5/product-change/reason-product-name/product-file-upload",
-    "http://localhost:3000/mock-5/product-change/reason-product-name/product-file-upload-success",
-    "http://localhost:3000/mock-5/product-change/reason-product-name/product-file-upload-2"
+    "http://localhost:3000/mock-5/product-change/reason-licensing-authority/licensing-authority",
+    "http://localhost:3000/mock-5/product-change/reason-licensing-authority/licensing-authority-reason",
+    "http://localhost:3000/mock-5/product-change/product-spc",
+    "http://localhost:3000/mock-5/product-change/product-no-spc",
+    "http://localhost:3000/mock-5/product-change/product-file-upload",
+    "http://localhost:3000/mock-5/product-change/product-file-upload-success",
+    "http://localhost:3000/mock-5/product-change/product-file-upload-2"
   ]
 }
