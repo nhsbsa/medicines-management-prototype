@@ -529,3 +529,10 @@ fill-blue{
 .inner-tabs-padding {
   padding: 0 32px 0 0;
 }
+
+/* to make font size on upload screen as per NHS BSA */
+
+.font-upload {
+  font-size: 1.1875rem;
+  line-height: 1.47368;
+}
