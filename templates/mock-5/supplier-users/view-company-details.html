@@ -24,10 +24,10 @@ Company details | Portal | NHSBSA
 
 <h2>Name</h2>
 
-<p class="nhsuk-u-font-size-32">AstraZeneca</p>
+<p class="nhsuk-body-l">AstraZeneca</p>
 
-<p>The company name can be changed <a class="nhsuk-link nhsuk-link--no-visited-state" href="change-company-name/reason">
-  here</a>.</p>
+<p> <a class="nhsuk-link nhsuk-link--no-visited-state" href="change-company-name/reason">Change name
+  </a></p>
 
 <!--<div class="nhsuk-grid-row">-->
 <!--  <div class="nhsuk-grid-column-two-thirds">-->
@@ -85,8 +85,9 @@ Company details | Portal | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Action</span>
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="edit-user-2fa-not-set-up/edit-contact-main">Edit</a><span> | </span>
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="remove-contact" onclick="lastContact('true')">Remove</a>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="edit-user-2fa-not-set-up/edit-contact-main">Edit <span class="nhsuk-u-visually-hidden"> primary contact John Smith</span></a>
+          <span> | </span>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="remove-contact" onclick="lastContact('true')">Remove <span class="nhsuk-u-visually-hidden"> primary contact John Smith</span></a>
         </td>
       </tr>
       </tbody>
@@ -127,8 +128,9 @@ Company details | Portal | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">Action</span>
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="edit-user-2fa-activated/edit-contact-secondary">Edit</a><span> | </span>
-          <a class="nhsuk-link nhsuk-link--no-visited-state" href="remove-contact" onclick="lastContact('false')">Remove</a>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="edit-user-2fa-activated/edit-contact-secondary">Edit <span class="nhsuk-u-visually-hidden"> secondary contact David Jones</span></a>
+          <span> | </span>
+          <a class="nhsuk-link nhsuk-link--no-visited-state" href="remove-contact" onclick="lastContact('false')">Remove <span class="nhsuk-u-visually-hidden"> secondary contact David Jones</span></a>
         </td>
       </tr>
 <!--      <tr role="row" class="nhsuk-table__row">-->
@@ -154,13 +156,13 @@ Company details | Portal | NHSBSA
 
 <div id="message-container">
   <span class="nhsuk-u-visually-hidden">Information: </span>
-  <table id="no-secondary-header" role="table" style="display:none;"
+  <table class="nhsuk-table" id="no-secondary-header" style="display:none;"
          class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
     <caption class="nhsuk-table__caption">Secondary contacts</caption>
   </table>
   <p id="not-submitted-message">No contacts.</p>
 </div>
-<p id="add-another-secondary-user" style="display: none;">Add another secondary contact <a href="add-user/add-contact-existing-user">here</a>.</p>
+<p id="add-another-secondary-user" style="display: none;"><a class="nhsuk-link nhsuk-link--no-visited-state" href="add-user/add-contact-existing-user">Add another secondary contact </a></p>
 
 
 
