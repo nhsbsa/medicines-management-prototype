@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-Detail the change to the product name | Submit a product change | Portal | NHSBSA
+Review market authorisation numbers | Submit a product change: market authorisation number | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
@@ -115,6 +115,7 @@ Detail the change to the product name | Submit a product change | Portal | NHSBS
 
   removeMaNumberOne.addEventListener("keydown", function(e) {
         // e.target was the clicked element
+        if (e.key == 'Enter' || e.code == 'Space') {
         let allRows = document.getElementsByClassName("nhsuk-table__row");
         if (allRows.length > 1) {
            maNumberTable.deleteRow(1);
@@ -123,7 +124,7 @@ Detail the change to the product name | Submit a product change | Portal | NHSBS
            document.getElementById("continue-button").style.display = "none";
            document.getElementById("product-name-current").innerHTML = 'No market authorisation numbers are associated with <strong>' + productName + '</strong>. <br><br> You must add at least one market authorisation number to continue.';
         }
-
+      }
 });
 
   let removeMaNumberTwo = document.getElementById("ma-link-number-2");
@@ -145,6 +146,7 @@ Detail the change to the product name | Submit a product change | Portal | NHSBS
 
   removeMaNumberTwo.addEventListener("keydown", function(e) {
         // e.target was the clicked element
+        if (e.key == 'Enter' || e.code == 'Space') {
         removeRowTwo.style.display = "none";
         let allRows = document.getElementsByClassName("nhsuk-table__row");
         console.log('allRows', allRows.length);
@@ -154,6 +156,7 @@ Detail the change to the product name | Submit a product change | Portal | NHSBS
            maNumberTable.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
         }
+      }
 });
 
 </script>
