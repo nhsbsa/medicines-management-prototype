@@ -22,6 +22,8 @@
     "http://localhost:3000/mock-5/product-change/reason-product-name/product-name-reason",
     "http://localhost:3000/mock-5/product-change/reason-licensing-authority/licensing-authority",
     "http://localhost:3000/mock-5/product-change/reason-licensing-authority/licensing-authority-reason",
+    "http://localhost:3000/mock-5/product-change/reason-market-auth-number/market-auth-number",
+    "http://localhost:3000/mock-5/product-change/reason-market-auth-number/add-market-auth-number",
     "http://localhost:3000/mock-5/product-change/product-spc",
     "http://localhost:3000/mock-5/product-change/product-no-spc",
     "http://localhost:3000/mock-5/product-change/product-file-upload",
