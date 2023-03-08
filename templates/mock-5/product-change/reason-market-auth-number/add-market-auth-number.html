@@ -150,21 +150,47 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
         let addAnotherMaNumber = document.querySelector("#first-add-button");
 
         addAnotherMaNumber.addEventListener("keydown", eventHandler, false);
-        addAnotherMaNumber.addEventListener("click", eventHandler, false);
+        addAnotherMaNumber.addEventListener("click", eventHandlerClick, false);
 
-        function eventHandler(event) {
+        function eventHandlerClick(event) {
           let buttonGroup = document.querySelector("#button-group");
           let secondMaNumber = document.querySelector("#second-ma-number");
           secondMaNumber.classList.remove("hide");
           buttonGroup.classList.add("hide");
         };
 
+        function eventHandler(event) {
+          if (event.key == 'Enter' || event.code == 'Space') {
+          let buttonGroup = document.querySelector("#button-group");
+          let secondMaNumber = document.querySelector("#second-ma-number");
+          secondMaNumber.classList.remove("hide");
+          buttonGroup.classList.add("hide");
+          }
+        };
+
         let deleteMaNumber2 = document.querySelector("#delete-ma-number2-button");
 
         deleteMaNumber2.addEventListener("keydown", eventHandlerDelete, false);
-        deleteMaNumber2.addEventListener("click", eventHandlerDelete, false);
+        deleteMaNumber2.addEventListener("click", eventHandlerDeleteClick, false);
 
         function eventHandlerDelete(event) {
+          if (event.key == 'Enter' || event.code == 'Space') {
+          let buttonGroup = document.querySelector("#button-group");
+          let secondMaNumber = document.querySelector("#second-ma-number");
+          let maNumber2Input = document.querySelector("#ma-number-2");
+          let maNumber3Input = document.querySelector("#ma-number-3");
+          secondMaNumber.classList.add("hide");
+          maNumber2Input.value = "";
+        if (maNumber3Input.value != "" || maNumber3Input.value != "") {
+          let buttonGroup = document.querySelector("#button-group");
+          buttonGroup.classList.add("hide");
+        } else {
+          buttonGroup.classList.remove("hide");
+          }
+         }
+        };
+
+        function eventHandlerDeleteClick(event) {
           let buttonGroup = document.querySelector("#button-group");
           let secondMaNumber = document.querySelector("#second-ma-number");
           let maNumber2Input = document.querySelector("#ma-number-2");
@@ -182,21 +208,30 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
         let addAThirdMaNumber = document.querySelector("#second-add-button");
 
         addAThirdMaNumber.addEventListener("keydown", eventHandlerAdd, false);
-        addAThirdMaNumber.addEventListener("click", eventHandlerAdd, false);
+        addAThirdMaNumber.addEventListener("click", eventHandlerAddClick, false);
 
-        function eventHandlerAdd(event) {
+        function eventHandlerAddClick(event) {
           let addButton2 = document.querySelector("#second-add-button");
           let thirdMaNumber = document.querySelector("#third-ma-number");
           thirdMaNumber.classList.remove("hide");
           addButton2.style.display = "none";
         };
 
+        function eventHandlerAdd(event) {
+          if (event.key == 'Enter' || event.code == 'Space') {
+          let addButton2 = document.querySelector("#second-add-button");
+          let thirdMaNumber = document.querySelector("#third-ma-number");
+          thirdMaNumber.classList.remove("hide");
+          addButton2.style.display = "none";
+         }
+        };
+
         let deleteMaNumber3 = document.querySelector("#delete-ma-number3-button");
 
         deleteMaNumber3.addEventListener("keydown", eventHandlerDeleteLast, false);
-        deleteMaNumber3.addEventListener("click", eventHandlerDeleteLast, false);
+        deleteMaNumber3.addEventListener("click", eventHandlerDeleteLastClick, false);
 
-        function eventHandlerDeleteLast(event) {
+        function eventHandlerDeleteLastClick(event) {
           let addButton2 = document.querySelector("#second-add-button");
           let thirdMaNumber = document.querySelector("#third-ma-number");
           let packMaNumber3Input = document.querySelector("#ma-number-3");
@@ -209,6 +244,22 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
           buttonGroup.classList.remove("hide");
           }
         };
+
+        function eventHandlerDeleteLast(event) {
+        if (event.key == 'Enter' || event.code == 'Space') {
+          let addButton2 = document.querySelector("#second-add-button");
+          let thirdMaNumber = document.querySelector("#third-ma-number");
+          let packMaNumber3Input = document.querySelector("#ma-number-3");
+          let packMaNumber2Input = document.querySelector("#ma-number-2");
+          addButton2.style.display = "inline-block";
+          thirdMaNumber.classList.add("hide");
+          packMaNumber3Input.value = "";
+        if (packGtin2Input.value == "") {
+          let buttonGroup = document.querySelector("#button-group");
+          buttonGroup.classList.remove("hide");
+          }
+         }
+       };
 
 </script>
 {% endblock %}
