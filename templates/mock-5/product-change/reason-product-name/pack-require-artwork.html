@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack artwork | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="pack-gtin">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to SmPC upload</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading" id="heading">
+        Do you have images of the packaging to upload?
+      </h1>
+    </legend>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="contact-hint-artwork">
+      The packaging is sometimes referred to as artwork. The images will not be displayed on dm+d.
+    </div>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      What the images should show
+    </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>The images should display the following.</p>
+        <ul>
+          <li>Product name</li>
+          <li>Marketing Authorisation Holder (MAH), for licensed products only</li>
+          <li>GTIN</li>
+          <li>Product License number (PL), for licensed products only</li>
+          <li>Supplier name</li>
+        </ul>
+      </div>
+    </details>
+
+    <div class="nhsuk-radios" id="display-price-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-yes" name="display-artwork" type="radio" value="yes" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
+          Yes
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-no" name="display-artwork" type="radio" value="no" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
+          No
+        </label>
+        <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+          If images are not available at submission, the NHS Business Services Authority (BSA) may ask for this before a new product can be added to dm+d.
+        </div>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeArtworkYesOrNo()"
+   id="continue-button"
+   href="#"
+   type="submit">
+  Continue
+</a>
+
+<script src="/js/newProduct.js"></script>
+{% endblock %}
+
+
