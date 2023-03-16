@@ -48,10 +48,6 @@ Review market authorisation numbers | Submit a product change: market authorisat
             <td class="nhsuk-table__cell">Nasal</td>
             <td class="nhsuk-table__cell "><a href="#" id="lic-route-link-number-2">Remove <span class="nhsuk-u-visually-hidden"> licensed route Nasal</span></a></td>
           </tr>
-          <tr role="row" class="nhsuk-table__row" id="lic-route-3">
-            <td class="nhsuk-table__cell" id="add-licensed-route-3">Nasal</td>
-            <td class="nhsuk-table__cell "><a href="#" id="lic-route-link-number-3">Remove <span class="nhsuk-u-visually-hidden"> licensed route Nasal</span></a></td>
-          </tr>
           </tbody>
         </table>
       </div>
@@ -86,6 +82,15 @@ Review market authorisation numbers | Submit a product change: market authorisat
     productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
   }
 
+  let addLicensedRoute = localStorage.getItem("add-licensed-route");
+    console.log('addLicensedRoute', addLicensedRoute != "");
+   if (addLicensedRoute != null) {
+
+   document.getElementById("lic-route-2").insertAdjacentHTML('afterend',
+        '<tr role="row" class="nhsuk-table__row" id="lic-route-3"><td class="nhsuk-table__cell" id="add-licensed-route-3">' + addLicensedRoute + '</td><td class="nhsuk-table__cell "><a href="#" id="lic-route-link-number-3">Remove <span class="nhsuk-u-visually-hidden"> licensed route Nasal</span></a></td></tr>'
+        )
+}
+
   let removeMaNumberOne = document.getElementById("lic-route-link-number-1");
   let removeRowOne = document.getElementById("lic-route-1");
   let licRouteTable = document.getElementById("lic-route-table");
@@ -93,9 +98,10 @@ Review market authorisation numbers | Submit a product change: market authorisat
   removeMaNumberOne.addEventListener("click", function(e) {
         // e.target was the clicked element
         let allRows = document.getElementsByClassName("nhsuk-table__row");
-        if (allRows.length > 1) {
+        console.log('allRows 1', allRows.length);
+        if (allRows.length <= 3 && allRows.length > 1) {
            licRouteTable.deleteRow(1);
-        } else if (allRows.length <= 1){
+        } else if (allRows.length < 2){
            licRouteTable.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
            document.getElementById("product-name-current").innerHTML = 'No licensed routes are associated with <strong>' + productName + '</strong>. <br><br> You must add at least one licensed route to continue.';
@@ -107,9 +113,9 @@ Review market authorisation numbers | Submit a product change: market authorisat
         // e.target was the clicked element
         if (e.key == 'Enter' || e.code == 'Space') {
         let allRows = document.getElementsByClassName("nhsuk-table__row");
-        if (allRows.length > 1) {
+        if (allRows.length <= 3 && allRows.length > 1) {
            licRouteTable.deleteRow(1);
-        } else if (allRows.length <= 1){
+        } else if (allRows.length < 2){
            licRouteTable.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
            document.getElementById("product-name-current").innerHTML = 'No licensed routes are associated with <strong>' + productName + '</strong>. <br><br> You must add at least one licensed route to continue.';
@@ -124,10 +130,10 @@ Review market authorisation numbers | Submit a product change: market authorisat
         // e.target was the clicked element
         removeRowTwo.style.display = "none";
         let allRows = document.getElementsByClassName("nhsuk-table__row");
-        console.log('allRows', allRows.length);
-        if (allRows.length > 1) {
+        console.log('allRows 2', allRows.length);
+        if (allRows.length <= 3 && allRows.length > 1) {
            licRouteTable.deleteRow(2);
-        } else if (allRows.length <= 1){
+        } else if (allRows.length < 2){
            licRouteTable.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
            document.getElementById("product-name-current").innerHTML = 'No licensed routes are associated with <strong>' + productName + '</strong>. <br><br> You must add at least one licensed route to continue.';
@@ -140,9 +146,9 @@ Review market authorisation numbers | Submit a product change: market authorisat
         removeRowTwo.style.display = "none";
         let allRows = document.getElementsByClassName("nhsuk-table__row");
         console.log('allRows', allRows.length);
-        if (allRows.length > 1) {
+        if (allRows.length <= 3 && allRows.length > 1) {
            licRouteTable.deleteRow(2);
-        } else if (allRows.length <= 1){
+        } else if (allRows.length < 2){
            licRouteTable.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
         }
@@ -152,10 +158,12 @@ Review market authorisation numbers | Submit a product change: market authorisat
   let removeMaNumberThree = document.getElementById("lic-route-link-number-3");
   let removeRowThree = document.getElementById("lic-route-3");
 
+if (removeMaNumberThree) {
   removeMaNumberThree.addEventListener("click", function(e) {
         // e.target was the clicked element
         removeRowThree.style.display = "none";
         let allRows = document.getElementsByClassName("nhsuk-table__row");
+        console.log('allRows 3', allRows.length);
         if (allRows.length == 2) {
            licRouteTable.deleteRow(2);
         } else if (allRows.length == 3) {
@@ -183,12 +191,6 @@ Review market authorisation numbers | Submit a product change: market authorisat
       }
 });
 
-let addLicensedRoute = localStorage.getItem("add-licensed-route");
-
-if (!addLicensedRoute || addLicensedRoute == "") {
-    document.getElementById("lic-route-3").style.display = "none";
-} else {
-    document.getElementById("add-licensed-route-3").innerHTML = addLicensedRoute;
 }
 
 </script>
