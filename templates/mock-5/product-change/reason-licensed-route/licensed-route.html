@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% block title %}
+Review market authorisation numbers | Submit a product change: market authorisation number | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../summary">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to product review details</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a product change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Manage licensed routes
+      </h1>
+    </legend>
+
+    <p class="nhsuk-u-margin-bottom-6" id="product-name-current">Review the licensed route, or routes, which are associated with Product name. Please note there must be at least one licensed route present.</p>
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-three-quarters">
+        <table class="nhsuk-table nhsuk-u-margin-bottom-4" id="lic-route-table">
+          <caption class="nhsuk-table__caption" id="table-caption">Licensed routes for Product name</caption>
+          <thead role="rowgroup" class="nhsuk-table__head">
+          <tr role="row">
+            <th role="columnheader" class="" scope="col">
+              Licensed route
+            </th>
+            <th role="columnheader" class="" scope="col">
+              Action
+            </th>
+          </tr>
+          </thead>
+          <tbody class="nhsuk-table__body">
+          <tr role="row" class="nhsuk-table__row" id="lic-route-1">
+            <td class="nhsuk-table__cell">Oral</td>
+            <td class="nhsuk-table__cell "><a href="#" id="lic-route-link-number-1">Remove <span class="nhsuk-u-visually-hidden"> licensed route Oral</span></a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row" id="lic-route-2">
+            <td class="nhsuk-table__cell">Nasal</td>
+            <td class="nhsuk-table__cell "><a href="#" id="lic-route-link-number-2">Remove <span class="nhsuk-u-visually-hidden"> licensed route Nasal</span></a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row" id="lic-route-3">
+            <td class="nhsuk-table__cell" id="add-licensed-route-3">Nasal</td>
+            <td class="nhsuk-table__cell "><a href="#" id="lic-route-link-number-3">Remove <span class="nhsuk-u-visually-hidden"> licensed route Nasal</span></a></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+ <div class="nhsuk-inset-text nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-5">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>Use this link to <a class="nhsuk-link nhsuk-link--no-visited-state" href="add-licensed-route" title="External website">add a licensed route</a></p>
+ </div>
+
+  <a class="nhsuk-button nhsuk-u-margin-top-3"
+     href="../product-spc" id="continue-button" type="submit">
+    Save and continue
+  </a>
+
+<script>
+  console.log(localStorage);
+  let productName = localStorage.getItem("product-name");
+
+  if (productName != "") {
+     document.getElementById("product-name-current").innerHTML = 'Review the licensed route, or routes, which are associated with <strong>' + productName + '</strong>. <br><br> Please note, you may remove a value but the product must contain at least one licensed route.';
+     document.getElementById("table-caption").innerHTML = 'Market authorisation numbers for ' + productName;
+  }
+
+  let productChangeReason = localStorage.getItem("product-change-reason");
+  let productTitle = document.getElementById("product-name-title");
+
+  if (productChangeReason || productChangeReason != null || productChangeReason != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+  let removeMaNumberOne = document.getElementById("lic-route-link-number-1");
+  let removeRowOne = document.getElementById("lic-route-1");
+  let licRouteTable = document.getElementById("lic-route-table");
+
+  removeMaNumberOne.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        if (allRows.length > 1) {
+           licRouteTable.deleteRow(1);
+        } else if (allRows.length <= 1){
+           licRouteTable.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+           document.getElementById("product-name-current").innerHTML = 'No licensed routes are associated with <strong>' + productName + '</strong>. <br><br> You must add at least one licensed route to continue.';
+        }
+
+});
+
+  removeMaNumberOne.addEventListener("keydown", function(e) {
+        // e.target was the clicked element
+        if (e.key == 'Enter' || e.code == 'Space') {
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        if (allRows.length > 1) {
+           licRouteTable.deleteRow(1);
+        } else if (allRows.length <= 1){
+           licRouteTable.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+           document.getElementById("product-name-current").innerHTML = 'No licensed routes are associated with <strong>' + productName + '</strong>. <br><br> You must add at least one licensed route to continue.';
+        }
+      }
+});
+
+  let removeMaNumberTwo = document.getElementById("lic-route-link-number-2");
+  let removeRowTwo = document.getElementById("lic-route-2");
+
+  removeMaNumberTwo.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        removeRowTwo.style.display = "none";
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        console.log('allRows', allRows.length);
+        if (allRows.length > 1) {
+           licRouteTable.deleteRow(2);
+        } else if (allRows.length <= 1){
+           licRouteTable.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+           document.getElementById("product-name-current").innerHTML = 'No licensed routes are associated with <strong>' + productName + '</strong>. <br><br> You must add at least one licensed route to continue.';
+        }
+});
+
+  removeMaNumberTwo.addEventListener("keydown", function(e) {
+        // e.target was the clicked element
+        if (e.key == 'Enter' || e.code == 'Space') {
+        removeRowTwo.style.display = "none";
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        console.log('allRows', allRows.length);
+        if (allRows.length > 1) {
+           licRouteTable.deleteRow(2);
+        } else if (allRows.length <= 1){
+           licRouteTable.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+        }
+      }
+});
+
+  let removeMaNumberThree = document.getElementById("lic-route-link-number-3");
+  let removeRowThree = document.getElementById("lic-route-3");
+
+  removeMaNumberThree.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        removeRowThree.style.display = "none";
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        if (allRows.length == 2) {
+           licRouteTable.deleteRow(2);
+        } else if (allRows.length == 3) {
+           licRouteTable.deleteRow(3);
+        } else if (allRows.length <= 1){
+           licRouteTable.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+           document.getElementById("product-name-current").innerHTML = 'No licensed routes are associated with <strong>' + productName + '</strong>. <br><br> You must add at least one licensed route to continue.';
+        }
+});
+
+  removeMaNumberThree.addEventListener("keydown", function(e) {
+        // e.target was the clicked element
+        if (e.key == 'Enter' || e.code == 'Space') {
+        removeRowThree.style.display = "none";
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        if (allRows.length == 2) {
+           licRouteTable.deleteRow(2);
+        } else if (allRows.length == 3) {
+           licRouteTable.deleteRow(3);
+        } else if (allRows.length <= 1){
+           licRouteTable.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+        }
+      }
+});
+
+let addLicensedRoute = localStorage.getItem("add-licensed-route");
+
+if (!addLicensedRoute || addLicensedRoute == "") {
+    document.getElementById("lic-route-3").style.display = "none";
+} else {
+    document.getElementById("add-licensed-route-3").innerHTML = addLicensedRoute;
+}
+
+</script>
+
+{% endblock %}
