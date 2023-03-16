@@ -1,7 +1,7 @@
 {
-  "total": 16,
-  "passes": 12,
-  "errors": 7,
+  "total": 20,
+  "passes": 15,
+  "errors": 8,
   "results": {
     "http://localhost:3000/mock-5/product-change/checklist": [],
     "http://localhost:3000/mock-5/product-change/effective-date": [],
@@ -92,6 +92,26 @@
     ],
     "http://localhost:3000/mock-5/product-change/reason-market-auth-number/market-auth-number": [],
     "http://localhost:3000/mock-5/product-change/reason-market-auth-number/add-market-auth-number": [],
+    "http://localhost:3000/mock-5/product-change/reason-market-auth-number/market-auth-reason": [
+      {
+        "code": "color-contrast",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI)",
+        "context": "<textarea class=\"nhsuk-textarea\" name=\"example\" rows=\"5\" id=\"market-auth-reason\"></textarea>",
+        "selector": "#market-auth-reason",
+        "runner": "axe",
+        "runnerExtras": {
+          "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+          "impact": "serious",
+          "help": "Elements must have sufficient color contrast",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI"
+        }
+      }
+    ],
+    "http://localhost:3000/mock-5/product-change/reason-licensed-route/add-licensed-route": [],
+    "http://localhost:3000/mock-5/product-change/reason-licensed-route/add-licensed-route-other": [],
+    "http://localhost:3000/mock-5/product-change/reason-licensed-route/licensed-route": [],
     "http://localhost:3000/mock-5/product-change/product-spc": [
       {
         "code": "color-contrast",
