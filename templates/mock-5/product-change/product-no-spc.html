@@ -12,13 +12,28 @@ Submit a new product: no spc or datasheet | Portal | NHSBSA
     Go back to SmPC?</a>
 </div>
 
-<h1>No SmPC </h1>
+<h1>
+  <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a product change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+  No SmPC </h1>
 
 <div class="nhsuk-inset-text">
   <span class="nhsuk-u-visually-hidden">Information: </span>
   <p>You cannot make a product change without a SmPC. </p>
   <p>Return to the  <a href="../../dashboard">Portal dashboard</a>.</p>
 </div>
+
+<script>
+  let productChangeReason = localStorage.getItem("product-change-reason");
+
+  let productTitle = document.getElementById("product-name-title");
+
+  if (productChangeReason || productChangeReason != null || productChangeReason != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+</script>
 
 {% endblock %}
 

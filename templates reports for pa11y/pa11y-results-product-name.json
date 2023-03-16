@@ -1,6 +1,6 @@
 {
-  "total": 16,
-  "passes": 12,
+  "total": 14,
+  "passes": 10,
   "errors": 7,
   "results": {
     "http://localhost:3000/mock-5/product-change/checklist": [],
@@ -90,8 +90,6 @@
         }
       }
     ],
-    "http://localhost:3000/mock-5/product-change/reason-market-auth-number/market-auth-number": [],
-    "http://localhost:3000/mock-5/product-change/reason-market-auth-number/add-market-auth-number": [],
     "http://localhost:3000/mock-5/product-change/product-spc": [
       {
         "code": "color-contrast",

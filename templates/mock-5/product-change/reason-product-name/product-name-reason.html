@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-What is the reason for changing the product name? | Submit a product change | Portal | NHSBSA
+What is the reason for changing the product name? | Submit a product change: product name | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
@@ -35,7 +35,7 @@ What is the reason for changing the product name? | Submit a product change | Po
 </div>
 
   <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeReason()"
-     href="product-spc" id="continue-button" type="submit">
+     href="../product-spc" id="continue-button" type="submit">
     Save and continue
   </a>
 
@@ -52,10 +52,10 @@ What is the reason for changing the product name? | Submit a product change | Po
 
   function storeReason() {
     var productReason = document.getElementById("product-reason");
-    localStorage.setItem("new-product-reason", productReason.value);
+    localStorage.setItem("product-name-reason", productReason.value);
    }
 
-  var getProductReason = localStorage.getItem("new-product-reason");
+  var getProductReason = localStorage.getItem("product-name-reason");
   var prodReason= document.querySelector("#product-reason");
 
   if (prodReason != null) {
