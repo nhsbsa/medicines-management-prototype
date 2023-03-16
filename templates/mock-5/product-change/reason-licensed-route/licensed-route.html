@@ -19,7 +19,7 @@ Review market authorisation numbers | Submit a product change: market authorisat
                 Submit a product change
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        Review licensed route
+        Manage licensed routes
       </h1>
     </legend>
 
@@ -42,11 +42,15 @@ Review market authorisation numbers | Submit a product change: market authorisat
           <tbody class="nhsuk-table__body">
           <tr role="row" class="nhsuk-table__row" id="lic-route-1">
             <td class="nhsuk-table__cell">Oral</td>
-            <td class="nhsuk-table__cell "><a href="#" id="ma-link-number-1">Remove <span class="nhsuk-u-visually-hidden"> licensed route Oral</span></a></td>
+            <td class="nhsuk-table__cell "><a href="#" id="lic-route-link-number-1">Remove <span class="nhsuk-u-visually-hidden"> licensed route Oral</span></a></td>
           </tr>
           <tr role="row" class="nhsuk-table__row" id="lic-route-2">
             <td class="nhsuk-table__cell">Nasal</td>
-            <td class="nhsuk-table__cell "><a href="#" id="ma-link-number-2">Remove <span class="nhsuk-u-visually-hidden"> licensed route Nasal</span></a></td>
+            <td class="nhsuk-table__cell "><a href="#" id="lic-route-link-number-2">Remove <span class="nhsuk-u-visually-hidden"> licensed route Nasal</span></a></td>
+          </tr>
+          <tr role="row" class="nhsuk-table__row" id="lic-route-3">
+            <td class="nhsuk-table__cell" id="add-licensed-route-3">Nasal</td>
+            <td class="nhsuk-table__cell "><a href="#" id="lic-route-link-number-3">Remove <span class="nhsuk-u-visually-hidden"> licensed route Nasal</span></a></td>
           </tr>
           </tbody>
         </table>
@@ -62,7 +66,7 @@ Review market authorisation numbers | Submit a product change: market authorisat
  </div>
 
   <a class="nhsuk-button nhsuk-u-margin-top-3"
-     href="#" id="continue-button" type="submit">
+     href="../product-spc" id="continue-button" type="submit">
     Save and continue
   </a>
 
@@ -82,7 +86,7 @@ Review market authorisation numbers | Submit a product change: market authorisat
     productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
   }
 
-  let removeMaNumberOne = document.getElementById("ma-link-number-1");
+  let removeMaNumberOne = document.getElementById("lic-route-link-number-1");
   let removeRowOne = document.getElementById("lic-route-1");
   let licRouteTable = document.getElementById("lic-route-table");
 
@@ -113,7 +117,7 @@ Review market authorisation numbers | Submit a product change: market authorisat
       }
 });
 
-  let removeMaNumberTwo = document.getElementById("ma-link-number-2");
+  let removeMaNumberTwo = document.getElementById("lic-route-link-number-2");
   let removeRowTwo = document.getElementById("lic-route-2");
 
   removeMaNumberTwo.addEventListener("click", function(e) {
@@ -144,6 +148,48 @@ Review market authorisation numbers | Submit a product change: market authorisat
         }
       }
 });
+
+  let removeMaNumberThree = document.getElementById("lic-route-link-number-3");
+  let removeRowThree = document.getElementById("lic-route-3");
+
+  removeMaNumberThree.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        removeRowThree.style.display = "none";
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        if (allRows.length == 2) {
+           licRouteTable.deleteRow(2);
+        } else if (allRows.length == 3) {
+           licRouteTable.deleteRow(3);
+        } else if (allRows.length <= 1){
+           licRouteTable.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+           document.getElementById("product-name-current").innerHTML = 'No licensed routes are associated with <strong>' + productName + '</strong>. <br><br> You must add at least one licensed route to continue.';
+        }
+});
+
+  removeMaNumberThree.addEventListener("keydown", function(e) {
+        // e.target was the clicked element
+        if (e.key == 'Enter' || e.code == 'Space') {
+        removeRowThree.style.display = "none";
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        if (allRows.length == 2) {
+           licRouteTable.deleteRow(2);
+        } else if (allRows.length == 3) {
+           licRouteTable.deleteRow(3);
+        } else if (allRows.length <= 1){
+           licRouteTable.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+        }
+      }
+});
+
+let addLicensedRoute = localStorage.getItem("add-licensed-route");
+
+if (!addLicensedRoute || addLicensedRoute == "") {
+    document.getElementById("lic-route-3").style.display = "none";
+} else {
+    document.getElementById("add-licensed-route-3").innerHTML = addLicensedRoute;
+}
 
 </script>
 

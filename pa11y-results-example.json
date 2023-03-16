@@ -1,0 +1,132 @@
+{
+  "total": 16,
+  "passes": 12,
+  "errors": 7,
+  "results": {
+    "http://localhost:3000/mock-5/product-change/checklist": [],
+    "http://localhost:3000/mock-5/product-change/effective-date": [],
+    "http://localhost:3000/mock-5/product-change/amend-product": [],
+    "http://localhost:3000/mock-5/product-change/reason": [],
+    "http://localhost:3000/mock-5/product-change/summary": [],
+    "http://localhost:3000/mock-5/product-change/reason-product-name/product-name": [],
+    "http://localhost:3000/mock-5/product-change/reason-product-name/product-name-reason": [
+      {
+        "code": "color-contrast",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI)",
+        "context": "<textarea class=\"nhsuk-textarea\" name=\"example\" rows=\"5\" id=\"product-reason\"></textarea>",
+        "selector": "#product-reason",
+        "runner": "axe",
+        "runnerExtras": {
+          "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+          "impact": "serious",
+          "help": "Elements must have sufficient color contrast",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI"
+        }
+      }
+    ],
+    "http://localhost:3000/mock-5/product-change/reason-licensing-authority/licensing-authority": [
+      {
+        "code": "color-contrast",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI)",
+        "context": "<label class=\"nhsuk-label nhsuk-radios__label\" for=\"example-1\">\n          Licensed\n        </label>",
+        "selector": "#main-content > div:nth-child(2) > fieldset > div:nth-child(4) > div:nth-child(1) > label",
+        "runner": "axe",
+        "runnerExtras": {
+          "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+          "impact": "serious",
+          "help": "Elements must have sufficient color contrast",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI"
+        }
+      },
+      {
+        "code": "color-contrast",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI)",
+        "context": "<label class=\"nhsuk-label nhsuk-radios__label\" for=\"example-2\">\n          Unlicensed\n        </label>",
+        "selector": "#main-content > div:nth-child(2) > fieldset > div:nth-child(4) > div:nth-child(2) > label",
+        "runner": "axe",
+        "runnerExtras": {
+          "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+          "impact": "serious",
+          "help": "Elements must have sufficient color contrast",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI"
+        }
+      },
+      {
+        "code": "color-contrast",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI)",
+        "context": "<label class=\"nhsuk-label nhsuk-radios__label\" for=\"example-3\">\n          Device\n        </label>",
+        "selector": "#main-content > div:nth-child(2) > fieldset > div:nth-child(4) > div:nth-child(3) > label",
+        "runner": "axe",
+        "runnerExtras": {
+          "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+          "impact": "serious",
+          "help": "Elements must have sufficient color contrast",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI"
+        }
+      }
+    ],
+    "http://localhost:3000/mock-5/product-change/reason-licensing-authority/licensing-authority-reason": [
+      {
+        "code": "color-contrast",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI)",
+        "context": "<textarea class=\"nhsuk-textarea\" name=\"example\" rows=\"5\" id=\"licensing-authority-reason\"></textarea>",
+        "selector": "#licensing-authority-reason",
+        "runner": "axe",
+        "runnerExtras": {
+          "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+          "impact": "serious",
+          "help": "Elements must have sufficient color contrast",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI"
+        }
+      }
+    ],
+    "http://localhost:3000/mock-5/product-change/reason-market-auth-number/market-auth-number": [],
+    "http://localhost:3000/mock-5/product-change/reason-market-auth-number/add-market-auth-number": [],
+    "http://localhost:3000/mock-5/product-change/product-spc": [
+      {
+        "code": "color-contrast",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI)",
+        "context": "<label class=\"nhsuk-label nhsuk-radios__label\" for=\"data-yes\">\n          Yes\n        </label>",
+        "selector": "#data-spc-radios > div:nth-child(1) > label",
+        "runner": "axe",
+        "runnerExtras": {
+          "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+          "impact": "serious",
+          "help": "Elements must have sufficient color contrast",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI"
+        }
+      },
+      {
+        "code": "color-contrast",
+        "type": "error",
+        "typeCode": 1,
+        "message": "Elements must have sufficient color contrast (https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI)",
+        "context": "<label class=\"nhsuk-label nhsuk-radios__label\" for=\"data-no\">\n          No\n        </label>",
+        "selector": "#data-spc-radios > div:nth-child(2) > label",
+        "runner": "axe",
+        "runnerExtras": {
+          "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+          "impact": "serious",
+          "help": "Elements must have sufficient color contrast",
+          "helpUrl": "https://dequeuniversity.com/rules/axe/4.6/color-contrast?application=axeAPI"
+        }
+      }
+    ],
+    "http://localhost:3000/mock-5/product-change/product-no-spc": [],
+    "http://localhost:3000/mock-5/product-change/product-file-upload": [],
+    "http://localhost:3000/mock-5/product-change/product-file-upload-success": [],
+    "http://localhost:3000/mock-5/product-change/product-file-upload-2": []
+  }
+}
