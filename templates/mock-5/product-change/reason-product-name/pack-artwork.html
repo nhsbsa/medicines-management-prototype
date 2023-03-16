@@ -16,6 +16,10 @@ Submit a new product: pack artwork | Portal | NHSBSA
   <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading" id="heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+        Submit a product change
+        <span class="nhsuk-u-visually-hidden"> - </span>
+      </span>
         Upload images of packaging
       </h1>
     </legend>
@@ -38,6 +42,17 @@ Submit a new product: pack artwork | Portal | NHSBSA
   Continue
 </a>
 
+<script>
+  console.log(localStorage);
+
+  let productChangeReason = localStorage.getItem("product-change-reason");
+  let productTitle = document.getElementById("product-name-title");
+
+  if (productChangeReason || productChangeReason != null || productChangeReason != "") {
+        productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+
+  };
+</script>
 <script src="/js/newProduct.js"></script>
 {% endblock %}
 
