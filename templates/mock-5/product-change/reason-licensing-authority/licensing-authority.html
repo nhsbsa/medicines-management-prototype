@@ -80,8 +80,13 @@ Detail the change to the licensing authority | Submit a product change: licensin
     var radioButtons = document.getElementsByName("data-licensing-authority");
 
     for (var radio of radioButtons) {
-      if (radio.checked) {
+      if (radio.checked) 
+   
+        {
           localStorage.setItem("licensing-authority", radio.value);
+          if (radio.value == "Unlicensed") {
+             document.getElementById("continue-button").href = "licencing-authority-data-sheet";
+          }
          if (radio.value == "Device") {
              document.getElementById("continue-button").href = "licensing-authority-device";
           }
