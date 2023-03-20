@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" id="back-link" href="drafts-dashboard">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to all drafts</a>
+</div>
+
+<span class="nhsuk-caption-l">
+  AstraZeneca
+</span>
+<h1>Discontinue drafts</h1>
+
+<p class="nhsuk-u-margin-bottom-6">A selection of discontinue drafts, if previously saved, are displayed. To continue with the draft, select the edit link which will take you to the relevant summary page.  </p>
+
+<!-- This page will also require a 'no results found' text when there are no drafts saved MPL 19DEC22-->
+
+<div class="nhsuk-body-m flex--space-between" style="display: flex">
+  <div class="nhsuk-u-visually-hidden">Currently viewing</div>
+  <div id="pageAndResultCount">Page 1 of 1 (5 results)</div>
+  <div class="nhsuk-u-text-align--right show-mobile" style="display: flex">
+  <div id="tableSortControls">
+    <span>Sort:</span>
+    <span><a aria-label="Sort results by eligibility" href="">type</a></span>
+
+    <span> | </span>
+
+    <span class="nhsuk-u-font-weight-bold">date received </span>
+  </div>
+</div>
+</div>
+
+
+<table class="govuk-table nhsuk-table-responsive" data-module="moj-sortable-table">
+  <caption class="govuk-table__caption nhsuk-u-visually-hidden" id="submission-caption">Summary of all submissions</caption>
+  <span id="table__assistiveHint" class="assistive-table-hint nhsuk-u-visually-hidden">
+    Summary of all submissions. Each heading in the table can be sorted in ascending or descending order. Selecting Enter or clicking the mouse on the heading button, or by touch if using a touch device, will achieve this.</span>
+  <thead class="govuk-table__head">
+  <tr class="govuk-table__row">
+
+    <th scope="col" class="govuk-table__header" aria-sort="ascending">Date saved</th>
+
+    <th scope="col" class="govuk-table__header" aria-sort="none">Discontinue reason</th>
+
+    <th scope="col" class="govuk-table__header" aria-sort="none">Effective date</th>
+
+    <th scope="col" class="govuk-table__header" aria-sort="none">Action</th>
+  </tr>
+  </thead>
+
+  <tbody class="nhsuk-table__body">
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date saved</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Discontinue reason</span>
+      Out of stock
+    </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+
+<!--    use this <td> as template for edit link in table MPL 03FEB23-->
+    <td class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Action</span>
+      <a class="nhsuk-link nhsuk-link--no-visited-state" href="discontinue/pack-summary-oos">Edit</a><span class="nhsuk-u-visually-hidden"> discontinue draft with reason as out of stock</span>
+      </td>
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Discontinue reason</span>
+      No longer manufactured
+    </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+
+    <td class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Action</span>
+      <p class="nhsuk-u-margin-bottom-0">Edit</p>
+    </td>
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Discontinue reason</span>
+      Product divestment
+    </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+    <td class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Action</span>
+      <p class="nhsuk-u-margin-bottom-0">Edit</p>
+    </td>
+  </tr>
+
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="1">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      01-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Discontinue reason</span>
+      Takeover
+    </td>
+    <td class="nhsuk-table__cell" data-sort-value="3">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      01-06-2022 </td>
+    <td class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Action</span>
+      <a class="nhsuk-link nhsuk-link--no-visited-state" href="discontinue/pack-summary-takeover">Edit</a><span class="nhsuk-u-visually-hidden"> discontinue draft with reason as takeover</span>
+    </td>
+  </tr>
+
+<!--  only show pagination if more than 1 page is returned MPL 03FEB23-->
+  <tr class="nhsuk-table__row">
+
+    <td class="nhsuk-table__cell" data-sort-value="2">
+      <span class="nhsuk-table-responsive__heading">Date received</span>
+      02-05-2022</td>
+
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Discontinue reason</span>
+      Out of stock
+    </td>
+
+    <td class="nhsuk-table__cell" data-sort-value="2">
+      <span class="nhsuk-table-responsive__heading">Effective date</span>
+      31-05-2022</td>
+    <td class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Action</span>
+      <p class="nhsuk-u-margin-bottom-0">Edit</p>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+<div class="nhsuk-grid-row nhsuk-u-margin-top-5">
+  <div class="nhsuk-grid-column-full">
+    <nav class="govuk-pagination" role="navigation" aria-label="results">
+      <div class="govuk-pagination__prev">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+          <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+          </svg>
+          <span class="govuk-pagination__link-title">Previous</span></a>
+      </div>
+      <ul class="govuk-pagination__list">
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+            1
+          </a>
+        </li>
+        <li class="govuk-pagination__item govuk-pagination__item--current">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+            2
+          </a>
+        </li>
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+            3
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-pagination__next">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg></a>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<script src="/js/MOJ.js" defer></script>
+<script src="../../js/dialog.js"></script>
+<script>
+  let captionTextElement = document.querySelector("#submission-caption");
+  captionTextElement.innerHTML = "Summary of all submissions. Each heading in the table can be sorted in ascending or descending order. Selecting Enter or clicking the mouse on the heading button, or by touch if using a touch device, will achieve this.";
+
+  window.addEventListener('resize', function(event) {
+     console.log(window.innerWidth);
+     if (window.innerWidth < 770) {
+     captionTextElement.innerHTML = "Summary of all submissions."
+     } else {
+     captionTextElement.innerHTML = "Summary of all submissions. Each heading in the table can be sorted in ascending or descending order. Selecting Enter or clicking the mouse on the heading button, or by touch if using a touch device, will achieve this.";
+     }
+}, true);
+
+</script>
+
+
+{% endblock %}

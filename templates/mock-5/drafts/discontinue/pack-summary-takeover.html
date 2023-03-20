@@ -1,0 +1,283 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../discontinue-drafts">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to discontinue drafts</a>
+</div>
+
+<h1><span class="nhsuk-caption-l" id="discontinue-reason">
+            Discontinue: takeover
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+  Summary</h1>
+
+<p class="nhsuk-u-margin-bottom-5">Check your answers before completing your submission. If you are not ready to submit you can save this as a draft and return later.</p>
+
+<dl class="nhsuk-summary-list nhsuk-u-margin-top-6">
+
+  <div class="nhsuk-summary-list__row" id="effective-date">
+    <dt class="nhsuk-summary-list__key">
+      Effective date
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-effective-date">15 November 2023
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="discontinue-effective-date">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; effective date</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <!--  if user changes reason then they must follow journey steps. If they go to change the reason and
+        then do not actually change it then they can return to the review page MPL 31JAN23-->
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key" id="discontinue-title">
+      Discontinue reason
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="discontinue-reason-add" >
+      Takeover
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="reason" id="reason">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; reason for discontinue</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row" id="supplier-name">
+    <dt class="nhsuk-summary-list__key">
+      Supplier name
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="supplier-name-detail">
+      Boots Ltd
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="contact-details-for-new-company/supplier-name">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; supplier name</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row" id="contact-name">
+    <dt class="nhsuk-summary-list__key">
+      Supplier contact name
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="contact-name-detail">
+      None
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="contact-details-for-new-company/contact-name">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; supplier contact name</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row" id="contact-email">
+    <dt class="nhsuk-summary-list__key">
+      Supplier contact email
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="contact-email-detail">
+      None
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="contact-details-for-new-company/email-address">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; supplier contact email</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" id="contact-phone">
+    <dt class="nhsuk-summary-list__key">
+      Supplier contact phone
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="contact-phone-detail">
+      None
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="contact-details-for-new-company/phone-number">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; supplier contact phone</span>
+      </a>
+
+    </dd>
+
+  </div>
+</dl>
+
+<p class="nhsuk-u-margin-bottom-8 nhsuk-u-margin-top-8">Review the selected packs to discontinue.</p>
+
+<div class="nhsuk-body-m flex--space-between" style="display: flex">
+  <div class="nhsuk-u-visually-hidden">Currently viewing</div>
+  <div id="pageAndResultCount">Page 1 of 1 (4 results)</div>
+</div>
+
+<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
+  <caption class="nhsuk-table__caption">Selected packs to discontinue</caption>
+  <thead role="rowgroup" class="nhsuk-table__head">
+  <tr role="row">
+    <th role="columnheader" class="" scope="col">
+      Product name
+    </th>
+    <th role="columnheader" class="" scope="col">
+      Pack size
+    </th>
+    <th role="columnheader" class="" scope="col">
+      Subpack
+    </th>
+    <th role="columnheader" class="" scope="col">
+      Price
+    </th>
+    <th role="columnheader" class="" scope="col">
+      Action
+    </th>
+  </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row" id="delete-row">
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Product name </span>Alprazolam
+    </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Pack </span>30
+    </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Subpack </span>2 &times; 15
+    </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Price </span><span><span>299</span>p</span>
+    </td>
+    <td>
+      <span class="nhsuk-table-responsive__heading">Action </span><a class="nhsuk-link nhsuk-link--no-visited-state " href="#" onclick="removeLine()">Remove</a>
+    </td>
+  </tr >
+  <tr role="row" class="nhsuk-table__row">
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Product name </span>Bupenorphine 100mg capsules
+    </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Pack </span>28
+    </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Subpack </span>2 &times; 14
+    </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Price </span><span><span>23</span>p</span>
+    </td>
+    <td>
+      <span class="nhsuk-table-responsive__heading">Action </span>
+      <p class="nhsuk-u-margin-bottom-0">Remove</p>
+    </td>
+  </tr>
+  <tr role="row" class="nhsuk-table__row">
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Product name </span>Protein cornflakes
+    </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Pack </span>1
+    </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Subpack </span>
+      <!--          need to make sure empty table cells announce something MPL 20/10/22-->
+      <span class="nhsuk-u-visually-hidden">No Subpack information</span>
+    </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
+    </td>
+    <td>
+      <span class="nhsuk-table-responsive__heading">Action </span>
+      <p class="nhsuk-u-margin-bottom-0" >Remove</p>
+    </td>
+  </tr>
+  <tr role="row" class="nhsuk-table__row">
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Product name </span>Boots Strawberry Pain Relief 3 Months Plus Paracetamol 120mg/5ml oral suspension
+    </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Pack </span>30
+    </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Subpack </span>3 &times; 10
+    </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
+    </td>
+    <td>
+      <span class="nhsuk-table-responsive__heading">Action </span>
+      <p class="nhsuk-link nhsuk-link--no-visited-state nhsuk-u-margin-bottom-0">Remove</p>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<!--  </div>-->
+<!--</div>-->
+<div class="nhsuk-grid-row nhsuk-u-margin-top-3">
+  <div class="nhsuk-grid-column-full">
+    <nav class="govuk-pagination" role="navigation" aria-label="results">
+      <div class="govuk-pagination__prev">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+          <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+          </svg>
+          <span class="govuk-pagination__link-title">Previous</span></a>
+      </div>
+      <ul class="govuk-pagination__list">
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+            1
+          </a>
+        </li>
+        <li class="govuk-pagination__item govuk-pagination__item--current">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+            2
+          </a>
+        </li>
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+            3
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-pagination__next">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg></a>
+      </div>
+    </nav>
+
+    <div class="nhsuk-inset-text">
+      <span class="nhsuk-u-visually-hidden">Information: </span>
+      <p>If you are missing any packs then <a href="pack-list-add.html" class="nhsuk-link nhsuk-link--no-visited-state">add more packs to discontinue</a></p>
+      <p>If you no longer need all selected packs then <a class="nhsuk-link nhsuk-link--no-visited-state" href="pack-list-empty.html" >remove all selected packs</a></p>
+    </div>
+
+    <a class="nhsuk-button nhsuk-u-margin-right-5" href="confirmation.html">Submit discontinue</a>
+    <a href="draft-confirmation"><button class="nhsuk-button nhsuk-button--secondary">Save as draft</button></a>
+  </div>
+</div>
+
+{% endblock %}

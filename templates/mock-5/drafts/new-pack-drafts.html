@@ -6,19 +6,19 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 {% block content %}
 
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" id="back-link" href="../dashboard">
+  <a class="nhsuk-back-link__link" id="back-link" href="drafts-dashboard">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to portal dashboard</a>
+    Go back to all drafts</a>
 </div>
 
 <span class="nhsuk-caption-l">
   AstraZeneca
 </span>
-<h1>Drafts</h1>
+<h1>New pack drafts</h1>
 
-<p class="nhsuk-u-margin-bottom-6">A selection of drafts, if previously saved, are displayed. To continue with the draft, select the edit link which will take you to the relevant summary page.  </p>
+<p class="nhsuk-u-margin-bottom-6">A selection of new pack drafts, if previously saved, are displayed. To continue with the draft, select the edit link which will take you to the relevant summary page.  </p>
 
 <!-- This page will also require a 'no results found' text when there are no drafts saved MPL 19DEC22-->
 
@@ -47,9 +47,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
     <th scope="col" class="govuk-table__header" aria-sort="ascending">Date saved</th>
 
-    <th scope="col" class="govuk-table__header" aria-sort="none">Draft type</th>
-
-    <th scope="col" class="govuk-table__header" aria-sort="none">Product name</th>
+    <th scope="col" class="govuk-table__header" aria-sort="none">Associated product name</th>
 
     <th scope="col" class="govuk-table__header" aria-sort="none">Effective date</th>
 
@@ -65,10 +63,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
       <span class="nhsuk-table-responsive__heading">Date saved</span>
       01-05-2022</td>
 
-    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
-      New product</td>
-
-    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Product name</span>
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Associated product name</span>
       Alprazolam
     </td>
 
@@ -79,7 +74,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 <!--    use this <td> as template for edit link in table MPL 03FEB23-->
     <td class="nhsuk-table__cell">
       <span class="nhsuk-table-responsive__heading">Action</span>
-      <a class="nhsuk-link" href="product-summary">Edit</a><span class="nhsuk-u-visually-hidden"> new product draft with product name Alprazolam</span>
+      <a class="nhsuk-link" href="new-pack/pack-summary">Edit</a><span class="nhsuk-u-visually-hidden"> new product draft with product name Alprazolam</span>
       </td>
   </tr>
 
@@ -89,10 +84,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
       <span class="nhsuk-table-responsive__heading">Date received</span>
       01-05-2022</td>
 
-    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
-      New product</td>
-
-    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Product name</span>
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Associated product name</span>
       Fexofenadine Hydrochloride
     </td>
 
@@ -112,10 +104,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
       <span class="nhsuk-table-responsive__heading">Date received</span>
       01-05-2022</td>
 
-    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
-      New pack</td>
-
-    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Product name</span>
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Associated product name</span>
       Clonedine Hydrochloride
     </td>
 
@@ -134,10 +123,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
       <span class="nhsuk-table-responsive__heading">Date received</span>
       01-05-2022</td>
 
-    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
-      New product</td>
-
-    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Product name</span>
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Associated product name</span>
       Acetaminophen
     </td>
     <td class="nhsuk-table__cell" data-sort-value="3">
@@ -156,10 +142,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
       <span class="nhsuk-table-responsive__heading">Date received</span>
       02-05-2022</td>
 
-    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>
-      New pack</td>
-
-    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Product name</span>
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Associated product name</span>
       Acrivastine
     </td>
 
