@@ -86,6 +86,12 @@ Detail the change to the licensing authority | Submit a product change: licensin
              document.getElementById("continue-button").href = "licensing-authority-device";
           }
         }
+      if (radio.checked) {
+        localStorage.setItem("licensed", radio.value);
+        if (radio.value == "Licensed") {
+          document.getElementById("continue-button").href = "select-legal-category";
+        }
+      }
      }
   }
 

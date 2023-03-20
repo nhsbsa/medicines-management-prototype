@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% block title %}
+What is the reason for changing the licensing authority? | Submit a product change: licensing authority | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="licensing-authority">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to detail the change to the licensing authority</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a product change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Detail the change to the legal category
+      </h1>
+    </legend>
+
+    <p id="product-name-current">The current legal category for '<span>Astra Zeneca</span>' is &#39;<strong><span>Pharmacy</span></strong>&#39;.</p>
+
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+      Select a new legal category from the following.
+    </div>
+
+    <div class="nhsuk-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="prescription" type="radio" value="prescription">
+        <label class="nhsuk-label nhsuk-radios__label" for="prescription">
+          Prescription only
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="pharmacy" type="radio" value="pharmacy">
+        <label class="nhsuk-label nhsuk-radios__label" for="pharmacy">
+          Pharmacy
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="general-sale" type="radio" value="general-sale">
+        <label class="nhsuk-label nhsuk-radios__label" for="general-sale">
+          General sale
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeReason()"
+   href="../product-spc.html" id="continue-button" type="submit">
+  Save and continue
+</a>
+
+<script>
+  console.log(localStorage);
+
+  let productChangeReason = localStorage.getItem("product-change-reason");
+
+  let productTitle = document.getElementById("product-name-title");
+
+  if (productChangeReason || productChangeReason != null || productChangeReason != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+  function storeReason() {
+    var licensingAuthorityReason = document.getElementById("licensing-authority-reason");
+    localStorage.setItem("licensing-authority-reason", licensingAuthorityReason.value);
+  }
+
+  var getLicensedAuthorityReason = localStorage.getItem("licensing-authority-reason");
+  var licAuthorityReason= document.querySelector("#licensing-authority-reason");
+
+  if (licAuthorityReason != null) {
+    if (getLicensedAuthorityReason != null) {
+      licAuthorityReason.defaultValue = getLicensedAuthorityReason;
+    }
+  }
+
+</script>
+
+{% endblock %}
