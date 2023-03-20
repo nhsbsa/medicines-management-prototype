@@ -23,7 +23,18 @@ Detail the change to the licensing authority | Submit a product change: licensin
       </h1>
     </legend>
 
-    <p id="product-name-current">The current licensing authority for 'Product name' is &#39;<strong>Unlicensed</strong>&#39;.</p>
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+    <span role="text">
+      <span class="nhsuk-u-visually-hidden">Important: </span>
+      Warning for developers
+    </span>
+      </h3>
+     <p>We are only dealing with licensed and unlicensed products</p>
+    </div>
+
+
+    <p id="product-name-current">The current licensing authority for 'Product name' is &#39;<strong>Device</strong>&#39;.</p>
 
     <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
       Select a new license authority from the following.
@@ -66,7 +77,7 @@ Detail the change to the licensing authority | Submit a product change: licensin
   let productName = localStorage.getItem("product-name");
 
   if (productName != "") {
-     document.getElementById("product-name-current").innerHTML = 'The current licensing authority for ' + productName + ' is <strong>&#39;Unlicensed&#39;</strong>.';
+     document.getElementById("product-name-current").innerHTML = 'The current licensing authority for ' + productName + ' is <strong>&#39;Device&#39;</strong>.';
   }
 
   let productChangeReason = localStorage.getItem("product-change-reason");
