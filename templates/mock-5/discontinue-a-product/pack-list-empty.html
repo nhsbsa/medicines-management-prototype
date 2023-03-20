@@ -5,31 +5,210 @@ Submit a new product | Portal | NHSBSA
 {% block content %}
 
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="reason">
-    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-    </svg>
-    Go back to reason</a>
+    <a class="nhsuk-back-link__link" href="pack-list-add">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to select discontinued packs</a>
 </div>
 
 <h1><span class="nhsuk-caption-l" id="discontinue-reason">
             Discontinue
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-  Review selected packs</h1>
-<p>There are no packs chosen to discontinue.</p>
+  Summary</h1>
 
-    <a href="pack-list-add.html"><button class="nhsuk-button nhsuk-button--secondary">Add packs</button></a><br>
+<p class="nhsuk-u-margin-bottom-5">Check your answers before completing your submission.</p>
+
+<dl class="nhsuk-summary-list nhsuk-u-margin-top-6">
+
+    <div class="nhsuk-summary-list__row" id="effective-date">
+        <dt class="nhsuk-summary-list__key">
+            Effective date
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="pack-effective-date">15 November 2023
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+            <a href="discontinue-effective-date">
+                Change<span class="nhsuk-u-visually-hidden">&nbsp; effective date</span>
+            </a>
+
+        </dd>
+
+    </div>
+    <!--  if user changes reason then they must follow journey steps. If they go to change the reason and
+          then do not actually change it then they can return to the review page MPL 31JAN23-->
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" id="discontinue-title">
+            Discontinue reason
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="discontinue-reason-add" >
+            No reason listed
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+            <a href="reason" id="reason">
+                Change<span class="nhsuk-u-visually-hidden">&nbsp; reason for discontinue</span>
+            </a>
+
+        </dd>
+
+    </div>
+    <div class="nhsuk-summary-list__row" id="supplier-name">
+        <dt class="nhsuk-summary-list__key">
+            Supplier name
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="supplier-name-detail">
+            Test Supplier Name
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+            <a href="contact-details-for-new-company/supplier-name">
+                Change<span class="nhsuk-u-visually-hidden">&nbsp; supplier name</span>
+            </a>
+
+        </dd>
+
+    </div>
+    <div class="nhsuk-summary-list__row" id="contact-name">
+        <dt class="nhsuk-summary-list__key">
+            Supplier contact name
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="contact-name-detail">
+            None
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+            <a href="contact-details-for-new-company/contact-name">
+                Change<span class="nhsuk-u-visually-hidden">&nbsp; supplier contact name</span>
+            </a>
+
+        </dd>
+
+    </div>
+    <div class="nhsuk-summary-list__row" id="contact-email">
+        <dt class="nhsuk-summary-list__key">
+            Supplier contact email
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="contact-email-detail">
+            None
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+            <a href="contact-details-for-new-company/email-address">
+                Change<span class="nhsuk-u-visually-hidden">&nbsp; supplier contact email</span>
+            </a>
+
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row" id="contact-phone">
+        <dt class="nhsuk-summary-list__key">
+            Supplier contact phone
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="contact-phone-detail">
+            None
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+            <a href="contact-details-for-new-company/phone-number">
+                Change<span class="nhsuk-u-visually-hidden">&nbsp; supplier contact phone</span>
+            </a>
+
+        </dd>
+
+    </div>
+</dl>
+
+<div class="nhsuk-inset-text">
+    <span class="nhsuk-u-visually-hidden">Information: </span>
+    <p>There are no packs chosen to discontinue. <a href="pack-list-add.html" class="nhsuk-link nhsuk-link--no-visited-state">Add packs to discontinue</a></p>
+</div>
 
 
 <script>
-    let discontinueReason = localStorage.getItem("discontinue-reason");
+console.log(localStorage);;
+
+
+  let discontinueReason = localStorage.getItem("discontinue-reason");
 
   let discontinueTitle = document.getElementById("discontinue-reason");
 
+  let mergerProductChange = localStorage.getItem("change-company-name");
+
   if (discontinueReason || discontinueReason != null || discontinueReason != "") {
-    discontinueTitle.innerHTML = '<span class="nhsuk-caption-l" id="discontinue-reason">Discontinue' + ' - ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+    discontinueTitle.innerHTML = 'Discontinue submission' + ': ' + discontinueReason +'<span class="nhsuk-u-visually-hidden"> - </span>';
+    document.getElementById("discontinue-reason-add").innerHTML = discontinueReason;
   }
+
+var getEffectiveDay = localStorage.getItem("effective-day");
+var getEffectiveMonth = localStorage.getItem("effective-month");
+var getEffectiveYear = localStorage.getItem("effective-year");
+
+if (getEffectiveDay != '' || getEffectiveMonth != '' || getEffectiveYear != '') {
+console.log('setting month');
+var getLongMonth = Intl.DateTimeFormat('en', { month: 'long' }).format(new Date(getEffectiveMonth));
+let formalDate = getEffectiveDay + ' ' + getLongMonth + ' ' + getEffectiveYear;
+document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' ' + getLongMonth + ' ' + getEffectiveYear;
+} if (getEffectiveDay == '' || getEffectiveMonth == '' || getEffectiveYear == '') {
+  document.getElementById("pack-effective-date").innerHTML = '15 November 2023';
+} else if (!getEffectiveDay|| !getEffectiveMonth || !getEffectiveYear) {
+  document.getElementById("effective-date").style.display = 'none';
+}
+
+ if (mergerProductChange) {
+  document.getElementById("discontinue-title").innerHTML = 'Company name change reason';
+  document.getElementById("discontinue-reason-add").innerHTML = mergerProductChange;
+  document.getElementById("reason").href = '../supplier-users/change-company-name/reason';
+ }
+
+ let supplierName = localStorage.getItem("supplier-name");
+ let contactName = localStorage.getItem("contact-name");
+ let emailName = localStorage.getItem("contact-email");
+ let ukPhone = localStorage.getItem("contact-uk-phone");
+ let intPhone = localStorage.getItem("contact-int-phone");
+
+  let reasonForDiscontinue = localStorage.getItem("discontinue-reason");
+
+  document.getElementById("supplier-name").style.display = 'none';
+  document.getElementById("contact-name").style.display = 'none';
+  document.getElementById("contact-email").style.display = 'none';
+  document.getElementById("contact-phone").style.display = 'none';
+
+ if (reasonForDiscontinue == 'product divestment' || reasonForDiscontinue == 'takeover') {
+   document.getElementById("supplier-name").style.display = 'table-row';
+   document.getElementById("contact-name").style.display = 'table-row';
+   document.getElementById("contact-email").style.display = 'table-row';
+   document.getElementById("contact-phone").style.display = 'table-row';
+   document.getElementById("supplier-name-detail").innerHTML = 'Test Supplier Name';
+   document.getElementById("contact-name-detail").innerHTML = 'None';
+   document.getElementById("contact-email-detail").innerHTML = 'None';
+   document.getElementById("contact-phone-detail").innerHTML = 'None';
+
+   if (supplierName) {
+    document.getElementById("supplier-name-detail").innerHTML = supplierName;
+   }
+   if (contactName) {
+    document.getElementById("contact-name-detail").innerHTML = contactName;
+   }
+   if (emailName) {
+    document.getElementById("contact-email-detail").innerHTML = emailName;
+   }
+   if (ukPhone) {
+    document.getElementById("contact-phone-detail").innerHTML = ukPhone;
+   } else if (intPhone) {
+    document.getElementById("contact-phone-detail").innerHTML = intPhone;
+   }
+ }
 </script>
 
 {% endblock %}

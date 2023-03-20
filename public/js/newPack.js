@@ -60,7 +60,7 @@ if (eDay != null && eMonth != null && eYear != null) {
 
 function storeName() {
   var productName = document.getElementById("product-name");
-  localStorage.setItem("product-name", productName.value);
+  localStorage.setItem("associated-product-name", productName.value);
 }
 
 var getProductName = localStorage.getItem("product-name");

@@ -484,14 +484,14 @@ Submit a new product: product summary | Portal | NHSBSA
 </dl>
 
 
-<a class="nhsuk-button nhsuk-u-margin-top-3" href="confirmation"
+<a class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-right-5" href="../confirmation"
    type="submit">
-  Submit
+  Submit new pack
 </a>
 
 <a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-3"
-   id="save-alert">
-  Save for later
+   id="save-alert" href="../draft-confirmation">
+  Save as draft
 </a>
 
 <script>
@@ -509,7 +509,7 @@ var getEffectiveYear = localStorage.getItem("pack-effective-year");
 
 document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' ' + getLongMonth + ' ' + getEffectiveYear;
 
-var getProductName = localStorage.getItem("product-name");
+var getProductName = localStorage.getItem("associated-product-name");
 document.getElementById("product-name").innerHTML = getProductName;
 
 var getProductHasSPC = localStorage.getItem("product-spc");
@@ -563,7 +563,6 @@ document.getElementById("pack-size").innerHTML = getPackSize + ' ' + getPackType
 document.getElementById("pack-size").innerHTML = getPackSize + ' &times; ' + getPackFurther;
 }
 
-if (localStorage.getItem("product-extra-pack") == 'yes') {
 if (getPackType != 'other' && !getPackFurther) {
 document.getElementById("heading-pack-1").innerHTML = getPackSize + ' ' + getPackType;
 } else if (getPackType == 'other'){
@@ -571,9 +570,6 @@ document.getElementById("heading-pack-1").innerHTML = getPackSize + ' ' + getPac
   } else if (getPackFurther) {
   document.getElementById("heading-pack-1").innerHTML = getPackSize + ' &times; ' + getPackFurther;
   }
- }  else {
-   document.getElementById("heading-pack-1").style["display"] = "none";
-}
 
 var getPackSubpack = localStorage.getItem("pack-subpack");
 document.getElementById("pack-subpack").innerHTML = getPackSubpack;
@@ -660,9 +656,6 @@ document.getElementById("pack-2-legal-category").innerHTML = getLegalCategoryExt
 
 var getIfHospExtra = localStorage.getItem("pack-2-hospital-only");
 document.getElementById("pack-2-hospital-only").innerHTML = getIfHospExtra;
-
-var saveButton = document.getElementById("save-alert");
-saveButton.addEventListener("click", function(){ alert("Work in progress!!"); });
 
 var addExtra = localStorage.getItem("product-extra-pack");
 
