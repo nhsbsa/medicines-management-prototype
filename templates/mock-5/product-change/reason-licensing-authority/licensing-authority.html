@@ -23,50 +23,102 @@ Detail the change to the licensing authority | Submit a product change: licensin
       </h1>
     </legend>
 
-    <p id="product-name-current">The current licensing authority for 'Product name' is &#39;<strong>Unlicensed</strong>&#39;.</p>
-
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
-      Select a new license authority from the following.
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+    <span role="text">
+      <span class="nhsuk-u-visually-hidden">Important: </span>
+      Warning for developers and Meds Team
+    </span>
+      </h3>
+     <p>I have split this page in to 2 sections. This is purely based on whether the product is going from licensed to unlicensed or vice versa.</p>
+      <p>Only the heading along with the elements within the hidden drop down section should appear in development.</p>
     </div>
 
-    <div class="nhsuk-radios">
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Product is currently licensed and is going to be changed to unlicensed or device
+    </span>
+      </summary>
+      <div class="nhsuk-details__text"><p id="product-name-current">The current licensing authority for 'Product name' is &#39;<strong>Device</strong>&#39;.</p>
 
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-1" name="data-licensing-authority" type="radio" value="Licensed">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-          Licensed
-        </label>
+        <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+          Select a new license authority from the following.
+        </div>
+
+        <div class="nhsuk-radios">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="data-licensing-authority" type="radio" value="Unlicensed">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              Unlicensed
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-3" name="data-licensing-authority" type="radio" value="Device">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+              Device
+            </label>
+          </div>
+
+        </div>
+
+        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
+           href="licensing-authority-reason" id="continue-button" type="submit">
+          Save and continue
+        </a>
+
       </div>
+    </details>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Product is currently unlicensed and is going to be changed to licensed or device
+    </span>
+      </summary>
+      <div class="nhsuk-details__text"><p id="product-name-current-unlicensed">The current licensing authority for 'Product name' is &#39;<strong>Device</strong>&#39;.</p>
 
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-2" name="data-licensing-authority" type="radio" value="Unlicensed">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-          Unlicensed
-        </label>
+        <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+          Select a new license authority from the following.
+        </div>
+
+        <div class="nhsuk-radios">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-4" name="data-licensing-authority-unlicensed" type="radio" value="Licensed">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-4">
+              Licensed
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-5" name="data-licensing-authority-unlicensed" type="radio" value="Device">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-5">
+              Device
+            </label>
+          </div>
+
+        </div>
+
+        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthorityUnlicensed()"
+           href="licensing-authority-reason" id="continue-button-unlicensed" type="submit">
+          Save and continue
+        </a>
+
       </div>
+    </details>
 
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-3" name="data-licensing-authority" type="radio" value="Device">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-3">
-          Device
-        </label>
-      </div>
-
-    </div>
   </fieldset>
 </div>
-
-  <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="saveLicensingAuthority()"
-     href="licensing-authority-reason" id="continue-button" type="submit">
-    Save and continue
-  </a>
 
 <script>
 
   let productName = localStorage.getItem("product-name");
 
   if (productName != "") {
-     document.getElementById("product-name-current").innerHTML = 'The current licensing authority for ' + productName + ' is <strong>&#39;Unlicensed&#39;</strong>.';
+     document.getElementById("product-name-current").innerHTML = 'The current licensing authority for ' + productName + ' is <strong>&#39;Licensed&#39;</strong>.';
+     document.getElementById("product-name-current-unlicensed").innerHTML = 'The current licensing authority for ' + productName + ' is <strong>&#39;Unlicensed&#39;</strong>.';
   }
 
   let productChangeReason = localStorage.getItem("product-change-reason");
@@ -80,10 +132,33 @@ Detail the change to the licensing authority | Submit a product change: licensin
     var radioButtons = document.getElementsByName("data-licensing-authority");
 
     for (var radio of radioButtons) {
-      if (radio.checked) {
+      if (radio.checked) 
+   
+        {
           localStorage.setItem("licensing-authority", radio.value);
+          if (radio.value == "Unlicensed") {
+             document.getElementById("continue-button").href = "licencing-authority-data-sheet";
+          }
          if (radio.value == "Device") {
              document.getElementById("continue-button").href = "licensing-authority-device";
+          }
+        }
+     }
+  }
+
+  function saveLicensingAuthorityUnlicensed() {
+    var radioButtons = document.getElementsByName("data-licensing-authority-unlicensed");
+
+    for (var radio of radioButtons) {
+      if (radio.checked)
+
+        {
+          localStorage.setItem("licensing-authority", radio.value);
+          if (radio.value == "Licensed") {
+             document.getElementById("continue-button-unlicensed").href = "product-legal-category";
+          }
+         if (radio.value == "Device") {
+             document.getElementById("continue-button-unlicensed").href = "licensing-authority-device";
           }
         }
      }
@@ -97,6 +172,19 @@ Detail the change to the licensing authority | Submit a product change: licensin
 
     if (getLicensingAuthority != null) {
         for (var radio of radioLicensingAuthorityButtons) {
+            if (getLicensingAuthority === radio.value) {
+                radio.checked = true;
+            }
+        }
+      }
+    };
+
+    var radioLicensingAuthorityUnlicensedButtons = document.getElementsByName("data-licensing-authority-unlicensed");
+
+  if (radioLicensingAuthorityUnlicensedButtons.length != 0) {
+
+    if (getLicensingAuthority != null) {
+        for (var radio of radioLicensingAuthorityUnlicensedButtons) {
             if (getLicensingAuthority === radio.value) {
                 radio.checked = true;
             }
