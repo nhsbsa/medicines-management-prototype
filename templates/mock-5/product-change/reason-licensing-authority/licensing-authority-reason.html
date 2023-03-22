@@ -34,7 +34,7 @@ What is the reason for changing the licensing authority? | Submit a product chan
   </fieldset>
 </div>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeReason()"
+  <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeReasonWhy()"
      href="../product-spc" id="continue-button" type="submit">
     Save and continue
   </a>
@@ -50,12 +50,18 @@ What is the reason for changing the licensing authority? | Submit a product chan
     productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
   }
 
-  function storeReason() {
-    var licensingAuthorityReason = document.getElementById("licensing-authority-reason");
-    localStorage.setItem("licensing-authority-reason", licensingAuthorityReason.value);
+  if (localStorage.getItem("licensing-authority") == "Licensed") {
+             document.getElementById("continue-button").href = "../product-spc";
+          } else if (localStorage.getItem("licensing-authority") == "Unlicensed") {
+             document.getElementById("continue-button").href = "licensing-authority-data-sheet";
+          }
+
+  function storeReasonWhy() {
+    var licensingAuthorityReason = document.getElementById("licensing-authority-reason-why");
+    localStorage.setItem("licensing-authority-reason-why", licensingAuthorityReason.value);
    }
 
-  var getLicensedAuthorityReason = localStorage.getItem("licensing-authority-reason");
+  var getLicensedAuthorityReason = localStorage.getItem("licensing-authority-reason-why");
   var licAuthorityReason= document.querySelector("#licensing-authority-reason");
 
   if (licAuthorityReason != null) {
