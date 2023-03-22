@@ -89,6 +89,14 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
   if (productChangeReason || productChangeReason != null || productChangeReason != "") {
     productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
   }
+
+  if (productChangeReason == "licensed route") {
+      document.getElementById("continue-button").href = "product-change-summary";
+  }
+
+
+
+
 </script>
 
 <script src="/js/newProduct.js"></script>
