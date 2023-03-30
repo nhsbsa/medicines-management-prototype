@@ -16,22 +16,33 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
 <h1>New product submission</h1>
 
-<div class="tabs tabbed">
-    <div class="tabs-nav">
-        <ul class="tabs-list">
-            <li id="heading-tab-submission"><a href="#tab-submission">Submission</a></li>
-            <li id="heading-tab-messages"><a href="#tab-messages">Message board</a></li>
-            <li id="heading-tab-summary"><a href="#tab-summary">Summary</a></li>
-            <li id="heading-tab-uploads"><a href="#tab-uploads">Uploads</a></li>
-            <li id="heading-tab-links"><a href="#tab-links">CDR links</a></li>
-        </ul>
-    </div>
-    <div class="tabs-content">
+<div class="nhsuk-tabs" data-module="nhsuk-tabs">
+    <h2 class="nhsuk-tabs__title">Contents</h2>
+    <ul class="nhsuk-tabs__list">
+        <li class="nhsuk-tabs__list-item nhsuk-tabs__lt-item--selected"
+            id="heading-tab-submission"
+            role="presentation"><a class="nhsuk-tabs__tab" href="#tab-submission" role="tab"
+                                   id="submission-panel" aria-selected="true">Submission</a>
+        </li>
+        <li class="nhsuk-tabs__list-item" id="heading-tab-messages" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-messages" role="tab" id="message-panel">Message
+            board</a></li>
+        <li class="nhsuk-tabs__list-item" id="heading-tab-summary" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-summary" role="tab" id="summary-panel">Summary</a>
+        </li>
+        <li class="nhsuk-tabs__list-item" id="heading-tab-uploads" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-uploads" role="tab" id="uploads-panel">Uploads</a>
+        </li>
+        <li class="nhsuk-tabs__list-item" id="heading-tab-links" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-links" role="tab" id="links-panel">Links</a>
+        </li>
+    </ul>
 
-        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-submission">
-            <div class="tabs-panel-inner">
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-tabs__panel" id="tab-submission" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab1">
+        <div class="nhsuk-tabs-panel-inner">
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-two-thirds">
                         <h2>Product</h2>
                         <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
 
@@ -132,10 +143,12 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                 </div>
             </div>
         </div>
-        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-messages">
-            <div class="tabs-panel-inner">
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-full">
+
+    <div class="nhsuk-tabs__panel" id="tab-messages" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab2">
+        <div class="nhsuk-tabs-panel-inner">
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
                         <h2>Message board</h2>
                         <p>Use the message board to communicate with the supplier. To amend a message, or follow up with the supplier on the same query, add a comment through the 'Further comments' section within the message. Otherwise, create a new message by using the 'Create a new message category' link.</p>
                         <details class="nhsuk-details nhsuk-expander">
@@ -173,7 +186,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
 <!--                        <p><a href="update-submission-notes-detail">Create a new message category</a></p>-->
 
-                        <div class="nhsuk-action-link nhsuk-u-margin-top-4">
+                        <div class="nhsuk-action-link nhsuk-u-margin-top-6">
                             <a class="nhsuk-action-link__link" href="update-submission-notes-detail">
                                 <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
                                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
@@ -189,10 +202,11 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                 </div>
             </div>
         </div>
-        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-summary">
-            <div class="tabs-panel-inner">
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-three-quarters">
+    <div class="nhsuk-tabs__panel" id="tab-summary" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab3">
+        <div class="nhsuk-tabs-panel-inner">
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-three-quarters">
                         <h2>Summary</h2>
 
                         <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
@@ -333,10 +347,11 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                 </div>
             </div>
         </div>
-        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-uploads">
-            <div class="tabs-panel-inner">
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-tabs__panel" id="tab-uploads" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab4">
+        <div class="nhsuk-tabs-panel-inner">
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
                         <h2 class="nhsuk-u-margin-bottom-6">Uploads</h2>
 
                         <table role="table" class="nhsuk-table-responsive" id="hide-table">
@@ -410,10 +425,11 @@ Submit a new product: pack size and strength | Portal | NHSBSA
             </div>
         </div>
 
-        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-links">
-            <div class="tabs-panel-inner">
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-full">
+    <div class="nhsuk-tabs__panel" id="tab-links" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab4">
+        <div class="nhsuk-tabs-panel-inner">
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
                         <h2>Links</h2>
                         <p><a href="#">Paracetamol 200mg tablets CDR</a></p>
                     </div>
