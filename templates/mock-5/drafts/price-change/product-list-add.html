@@ -23,30 +23,31 @@ Submit a new product | Portal | NHSBSA
     <div class="nhsuk-form-group">
       <p class="">You may filter the products by choosing from one of the following options.</p>
       <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-5">
-        <div class="nhsuk-grid-column-one-third">
-
+<!--        <div class="nhsuk-grid-column-one-third">-->
+        <div class="nhsuk-radios nhsuk-radios--inline">
           <div class="nhsuk-radios__item">
             <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes" checked>
             <label class="nhsuk-label nhsuk-radios__label" for="example-1">
               Show all
             </label>
           </div>
-        </div>
-        <div class="nhsuk-grid-column-one-third">
+<!--        </div>-->
+<!--        <div class="nhsuk-grid-column-one-third">-->
           <div class="nhsuk-radios__item">
             <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
             <label class="nhsuk-label nhsuk-radios__label" for="example-2">
               Show active
             </label>
           </div>
-        </div>
-        <div class="nhsuk-grid-column-one-third">
+<!--        </div>-->
+<!--        <div class="nhsuk-grid-column-one-third">-->
           <div class="nhsuk-radios__item">
             <input class="nhsuk-radios__input" id="example-3" name="example" type="radio" value="no">
             <label class="nhsuk-label nhsuk-radios__label" for="example-3">
               Show discontinued
             </label>
           </div>
+<!--        </div>-->
         </div>
       </fieldset>
 
@@ -65,9 +66,9 @@ Submit a new product | Portal | NHSBSA
 
     <div class="nhsuk-inset-text nhsuk-u-margin-top-4 extend-inset">
       <span class="nhsuk-u-visually-hidden">Information: </span>
-      <p>Select packs individually from the table, or you can <a class="nhsuk-link nhsuk-link--no-visited-state" href="#" onclick="checkAllBoxes()">select all products</a>.</p>
+      <p>Select single packs from the table or <a class="nhsuk-link nhsuk-link--no-visited-state" href="#" onclick="checkAllBoxes()">select all products</a></p>
 <!--      can the 'remove all' only be shown if user has selected all? Same as, if user has 'selected all', can this be hidden from view? YML 31/10/22-->
-      <p>Deselect packs individually from the table, or you can <a class="nhsuk-link nhsuk-link--no-visited-state" href="#" onclick="removeAllBoxes()">deselect all products</a>.</p>
+      <p>Deselect single packs from the table or <a class="nhsuk-link nhsuk-link--no-visited-state" href="#" onclick="removeAllBoxes()">deselect all products</a></p>
 <!--      not sure if we need this extra detail? MPL 20/10/2022  -->
       <p class="" >If the search results span over multiple pages, any action will only apply to this page. If required, move to the next page to continue selecting or deselecting products.</p>
     </div>
@@ -94,7 +95,7 @@ Submit a new product | Portal | NHSBSA
           Subpack
         </th>
         <th role="columnheader" class="" scope="col">
-          Current price
+          Price
         </th>
         <th>Status</th>
         <th role="columnheader" class="" scope="col">
@@ -108,13 +109,16 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Product name </span>Aciclovir 200mg dispersible tablets
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
-          <span class="nhsuk-table-responsive__heading">Pack </span>25
+          <span class="nhsuk-table-responsive__heading">Pack </span>
+          <span>25</span>
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
-          <span class="nhsuk-table-responsive__heading">Subpack </span>10 &times; 2.5
+          <span class="nhsuk-table-responsive__heading">Subpack </span>
+          <span>10 &times; 2.5 tablets</span>
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
-          <span class="nhsuk-table-responsive__heading">Price </span><span><span>249</span>p</span>
+          <span class="nhsuk-table-responsive__heading">Price </span>
+          <span>249p</span>
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Status </span>
@@ -122,7 +126,7 @@ Submit a new product | Portal | NHSBSA
             Active
           </strong>
         </td>
-        <td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="nhsuk-checkboxes">
 
@@ -186,7 +190,7 @@ Submit a new product | Portal | NHSBSA
             Active
           </strong>
         </td>
-        <td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="nhsuk-checkboxes">
 
@@ -201,10 +205,12 @@ Submit a new product | Portal | NHSBSA
       </tr>
       <tr role="row" class="nhsuk-table__row">
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Bupenorphine 100mg capsules
+          <span class="nhsuk-table-responsive__heading">Product name </span>
+          <span>Bupenorphine 100mg capsules</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Pack </span>28
+          <span class="nhsuk-table-responsive__heading">Pack </span>
+          <span>28</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>
@@ -212,7 +218,8 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-u-visually-hidden">No Subpack exists for Bupenorphine 100mg capsules 28 pack</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Price </span><span><span>23</span>p</span>
+          <span class="nhsuk-table-responsive__heading">Price </span>
+          <span>23p</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading select-tag">Status</span>
@@ -220,7 +227,7 @@ Submit a new product | Portal | NHSBSA
             Discontinued
           </strong>
         </td>
-        <td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="nhsuk-checkboxes">
 
@@ -235,16 +242,20 @@ Submit a new product | Portal | NHSBSA
       </tr>
       <tr role="row" class="nhsuk-table__row">
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Cymbalta
+          <span class="nhsuk-table-responsive__heading">Product name </span>
+          <span>Cymbalta 30mg gastro-resistant capsules</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Pack </span>1
+          <span class="nhsuk-table-responsive__heading">Pack </span>
+          <span>1</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Subpack </span>3 &times; 10
+          <span class="nhsuk-table-responsive__heading">Subpack </span>
+          <span>3 &times; 10 capsules</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
+          <span class="nhsuk-table-responsive__heading">Price </span>
+          <span>99p</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading select-tag">Status </span>
@@ -252,7 +263,7 @@ Submit a new product | Portal | NHSBSA
             Active
           </strong>
         </td>
-        <td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="nhsuk-checkboxes">
 
@@ -267,17 +278,20 @@ Submit a new product | Portal | NHSBSA
       </tr>
       <tr role="row" class="nhsuk-table__row">
         <td role="cell" class="nhsuk-table__cell align-middle">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Methadone 50mg/5ml solution for injection ampoules
+          <span class="nhsuk-table-responsive__heading">Product name </span>
+          <span>Methadone 50mg/5ml solution for injection ampoules</span>
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
-          <span class="nhsuk-table-responsive__heading">Pack </span>10
+          <span class="nhsuk-table-responsive__heading">Pack </span>
+          <span>10</span>
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading">Subpack </span>
           <span class="nhsuk-u-visually-hidden">No Subpack exists for Methadone 50mg/5ml solution for injection ampoules 10 pack</span>
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
-          <span class="nhsuk-table-responsive__heading">Price </span><span><span>222</span>p</span>
+          <span class="nhsuk-table-responsive__heading">Price </span>
+          <span>222p</span>
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Status </span>
@@ -285,7 +299,7 @@ Submit a new product | Portal | NHSBSA
             Active
           </strong>
         </td>
-        <td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="nhsuk-checkboxes">
 
@@ -300,10 +314,12 @@ Submit a new product | Portal | NHSBSA
       </tr>
       <tr role="row" class="nhsuk-table__row">
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Protein cornflakes
+          <span class="nhsuk-table-responsive__heading">Product name </span>
+          <span>Protein cornflakes</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Pack </span>1
+          <span class="nhsuk-table-responsive__heading">Pack </span>
+          <span>1</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>
@@ -311,7 +327,7 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-u-visually-hidden">No Subpack exists for Protein cornflakes 1 pack</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
+          <span class="nhsuk-table-responsive__heading">Price </span><span>99p</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading select-tag">Status </span>
@@ -319,7 +335,7 @@ Submit a new product | Portal | NHSBSA
             Active
           </strong>
         </td>
-        <td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Select </span>
           <div class="nhsuk-checkboxes">
 
@@ -377,11 +393,13 @@ Submit a new product | Portal | NHSBSA
 
 <!--    remove back button as back link works more effectively and keeping it may cause confusion YML 31/10/22-->
 
-    <a href="input-price-all"><button class="nhsuk-button">Add selected products</button></a>
+    <a href="product-list"><button class="nhsuk-button">Save selection and continue</button></a>
   </div>
 </div>
 
 <script>
+    console.log(localStorage);
+
     let checkAll = document.getElementsByClassName("nhsuk-checkboxes__input");
 
 

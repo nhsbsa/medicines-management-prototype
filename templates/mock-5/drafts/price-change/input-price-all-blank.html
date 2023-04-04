@@ -374,7 +374,8 @@ Submit a new product | Portal | NHSBSA
 <script>
   console.log(localStorage);
 
-  if (localStorage.getItem("zero-price-search") == "yes") {
+  if (localStorage.getItem("zero-price-change-add") == "yes" ||
+  localStorage.getItem("zero-price-change-add") == "no") {
     document.getElementById("submit").href = "price-zero-reason";
   };
 </script>

@@ -65,7 +65,7 @@ Submit a new product | Portal | NHSBSA
     <div id="pageAndResultCount">Page 1 of 1 (4 results)</div>
   </div>
     <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-3" id="zero-price-change-table">
-      <caption class="nhsuk-table__caption">Packs with price set at zero</caption>
+      <caption class="nhsuk-table__caption">Packs chosen for zero price changes</caption>
       <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
         <th role="columnheader" class="" scope="col">
@@ -97,7 +97,7 @@ Submit a new product | Portal | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack</span>
-          <span id="subpack-1">10 &times; 2.5</span>
+          <span id="subpack-1">10 &times; 2.5 tablets</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Reason for zero price</span>
@@ -161,7 +161,7 @@ Submit a new product | Portal | NHSBSA
       </tbody>
     </table>
 
-  <nav class="govuk-pagination nhsuk-u-margin-top-3" role="navigation" aria-label="results">
+  <nav class="govuk-pagination nhsuk-u-margin-top-4" role="navigation" aria-label="results">
     <div class="govuk-pagination__prev">
       <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
         <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
@@ -196,7 +196,7 @@ Submit a new product | Portal | NHSBSA
 
 <div class="nhsuk-inset-text" id="inset-text-no-packs">
   <span class="nhsuk-u-visually-hidden">Information: </span>
-  <p>If you are missing any packs then <a href="product-list-search" class="nhsuk-link nhsuk-link--no-visited-state" onclick="zeroPrices()">add more packs for zero price change</a></p>
+  <p>If you are missing any packs then <a href="product-list-search" onclick="zeroPriceChangeAdd()" class="nhsuk-link nhsuk-link--no-visited-state">add more packs</a></p>
   <p>If you no longer need all packs then <a class="nhsuk-link nhsuk-link--no-visited-state" href="#" onclick="removeAllEntries()">remove all selected packs</a></p>
 </div>
 
@@ -219,6 +219,14 @@ window.onload = function() {
    }
 
 };
+
+ function zeroPriceChangeAdd() {
+    localStorage.setItem("zero-price-change-add","yes");
+ }
+
+ function zeroPriceChangeAddBlank() {
+    localStorage.setItem("zero-price-change-add","no");
+ }
 
 var getEffectiveDay = localStorage.getItem("effective-day");
 var getEffectiveMonth = localStorage.getItem("effective-month");
@@ -284,7 +292,7 @@ document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' '
            packReviewText.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
            document.getElementById("inset-text-no-packs").innerHTML =
-           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
         }
 
 });
@@ -300,7 +308,7 @@ document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' '
            packReviewText.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
            document.getElementById("inset-text-no-packs").innerHTML =
-           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
         }
       }
 });
@@ -320,7 +328,7 @@ document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' '
            packReviewText.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
            document.getElementById("inset-text-no-packs").innerHTML =
-           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
         }
 });
 
@@ -336,7 +344,7 @@ document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' '
            packReviewText.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
            document.getElementById("inset-text-no-packs").innerHTML =
-           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
         }
       }
 });
@@ -359,7 +367,7 @@ if (removeZeroPriceChangeNumberThree) {
            packReviewText.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
            document.getElementById("inset-text-no-packs").innerHTML =
-           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
         }
 });
 
@@ -376,7 +384,7 @@ if (removeZeroPriceChangeNumberThree) {
            packReviewText.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
            document.getElementById("inset-text-no-packs").innerHTML =
-           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
         }
       }
 });
@@ -389,7 +397,7 @@ function removeAllEntries() {
      document.getElementById("continue-button").style.display = "none";
      document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
      document.getElementById("inset-text-no-packs").innerHTML =
-     '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+     '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
 };
 
 </script>

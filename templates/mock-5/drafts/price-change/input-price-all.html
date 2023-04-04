@@ -41,13 +41,13 @@ Submit a new product | Portal | NHSBSA
           Subpack
         </dt>
         <dd class="nhsuk-summary-list__value">
-          10 &times; 2.5
+          10 &times; 2.5 tablets
         </dd>
 
       </div>
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Current price
+          Price
         </dt>
         <dd class="nhsuk-summary-list__value">
           249p
@@ -113,7 +113,7 @@ Submit a new product | Portal | NHSBSA
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Current price
+          Price
         </dt>
         <dd class="nhsuk-summary-list__value">
           299p
@@ -179,7 +179,7 @@ Submit a new product | Portal | NHSBSA
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Current price
+          Price
         </dt>
         <dd class="nhsuk-summary-list__value">
           800p
@@ -228,7 +228,7 @@ Submit a new product | Portal | NHSBSA
 
 <hr class="nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-5" />
 
-<h2>Cymbalta</h2>
+<h2>Cymbalta 30mg gastro-resistant capsules</h2>
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-one-half">
     <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-3">
@@ -238,7 +238,7 @@ Submit a new product | Portal | NHSBSA
           Pack size and UOM
         </dt>
         <dd class="nhsuk-summary-list__value">
-          1 tablet
+          1 capsule
         </dd>
 
       </div>
@@ -248,14 +248,14 @@ Submit a new product | Portal | NHSBSA
           Subpack
         </dt>
         <dd class="nhsuk-summary-list__value">
-          3 &times; 10
+          3 &times; 10 capsules
         </dd>
 
       </div>
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Current price
+          Price
         </dt>
         <dd class="nhsuk-summary-list__value">
           99p
@@ -320,7 +320,7 @@ Submit a new product | Portal | NHSBSA
 
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
-          Current price
+          Price
         </dt>
         <dd class="nhsuk-summary-list__value">
           222p
@@ -376,15 +376,13 @@ Submit a new product | Portal | NHSBSA
 <script>
   console.log(localStorage);
 
-  if (localStorage.getItem("zero-price-search") == "yes") {
+  if (localStorage.getItem("zero-price-change-add") == "yes") {
     document.getElementById("aciclovir").value = 0;
     document.getElementById("bromocriptine").value = 0;
     document.getElementById("methadone").value = 0;
     document.getElementById("selected-title").innerHTML = "Diazepam 2mg tablets";
     document.getElementById("selected-pack").innerHTML = "1000 tablets";
     document.getElementById("submit").href = "price-zero-reason";
-
-
   };
 </script>
 
