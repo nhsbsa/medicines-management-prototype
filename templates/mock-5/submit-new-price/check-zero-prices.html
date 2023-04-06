@@ -246,6 +246,8 @@ document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' '
 
   function zeroPriceChangeAddBlank() {
     localStorage.setItem("zero-price-change-add","no");
+    localStorage.removeItem("zero-price-reason-detail");
+    localStorage.removeItem("zero-price-reason");
  }
 
 function zeroPriceChangeAdd() {
