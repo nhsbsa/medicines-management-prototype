@@ -180,7 +180,7 @@ Submit a new product | Portal | NHSBSA
 
 <div class="nhsuk-inset-text" id="inset-text-no-packs">
   <span class="nhsuk-u-visually-hidden">Information: </span>
-  <p>If you are missing any packs then <a href="product-list-search" onclick="zeroPriceChangeAdd()" class="nhsuk-link nhsuk-link--no-visited-state">add more packs</a></p>
+  <p>If you are missing any packs then <a href="product-list-add" onclick="zeroPriceChangeAdd()" class="nhsuk-link nhsuk-link--no-visited-state">add more packs</a></p>
   <p>If you no longer need all packs then <a class="nhsuk-link nhsuk-link--no-visited-state" href="#" onclick="removeAllEntries()">remove all selected packs</a></p>
 </div>
 
@@ -248,7 +248,9 @@ document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' '
     localStorage.setItem("zero-price-change-add","no");
  }
 
-
+function zeroPriceChangeAdd() {
+    localStorage.setItem("add-more-packs", "yes");
+  }
 
   let removeZeroPriceChangeNumberOne = document.getElementById("zero-price-change-link-number-1");
   let removeRowOne = document.getElementById("price-change-1");
