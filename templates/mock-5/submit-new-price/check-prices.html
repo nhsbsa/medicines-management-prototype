@@ -12,13 +12,49 @@ Submit a new product | Portal | NHSBSA
     Go back to confirm the price</a>
 </div>
 
-<h1>Summary of price changes</h1>
+<h1><span class="nhsuk-caption-l">
+     Price change submission
+     <span class="nhsuk-u-visually-hidden"> - </span>
+   </span>
+  Summary of price changes</h1>
 
-<p>Review the price updates and edit where necessary. This will only show packs with prices that are set above zero.</p>
-<p class="nhsuk-u-margin-bottom-6">The effective date for this change is set as <strong>1st February 2023</strong>.</p>
+<p class="nhsuk-u-margin-bottom-7">Review the effective date of the price change and update if necessary.</p>
 
-    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-3">
-      <caption class="nhsuk-table__caption">Packs with price changes</caption>
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Effective date
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="pack-effective-date">
+          12 November 2023
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="price-effective-date" class="nhsuk-link nhsuk-link--no-visited-state">
+            Change<span class="nhsuk-u-visually-hidden"> effective date</span>
+          </a>
+
+        </dd>
+
+      </div>
+    </dl>
+  </div>
+</div>
+
+<p class="nhsuk-u-margin-bottom-7 nhsuk-u-margin-top-3" id="pack-review">Review the selected packs for this price change. This will only show packs with prices set above zero.</p>
+
+<div id="price-change-clear-all">
+  <!--Table needs to show number of pages or results but pagination can be hidden if the number of pages is less than 2 -->
+  <div class="nhsuk-body-m flex--space-between" style="display: flex">
+    <div class="nhsuk-u-visually-hidden">Currently viewing</div>
+    <div id="pageAndResultCount">Page 1 of 1 (4 results)</div>
+  </div>
+    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-3" id="price-change-table">
+      <caption class="nhsuk-table__caption">Packs chosen for price changes</caption>
       <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
         <th role="columnheader" class="" scope="col">
@@ -40,130 +76,320 @@ Submit a new product | Portal | NHSBSA
       </tr>
       </thead>
       <tbody class="nhsuk-table__body">
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Aciclovir 200mg dispersible tablets
+      <tr role="row" class="nhsuk-table__row" id="price-change-1">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading">Product name </span>
+          <span id="product-name-1">Aciclovir 200mg dispersible tablets</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Pack size </span>25
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading">Pack size </span>
+          <span id="pack-size-1">25</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Subpack info</span>10 &times; 2.5
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading">Subpack info</span>
+          <span id="subpack-1">10 &times; 2.5 tablets</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Price </span><span>299p or £2.99</span>
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading">Price </span>
+          <span id="new-price-1">299p</span><span> or £2.99</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+        <td role="cell" class="nhsuk-table__cell action-width center-table-row">
           <span class="nhsuk-table-responsive__heading">Action</span>
-          <span><a href="#">Edit</a> | <span class="nhsuk-u-visually-hidden">or</span><a href="#">remove</a></span>
+          <span><a href="edit-input-price" class="nhsuk-link nhsuk-link--no-visited-state" onclick="editProductOne()">Edit<span class="nhsuk-u-visually-hidden"> Aciclovir 200mg dispersible tablets 25 pack</span></a>
+          &nbsp; | &nbsp;<span class="nhsuk-u-visually-hidden"> or </span>
+          <a id="price-change-link-number-1" href="#" class="nhsuk-link nhsuk-link--no-visited-state">Remove<span class="nhsuk-u-visually-hidden">Aciclovir 200mg dispersible tablets 25 pack</span></a></span>
         </td>
       </tr>
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Bromocriptine 2.5mg tablets
+      <tr role="row" class="nhsuk-table__row" id="price-change-2">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading">Product name </span>
+          <span id="product-name-2">Bromocriptine 2.5mg tablets</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Pack size </span>100
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading">Pack size </span>
+          <span id="pack-size-2">100</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>
           <!--          need to make sure empty table cells announce something MPL 20/10/22-->
-          <span class="nhsuk-u-visually-hidden">No Subpack information</span>
+          <span class="nhsuk-u-visually-hidden" id="subpack-2">No Subpack information</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Price </span><span>825p or £8.25</span>
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading">Price </span>
+          <span id="new-price-2">825p</span><span> or £8.25</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+        <td role="cell" class="nhsuk-table__cell action-width center-table-row">
           <span class="nhsuk-table-responsive__heading">Action</span>
-          <span><a href="#">Edit</a> | <span class="nhsuk-u-visually-hidden">or</span><a href="#">remove</a></span>
+          <span><a href="edit-input-price" class="nhsuk-link nhsuk-link--no-visited-state" onclick="editProductTwo()">Edit<span class="nhsuk-u-visually-hidden"> Aciclovir 200mg dispersible tablets 25 pack</span></a>
+          &nbsp; | &nbsp;<span class="nhsuk-u-visually-hidden"> or </span>
+          <a id="price-change-link-number-2" href="#" class="nhsuk-link nhsuk-link--no-visited-state">Remove<span class="nhsuk-u-visually-hidden">Aciclovir 200mg dispersible tablets 25 pack</span></a></span>
         </td>
       </tr>
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Diazepam 2mg tablets
+      <tr role="row" class="nhsuk-table__row" id="price-change-3">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading">Product name </span>
+          <span id="product-name-3">Methadone 50mg/5ml solution for injection ampoules</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Pack size </span>1000
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading">Pack size </span>
+          <span id="pack-size-3">1000</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+        <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>
           <!--          need to make sure empty table cells announce something MPL 20/10/22-->
-          <span class="nhsuk-u-visually-hidden">No Subpack information</span>
+          <span class="nhsuk-u-visually-hidden" id="subpack-3">No Subpack information</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Price </span><span>1011p or £10.11</span>
+        <td role="cell" class="nhsuk-table__cell center-table-row">
+          <span class="nhsuk-table-responsive__heading">Price </span>
+          <span id="new-price-3">1011p</span><span> or £10.11</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
+        <td role="cell" class="nhsuk-table__cell action-width center-table-row">
           <span class="nhsuk-table-responsive__heading">Action</span>
-          <span><a href="#">Edit</a> | <span class="nhsuk-u-visually-hidden">or</span><a href="#">remove</a></span>
-        </td>
-      </tr>
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Hydrocortisone 0.5% cream
-        </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Pack size </span>15
-        </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Subpack info</span>3 &times; 5
-        </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Price </span><span>600p or £6.00</span>
-        </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
-          <span class="nhsuk-table-responsive__heading">Action</span>
-          <span><a href="#">Edit</a> | <span class="nhsuk-u-visually-hidden">or</span><a href="#">remove</a></span>
-        </td>
-      </tr>
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Liquid paraffin liquid
-        </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Pack size </span>200
-        </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Subpack </span>
-          <!--          need to make sure empty table cells announce something MPL 20/10/22-->
-          <span class="nhsuk-u-visually-hidden">No Subpack information</span>
-        </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Price </span><span>555p or £5.55</span>
-        </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
-          <span class="nhsuk-table-responsive__heading">Action</span>
-          <span><a href="#">Edit</a> | <span class="nhsuk-u-visually-hidden">or</span><a href="#">remove</a></span>
-        </td>
-      </tr>
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Methadone 50mg/5ml solution for injection ampoules
-        </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Pack size </span>10
-        </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Subpack </span>
-          <!--          need to make sure empty table cells announce something MPL 20/10/22-->
-          <span class="nhsuk-u-visually-hidden">No Subpack information</span>
-        </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-          <span class="nhsuk-table-responsive__heading">Price </span><span>329p or £3.29</span>
-        </td>
-        <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle;">
-          <span class="nhsuk-table-responsive__heading">Action</span>
-          <span><a href="#">Edit</a> | <span class="nhsuk-u-visually-hidden">or</span><a href="#">remove</a></span>
+          <span><a href="edit-input-price" class="nhsuk-link nhsuk-link--no-visited-state" onclick="editProductThree()">Edit<span class="nhsuk-u-visually-hidden"> Aciclovir 200mg dispersible tablets 25 pack</span></a>
+          &nbsp; | &nbsp;<span class="nhsuk-u-visually-hidden"> or </span>
+          <a id="price-change-link-number-3" href="#" class="nhsuk-link nhsuk-link--no-visited-state">Remove<span class="nhsuk-u-visually-hidden">Aciclovir 200mg dispersible tablets 25 pack</span></a></span>
         </td>
       </tr>
       </tbody>
     </table>
 
-<a class="nhsuk-button nhsuk-u-margin-top-5" onclick="" href="price-zero-reason" id="continue-button" type="submit">
+  <nav class="govuk-pagination nhsuk-u-margin-top-4" role="navigation" aria-label="results">
+    <div class="govuk-pagination__prev">
+      <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+        <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+          <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+        </svg>
+        <span class="govuk-pagination__link-title">Previous</span></a>
+    </div>
+    <ul class="govuk-pagination__list">
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+          1
+        </a>
+      </li>
+      <li class="govuk-pagination__item govuk-pagination__item--current">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+          2
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+          3
+        </a>
+      </li>
+    </ul>
+    <div class="govuk-pagination__next">
+      <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg></a>
+    </div>
+  </nav>
+</div>
+
+<div class="nhsuk-inset-text" id="inset-text-no-packs">
+  <span class="nhsuk-u-visually-hidden">Information: </span>
+  <p>If you are missing any packs then <a href="product-list-add" onclick="addMorePacks()" class="nhsuk-link nhsuk-link--no-visited-state">add more packs</a></p>
+  <p>If you no longer need all packs then <a class="nhsuk-link nhsuk-link--no-visited-state" href="#" onclick="removeAllEntries()">remove all selected packs</a></p>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-right-5" onclick="" href="price-zero-reason" id="continue-button" type="submit">
   Confirm prices and continue
 </a>
+<a href="draft-confirmation" id="draft-button"><button class="nhsuk-button nhsuk-button--secondary">Save as draft</button></a>
+
+<script>
+  console.log(localStorage);
+
+  localStorage.setItem("summary-page", "yes");
+
+  if (localStorage.getItem("price-change-type") == "price change") {
+        document.getElementById("continue-button").innerHTML = "Confirm prices and submit";
+        document.getElementById("continue-button").href = "prices-submitted";
+  }
+
+  if (localStorage.getItem("combination") == "yes") {
+        document.getElementById("continue-button").innerHTML = "Confirm prices and continue";
+        document.getElementById("continue-button").href = "both-price-and-zero-draft";
+  }
+
+  if (localStorage.getItem("price-change-type") == "both") {
+        document.getElementById("draft-button").style.display = "none";
+  }
 
 
+
+  function addMorePacks() {
+    localStorage.setItem("add-more-packs", "yes");
+  }
+
+  function priceChangeAddBlank() {
+    localStorage.removeItem("add-more-packs");
+ }
+
+  let priceChangeClearAll = document.getElementById("price-change-clear-all");
+  let packReviewText = document.getElementById("pack-review");
+
+    function removeAllEntries() {
+     priceChangeClearAll.style.display = "none";
+     packReviewText.style.display = "none";
+     document.getElementById("continue-button").style.display = "none";
+     document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
+     document.getElementById("inset-text-no-packs").innerHTML =
+     '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this price change.</p><p>To continue, <a href="product-list-search" onclick="priceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this price change</a></p>';
+};
+
+  let removePriceChangeNumberOne = document.getElementById("price-change-link-number-1");
+  let removeRowOne = document.getElementById("price-change-1");
+  let priceChangeTable = document.getElementById("price-change-table");
+
+   removePriceChangeNumberOne.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        console.log('allRows 1', allRows.length);
+        if (allRows.length <= 3 && allRows.length > 1) {
+           priceChangeTable.deleteRow(1);
+        } else if (allRows.length < 2){
+           priceChangeClearAll.style.display = "none";
+           packReviewText.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+           document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
+           document.getElementById("inset-text-no-packs").innerHTML =
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this price change.</p><p>To continue, <a href="product-list-search" onclick="priceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this price change</a></p>';
+        }
+
+});
+
+  removePriceChangeNumberOne.addEventListener("keydown", function(e) {
+        // e.target was the clicked element
+        if (e.key == 'Enter' || e.code == 'Space') {
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        if (allRows.length <= 3 && allRows.length > 1) {
+           priceChangeTable.deleteRow(1);
+        } else if (allRows.length < 2){
+           priceChangeClearAll.style.display = "none";
+           packReviewText.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+           document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
+           document.getElementById("inset-text-no-packs").innerHTML =
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this price change.</p><p>To continue, <a href="product-list-search" onclick="priceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this price change</a></p>';
+        }
+      }
+});
+
+  let removePriceChangeNumberTwo = document.getElementById("price-change-link-number-2");
+  let removeRowTwo = document.getElementById("price-change-2");
+
+  removePriceChangeNumberTwo.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        console.log('allRows 2', allRows.length);
+        if (allRows.length <= 3 && allRows.length > 1) {
+           priceChangeTable.deleteRow(2);
+        } else if (allRows.length < 2){
+        console.log('under 2 rows');
+           priceChangeClearAll.style.display = "none";
+           packReviewText.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+           document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
+           document.getElementById("inset-text-no-packs").innerHTML =
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this price change.</p><p>To continue, <a href="product-list-search" onclick="priceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this price change</a></p>';
+        }
+});
+
+  removePriceChangeNumberTwo.addEventListener("keydown", function(e) {
+        // e.target was the clicked element
+        if (e.key == 'Enter' || e.code == 'Space') {
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        console.log('allRows', allRows.length);
+        if (allRows.length <= 3 && allRows.length > 1) {
+           priceChangeTable.deleteRow(2);
+        } else if (allRows.length < 2){
+           priceChangeClearAll.style.display = "none";
+           packReviewText.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+           document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
+           document.getElementById("inset-text-no-packs").innerHTML =
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this price change.</p><p>To continue, <a href="product-list-search" onclick="priceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this price change</a></p>';
+        }
+      }
+});
+
+  let removePriceChangeNumberThree = document.getElementById("price-change-link-number-3");
+  let removeRowThree = document.getElementById("price-change-3");
+
+if (removePriceChangeNumberThree) {
+  removePriceChangeNumberThree.addEventListener("click", function(e) {
+        // e.target was the clicked element
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        console.log('allRows 3', allRows.length);
+        if (allRows.length == 2) {
+           priceChangeTable.deleteRow(2);
+        } else if (allRows.length == 3) {
+           priceChangeTable.deleteRow(3);
+        } else if (allRows.length <= 1){
+        console.log('under 2 rows #3');
+           priceChangeClearAll.style.display = "none";
+           packReviewText.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+           document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
+           document.getElementById("inset-text-no-packs").innerHTML =
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this price change.</p><p>To continue, <a href="product-list-search" onclick="priceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this price change</a></p>';
+        }
+});
+
+  removePriceChangeNumberThree.addEventListener("keydown", function(e) {
+        // e.target was the clicked element
+        if (e.key == 'Enter' || e.code == 'Space') {
+        let allRows = document.getElementsByClassName("nhsuk-table__row");
+        if (allRows.length == 2) {
+           priceChangeTable.deleteRow(2);
+        } else if (allRows.length == 3) {
+           priceChangeTable.deleteRow(3);
+        } else if (allRows.length <= 1){
+           priceChangeClearAll.style.display = "none";
+           packReviewText.style.display = "none";
+           document.getElementById("continue-button").style.display = "none";
+           document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
+           document.getElementById("inset-text-no-packs").innerHTML =
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this price change.</p><p>To continue, <a href="product-list-search" onclick="priceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this price change</a></p>';
+        }
+      }
+});
+
+}
+
+   function editProductOne(obj) {
+      let newPrice = document.getElementById("new-price-1").innerHTML.toString();
+      let newPriceFormat = newPrice.substring(0, newPrice.length - 1);
+
+          localStorage.setItem("product-name", document.getElementById("product-name-1").innerHTML);
+          localStorage.setItem("pack-size", document.getElementById("pack-size-1").innerHTML);
+          localStorage.setItem("subpack", document.getElementById("subpack-1").innerHTML);
+          localStorage.setItem("new-price", newPriceFormat);
+       }
+
+    function editProductTwo(obj) {
+      let newPriceTwo = document.getElementById("new-price-2").innerHTML.toString();
+      let newPriceTwoFormat = newPriceTwo.substring(0, newPriceTwo.length - 1);
+
+          localStorage.setItem("product-name", document.getElementById("product-name-2").innerHTML);
+          localStorage.setItem("pack-size", document.getElementById("pack-size-2").innerHTML);
+          localStorage.setItem("subpack", document.getElementById("subpack-2").innerHTML);
+          localStorage.setItem("new-price", newPriceTwoFormat);
+       }
+
+    function editProductThree(obj) {
+      let newPriceThree = document.getElementById("new-price-3").innerHTML.toString();
+      let newPriceThreeFormat = newPriceThree.substring(0, newPriceThree.length - 1);
+
+          localStorage.setItem("product-name", document.getElementById("product-name-3").innerHTML);
+          localStorage.setItem("pack-size", document.getElementById("pack-size-3").innerHTML);
+          localStorage.setItem("subpack", document.getElementById("subpack-3").innerHTML);
+          localStorage.setItem("new-price", newPriceTwoFormat);
+       }
+
+
+</script>
 
 
 {% endblock %}

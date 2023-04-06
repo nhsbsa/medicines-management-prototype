@@ -9,10 +9,14 @@ Submit a new product | Portal | NHSBSA
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to product list</a>
+    Go back to selected packs</a>
 </div>
 
-<h1 id="skip-to-top">Price input</h1>
+<h1 id="skip-to-top">
+  <span class="nhsuk-caption-l">
+     Price change submission
+     <span class="nhsuk-u-visually-hidden"> - </span>
+   </span>Price input</h1>
 
 <h2>Aciclovir 200mg dispersible tablets</h2>
 <div class="nhsuk-grid-row">
@@ -497,8 +501,15 @@ Submit a new product | Portal | NHSBSA
   </div>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-5" onclick="" href="price-variance-check" id="submit" type="submit">
+<a class="nhsuk-button nhsuk-u-margin-top-7" onclick=""
+   href="price-variance-check" id="submit" type="submit">
   Save prices and continue
 </a>
+
+<script>
+  if (localStorage.getItem("price-change-type") ==  "zero price") {
+      document.getElementById("submit").href = "price-zero-reason";
+  }
+</script>
 
 {% endblock %}
