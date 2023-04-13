@@ -179,150 +179,174 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                 </div>
             </div>
         </div>
-        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-summary">
-            <div class="tabs-panel-inner">
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-three-quarters">
-                        <h2>Summary</h2>
+        <div class="nhsuk-tabs__panel" id="tab-summary" role="tabpanel" tabindex="-1"
+        aria-labelledby="tab3">
+       <div class="nhsuk-tabs-panel-inner">
+           <div class="nhsuk-grid-row">
+               <div class="nhsuk-grid-column-two-thirds">
+                   <h2>Summary</h2>
 
-                        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+                   <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-top-6">
 
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                    Product effective date
-                                </dt>
-                                <dd class="nhsuk-summary-list__value" id="product-effective-date">01 December 2022</dd>
+                       <div class="nhsuk-summary-list__row" id="effective-date">
+                           <dt class="nhsuk-summary-list__key">
+                               Effective date
+                           </dt>
+                           <dd class="nhsuk-summary-list__value" id="pack-effective-date">12 July 2022
+                           </dd>
 
-                            </div>
+                       </div>
+                       <!--  if user changes reason then they must follow journey steps. If they go to change the reason and
+                             then do not actually change it then they can return to the review page MPL 31JAN23-->
 
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key" style="vertical-align:middle">
-                                    Product name
-                                </dt>
-                                <dd class="nhsuk-summary-list__value js-copy-to-clipboard" id="product-name">Paracetamol 200mg tablets
-                                    <div aria-live="polite" class="nhsuk-u-visually-hidden"><p id="live-text-1"></div></dd>
+                       <div class="nhsuk-summary-list__row">
+                           <dt class="nhsuk-summary-list__key" id="discontinue-title">
+                               Discontinue reason
+                           </dt>
+                           <dd class="nhsuk-summary-list__value" id="discontinue-reason-add" >
+                               Product divestment
+                           </dd>
+                       </div>
 
-                            </div>
+                       <div class="nhsuk-summary-list__row">
+                           <dt class="nhsuk-summary-list__key" id="supplier-title">
+                               Supplier name
+                           </dt>
+                           <dd class="nhsuk-summary-list__value" id="supplier-add" >
+                               Boots Ltd.
+                           </dd>
+                       </div>
 
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key" id="file-or-link">
-                                    Product has SmPC or Data Sheet
-                                </dt>
-                                <dd class="nhsuk-summary-list__value" id="display-file-or-link">Yes
-                                </dd>
+                   </dl>
 
-                            </div>
+               </div>
 
-                        </dl>
+               <div class="nhsuk-grid-column-full">
 
+                   <div class="nhsuk-body-m flex--space-between nhsuk-u-margin-top-3" style="display: flex">
+                       <div class="nhsuk-u-visually-hidden">Currently viewing</div>
+                       <div id="pageAndResultCount">Page 1 of 1 (4 results)</div>
+                   </div>
 
-                        <h3>200 tablets</h3>
-                        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+                   <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-4">
+                       <caption class="nhsuk-table__caption">Selected packs to discontinue</caption>
+                       <thead role="rowgroup" class="nhsuk-table__head">
+                       <tr role="row">
+                           <th role="columnheader" class="" scope="col">
+                               Product name
+                           </th>
+                           <th role="columnheader" class="" scope="col">
+                               Pack size
+                           </th>
+                           <th role="columnheader" class="" scope="col">
+                               Subpack
+                           </th>
+                           <th role="columnheader" class="" scope="col">
+                               Price
+                           </th>
+                       </tr>
+                       </thead>
+                       <tbody class="nhsuk-table__body">
+                       <tr role="row" class="nhsuk-table__row" id="delete-row">
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Product name </span>Alprazolam
+                           </td>
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Pack </span>30
+                           </td>
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Subpack </span>2 &times; 15
+                           </td>
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Price </span><span><span>299</span>p</span>
+                           </td>
+                       </tr >
+                       <tr role="row" class="nhsuk-table__row">
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Product name </span>Bupenorphine 100mg capsules
+                           </td>
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Pack </span>28
+                           </td>
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Subpack </span>2 &times; 14
+                           </td>
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Price </span><span><span>23</span>p</span>
+                           </td>
+                       </tr>
+                       <tr role="row" class="nhsuk-table__row">
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Product name </span>Protein cornflakes
+                           </td>
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Pack </span>1
+                           </td>
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Subpack </span>
+                               <!--          need to make sure empty table cells announce something MPL 20/10/22-->
+                               <span class="nhsuk-u-visually-hidden">No Subpack information</span>
+                           </td>
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
+                           </td>
+                       </tr>
+                       <tr role="row" class="nhsuk-table__row">
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Product name </span>Boots Strawberry Pain Relief 3 Months Plus Paracetamol 120mg/5ml oral suspension
+                           </td>
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Pack </span>30
+                           </td>
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Subpack </span>3 &times; 10
+                           </td>
+                           <td role="cell" class="nhsuk-table__cell">
+                               <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
+                           </td>
+                       </tr>
+                       </tbody>
+                   </table>
 
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                    Pack size and type
-                                </dt>
-                                <dd class="nhsuk-summary-list__value js-copy-to-clipboard" id="pack-size">200 tablets
-                                    <div aria-live="polite" class="nhsuk-u-visually-hidden"><p id="live-text-2"></p></div></dd>
-
-                            </div>
-
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                    Pack has subpack
-                                </dt>
-                                <dd class="nhsuk-summary-list__value" id="pack-subpack">Yes</dd>
-
-                            </div>
-
-                            <div class="nhsuk-summary-list__row" id="subpack-info">
-                                <dt class="nhsuk-summary-list__key">
-                                    Number of subpacks
-                                </dt>
-                                <dd class="nhsuk-summary-list__value" id="pack-subpack-extra">20</dd>
-
-                            </div>
-
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                    Pack GTIN
-                                </dt>
-                                <dd class="nhsuk-summary-list__value js-copy-to-clipboard" id="pack-gtin">54465465454
-                                    <div aria-live="polite" class="nhsuk-u-visually-hidden"><p id="live-text-3"></p></div></dd>
-
-                            </div>
-
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                    Pack has packaging images
-                                </dt>
-                                <dd class="nhsuk-summary-list__value" id="pack-has-artwork">Yes</dd>
-
-                            </div>
-
-                            <!--                            <div class="nhsuk-summary-list__row" id="awaiting-artwork">-->
-                            <!--                                <dt class="nhsuk-summary-list__key">-->
-                            <!--                                    Packaging images uploaded files-->
-                            <!--                                </dt>-->
-                            <!--                                <dd class="nhsuk-summary-list__value" id="pack-upload-artwork">test-image.pdf-->
-                            <!--                                </dd>-->
-
-                            <!--                            </div>-->
-
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                    Pack has price
-                                </dt>
-                                <dd class="nhsuk-summary-list__value" id="pack-should-display-price">Yes</dd>
-
-                            </div>
-
-                            <div class="nhsuk-summary-list__row" id="hide-price">
-                                <dt class="nhsuk-summary-list__key">
-                                    Price in pence
-                                </dt>
-                                <dd class="nhsuk-summary-list__value js-copy-to-clipboard" id="product-price">555
-                                    <div aria-live="polite" class="nhsuk-u-visually-hidden"><p id="live-text-4"></p></div></dd>
-
-                            </div>
-
-                            <!--                            <div class="nhsuk-summary-list__row" id="hide-reason-no-price">-->
-                            <!--                                <dt class="nhsuk-summary-list__key">-->
-                            <!--                                    Reason for no price-->
-                            <!--                                </dt>-->
-                            <!--                                <dd class="nhsuk-summary-list__value" id="product-reason-no-price">-->
-                            <!--                                </dd>-->
-
-                            <!--                                <dd class="nhsuk-summary-list__actions">-->
-
-                            <!--                                    <a href="../product/product-reason-no-price">-->
-                            <!--                                        Change<span class="nhsuk-u-visually-hidden">&nbsp;reason for not providing a price</span>-->
-                            <!--                                    </a>-->
-
-                            <!--                                </dd>-->
-
-                            <!--                            </div>-->
-
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                    Pack legal category
-                                </dt>
-                                <dd class="nhsuk-summary-list__value" id="product-legal-category">P (Pharmacy Only)</dd>
-                            </div>
-
-                            <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                    Pack is hospital only
-                                </dt>
-                                <dd class="nhsuk-summary-list__value" id="product-hospital-only">No</dd>
-                            </div>
-
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </div>
+                   <div class="nhsuk-grid-row nhsuk-u-margin-top-5">
+                       <div class="nhsuk-grid-column-full">
+                           <nav class="govuk-pagination" role="navigation" aria-label="results">
+                               <div class="govuk-pagination__prev">
+                                   <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+                                       <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                                           <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                                       </svg>
+                                       <span class="govuk-pagination__link-title">Previous</span></a>
+                               </div>
+                               <ul class="govuk-pagination__list">
+                                   <li class="govuk-pagination__item">
+                                       <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                                           1
+                                       </a>
+                                   </li>
+                                   <li class="govuk-pagination__item govuk-pagination__item--current">
+                                       <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+                                           2
+                                       </a>
+                                   </li>
+                                   <li class="govuk-pagination__item">
+                                       <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                                           3
+                                       </a>
+                                   </li>
+                               </ul>
+                               <div class="govuk-pagination__next">
+                                   <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                                       <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                                   </svg></a>
+                               </div>
+                           </nav>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
         <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-uploads">
             <div class="tabs-panel-inner">
                 <div class="nhsuk-grid-row">
