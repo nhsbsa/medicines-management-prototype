@@ -354,6 +354,7 @@ if (localStorage.getItem("licensing-authority") == "Unlicensed") {
    document.getElementById("new-details").innerHTML = localStorage.getItem("licensing-authority");
    document.getElementById("new-details-change").href = "reason-licensing-authority/licensing-authority";
    document.getElementById("link-reason").href = "reason-licensing-authority/licensing-authority-reason";
+   document.getElementById("link-url").href = "reason-licensing-authority/product-file-upload-success";
 
    if (reasonForChangeLA != "") {
    document.getElementById("display-reason").innerHTML = reasonForChangeLA;
@@ -377,7 +378,6 @@ var getProductUpload2 = localStorage.getItem("product-upload-file-2");
 if (getProductLink != null) {
 console.log(getProductLink);
   document.getElementById("display-file-or-link").innerHTML = getProductLink;
-  document.getElementById("link-url").setAttribute('href', "product-spc-upload-choice");
 
 } else if (!getProductLink && (getProductUpload && !getProductUpload2)) {
   var linkUrlSplit = getProductUpload.split("\\");
@@ -396,8 +396,10 @@ console.log(getProductLink);
   var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
   document.getElementById("display-file-or-link").innerHTML = linkUrlFileName + '<br>' + linkUrlFileName2;
   document.getElementById("file-or-link").innerHTML = 'SmPC uploaded files';
+    if (localStorage.getItem("licensing-authority") != "Unlicensed") {
   document.getElementById("link-url").setAttribute('href', "product-file-upload-success");
   }
+ }
 
 var notAwaitingArtwork = localStorage.getItem("pack-should-display-artwork");
 document.getElementById("pack-has-artwork").innerHTML = notAwaitingArtwork;
