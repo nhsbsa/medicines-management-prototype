@@ -14,6 +14,7 @@ var getContinueButton = document.getElementsByClassName("nhsuk-button")[0];
 var buttonLink = document.getElementById("continue-button");
 var continueButton = document.getElementById("continue-button");
 var heading = document.getElementById("heading");
+var hideTable = document.getElementById("hide-table");
 
 // effective date
 

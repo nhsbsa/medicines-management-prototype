@@ -53,6 +53,10 @@ What is the reason for changing the product name? | Submit a product change: pro
   function storeReason() {
     var productReason = document.getElementById("product-reason");
     localStorage.setItem("product-name-reason", productReason.value);
+
+     if (localStorage.getItem("summary-page") == "yes") {
+        document.getElementById("continue-button").href = "../final-summary";
+    }
    }
 
   var getProductReason = localStorage.getItem("product-name-reason");
