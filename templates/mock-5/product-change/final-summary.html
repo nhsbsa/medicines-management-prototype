@@ -241,8 +241,11 @@ if (productChangeReason == "licensed route") {
   document.getElementById("has-artwork").style.display = "none";
   document.getElementById("awaiting-artwork").style.display = "none";
 
-  document.getElementById("new-details-title").innerHTML = "New licensed route";
+  document.getElementById("new-details-title").innerHTML = "Licensed routes";
   document.getElementById("new-details").innerHTML = 'Oral' + '<br>' + 'Dental';
+  document.getElementById("new-details-change").href = "reason-licensed-route/licensed-route";
+
+  document.getElementById("link-reason").href = "reason-licensed-route/licensed-route-reason";
 
   if (reasonForChangeLR != "") {
    document.getElementById("display-reason").innerHTML = reasonForChangeLR;
