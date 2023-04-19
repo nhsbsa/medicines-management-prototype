@@ -34,7 +34,7 @@ What is the reason for changing the licensing authority? | Submit a product chan
   </fieldset>
 </div>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeReason()"
+  <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeMAReason()"
      href="../product-spc" id="continue-button" type="submit">
     Save and continue
   </a>
@@ -50,19 +50,21 @@ What is the reason for changing the licensing authority? | Submit a product chan
     productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
   }
 
-  function storeReason() {
+  function storeMAReason() {
     var marketAuthReason = document.getElementById("market-auth-reason");
     localStorage.setItem("market-auth-reason", marketAuthReason.value);
+
+    if (localStorage.getItem("summary-page") == "yes") {
+        document.getElementById("continue-button").href = "../final-summary";
+    }
    }
 
   var getMarketAuthReason = localStorage.getItem("market-auth-reason");
   var licMarketAuthReason = document.querySelector("#market-auth-reason");
 
-  if (MarketAuthReason != null) {
     if (getMarketAuthReason != null) {
-        MarketAuthReason.defaultValue = getMarketAuthReason;
+        licMarketAuthReason.defaultValue = getMarketAuthReason;
     }
-  }
 
 </script>
 
