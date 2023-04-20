@@ -55,7 +55,7 @@ Submit a product change: what is the legal category of the product? | Portal | N
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeLegalCategory()"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeLegalCategoryProductChange()"
    href="licensing-authority-reason" id="continue-button"
    type="submit">
   Save and continue
@@ -68,6 +68,19 @@ Submit a product change: what is the legal category of the product? | Portal | N
   if (productChangeReason || productChangeReason != null || productChangeReason != "") {
     productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
   }
+
+  let radioProductChangeLegalButtons = document.getElementsByName("data-legal-cat");
+
+  function storeLegalCategoryProductChange() {
+        for (var radio of radioProductChangeLegalButtons) {
+                  if (radio.checked) {
+                        localStorage.setItem("product-legal-category", radio.value);
+                  }
+                  if (localStorage.getItem("summary-page") == "yes") {
+                        buttonLink.href = "../final-summary";
+                  }
+                }
+}
 
 </script>
 {% endblock %}

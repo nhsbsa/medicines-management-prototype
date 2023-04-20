@@ -74,8 +74,7 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button" onclick="uploadSpcFiles()"
-   id="continue-button"
+<a class="nhsuk-button" id="continue-button"
    href="pack-require-artwork"
    type="submit">
   Continue
@@ -90,8 +89,8 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
     productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
   }
 
-  if (productChangeReason == "licensed route") {
-      document.getElementById("continue-button").href = "product-change-summary";
+  if (productChangeReason == "licensed route" || localStorage.getItem("summary-page") == "yes") {
+      document.getElementById("continue-button").href = "final-summary";
   }
 
 

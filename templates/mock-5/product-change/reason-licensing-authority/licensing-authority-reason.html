@@ -64,17 +64,21 @@ What is the reason for changing the licensing authority? | Submit a product chan
           }
 
   function storeReasonWhy() {
-    var licensingAuthorityReason = document.getElementById("licensing-authority-reason-why");
-    localStorage.setItem("licensing-authority-reason-why", licensingAuthorityReason.value);
+    localStorage.setItem("licensing-authority-reason-why", document.querySelector("#licensing-authority-reason").value);
    }
 
   var getLicensedAuthorityReason = localStorage.getItem("licensing-authority-reason-why");
+  console.log('getLicensedAuthorityReason', getLicensedAuthorityReason);
   var licAuthorityReason= document.querySelector("#licensing-authority-reason");
 
   if (licAuthorityReason != null) {
     if (getLicensedAuthorityReason != null) {
-        licAuthorityReason.defaultValue = getLicensedAuthorityReason;
+        licAuthorityReason.value = getLicensedAuthorityReason;
     }
+  }
+
+  if (localStorage.getItem("summary-page") == "yes") {
+      document.getElementById("continue-button").href = "../final-summary";
   }
 
 </script>

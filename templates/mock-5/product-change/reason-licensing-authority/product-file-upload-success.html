@@ -77,9 +77,9 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
 <!--if product goes from licensed to unlicensed then just data sheet then summary -->
 <!--if product goes from unlicensed to licensed then SmPC then optional artwork then summary -->
 
-<a class="nhsuk-button" onclick="uploadSpcFiles()"
+<a class="nhsuk-button"
    id="continue-button"
-   href="#"
+   href="../final-summary"
    type="submit">
   Continue
 </a>
@@ -91,6 +91,10 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
 
   if (productChangeReason || productChangeReason != null || productChangeReason != "") {
     productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+  if (localStorage.getItem("licensing-authority") == "Licensed") {
+      document.getElementById("continue-button").href = "../pack-require-artwork";
   }
 </script>
 
