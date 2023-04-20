@@ -83,16 +83,8 @@ Review market authorisation numbers | Submit a product change: market authorisat
   }
 
   function storeName() {
-    var productName = document.getElementById("product-name");
-    localStorage.setItem("new-product-name", productName.value);
-   }
-
-  var getProductName = localStorage.getItem("new-product-name");
-  var prodName = document.querySelector("#product-name");
-
-  if (prodName != null) {
-    if (getProductName != null) {
-        prodName.defaultValue = getProductName;
+    if (localStorage.getItem("summary-page") == "yes") {
+        document.getElementById("continue-button").href = "../final-summary";
     }
   }
 

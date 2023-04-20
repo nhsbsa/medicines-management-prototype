@@ -166,8 +166,11 @@ Select a product | Submit a product change | Portal | NHSBSA
              let productNameId = splitId[1] + '-' + splitId[2];
              localStorage.setItem("product-name", document.getElementById(productNameId).textContent);
 
-             if (localStorage.getItem("product-change-summary") == 'product-change-summary') {
+             if (localStorage.getItem("product-change-summary") == 'product-change-summary' && localStorage.getItem("summary-page") != "yes") {
               e.target.href = "summary";
+              console.log(e.target.href);
+                } else if (localStorage.getItem("summary-page") == 'yes') {
+              e.target.href = "final-summary";
               console.log(e.target.href);
                 }
               }
@@ -180,10 +183,13 @@ Select a product | Submit a product change | Portal | NHSBSA
              let productNameId = splitId[1] + '-' + splitId[2];
              localStorage.setItem("product-name", document.getElementById(productNameId).textContent);
 
-             if (localStorage.getItem("product-change-summary") == 'product-change-summary') {
+             if (localStorage.getItem("product-change-summary") == 'product-change-summary'&& localStorage.getItem("summary-page") != "yes") {
               e.target.href = "summary";
               console.log(e.target.href);
-               }
+                } else if (localStorage.getItem("summary-page") == 'yes') {
+              e.target.href = "final-summary";
+              console.log(e.target.href);
+                }
              }
           })
       }

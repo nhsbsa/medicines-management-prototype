@@ -5,64 +5,65 @@ Submit a new product | Portal | NHSBSA
 {% block content %}
 
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="price-effective-date">
+  <a class="nhsuk-back-link__link" href="price-change-draft">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to what is the effective date of the price change?</a>
+    Go back to summary of price changes</a>
 </div>
 
 <h1>
   <span class="nhsuk-caption-l">
      Price change submission
      <span class="nhsuk-u-visually-hidden"> - </span>
-   </span>Select products or individual packs</h1>
+   </span>
+  Select products or individual packs</h1>
 
 <p>To select products or individual packs you must first perform a product search. Choosing to &#39;Show all&#39; will return all products currently listed on dm+d, any recently actioned submissions and all discontinued lines.</p>
 
-<div class="nhsuk-form-group">
-  <p class="">You may filter the products by choosing from one of the following options.</p>
-  <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-5">
-    <!--        <div class="nhsuk-grid-column-one-third">-->
-    <div class="nhsuk-radios nhsuk-radios--inline">
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes" checked>
-        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-          Show all
-        </label>
-      </div>
-      <!--        </div>-->
-      <!--        <div class="nhsuk-grid-column-one-third">-->
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-          Show active
-        </label>
-      </div>
-      <!--        </div>-->
-      <!--        <div class="nhsuk-grid-column-one-third">-->
-      <div class="nhsuk-radios__item">
-        <input class="nhsuk-radios__input" id="example-3" name="example" type="radio" value="no">
-        <label class="nhsuk-label nhsuk-radios__label" for="example-3">
-          Show discontinued
-        </label>
-      </div>
+    <div class="nhsuk-form-group">
+      <p class="">You may filter the products by choosing from one of the following options.</p>
+      <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-5">
+<!--        <div class="nhsuk-grid-column-one-third">-->
+
+        <div class="nhsuk-radios nhsuk-radios--inline">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes" checked>
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+              Show all
+            </label>
+          </div>
+<!--        </div>-->
+<!--        <div class="nhsuk-grid-column-one-third">-->
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              Show active
+            </label>
+          </div>
+<!--        </div>-->
+<!--        <div class="nhsuk-grid-column-one-third">-->
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-3" name="example" type="radio" value="no">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+              Show discontinued
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
     </div>
-  </fieldset>
-
-</div>
-<div class="nhsuk-form-group">
-  <p class="">You can also search for a specific term, but this is optional.</p>
+     <div class="nhsuk-form-group">
+       <p class="nhsuk-u-margin-top-5">You can also search for a specific term, but this is optional.</p>
   <label class="nhsuk-label" for="example">Search term (optional)</label>
-  <input class="nhsuk-input" id="example" name="example" type="text">
-</div>
-<a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-7 nhsuk-u-margin-top-3"
-   id="continue-button" type="submit" href="product-list-add">
-  Search
-  <span class="nhsuk-u-visually-hidden">Search</span>
-</a>
+  <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="example" name="example" type="text">
+    </div>
+    <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-7" type="submit">
+      Search
+      <span class="nhsuk-u-visually-hidden">Search</span>
+    </button>
 
-<h2>Search results</h2>
+    <h2>Search results</h2>
 
 <div class="nhsuk-inset-text nhsuk-u-margin-top-4 extend-inset">
   <span class="nhsuk-u-visually-hidden">Information: </span>
@@ -73,13 +74,13 @@ Submit a new product | Portal | NHSBSA
   <p class="" >If the search results span over multiple pages, any action will only apply to this page. If required, move to the next page to continue selecting or deselecting products.</p>
 </div>
 
-
 <!-- using smaller govuk checkboxes. If required, we can revert to nhs checkbox MPL 31/10/2022  -->
 
 <div class="nhsuk-body-m flex--space-between" style="display: flex">
   <div class="nhsuk-u-visually-hidden">Currently viewing</div>
   <div id="pageAndResultCount">Page 1 of 1 (4 results)</div>
 </div>
+<!--search results kept above table, but only require pagination if more than 1 page MPL 29MAR23-->
     <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
       <caption>Product search results</caption>
       <thead role="rowgroup" class="nhsuk-table__head">
@@ -104,20 +105,19 @@ Submit a new product | Portal | NHSBSA
       </thead>
       <tbody class="nhsuk-table__body">
       <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Alprazolam
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Product name </span>Aciclovir 200mg dispersible tablets
         </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Pack </span>30
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Pack </span>25
         </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Subpack </span>
-          <span class="nhsuk-u-visually-hidden">No Subpack information</span>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Subpack </span>10 &times; 2.5 tablets
         </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Price </span><span><span>299</span>p</span>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Price </span><span><span>249</span>p</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
+        <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Status </span>
           <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
             Active
@@ -125,12 +125,78 @@ Submit a new product | Portal | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Select </span>
-          <div class="nhsuk-checkboxes__item table-checkbox">
-            <input class="nhsuk-checkboxes__input" id="product-name-0" name="product-name-0" type="checkbox" value="hmrc">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-0">
-              <!--                label is hidden to save space YML 31/10/22 -->
-              <span class="nhsuk-u-visually-hidden">Product name</span>
-            </label>
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item table-checkbox">
+              <input class="nhsuk-checkboxes__input" id="product-name-select-1" name="select" type="checkbox" value="email">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-select-1">
+                <span class="nhsuk-u-visually-hidden">Product name</span>
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Product name </span>Alprazolam
+        </td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Pack </span>30
+        </td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Subpack </span><span class="nhsuk-u-visually-hidden">No subpack exists for Alprazolam 30 pack</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Price </span><span><span>299</span>p</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
+          <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
+            Active
+          </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item table-checkbox">
+              <input class="nhsuk-checkboxes__input" id="product-name-select-2" name="select" type="checkbox" value="email">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-select-2">
+                <span class="nhsuk-u-visually-hidden">Product name</span>
+              </label>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Product name </span>Bromocriptine 2.5mg tablets
+        </td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Pack </span>100
+        </td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Subpack </span><span class="nhsuk-u-visually-hidden">No subpack exists for Bromocriptine 2.5mg tablets 100 pack</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Price </span><span><span>800</span>p</span>
+        </td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
+          <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
+            Active
+          </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item table-checkbox">
+              <input class="nhsuk-checkboxes__input" id="product-name-select-3" name="select" type="checkbox" value="email">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-select-3">
+                <span class="nhsuk-u-visually-hidden">Product name</span>
+              </label>
+            </div>
           </div>
         </td>
       </tr>
@@ -144,7 +210,7 @@ Submit a new product | Portal | NHSBSA
         <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>
 <!--          need to make sure empty table cells announce something MPL 20/10/22-->
-          <span class="nhsuk-u-visually-hidden">No Subpack information</span>
+          <span class="nhsuk-u-visually-hidden">No Subpack exists for Bupenorphine 100mg capsules 28 pack</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>23</span>p</span>
@@ -157,44 +223,14 @@ Submit a new product | Portal | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Select </span>
-          <div class="nhsuk-checkboxes__item table-checkbox">
-              <input class="nhsuk-checkboxes__input" id="product-name-1" name="product-name-1" type="checkbox" value="hmrc">
-              <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-1">
-<!--                label is hidden to save space YML 31/10/22 -->
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item table-checkbox">
+              <input class="nhsuk-checkboxes__input" id="product-name-select-4" name="select" type="checkbox" value="email">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-select-4">
                 <span class="nhsuk-u-visually-hidden">Product name</span>
               </label>
-          </div>
-        </td>
-      </tr>
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Protein cornflakes
-        </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Pack </span>1
-        </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Subpack </span>
-          <!--          need to make sure empty table cells announce something MPL 20/10/22-->
-          <span class="nhsuk-u-visually-hidden">No Subpack information</span>
-        </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
-        </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
-          <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
-            Active
-          </strong>
-        </td>
-        <td role="cell" class="nhsuk-table__cell align-middle">
-          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
-          <div class="nhsuk-checkboxes__item table-checkbox">
-            <input class="nhsuk-checkboxes__input" id="product-name-2" name="product-name-2" type="checkbox" value="hmrc">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-2">
-              <!--                label is hidden to save space YML 31/10/22 -->
-              <span class="nhsuk-u-visually-hidden">Product name</span>
-            </label>
+            </div>
           </div>
         </td>
       </tr>
@@ -203,7 +239,7 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-table-responsive__heading">Product name </span>Cymbalta 30mg gastro-resistant capsules
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Pack </span>30
+          <span class="nhsuk-table-responsive__heading">Pack </span>1
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>3 &times; 10 capsules
@@ -219,44 +255,47 @@ Submit a new product | Portal | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Select </span>
-          <div class="nhsuk-checkboxes__item table-checkbox">
-            <input class="nhsuk-checkboxes__input" id="product-name-3" name="product-name-3" type="checkbox" value="hmrc">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-3">
-              <!--                label is hidden to save space YML 31/10/22 -->
-              <span class="nhsuk-u-visually-hidden">Product name</span>
-            </label>
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item table-checkbox">
+              <input class="nhsuk-checkboxes__input" id="product-name-select-5" name="select" type="checkbox" value="email">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-select-5">
+                <span class="nhsuk-u-visually-hidden">Product name</span>
+              </label>
+            </div>
           </div>
         </td>
       </tr>
-
       <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell center-table-row">
+        <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading">Product name </span>Methadone 50mg/5ml solution for injection ampoules
         </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
+        <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading">Pack </span>10
         </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
+        <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading">Subpack </span>
           <span class="nhsuk-u-visually-hidden">No Subpack exists for Methadone 50mg/5ml solution for injection ampoules 10 pack</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Price </span>222p<span/>
+        <td role="cell" class="nhsuk-table__cell align-middle">
+          <span class="nhsuk-table-responsive__heading">Price </span><span><span>222</span>p</span>
         </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
+        <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Status </span>
-          <strong class="nhsuk-tag nhsuk-tag--red mobile-tag">
-            Discontinued
+          <strong class="nhsuk-tag nhsuk-tag--blue mobile-tag">
+            Active
           </strong>
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Select </span>
-          <div class="nhsuk-checkboxes__item table-checkbox">
-            <input class="nhsuk-checkboxes__input" id="product-name-4" name="product-name-4" type="checkbox" value="hmrc">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-4">
-              <!--                label is hidden to save space YML 31/10/22 -->
-              <span class="nhsuk-u-visually-hidden">Product name</span>
-            </label>
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item table-checkbox">
+              <input class="nhsuk-checkboxes__input" id="product-name-select-6" name="select" type="checkbox" value="email">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-select-6">
+                <span class="nhsuk-u-visually-hidden">Product name</span>
+              </label>
+            </div>
           </div>
         </td>
       </tr>
@@ -270,7 +309,7 @@ Submit a new product | Portal | NHSBSA
         <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Subpack </span>
           <!--          need to make sure empty table cells announce something MPL 20/10/22-->
-          <span class="nhsuk-u-visually-hidden">No subpack information</span>
+          <span class="nhsuk-u-visually-hidden">No Subpack exists for Protein cornflakes 1 pack</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
           <span class="nhsuk-table-responsive__heading">Price </span><span><span>99</span>p</span>
@@ -283,42 +322,14 @@ Submit a new product | Portal | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell align-middle">
           <span class="nhsuk-table-responsive__heading select-tag">Select </span>
-          <div class="nhsuk-checkboxes__item table-checkbox">
-            <input class="nhsuk-checkboxes__input" id="product-name-5" name="product-name-5" type="checkbox" value="hmrc">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-5">
-              <!--                label is hidden to save space YML 31/10/22 -->
-              <span class="nhsuk-u-visually-hidden">Product name</span>
-            </label>
-          </div>
-        </td>
-      </tr>
-      <tr role="row" class="nhsuk-table__row">
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Product name </span>Bupenorphine 100mg capsules
-        </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Pack </span>28
-        </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Subpack </span>2 &times; 14 capsules
-        </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Price </span><span><span>23</span>p</span>
-        </td>
-        <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading select-tag">Status </span>
-          <strong class="nhsuk-tag nhsuk-tag--red mobile-tag">
-            Discontinued
-          </strong>
-        </td>
-        <td role="cell" class="nhsuk-table__cell align-middle">
-          <span class="nhsuk-table-responsive__heading select-tag">Select </span>
-          <div class="nhsuk-checkboxes__item table-checkbox">
-            <input class="nhsuk-checkboxes__input" id="product-name-6" name="product-name-6" type="checkbox" value="hmrc">
-            <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-6">
-              <!--                label is hidden to save space YML 31/10/22 -->
-              <span class="nhsuk-u-visually-hidden">Product name</span>
-            </label>
+          <div class="nhsuk-checkboxes">
+
+            <div class="nhsuk-checkboxes__item table-checkbox">
+              <input class="nhsuk-checkboxes__input" id="product-name-select-7" name="select" type="checkbox" value="email">
+              <label class="nhsuk-label nhsuk-checkboxes__label" for="product-name-select-7">
+                <span class="nhsuk-u-visually-hidden">Product name</span>
+              </label>
+            </div>
           </div>
         </td>
       </tr>
@@ -367,13 +378,14 @@ Submit a new product | Portal | NHSBSA
 
 <!--    remove back button as back link works more effectively and keeping it may cause confusion YML 31/10/22-->
 
-
-<!--    button floated right to line up with checkboxes. YML 31/10/22-->
-    <a href="product-list.html"><button class="nhsuk-button nhsuk-u-margin-top-3">Add selected products</button></a>
+    <a href="product-list"><button class="nhsuk-button">Save selection and continue</button></a>
   </div>
 </div>
 
 <script>
+    localStorage.setItem("existing-products", "yes");
+     localStorage.removeItem("new-products");
+
     let checkAll = document.getElementsByClassName("nhsuk-checkboxes__input");
 
 
@@ -388,13 +400,6 @@ Submit a new product | Portal | NHSBSA
        checkAll[i].checked = false;
      }
   }
-
-  if (localStorage.getItem("add-more-packs") == "yes") {
-    document.getElementById("product-name-0").checked = "checked";
-    document.getElementById("product-name-1").checked = "checked";
-    document.getElementById("product-name-4").checked = "checked";
-  }
-
 </script>
 
 

@@ -5,14 +5,29 @@ Submit a new product | Portal | NHSBSA
 {% block content %}
 
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="price-zero-reason">
+  <a class="nhsuk-back-link__link" href="../price-change-drafts" id="back-link">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to reason for zero price change</a>
+    Go back to price change drafts</a>
 </div>
 
-<h1>Summary of zero price changes</h1>
+<h1><span class="nhsuk-caption-l">
+     Price change submission
+     <span class="nhsuk-u-visually-hidden"> - </span>
+   </span>
+  Summary of zero price changes</h1>
+
+<!--MPL 29MAR23-->
+<!--Instructions for zero prices draft-->
+
+<!--If a user deletes all packs then they will need to add packs before continuing. Need to hide continue button if no packs on page -->
+<!--There will be a link asking users to add packs. This takes user to select products' page where they pick up the journey -->
+
+<!--Effective date will always remain on the page, but user can change this value -->
+
+<!--When a user edits a value we just want to show them that entry, not a full list of all entries. This makes sure the user focuses on changing that entry only -->
+<!--We need to make sure the price variance check is performed on this new entry -->
 
 <p class="nhsuk-u-margin-bottom-7">Review the effective date of the zero price change and update if necessary.</p>
 
@@ -50,7 +65,7 @@ Submit a new product | Portal | NHSBSA
     <div id="pageAndResultCount">Page 1 of 1 (4 results)</div>
   </div>
     <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-3" id="zero-price-change-table">
-      <caption class="nhsuk-table__caption">Packs with price set at zero</caption>
+      <caption class="nhsuk-table__caption">Packs chosen for zero price changes</caption>
       <thead role="rowgroup" class="nhsuk-table__head">
       <tr role="row">
         <th role="columnheader" class="" scope="col">
@@ -85,7 +100,7 @@ Submit a new product | Portal | NHSBSA
           <span id="subpack-1">10 &times; 2.5 tablets</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Reason for zero </span>
+          <span class="nhsuk-table-responsive__heading">Reason for zero price</span>
           <span>Matches Part VIII in Drug Tariff</span>
         </td>
         <td role="cell" class="nhsuk-table__cell action-width center-table-row">
@@ -110,7 +125,7 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-u-visually-hidden">No Subpack information</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Reason for zero </span><span>Price no longer agreed</span>
+          <span class="nhsuk-table-responsive__heading">Reason for zero price</span><span>Price no longer agreed</span>
         </td>
         <td role="cell" class="nhsuk-table__cell action-width center-table-row">
           <span class="nhsuk-table-responsive__heading">Action</span>
@@ -134,7 +149,7 @@ Submit a new product | Portal | NHSBSA
           <span class="nhsuk-u-visually-hidden">No Subpack information</span>
         </td>
         <td role="cell" class="nhsuk-table__cell center-table-row">
-          <span class="nhsuk-table-responsive__heading">Reason for zero </span><span>Example of a unique reason</span>
+          <span class="nhsuk-table-responsive__heading">Reason for zero price</span><span>Example of a unique reason</span>
         </td>
         <td role="cell" class="nhsuk-table__cell action-width center-table-row">
           <span class="nhsuk-table-responsive__heading">Action</span>
@@ -145,6 +160,7 @@ Submit a new product | Portal | NHSBSA
       </tr>
       </tbody>
     </table>
+
   <nav class="govuk-pagination nhsuk-u-margin-top-4" role="navigation" aria-label="results">
     <div class="govuk-pagination__prev">
       <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
@@ -180,26 +196,39 @@ Submit a new product | Portal | NHSBSA
 
 <div class="nhsuk-inset-text" id="inset-text-no-packs">
   <span class="nhsuk-u-visually-hidden">Information: </span>
-  <p>If you are missing any packs then <a href="product-list-add" onclick="zeroPriceChangeAdd()" class="nhsuk-link nhsuk-link--no-visited-state">add more packs</a></p>
+  <p>If you are missing any packs then <a href="product-list-search" onclick="zeroPriceChangeAdd()" class="nhsuk-link nhsuk-link--no-visited-state">add more packs</a></p>
   <p>If you no longer need all packs then <a class="nhsuk-link nhsuk-link--no-visited-state" href="#" onclick="removeAllEntries()">remove all selected packs</a></p>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-right-5" onclick="" href="prices-submitted" id="continue-button" type="submit">
+<a class="nhsuk-button nhsuk-u-margin-right-5" onclick="" href="price-change-confirmation" id="continue-button" type="submit">
   Confirm zero prices and submit
 </a>
+
 <a href="draft-confirmation" id="draft-button"><button class="nhsuk-button nhsuk-button--secondary">Save as draft</button></a>
 
 <script>
-  localStorage.setItem("summary-page", "yes");
+window.onload = function() {
+    if (localStorage.getItem("combination") == "yes") {
+       document.getElementById("continue-button").innerHTML = "Save and continue";
+       document.getElementById("continue-button").href = "both-price-and-zero-draft";
 
-  if (localStorage.getItem("price-change-type") == "both") {
-        document.getElementById("continue-button").innerHTML = "Confirm prices and continue";
-        document.getElementById("continue-button").href = "both-price-and-zero-draft";
-        document.getElementById("draft-button").style.display = "none";
-  }
+       document.getElementById("draft-button").style.display = "none";
 
+       document.getElementById("back-link").setAttribute('href', "both-price-and-zero-draft");
+       document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to summary price and zero price changes";
+   }
 
-  var getEffectiveDay = localStorage.getItem("effective-day");
+};
+
+ function zeroPriceChangeAdd() {
+    localStorage.setItem("zero-price-change-add","yes");
+ }
+
+ function zeroPriceChangeAddBlank() {
+    localStorage.setItem("zero-price-change-add","no");
+ }
+
+var getEffectiveDay = localStorage.getItem("effective-day");
 var getEffectiveMonth = localStorage.getItem("effective-month");
 var getEffectiveYear = localStorage.getItem("effective-year");
 
@@ -244,15 +273,7 @@ document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' '
      localStorage.setItem("zero-price-search", "yes");
   }
 
-  function zeroPriceChangeAddBlank() {
-    localStorage.setItem("zero-price-change-add","no");
-    localStorage.removeItem("zero-price-reason-detail");
-    localStorage.removeItem("zero-price-reason");
- }
 
-function zeroPriceChangeAdd() {
-    localStorage.setItem("add-more-packs", "yes");
-  }
 
   let removeZeroPriceChangeNumberOne = document.getElementById("zero-price-change-link-number-1");
   let removeRowOne = document.getElementById("price-change-1");
@@ -270,9 +291,8 @@ function zeroPriceChangeAdd() {
            zeroPriceChangeClearAll.style.display = "none";
            packReviewText.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
-           document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
            document.getElementById("inset-text-no-packs").innerHTML =
-           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
         }
 
 });
@@ -287,9 +307,8 @@ function zeroPriceChangeAdd() {
            zeroPriceChangeClearAll.style.display = "none";
            packReviewText.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
-           document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
            document.getElementById("inset-text-no-packs").innerHTML =
-           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
         }
       }
 });
@@ -308,9 +327,8 @@ function zeroPriceChangeAdd() {
            zeroPriceChangeClearAll.style.display = "none";
            packReviewText.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
-           document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
            document.getElementById("inset-text-no-packs").innerHTML =
-           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
         }
 });
 
@@ -325,9 +343,8 @@ function zeroPriceChangeAdd() {
            zeroPriceChangeClearAll.style.display = "none";
            packReviewText.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
-           document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
            document.getElementById("inset-text-no-packs").innerHTML =
-           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
         }
       }
 });
@@ -349,9 +366,8 @@ if (removeZeroPriceChangeNumberThree) {
            zeroPriceChangeClearAll.style.display = "none";
            packReviewText.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
-           document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
            document.getElementById("inset-text-no-packs").innerHTML =
-           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
         }
 });
 
@@ -367,9 +383,8 @@ if (removeZeroPriceChangeNumberThree) {
            zeroPriceChangeClearAll.style.display = "none";
            packReviewText.style.display = "none";
            document.getElementById("continue-button").style.display = "none";
-           document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
            document.getElementById("inset-text-no-packs").innerHTML =
-           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+           '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
         }
       }
 });
@@ -382,15 +397,11 @@ function removeAllEntries() {
      document.getElementById("continue-button").style.display = "none";
      document.getElementById("inset-text-no-packs").style = "margin-top: 8px";
      document.getElementById("inset-text-no-packs").innerHTML =
-     '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
+     '<span class="nhsuk-u-visually-hidden">Information: </span><p>No packs selected for this zero price change.</p><p>To continue, <a href="product-list-search-blank" onclick="zeroPriceChangeAddBlank()" class="nhsuk-link nhsuk-link--no-visited-state">add packs for this zero price change</a></p>';
 };
 
-if (localStorage.getItem("combination") == "yes") {
-        document.getElementById("continue-button").innerHTML = "Confirm prices and continue";
-        document.getElementById("continue-button").href = "both-price-and-zero-draft";
-  }
-
 </script>
+
 
 
 {% endblock %}
