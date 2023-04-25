@@ -16,7 +16,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
 <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
-        <h1>New product submission</h1>
+        <h1>Price change submission</h1>
     </div>
 </div>
 
@@ -31,11 +31,8 @@ Submit a new product: pack size and strength | Portal | NHSBSA
         <li class="nhsuk-tabs__list-item" id="heading-tab-messages" role="presentation"><a
                 class="nhsuk-tabs__tab" href="#tab-messages" role="tab" id="message-panel">Message
             board</a></li>
-        <li class="nhsuk-tabs__list-item" id="heading-tab-summary" role="presentation"><a
-                class="nhsuk-tabs__tab" href="#tab-summary" role="tab" id="summary-panel">Summary</a>
-        </li>
-        <li class="nhsuk-tabs__list-item" id="heading-tab-uploads" role="presentation"><a
-                class="nhsuk-tabs__tab" href="#tab-uploads" role="tab" id="uploads-panel">Uploads</a>
+        <li class="nhsuk-tabs__list-item" id="heading-tab-price-change-summary" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-summary" role="tab" id="price-change-summary-panel">Summary</a>
         </li>
         <li class="nhsuk-tabs__list-item" id="heading-tab-action" role="presentation"><a
                 class="nhsuk-tabs__tab" href="#tab-action" role="tab" id="action-panel">Action</a>
@@ -47,7 +44,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
         <div class="nhsuk-tabs-panel-inner">
             <div class="nhsuk-grid-row">
                 <div class="nhsuk-grid-column-two-thirds">
-                    <h2>Product</h2>
+                    <h2>Submission</h2>
                     <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
 
                         <div class="nhsuk-summary-list__row">
@@ -229,225 +226,10 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                 <div class="nhsuk-grid-column-full">
                     <h2>Summary</h2>
 
-                    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+                    <p>Your price change submission contains changes to pack prices and setting some pack prices as zero. To view these in more detail, select the appropriate link below. </p>
 
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Product effective date
-                            </dt>
-                            <dd class="nhsuk-summary-list__value" id="product-effective-date">01 December 2022</dd>
-
-                        </div>
-
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key" style="vertical-align:middle">
-                                Product name
-                            </dt>
-                            <dd class="nhsuk-summary-list__value js-copy-to-clipboard" id="product-name">Paracetamol
-                                200mg tablets
-                                <div aria-live="polite" class="nhsuk-u-visually-hidden"><p id="live-text-1"></div>
-                            </dd>
-
-                        </div>
-
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key" id="file-or-link">
-                                Product has SmPC or Data Sheet
-                            </dt>
-                            <dd class="nhsuk-summary-list__value" id="display-file-or-link">Yes
-                            </dd>
-
-                        </div>
-
-                    </dl>
-
-
-                    <h3>200 tablets</h3>
-                    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
-
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Pack size and type
-                            </dt>
-                            <dd class="nhsuk-summary-list__value js-copy-to-clipboard" id="pack-size">200 tablets
-                                <div aria-live="polite" class="nhsuk-u-visually-hidden"><p id="live-text-2"></p>
-                                </div>
-                            </dd>
-
-                        </div>
-
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Pack has subpack
-                            </dt>
-                            <dd class="nhsuk-summary-list__value" id="pack-subpack">Yes</dd>
-
-                        </div>
-
-                        <div class="nhsuk-summary-list__row" id="subpack-info">
-                            <dt class="nhsuk-summary-list__key">
-                                Number of subpacks
-                            </dt>
-                            <dd class="nhsuk-summary-list__value" id="pack-subpack-extra">20</dd>
-
-                        </div>
-
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Pack GTIN
-                            </dt>
-                            <dd class="nhsuk-summary-list__value js-copy-to-clipboard" id="pack-gtin">54465465454
-                                <div aria-live="polite" class="nhsuk-u-visually-hidden"><p id="live-text-3"></p>
-                                </div>
-                            </dd>
-
-                        </div>
-
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Pack has packaging images
-                            </dt>
-                            <dd class="nhsuk-summary-list__value" id="pack-has-artwork">Yes</dd>
-
-                        </div>
-
-                        <!--                            <div class="nhsuk-summary-list__row" id="awaiting-artwork">-->
-                        <!--                                <dt class="nhsuk-summary-list__key">-->
-                        <!--                                    Packaging images uploaded files-->
-                        <!--                                </dt>-->
-                        <!--                                <dd class="nhsuk-summary-list__value" id="pack-upload-artwork">test-image.pdf-->
-                        <!--                                </dd>-->
-
-                        <!--                            </div>-->
-
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Pack has price
-                            </dt>
-                            <dd class="nhsuk-summary-list__value" id="pack-should-display-price">Yes</dd>
-
-                        </div>
-
-                        <div class="nhsuk-summary-list__row" id="hide-price">
-                            <dt class="nhsuk-summary-list__key">
-                                Price in pence
-                            </dt>
-                            <dd class="nhsuk-summary-list__value js-copy-to-clipboard" id="product-price">555
-                                <div aria-live="polite" class="nhsuk-u-visually-hidden"><p id="live-text-4"></p>
-                                </div>
-                            </dd>
-
-                        </div>
-
-                        <!--                            <div class="nhsuk-summary-list__row" id="hide-reason-no-price">-->
-                        <!--                                <dt class="nhsuk-summary-list__key">-->
-                        <!--                                    Reason for no price-->
-                        <!--                                </dt>-->
-                        <!--                                <dd class="nhsuk-summary-list__value" id="product-reason-no-price">-->
-                        <!--                                </dd>-->
-
-                        <!--                                <dd class="nhsuk-summary-list__actions">-->
-
-                        <!--                                    <a href="../product/product-reason-no-price">-->
-                        <!--                                        Change<span class="nhsuk-u-visually-hidden">&nbsp;reason for not providing a price</span>-->
-                        <!--                                    </a>-->
-
-                        <!--                                </dd>-->
-
-                        <!--                            </div>-->
-
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Pack legal category
-                            </dt>
-                            <dd class="nhsuk-summary-list__value" id="product-legal-category">P (Pharmacy Only)</dd>
-                        </div>
-
-                        <div class="nhsuk-summary-list__row">
-                            <dt class="nhsuk-summary-list__key">
-                                Pack is hospital only
-                            </dt>
-                            <dd class="nhsuk-summary-list__value" id="product-hospital-only">No</dd>
-                        </div>
-
-                    </dl>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="nhsuk-tabs__panel" id="tab-uploads" role="tabpanel" tabindex="-1"
-         aria-labelledby="tab4">
-        <div class="nhsuk-tabs-panel-inner">
-            <div class="nhsuk-grid-row">
-                <div class="nhsuk-grid-column-full">
-                    <h2 class="nhsuk-u-margin-bottom-6">Uploads</h2>
-
-                    <table role="table" class="nhsuk-table-responsive" id="hide-table">
-                        <caption class="nhsuk-table__caption">SmPC or Data Sheet file uploads</caption>
-                        <thead role="rowgroup" class="nhsuk-table__head">
-                        <tr role="row">
-                            <th role="columnheader" class="" scope="col">
-                                File name
-                            </th>
-                            <th role="columnheader" class="file-size-width" scope="col">
-                                File size
-                            </th>
-
-                        </tr>
-                        </thead>
-                        <tbody class="nhsuk-table__body">
-                        <tr role="row" class="nhsuk-table__row" id="hide-first-file">
-                            <td role="cell" class="nhsuk-table__cell" id="file-upload-name"><a href="#">test-SmPC.doc</a>
-                                <span class="nhsuk-table-responsive__heading">File name</span>
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">File size </span>8.25 MB
-                            </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row" id="hide-second-file">
-                            <td role="cell" class="nhsuk-table__cell" id="file-upload-name-2"><a href="#">test-SmPC-other.doc</a>
-                                <span class="nhsuk-table-responsive__heading"> </span>
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">File size </span>3.77 MB
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-
-                    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-6" id="hide-table">
-                        <caption class="nhsuk-table__caption">Artwork file uploads</caption>
-                        <thead role="rowgroup" class="nhsuk-table__head">
-                        <tr role="row">
-                            <th role="columnheader" class="" scope="col">
-                                File name
-                            </th>
-                            <th role="columnheader" class="file-size-width" scope="col">
-                                File size
-                            </th>
-
-                        </tr>
-                        </thead>
-                        <tbody class="nhsuk-table__body">
-                        <tr role="row" class="nhsuk-table__row" id="hide-first-file">
-                            <td role="cell" class="nhsuk-table__cell" id="file-image-upload-name"><a href="#">test-image.png</a>
-                                <span class="nhsuk-table-responsive__heading"></span>
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">File size </span>8.25 MB
-                            </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row" id="hide-second-file">
-                            <td role="cell" class="nhsuk-table__cell" id="file-image-upload-name-2"><a href="#">test-image-other.jpg</a>
-                                <span class="nhsuk-table-responsive__heading"> </span>
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell">
-                                <span class="nhsuk-table-responsive__heading">File size </span>3.77 MB
-                            </td>
-                        </tr>
-                        </tbody>
-                    </table>
-
+                    <p><a class="nhsuk-link nhsuk-link--no-visited-state" href="check-prices">Price change summary</a></p>
+                    <p><a class="nhsuk-link nhsuk-link--no-visited-state" href="check-zero-prices">Zero price summary</a></p>
                 </div>
             </div>
         </div>
@@ -457,12 +239,12 @@ Submit a new product: pack size and strength | Portal | NHSBSA
         <div class="nhsuk-tabs-panel-inner">
             <div class="nhsuk-grid-row">
                 <div class="nhsuk-grid-column-full">
-                        <h2>Action</h2>
+                    <h2>Action</h2>
                     <p>This submission is ready for action. As part of actioning a submission, you will need to
                         associate a VMP, an AMP, and for each pack associated with this submission, a VMPP.</p>
                     <div class="nhsuk-action-link">
                         <a class="nhsuk-action-link__link"
-                           href="new-product-pack/action.html">
+                           href="action-submission-mock-3/action-submission--homepage.html">
                             <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
                                  viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
                                 <path d="M0 0h24v24H0z" fill="none"></path>
