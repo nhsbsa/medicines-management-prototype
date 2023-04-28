@@ -5894,9 +5894,6 @@ b {
 .nhsuk-summary-list__key {
   font-weight: 600;
   margin-bottom: 4px; }
-  @media (min-width: 40.0625em) {
-    .nhsuk-summary-list__key {
-      width: 40% !important; } }
 
 @media (max-width: 40.0525em) {
   .nhsuk-summary-list__value {

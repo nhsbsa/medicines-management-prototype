@@ -11,23 +11,27 @@ Submit a new product: effective date | Portal | NHSBSA
     Go back to submit a new price information</a>
 </div>
 
-<div class="nhsuk-form-group">
+<p class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l">
+     Price change submission
+     <span class="nhsuk-u-visually-hidden"> - </span>
+   </span>
         What is the effective date of the price change?
       </h1>
     </legend>
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
+    <p class="" id="example-hint">
       The date the pack is available in the warehouse and cannot be in the past. It can take up to 2 full weeks to show on dm+d. The extract day for dm+d is usually every Thursday.
-    </div>
+    </p>
 
     <div class="nhsuk-inset-text nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-6" style="max-width: 45em;">
       <span class="nhsuk-u-visually-hidden">Information: </span>
       <p>Price changes with different effective dates must be submitted separately.</p>
     </div>
 
-    <div class="nhsuk-hint nhsuk-u-margin-bottom-5" id="format-hint">Enter each element of the date as a number in the format <strong>dd mm yyyy</strong>.</div>
+    <p class="" id="format-hint">Enter each element of the date as a number in the format <strong>dd mm yyyy</strong>.</p>
 
     <div class="nhsuk-date-input" id="example">
       <div class="nhsuk-date-input__item">
@@ -57,9 +61,18 @@ Submit a new product: effective date | Portal | NHSBSA
     </div>
   </fieldset>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeDate()" href="product-list-search.html" id="continue-button" type="submit">
+  <a class="nhsuk-button nhsuk-u-margin-top-4" onclick="storeDate()" href="product-list-search.html" id="continue-button" type="submit">
     Continue
   </a>
   <script src="/js/newProduct.js"></script>
+  <script>
+  localStorage.getItem("price-change-type") =="zero price"
+
+       if (localStorage.getItem("summary-page") == "yes" && localStorage.getItem("price-change-type") =="price change") {
+           document.getElementById("continue-button").href = "check-prices";
+       } else if (localStorage.getItem("summary-page") == "yes" && localStorage.getItem("price-change-type") =="zero price") {
+           document.getElementById("continue-button").href = "check-zero-prices";
+       }
+  </script>
 </div>
 {% endblock %}

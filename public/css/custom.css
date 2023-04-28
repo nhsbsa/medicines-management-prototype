@@ -548,3 +548,21 @@ fill-blue{
   font-size: 1.1875rem;
   line-height: 1.47368;
 }
+
+
+.update-width {
+  width: 25% !important;
+}
+
+/* Used for price change inset text to enhance desktop view */
+.extend-inset {
+  max-width: 53em !important;
+}
+
+/* price change Action column so edit and remove on same line */
+@media (min-width: 990px) {
+.action-width {
+  width: 15%;
+   }
+}
+

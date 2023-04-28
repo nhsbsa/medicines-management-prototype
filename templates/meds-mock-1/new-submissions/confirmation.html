@@ -4,24 +4,23 @@ Submit a new product: product confirmation | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 
-<div class="nhsuk-card" style="color: #ffffff; background-color: #005eb8;">
-  <div class="nhsuk-card__content">
-    <h1 class="nhsuk-card__heading nhsuk-u-margin-bottom-7">
-      The submission has been updated
-    </h1>
-    <p class="nhsuk-body-l">Notification sent to: jane.smith@example.com</p>
-    <p class="nhsuk-body-l" id="product-name">Product name: Paracetamol 200mg tablets</p>
-    <p class="nhsuk-body-l" >Reference: 56465452</p>
-  </div>
+<div class="govuk-panel govuk-panel--confirmation nhsuk-u-margin-bottom-5">
+  <h1 class="govuk-panel__title">
+    Submission updated
+  </h1>
+  <div class="govuk-panel__body">
+    Notification sent to jane.smith@example.com</div>
+
 </div>
 
 <h2>Next Steps</h2>
-<p>If the status remains as 'Ready' or is changed to 'More detail' then the submission will stay within <a class="nhsuk-link nhsuk-link--no-visited-state" href="submissions">new submissions</a>. If the status changes to anything else then the submission will move to <a class="nhsuk-link nhsuk-link--no-visited-state" href="../complete-submissions/submissions">complete submissions</a>.</p>
-<p>If the status is not changed and only a message or comment is added, the location of the submission will not change.</p>
+<p>If the status remains as 'Ready' or changes to 'More detail' then <a class="nhsuk-link nhsuk-link--no-visited-state" href="submissions">view the submission in new submissions</a>.</p>
+<p>If the status changes to anything else then <a class="nhsuk-link nhsuk-link--no-visited-state" href="../complete-submissions/submissions">view the submission in complete submissions</a>.</p>
+<p>If only a message or comment is added, the location of the submission will not change.</p>
 
-<p>Return to <a href="../dashboard" class="nhsuk-link nhsuk-link--no-visited-state">
-  portal dashboard
-</a> or return to <a class="nhsuk-link nhsuk-link--no-visited-state" href="submission-view">submission</a></p>
+<p><a href="../dashboard" class="nhsuk-link nhsuk-link--no-visited-state">
+  Return to portal dashboard
+</a></p>
 
 
 {% endblock %}

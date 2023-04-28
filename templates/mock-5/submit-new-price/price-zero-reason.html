@@ -5,17 +5,17 @@ Submit a new product | Portal | NHSBSA
 {% block content %}
 
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="check-prices">
+  <a class="nhsuk-back-link__link" href="input-price">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to summary of price changes</a>
+    Go back to summary of price input</a>
 </div>
 
 <fieldset class="nhsuk-fieldset">
   <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
     <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-4">
-      Reason for zero price
+      Reason for zero price change
     </h1>
   </legend>
 
@@ -26,10 +26,10 @@ Submit a new product | Portal | NHSBSA
       <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
 
         <div class="nhsuk-summary-list__row">
-          <dt class="price-update-summary">
+          <dt class="price-update-summary" >
             Product name
           </dt>
-          <dd class="nhsuk-summary-list__value">
+          <dd class="nhsuk-summary-list__value" id="product-name">
             Hydrocortisone 0.5% cream
           </dd>
         </div>
@@ -38,17 +38,17 @@ Submit a new product | Portal | NHSBSA
           <dt class="price-update-summary">
             Pack size and UOM
           </dt>
-          <dd class="nhsuk-summary-list__value">
+          <dd class="nhsuk-summary-list__value" id="pack-size">
             15 gram
           </dd>
 
         </div>
 
-        <div class="nhsuk-summary-list__row">
+        <div class="nhsuk-summary-list__row" id="subpack-display">
           <dt class="nhsuk-summary-list__key">
             Subpack
           </dt>
-          <dd class="nhsuk-summary-list__value">
+          <dd class="nhsuk-summary-list__value" id="subpack">
             3 &times; 5
           </dd>
 
@@ -66,14 +66,14 @@ Submit a new product | Portal | NHSBSA
   <div class="nhsuk-radios nhsuk-radios--conditional">
 
     <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+      <input class="nhsuk-radios__input" id="contact-1" name="zero-reason" type="radio" value="Price match Part VIII in Drug Tariff" aria-controls="conditional-contact-1" aria-expanded="false">
       <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
         Price matched Part VIII in the Drug Tariff
       </label>
     </div>
 
     <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" aria-controls="conditional-contact-2" aria-expanded="false">
+      <input class="nhsuk-radios__input" id="contact-2" name="zero-reason" type="radio" value="No longer agreed" aria-controls="conditional-contact-2" aria-expanded="false">
       <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
         Price no longer agreed
       </label>
@@ -81,7 +81,7 @@ Submit a new product | Portal | NHSBSA
 
 
     <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="contact-3" name="contact" type="radio" value="text" aria-controls="conditional-contact-3" aria-expanded="false">
+      <input class="nhsuk-radios__input" id="contact-3" name="zero-reason" type="radio" value="Unique reason" aria-controls="conditional-contact-3" aria-expanded="false">
       <label class="nhsuk-label nhsuk-radios__label" for="contact-3">
         Other reason
       </label>
@@ -106,7 +106,7 @@ Submit a new product | Portal | NHSBSA
     <div class="nhsuk-radios__divider">or</div>
 
     <div class="nhsuk-radios__item">
-      <input class="nhsuk-radios__input" id="example-divider-4" name="contact" type="radio" value="create-account">
+      <input class="nhsuk-radios__input" id="example-divider-4" name="zero-reason" type="radio" value="create-account">
       <label class="nhsuk-label nhsuk-radios__label" for="example-divider-4">
         This should not be zero price, remove it from the list
       </label>
@@ -116,11 +116,51 @@ Submit a new product | Portal | NHSBSA
 
 </fieldset>
 
-<a class="nhsuk-button nhsuk-u-margin-top-5" onclick="" href="check-zero-prices" id="continue-button" type="submit">
+<a class="nhsuk-button nhsuk-u-margin-top-6" onclick=""
+   href="check-zero-prices" id="continue-button" type="submit">
   Continue
 </a>
 
+<script>
+  console.log(localStorage);
 
+  if (localStorage.getItem("zero-price-reason-detail")) {
+     document.getElementById("with-hint").value = localStorage.getItem("zero-price-reason-detail");
+  }
+
+  if (localStorage.getItem("product-name")) {
+  document.getElementById("product-name").innerHTML = localStorage.getItem("product-name");
+  }
+
+  if (localStorage.getItem("pack-size")) {
+  document.getElementById("pack-size").innerHTML = localStorage.getItem("pack-size") + ' tablets';
+  }
+
+  if (localStorage.getItem("subpack")) {
+  document.getElementById("subpack").innerHTML = localStorage.getItem("subpack");
+  } else {
+      document.getElementById("subpack-display").style.display = "none";
+  }
+
+  var radioButtons = document.getElementsByName("zero-reason");
+
+if (radioButtons) {
+    var getZeroPriceReason = localStorage.getItem("zero-price-reason");
+    console.log(getZeroPriceReason);
+    var buttonLink = document.getElementById("continue-button");
+    if (getZeroPriceReason != null) {
+        for (var radio of radioButtons) {
+            console.log(radio.value);
+            if (getZeroPriceReason === radio.value) {
+               console.log('working?');
+                radio.checked = true;
+            }
+        }
+    }
+};
+
+
+</script>
 
 
 {% endblock %}

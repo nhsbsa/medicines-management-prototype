@@ -65,8 +65,8 @@ Submit a new product: pack artwork | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeArtworkYesOrNo()"
-   id="continue-button"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeArtworkForProductChange()"
+   id="continue-button-next"
    href="#"
    type="submit">
   Continue
@@ -79,7 +79,6 @@ Submit a new product: pack artwork | Portal | NHSBSA
   var radioArtworkButtons = document.getElementsByName("display-artwork");
 
   if (radioArtworkButtons.length != 0) {
-
     var getPackShdDisArtwork = localStorage.getItem("pack-should-display-artwork");
 
     if (getPackShdDisArtwork != null) {
@@ -104,6 +103,26 @@ Submit a new product: pack artwork | Portal | NHSBSA
       }
     }
   }
+=======
+  };
+
+  function storeArtworkForProductChange() {
+      let radioArtworkButtons = document.getElementsByName("display-artwork");
+      let buttonLink = document.getElementById("continue-button-next");
+        for (var radio of radioArtworkButtons) {
+            if (radio.checked) {
+                localStorage.setItem("pack-should-display-artwork", radio.value);
+                if (radio.value == 'yes') {
+                    buttonLink.href = "pack-artwork";
+                } else if (radio.value == 'no') {
+                    buttonLink.href = "final-summary";
+                }
+            }
+        }
+    }
+
+
+
 </script>
 
 
