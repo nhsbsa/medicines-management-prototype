@@ -41,22 +41,11 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     <div class="nhsuk-tabs__panel" id="tab-submission" role="tabpanel" tabindex="-1"
          aria-labelledby="tab1">
         <div class="nhsuk-tabs-panel-inner">
-            <div class="nhsuk-grid-row">
-                <div class="nhsuk-grid-column-two-thirds">
                         <h2>Submission</h2>
                         <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
 
-                           <!--- <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
-                                    Product name
-                                </dt>
-                                <dd class="nhsuk-summary-list__value">
-                                    Paracetamol 200mg tablets
-                                </dd>
-
-                            </div>-->
                             <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key">
+                                <dt class="nhsuk-summary-list__key update-width">
                                     Submission type
                                 </dt>
                                 <dd class="nhsuk-summary-list__value">
@@ -128,8 +117,8 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                                     Submission status
                                 </dt>
                                 <dd class="nhsuk-summary-list__value">
-                                    <strong class="nhsuk-tag nhsuk-tag--green">
-                                        Ready
+                                    <strong class="nhsuk-tag nhsuk-tag--white">
+                                        More detail
                                     </strong>
                                 </dd>
 
@@ -137,7 +126,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                         </dl>
 
                         <div class="nhsuk-action-link nhsuk-u-margin-top-4">
-                            <a class="nhsuk-action-link__link" href="update-submission-status">
+                            <a class="nhsuk-action-link__link" href="discontinue/update-submission-status">
                                 <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
                                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
                                      width="36" height="36">
@@ -147,8 +136,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                                 <span class="nhsuk-action-link__text">Update the submission status</span>
                             </a>
                         </div>
-                    </div>
-                </div>
+
             </div>
         </div>
 
@@ -195,7 +183,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 <!--                        <p><a href="update-submission-notes-detail">Create a new message category</a></p>-->
 
                         <div class="nhsuk-action-link nhsuk-u-margin-top-6">
-                            <a class="nhsuk-action-link__link" href="update-submission-notes-detail">
+                            <a class="nhsuk-action-link__link" href="discontinue/update-submission-notes-detail">
                                 <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle"
                                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"
                                      width="36" height="36">
@@ -213,22 +201,20 @@ Submit a new product: pack size and strength | Portal | NHSBSA
         <div class="nhsuk-tabs__panel" id="tab-summary" role="tabpanel" tabindex="-1"
         aria-labelledby="tab3">
        <div class="nhsuk-tabs-panel-inner">
-           <div class="nhsuk-grid-row">
-               <div class="nhsuk-grid-column-two-thirds">
                    <h2>Summary</h2>
 
                    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-top-6">
 
                        <div class="nhsuk-summary-list__row" id="effective-date">
-                           <dt class="nhsuk-summary-list__key">
+                           <dt class="nhsuk-summary-list__key update-width">
                                Effective date
                            </dt>
                            <dd class="nhsuk-summary-list__value" id="pack-effective-date">12 July 2022
                            </dd>
 
                        </div>
-                       <!--  if user changes reason then they must follow journey steps. If they go to change the reason and
-                             then do not actually change it then they can return to the review page MPL 31JAN23-->
+                       <!--  if divestment or takeover then needs to show the following, as long as user has provided
+                             Supplier name, supplier contact name, supplier email, supplier telephone number MPL 27APR23 -->
 
                        <div class="nhsuk-summary-list__row">
                            <dt class="nhsuk-summary-list__key" id="discontinue-title">
@@ -252,7 +238,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
                </div>
 
-               <div class="nhsuk-grid-column-full">
+
 
                    <div class="nhsuk-body-m flex--space-between nhsuk-u-margin-top-3" style="display: flex">
                        <div class="nhsuk-u-visually-hidden">Currently viewing</div>
@@ -374,8 +360,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                            </nav>
                        </div>
                    </div>
-               </div>
-           </div>
+
        </div>
    </div>
 
