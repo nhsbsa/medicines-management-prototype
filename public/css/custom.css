@@ -549,9 +549,10 @@ fill-blue{
   line-height: 1.47368;
 }
 
-
+@media (min-width: 40.0625em) {
 .update-width {
   width: 25% !important;
+  }
 }
 
 /* Used for price change inset text to enhance desktop view */
