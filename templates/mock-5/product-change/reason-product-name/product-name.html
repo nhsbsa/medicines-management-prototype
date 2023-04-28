@@ -55,6 +55,10 @@ Detail the change to the product name | Submit a product change: product name | 
   function storeName() {
     var productName = document.getElementById("product-name");
     localStorage.setItem("new-product-name", productName.value);
+
+     if (localStorage.getItem("summary-page") == "yes") {
+        document.getElementById("continue-button").href = "../final-summary";
+    }
    }
 
   var getProductName = localStorage.getItem("new-product-name");

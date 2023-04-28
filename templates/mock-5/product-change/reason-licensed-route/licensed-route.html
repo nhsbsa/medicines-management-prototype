@@ -68,6 +68,11 @@ Review market authorisation numbers | Submit a product change: market authorisat
 
 <script>
   console.log(localStorage);
+
+  if (localStorage.getItem("summary-page") == "yes") {
+      document.getElementById("continue-button").href = "../final-summary";
+  }
+
   let productName = localStorage.getItem("product-name");
 
   if (productName != "") {

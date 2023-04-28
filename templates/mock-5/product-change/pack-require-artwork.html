@@ -65,26 +65,67 @@ Submit a new product: pack artwork | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeArtworkYesOrNo()"
-   id="continue-button"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeArtworkForProductChange()"
+   id="continue-button-next"
    href="#"
    type="submit">
   Continue
 </a>
 
 <script>
-  console.log(localStorage);
+  // should display artwork? (first pack)
 
-  let productChangeReason = localStorage.getItem("product-change-reason");
-  let productTitle = document.getElementById("product-name-title");
+  var buttonLink = document.getElementById("continue-button");
+  var radioArtworkButtons = document.getElementsByName("display-artwork");
 
-  if (productChangeReason || productChangeReason != null || productChangeReason != "") {
-        productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  if (radioArtworkButtons.length != 0) {
+    var getPackShdDisArtwork = localStorage.getItem("pack-should-display-artwork");
 
+    if (getPackShdDisArtwork != null) {
+      for (var radio of radioArtworkButtons) {
+        if (getPackShdDisArtwork === radio.value) {
+          radio.checked = true;
+        }
+      }
+    }
+    ;
+
+    function storeArtworkYesOrNo() {
+      for (var radio of radioArtworkButtons) {
+        if (radio.checked) {
+          localStorage.setItem("pack-should-display-artwork", radio.value);
+          if (radio.value == 'yes') {
+            buttonLink.href = "pack-artwork";
+          } else if (radio.value == 'no') {
+            buttonLink.href = "final-summary";
+          }
+        }
+      }
+    }
+  }
+=======
   };
+
+  function storeArtworkForProductChange() {
+      let radioArtworkButtons = document.getElementsByName("display-artwork");
+      let buttonLink = document.getElementById("continue-button-next");
+        for (var radio of radioArtworkButtons) {
+            if (radio.checked) {
+                localStorage.setItem("pack-should-display-artwork", radio.value);
+                if (radio.value == 'yes') {
+                    buttonLink.href = "pack-artwork";
+                } else if (radio.value == 'no') {
+                    buttonLink.href = "final-summary";
+                }
+            }
+        }
+    }
+
+
+
 </script>
 
-<script src="/js/newProduct.js"></script>
+
 {% endblock %}
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 {% extends "base.html" %}
 {% block title %}
 Select a reason | Submit a product change | Portal | NHSBSA
@@ -20,7 +20,7 @@ Select a reason | Submit a product change | Portal | NHSBSA
                 Submit a product change
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        Select a reason
+        Select a cause for the product change
       </h1>
     </legend>
 
@@ -29,26 +29,26 @@ Select a reason | Submit a product change | Portal | NHSBSA
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="product-name" name="data-product-change-reason" type="radio" value="product name" />
         <label class="nhsuk-label nhsuk-radios__label" for="product-name">
-          Change the product name
+          Change to the product name
         </label>
       </div>
 
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="market-authorisation-number" name="data-product-change-reason" type="radio" value="market authorisation number" />
         <label class="nhsuk-label nhsuk-radios__label" for="market-authorisation-number">
-        Change the market authorisation number
+        Change to the market authorisation number
         </label>
       </div>
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="license-route" name="data-product-change-reason" type="radio" value="licensed route" />
         <label class="nhsuk-label nhsuk-radios__label" for="license-route">
-        Change the licensed route
+        Change to the licensed route
         </label>
       </div>
       <div class="nhsuk-radios__item">
         <input class="nhsuk-radios__input" id="licensing-authority" name="data-product-change-reason" type="radio" value="licensing authority" />
         <label class="nhsuk-label nhsuk-radios__label" for="licensing-authority">
-        Change the licensing authority
+        Change to the licensing authority
         </label>
       </div>
       
@@ -63,6 +63,10 @@ Select a reason | Submit a product change | Portal | NHSBSA
 </a>
 
 <script type="text/javascript">
+
+  if (localStorage.getItem("summary-page")) {
+     localStorage.removeItem("summary-page");
+  }
 
   const continueBtn = document.getElementById("next")
 

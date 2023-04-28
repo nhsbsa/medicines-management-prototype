@@ -64,6 +64,10 @@ What is the reason for changing the licensing authority? | Submit a product chan
     }
   }
 
+  if (localStorage.getItem("summary-page") == "yes") {
+      document.getElementById("continue-button").href = "../final-summary";
+  }
+
 </script>
 
 {% endblock %}
