@@ -319,59 +319,14 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
 </div>
 
-<!--<div class="tabs tabbed">-->
-<!--    <div class="tabs-nav">-->
-<!--        <ul class="tabs-list">-->
-<!--            <li id="heading-tab-submission"><a href="#tab-submission">Submission</a></li>-->
-<!--            <li id="heading-tab-messages"><a href="#tab-messages">Message board</a></li>-->
-<!--            <li id="heading-tab-summary"><a href="#tab-summary">Summary</a></li>-->
-<!--            <li id="heading-tab-uploads"><a href="#tab-uploads">Uploads</a></li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--    <div class="tabs-content">-->
-
-<!--        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-submission">-->
-<!--            <div class="tabs-panel-inner">-->
-<!--                <div class="nhsuk-grid-row">-->
-<!--                    <div class="nhsuk-grid-column-two-thirds">-->
-<!--                        <h2>Product</h2>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-messages">-->
-<!--            <div class="tabs-panel-inner">-->
-<!--                <div class="nhsuk-grid-row">-->
-<!--                    <div class="nhsuk-grid-column-full">-->
-<!--                        <h2>Message board</h2>-->
-
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-summary">-->
-<!--            <div class="tabs-panel-inner">-->
-<!--                <div class="nhsuk-grid-row">-->
-<!--                    <div class="nhsuk-grid-column-three-quarters">-->
-<!--                        <h2>Summary</h2>-->
-
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div class="tabs-panel nhsuk-u-padding-top-3" id="tab-uploads">-->
-<!--            <div class="tabs-panel-inner">-->
-<!--                <div class="nhsuk-grid-row">-->
-<!--                    <div class="nhsuk-grid-column-full">-->
-<!--                        <h2 class="nhsuk-u-margin-bottom-6">Uploads</h2>-->
-
-
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--</div>-->
-
+<script>
+    window.onload = function() {
+    var hasAllResults = localStorage.getItem("all-results");
+    if (hasAllResults == 'yes') {
+    document.getElementById("back-link").setAttribute('href', "../all-submissions/search-results");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to search all submissions";
+    }
+};
+</script>
 
 {% endblock %}

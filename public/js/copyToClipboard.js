@@ -10,6 +10,7 @@
     element.insertAdjacentHTML('beforeend',
         '<button class="nhsuk-u-margin-left-1" style="border:none; background-color:transparent; vertical-align:middle; padding: 0 4px 0 0;"><svg style="vertical-align:middle; height: 31px; width:31px" alt="copy icon" class="nhsuk-icon nhsuk-icon__tick nhsuk-u-inline-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-labelledby="copy-function">'
         +
+//        needs to make sure this says, "Select {attributeName} to copy to clipboard"
         '<title id="copy-function" lang="en">Select this to copy to clipboard</title>'
         +
         '<rect x="9" y="5" rx="1" ry="1" width="9" height="11" style="fill:white;stroke:black; stroke-width:1;opacity:1" />'
