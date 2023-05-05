@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-width-container">
+    <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+        <a class="nhsuk-back-link__link" id="back-link" href="../submission-view.html">
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                 aria-hidden="true" height="24" width="24">
+                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+            </svg>
+            Go back to view submission</a>
+    </div>
+    <h1 class="app-page-heading">
+        <span class="nhsuk-caption-l">
+            AstraZeneca
+          <span class="nhsuk-u-visually-hidden"> - </span>
+        </span>
+        Action new pack submission
+    </h1>
+</div>
+
+        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key update-width">
+                    Effective date
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    12 May 2023
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    SMPC or Data Sheet uploads
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <p><a class="nhsuk-contents-list__link nhsuk-link--no-visited-state" href="#">SmPC_document_1.pdf</a></p>
+                    <p><a class="nhsuk-contents-list__link nhsuk-link--no-visited-state" href="#">SmPC_document_2.pdf</a></p>
+                </dd>
+
+            </div>
+        </dl>
+
+<h2>Product information</h2>
+
+<div class="nhsuk-grid-row nhsuk-card-group">
+    <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <strong class="nhsuk-tag nhsuk-tag--green">
+                    Complete VMP
+                </strong>
+                <h3 class="nhsuk-card__heading nhsuk-u-margin-top-3">
+                    Paracetamol
+                </h3>
+                <p><a class="nhsuk-link--no-visited-state" href="unlink-vmp">Unlink VMP</a><span class="nhsuk-u-visually-hidden">Paracetamol</span></p>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <strong class="nhsuk-tag nhsuk-tag--green">
+                    Complete AMP
+                </strong>
+                <h3 class="nhsuk-card__heading nhsuk-u-margin-top-3">
+                    AstraZeneca 100mg Paracetamol
+
+                </h3>
+                <p><a class="nhsuk-link--no-visited-state nhsuk-u-margin-top-3" href="unlink-amp">Unlink AMP</a><span class="nhsuk-u-visually-hidden">AstraZeneca 100mg Paracetamol</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2>Product pack information</h2>
+<p>Below are the packs included in the submission. For each pack, either an existing VMPP
+will be chosen automatically, an existing VMPP will have to be associated, or a new VMPP will have to be inserted. In order to progress the product pack, both VMPP and AMPP need to show as &#39;complete&#39;.</p>
+
+<h3>Paracetamol 100mg 6 tablet</h3>
+<details class="nhsuk-details nhsuk-expander">
+    <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Information provided by AstraZeneca for Paracetamol 100mg 6 tablet
+    </span>
+    </summary>
+    <div class="nhsuk-details__text">
+        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack size and type
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-size">
+                    6 tablet
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack has subpack
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-subpack">
+                    Yes
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row" id="subpack-info">
+                <dt class="nhsuk-summary-list__key">
+                    Number of subpacks
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-subpack-extra">
+                    2
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack GTIN
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-gtin">
+                    12345670
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack has packaging images
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-has-artwork">
+                    Yes
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row" id="awaiting-artwork">
+                <dt class="nhsuk-summary-list__key">
+                    Packaging images uploaded files
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-upload-artwork">
+                    <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">packart-right.jpg</a> </br>
+                    <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">packart-top.jpg</a>
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack has price
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-should-display-price">
+                    Yes
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row" id="hide-price">
+                <dt class="nhsuk-summary-list__key">
+                    Price in pence
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="product-price">
+                    251p
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack legal category
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="product-legal-category">
+                    POM
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack is hospital only
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="product-hospital-only">
+                    No
+                </dd>
+            </div>
+
+        </dl>
+    </div>
+</details>
+<div class="nhsuk-grid-row nhsuk-card-group">
+    <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+                <strong class="nhsuk-tag nhsuk-tag--green">
+                    Complete VMPP
+                </strong>
+                <h3 class="nhsuk-card__heading nhsuk-u-margin-top-3">
+                    Paracetamol 6 tablet
+                </h3>
+
+                <p class="nhsuk-u-margin-top-3"><a class="nhsuk-card__link nhsuk-link--no-visited-state" href="unlink-vmpp-ampp.html">Unlink VMPP</a><span class="nhsuk-u-visually-hidden">Paracetamol 6 tablet</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+                <strong class="nhsuk-tag nhsuk-tag--green">
+                    Complete AMPP
+                </strong>
+                <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-top-3">
+                    Paracetamol 100mg 6 tablet
+                </h3>
+                <p class="nhsuk-u-margin-top-3"><a class="nhsuk-card__link nhsuk-link--no-visited-state" href="delete-ampp.html">Delete AMPP</a><span class="nhsuk-u-visually-hidden">racetamol 100mg 6 tablet</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr aria-hidden="true"/>
+
+<h3>Paracetamol 100mg 12 tablet</h3>
+<details class="nhsuk-details nhsuk-expander">
+    <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Information provided by AstraZeneca for Paracetamol 100mg 12 tablet
+    </span>
+    </summary>
+    <div class="nhsuk-details__text">
+        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack size and type
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-size">
+                    12 tablet
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack has subpack
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-subpack">
+                    Yes
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row" id="subpack-info">
+                <dt class="nhsuk-summary-list__key">
+                    Number of subpacks
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-subpack-extra">
+                    2
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack GTIN
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-gtin">
+                    12345670
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack has packaging images
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-has-artwork">
+                    Yes
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row" id="awaiting-artwork">
+                <dt class="nhsuk-summary-list__key">
+                    Packaging images uploaded files
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-upload-artwork">
+                    <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">packart-right.jpg</a> </br>
+                    <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">packart-top.jpg</a>
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack has price
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-should-display-price">
+                    Yes
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row" id="hide-price">
+                <dt class="nhsuk-summary-list__key">
+                    Price in pence
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="product-price">
+                    251p
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack legal category
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="product-legal-category">
+                    POM
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack is hospital only
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="product-hospital-only">
+                    No
+                </dd>
+            </div>
+
+        </dl>
+    </div>
+</details>
+<div class="nhsuk-grid-row nhsuk-card-group">
+    <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <strong class="nhsuk-tag nhsuk-tag--green">
+                    Complete VMPP
+                </strong>
+                <h3 class="nhsuk-card__heading nhsuk-u-margin-top-3">
+                    Paracetamol 12 tablet
+                </h3>
+                <p class="nhsuk-u-margin-top-3"><a class="nhsuk-card__link nhsuk-link--no-visited-state" href="unlink-vmpp-ampp.html">Unlink VMPP</a><span class="nhsuk-u-visually-hidden">fParacetamol 12 tablet</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+                <strong class="nhsuk-tag nhsuk-tag--red" >
+                    Incomplete AMPP
+                </strong>
+                <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-top-3">
+                    No AMPP exists
+                </h3>
+                <p class="nhsuk-u-margin-top-3"><a class="nhsuk-card__link nhsuk-link--no-visited-state" href="#"> Insert to complete AMPP</a><span class="nhsuk-u-visually-hidden">for Paracetamol 100mg 12 tablet</span> </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr aria-hidden="true"/>
+
+<h3>Paracetamol 100mg 24 tablet</h3>
+<details class="nhsuk-details nhsuk-expander">
+    <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Information provided by AstraZeneca for Paracetamol 100mg 24 tablet
+    </span>
+    </summary>
+    <div class="nhsuk-details__text">
+        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack size and type
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-size">
+                    24 tablet
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack has subpack
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-subpack">
+                    Yes
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row" id="subpack-info">
+                <dt class="nhsuk-summary-list__key">
+                    Number of subpacks
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-subpack-extra">
+                    2
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack GTIN
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-gtin">
+                    12345670
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack has packaging images
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-has-artwork">
+                    Yes
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row" id="awaiting-artwork">
+                <dt class="nhsuk-summary-list__key">
+                    Packaging images uploaded files
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-upload-artwork">
+                    <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">packart-right.jpg</a> </br>
+                    <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">packart-top.jpg</a>
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack has price
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="pack-should-display-price">
+                    Yes
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row" id="hide-price">
+                <dt class="nhsuk-summary-list__key">
+                    Price in pence
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="product-price">
+                    251p
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack legal category
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="product-legal-category">
+                    POM
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Pack is hospital only
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="product-hospital-only">
+                    No
+                </dd>
+            </div>
+
+        </dl>
+    </div>
+</details>
+<div class="nhsuk-grid-row nhsuk-card-group">
+    <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <strong class="nhsuk-tag nhsuk-tag--red">
+                    Incomplete VMPP
+                </strong>
+                <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-top-3">
+                   No VMPP exists
+                </h3>
+                <p class="nhsuk-u-margin-top-3"><a class="nhsuk-card__link nhsuk-link--no-visited-state" href="insert-vmpp.html">Link to complete VMPP</a><span class="nhsuk-u-visually-hidden">for Paracetamol 100mg 24 tablet</span></p>
+            </div>
+        </div>
+    </div>
+
+    <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <strong class="nhsuk-tag nhsuk-tag--red">
+                    Incomplete AMPP
+                </strong>
+                <h3 class="nhsuk-card__heading nhsuk-heading-m nhsuk-u-margin-top-3">
+                    No AMPP exists
+                </h3>
+                <p class="nhsuk-card__description">You can insert an AMPP only when a VMPP has been linked</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--if all packs are complete then show this button, otherwise do not show it MPL 17FEB23-->
+<a class="nhsuk-button">Complete</a>
+
+{% endblock %}

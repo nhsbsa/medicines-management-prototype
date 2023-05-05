@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Review submission | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+    <a class="nhsuk-back-link__link" id="back-link" href="action-copy.html">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to action product pack</a>
+</div>
+
+<div class="nhsuk-form-group">
+
+  <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+      <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-5">
+        How do you want to link the VMPP?
+      </h1>
+    </legend>
+
+    <div class="nhsuk-hint" id="contact-hint">
+      Select one option
+    </div>
+
+    <div class="nhsuk-radios nhsuk-radios--conditional">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+        <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+          Insert new VMPP
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="email" aria-controls="conditional-contact-1" aria-expanded="false">
+        <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+          Select an existing VMPP
+        </label>
+      </div>
+
+<!--      Please note, if select dropdown has over 10 options then we will need to use an accessible autocomplete MPL 16FEB23-->
+
+      <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+
+        <div class="nhsuk-form-group">
+          <label class="nhsuk-label" for="select-1">
+            Select a VMPP
+          </label>
+          <select class="nhsuk-select" id="select-1" name="select-1">
+            <option value="1">6 tablet</option>
+            <option value="2" selected>12 tablet</option>
+            <option value="3">24 tablet</option>
+          </select>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+  </fieldset>
+
+</div>
+
+<a class="nhsuk-button" href="action-copy.html">Save and continue</a>
+
+
+{% endblock %}
