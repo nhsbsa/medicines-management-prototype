@@ -75,7 +75,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                                 Effective date
                             </dt>
                             <dd class="nhsuk-summary-list__value">
-                                1 June 2022
+                                1 June 2024
                             </dd>
 
                         </div>
@@ -148,11 +148,11 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
                     <div class="nhsuk-body-m flex--space-between nhsuk-u-margin-top-5" style="display: flex">
                         <div class="nhsuk-u-visually-hidden">Currently viewing</div>
-                        <div id="pageAndResultCount">Page 1 of 1 (4 results)</div>
+                        <div id="pageAndResultCount">Page 1 of 1 (3 results)</div>
                     </div>
 
-                    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-3">
-                        <caption class="nhsuk-table__caption">Packs with price changes</caption>
+                    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5" id="price-change-table">
+                        <caption class="nhsuk-table__caption">Packs chosen for price changes</caption>
                         <thead role="rowgroup" class="nhsuk-table__head">
                         <tr role="row">
                             <th role="columnheader" class="" scope="col">
@@ -171,136 +171,66 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                         </tr>
                         </thead>
                         <tbody class="nhsuk-table__body">
-                        <tr role="row" class="nhsuk-table__row">
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Product name </span>Aciclovir 200mg dispersible tablets
+                        <tr role="row" class="nhsuk-table__row" id="price-change-1">
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading">Product name </span>
+                                <span id="product-name-1">Alprazolam</span>
                             </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Pack size </span>25
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading">Pack size </span>
+                                <span id="pack-size-1">30</span>
                             </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Subpack info</span>10 &times; 2.5
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading">Subpack info</span>
+                                <span class="nhsuk-u-visually-hidden" id="subpack-1">No Subpack information</span>
                             </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Price </span><span>299p</span>
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading">Price </span>
+                                <span id="new-price-1">299p</span>
                             </td>
                         </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Product name </span>Bromocriptine 2.5mg tablets
+                        <tr role="row" class="nhsuk-table__row" id="price-change-2">
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading">Product name </span>
+                                <span id="product-name-2">Bupenorphine 100mg capsules</span>
                             </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Pack size </span>100
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading">Pack size </span>
+                                <span id="pack-size-2">28</span>
                             </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
                                 <span class="nhsuk-table-responsive__heading">Subpack </span>
                                 <!--          need to make sure empty table cells announce something MPL 20/10/22-->
-                                <span class="nhsuk-u-visually-hidden">No Subpack information</span>
+                                <span class="nhsuk-u-visually-hidden" id="subpack-2">No Subpack information</span>
                             </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Price </span><span>825p</span>
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading">Price </span>
+                                <span id="new-price-2">249p</span>
                             </td>
                         </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Product name </span>Diazepam 2mg tablets
+                        <tr role="row" class="nhsuk-table__row" id="price-change-3">
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading">Product name </span>
+                                <span id="product-name-3">Cymbalta 30mg gastro-resistant capsules</span>
                             </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Pack size </span>1000
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading">Pack size </span>
+                                <span id="pack-size-3">30</span>
                             </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
                                 <span class="nhsuk-table-responsive__heading">Subpack </span>
                                 <!--          need to make sure empty table cells announce something MPL 20/10/22-->
-                                <span class="nhsuk-u-visually-hidden">No Subpack information</span>
+                                <span id="subpack-3">3 &times; 10 capsules</span>
                             </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Price </span><span>1011p</span>
+                            <td role="cell" class="nhsuk-table__cell center-table-row">
+                                <span class="nhsuk-table-responsive__heading">Price </span>
+                                <span id="new-price-3">329p</span>
                             </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Product name </span>Hydrocortisone 0.5% cream
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Pack size </span>15
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Subpack info</span>3 &times; 5
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Price </span><span>600p</span>
-                            </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Product name </span>Liquid paraffin liquid
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Pack size </span>200
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Subpack </span>
-                                <!--          need to make sure empty table cells announce something MPL 20/10/22-->
-                                <span class="nhsuk-u-visually-hidden">No Subpack information</span>
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Price </span><span>555p</span>
-                            </td>
-                        </tr>
-                        <tr role="row" class="nhsuk-table__row">
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Product name </span>Methadone 50mg/5ml solution for injection ampoules
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Pack size </span>10
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Subpack </span>
-                                <!--          need to make sure empty table cells announce something MPL 20/10/22-->
-                                <span class="nhsuk-u-visually-hidden">No Subpack information</span>
-                            </td>
-                            <td role="cell" class="nhsuk-table__cell" style="vertical-align:middle">
-                                <span class="nhsuk-table-responsive__heading">Price </span><span>329p</span>
-                            </td>
+
                         </tr>
                         </tbody>
                     </table>
 
-                    <div class="nhsuk-grid-row nhsuk-u-margin-top-5">
-                        <div class="nhsuk-grid-column-full">
-                            <nav class="govuk-pagination" role="navigation" aria-label="results">
-                                <div class="govuk-pagination__prev">
-                                    <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
-                                        <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-                                            <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-                                        </svg>
-                                        <span class="govuk-pagination__link-title">Previous</span></a>
-                                </div>
-                                <ul class="govuk-pagination__list">
-                                    <li class="govuk-pagination__item">
-                                        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
-                                            1
-                                        </a>
-                                    </li>
-                                    <li class="govuk-pagination__item govuk-pagination__item--current">
-                                        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
-                                            2
-                                        </a>
-                                    </li>
-                                    <li class="govuk-pagination__item">
-                                        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
-                                            3
-                                        </a>
-                                    </li>
-                                </ul>
-                                <div class="govuk-pagination__next">
-                                    <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-                                        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-                                    </svg></a>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
