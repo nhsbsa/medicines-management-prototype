@@ -12,17 +12,17 @@ Submit a new product | Portal | NHSBSA
     Go back to portal dashboard</a>
 </div>
 
-<h1>Discontinue submission</h1>
+<h1>Submit a new price change</h1>
 
-<p>You should make your discontinue submission at least 2 to 4 weeks before the effective date.</p>
+<p>You should make your price change submission at least 2 to 4 weeks before the effective date.</p>
 
 <h2 class="nhsuk-heading-l">Submission process</h2>
-<p>Dictionary of medicines and devices (dm+d) is updated each Thursday. Updates to dm+d can be viewed on the following Monday. Discontinued products or packs that have reached their effective date will be published in dm+d. Once accepted, it can take up to 6 days to appear on dm+d due to the weekly update schedule.</p>
-<p>If your discontinue submission is made less than 2 weeks before the effective date, it could take up to 3 weeks to appear on dm+d.</p>
+<p>Dictionary of medicines and devices (dm+d) is updated each Thursday. Updates to dm+d can be viewed on the following Monday. Only prices that have reached their effective date will be published in dm+d. Once accepted, it can take up to 6 days to appear on dm+d due to the weekly update schedule.</p>
+<p>If a price submission is made less than 2 weeks before the effective date, it could take up to 3 weeks to appear on dm+d.</p>
 
 <div class="nhsuk-do-dont-list nhsuk-u-margin-bottom-5">
   <h3 class="nhsuk-do-dont-list__label">Checklist</h3>
-  <p>In order to complete your discontinue submission you will need the following information.</p>
+  <p>In order to complete a submission you will need the following information.</p>
   <ul class="nhsuk-list nhsuk-list--tick">
     <li>
       <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
@@ -46,28 +46,48 @@ Submit a new product | Portal | NHSBSA
       <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
         <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
       </svg>
-      Subpack size (if applicable)
+      Subpack size, if applicable
     </li>
     <li>
       <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true" width="34" height="34">
         <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
       </svg>
-      Reason for discontinuation
+      New price
     </li>
 
   </ul>
 </div>
 
+<!-- In development, we will only have the 'submit a new price change' action link, -->
+<!-- but I decided to set up three links to show the 3 different layouts for:-->
+<!-- 1) Price change only 2) Zero price change only 3) both price and zero price change -->
+<!-- MPL 04APR23-->
+
 
 <div class="nhsuk-action-link">
-  <a class="nhsuk-action-link__link nhsuk-link--no-visited-state" href="discontinue-effective-date ">
+  <a class="nhsuk-action-link__link nhsuk-action-link--no-visited-state" href="price-effective-date" onclick="saveZeroPriceChangeOnly()">
     <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
       <path d="M0 0h24v24H0z" fill="none"></path>
       <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
     </svg>
-    <span class="nhsuk-action-link__text">Continue to discontinue submission</span>
+    <span class="nhsuk-action-link__text">Submit a new price change</span>
   </a>
 </div>
 
+<script>
+  localStorage.clear();
+
+  function savePriceChangeOnly() {
+     localStorage.setItem("price-change-type", "price change");
+  }
+
+  function saveZeroPriceChangeOnly() {
+     localStorage.setItem("price-change-type", "zero price");
+  }
+
+  function saveBothPriceAndZeroPriceChange() {
+     localStorage.setItem("price-change-type", "both");
+  }
+</script>
 
 {% endblock %}
