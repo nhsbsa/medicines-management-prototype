@@ -11,9 +11,37 @@ Submit a new product | Portal | NHSBSA
     </svg>
     Go back to action price change</a>
 </div>
-
+<form>
 <h1>Zero price summary</h1>
-
+<h2>Set reimbursement month</h2>
+<p>in order to confirm price changes, you must first set the reimbursement month for generic and proprietary
+  products. Note the effective date is 01 June 2023.</p>
+<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="reimbursement-month">
+    Select the reimbursement month for generic products
+  </label>
+  <select class="nhsuk-select" id="reimbursement-month" name="reimbursement-month">
+    <option value="JAN23">January 2023</option>
+    <option value="FEB23" selected>February 2023</option>
+    <option value="MAR23" selected>March 2023</option>
+    <option value="APR23" selected>April 2023</option>
+    <option value="MAY23" selected>May 2023</option>
+  </select>
+</div>
+<div class="nhsuk-form-group">
+  <label class="nhsuk-label" for="proprietary-month">
+    Select the reimbursement month for proprietary products
+  </label>
+  <select class="nhsuk-select" id="proprietary-month" name="reimbursement-month">
+    <option value="JAN23">January 2023</option>
+    <option value="FEB23" selected>February 2023</option>
+    <option value="MAR23" selected>March 2023</option>
+    <option value="APR23" selected>April 2023</option>
+    <option value="MAY23" selected>May 2023</option>
+  </select>
+</div>
+<h2>Selected packs</h2>
+<p>Before confirming the price change, you must review all selected packs for this price change.</p>
 <div class="nhsuk-body-m flex--space-between nhsuk-u-margin-top-5" style="display: flex">
   <div class="nhsuk-u-visually-hidden">Currently viewing</div>
   <div id="pageAndResultCount">Page 1 of 1 (4 results)</div>
@@ -128,7 +156,7 @@ Submit a new product | Portal | NHSBSA
   <p>If you are not ready to confirm this price change summary then you must <a href="action-submission--homepage.html" class="nhsuk-link nhsuk-link--no-visited-state">mark as not confirmed and return to action price change</a>.</p>
 </div>
       <a href="action-submission--homepage--check-zero-prices-complete.html" class="nhsuk-button govuk-!-margin-right-4">Confirm</a>
-
+</form>
 
 
 
