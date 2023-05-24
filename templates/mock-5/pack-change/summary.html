@@ -42,7 +42,7 @@ Review details | Submit a product change | Portal | NHSBSA
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
-      Pack name
+      Pack details
     </dt>
     <dd class="nhsuk-summary-list__value" id="product-name">
       No product name
@@ -109,8 +109,10 @@ Review details | Submit a product change | Portal | NHSBSA
   }
 
 
-  if (getPackName) {
-    document.getElementById("product-name").innerHTML = 'Product name: ' + getPackName;
+  if (getPackName && getPackSubpack) {
+    document.getElementById("product-name").innerHTML = 'Product name:<br> ' + getPackName + '<br><br>Pack size: ' + getPackSize + '<br><br>Subpack: ' + getPackSubpack;
+  } else if (getPackName && !getPackSubpack) {
+    document.getElementById("product-name").innerHTML = 'Product name:<br> ' + getPackName + '<br><br>Pack size: ' + getPackSize;
   }
   if (getProductChangeReason) {
     document.getElementById("product-change-reason").innerHTML = getProductChangeReason;
