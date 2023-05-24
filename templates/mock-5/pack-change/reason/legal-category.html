@@ -1,0 +1,189 @@
+{% extends "base.html" %}
+{% block title %}
+Detail the change to the licensing authority | Submit a product change: licensing authority | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../summary">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to product review details</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Detail the change to the legal category
+      </h1>
+    </legend>
+
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+    <span role="text">
+      <span class="nhsuk-u-visually-hidden">Important: </span>
+      Warning for developers and Meds Team
+    </span>
+      </h3>
+      <p>I have split this page in to 3 sections. This is purely based on whether the pack has already been marked as prescription only, pharmacy or general sale</p>
+      <p>Only the heading along with the elements within the hidden drop down section should appear in development.</p>
+    </div>
+
+    <details class="nhsuk-details">
+    <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Pack is marked as prescription only (POM).
+    </span>
+    </summary>
+    <div class="nhsuk-details__text"><p id="product-name-current">The current legal category for <span id="product-name1">___</span> is &#39;<strong>Prescription only</strong>&#39;.</p>
+
+      <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+        Select a new legal category from the following.
+      </div>
+
+      <div class="nhsuk-radios">
+
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="example-1" name="data-licensing-authority" type="radio" value="Unlicensed" checked>
+          <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+            Prescription only
+          </label>
+        </div>
+
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="example-2" name="data-licensing-authority" type="radio" value="Device">
+          <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+            Pharmacy
+          </label>
+        </div>
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="example-3" name="data-licensing-authority" type="radio" value="Device">
+          <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+            General Sale
+          </label>
+        </div>
+
+      </div>
+
+      <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
+         href="licensing-authority-reason" id="continue-button" type="submit">
+        Save and continue
+      </a>
+
+    </div>
+    </details>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Pack is marked as pharmacy (P).
+    </span>
+      </summary>
+      <div class="nhsuk-details__text"><p id="product-name-current">The current legal category for <span id="product-name2">___</span> is &#39;<strong>Pharmacy</strong>&#39;.</p>
+
+        <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+          Select a new legal category from the following.
+        </div>
+
+        <div class="nhsuk-radios">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-1" name="data-licensing-authority" type="radio" value="Unlicensed">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+              Prescription only
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="data-licensing-authority" type="radio" value="Device" checked>
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              Pharmacy
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-3" name="data-licensing-authority" type="radio" value="Device">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+              General Sale
+            </label>
+          </div>
+
+        </div>
+
+        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
+           href="licensing-authority-reason" id="continue-button" type="submit">
+          Save and continue
+        </a>
+
+      </div>
+    </details>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Pack is marked as general sale (GSL).
+    </span>
+      </summary>
+      <div class="nhsuk-details__text"><p id="product-name-current">The current legal category for <span id="product-name3">___</span> is &#39;<strong>General sale (GSL)</strong>&#39;.</p>
+
+        <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+          Select a new legal category from the following.
+        </div>
+
+        <div class="nhsuk-radios">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-1" name="data-licensing-authority" type="radio" value="Unlicensed">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+              Prescription only
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-2" name="data-licensing-authority" type="radio" value="Device">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+              Pharmacy
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-3" name="data-licensing-authority" type="radio" value="Device" checked>
+            <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+              General Sale
+            </label>
+          </div>
+
+        </div>
+
+        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
+           href="licensing-authority-reason" id="continue-button" type="submit">
+          Save and continue
+        </a>
+
+      </div>
+    </details>
+
+  </fieldset>
+</div>
+
+<script>
+  localStorage.setItem("product-change-summary", "product-change-summary");
+
+  console.log(localStorage);
+
+  var getPackName = localStorage.getItem("pack-name");
+
+
+    document.getElementById("product-name1").innerHTML = getPackName;
+    document.getElementById("product-name2").innerHTML = getPackName;
+    document.getElementById("product-name3").innerHTML = getPackName;
+
+
+
+
+
+
+</script>
+
+{% endblock %}
