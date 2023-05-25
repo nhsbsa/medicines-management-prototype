@@ -40,7 +40,7 @@ Select a product | Submit a product change | Portal | NHSBSA
 
     <div class="nhsuk-body-m flex--space-between" style="display: flex">
         <div class="nhsuk-u-visually-hidden">Currently viewing</div>
-        <div id="pageAndResultCount">Page 1 of 1 (5 results)</div>
+        <div id="pageAndResultCount">Page 1 of 1 (6 results)</div>
     </div>
 
 
@@ -78,8 +78,9 @@ Select a product | Submit a product change | Portal | NHSBSA
             <td><span
                     class="nhsuk-table-responsive__heading">Action </span>
                 <p class="nhsuk-u-margin-bottom-0">
-                    <a href="reason.html" class="nhsuk-link nhsuk-link--no-visited-state"
-                                                      id="select-product-1">Select</a></p>
+                    <a href="reason" class="nhsuk-link nhsuk-link--no-visited-state"
+                                                      id="select-product-1">Select</a>
+                </p>
 
 
             </td>
@@ -115,14 +116,14 @@ Select a product | Submit a product change | Portal | NHSBSA
                 <span id="pack-size-3">30</span>
             </td>
             <td role="cell" class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Subpack </span>3 &times; 10 capsules
+                <span class="nhsuk-table-responsive__heading">Subpack </span>
+                <span id="subpack-3">3 &times; 10 capsules</span>
             </td>
-            <td><span
-                    class="nhsuk-table-responsive__heading">Select </span>
-                <p class="nhsuk-u-margin-bottom-0"><a href="reason.html" class="nhsuk-link nhsuk-link--no-visited-state"
-                                                      id="select-product-3">Select</a></p>
-
-
+            <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Select </span>
+                <p class="nhsuk-u-margin-bottom-0">
+                    <a href="reason.html" class="nhsuk-link nhsuk-link--no-visited-state" id="select-product-3">Select</a>
+                </p>
             </td>
         </tr>
         <tr role="row" class="nhsuk-table__row">
@@ -138,8 +139,8 @@ Select a product | Submit a product change | Portal | NHSBSA
                 <span class="nhsuk-table-responsive__heading">Subpack </span>
                 <span class="nhsuk-u-visually-hidden">No Subpack exists for Diamorphine 10mg tablets 100 pack</span>
             </td>
-            <td><span
-                    class="nhsuk-table-responsive__heading">Action </span>
+            <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action </span>
                 <p class="nhsuk-u-margin-bottom-0"><a href="reason.html" class="nhsuk-link nhsuk-link--no-visited-state"
                                                       id="select-product-4">Select</a></p>
 
@@ -159,8 +160,8 @@ Select a product | Submit a product change | Portal | NHSBSA
                 <span class="nhsuk-table-responsive__heading">Subpack </span>
                 <span class="nhsuk-u-visually-hidden">No Subpack exists for Methadone 50mg/5ml solution for injection ampoules 10 pack</span>
             </td>
-            <td><span
-                    class="nhsuk-table-responsive__heading">Action </span>
+            <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action </span>
                 <p class="nhsuk-u-margin-bottom-0"><a href="reason.html" class="nhsuk-link nhsuk-link--no-visited-state"
                                                       id="select-product-5">Select</a></p>
 
@@ -180,8 +181,8 @@ Select a product | Submit a product change | Portal | NHSBSA
                 <span class="nhsuk-table-responsive__heading">Subpack </span>
                 <span id="subpack-6">5 &times; 4 capsules</span>
             </td>
-            <td><span
-                    class="nhsuk-table-responsive__heading">Action </span>
+            <td role="cell" class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Action </span>
                 <p class="nhsuk-u-margin-bottom-0"><a href="reason.html" class="nhsuk-link nhsuk-link--no-visited-state"
                                                       id="select-product-6">Select</a></p>
 
@@ -259,7 +260,9 @@ Select a product | Submit a product change | Portal | NHSBSA
                 localStorage.setItem("pack-size", document.getElementById(packSizeId).textContent);
                 if (subpackId) {
                     localStorage.setItem("pack-subpack", document.getElementById(subpackId).textContent);
-                }
+                } else {
+                        localStorage.removeItem("pack-subpack")
+                    }
                     if (localStorage.getItem("product-change-summary") == 'product-change-summary') {
                         e.target.href = "summary";
                         console.log(e.target.href);
@@ -275,11 +278,13 @@ Select a product | Submit a product change | Portal | NHSBSA
                     let productNameId = splitId[1] + '-' + splitId[2];
                     let packSizeId = 'pack-size-' + splitId[2];
                     let subpackId = 'subpack-' + splitId[2];
-                    console.log('productNameId', productNameId);
+                    console.log('subpackId', subpackId);
                     localStorage.setItem("pack-name", document.getElementById(productNameId).textContent);
                     localStorage.setItem("pack-size", document.getElementById(packSizeId).textContent);
-                    if (subpackId) {
+                    if (document.getElementById(subpackId)) {
                         localStorage.setItem("pack-subpack", document.getElementById(subpackId).textContent);
+                    } else {
+                        localStorage.removeItem("pack-subpack")
                     }
 
                     if (localStorage.getItem("product-change-summary") == 'product-change-summary') {
