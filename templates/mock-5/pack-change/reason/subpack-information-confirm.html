@@ -16,25 +16,47 @@ Select a reason | Submit a product change | Portal | NHSBSA
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading" id="heading">
-        How many subpacks are in a pack?
+        Confirm subpack size
       </h1>
     </legend>
 
-    <div class="nhsuk-form-group">
-      <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="subpack-extra-hint">
-        For example, a 24 pack of tablets is made up of 3 subpack blister strips of 8.
-      </div>
-      <label class="nhsuk-label" for="subpack-extra">
-        Number of subpacks
-      </label>
-      <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="subpack-extra" name="subpack-extra" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
+      The subpack size is calculated by dividing the pack size with the number of subpacks. If the subpack size is incorrect, go
+      back to amend the number of subpacks. Otherwise select continue.
     </div>
+
+    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Pack size
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="pack-size-value">10</span>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Subpack quantity
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="subpack-quantity-value">5</span>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Subpack size
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="subpack-size-value">2</span>
+        </dd>
+      </div>
+    </dl>
 
   </fieldset>
 </div>
 
 <a onclick="saveReason()" class="nhsuk-button nhsuk-u-margin-top-3"
-       id="next" href="subpack-information-confirm.html"
+       id="next" href="summary"
        name="next">Save and continue
 </a>
 
