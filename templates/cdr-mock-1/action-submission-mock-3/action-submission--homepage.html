@@ -26,6 +26,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 <h2>Submission detail</h2>
 
         <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key update-width">
                     Reference number
@@ -67,8 +68,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
             </div>
         </dl>
 
-
-<h2>Review price change</h2>
+<h2>Review price changes</h2>
 
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-4">
     <div class="nhsuk-summary-list__row">
@@ -81,8 +81,9 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
     </div>
 </dl>
-<!--<p>To complete the submission, review the summaries below.</p>-->
-<p class="nhsuk-u-margin-bottom-5">To complete the submission, review the summary below.</p>
+
+<p class="nhsuk-u-margin-bottom-5">To complete the submission, review the zero price change summary below.</p>
+<!--<p>To complete the submission, review the summary below.</p>-->
 
 <div class="nhsuk-grid-row nhsuk-card-group">
 
@@ -92,25 +93,37 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                 <strong class="nhsuk-tag nhsuk-tag--grey">
                     Not confirmed
                 </strong>
-                <h3 class="nhsuk-card__heading nhsuk-u-margin-top-3">
+                <h3 class="nhsuk-card__heading nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4">
                     Zero price change summary
-
                 </h3>
-                <p><a class="nhsuk-link--no-visited-state nhsuk-u-margin-top-3" href="action-submission--check-zero-prices">Review zero price changes</a></p>
+                <h4 class="nhsuk-u-margin-bottom-0">Reimbursement dates</h4>
+                <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-4">
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key summary-width">
+                            Generic products
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            not set
+                        </dd>
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Proprietary products
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            not set
+                        </dd>
+                    </div>
+                </dl>
+                <p><a class="nhsuk-link--no-visited-state nhsuk-u-margin-top-3" href="action-submission--check-zero-prices">Review zero price changes and set reimbursement dates</a><span class="nhsuk-u-visually-hidden">AstraZeneca 100mg Paracetamol</span></p>
             </div>
         </div>
     </div>
 </div>
 <div class="nhsuk-inset-text nhsuk-u-margin-top-0">
     <span class="nhsuk-u-visually-hidden">Information: </span>
-    <p>In order to complete this price change submission, you must confirm all price changes.</a></p>
+    <p>In order to complete this zero price change submission, you must set the reimbursement dates and confirm all zero price changes.</a></p>
 </div>
-<!--<div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-full">
-            <a class="nhsuk-button">Complete</a>
-    </div>
-</div>-->
-<!--if all packs are complete then show this button, otherwise do not show it MPL 17FEB23-->
 
 
 {% endblock %}
