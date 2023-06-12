@@ -1,11 +1,10 @@
-!DOCTYPE html>
 {% extends "base.html" %}
 {% block title %}
-Select a reason | Submit a product change | Portal | NHSBSA
+Detail the change to the licensing authority | Submit a product change: licensing authority | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="../summary.html">
+  <a class="nhsuk-back-link__link" href="../summary">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
@@ -17,58 +16,119 @@ Select a reason | Submit a product change | Portal | NHSBSA
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
         <span class="nhsuk-caption-l" id="product-name-title">
-                Submit a product change
+                Submit a pack change
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        Storage conditions
+        Detail the change to the Storage conditions
       </h1>
     </legend>
 
-    <div class="nhsuk-radios" id="data-discontinue-reason-radios">
-
-      
-
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+    <span role="text">
+      <span class="nhsuk-u-visually-hidden">Important: </span>
+      Warning for developers and Meds Team
+    </span>
+      </h3>
+      <p>I have split this page in to 4 sections. The first three connect as a condition where there is already storage conditions information on the pack.
+        first being what they view when they come to this page, second when they press edit and third being what they view when they press delete.<br><br>
+      there is no confirmation pages needed on the adding or deletion of storage info as it's very easy to re-add data and it isn't a long process.<br><br>
+      The fourth and final view is the most common. what the user will see when they want to add the first storage info note to the product when there is none already.
     </div>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Pack has pre-written storage conditions
+    </span>
+      </summary>
+      <div class="nhsuk-grid-column-full govuk-!-margin-top-4 nhsuk-u-margin-bottom-4">
+        <p>You currently have a note on storage conditions for <b><span id="product-name1">___</span></b></p>
+        <div class="nhsuk-hint">
+          "Must be stored in a cool dry place"
+        </div>
+
+
+        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
+           href="licensing-authority-reason" id="continue-button" type="submit">
+          Edit
+        </a><br>
+        <a><u>Delete storage conditions note</u></a>
+
+      </div>
+    </details>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      User presses edit
+    </span>
+      </summary>
+      <div class="nhsuk-details__text"><p id="product-name-current">You currently have a note on storage conditions for <span id="product-name2">___</span></p>
+        <textarea class="nhsuk-textarea govuk-!-margin-bottom-4">Must be stored in a cool dry place</textarea>
+
+
+        <a class="nhsuk-button" onclick="saveLicensingAuthority()"
+           href="licensing-authority-reason" id="continue-button" type="submit">
+          Save changes
+        </a>
+        <a class="nhsuk-button nhsuk-button--secondary">Discard changes</a>
+
+      </div>
+    </details>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      User presses delete
+    </span>
+      </summary>
+      <div class="nhsuk-details__text nhsuk-u-margin-bottom-4"><p id="product-name-current">The storage conditions for <b><span id="product-name3"></span></b> have been deleted.
+      </p>
+      <p>
+        <a class="nhsuk-button" onclick="saveLicensingAuthority()"
+           href="licensing-authority-reason" id="continue-button" type="submit">
+          Continue
+        </a><br>
+        <a><u>Add new storage conditions note</u></a>
+
+      </div>
+    </details>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      User adds information when there is currently no existing storage information
+    </span>
+      </summary>
+      <div class="nhsuk-details__text"><p id="product-name-current">Add storage information for <span id="product-name4">___</span></p>
+        <textarea class="nhsuk-textarea govuk-!-margin-bottom-4">
+        </textarea>
+
+
+        <a class="nhsuk-button" onclick="saveLicensingAuthority()"
+           href="licensing-authority-reason" id="continue-button" type="submit">
+          Save
+        </a>
+        <a class="nhsuk-button nhsuk-button--secondary">Discard</a>
+
+      </div>
+    </details>
+
   </fieldset>
 </div>
 
-<a onclick="saveReason()" class="nhsuk-button nhsuk-u-margin-top-3"
-       id="next" href="summary"
-       name="next">Save and continue
-</a>
+<script>
+  localStorage.setItem("product-change-summary", "product-change-summary");
 
-<script type="text/javascript">
+  console.log(localStorage);
 
-  if (localStorage.getItem("summary-page")) {
-     localStorage.removeItem("summary-page");
-  }
+  var getPackName = localStorage.getItem("pack-name");
 
-  const continueBtn = document.getElementById("next")
 
-  function saveReason() {
-    var radioButtons = document.getElementsByName("data-pack-change-reason");
+  document.getElementById("product-name1").innerHTML = getPackName;
+  document.getElementById("product-name2").innerHTML = getPackName;
+  document.getElementById("product-name3").innerHTML = getPackName;
+  document.getElementById("product-name4").innerHTML = getPackName;
 
-    for (var radio of radioButtons) {
-      if (radio.checked) {
-          localStorage.setItem("pack-change-reason", radio.value);
-       }
-     }
-  }
 
-var radioReasonButtons = document.getElementsByName("data-pack-change-reason");
-
-if (radioReasonButtons.length != 0) {
-
-var getProductChangeReason = localStorage.getItem("pack-change-reason");
-
-    if (getProductChangeReason != null) {
-        for (var radio of radioReasonButtons) {
-            if (getProductChangeReason === radio.value) {
-                radio.checked = true;
-            }
-        }
-      }
-    };
 
 
 
@@ -76,5 +136,3 @@ var getProductChangeReason = localStorage.getItem("pack-change-reason");
 </script>
 
 {% endblock %}
-
-
