@@ -1,74 +1,173 @@
-!DOCTYPE html>
 {% extends "base.html" %}
 {% block title %}
-Select a reason | Submit a product change | Portal | NHSBSA
+Detail the change to the licensing authority | Submit a product change: licensing authority | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="amend-product">
-    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
-    </svg>
-    Go back to select product</a>
+    <a class="nhsuk-back-link__link" href="../summary">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to review details</a>
 </div>
 
 <div class="nhsuk-form-group">
-  <fieldset class="nhsuk-fieldset" role="group">
-    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
-      <h1 class="nhsuk-fieldset__heading">
+    <fieldset class="nhsuk-fieldset" role="group">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+            <h1 class="nhsuk-fieldset__heading">
         <span class="nhsuk-caption-l" id="product-name-title">
-                Submit a product change
+                Submit a pack change
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        Availability restrictions
-              </h1>
-    </legend>
+                Detail the change to the pack restrictions
+            </h1>
+        </legend>
 
-    <div class="nhsuk-radios" id="data-discontinue-reason-radios">
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+    <span role="text">
+      <span class="nhsuk-u-visually-hidden">Important: </span>
+      Warning for developers and Meds Team
+    </span>
+            </h3>
+            <p>I have split this page in to 3 sections. The case where it has been pre-selected as yes, no and the third for the chance that a restriction has not been set.
+        </div>
 
-      
+        <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Pack is marked yes
+    </span>
+            </summary>
+            <div class="nhsuk-details__text"><p id="product-name-current">The restrictions for <span id="product-name1">___</span> are currently set as &#39;<strong>Yes (hospital only)</strong>&#39;.</p>
+                <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+                   Hospital only packs are only available via hospitals or home care, they are not available in community pharmacies.
+                    <br>
+                    <br>Select a new restriction from the following.
+                </div>
 
-    </div>
-  </fieldset>
+                <div class="nhsuk-radios">
+
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="example-1" name="data-licensing-authority" type="radio" value="Unlicensed" checked>
+                        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                            Yes (hospital only)
+                        </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="example-2" name="data-licensing-authority" type="radio" value="Device">
+                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                            No
+                        </label>
+                    </div>
+
+                </div>
+
+                <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
+                   href="licensing-authority-reason" id="continue-button" type="submit">
+                    Save and continue
+                </a>
+
+            </div>
+        </details>
+        <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Pack is marked as no
+    </span>
+            </summary>
+            <div class="nhsuk-details__text"><p id="product-name-current">The restrictions for <span id="product-name2">___</span> are currently set as &#39;<strong>No</strong>&#39;.</p>
+
+                <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+                    Hospital only packs are only available via hospitals or home care, they are not available in community pharmacies.
+                    <br>
+                    <br>Select a new restriction from the following.
+                </div>
+
+                <div class="nhsuk-radios">
+
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="example-" name="data-licensing-authority" type="radio" value="Unlicensed" >
+                        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                            Yes (hospital only)
+                        </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="example-2" name="data-licensing-authority" type="radio" value="Device"checked>
+                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                            No
+                        </label>
+                    </div>
+
+                </div>
+
+                <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
+                   href="licensing-authority-reason" id="continue-button" type="submit">
+                    Save and continue
+                </a>
+
+
+            </div>
+        </details>
+        <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Pack is unmarked (null)
+    </span>
+            </summary>
+            <div class="nhsuk-details__text"><p id="product-name-current">The restrictions for <span id="product-name3">___</span> are currently '<b>unset</b>' and will be set profiled as &#39;<strong>No</strong>&#39; by default.</p>
+
+                <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+                    Hospital only packs are only available via hospitals or home care, they are not available in community pharmacies.
+                    <br>
+                    <br>Select a new restriction from the following.
+                </div>
+
+                <div class="nhsuk-radios">
+
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="example-1" name="data-licensing-authority" type="radio" value="Unlicensed" >
+                        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                            Yes (hospital only)
+                        </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="example-2" name="data-licensing-authority" type="radio" value="Device"checked>
+                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                            No
+                        </label>
+                    </div>
+
+                </div>
+
+                <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
+                   href="licensing-authority-reason" id="continue-button" type="submit">
+                    Save and continue
+                </a>
+
+
+            </div>
+        </details>
+
+    </fieldset>
 </div>
 
-<a onclick="saveReason()" class="nhsuk-button nhsuk-u-margin-top-3"
-       id="next" href="summary"
-       name="next">Save and continue
-</a>
+<script>
+    localStorage.setItem("product-change-summary", "product-change-summary");
 
-<script type="text/javascript">
+    console.log(localStorage);
 
-  if (localStorage.getItem("summary-page")) {
-     localStorage.removeItem("summary-page");
-  }
+    var getPackName = localStorage.getItem("pack-name");
 
-  const continueBtn = document.getElementById("next")
 
-  function saveReason() {
-    var radioButtons = document.getElementsByName("data-pack-change-reason");
+    document.getElementById("product-name1").innerHTML = getPackName;
+    document.getElementById("product-name2").innerHTML = getPackName;
+    document.getElementById("product-name3").innerHTML = getPackName;
 
-    for (var radio of radioButtons) {
-      if (radio.checked) {
-          localStorage.setItem("pack-change-reason", radio.value);
-       }
-     }
-  }
 
-var radioReasonButtons = document.getElementsByName("data-pack-change-reason");
-
-if (radioReasonButtons.length != 0) {
-
-var getProductChangeReason = localStorage.getItem("pack-change-reason");
-
-    if (getProductChangeReason != null) {
-        for (var radio of radioReasonButtons) {
-            if (getProductChangeReason === radio.value) {
-                radio.checked = true;
-            }
-        }
-      }
-    };
 
 
 
@@ -76,5 +175,3 @@ var getProductChangeReason = localStorage.getItem("pack-change-reason");
 </script>
 
 {% endblock %}
-
-

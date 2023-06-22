@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-width-container">
+    <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+        <a class="nhsuk-back-link__link" id="back-link" href="../discontinue-takeover-submission-view.html#tab-action">
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                 aria-hidden="true" height="24" width="24">
+                <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+            </svg>
+            Go back to submission view</a>
+    </div>
+    <h1 class="app-page-heading">
+        <span class="nhsuk-caption-l">
+            AstraZeneca
+          <span class="nhsuk-u-visually-hidden"> - </span>
+        </span>
+        Action discontinue submission
+    </h1>
+</div>
+
+<h2>Submission detail</h2>
+
+        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key update-width">
+                    Reference number
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    123456789
+                </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Submitted by
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Jane Smith
+                </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Email contact
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <a href="mailto:jane.smith@example.com">
+                        jane.smith@example.com
+                    </a>
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Date received
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    01 May 2022
+                </dd>
+
+            </div>
+        </dl>
+
+
+<h2>Review discontinue</h2>
+
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-top-6">
+
+    <div class="nhsuk-summary-list__row" id="effective-date">
+        <dt class="nhsuk-summary-list__key update-width">
+            Effective date
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="pack-effective-date">12 July 2022
+        </dd>
+
+    </div>
+    <!--  if divestment or takeover then needs to show the following, as long as user has provided
+          Supplier name, supplier contact name, supplier email, supplier telephone number MPL 27APR23 -->
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" id="discontinue-title">
+            Discontinue reason
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="discontinue-reason-add" >
+            Takeover
+        </dd>
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" id="supplier-title">
+            Supplier name
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="supplier-add" >
+            Boots Ltd.
+        </dd>
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" id="supplier-contact-name">
+            Supplier contact name
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="supplier-contact-name-add">
+            John Smith
+        </dd>
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key" id="supplier-contact-email">
+            Supplier contact email
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="supplier-contact-email-add">
+            john.smith@nhs.net
+        </dd>
+    </div>
+
+</dl>
+<!--<p>To complete the submission, review the summaries below.</p>-->
+<p class="nhsuk-u-margin-bottom-5">To complete the submission, review the summary below.</p>
+
+<div class="nhsuk-grid-row nhsuk-card-group">
+
+    <div class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card">
+            <div class="nhsuk-card__content">
+                <strong class="nhsuk-tag nhsuk-tag--grey">
+                    Not confirmed
+                </strong>
+                <h3 class="nhsuk-card__heading nhsuk-u-margin-top-3">
+                    Selected packs to discontinue
+
+                </h3>
+                <p><a class="nhsuk-link--no-visited-state nhsuk-u-margin-top-3" href="action-submission-check-packs">Review selected packs to discontinue</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="nhsuk-inset-text nhsuk-u-margin-top-0">
+    <span class="nhsuk-u-visually-hidden">Information: </span>
+    <p>In order to complete this discontinue submission, you must confirm all selected packs.</a></p>
+</div>
+<!--<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+            <a class="nhsuk-button">Complete</a>
+    </div>
+</div>-->
+<!--if all packs are complete then show this button, otherwise do not show it MPL 17FEB23-->
+
+
+{% endblock %}

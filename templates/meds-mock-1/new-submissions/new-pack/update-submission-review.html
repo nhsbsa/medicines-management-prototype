@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+    <a class="nhsuk-back-link__link" id="back-link" href="update-submission-notes-detail">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to message content</a>
+</div>
+
+<h1>Update summary</h1>
+
+<p>Review the details of the update to ensure all details are correct.</p>
+<p>Choosing to 'Save and notify' sends a notification to the supplier via email. This alerts them of an update to the submission, but does not include specific detail.
+</p>
+
+<h2>Update</h2>
+        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+            <div class="nhsuk-summary-list__row" id="hide-status">
+                <dt class="nhsuk-summary-list__key update-width">
+                    Status
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="status-update">
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row" id="hide-note-title">
+                <dt class="nhsuk-summary-list__key update-width">
+                    Message title
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="note-title">
+                    <p>Status update</p>
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row" id="hide-note-detail">
+                <dt class="nhsuk-summary-list__key">
+                    Message detail
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="note-detail">
+                    <p>This submission has been rejected due to certain circumstances.</p>
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row" id="hide-comment-detail">
+                <dt class="nhsuk-summary-list__key">
+                    Comment detail
+                </dt>
+                <dd class="nhsuk-summary-list__value" id="comment-detail">
+                    <p>This submission has been rejected due to certain circumstances.</p>
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Notify email
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <p>jane.smith@example.com</p>
+                </dd>
+
+            </div>
+        </dl>
+
+
+<h2>Submission</h2>
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key update-width">
+            Submission type
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            New pack
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Reference
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            56465452
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Date received
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            1 May 2022
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Effective date
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            1 June 2022
+        </dd>
+
+    </div>
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Supplier
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            AstraZeneca
+        </dd>
+
+    </div>
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Submitted by
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            Jane Smith
+        </dd>
+
+    </div>
+</dl>
+
+<a class="nhsuk-button nhsuk-u-margin-top-4" href="../confirmation" id="continue-button" type="submit">
+    Save and notify
+</a>
+
+<script>
+    window.onload = function() {
+    if (localStorage.getItem("submission-status") != null && localStorage.getItem("product-notes-require") == 'No') {
+    document.getElementById("back-link").setAttribute('href', "update-submission-notes");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to would you like to add a message for the supplier?";
+    }
+    if (localStorage.getItem("comment-detail") != null) {
+    document.getElementById("back-link").setAttribute('href', "update-add-comment");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to add a comment";
+    }
+
+
+};
+    console.log(localStorage);
+
+    let statusElement = document.getElementById("status-update");
+    let statusView = document.getElementById("hide-status");
+    let notesTitleInput = document.getElementById("note-title");
+    let notesTitle = document.getElementById("hide-note-title");
+    let notesDetailInput = document.getElementById("note-detail");
+    let notesDetail = document.getElementById("hide-note-detail");
+    let commentDetailInput = document.getElementById("comment-detail");
+    let commentDetail = document.getElementById("hide-comment-detail");
+
+    console.log(localStorage.getItem("submission-status") == null);
+
+    if (localStorage.getItem("submission-status") != null || localStorage.getItem("submission-status") != "") {
+        if (localStorage.getItem("submission-status") == 'Actioned') {
+        statusElement.insertAdjacentHTML('beforeend',
+        '<strong class="nhsuk-tag nhsuk-tag--grey">Actioned</strong>'
+        )}
+        else if (localStorage.getItem("submission-status") == 'Rejected'){
+        statusElement.insertAdjacentHTML('beforeend',
+        '<strong class="nhsuk-tag nhsuk-tag--red">Rejected</strong>'
+        )}
+        else if (localStorage.getItem("submission-status") == 'Failed'){
+        statusElement.insertAdjacentHTML('beforeend',
+        '<strong class="nhsuk-tag nhsuk-tag--orange">Failed</strong>'
+        )}
+        else if (localStorage.getItem("submission-status") == 'Cancelled'){
+        statusElement.insertAdjacentHTML('beforeend',
+        '<strong class="nhsuk-tag nhsuk-tag--purple">Cancelled</strong>'
+        )}
+        else if (localStorage.getItem("submission-status") == 'More detail required'){
+        statusElement.insertAdjacentHTML('beforeend',
+        '<strong class="nhsuk-tag nhsuk-tag--white">More detail</strong>'
+        )}
+    }
+
+    if (localStorage.getItem("submission-status") == null || localStorage.getItem("submission-status") == "") {
+     statusView.style["display"] = "none";
+    }
+
+    if (localStorage.getItem("notes-title") != null) {
+    notesTitleInput.innerHTML = localStorage.getItem("notes-title");
+    notesDetailInput.innerHTML = localStorage.getItem("notes-detail");
+    }
+    if (localStorage.getItem("notes-title-other") != null) {
+    notesTitleInput.innerHTML = localStorage.getItem("notes-title-other");
+    }
+
+    if (localStorage.getItem("notes-title") == null || localStorage.getItem("product-notes-require") == 'No') {
+    console.log('working');
+     notesTitle.style["display"] = "none";
+     notesDetail.style["display"] = "none";
+    }
+
+    if (localStorage.getItem("comment-detail") != null) {
+    commentDetailInput.innerHTML = localStorage.getItem("comment-detail");
+    }
+
+    if (localStorage.getItem("comment-detail") == null) {
+    commentDetail.style["display"] = "none";
+    }
+
+
+
+
+
+
+</script>
+
+
+
+
+{% endblock %}

@@ -15,11 +15,14 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
 <h1>Update summary</h1>
 
-<p>Review the details of the update to ensure all details are correct. This includes which product it relates to as well as the contact information. </p>
+<p>Review the details of the update to ensure all details are correct.</p>
 <p>Choosing to 'Save and notify' sends a notification to the supplier via email. This alerts them of an update to the submission, but does not include specific detail.
 </p>
 
 <h2>Update</h2>
+
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
     <div class="nhsuk-summary-list__row" id="hide-status">
         <dt class="nhsuk-summary-list__key">
@@ -71,9 +74,23 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
     </div>
 </dl>
+    </div>
+</div>
 
-<h2>Product</h2>
+<h2>Submission</h2>
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
 <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Submission type
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            New Product
+        </dd>
+
+    </div>
 
     <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
@@ -133,8 +150,8 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
     </div>
 </dl>
-
-
+    </div>
+</div>
 
 <a class="nhsuk-button nhsuk-u-margin-top-4" href="confirmation" id="continue-button" type="submit">
     Save and notify
@@ -197,6 +214,9 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     notesTitleInput.innerHTML = localStorage.getItem("notes-title");
     notesDetailInput.innerHTML = localStorage.getItem("notes-detail");
     }
+    if (localStorage.getItem("notes-title-other") != null) {
+    notesTitleInput.innerHTML = localStorage.getItem("notes-title-other");
+    }
 
     if (localStorage.getItem("notes-title") == null || localStorage.getItem("product-notes-require") == 'No') {
     console.log('working');
@@ -207,6 +227,12 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     if (localStorage.getItem("comment-detail") != null) {
     commentDetailInput.innerHTML = localStorage.getItem("comment-detail");
     }
+
+    if (localStorage.getItem("comment-detail") == null) {
+    commentDetail.style["display"] = "none";
+    }
+
+
 
 
 
