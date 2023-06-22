@@ -1,0 +1,105 @@
+!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Select a reason | Submit a product change | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../summary.html">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to review details</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading" id="heading">
+        Confirm subpack size
+      </h1>
+    </legend>
+
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
+      The subpack size is calculated by dividing the pack size with the number of subpacks. If the subpack size is incorrect, go
+      back to amend the number of subpacks. Otherwise select continue.
+    </div>
+
+    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Pack size
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="pack-size-value">10</span>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Subpack quantity
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="subpack-quantity-value">5</span>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Subpack size
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="subpack-size-value">2</span>
+        </dd>
+      </div>
+    </dl>
+
+  </fieldset>
+</div>
+
+<a onclick="saveReason()" class="nhsuk-button nhsuk-u-margin-top-3"
+       id="next" href="../does-have-artwork.html"
+       name="next">Continue
+</a>
+
+<script type="text/javascript">
+
+  if (localStorage.getItem("summary-page")) {
+     localStorage.removeItem("summary-page");
+  }
+
+  const continueBtn = document.getElementById("next")
+
+  function saveReason() {
+    var radioButtons = document.getElementsByName("data-pack-change-reason");
+
+    for (var radio of radioButtons) {
+      if (radio.checked) {
+          localStorage.setItem("pack-change-reason", radio.value);
+       }
+     }
+  }
+
+var radioReasonButtons = document.getElementsByName("data-pack-change-reason");
+
+if (radioReasonButtons.length != 0) {
+
+  var getPackSubpack = localStorage.getItem("pack-subpack");
+  document.getElementById("subpackInfo").innerHTML = getPackName;
+var getProductChangeReason = localStorage.getItem("pack-change-reason");
+
+    if (getProductChangeReason != null) {
+        for (var radio of radioReasonButtons) {
+            if (getProductChangeReason === radio.value) {
+                radio.checked = true;
+            }
+        }
+      }
+    };
+
+
+
+
+</script>
+
+{% endblock %}
+
+

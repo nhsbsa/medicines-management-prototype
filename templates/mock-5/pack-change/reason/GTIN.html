@@ -1,0 +1,115 @@
+!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Select a reason | Submit a product change | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../summary.html">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to review details</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Detail the change to the GTIN
+      </h1>
+    </legend>
+
+    <div class="nhsuk-radios" id="data-discontinue-reason-radios">
+      <p>Review the GTIN codes which are associated with <b><span id="product-name1"></span></b>.</p>
+      <p class="nhsuk-u-margin-bottom-6">Please note, you may remove a value but the pack must contain at least one GTIN.</p>
+      <table class="nhsuk-table nhsuk-u-margin-bottom-4" id="ma-number-table">
+        <caption class="nhsuk-table__caption" id="table-caption">GTIN codes for <span id="product-name2"></span></caption>
+        <thead role="rowgroup" class="nhsuk-table__head">
+        <tr role="row">
+          <th role="columnheader" class="" scope="col">
+            Global trade item number
+          </th>
+          <th role="columnheader" class="" scope="col">
+            Action
+          </th>
+        </tr>
+        </thead>
+        <tbody class="nhsuk-table__body">
+        <tr role="row" class="nhsuk-table__row" id="ma-number-1">
+          <td class="nhsuk-table__cell">00012345678905</td>
+          <td class="nhsuk-table__cell "><a href="#" id="ma-link-number-1">Remove <span class="nhsuk-u-visually-hidden"> GTIN 00012345678905</span></a></td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row" id="ma-number-2">
+          <td class="nhsuk-table__cell">00012345678906</td>
+          <td class="nhsuk-table__cell "><a href="#" id="ma-link-number-2">Remove <span class="nhsuk-u-visually-hidden"> GTIN 00012345678906</span></a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </fieldset>
+
+  <div class="nhsuk-inset-text nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-5">
+    <span class="nhsuk-u-visually-hidden">Information: </span>
+    <p>Use this link to <a class="nhsuk-link nhsuk-link--no-visited-state" href="add-GTIN.html" title="External website">add a GTIN</a></p>
+  </div>
+</div>
+
+<a onclick="saveReason()" class="nhsuk-button nhsuk-u-margin-top-3"
+       id="next" href="../does-have-artwork.html"
+       name="next">Continue
+</a>
+
+<script type="text/javascript">
+
+  if (localStorage.getItem("summary-page")) {
+     localStorage.removeItem("summary-page");
+  }
+
+  const continueBtn = document.getElementById("next")
+
+  function saveReason() {
+    var radioButtons = document.getElementsByName("data-pack-change-reason");
+
+    for (var radio of radioButtons) {
+      if (radio.checked) {
+          localStorage.setItem("pack-change-reason", radio.value);
+       }
+     }
+  }
+
+var radioReasonButtons = document.getElementsByName("data-pack-change-reason");
+
+if (radioReasonButtons.length != 0) {
+
+var getProductChangeReason = localStorage.getItem("pack-change-reason");
+
+    if (getProductChangeReason != null) {
+        for (var radio of radioReasonButtons) {
+            if (getProductChangeReason === radio.value) {
+                radio.checked = true;
+            }
+        }
+      }
+    };
+
+  localStorage.setItem("product-change-summary", "product-change-summary");
+
+  console.log(localStorage);
+
+  var getPackName = localStorage.getItem("pack-name");
+
+
+  document.getElementById("product-name1").innerHTML = getPackName;
+  document.getElementById("product-name2").innerHTML = getPackName;
+
+
+</script>
+
+{% endblock %}
+
+
