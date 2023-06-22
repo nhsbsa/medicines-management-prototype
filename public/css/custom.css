@@ -567,3 +567,9 @@ fill-blue{
    }
 }
 
+@media (min-width: 40.0625em) {
+.summary-width {
+  width: 45% !important;
+  }
+}
+
