@@ -56,13 +56,13 @@ Detail the change to the licensing authority | Submit a product change: licensin
 <!--        </div>-->
 
         <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="example-1-pharmacy" name="data-licensing-authority" type="radio" value="Device">
+          <input class="nhsuk-radios__input" id="example-1-pharmacy" name="data-legal-category-pom" type="radio" value="Pharmacy (P)">
           <label class="nhsuk-label nhsuk-radios__label" for="example-1-pharmacy">
             Pharmacy (P)
           </label>
         </div>
         <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="example-1-gsl" name="data-licensing-authority" type="radio" value="Device">
+          <input class="nhsuk-radios__input" id="example-1-gsl" name="data-legal-category-pom" type="radio" value="General Sales List (GSL)">
           <label class="nhsuk-label nhsuk-radios__label" for="example-1-gsl">
             General Sales List (GSL)
           </label>
@@ -70,7 +70,7 @@ Detail the change to the licensing authority | Submit a product change: licensin
 
       </div>
 
-      <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
+      <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLegalCategoryPOM()"
          href="../final-summary" id="example-1-continue-button" type="submit">
         Save and continue
       </a>
@@ -92,13 +92,13 @@ Detail the change to the licensing authority | Submit a product change: licensin
         <div class="nhsuk-radios">
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2-pom" name="data-licensing-authority" type="radio" value="Unlicensed">
+            <input class="nhsuk-radios__input" id="example-2-pom" name="data-legal-category-p" type="radio" value="Prescription Only Medicine (POM)">
             <label class="nhsuk-label nhsuk-radios__label" for="example-2-pom">
               Prescription Only Medicine (POM)
             </label>
           </div>
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-2-gsl" name="data-licensing-authority" type="radio" value="Device">
+            <input class="nhsuk-radios__input" id="example-2-gsl" name="data-legal-category-p" type="radio" value="General Sales List (GSL)">
             <label class="nhsuk-label nhsuk-radios__label" for="example-2-gsl">
               General Sales List (GSL)
             </label>
@@ -106,7 +106,7 @@ Detail the change to the licensing authority | Submit a product change: licensin
 
         </div>
 
-        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
+        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLegalCategoryP()"
            href="../final-summary" id="example-2-continue-button" type="submit">
           Save and continue
         </a>
@@ -128,14 +128,14 @@ Detail the change to the licensing authority | Submit a product change: licensin
         <div class="nhsuk-radios">
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-3-pom" name="data-licensing-authority" type="radio" value="Unlicensed">
+            <input class="nhsuk-radios__input" id="example-3-pom" name="data-legal-category-gsl" type="radio" value="Prescription Only Medicine (POM)">
             <label class="nhsuk-label nhsuk-radios__label" for="example-3-pom">
               Prescription Only Medicine (POM)
             </label>
           </div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-3-pharmacy" name="data-licensing-authority" type="radio" value="Device">
+            <input class="nhsuk-radios__input" id="example-3-pharmacy" name="data-legal-category-gsl" type="radio" value="Pharmacy (P)">
             <label class="nhsuk-label nhsuk-radios__label" for="example-3-pharmacy">
               Pharmacy (P)
             </label>
@@ -143,7 +143,7 @@ Detail the change to the licensing authority | Submit a product change: licensin
 
         </div>
 
-        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
+        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLegalCategoryGSL()"
            href="../final-summary" id="continue-button" type="submit">
           Save and continue
         </a>
@@ -167,6 +167,84 @@ Detail the change to the licensing authority | Submit a product change: licensin
     document.getElementById("product-name3").innerHTML = getPackName;
 
 
+  function saveLegalCategoryPOM() {
+    var radioButtons = document.getElementsByName("data-legal-category-pom");
+
+    for (var radio of radioButtons) {
+      if (radio.checked) {
+          localStorage.setItem("legal-category", radio.value);
+        }
+     }
+  }
+
+  function saveLegalCategoryP() {
+    var radioButtons = document.getElementsByName("data-legal-category-p");
+
+    for (var radio of radioButtons) {
+      if (radio.checked)
+
+        {
+          localStorage.setItem("legal-category", radio.value);
+        }
+     }
+  }
+
+  function saveLegalCategoryGSL() {
+    var radioButtons = document.getElementsByName("data-legal-category-gsl");
+
+    for (var radio of radioButtons) {
+      if (radio.checked)
+
+        {
+          localStorage.setItem("legal-category", radio.value);
+        }
+     }
+  }
+
+  var radioLegalCategoryPOMButtons = document.getElementsByName("data-legal-category-pom");
+
+  if (radioLegalCategoryPOMButtons.length != 0) {
+
+  var getLegalCategory = localStorage.getItem("legal-category");
+
+    if (getLegalCategory != null) {
+        for (var radio of radioLegalCategoryPOMButtons) {
+            if (getLegalCategory === radio.value) {
+                radio.checked = true;
+            }
+        }
+      }
+    };
+
+  var radioLegalCategoryPButtons = document.getElementsByName("data-legal-category-p");
+
+  if (radioLegalCategoryPButtons.length != 0) {
+
+  var getLegalCategory = localStorage.getItem("legal-category");
+
+    if (getLegalCategory != null) {
+        for (var radio of radioLegalCategoryPButtons) {
+            if (getLegalCategory === radio.value) {
+                radio.checked = true;
+            }
+        }
+      }
+    };
+
+  var radioLegalCategoryGSLButtons = document.getElementsByName("data-legal-category-gsl");
+
+  if (radioLegalCategoryGSLButtons.length != 0) {
+
+  var getLegalCategory = localStorage.getItem("legal-category");
+
+    if (getLegalCategory != null) {
+        for (var radio of radioLegalCategoryGSLButtons) {
+            if (getLegalCategory === radio.value) {
+                radio.checked = true;
+            }
+        }
+      }
+    };
 
 
 

@@ -126,7 +126,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
   </div>
 
-  <div class="nhsuk-summary-list__row">
+  <div class="nhsuk-summary-list__row" id="has-smpc">
     <dt class="nhsuk-summary-list__key" id="file-or-link">
       SmPC uploaded files
     </dt>
@@ -280,27 +280,30 @@ if (packChangeReason != null || packChangeReason != "") {
    document.getElementById("heading-pack-1").innerHTML = capitaliseReason + ' update';
 }
 
-<!--let reasonForChangeLR = localStorage.getItem("licensed-route-reason");-->
+let reasonForChangeLegalCat = localStorage.getItem("legal-category-reason");
 <!--let reasonForChangePN = localStorage.getItem("product-name-reason");-->
 <!--let reasonForChangeMA = localStorage.getItem("market-auth-reason");-->
 <!--let reasonForChangeLA = localStorage.getItem("licensing-authority-reason-why");-->
 
-<!--if (packChangeReason == "licensed route") {-->
-<!--  document.getElementById("has-artwork").style.display = "none";-->
-<!--  document.getElementById("awaiting-artwork").style.display = "none";-->
+if (packChangeReason == "legal category") {
+  document.getElementById("has-artwork").style.display = "none";
+  document.getElementById("awaiting-artwork").style.display = "none";
+  document.getElementById("has-smpc").style.display = "none";
 
-<!--  document.getElementById("new-details-title").innerHTML = "Licensed routes";-->
-<!--  document.getElementById("new-details").innerHTML = 'Oral' + '<br>' + 'Dental';-->
-<!--  document.getElementById("new-details-change").href = "reason-licensed-route/licensed-route";-->
+  document.getElementById("new-details-title").innerHTML = "Legal category";
+  document.getElementById("new-details").innerHTML = localStorage.getItem("legal-category");
+  document.getElementById("new-details-change").href = "reason/legal-category";
 
-<!--  document.getElementById("link-reason").href = "reason-licensed-route/licensed-route-reason";-->
+  document.getElementById("link-reason").href = "reason/legal-category-reason";
 
-<!--  if (reasonForChangeLR != "") {-->
-<!--   document.getElementById("display-reason").innerHTML = reasonForChangeLR;-->
-<!--} else {-->
-<!--   document.getElementById("display-reason").innerHTML = 'No reason provided';-->
-<!--    }-->
-<!--}-->
+  console.log('reasonForChangeLegalCat', reasonForChangeLegalCat);
+
+  if (reasonForChangeLegalCat) {
+   document.getElementById("display-reason").innerHTML = reasonForChangeLegalCat;
+} else {
+   document.getElementById("display-reason").innerHTML = 'No reason provided';
+    }
+}
 
 <!--if (packChangeReason == "product name") {-->
 <!--  document.getElementById("new-details-title").innerHTML = "New product name";-->
