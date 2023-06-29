@@ -1,0 +1,139 @@
+{% extends "base.html" %}
+{% block title %}
+Review details | Submit a product change | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="reason">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to select reason for pack change</a>
+</div>
+
+<h1><span class="nhsuk-caption-l">
+    Submit a pack change
+  <span class="nhsuk-u-visually-hidden"> - </span>
+</span>
+  Review details</h1>
+
+<p>Before continuing with this pack change, please check that the following details are correct. </p>
+
+<dl class="nhsuk-summary-list nhsuk-u-margin-top-6">
+
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Effective date
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-effective-date">15 November 2023
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="effective-date">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; effective date</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Pack details
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-name">
+      No product name
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="select-pack">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;product name</span>
+      </a>
+
+    </dd>
+
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Pack change reason
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-change-reason">
+      No reason listed
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="reason">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; reason for product change</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+</dl>
+
+<a class="nhsuk-button nhsuk-u-margin-right-0" href="reason-product-name/product-spc" id="continue-button">Continue with pack change</a>
+<!--<a class="nhsuk-button nhsuk-u-margin-right-0" href="confirmation" id="confirm-button">Confirm</a>-->
+<!--<a class="nhsuk-button nhsuk-button&#45;&#45;secondary nhsuk-u-margin-right-0" href="draft-confirmation" id="draft-button">Save as draft</a>-->
+
+
+<script>
+  localStorage.setItem("product-change-summary", "product-change-summary");
+
+  console.log(localStorage);
+
+  var getEffectiveDay = localStorage.getItem("effective-day");
+  var getEffectiveMonth = localStorage.getItem("effective-month");
+  var getEffectiveYear = localStorage.getItem("effective-year");
+  var getPackName = localStorage.getItem("pack-name");
+  var getPackSize = localStorage.getItem("pack-size");
+  var getPackSubpack = localStorage.getItem("pack-subpack");
+  var getProductChangeReason = localStorage.getItem("pack-change-reason");
+
+  var continueButton = document.getElementById("continue-button");
+
+  if (getEffectiveDay != '' || getEffectiveMonth != '' || getEffectiveYear != '') {
+    console.log('setting month');
+    var getLongMonth = Intl.DateTimeFormat('en', { month: 'long' }).format(new Date(getEffectiveMonth));
+    let formalDate = getEffectiveDay + ' ' + getLongMonth + ' ' + getEffectiveYear;
+    document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' ' + getLongMonth + ' ' + getEffectiveYear;
+  } else {
+    document.getElementById("pack-effective-date").innerHTML = '15 November 2023';
+  }
+
+
+  if (getPackName && getPackSubpack) {
+    document.getElementById("product-name").innerHTML = 'Product name:<br> ' + getPackName + '<br><br>Pack size: ' + getPackSize + '<br><br>Subpack: ' + getPackSubpack;
+  } else if (getPackName && !getPackSubpack) {
+    document.getElementById("product-name").innerHTML = 'Product name:<br> ' + getPackName + '<br><br>Pack size: ' + getPackSize;
+  }
+  if (getProductChangeReason) {
+    document.getElementById("product-change-reason").innerHTML = getProductChangeReason;
+  }
+
+  if (getProductChangeReason == 'legal category') {
+    continueButton.href = "reason/legal-category"
+  } else if (getProductChangeReason == "GTIN") {
+    continueButton.href = "reason/GTIN"
+  } else if (getProductChangeReason == "subpack information") {
+    continueButton.href = "reason/subpack-information"
+  } else if (getProductChangeReason == "availability restrictions") {
+    continueButton.href = "reason/availability-restrictions"
+  } else if (getProductChangeReason == "storage conditions") {
+    continueButton.href = "reason/storage-conditions"
+  }
+
+
+
+
+
+</script>
+
+{% endblock %}

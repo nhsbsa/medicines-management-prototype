@@ -22,16 +22,16 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
     <div class="nhsuk-hint" id="contact-hint">
       To provide a SmPC or Data Sheet, we will need a file upload. This can be in Word or PDF formats only. The largest size is 10 megabytes (MB).
     </div>
-    <div class="govuk-form-group">
+    <div class="govuk-form-group nhsuk-u-margin-bottom-3">
       <label class="nhsuk-label nhsuk-u-margin-top-3" for="file-upload-1">
         Upload a file
       </label>
-      <input class="nhsuk-input " id="file-upload-1" name="file-upload-1" type="file" style="background-color: #ffffff;">
+      <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
     </div>
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeFile()"
+<a class="nhsuk-button" onclick="storeFile()"
    id="continue-button"
    href="pack-file-upload-success"
    type="submit">

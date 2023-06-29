@@ -4,7 +4,7 @@ Detail the change to the licensing authority | Submit a product change: licensin
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-    <a class="nhsuk-back-link__link" href="../summary">
+    <a class="nhsuk-back-link__link" href="../pre-summary">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
@@ -30,43 +30,24 @@ Detail the change to the licensing authority | Submit a product change: licensin
       Warning for developers and Meds Team
     </span>
             </h3>
-            <p>I have split this page in to 3 sections. The case where it has been pre-selected as yes, no and the third for the chance that a restriction has not been set.
+            <p>This page has 2 sections. This is based on whether the pack selected has availability restrictions already set as 'no' or 'yes'.
+            <p>Only the heading along with the elements within the hidden drop down section should appear in development.</p>
         </div>
 
         <details class="nhsuk-details">
             <summary class="nhsuk-details__summary">
     <span class="nhsuk-details__summary-text">
-      Pack is marked yes
+      Pack has availability restrictions marked as yes
     </span>
             </summary>
-            <div class="nhsuk-details__text"><p id="product-name-current">The restrictions for <span id="product-name1">___</span> are currently set as &#39;<strong>Yes (hospital only)</strong>&#39;.</p>
+            <div class="nhsuk-details__text"><p id="product-name-yes"><span id="product-name1">___</span> has availability restrictions set as &#39;<strong>Yes (hospital only)</strong>&#39;.</p>
                 <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
                    Hospital only packs are only available via hospitals or home care, they are not available in community pharmacies.
-                    <br>
-                    <br>Select a new restriction from the following.
                 </div>
 
-                <div class="nhsuk-radios">
-
-                    <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="example-1" name="data-licensing-authority" type="radio" value="Unlicensed" checked>
-                        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                            Yes (hospital only)
-                        </label>
-                    </div>
-
-                    <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="example-2" name="data-licensing-authority" type="radio" value="Device">
-                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                            No
-                        </label>
-                    </div>
-
-                </div>
-
-                <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
-                   href="licensing-authority-reason" id="continue-button" type="submit">
-                    Save and continue
+                <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="saveRemoveHospitalOnly()"
+                   href="have-got-smpc" id="continue-button-remove" type="submit">
+                    Remove hospital only restriction and continue
                 </a>
 
             </div>
@@ -74,81 +55,19 @@ Detail the change to the licensing authority | Submit a product change: licensin
         <details class="nhsuk-details">
             <summary class="nhsuk-details__summary">
     <span class="nhsuk-details__summary-text">
-      Pack is marked as no
+      Pack has availability restrictions marked as no
     </span>
             </summary>
-            <div class="nhsuk-details__text"><p id="product-name-current">The restrictions for <span id="product-name2">___</span> are currently set as &#39;<strong>No</strong>&#39;.</p>
+            <div class="nhsuk-details__text"><p id="product-name-no"><span id="product-name2">___</span> has availability restrictions set as &#39;<strong>No (not hospital only)</strong>&#39;.</p>
 
                 <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
                     Hospital only packs are only available via hospitals or home care, they are not available in community pharmacies.
-                    <br>
-                    <br>Select a new restriction from the following.
                 </div>
 
-                <div class="nhsuk-radios">
-
-                    <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="example-" name="data-licensing-authority" type="radio" value="Unlicensed" >
-                        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                            Yes (hospital only)
-                        </label>
-                    </div>
-
-                    <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="example-2" name="data-licensing-authority" type="radio" value="Device"checked>
-                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                            No
-                        </label>
-                    </div>
-
-                </div>
-
-                <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
-                   href="upload-smpc" id="continue-button" type="submit">
-                    Save and continue
+                <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="saveAddHospitalOnly()"
+                   href="have-got-smpc" id="continue-button" type="submit">
+                    Add hospital only restriction and continue
                 </a>
-
-
-            </div>
-        </details>
-        <details class="nhsuk-details">
-            <summary class="nhsuk-details__summary">
-    <span class="nhsuk-details__summary-text">
-      Pack is unmarked (null)
-    </span>
-            </summary>
-            <div class="nhsuk-details__text"><p id="product-name-current">The restrictions for <span id="product-name3">___</span> are currently '<b>unset</b>' and will be set profiled as &#39;<strong>No</strong>&#39; by default.</p>
-
-                <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
-                    Hospital only packs are only available via hospitals or home care, they are not available in community pharmacies.
-                    <br>
-                    <br>Select a new restriction from the following.
-                </div>
-
-                <div class="nhsuk-radios">
-
-                    <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="example-1" name="data-licensing-authority" type="radio" value="Unlicensed" >
-                        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
-                            Yes (hospital only)
-                        </label>
-                    </div>
-
-                    <div class="nhsuk-radios__item">
-                        <input class="nhsuk-radios__input" id="example-2" name="data-licensing-authority" type="radio" value="Device"checked>
-                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
-                            No
-                        </label>
-                    </div>
-
-                </div>
-
-                <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLicensingAuthority()"
-                   href="licensing-authority-reason" id="continue-button" type="submit">
-                    Save and continue
-                </a>
-
-
             </div>
         </details>
 
@@ -165,9 +84,14 @@ Detail the change to the licensing authority | Submit a product change: licensin
 
     document.getElementById("product-name1").innerHTML = getPackName;
     document.getElementById("product-name2").innerHTML = getPackName;
-    document.getElementById("product-name3").innerHTML = getPackName;
 
+    function saveRemoveHospitalOnly() {
+        localStorage.setItem("hospital-only", "remove");
+    }
 
+    function saveAddHospitalOnly() {
+        localStorage.setItem("hospital-only", "add");
+    }
 
 
 
