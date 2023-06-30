@@ -11,72 +11,206 @@ Select a reason | Submit a product change | Portal | NHSBSA
     </svg>
     Go back to review details</a>
 </div>
-
 <div class="nhsuk-form-group">
-  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+  <fieldset class="nhsuk-fieldset" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
-      <h1 class="nhsuk-fieldset__heading" id="heading">
-        How many subpacks are in a pack?
+      <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Detail the change to the subpack information
       </h1>
     </legend>
 
-    <div class="nhsuk-form-group">
-      <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="subpack-extra-hint">
-        For example, a 24 pack of tablets is made up of 3 subpack blister strips of 8.
-      </div>
-      <label class="nhsuk-label" for="subpack-extra">
-        Number of subpacks
-      </label>
-      <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="subpack-extra" name="subpack-extra" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
+    <div class="nhsuk-warning-callout">
+      <h3 class="nhsuk-warning-callout__label">
+    <span role="text">
+      <span class="nhsuk-u-visually-hidden">Important: </span>
+      Warning for developers and Meds Team
+    </span>
+      </h3>
+      <p>I have split this page in to 3 sections. This is purely based on whether the pack has already been marked as prescription only, pharmacy or general sale</p>
+      <p>Only the heading along with the elements within the hidden drop down section should appear in development.</p>
     </div>
+
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Pack currently contains subpack information
+    </span>
+      </summary>
+      <div class="nhsuk-details__text"><p id="example-1-product-name-current">The current subpack information for <span id="product-name1">___</span> is &#39;<strong>2 subpack blister strips of 7</strong>&#39;.</p>
+
+
+        <div class="nhsuk-radios">
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-1-pharmacy" name="data-legal-category-pom" type="radio" value="Pharmacy (P)">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1-pharmacy">
+              Delete
+            </label>
+          </div>
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="example-1-gsl" name="data-legal-category-pom" type="radio" value="General Sales List (GSL)">
+            <label class="nhsuk-label nhsuk-radios__label" for="example-1-gsl">
+              Edit
+            </label>
+            <div class="govuk-details__text">
+
+              <div class="nhsuk-form-group">
+                <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="subpack-extra-hint">
+                  For example, a 24 pack of tablets is made up of 3 subpack blister strips of 8.
+                </div>
+                <label class="nhsuk-label" for="subpack-extra">
+                  Number of subpacks
+                </label>
+                <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="subpack-extra" name="subpack-extra" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLegalCategoryPOM()"
+           href="../does-have-artwork.html" id="example-1-continue-button" type="submit">
+          Save and continue
+        </a>
+
+      </div>
+    </details>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Pack currently has no subpack information
+    </span>
+      </summary>
+      <div class="nhsuk-details__text"><p id="example-2-product-name-current">There is currently no subpack information for this pack.</p>
+
+        <div class="nhsuk-form-group">
+          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
+              <h1 class="nhsuk-fieldset__heading" id="heading">
+                How many subpacks are in a pack?
+              </h1>
+            </legend>
+
+            <div class="nhsuk-form-group">
+              <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="subpack-extra-hint">
+                For example, a 24 pack of tablets is made up of 3 subpack blister strips of 8.
+              </div>
+              <label class="nhsuk-label" for="subpack-extra">
+                Number of subpacks
+              </label>
+              <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="subpack-extra" name="subpack-extra" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
+            </div>
+
+          </fieldset>
+        </div>
+        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLegalCategoryPOM()"
+           href="../does-have-artwork.html" id="example-1-continue-button" type="submit">
+          Save and continue
+        </a>
+      </div>
+    </details>
 
   </fieldset>
 </div>
 
-<a onclick="saveReason()" class="nhsuk-button nhsuk-u-margin-top-3"
-       id="next" href="subpack-information-confirm.html"
-       name="next">Save and continue
-</a>
+<script>
+  localStorage.setItem("product-change-summary", "product-change-summary");
 
-<script type="text/javascript">
+  console.log(localStorage);
 
-  if (localStorage.getItem("summary-page")) {
-     localStorage.removeItem("summary-page");
-  }
+  var getPackName = localStorage.getItem("pack-name");
 
-  const continueBtn = document.getElementById("next")
 
-  function saveReason() {
-    var radioButtons = document.getElementsByName("data-pack-change-reason");
+  document.getElementById("product-name1").innerHTML = getPackName;
+  document.getElementById("product-name2").innerHTML = getPackName;
+  document.getElementById("product-name3").innerHTML = getPackName;
+
+
+  function saveLegalCategoryPOM() {
+    var radioButtons = document.getElementsByName("data-legal-category-pom");
 
     for (var radio of radioButtons) {
       if (radio.checked) {
-          localStorage.setItem("pack-change-reason", radio.value);
-       }
-     }
+        localStorage.setItem("legal-category", radio.value);
+      }
+    }
   }
 
-var radioReasonButtons = document.getElementsByName("data-pack-change-reason");
+  function saveLegalCategoryP() {
+    var radioButtons = document.getElementsByName("data-legal-category-p");
 
-if (radioReasonButtons.length != 0) {
+    for (var radio of radioButtons) {
+      if (radio.checked)
 
-  var getPackSubpack = localStorage.getItem("pack-subpack");
-  document.getElementById("subpackInfo").innerHTML = getPackName;
-var getProductChangeReason = localStorage.getItem("pack-change-reason");
+      {
+        localStorage.setItem("legal-category", radio.value);
+      }
+    }
+  }
 
-    if (getProductChangeReason != null) {
-        for (var radio of radioReasonButtons) {
-            if (getProductChangeReason === radio.value) {
-                radio.checked = true;
-            }
+  function saveLegalCategoryGSL() {
+    var radioButtons = document.getElementsByName("data-legal-category-gsl");
+
+    for (var radio of radioButtons) {
+      if (radio.checked)
+
+      {
+        localStorage.setItem("legal-category", radio.value);
+      }
+    }
+  }
+
+  var radioLegalCategoryPOMButtons = document.getElementsByName("data-legal-category-pom");
+
+  if (radioLegalCategoryPOMButtons.length != 0) {
+
+    var getLegalCategory = localStorage.getItem("legal-category");
+
+    if (getLegalCategory != null) {
+      for (var radio of radioLegalCategoryPOMButtons) {
+        if (getLegalCategory === radio.value) {
+          radio.checked = true;
         }
       }
-    };
+    }
+  };
+
+  var radioLegalCategoryPButtons = document.getElementsByName("data-legal-category-p");
+
+  if (radioLegalCategoryPButtons.length != 0) {
+
+    var getLegalCategory = localStorage.getItem("legal-category");
+
+    if (getLegalCategory != null) {
+      for (var radio of radioLegalCategoryPButtons) {
+        if (getLegalCategory === radio.value) {
+          radio.checked = true;
+        }
+      }
+    }
+  };
+
+  var radioLegalCategoryGSLButtons = document.getElementsByName("data-legal-category-gsl");
+
+  if (radioLegalCategoryGSLButtons.length != 0) {
+
+    var getLegalCategory = localStorage.getItem("legal-category");
+
+    if (getLegalCategory != null) {
+      for (var radio of radioLegalCategoryGSLButtons) {
+        if (getLegalCategory === radio.value) {
+          radio.checked = true;
+        }
+      }
+    }
+  };
 
 
 
 
-</script>
 
 {% endblock %}
 
