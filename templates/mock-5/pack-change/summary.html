@@ -15,7 +15,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
 <p class="nhsuk-u-margin-bottom-5">Check your answers before completing your submission. If you are not ready to submit you can store the information to return later.</p>
 
-<dl class="nhsuk-summary-list">
+<dl class="nhsuk-summary-list nhsuk-u-margin-bottom-8">
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -135,7 +135,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="product-file-upload-success" id="link-url">
+      <a href="reason/product-file-upload-success" id="link-url">
         Change<span class="nhsuk-u-visually-hidden">&nbsp;SmPC or Data Sheet files</span>
       </a>
 
@@ -447,7 +447,7 @@ console.log(getProductLink);
   document.getElementById("display-file-or-link").innerHTML = linkUrlFileName + '<br>' + linkUrlFileName2;
   document.getElementById("file-or-link").innerHTML = 'SmPC uploaded files';
     if (localStorage.getItem("licensing-authority") != "Unlicensed") {
-  document.getElementById("link-url").setAttribute('href', "product-file-upload-success");
+  document.getElementById("link-url").setAttribute('href', "reason/product-file-upload-success");
   }
  }
 
