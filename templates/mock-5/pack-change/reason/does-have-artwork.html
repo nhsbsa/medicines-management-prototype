@@ -13,68 +13,89 @@ Select a reason | Submit a product change | Portal | NHSBSA
 </div>
 
 <div class="nhsuk-form-group">
-  <form class="nhsuk-fieldset" role="group">
-    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
-      <h1 class="nhsuk-fieldset__heading">
+  <fieldset class="nhsuk-fieldset">
+    <h1>
         <span class="nhsuk-caption-l" id="product-name-title">
-                Submit a product change
+                Submit a pack change
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        Does the pack have artwork
-      </h1>
-    </legend>
+      Do you have images of the packaging to upload?
+    </h1>
 
-      <div class="nhsuk-radios">
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="contact-hint-artwork">
+      The packaging is sometimes referred to as artwork. The images will not be displayed on dm+d.
+    </div>
 
-        <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="data-yes" name="data" type="radio" value="yes" />
-          <label class="nhsuk-label nhsuk-radios__label">
-            Yes
-          </label>
-        </div>
+    <details class="nhsuk-details">
+      <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      What the images should show
+    </span>
+      </summary>
+      <div class="nhsuk-details__text">
+        <p>The images should display:</p>
+        <ul>
+          <li>name of the product</li>
+          <li>Marketing Authorisation Holder (MAH)</li>
+          <li>GTIN code</li>
+          <li>Product License Number</li>
+          <li>supplier name</li>
+        </ul>
+      </div>
+    </details>
 
-        <div class="nhsuk-radios__item">
-          <input class="nhsuk-radios__input" id="data-no" name="data" type="radio" value="no" />
-          <label class="nhsuk-label nhsuk-radios__label">
-            No
-          </label>
-        </div>
+    <div class="nhsuk-radios" id="display-price-radios">
 
-
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-yes" name="display-artwork" type="radio" value="yes" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
+          Yes
+        </label>
       </div>
 
-  </form>
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="data-no" name="display-artwork" type="radio" value="no" />
+        <label class="nhsuk-label nhsuk-radios__label" for="data-yes">
+          No
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
 </div>
 
-<a onclick="doesItHaveArtworkYesOrNo()" class="nhsuk-button nhsuk-u-margin-top-3"
-   id="continue-button" href="#"
+<a onclick="storeArtworkYesOrNo()" class="nhsuk-button nhsuk-u-margin-top-3"
+   id="continue-button" href="../summary"
    name="next">Continue
 </a>
 
-
-<script type="text/javascript">
-
-  function doesItHaveArtworkYesOrNo() {
-    var radioButtons = document.getElementsByName("data");
-    var buttonLink = document.getElementById("continue-button");
-
-    for (var radio of radioButtons) {
-      if (radio.checked) {
-        localStorage.setItem("product", radio.value);
-        if (radio.value == 'yes') {
-          buttonLink.href = "upload-artwork";
-        } else if (radio.value == 'no') {
-          buttonLink.href = "summary";
-        }
-      }
-    }
-  }
-
-
-
-
-</script>
+<script src="/js/newPack.js"></script>
 
 {% endblock %}
+
+
+<!--<script type="text/javascript">-->
+
+<!--  function doesItHaveArtworkYesOrNo() {-->
+<!--    var radioButtons = document.getElementsByName("data");-->
+<!--    var buttonLink = document.getElementById("continue-button");-->
+
+<!--    for (var radio of radioButtons) {-->
+<!--      if (radio.checked) {-->
+<!--        localStorage.setItem("product", radio.value);-->
+<!--        if (radio.value == 'yes') {-->
+<!--          buttonLink.href = "upload-artwork";-->
+<!--        } else if (radio.value == 'no') {-->
+<!--          buttonLink.href = "summary";-->
+<!--        }-->
+<!--      }-->
+<!--    }-->
+<!--  }-->
+
+
+
+
+<!--</script>-->
+
 
 
