@@ -152,7 +152,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="pack-require-artwork">
+      <a href="reason/does-have-artwork">
         Change<span class="nhsuk-u-visually-hidden">&nbsp;if pack has packaging images</span>
       </a>
 
@@ -210,6 +210,12 @@ window.onload = function() {
     } else if (packChange == 'availability restrictions') {
     document.getElementById("back-link").setAttribute('href', "reason/product-file-upload-success");
     document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to SmPC ot Data Sheet upload";
+    } else if (packChange == 'GTIN' && localStorage.getItem("pack-should-display-artwork") == "yes") {
+    document.getElementById("back-link").setAttribute('href', "reason/pack-artwork-upload-success");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to images of packaging upload";
+    } else if (packChange == 'GTIN' && localStorage.getItem("pack-should-display-artwork") == "no") {
+    document.getElementById("back-link").setAttribute('href', "reason/does-have-artwork");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to do you have images of the packaging to upload?";
     }
 
 <!--    if ((packChange == 'product name' || packChange == 'market authorisation number') && artworkChange == "yes" ) {-->
@@ -308,6 +314,51 @@ if (packChangeReason == "legal category") {
     }
 }
 
+if (packChangeReason == "GTIN") {
+   let reasonForChangeGTIN = localStorage.getItem("GTIN-reason");
+
+  document.getElementById("has-smpc").style.display = "none";
+
+  if (localStorage.getItem("pack-should-display-artwork") == "no") {
+        document.getElementById("pack-has-artwork").innerHTML = "No";
+        document.getElementById("awaiting-artwork").style.display = "none";
+  } else {
+
+     document.getElementById("pack-has-artwork").innerHTML = "Yes";
+
+     var getProductArtwork = localStorage.getItem("pack-upload-artwork");
+     var getProductArtwork2 = localStorage.getItem("pack-upload-artwork-2");
+     var getProductArtwork3 = localStorage.getItem("pack-upload-artwork-3");
+     var getProductArtwork4 = localStorage.getItem("pack-upload-artwork-4");
+
+     var artworkArray = [];
+
+     artworkArray.push(getProductArtwork, getProductArtwork2, getProductArtwork3, getProductArtwork4);
+
+     var filtered = artworkArray.filter(function (el) {
+          return el != null
+     });
+
+     for (let i = 0; i < filtered.length; i++) {
+     var splitUp = filtered[i].split("\\");
+     var fileForm = splitUp[splitUp.length - 1];
+     document.getElementById("pack-upload-artwork").innerHTML += fileForm + "<br>";
+    }
+  }
+
+  document.getElementById("new-details-title").innerHTML = "GTIN";
+  document.getElementById("new-details").innerHTML = '00012345678905' + '<br>' + '00012345678906';
+  document.getElementById("new-details-change").href = "reason/GTIN";
+
+  document.getElementById("link-reason").href = "reason/GTIN-reason";
+
+  if (reasonForChangeGTIN) {
+   document.getElementById("display-reason").innerHTML = reasonForChangeGTIN;
+} else {
+   document.getElementById("display-reason").innerHTML = 'No reason provided';
+    }
+}
+
 if (packChangeReason == "availability restrictions") {
   document.getElementById("has-artwork").style.display = "none";
   document.getElementById("awaiting-artwork").style.display = "none";
@@ -357,7 +408,8 @@ if (packChangeReason == "availability restrictions") {
 <!--  document.getElementById("new-details-title").innerHTML = "New market authorisation numbers";-->
 <!--  document.getElementById("new-details-change").href = "reason-market-auth-number/market-auth-number";-->
 <!--  document.getElementById("link-reason").href = "reason-market-auth-number/market-auth-reason";-->
-<!--  document.getElementById("new-details").innerHTML = 'EU/1/07/391/010' + '<br>' + 'PLGB 15105/0119';-->
+<!--  document.getElementById("new-details").innerHTML = '00012345678905' + '<br>' + '00012345678906';-->
+
 
 
 <!--  if (reasonForChangeMA != "") {-->
