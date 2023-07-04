@@ -21,22 +21,22 @@ Submit a new product: pack artwork | Portal | NHSBSA
                 Submit a pack change
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-                <span id="heading">Upload images of packaging</span>
+                <span>Upload images of packaging</span>
             </h1>
         </legend>
         <div class="nhsuk-hint" id="contact-hint">
             Files accepted are JPG, BMP, PNG, TIFF or PDF. The largest size of each file is 5 MB.
         </div>
         <div class="govuk-form-group">
-            <label class="nhsuk-label nhsuk-u-margin-top-3" for="file-upload-1">
+            <label class="govuk-label nhsuk-u-margin-top-3" for="file-upload-1">
                 Upload a file
             </label>
-            <input class="nhsuk-input " id="file-upload-1" name="file-upload-1" type="file" style="background-color: #ffffff;">
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
         </div>
     </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeArtwork()"
+<a class="nhsuk-button" onclick="storeArtwork()"
    id="continue-button"
    href="pack-artwork-upload-success"
    type="submit">
