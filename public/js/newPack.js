@@ -434,10 +434,6 @@ if (packSubEx) {
   function storeNumberOfSubpacks() {
     var packSubpackExtra = document.getElementById("subpack-extra");
     localStorage.setItem("pack-subpack-extra", packSubpackExtra.value);
-
-//    if (summaryPage) {
-//      buttonLink.href = "../summary";
-//    }
   }
 
   var getPackSubpackExtra = localStorage.getItem("pack-subpack-extra");
