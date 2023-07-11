@@ -66,10 +66,6 @@ Select a reason | Submit a product change | Portal | NHSBSA
 
 <script type="text/javascript">
 
-  if (localStorage.getItem("summary-page")) {
-     localStorage.removeItem("summary-page");
-  }
-
   const continueBtn = document.getElementById("next")
 
   function saveReason() {
@@ -106,6 +102,10 @@ var getProductChangeReason = localStorage.getItem("pack-change-reason");
 
   document.getElementById("product-name1").innerHTML = getPackName;
   document.getElementById("product-name2").innerHTML = getPackName;
+
+   if (localStorage.getItem("summary-page") == "yes") {
+        continueBtn.href = "../summary";
+    }
 
 
 </script>

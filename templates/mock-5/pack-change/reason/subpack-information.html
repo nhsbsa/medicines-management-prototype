@@ -136,12 +136,16 @@ Select a reason | Submit a product change | Portal | NHSBSA
   document.getElementById("subpack-size-value").innerHTML = splitSubpack[2];
 
   function storeSubpackChange() {
+     let summaryPage = localStorage.getItem("summary-page");
+
      let buttonLink = document.getElementById("continue-button");
      for (var radio of subpackRadioButtons) {
       if (radio.checked) {
         localStorage.setItem("subpack-change", radio.value);
-        if (radio.value == 'delete') {
+        if (radio.value == 'delete' && summaryPage != "yes") {
           buttonLink.href = "does-have-artwork";
+        } else if (radio.value == 'delete' && summaryPage == "yes") {
+          buttonLink.href = "../summary";
         } else if (radio.value == 'amend') {
           localStorage.setItem("subpack-quantity", document.getElementById("subpack-quantity").value);
         }

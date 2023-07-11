@@ -66,7 +66,9 @@ What is the effective date of the product? | Submit a product change | Portal | 
   console.log(localStorage);
 
 
-  var summaryPage = localStorage.getItem("product-change-summary");
+  var preSummaryPage = localStorage.getItem("product-change-summary");
+  let summaryPage = localStorage.getItem("summary-page");
+
   var continueButton = document.getElementById("continue-button");
   var getContinueButton = document.getElementsByClassName("nhsuk-button")[0];
 
@@ -102,7 +104,9 @@ if (eDay != null && eMonth != null && eYear != null) {
         eYear.defaultValue = getEffectiveYear;
     }
 
-    if ((getEffectiveDay != null && getEffectiveMonth != null && getEffectiveYear != null) && summaryPage != null) {
+    if ((getEffectiveDay != null && getEffectiveMonth != null && getEffectiveYear != null) && preSummaryPage != null && !summaryPage) {
+        getContinueButton.href = "pre-summary";
+    } else if ((getEffectiveDay != null && getEffectiveMonth != null && getEffectiveYear != null) && summaryPage != null) {
         getContinueButton.href = "summary";
     }
 }

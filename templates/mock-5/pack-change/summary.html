@@ -53,15 +53,15 @@ Submit a new product: product summary | Portal | NHSBSA
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
-      Product change
+      Pack change
     </dt>
-    <dd class="nhsuk-summary-list__value" id="pack-change-reason">Product change reason
+    <dd class="nhsuk-summary-list__value" id="pack-change-reason">Pack change reason
     </dd>
 
     <dd class="nhsuk-summary-list__actions">
 
       <a href="reason">
-        Change<span class="nhsuk-u-visually-hidden">&nbsp; product change reason</span>
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; pack change reason</span>
       </a>
 
     </dd>
@@ -373,11 +373,11 @@ if (packChangeReason == "subpack information") {
       document.getElementById("new-details").innerHTML = 'Subpack information removed';
       document.getElementById("new-details-change").href = "reason/subpack-information";
   } else if (localStorage.getItem("subpack-change") == "amend") {
-      document.getElementById("new-details").innerHTML = localStorage.getItem("new-subpack");
+      document.getElementById("new-details").innerHTML = localStorage.getItem("non-existing-subpack");
       document.getElementById("new-details-change").href = "reason/subpack-information";
   } else if (localStorage.getItem("subpack-change") == "add") {
-      document.getElementById("new-details").innerHTML = localStorage.getItem("new-subpack");
-      document.getElementById("new-details-change").href = "reason/subpack-information";
+      document.getElementById("new-details").innerHTML = localStorage.getItem("non-existing-subpack");
+      document.getElementById("new-details-change").href = "reason/pack-subpack-extra";
   }
 
 
@@ -406,6 +406,59 @@ if (packChangeReason == "availability restrictions") {
 
   document.getElementById("new-details-change").href = "reason/availability-restrictions";
   document.getElementById("link-reason").href = "reason/avail-restrict-reason";
+
+
+  if (reasonForChangeLegalCat) {
+   document.getElementById("display-reason").innerHTML = reasonForChangeLegalCat;
+} else {
+   document.getElementById("display-reason").innerHTML = 'No reason provided';
+    }
+}
+
+
+var getProductLink = localStorage.getItem("product-link-url");
+var getProductUpload = localStorage.getItem("product-upload-file");
+var getProductUpload2 = localStorage.getItem("product-upload-file-2");
+
+if (getProductLink != null) {
+console.log(getProductLink);
+  document.getElementById("display-file-or-link").innerHTML = getProductLink;
+
+} else if (!getProductLink && (getProductUpload && !getProductUpload2)) {
+  var linkUrlSplit = getProductUpload.split("\\");
+  var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
+  document.getElementById("display-file-or-link").innerHTML = linkUrlFileName;
+
+  } else if (!getProductLink && (!getProductUpload && getProductUpload2)) {
+  var linkUrlSplit2 = getProductUpload2.split("\\");
+  var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
+  document.getElementById("display-file-or-link").innerHTML = linkUrlFileName2;
+
+  } else if (!getProductLink && (getProductUpload && getProductUpload2)) {
+  var linkUrlSplit = getProductUpload.split("\\");
+  var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
+  var linkUrlSplit2 = getProductUpload2.split("\\");
+  var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
+  document.getElementById("display-file-or-link").innerHTML = linkUrlFileName + '<br>' + linkUrlFileName2;
+  document.getElementById("file-or-link").innerHTML = 'SmPC uploaded files';
+    if (localStorage.getItem("licensing-authority") != "Unlicensed") {
+  document.getElementById("link-url").setAttribute('href', "reason/product-file-upload-success");
+  }
+ }
+
+ if (packChangeReason == "storage conditions") {
+  document.getElementById("has-artwork").style.display = "none";
+  document.getElementById("awaiting-artwork").style.display = "none";
+
+
+  document.getElementById("new-details-title").innerHTML = "Storage conditions";
+
+  if (localStorage.getItem("storage-conditions")) {
+      document.getElementById("new-details").innerHTML = localStorage.getItem("storage-conditions");
+  }
+
+  document.getElementById("new-details-change").href = "reason/storage-conditions";
+  document.getElementById("link-reason").href = "reason/storage-conditions-reason";
 
 
   if (reasonForChangeLegalCat) {
