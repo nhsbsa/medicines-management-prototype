@@ -70,6 +70,15 @@ Select a reason | Submit a product change | Portal | NHSBSA
 </a>
 
 <script>
+
+  let packChange = localStorage.getItem("pack-change-reason");
+
+  let productTitle = document.getElementById("product-name-title");
+
+  if (packChange || packChange != null || packChange != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + packChange +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
   window.onload = function() {
     if (localStorage.getItem("subpack-change") == 'delete') {
     document.getElementById("back-link").setAttribute('href', "subpack-information");

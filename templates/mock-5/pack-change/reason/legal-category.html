@@ -159,8 +159,16 @@ Detail the change to the licensing authority | Submit a product change: licensin
 
   console.log(localStorage);
 
-  var getPackName = localStorage.getItem("pack-name");
+  let productChangeReason = localStorage.getItem("pack-change-reason");
 
+  let productTitle = document.getElementById("product-name-title");
+
+  if (productChangeReason || productChangeReason != null || productChangeReason != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+
+  var getPackName = localStorage.getItem("pack-name");
 
     document.getElementById("product-name1").innerHTML = getPackName;
     document.getElementById("product-name2").innerHTML = getPackName;
@@ -245,9 +253,6 @@ Detail the change to the licensing authority | Submit a product change: licensin
         }
       }
     };
-
-
-
 
 </script>
 

@@ -15,6 +15,10 @@ Submit a new product: subpack information | Portal | NHSBSA
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
       <h1 class="nhsuk-fieldset__heading" id="heading">
         How many subpacks are in a pack?
       </h1>
@@ -42,6 +46,15 @@ Submit a new product: subpack information | Portal | NHSBSA
 
 <script>
   localStorage.setItem("subpack-change", "add");
+
+  let packChange = localStorage.getItem("pack-change-reason");
+
+  let productTitle = document.getElementById("product-name-title");
+
+  if (packChange || packChange != null || packChange != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + packChange +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
 </script>
 <script src="/js/newPack.js"></script>
 {% endblock %}

@@ -16,6 +16,10 @@ Submit a new product: extra pack subpack confirmation | Portal | NHSBSA
   <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading" id="heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
         Confirm subpack size
       </h1>
     </legend>
@@ -25,7 +29,7 @@ Submit a new product: extra pack subpack confirmation | Portal | NHSBSA
           back to amend the number of subpacks. Otherwise select continue.
     </div>
 
-    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-4">
       <div class="nhsuk-summary-list__row">
         <dt class="nhsuk-summary-list__key">
           Pack size
@@ -74,6 +78,14 @@ window.onload = function() {
     document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to how many subpacks are in the pack";
       }
    }
+
+   let packChange = localStorage.getItem("pack-change-reason");
+
+  let productTitle = document.getElementById("product-name-title");
+
+  if (packChange || packChange != null || packChange != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + packChange +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
 
 var packSize = localStorage.getItem("pack-size");
 document.getElementById("pack-size-value").innerHTML = packSize;
