@@ -18,20 +18,56 @@ Submit a new product | Portal | NHSBSA
      <span class="nhsuk-u-visually-hidden"> - </span>
    </span>Portfolio</h1>
 
-<p>Your portfolio shows all products currently listed on dictionary of medicines and devices (dm+d), any recently actioned submissions and all discontinued lines. Submissions will only be visible once the effective date has passed. However,  it can also take up to 6 days further to appear due to the weekly update schedule. </p>
+<p>Your portfolio shows all products listed on dictionary of medicines and devices (dm+d), any recently actioned submissions and all discontinued lines. Submissions will only be visible once the effective date has passed. However,  it can also take up to 6 days further to appear due to the weekly update schedule. </p>
 
-<details class="nhsuk-details nhsuk-u-margin-bottom-7">
+<h2>Portfolio search</h2>
+
+<div class="nhsuk-form-group">
+    <p class="">The portfolio results display all products by default. If you do not want to refine these results then you can <a class="nhsuk-link nhsuk-link--no-visited-state" href="#skip-to-table">skip to the portfolio results</a> or choose from one of the following options to filter the results.</p>
+    <fieldset class="nhsuk-fieldset nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-5">
+        <!--        <div class="nhsuk-grid-column-one-third">-->
+        <div class="nhsuk-radios nhsuk-radios--inline">
+           <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    Show active
+                </label>
+            </div>
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-3" name="example" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-3">
+                    Show discontinued
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+</div>
+<div class="nhsuk-form-group">
+    <p class="">If required, you can also search for a specific term.</p>
+    <label class="nhsuk-label" for="example">Search term</label>
+    <input class="nhsuk-input" id="example" name="example" type="text">
+</div>
+<a class="nhsuk-button nhsuk-u-margin-bottom-7 nhsuk-u-margin-top-3"
+   id="continue-button" type="submit" href="#">
+    Refine search
+    <span class="nhsuk-u-visually-hidden">Search</span>
+</a>
+<a href="#" class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-left-5 nhsuk-u-margin-bottom-7 nhsuk-u-margin-top-3">Reset filter</a>
+
+<h2 class="nhsuk-u-margin-top-5" id="skip-to-table">Portfolio results</h2>
+
+<details class="nhsuk-details nhsuk-u-margin-bottom-6">
     <summary class="nhsuk-details__summary">
     <span class="nhsuk-details__summary-text">
       What does AMPP or SNOMED stand for?
     </span>
     </summary>
     <div class="nhsuk-details__text">
-        <p>SNOMED stands for Systematized Nomenclature of Medicine Clinical Terms.</p>
         <p>AMPP stands for Actual Medicinal Product Pack.</p>
+        <p>SNOMED stands for Systematized Nomenclature of Medicine Clinical Terms.</p>
     </div>
 </details>
-
 
 <div class="nhsuk-body-m flex--space-between" style="display: flex">
     <div class="nhsuk-u-visually-hidden">Currently viewing</div>

@@ -175,7 +175,7 @@ Select a product | Submit a product change | Portal | NHSBSA
             </td>
             <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Pack </span>
-                <span id="pack-size-6">30</span>
+                <span id="pack-size-6">20</span>
             </td>
             <td role="cell" class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Subpack </span>
@@ -285,11 +285,6 @@ Select a product | Submit a product change | Portal | NHSBSA
                         localStorage.setItem("pack-subpack", document.getElementById(subpackId).textContent);
                     } else {
                         localStorage.removeItem("pack-subpack")
-                    }
-
-                    if (localStorage.getItem("product-change-summary") == 'product-change-summary') {
-                        e.target.href = "summary";
-                        console.log(e.target.href);
                     }
                 }
             })

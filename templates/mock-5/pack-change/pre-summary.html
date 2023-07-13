@@ -122,7 +122,9 @@ Review details | Submit a product change | Portal | NHSBSA
     continueButton.href = "reason/legal-category"
   } else if (getProductChangeReason == "GTIN") {
     continueButton.href = "reason/GTIN"
-  } else if (getProductChangeReason == "subpack information") {
+  } else if (getProductChangeReason == "subpack information" && !localStorage.getItem("pack-subpack")) {
+    continueButton.href = "reason/pack-subpack-extra"
+  } else if (getProductChangeReason == "subpack information" && localStorage.getItem("pack-subpack")) {
     continueButton.href = "reason/subpack-information"
   } else if (getProductChangeReason == "availability restrictions") {
     continueButton.href = "reason/availability-restrictions"

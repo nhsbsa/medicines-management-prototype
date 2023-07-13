@@ -16,6 +16,10 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
   <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
         SmPC or Data Sheet upload
       </h1>
     </legend>
@@ -78,6 +82,16 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
 </a>
 
 <script src="/js/newPack.js"></script>
+
+<script>
+  let packChange = localStorage.getItem("pack-change-reason");
+
+  let productTitle = document.getElementById("product-name-title");
+
+  if (packChange || packChange != null || packChange != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + packChange +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+</script>
 {% endblock %}
 
 

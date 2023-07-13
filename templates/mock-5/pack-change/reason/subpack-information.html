@@ -23,192 +23,145 @@ Select a reason | Submit a product change | Portal | NHSBSA
       </h1>
     </legend>
 
-    <div class="nhsuk-warning-callout">
-      <h3 class="nhsuk-warning-callout__label">
-    <span role="text">
-      <span class="nhsuk-u-visually-hidden">Important: </span>
-      Warning for developers and Meds Team
-    </span>
-      </h3>
-      <p>I have split this page in to 3 sections. This is purely based on whether the pack has already been marked as prescription only, pharmacy or general sale</p>
-      <p>Only the heading along with the elements within the hidden drop down section should appear in development.</p>
-    </div>
-
-    <details class="nhsuk-details">
-      <summary class="nhsuk-details__summary">
-    <span class="nhsuk-details__summary-text">
-      Pack currently contains subpack information
-    </span>
-      </summary>
-      <div class="nhsuk-details__text"><p id="example-1-product-name-current">The current subpack information for <span id="product-name1">___</span> is &#39;<strong>2 subpack blister strips of 7</strong>&#39;.</p>
-
-
-        <div class="nhsuk-radios">
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-1-pharmacy" name="data-legal-category-pom" type="radio" value="Pharmacy (P)">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-1-pharmacy">
-              Delete
-            </label>
-          </div>
-          <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="example-1-gsl" name="data-legal-category-pom" type="radio" value="General Sales List (GSL)">
-            <label class="nhsuk-label nhsuk-radios__label" for="example-1-gsl">
-              Edit
-            </label>
-            <div class="govuk-details__text">
-
-              <div class="nhsuk-form-group">
-                <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="subpack-extra-hint">
-                  For example, a 24 pack of tablets is made up of 3 subpack blister strips of 8.
-                </div>
-                <label class="nhsuk-label" for="subpack-extra">
-                  Number of subpacks
-                </label>
-                <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="subpack-extra" name="subpack-extra" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLegalCategoryPOM()"
-           href="pack-artwork.html" id="example-1-continue-button" type="submit">
-          Save and continue
-        </a>
-
+    <p>The current subpack information is as follows. </p>
+    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key update-width">
+          Pack size
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="pack-size-value">10</span>
+        </dd>
       </div>
-    </details>
-    <details class="nhsuk-details">
-      <summary class="nhsuk-details__summary">
-    <span class="nhsuk-details__summary-text">
-      Pack currently has no subpack information
-    </span>
-      </summary>
-      <div class="nhsuk-details__text"><p id="example-2-product-name-current">There is currently no subpack information for this pack.</p>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Subpack quantity
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="subpack-quantity-value">5</span>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Subpack size
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="subpack-size-value">2</span>
+        </dd>
+      </div>
+    </dl>
 
-        <div class="nhsuk-form-group">
-          <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
-            <legend class="nhsuk-fieldset__legend nhsuk-label--l">
-              <h1 class="nhsuk-fieldset__heading" id="heading">
-                How many subpacks are in a pack?
-              </h1>
-            </legend>
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+          <h2 class="nhsuk-fieldset__heading">
+            How would you like to change the subpack information?
+          </h2>
+        </legend>
+
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="contact-1" name="subpack" type="radio" value="delete">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+              Delete subpack information for this pack
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__divider">or</div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="contact-2" name="subpack" type="radio" value="amend" aria-controls="conditional-contact-2" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+              Amend subpack information for this pack
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
 
             <div class="nhsuk-form-group">
-              <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="subpack-extra-hint">
-                For example, a 24 pack of tablets is made up of 3 subpack blister strips of 8.
-              </div>
-              <label class="nhsuk-label" for="subpack-extra">
-                Number of subpacks
+              <label class="nhsuk-label" for="subpack-quantity">
+                Enter the subpack quantity
               </label>
-              <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="subpack-extra" name="subpack-extra" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 22.8ex;">
+              <input class="nhsuk-input nhsuk-u-width-two-thirds" id="subpack-quantity" name="phone" type="text">
             </div>
 
-          </fieldset>
+          </div>
+
         </div>
-        <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="saveLegalCategoryPOM()"
-           href="pack-artwork.html" id="example-1-continue-button" type="submit">
-          Save and continue
-        </a>
-      </div>
-    </details>
+      </fieldset>
+
+    </div>
 
   </fieldset>
 </div>
 
+<a class="nhsuk-button" onclick="storeSubpackChange()"
+   href="pack-subpack-confirmation" id="continue-button"
+   type="submit">
+  Save and continue
+</a>
+
 <script>
+
+  let packChange = localStorage.getItem("pack-change-reason");
+
+  let productTitle = document.getElementById("product-name-title");
+
+  if (packChange || packChange != null || packChange != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + packChange +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+  var getSubpack = localStorage.getItem("subpack-change");
+  let subpackRadioButtons = document.getElementsByName("subpack");
+
+  if (getSubpack != null) {
+    for (var radio of subpackRadioButtons) {
+      if (getSubpack === radio.value) {
+        radio.checked = true;
+        document.getElementById("subpack-quantity").value = localStorage.getItem("subpack-quantity");
+      }
+    }
+  }
+
   localStorage.setItem("product-change-summary", "product-change-summary");
 
   console.log(localStorage);
 
   var getPackName = localStorage.getItem("pack-name");
 
+  let getPackSize = localStorage.getItem("pack-size");
 
-  document.getElementById("product-name1").innerHTML = getPackName;
-  document.getElementById("product-name2").innerHTML = getPackName;
-  document.getElementById("product-name3").innerHTML = getPackName;
+  let getPackSubpack = localStorage.getItem("pack-subpack");
 
+  let splitSubpack = getPackSubpack.split(" ");
 
-  function saveLegalCategoryPOM() {
-    var radioButtons = document.getElementsByName("data-legal-category-pom");
+  console.log('splitSubpack', splitSubpack);
 
-    for (var radio of radioButtons) {
+  document.getElementById("pack-size-value").innerHTML = getPackSize;
+  document.getElementById("subpack-quantity-value").innerHTML = splitSubpack[0];
+  document.getElementById("subpack-size-value").innerHTML = splitSubpack[2];
+
+  function storeSubpackChange() {
+     let summaryPage = localStorage.getItem("summary-page");
+
+     let buttonLink = document.getElementById("continue-button");
+     for (var radio of subpackRadioButtons) {
       if (radio.checked) {
-        localStorage.setItem("legal-category", radio.value);
+        localStorage.setItem("subpack-change", radio.value);
+        if (radio.value == 'delete' && summaryPage != "yes") {
+          buttonLink.href = "does-have-artwork";
+        } else if (radio.value == 'delete' && summaryPage == "yes") {
+          buttonLink.href = "../summary";
+        } else if (radio.value == 'amend') {
+          localStorage.setItem("subpack-quantity", document.getElementById("subpack-quantity").value);
+        }
       }
     }
   }
 
-  function saveLegalCategoryP() {
-    var radioButtons = document.getElementsByName("data-legal-category-p");
-
-    for (var radio of radioButtons) {
-      if (radio.checked)
-
-      {
-        localStorage.setItem("legal-category", radio.value);
-      }
-    }
-  }
-
-  function saveLegalCategoryGSL() {
-    var radioButtons = document.getElementsByName("data-legal-category-gsl");
-
-    for (var radio of radioButtons) {
-      if (radio.checked)
-
-      {
-        localStorage.setItem("legal-category", radio.value);
-      }
-    }
-  }
-
-  var radioLegalCategoryPOMButtons = document.getElementsByName("data-legal-category-pom");
-
-  if (radioLegalCategoryPOMButtons.length != 0) {
-
-    var getLegalCategory = localStorage.getItem("legal-category");
-
-    if (getLegalCategory != null) {
-      for (var radio of radioLegalCategoryPOMButtons) {
-        if (getLegalCategory === radio.value) {
-          radio.checked = true;
-        }
-      }
-    }
-  };
-
-  var radioLegalCategoryPButtons = document.getElementsByName("data-legal-category-p");
-
-  if (radioLegalCategoryPButtons.length != 0) {
-
-    var getLegalCategory = localStorage.getItem("legal-category");
-
-    if (getLegalCategory != null) {
-      for (var radio of radioLegalCategoryPButtons) {
-        if (getLegalCategory === radio.value) {
-          radio.checked = true;
-        }
-      }
-    }
-  };
-
-  var radioLegalCategoryGSLButtons = document.getElementsByName("data-legal-category-gsl");
-
-  if (radioLegalCategoryGSLButtons.length != 0) {
-
-    var getLegalCategory = localStorage.getItem("legal-category");
-
-    if (getLegalCategory != null) {
-      for (var radio of radioLegalCategoryGSLButtons) {
-        if (getLegalCategory === radio.value) {
-          radio.checked = true;
-        }
-      }
-    }
-  };
-
-
+</script>
 
 
 
