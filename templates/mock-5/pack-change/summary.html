@@ -1,0 +1,516 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: product summary | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="add-extra-pack" id="back-link">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to add extra pack</a>
+</div>
+
+<h1>
+  <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+  Summary</h1>
+
+<p class="nhsuk-u-margin-bottom-5">Check your answers before completing your submission. If you are not ready to submit you can store the information to return later.</p>
+
+<dl class="nhsuk-summary-list nhsuk-u-margin-bottom-8">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Effective date
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-effective-date">19 November 2023
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="effective-date">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; effective date</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Pack details
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-name">Paracetamol 200mg tablets
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="select-pack">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; product name</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Pack change
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-change-reason">Pack change reason
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="reason">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; pack change reason</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <!--  <div class="nhsuk-summary-list__row">-->
+  <!--    <dt class="nhsuk-summary-list__key" id="link-or-upload">-->
+  <!--      SmPC or Data Sheet format-->
+  <!--    </dt>-->
+  <!--    <dd class="nhsuk-summary-list__value" id="product-link-upload">-->
+  <!--    </dd>-->
+
+  <!--    <dd class="nhsuk-summary-list__actions">-->
+
+  <!--      <a href="product-spc-upload-choice">-->
+  <!--        Change<span class="nhsuk-u-visually-hidden">&nbsp;SmPC or Data Sheet format</span>-->
+  <!--      </a>-->
+
+  <!--    </dd>-->
+
+  <!--  </div>-->
+</dl>
+
+<!-- will need to add in reference to pack on visually hidden -->
+
+<h2 id="heading-pack-1">Product change cause</h2>
+
+<dl class="nhsuk-summary-list">
+
+  <div class="nhsuk-summary-list__row" id="first-section">
+    <dt class="nhsuk-summary-list__key" id="new-details-title">
+      What has changed
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="new-details">Reason goes here
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="initial-pack/pack-file-upload-success" id="new-details-change">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;what has changed</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key" id="reason-for-change">
+      Reason for change
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="display-reason">Reason goes here
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="initial-pack/pack-file-upload-success" id="link-reason">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;reason for change</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" id="has-smpc">
+    <dt class="nhsuk-summary-list__key" id="file-or-link">
+      SmPC uploaded files
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="display-file-or-link">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="reason/product-file-upload-success" id="link-url">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;SmPC or Data Sheet files</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" id="has-artwork">
+    <dt class="nhsuk-summary-list__key">
+      Packaging images provided
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-has-artwork">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="reason/does-have-artwork">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;if pack has packaging images</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" id="awaiting-artwork">
+    <dt class="nhsuk-summary-list__key">
+      Packaging images uploaded files
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-upload-artwork">
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="pack-artwork-upload-success">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;uploaded packaging images</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+
+
+</dl>
+
+
+
+<a class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-right-5" href="confirmation"
+   type="submit">
+  Submit pack change
+</a>
+
+<a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-3"
+   id="save-alert" href="draft-confirmation">
+  Save as draft
+</a>
+
+<script>
+let packChange = localStorage.getItem("pack-change-reason");
+let artworkChange = localStorage.getItem("pack-should-display-artwork");
+
+  var getPackName = localStorage.getItem("pack-name");
+  var getPackSize = localStorage.getItem("pack-size");
+  var getPackSubpack = localStorage.getItem("pack-subpack");
+  var getProductChangeReason = localStorage.getItem("pack-change-reason");
+
+
+  let productTitle = document.getElementById("product-name-title");
+
+  if (packChange || packChange != null || packChange != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + packChange +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+
+window.onload = function() {
+    if (packChange == 'legal category') {
+    document.getElementById("back-link").setAttribute('href', "reason/legal-category");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to detail the change to the legal category";
+    } else if (packChange == 'availability restrictions' || packChange == 'storage conditions') {
+    document.getElementById("back-link").setAttribute('href', "reason/product-file-upload-success");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to SmPC ot Data Sheet upload";
+    } else if (packChange == 'GTIN' && localStorage.getItem("pack-should-display-artwork") == "yes") {
+    document.getElementById("back-link").setAttribute('href', "reason/pack-artwork-upload-success");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to images of packaging upload";
+    } else if (packChange == 'GTIN' && localStorage.getItem("pack-should-display-artwork") == "no") {
+    document.getElementById("back-link").setAttribute('href', "reason/does-have-artwork");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to do you have images of the packaging to upload?";
+    } else if (packChange == 'subpack information' && localStorage.getItem("pack-should-display-artwork") == "yes") {
+    document.getElementById("back-link").setAttribute('href', "reason/pack-artwork-upload-success");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to images of packaging upload";
+    } else if (packChange == 'subpack information' && localStorage.getItem("pack-should-display-artwork") == "no") {
+    document.getElementById("back-link").setAttribute('href', "reason/does-have-artwork");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to do you have images of the packaging to upload?";
+    }
+   }
+console.log(localStorage);
+
+if (getPackName && getPackSubpack) {
+    document.getElementById("product-name").innerHTML = 'Product name:<br> ' + getPackName + '<br><br>Pack size: ' + getPackSize + '<br><br>Subpack: ' + getPackSubpack;
+  } else if (getPackName && !getPackSubpack) {
+    document.getElementById("product-name").innerHTML = 'Product name:<br> ' + getPackName + '<br><br>Pack size: ' + getPackSize;
+  }
+
+  let getPackChangeReason = localStorage.getItem("pack-change-reason");
+
+  if (getPackChangeReason) {
+    document.getElementById("pack-change-reason").innerHTML = getPackChangeReason;
+  }
+
+let summaryPage = localStorage.getItem("summary-page");
+
+if (summaryPage == null) {
+  localStorage.setItem("summary-page", "yes");
+  summaryPage = localStorage.setItem("summary-page", "yes");
+}
+
+var getEffectiveDay = localStorage.getItem("effective-day");
+var getEffectiveMonth = localStorage.getItem("effective-month");
+
+console.log('getEffectiveDay', getEffectiveDay != null);
+
+if (getEffectiveDay != "") {
+var getLongMonth = Intl.DateTimeFormat('en', { month: 'long' }).format(new Date(getEffectiveMonth));
+var getEffectiveYear = localStorage.getItem("effective-year");
+
+document.getElementById("pack-effective-date").innerHTML = getEffectiveDay + ' ' + getLongMonth + ' ' + getEffectiveYear;
+
+} else {
+document.getElementById("pack-effective-date").innerHTML = '19 November 2023';
+}
+
+let packChangeReason = localStorage.getItem("pack-change-reason");
+let capitaliseReason = packChangeReason.charAt(0).toUpperCase() + packChangeReason.slice(1);
+
+if (packChangeReason != null || packChangeReason != "") {
+   document.getElementById("pack-change-reason").innerHTML = 'Change to the ' + packChangeReason;
+   document.getElementById("heading-pack-1").innerHTML = capitaliseReason + ' update';
+}
+
+let reasonForChangeLegalCat = localStorage.getItem("legal-category-reason");
+
+if (packChangeReason == "legal category") {
+  document.getElementById("has-artwork").style.display = "none";
+  document.getElementById("awaiting-artwork").style.display = "none";
+  document.getElementById("has-smpc").style.display = "none";
+
+  document.getElementById("new-details-title").innerHTML = "Legal category";
+  document.getElementById("new-details").innerHTML = localStorage.getItem("legal-category");
+  document.getElementById("new-details-change").href = "reason/legal-category";
+
+  document.getElementById("link-reason").href = "reason/legal-category-reason";
+
+  console.log('reasonForChangeLegalCat', reasonForChangeLegalCat);
+
+  if (reasonForChangeLegalCat) {
+   document.getElementById("display-reason").innerHTML = reasonForChangeLegalCat;
+} else {
+   document.getElementById("display-reason").innerHTML = 'No reason provided';
+    }
+}
+
+if (packChangeReason == "GTIN") {
+   let reasonForChangeGTIN = localStorage.getItem("GTIN-reason");
+
+  document.getElementById("has-smpc").style.display = "none";
+
+  if (localStorage.getItem("pack-should-display-artwork") == "no") {
+        document.getElementById("pack-has-artwork").innerHTML = "No";
+        document.getElementById("awaiting-artwork").style.display = "none";
+  } else {
+
+     document.getElementById("pack-has-artwork").innerHTML = "Yes";
+
+     var getProductArtwork = localStorage.getItem("pack-upload-artwork");
+     var getProductArtwork2 = localStorage.getItem("pack-upload-artwork-2");
+     var getProductArtwork3 = localStorage.getItem("pack-upload-artwork-3");
+     var getProductArtwork4 = localStorage.getItem("pack-upload-artwork-4");
+
+     var artworkArray = [];
+
+     artworkArray.push(getProductArtwork, getProductArtwork2, getProductArtwork3, getProductArtwork4);
+
+     var filtered = artworkArray.filter(function (el) {
+          return el != null
+     });
+
+     for (let i = 0; i < filtered.length; i++) {
+     var splitUp = filtered[i].split("\\");
+     var fileForm = splitUp[splitUp.length - 1];
+     document.getElementById("pack-upload-artwork").innerHTML += fileForm + "<br>";
+    }
+  }
+
+  document.getElementById("new-details-title").innerHTML = "GTIN";
+  document.getElementById("new-details").innerHTML = '00012345678905' + '<br>' + '00012345678906';
+  document.getElementById("new-details-change").href = "reason/GTIN";
+
+  document.getElementById("link-reason").href = "reason/GTIN-reason";
+
+  if (reasonForChangeGTIN) {
+   document.getElementById("display-reason").innerHTML = reasonForChangeGTIN;
+} else {
+   document.getElementById("display-reason").innerHTML = 'No reason provided';
+    }
+}
+
+if (packChangeReason == "subpack information") {
+   let reasonForChangeSubpack = localStorage.getItem("subpack-reason");
+
+  document.getElementById("has-smpc").style.display = "none";
+
+  if (localStorage.getItem("pack-should-display-artwork") == "no") {
+        document.getElementById("pack-has-artwork").innerHTML = "No";
+        document.getElementById("awaiting-artwork").style.display = "none";
+  } else {
+
+     document.getElementById("pack-has-artwork").innerHTML = "Yes";
+
+     var getProductArtwork = localStorage.getItem("pack-upload-artwork");
+     var getProductArtwork2 = localStorage.getItem("pack-upload-artwork-2");
+     var getProductArtwork3 = localStorage.getItem("pack-upload-artwork-3");
+     var getProductArtwork4 = localStorage.getItem("pack-upload-artwork-4");
+
+     var artworkArray = [];
+
+     artworkArray.push(getProductArtwork, getProductArtwork2, getProductArtwork3, getProductArtwork4);
+
+     var filtered = artworkArray.filter(function (el) {
+          return el != null
+     });
+
+     for (let i = 0; i < filtered.length; i++) {
+     var splitUp = filtered[i].split("\\");
+     var fileForm = splitUp[splitUp.length - 1];
+     document.getElementById("pack-upload-artwork").innerHTML += fileForm + "<br>";
+    }
+  }
+
+  document.getElementById("new-details-title").innerHTML = "Subpack information";
+
+  if (localStorage.getItem("subpack-change") == "delete") {
+      document.getElementById("new-details").innerHTML = 'Subpack information removed';
+      document.getElementById("new-details-change").href = "reason/subpack-information";
+  } else if (localStorage.getItem("subpack-change") == "amend") {
+      document.getElementById("new-details").innerHTML = localStorage.getItem("non-existing-subpack");
+      document.getElementById("new-details-change").href = "reason/subpack-information";
+  } else if (localStorage.getItem("subpack-change") == "add") {
+      document.getElementById("new-details").innerHTML = localStorage.getItem("non-existing-subpack");
+      document.getElementById("new-details-change").href = "reason/pack-subpack-extra";
+  }
+
+
+
+  document.getElementById("link-reason").href = "reason/subpack-reason";
+
+  if (reasonForChangeSubpack) {
+   document.getElementById("display-reason").innerHTML = reasonForChangeSubpack;
+} else {
+   document.getElementById("display-reason").innerHTML = 'No reason provided';
+    }
+}
+
+if (packChangeReason == "availability restrictions") {
+  document.getElementById("has-artwork").style.display = "none";
+  document.getElementById("awaiting-artwork").style.display = "none";
+
+
+  document.getElementById("new-details-title").innerHTML = "Availability restrictions";
+
+  if (localStorage.getItem("hospital-only") == "remove") {
+      document.getElementById("new-details").innerHTML = "No (not hospital only)";
+  } else if (localStorage.getItem("hospital-only") == "add") {
+      document.getElementById("new-details").innerHTML = "Yes (hospital only)";
+ }
+
+  document.getElementById("new-details-change").href = "reason/availability-restrictions";
+  document.getElementById("link-reason").href = "reason/avail-restrict-reason";
+
+
+  if (reasonForChangeLegalCat) {
+   document.getElementById("display-reason").innerHTML = reasonForChangeLegalCat;
+} else {
+   document.getElementById("display-reason").innerHTML = 'No reason provided';
+    }
+}
+
+
+var getProductLink = localStorage.getItem("product-link-url");
+var getProductUpload = localStorage.getItem("product-upload-file");
+var getProductUpload2 = localStorage.getItem("product-upload-file-2");
+
+if (getProductLink != null) {
+console.log(getProductLink);
+  document.getElementById("display-file-or-link").innerHTML = getProductLink;
+
+} else if (!getProductLink && (getProductUpload && !getProductUpload2)) {
+  var linkUrlSplit = getProductUpload.split("\\");
+  var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
+  document.getElementById("display-file-or-link").innerHTML = linkUrlFileName;
+
+  } else if (!getProductLink && (!getProductUpload && getProductUpload2)) {
+  var linkUrlSplit2 = getProductUpload2.split("\\");
+  var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
+  document.getElementById("display-file-or-link").innerHTML = linkUrlFileName2;
+
+  } else if (!getProductLink && (getProductUpload && getProductUpload2)) {
+  var linkUrlSplit = getProductUpload.split("\\");
+  var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
+  var linkUrlSplit2 = getProductUpload2.split("\\");
+  var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
+  document.getElementById("display-file-or-link").innerHTML = linkUrlFileName + '<br>' + linkUrlFileName2;
+  document.getElementById("file-or-link").innerHTML = 'SmPC uploaded files';
+    if (localStorage.getItem("licensing-authority") != "Unlicensed") {
+  document.getElementById("link-url").setAttribute('href', "reason/product-file-upload-success");
+  }
+ }
+
+ if (packChangeReason == "storage conditions") {
+  document.getElementById("has-artwork").style.display = "none";
+  document.getElementById("awaiting-artwork").style.display = "none";
+
+
+  document.getElementById("new-details-title").innerHTML = "Storage conditions";
+
+  if (localStorage.getItem("storage-conditions")) {
+      document.getElementById("new-details").innerHTML = localStorage.getItem("storage-conditions");
+  }
+
+  document.getElementById("new-details-change").href = "reason/storage-conditions";
+  document.getElementById("link-reason").href = "reason/storage-conditions-reason";
+
+
+  if (reasonForChangeLegalCat) {
+   document.getElementById("display-reason").innerHTML = reasonForChangeLegalCat;
+} else {
+   document.getElementById("display-reason").innerHTML = 'No reason provided';
+    }
+}
+
+
+var getProductLink = localStorage.getItem("product-link-url");
+var getProductUpload = localStorage.getItem("product-upload-file");
+var getProductUpload2 = localStorage.getItem("product-upload-file-2");
+
+if (getProductLink != null) {
+console.log(getProductLink);
+  document.getElementById("display-file-or-link").innerHTML = getProductLink;
+
+} else if (!getProductLink && (getProductUpload && !getProductUpload2)) {
+  var linkUrlSplit = getProductUpload.split("\\");
+  var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
+  document.getElementById("display-file-or-link").innerHTML = linkUrlFileName;
+
+  } else if (!getProductLink && (!getProductUpload && getProductUpload2)) {
+  var linkUrlSplit2 = getProductUpload2.split("\\");
+  var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
+  document.getElementById("display-file-or-link").innerHTML = linkUrlFileName2;
+
+  } else if (!getProductLink && (getProductUpload && getProductUpload2)) {
+  var linkUrlSplit = getProductUpload.split("\\");
+  var linkUrlFileName = linkUrlSplit[linkUrlSplit.length - 1];
+  var linkUrlSplit2 = getProductUpload2.split("\\");
+  var linkUrlFileName2 = linkUrlSplit2[linkUrlSplit2.length - 1];
+  document.getElementById("display-file-or-link").innerHTML = linkUrlFileName + '<br>' + linkUrlFileName2;
+  document.getElementById("file-or-link").innerHTML = 'SmPC uploaded files';
+    if (localStorage.getItem("licensing-authority") != "Unlicensed") {
+  document.getElementById("link-url").setAttribute('href', "reason/product-file-upload-success");
+  }
+ }
+
+</script>
+{% endblock %}
+

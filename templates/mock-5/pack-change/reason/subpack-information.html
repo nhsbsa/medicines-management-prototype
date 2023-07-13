@@ -1,0 +1,170 @@
+!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Select a reason | Submit a product change | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../pre-summary.html">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to review details</a>
+</div>
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Detail the change to the subpack information
+      </h1>
+    </legend>
+
+    <p>The current subpack information is as follows. </p>
+    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key update-width">
+          Pack size
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="pack-size-value">10</span>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Subpack quantity
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="subpack-quantity-value">5</span>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Subpack size
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="subpack-size-value">2</span>
+        </dd>
+      </div>
+    </dl>
+
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--m">
+          <h2 class="nhsuk-fieldset__heading">
+            How would you like to change the subpack information?
+          </h2>
+        </legend>
+
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="contact-1" name="subpack" type="radio" value="delete">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+              Delete subpack information for this pack
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__divider">or</div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="contact-2" name="subpack" type="radio" value="amend" aria-controls="conditional-contact-2" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+              Amend subpack information for this pack
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-2">
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="subpack-quantity">
+                Enter the subpack quantity
+              </label>
+              <input class="nhsuk-input nhsuk-u-width-two-thirds" id="subpack-quantity" name="phone" type="text">
+            </div>
+
+          </div>
+
+        </div>
+      </fieldset>
+
+    </div>
+
+  </fieldset>
+</div>
+
+<a class="nhsuk-button" onclick="storeSubpackChange()"
+   href="pack-subpack-confirmation" id="continue-button"
+   type="submit">
+  Save and continue
+</a>
+
+<script>
+
+  let packChange = localStorage.getItem("pack-change-reason");
+
+  let productTitle = document.getElementById("product-name-title");
+
+  if (packChange || packChange != null || packChange != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + packChange +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+  var getSubpack = localStorage.getItem("subpack-change");
+  let subpackRadioButtons = document.getElementsByName("subpack");
+
+  if (getSubpack != null) {
+    for (var radio of subpackRadioButtons) {
+      if (getSubpack === radio.value) {
+        radio.checked = true;
+        document.getElementById("subpack-quantity").value = localStorage.getItem("subpack-quantity");
+      }
+    }
+  }
+
+  localStorage.setItem("product-change-summary", "product-change-summary");
+
+  console.log(localStorage);
+
+  var getPackName = localStorage.getItem("pack-name");
+
+  let getPackSize = localStorage.getItem("pack-size");
+
+  let getPackSubpack = localStorage.getItem("pack-subpack");
+
+  let splitSubpack = getPackSubpack.split(" ");
+
+  console.log('splitSubpack', splitSubpack);
+
+  document.getElementById("pack-size-value").innerHTML = getPackSize;
+  document.getElementById("subpack-quantity-value").innerHTML = splitSubpack[0];
+  document.getElementById("subpack-size-value").innerHTML = splitSubpack[2];
+
+  function storeSubpackChange() {
+     let summaryPage = localStorage.getItem("summary-page");
+
+     let buttonLink = document.getElementById("continue-button");
+     for (var radio of subpackRadioButtons) {
+      if (radio.checked) {
+        localStorage.setItem("subpack-change", radio.value);
+        if (radio.value == 'delete' && summaryPage != "yes") {
+          buttonLink.href = "does-have-artwork";
+        } else if (radio.value == 'delete' && summaryPage == "yes") {
+          buttonLink.href = "../summary";
+        } else if (radio.value == 'amend') {
+          localStorage.setItem("subpack-quantity", document.getElementById("subpack-quantity").value);
+        }
+      }
+    }
+  }
+
+</script>
+
+
+
+{% endblock %}
+
+

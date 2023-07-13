@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}
+Detail the change to the licensing authority | Submit a product change: licensing authority | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+    <a class="nhsuk-back-link__link" href="../pre-summary">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to review details</a>
+</div>
+
+<div class="nhsuk-form-group">
+    <fieldset class="nhsuk-fieldset" role="group">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+            <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+                Detail the change to the availability restrictions
+            </h1>
+        </legend>
+
+        <div class="nhsuk-warning-callout">
+            <h3 class="nhsuk-warning-callout__label">
+    <span role="text">
+      <span class="nhsuk-u-visually-hidden">Important: </span>
+      Warning for developers and Meds Team
+    </span>
+            </h3>
+            <p>This page has 2 sections. This is based on whether the pack selected has availability restrictions already set as 'no' or 'yes'.
+            <p>Only the heading along with the elements within the hidden drop down section should appear in development.</p>
+        </div>
+
+        <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Pack has availability restrictions marked as yes
+    </span>
+            </summary>
+            <div class="nhsuk-details__text"><p id="product-name-yes"><span id="product-name1">___</span> has availability restrictions set as &#39;<strong>Yes (hospital only)</strong>&#39;.</p>
+                <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+                   Hospital only packs are only available via hospitals or home care, they are not available in community pharmacies.
+                </div>
+
+                <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="saveRemoveHospitalOnly()"
+                   href="have-got-smpc" id="continue-button-remove" type="submit">
+                    Remove hospital only restriction and continue
+                </a>
+
+            </div>
+        </details>
+        <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Pack has availability restrictions marked as no
+    </span>
+            </summary>
+            <div class="nhsuk-details__text"><p id="product-name-no"><span id="product-name2">___</span> has availability restrictions set as &#39;<strong>No (not hospital only)</strong>&#39;.</p>
+
+                <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+                    Hospital only packs are only available via hospitals or home care, they are not available in community pharmacies.
+                </div>
+
+                <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="saveAddHospitalOnly()"
+                   href="have-got-smpc" id="continue-button" type="submit">
+                    Add hospital only restriction and continue
+                </a>
+            </div>
+        </details>
+
+    </fieldset>
+</div>
+
+<script>
+    localStorage.setItem("product-change-summary", "product-change-summary");
+
+    console.log(localStorage);
+
+    var getPackName = localStorage.getItem("pack-name");
+
+
+    document.getElementById("product-name1").innerHTML = getPackName;
+    document.getElementById("product-name2").innerHTML = getPackName;
+
+    function saveRemoveHospitalOnly() {
+        localStorage.setItem("hospital-only", "remove");
+    }
+
+    function saveAddHospitalOnly() {
+        localStorage.setItem("hospital-only", "add");
+    }
+
+    let productTitle = document.getElementById("product-name-title");
+    let packChange = localStorage.getItem("pack-change-reason");
+
+    if (packChange || packChange != null || packChange != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + packChange +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+
+</script>
+
+{% endblock %}

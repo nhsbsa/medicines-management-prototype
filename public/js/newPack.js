@@ -434,10 +434,6 @@ if (packSubEx) {
   function storeNumberOfSubpacks() {
     var packSubpackExtra = document.getElementById("subpack-extra");
     localStorage.setItem("pack-subpack-extra", packSubpackExtra.value);
-
-//    if (summaryPage) {
-//      buttonLink.href = "../summary";
-//    }
   }
 
   var getPackSubpackExtra = localStorage.getItem("pack-subpack-extra");
@@ -519,6 +515,7 @@ if (packGtin) {
 // should display artwork? (first pack)
 
 var radioArtworkButtons = document.getElementsByName("display-artwork");
+console.log('radioArtworkButtons', radioArtworkButtons);
 
 if (radioArtworkButtons.length != 0) {
 
@@ -526,8 +523,10 @@ if (radioArtworkButtons.length != 0) {
       "pack-should-display-artwork");
 
   if (getPackSize != null) {
+    if (heading) {
     heading.innerHTML = 'Do you have images of the packaging to upload for the '
         + getPackSize + ' pack?';
+      }
   }
 
   if (getPackShdDisArtwork != null) {

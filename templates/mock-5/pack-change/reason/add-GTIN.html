@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Add market authorisation (MA) number | Submit a product change: market authorisation number | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="GTIN" id="market-auth-number">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to detail the change to the GTIN</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" id="ma-number-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading" id="heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Add a GTIN to the pack
+      </h1>
+    </legend>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
+      A GTIN contains only numbers, and we will accept 13 or 14 digit versions. Add one, or more, GTINs as required.
+    </div>
+
+
+    <label class="nhsuk-label" for="ma-number">
+      GTIN
+    </label>
+    <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="ma-number" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 30.8ex;">
+
+    <div class="nhsuk-form-group nhsuk-u-margin-bottom-0" id="button-group" >
+      <button class="govuk-button secondary-color" id="first-add-button">Add another GTIN</button>
+    </div>
+
+    <div class="hide nhsuk-u-margin-top-2" id="second-ma-number">
+      <label class="nhsuk-label" for="ma-number-2">
+        GTIN
+      </label>
+      <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="ma-number-2" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 30.8ex;">
+
+      <div class="nhsuk-form-group nhsuk-u-margin-bottom-0" id="button-group-2">
+        <button class="govuk-button govuk-button--warning nhsuk-u-margin-right-2 nhsuk-u-margin-bottom-4" id="delete-ma-number2-button">Delete GTIN</button>
+        <button class="govuk-button secondary-color" id="second-add-button">Add another GTIN</button>
+      </div>
+    </div>
+
+    <div class="hide" id="third-ma-number">
+      <label class="nhsuk-label" for="ma-number-3">
+        GTIN
+      </label>
+      <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="ma-number-3" name="strength" type="text" pattern="[0-9]*" inputmode="numeric" style="max-width: 30.8ex;">
+
+      <div class="nhsuk-form-group nhsuk-u-margin-bottom-0" id="button-group-3">
+        <button class="govuk-button govuk-button--warning nhsuk-u-margin-right-2" id="delete-ma-number3-button">Delete GTIN</button>
+        <button class="govuk-button secondary-color" id="third-add-button">Add another GTIN</button>
+      </div>
+    </div>
+
+  </fieldset>
+</div>
+
+
+
+
+
+
+<a class="nhsuk-button" onclick="storeMANumbers()"
+   href="GTIN.html" id="continue-button"
+   type="submit">
+  Save and continue
+</a>
+
+<script src="/js/gov.min.js"></script>
+
+<script>
+
+  var maNumber = document.getElementById("ma-number");
+
+  if (maNumber) {
+
+    function storeMANumbers() {
+
+      maNumber = document.getElementById("ma-number");
+      localStorage.setItem("ma-number", maNumber.value);
+
+      var maNumber2 = document.getElementById("ma-number-2");
+      localStorage.setItem("ma-number-2", maNumber2.value);
+      if (maNumber2.value == "") {
+        localStorage.removeItem("ma-number-2");
+      }
+
+      var maNumber3 = document.getElementById("ma-number-3");
+      localStorage.setItem("ma-number-3", maNumber3.value);
+      if (maNumber3.value == "") {
+        localStorage.removeItem("ma-number-3");
+      }
+
+      if (summaryPage) {
+        buttonLink.href = "../summary";
+      }
+    }
+
+    var getMaNumber = localStorage.getItem("ma-number");
+
+    var maNum = document.querySelector("#ma-number");
+    if (getMaNumber != null) {
+      maNum.defaultValue = getMaNumber;
+    }
+
+    var getMaNumber2 = localStorage.getItem("ma-number-2");
+
+    var maNum2 = document.querySelector("#ma-number-2");
+    if (getMaNumber2 != null) {
+      maNum2.defaultValue = getMaNumber2;
+    }
+
+    var getMaNumber3 = localStorage.getItem("ma-number-3");
+
+    var maNum3 = document.querySelector("#ma-number-3");
+    if (getMaNumber3 != null) {
+      maNum3.defaultValue = getMaNumber3;
+    }
+  }
+
+  if (localStorage.getItem("ma-number-2") && !localStorage.getItem("ma-number-3")) {
+    let buttonGroup = document.querySelector("#button-group");
+    let secondMaNumber = document.querySelector("#second-ma-number");
+    secondMaNumber.classList.remove("hide");
+    buttonGroup.classList.add("hide");
+  } else if (localStorage.getItem("ma-number-3") && !localStorage.getItem("ma-number-2")) {
+    let buttonGroup = document.querySelector("#button-group");
+    let thirdMaNumber = document.querySelector("#third-ma-number");
+    buttonGroup.classList.add("hide");
+    thirdMaNumber.classList.remove("hide");
+  } else if (localStorage.getItem("ma-number-3") && localStorage.getItem("ma-number-2")) {
+    let buttonGroup = document.querySelector("#button-group");
+    let addButton2 = document.querySelector("#second-add-button");
+    let thirdMaNumber = document.querySelector("#third-ma-number");
+    let secondMaNumber = document.querySelector("#second-ma-number");
+    secondMaNumber.classList.remove("hide");
+    buttonGroup.classList.add("hide");
+    thirdMaNumber.classList.remove("hide");
+    addButton2.style.display = "none";
+  } else if (!localStorage.getItem("ma-number-3") && !localStorage.getItem("ma-number-2")) {
+    let buttonGroup = document.querySelector("#button-group");
+    buttonGroup.classList.remove("hide");
+  }
+
+  let addAnotherMaNumber = document.querySelector("#first-add-button");
+
+  addAnotherMaNumber.addEventListener("keydown", eventHandler, false);
+  addAnotherMaNumber.addEventListener("click", eventHandlerClick, false);
+
+  function eventHandlerClick(event) {
+    let buttonGroup = document.querySelector("#button-group");
+    let secondMaNumber = document.querySelector("#second-ma-number");
+    secondMaNumber.classList.remove("hide");
+    buttonGroup.classList.add("hide");
+  };
+
+  function eventHandler(event) {
+    if (event.key == 'Enter' || event.code == 'Space') {
+      let buttonGroup = document.querySelector("#button-group");
+      let secondMaNumber = document.querySelector("#second-ma-number");
+      secondMaNumber.classList.remove("hide");
+      buttonGroup.classList.add("hide");
+    }
+  };
+
+  let deleteMaNumber2 = document.querySelector("#delete-ma-number2-button");
+
+  deleteMaNumber2.addEventListener("keydown", eventHandlerDelete, false);
+  deleteMaNumber2.addEventListener("click", eventHandlerDeleteClick, false);
+
+  function eventHandlerDelete(event) {
+    if (event.key == 'Enter' || event.code == 'Space') {
+      let buttonGroup = document.querySelector("#button-group");
+      let secondMaNumber = document.querySelector("#second-ma-number");
+      let maNumber2Input = document.querySelector("#ma-number-2");
+      let maNumber3Input = document.querySelector("#ma-number-3");
+      secondMaNumber.classList.add("hide");
+      maNumber2Input.value = "";
+      if (maNumber3Input.value != "" || maNumber3Input.value != "") {
+        let buttonGroup = document.querySelector("#button-group");
+        buttonGroup.classList.add("hide");
+      } else {
+        buttonGroup.classList.remove("hide");
+      }
+    }
+  };
+
+  function eventHandlerDeleteClick(event) {
+    let buttonGroup = document.querySelector("#button-group");
+    let secondMaNumber = document.querySelector("#second-ma-number");
+    let maNumber2Input = document.querySelector("#ma-number-2");
+    let maNumber3Input = document.querySelector("#ma-number-3");
+    secondMaNumber.classList.add("hide");
+    maNumber2Input.value = "";
+    if (maNumber3Input.value != "" || maNumber3Input.value != "") {
+      let buttonGroup = document.querySelector("#button-group");
+      buttonGroup.classList.add("hide");
+    } else {
+      buttonGroup.classList.remove("hide");
+    }
+  };
+
+  let addAThirdMaNumber = document.querySelector("#second-add-button");
+
+  addAThirdMaNumber.addEventListener("keydown", eventHandlerAdd, false);
+  addAThirdMaNumber.addEventListener("click", eventHandlerAddClick, false);
+
+  function eventHandlerAddClick(event) {
+    let addButton2 = document.querySelector("#second-add-button");
+    let thirdMaNumber = document.querySelector("#third-ma-number");
+    thirdMaNumber.classList.remove("hide");
+    addButton2.style.display = "none";
+  };
+
+  function eventHandlerAdd(event) {
+    if (event.key == 'Enter' || event.code == 'Space') {
+      let addButton2 = document.querySelector("#second-add-button");
+      let thirdMaNumber = document.querySelector("#third-ma-number");
+      thirdMaNumber.classList.remove("hide");
+      addButton2.style.display = "none";
+    }
+  };
+
+  let deleteMaNumber3 = document.querySelector("#delete-ma-number3-button");
+
+  deleteMaNumber3.addEventListener("keydown", eventHandlerDeleteLast, false);
+  deleteMaNumber3.addEventListener("click", eventHandlerDeleteLastClick, false);
+
+  function eventHandlerDeleteLastClick(event) {
+    let addButton2 = document.querySelector("#second-add-button");
+    let thirdMaNumber = document.querySelector("#third-ma-number");
+    let packMaNumber3Input = document.querySelector("#ma-number-3");
+    let packMaNumber2Input = document.querySelector("#ma-number-2");
+    addButton2.style.display = "inline-block";
+    thirdMaNumber.classList.add("hide");
+    packMaNumber3Input.value = "";
+    if (packGtin2Input.value == "") {
+      let buttonGroup = document.querySelector("#button-group");
+      buttonGroup.classList.remove("hide");
+    }
+  };
+
+  function eventHandlerDeleteLast(event) {
+    if (event.key == 'Enter' || event.code == 'Space') {
+      let addButton2 = document.querySelector("#second-add-button");
+      let thirdMaNumber = document.querySelector("#third-ma-number");
+      let packMaNumber3Input = document.querySelector("#ma-number-3");
+      let packMaNumber2Input = document.querySelector("#ma-number-2");
+      addButton2.style.display = "inline-block";
+      thirdMaNumber.classList.add("hide");
+      packMaNumber3Input.value = "";
+      if (packGtin2Input.value == "") {
+        let buttonGroup = document.querySelector("#button-group");
+        buttonGroup.classList.remove("hide");
+      }
+    }
+  };
+
+  let packChange = localStorage.getItem("pack-change-reason");
+
+let productTitle = document.getElementById("product-name-title");
+
+if (packChange || packChange != null || packChange != "") {
+productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + packChange +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+}
+
+</script>
+{% endblock %}

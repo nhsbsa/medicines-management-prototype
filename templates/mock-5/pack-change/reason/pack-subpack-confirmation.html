@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: extra pack subpack confirmation | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="subpack-information" id="back-link">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to detail the change to the subpack information</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading" id="heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Confirm subpack size
+      </h1>
+    </legend>
+
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
+      The subpack size is calculated by dividing the pack size with the number of subpacks. If the subpack size is incorrect, go
+          back to amend the number of subpacks. Otherwise select continue.
+    </div>
+
+    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-4">
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Pack size
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="pack-size-value">10</span>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Subpack quantity
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="subpack-quantity-value">5</span>
+        </dd>
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Subpack size
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+          <span id="subpack-size-value">2</span>
+        </dd>
+      </div>
+    </dl>
+
+  </fieldset>
+</div>
+
+<a class="nhsuk-button" onclick="storeNewSubpack()"
+   href="does-have-artwork" id="continue-button"
+   type="submit">
+  Continue
+</a>
+
+<script src="/js/newPack.js"></script>
+
+<script>
+
+window.onload = function() {
+    if (localStorage.getItem("subpack-change") == 'amend') {
+    document.getElementById("back-link").setAttribute('href', "subpack-information");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to detail the change to the subpack information";
+      } else if (localStorage.getItem("subpack-change") == 'add') {
+    document.getElementById("back-link").setAttribute('href', "pack-subpack-extra");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to how many subpacks are in the pack";
+      }
+   }
+
+   let packChange = localStorage.getItem("pack-change-reason");
+
+  let productTitle = document.getElementById("product-name-title");
+
+  if (packChange || packChange != null || packChange != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + packChange +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+var packSize = localStorage.getItem("pack-size");
+document.getElementById("pack-size-value").innerHTML = packSize;
+
+var subpackQuantity = localStorage.getItem("subpack-quantity");
+
+if (subpackQuantity) {
+   document.getElementById("subpack-quantity-value").innerHTML = subpackQuantity;
+   var subpackSize = packSize / subpackQuantity;
+   document.getElementById("subpack-size-value").innerHTML = subpackSize;
+   }
+
+var subpackQuantityExtra = localStorage.getItem("pack-subpack-extra");
+if (subpackQuantityExtra) {
+   document.getElementById("subpack-quantity-value").innerHTML = subpackQuantityExtra;
+   var subpackSize = packSize / subpackQuantityExtra;
+   document.getElementById("subpack-size-value").innerHTML = subpackSize;
+   }
+
+function storeNewSubpack() {
+   let newSubpackQuantity = localStorage.getItem("subpack-quantity");
+   let newPackSize = localStorage.getItem("pack-size");
+   let oldSubpackExtra = localStorage.getItem("pack-subpack-extra");
+
+   let packName = localStorage.getItem("pack-name");
+   let getForm = packName.split(" ");
+   let formElement = getForm[getForm.length -1];
+
+   if (newSubpackQuantity) {
+   let newSubpackSize = newPackSize / newSubpackQuantity;
+   let oldSubpack = localStorage.getItem("pack-subpack");
+   let oldSubpackArray = oldSubpack.split(" ");
+   let newSubpack = newSubpackQuantity + ' ' + oldSubpackArray[1] + ' ' + newSubpackSize + ' ' + oldSubpackArray[3]
+   localStorage.setItem("non-existing-subpack", newSubpack);
+  } else {
+   let newSubpackSize = newPackSize / oldSubpackExtra;
+   let newSubpack = oldSubpackExtra + ' x ' + newSubpackSize + ' ' + formElement;
+   localStorage.setItem("non-existing-subpack", newSubpack);
+   }
+
+   if (localStorage.getItem("summary-page") == "yes") {
+      document.getElementById("continue-button").href = "../summary";
+   }
+}
+
+</script>
+{% endblock %}

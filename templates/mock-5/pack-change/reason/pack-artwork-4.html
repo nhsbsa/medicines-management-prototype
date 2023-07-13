@@ -1,39 +1,39 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
 {% block title %}
-Submit a new product: spc link or file upload | Portal | NHSBSA
+Submit a new product: pack artwork | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="pack-spc">
+  <a class="nhsuk-back-link__link" href="pack-artwork-upload-success">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to has SmPC or Data Sheet?</a>
+    Go back to pack images of packaging uploaded files</a>
 </div>
 
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
-      <h1 class="nhsuk-fieldset__heading">
-        Upload the SmPC or Data Sheet
+      <h1 class="nhsuk-fieldset__heading" id="heading">
+        Upload images of packaging
       </h1>
     </legend>
     <div class="nhsuk-hint" id="contact-hint">
-      To provide a SmPC or Data Sheet, we will need a file upload. This can be in Word or PDF formats only. The largest size is 10 megabytes (MB).
+      Files accepted are JPG, BMP, PNG, TIFF or PDF. The largest size of each file is 5 MB.
     </div>
-    <div class="govuk-form-group nhsuk-u-margin-bottom-3">
-      <label class="nhsuk-label nhsuk-u-margin-top-3" for="file-upload-1">
+    <div class="govuk-form-group">
+      <label class="nhsuk-label nhsuk-u-margin-top-3" for="file-upload-4">
         Upload a file
       </label>
-      <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+      <input class="govuk-file-upload" id="file-upload-4" name="file-upload-4" type="file">
     </div>
   </fieldset>
 </div>
 
-<a class="nhsuk-button" onclick="storeFile()"
+<a class="nhsuk-button" onclick="storeArtwork4()"
    id="continue-button"
-   href="pack-file-upload-success"
+   href="pack-artwork-upload-success"
    type="submit">
   Continue
 </a>

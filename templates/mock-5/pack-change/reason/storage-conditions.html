@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% block title %}
+Detail the change to the licensing authority | Submit a product change: licensing authority | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../pre-summary">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to review details</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Detail the change in storage conditions
+      </h1>
+    </legend>
+
+
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="storage-conditions">
+        Provide the storage conditions
+      </label>
+      <textarea class="nhsuk-textarea" name="example" rows="5" id="storage-conditions"></textarea>
+    </div>
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeReason()"
+   href="have-got-smpc" id="continue-button" type="submit">
+  Save and continue
+</a>
+
+<script>
+  console.log(localStorage);
+
+  let productChangeReason = localStorage.getItem("pack-change-reason");
+
+  let productTitle = document.getElementById("product-name-title");
+
+  if (productChangeReason || productChangeReason != null || productChangeReason != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
+  function storeReason() {
+    var storageConditions = document.getElementById("storage-conditions");
+    localStorage.setItem("storage-conditions", storageConditions.value);
+   }
+
+  var getStorageConditionsReason = localStorage.getItem("storage-conditions");
+  var storCondReason= document.querySelector("#storage-conditions");
+
+  if (storCondReason != null) {
+    if (getStorageConditionsReason != null) {
+        storCondReason.defaultValue = getStorageConditionsReason;
+    }
+  }
+
+  if (localStorage.getItem("summary-page") == "yes") {
+      document.getElementById("continue-button").href = "../summary";
+  }
+
+</script>
+
+{% endblock %}
