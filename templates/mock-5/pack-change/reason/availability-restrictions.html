@@ -93,7 +93,12 @@ Detail the change to the licensing authority | Submit a product change: licensin
         localStorage.setItem("hospital-only", "add");
     }
 
+    let productTitle = document.getElementById("product-name-title");
+    let packChange = localStorage.getItem("pack-change-reason");
 
+    if (packChange || packChange != null || packChange != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + packChange +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
 
 
 </script>

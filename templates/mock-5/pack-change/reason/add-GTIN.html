@@ -5,22 +5,26 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="../pre-summary" id="market-auth-number">
+  <a class="nhsuk-back-link__link" href="GTIN" id="market-auth-number">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to review details</a>
+    Go back to detail the change to the GTIN</a>
 </div>
 
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" id="ma-number-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading" id="heading">
-        Add GTIN/s
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a pack change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Add a GTIN to the pack
       </h1>
     </legend>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
-      A Global Trade Item Number (GTIN) needs to be entered as shown in (insert text here). This may start with (insert text here)
+      A GTIN contains only numbers, and we will accept 13 or 14 digit versions. Add one, or more, GTINs as required.
     </div>
 
 
@@ -260,6 +264,14 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
       }
     }
   };
+
+  let packChange = localStorage.getItem("pack-change-reason");
+
+let productTitle = document.getElementById("product-name-title");
+
+if (packChange || packChange != null || packChange != "") {
+productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a pack change' + ': ' + packChange +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+}
 
 </script>
 {% endblock %}
