@@ -1,0 +1,160 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="input-price">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to summary of price input</a>
+</div>
+
+<fieldset class="nhsuk-fieldset">
+  <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+    <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-4">
+      Reason for zero price change
+    </h1>
+  </legend>
+
+  <p>Review the following product, set to zero price.</p>
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="price-update-summary" >
+            Product name
+          </dt>
+          <dd class="nhsuk-summary-list__value" id="product-name">
+            Piroxicam 20mg capsules
+          </dd>
+        </div>
+
+        <div class="nhsuk-summary-list__row">
+          <dt class="price-update-summary">
+            Pack size and UOM
+          </dt>
+          <dd class="nhsuk-summary-list__value" id="pack-size">
+            30 capsules
+          </dd>
+
+        </div>
+
+        <div class="nhsuk-summary-list__row" id="subpack-display">
+          <dt class="nhsuk-summary-list__key">
+            Subpack
+          </dt>
+          <dd class="nhsuk-summary-list__value" id="subpack">
+            5 &times; 4 capsules
+          </dd>
+
+        </div>
+
+      </dl>
+    </div>
+  </div>
+
+
+  <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+    As the price is set to zero, a reason must be chosen. Choose from one of the following.
+  </div>
+
+  <div class="nhsuk-radios nhsuk-radios--conditional">
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="contact-1" name="zero-reason" type="radio" value="Price match Part VIII in Drug Tariff" aria-controls="conditional-contact-1" aria-expanded="false">
+      <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+        Price matched Part VIII in the Drug Tariff
+      </label>
+    </div>
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="contact-2" name="zero-reason" type="radio" value="No longer agreed" aria-controls="conditional-contact-2" aria-expanded="false">
+      <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+        Price no longer agreed
+      </label>
+    </div>
+
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="contact-3" name="zero-reason" type="radio" value="Unique reason" aria-controls="conditional-contact-3" aria-expanded="false">
+      <label class="nhsuk-label nhsuk-radios__label" for="contact-3">
+        Other reason
+      </label>
+    </div>
+
+    <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-3">
+      <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="100">
+      <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="with-hint">
+          Provide a reason
+        </label>
+        <!--          <input class="nhsuk-input nhsuk-u-width-two-thirds" type="text">-->
+        <textarea class="nhsuk-textarea govuk-js-character-count" id="with-hint" name="with-hint"  rows="2" aria-describedby="with-hint-info"></textarea>
+        <!--          <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="with-hint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>-->
+        <div id="with-hint-info" class="govuk-hint govuk-character-count__message" aria-live="polite">
+          You can enter up to 100 characters
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-radios__divider">or</div>
+
+    <div class="nhsuk-radios__item">
+      <input class="nhsuk-radios__input" id="example-divider-4" name="zero-reason" type="radio" value="create-account">
+      <label class="nhsuk-label nhsuk-radios__label" for="example-divider-4">
+        This should not be zero price, remove it from the list
+      </label>
+    </div>
+
+  </div>
+
+</fieldset>
+
+<a class="nhsuk-button nhsuk-u-margin-top-6" onclick=""
+   href="check-zero-prices" id="continue-button" type="submit">
+  Continue
+</a>
+
+<script>
+  console.log(localStorage);
+
+  if (localStorage.getItem("zero-price-reason-detail")) {
+     document.getElementById("with-hint").value = localStorage.getItem("zero-price-reason-detail");
+  }
+
+  if (localStorage.getItem("product-name")) {
+  document.getElementById("product-name").innerHTML = localStorage.getItem("product-name");
+  }
+
+  if (localStorage.getItem("pack-size")) {
+  document.getElementById("pack-size").innerHTML = localStorage.getItem("pack-size") + ' tablets';
+  }
+
+  var radioButtons = document.getElementsByName("zero-reason");
+
+if (radioButtons) {
+    var getZeroPriceReason = localStorage.getItem("zero-price-reason");
+    console.log(getZeroPriceReason);
+    var buttonLink = document.getElementById("continue-button");
+    if (getZeroPriceReason != null) {
+        for (var radio of radioButtons) {
+            console.log(radio.value);
+            if (getZeroPriceReason === radio.value) {
+               console.log('working?');
+                radio.checked = true;
+            }
+        }
+    }
+};
+
+
+</script>
+
+
+{% endblock %}
