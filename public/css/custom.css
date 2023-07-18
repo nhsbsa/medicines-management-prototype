@@ -573,3 +573,7 @@ fill-blue{
   }
 }
 
+.word-break-file {
+  word-break: break-all;
+}
+

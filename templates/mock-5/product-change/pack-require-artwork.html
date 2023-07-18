@@ -73,6 +73,13 @@ Submit a new product: pack artwork | Portal | NHSBSA
 </a>
 
 <script>
+    let productChangeReason = localStorage.getItem("product-change-reason");
+  let productTitle = document.getElementById("product-name-title");
+
+  if (productChangeReason || productChangeReason != null || productChangeReason != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
   // should display artwork? (first pack)
 
   var buttonLink = document.getElementById("continue-button");

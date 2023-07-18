@@ -46,7 +46,7 @@ Submit a new product | Portal | NHSBSA
         <dt class="nhsuk-summary-list__key">
           Current price
         </dt>
-        <dd class="nhsuk-summary-list__value">
+        <dd class="nhsuk-summary-list__value" id="current-price">
           279p
         </dd>
 
@@ -79,6 +79,14 @@ Submit a new product | Portal | NHSBSA
 
   if (localStorage.getItem("product-name")) {
   document.getElementById("product-name").innerHTML = localStorage.getItem("product-name");
+  }
+
+  if (localStorage.getItem("product-name") == "Bupenorphine 100mg capsules") {
+     document.getElementById("current-price").innerHTML = "233p";
+  }
+
+  if (localStorage.getItem("product-name") == "Cymbalta 30mg gastro-resistant capsules") {
+     document.getElementById("current-price").innerHTML = "315";
   }
 
   if (localStorage.getItem("pack-size")) {

@@ -16,11 +16,15 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
   <fieldset class="nhsuk-fieldset" id="ma-number-fieldset" aria-describedby="example-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading" id="heading">
-        Add market authorisation (MA) number
+        <span class="nhsuk-caption-l" id="product-name-title">
+                Submit a product change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Add MA number
       </h1>
     </legend>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
-      A market authorisation (MA) number needs to be entered as shown in Part 8 of the SmPC. This may start with PL, PLGB, EU or MA.
+      A MA number needs to be entered as shown in Part 8 of the SmPC. This may start with PL, PLGB, EU or MA.
     </div>
 
 
@@ -74,6 +78,13 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
 <script src="/js/gov.min.js"></script>
 
 <script>
+
+    let productChangeReason = localStorage.getItem("product-change-reason");
+  let productTitle = document.getElementById("product-name-title");
+
+  if (productChangeReason || productChangeReason != null || productChangeReason != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
 
         var maNumber = document.getElementById("ma-number");
 

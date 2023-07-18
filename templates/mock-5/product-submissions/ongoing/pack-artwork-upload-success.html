@@ -5,7 +5,7 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-  <a class="nhsuk-back-link__link" href="new-product-submission-view">
+  <a class="nhsuk-back-link__link" href="new-product-submission-view" id="back-link">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
@@ -39,8 +39,9 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
       </thead>
       <tbody class="nhsuk-table__body">
       <tr role="row" class="nhsuk-table__row" id="hide-first-file">
-        <td role="cell" class="nhsuk-table__cell" id="file-upload-name">
+        <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">File name </span>
+          <span id="file-upload-name" class="word-break-file"></span>
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">File size </span>2.30 MB
@@ -50,8 +51,9 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row" id="hide-second-file">
-        <td role="cell" class="nhsuk-table__cell" id="file-upload-name-2">
+        <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">File name </span>
+          <span id="file-upload-name-2" class="word-break-file"></span>
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">File size </span>2.93 MB
@@ -61,8 +63,9 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row" id="hide-third-file">
-        <td role="cell" class="nhsuk-table__cell" id="file-upload-name-3">
+        <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">File name </span>
+          <span id="file-upload-name-3" class="word-break-file"></span>
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">File size </span>2.10 MB
@@ -72,8 +75,9 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
         </td>
       </tr>
       <tr role="row" class="nhsuk-table__row" id="hide-fourth-file">
-        <td role="cell" class="nhsuk-table__cell" id="file-upload-name-4">
+        <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">File name </span>
+          <span id="file-upload-name-4" class="word-break-file"></span>
         </td>
         <td role="cell" class="nhsuk-table__cell">
           <span class="nhsuk-table-responsive__heading">File size </span>2.93 MB
@@ -102,6 +106,25 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
 </a>
 
 <script src="/js/newProduct.js"></script>
+
+<script>
+window.onload = function() {
+    var productChange = localStorage.getItem("product-change");
+
+    if (productChange == 'product-name') {
+    document.getElementById("back-link").setAttribute('href', "product-change-product-name#tab-uploads");
+    document.getElementById("continue-button").setAttribute('href', "product-change-product-name#tab-uploads");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to product change submission";
+    } else if (productChange == 'ma-number') {
+    document.getElementById("back-link").setAttribute('href', "product-change-ma-number#tab-uploads");
+    document.getElementById("continue-button").setAttribute('href', "product-change-ma-number#tab-uploads");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to product change submission";
+    }
+};
+</script>
+
+
+
 {% endblock %}
 
 

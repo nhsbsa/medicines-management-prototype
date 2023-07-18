@@ -19,20 +19,20 @@ Review market authorisation numbers | Submit a product change: market authorisat
                 Submit a product change
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        Manage market authorisation numbers
+        Manage MA numbers
       </h1>
     </legend>
 
-    <p class="nhsuk-u-margin-bottom-6" id="product-name-current">Review the market authorisation numbers which are associated with Product name. Please note there must be at least one market authorisation number present.</p>
+    <p class="nhsuk-u-margin-bottom-6" id="product-name-current">Review the MA numbers which are associated with Product name. Please note there must be at least one MA number present.</p>
 
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-three-quarters">
         <table class="nhsuk-table nhsuk-u-margin-bottom-4" id="ma-number-table">
-          <caption class="nhsuk-table__caption" id="table-caption">Market authorisation numbers for Product name</caption>
+          <caption class="nhsuk-table__caption" id="table-caption">MA numbers for Product name</caption>
           <thead role="rowgroup" class="nhsuk-table__head">
           <tr role="row">
             <th role="columnheader" class="" scope="col">
-              Market authorisation number
+              MA number
             </th>
             <th role="columnheader" class="" scope="col">
               Action
@@ -42,11 +42,11 @@ Review market authorisation numbers | Submit a product change: market authorisat
           <tbody class="nhsuk-table__body">
           <tr role="row" class="nhsuk-table__row" id="ma-number-1">
             <td class="nhsuk-table__cell">EU/1/07/391/010</td>
-            <td class="nhsuk-table__cell "><a href="#" id="ma-link-number-1">Remove <span class="nhsuk-u-visually-hidden"> market authorisation number EU/1/07/391/010</span></a></td>
+            <td class="nhsuk-table__cell "><a href="#" id="ma-link-number-1">Remove <span class="nhsuk-u-visually-hidden"> marketing authorisation number EU/1/07/391/010</span></a></td>
           </tr>
           <tr role="row" class="nhsuk-table__row" id="ma-number-2">
             <td class="nhsuk-table__cell">PLGB 15105/0119</td>
-            <td class="nhsuk-table__cell "><a href="#" id="ma-link-number-2">Remove <span class="nhsuk-u-visually-hidden"> market authorisation number PLGB 15105/0119</span></a></td>
+            <td class="nhsuk-table__cell "><a href="#" id="ma-link-number-2">Remove <span class="nhsuk-u-visually-hidden"> marketing authorisation number PLGB 15105/0119</span></a></td>
           </tr>
           </tbody>
         </table>
@@ -58,7 +58,7 @@ Review market authorisation numbers | Submit a product change: market authorisat
 
  <div class="nhsuk-inset-text nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-5">
   <span class="nhsuk-u-visually-hidden">Information: </span>
-  <p>Use this link to <a class="nhsuk-link nhsuk-link--no-visited-state" href="add-market-auth-number" title="External website">add a market authorisation number</a></p>
+  <p>Use this link to <a class="nhsuk-link nhsuk-link--no-visited-state" href="add-market-auth-number" title="External website">add a MA number</a></p>
  </div>
 
   <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeName()"
@@ -71,8 +71,8 @@ Review market authorisation numbers | Submit a product change: market authorisat
   let productName = localStorage.getItem("product-name");
 
   if (productName != "") {
-     document.getElementById("product-name-current").innerHTML = 'Review the market authorisation numbers which are associated with <strong>' + productName + '</strong>. <br><br> Please note, you may remove a value but the product must contain at least one market authorisation number.';
-     document.getElementById("table-caption").innerHTML = 'Market authorisation numbers for ' + productName;
+     document.getElementById("product-name-current").innerHTML = 'Review the MA numbers which are associated with <strong>' + productName + '</strong>. <br><br> Please note, you may remove a value but the product must contain at least one MA number.';
+     document.getElementById("table-caption").innerHTML = 'MA numbers for ' + productName;
   }
 
   let productChangeReason = localStorage.getItem("product-change-reason");
