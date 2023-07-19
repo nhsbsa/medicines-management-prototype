@@ -77,7 +77,7 @@ Review market authorisation numbers | Submit a product change: market authorisat
 
   if (productName != "") {
      document.getElementById("product-name-current").innerHTML = 'Review the licensed route, or routes, which are associated with <strong>' + productName + '</strong>. <br><br> Please note, you may remove a value but the product must contain at least one licensed route.';
-     document.getElementById("table-caption").innerHTML = 'Market authorisation numbers for ' + productName;
+     document.getElementById("table-caption").innerHTML = 'Licensed routes for ' + productName;
   }
 
   let productChangeReason = localStorage.getItem("product-change-reason");

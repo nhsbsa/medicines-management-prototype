@@ -194,7 +194,7 @@ if (fileSuccess) {
         fileName.innerHTML =
         '<span class="nhsuk-table-responsive__heading">File name </span>'
         +
-        fileUploadFileName;
+        '<span class="word-break-file">' + fileUploadFileName + '</span>';
         removeRowTwo.style.display = "none";
     } else if (getUploadFile2 && getUploadFile == null) {
         var fileUploadSplit2 = getUploadFile2.split("\\");
@@ -203,7 +203,7 @@ if (fileSuccess) {
         fileName2.innerHTML =
         '<span class="nhsuk-table-responsive__heading">File name </span>'
         +
-        fileUploadFileName2;
+        '<span class="word-break-file">' + fileUploadFileName2 + '</span>';
         removeRowOne.style.display = "none";
     } else if (getUploadFile2 && getUploadFile) {
         var fileUploadSplit = getUploadFile.split("\\");
@@ -212,7 +212,7 @@ if (fileSuccess) {
         fileName.innerHTML =
         '<span class="nhsuk-table-responsive__heading">File name </span>'
         +
-        fileUploadFileName;
+        '<span class="word-break-file">' + fileUploadFileName + '</span>';
 
         var fileUploadSplit2 = getUploadFile2.split("\\");
         var fileUploadFileName2 = fileUploadSplit2[fileUploadSplit2.length - 1];
@@ -220,7 +220,7 @@ if (fileSuccess) {
         fileName2.innerHTML =
         '<span class="nhsuk-table-responsive__heading">File name </span>'
         +
-        fileUploadFileName2;
+        '<span class="word-break-file">' + fileUploadFileName2 + '</span>';
 
         addAnotherLink.style.display = "none";
     }

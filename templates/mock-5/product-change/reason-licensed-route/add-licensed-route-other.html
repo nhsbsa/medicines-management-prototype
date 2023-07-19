@@ -15,7 +15,10 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset"  role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
-      <h1 class="nhsuk-fieldset__heading" id="heading">
+      <h1 class="nhsuk-fieldset__heading" id="heading"><span class="nhsuk-caption-l" id="product-name-title">
+        Submit a product change
+        <span class="nhsuk-u-visually-hidden"> - </span>
+      </span>
         Detail the licensed route
       </h1>
     </legend>
@@ -36,6 +39,13 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 </a>
 
 <script>
+  let productChangeReason = localStorage.getItem("product-change-reason");
+  let productTitle = document.getElementById("product-name-title");
+
+  if (productChangeReason || productChangeReason != null || productChangeReason != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
   function storeLicensedRoute() {
         var licRoute = document.getElementById("licensed-route");
         localStorage.setItem("add-licensed-route", licRoute.value);

@@ -15,7 +15,10 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
 <div class="nhsuk-form-group">
   <fieldset class="nhsuk-fieldset" aria-describedby="example-uom-hint" role="group">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
-      <h1 class="nhsuk-fieldset__heading">
+      <h1 class="nhsuk-fieldset__heading"><span class="nhsuk-caption-l" id="product-name-title">
+        Submit a product change
+        <span class="nhsuk-u-visually-hidden"> - </span>
+      </span>
         Add a licensed route
       </h1>
     </legend>
@@ -60,6 +63,13 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
 <script src="/js/gov.min.js"></script>
 
 <script>
+  let productChangeReason = localStorage.getItem("product-change-reason");
+  let productTitle = document.getElementById("product-name-title");
+
+  if (productChangeReason || productChangeReason != null || productChangeReason != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l" id="product-change-reason">Submit a product change' + ': ' + productChangeReason +'<span class="nhsuk-u-visually-hidden"> - </span></span>';
+  }
+
 let allSelectIds = document.querySelectorAll('select[id]');
 let allInputIds = document.querySelectorAll('input[id]');
 
