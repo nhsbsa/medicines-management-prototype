@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+    <a class="nhsuk-back-link__link" id="back-link" href="product-submissions-main">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to complete submissions</a>
+</div>
+
+<h1>Product change submission</h1>
+
+<div class="nhsuk-tabs" data-module="nhsuk-tabs">
+    <h2 class="nhsuk-tabs__title">Contents</h2>
+    <ul class="nhsuk-tabs__list">
+        <li class="nhsuk-tabs__list-item nhsuk-tabs__lt-item--selected"
+            id="heading-tab-submission"
+            role="presentation"><a class="nhsuk-tabs__tab" href="#tab-submission" role="tab"
+                                   id="submission-panel" aria-selected="true">Submission</a></li>
+        <li class="nhsuk-tabs__list-item" id="heading-tab-messages" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-messages" role="tab" id="message-panel">Message
+            board</a></li>
+        <li class="nhsuk-tabs__list-item" id="heading-tab-summary" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-summary" role="tab" id="summary-panel">Summary</a>
+        </li>
+        <li class="nhsuk-tabs__list-item" id="heading-tab-uploads" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-uploads" role="tab" id="uploads-panel">Uploads</a>
+        </li>
+    </ul>
+
+    <div class="nhsuk-tabs__panel" id="tab-submission" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab1">
+        <div class="nhsuk-tabs-panel-inner">
+                    <h2>Submission</h2>
+                    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key update-width">
+                                Submission type
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                Product change
+                            </dd>
+                        </div>
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Product name
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                Aciclovir 200mg dispersible tablets
+                            </dd>
+                        </div>
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Reference
+                            </dt>
+                            <dd class="nhsuk-summary-list__value"
+                            >78965277
+                            </dd>
+                        </div>
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Date received
+                            </dt>
+                            <dd class="nhsuk-summary-list__value"
+                            >6 June 2022
+                            </dd>
+
+                        </div>
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Effective date
+                            </dt>
+                            <dd class="nhsuk-summary-list__value"
+                            >10 April 2024
+                            </dd>
+
+                        </div>
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Submission status
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                <strong class="nhsuk-tag nhsuk-tag--red">
+                                    Rejected
+                                </strong>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <!--                  <div class="" th:unless="submissionPage.getSubmissionTab()">-->
+                <!--                      <h2>Error displaying submission details</h2>-->
+                <!--                  </div>-->
+
+    </div>
+    <div class="nhsuk-tabs__panel" id="tab-messages" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab2">
+        <div class="nhsuk-tabs-panel-inner">
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                    <h2>Message board</h2>
+                    <!--                          what is the email address for suppliers to contact in reply to a message? MPL 20DEC22-->
+                    <p>Messages from the Medicines Management team will appear here. This may include information about a status update or
+                        requesting more detail. If you need to respond to a message, send an <a
+                                href="mailto: xxx@nhs.net">email</a>.</p>
+                    <p>If you would like to upload images of the packaging, visit <a class="nhsuk-link nhsuk-link--no-visited-state" href="#tab-uploads">Uploads</a>.</p>
+                    <details class="nhsuk-details nhsuk-expander">
+                        <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    20 September 2022 at 15:03 | Status update
+                                </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+                            <p>The status has been changed to 'actioned'. At this stage we do not require any further
+                                action on your behalf.</p>
+
+                            <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                            <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-3"
+                                style="color: #4c6272; font-weight: 400;">Further comments</h3>
+                            <p style="color: #4c6272; font-weight: 400;"
+                               class="nhsuk-u-font-size-16 nhsuk-u-margin-bottom-2">Here is an example of a comment and
+                                how it will be presented to the user (comment left on 22 September at 2024 15:19).</p>
+                            <p style="color: #4c6272; font-weight: 400;"
+                               class="nhsuk-u-font-size-16 nhsuk-u-margin-bottom-3">Here is another example of a comment
+                                and how it will be presented to the user if more than one comment is left (comment left
+                                on 21 September 2024 at 11:10).</p>
+                        </div>
+
+                    </details>
+
+                    <details class="nhsuk-details nhsuk-expander">
+                        <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    03 September 2022 at 10:01 | More information required
+                                </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+                            <p>Thank you for clarifying the reason for no price and confirming the number of subpacks.
+                                We also require more images of artwork. </p>
+                            <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                            <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-3"
+                                style="color: #4c6272; font-weight: 400;">Further comments</h3>
+                            <p style="color: #4c6272; font-weight: 400;"
+                               class="nhsuk-u-font-size-16 nhsuk-u-margin-bottom-3">No comments at present.</p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nhsuk-tabs__panel" id="tab-summary" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab3">
+        <div class="nhsuk-tabs-panel-inner">
+                    <h2>Summary</h2>
+
+                    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key update-width">
+                                Effective date
+                            </dt>
+                            <dd class="nhsuk-summary-list__value" id="pack-effective-date">10 April 2024</dd>
+
+                        </div>
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Product name
+                            </dt>
+                            <dd class="nhsuk-summary-list__value" id="product-name">Aciclovir 200mg dispersible tablets</dd>
+
+                        </div>
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Product change
+                            </dt>
+                            <dd class="nhsuk-summary-list__value" id="product-change-reason">Change to the licensed route</dd>
+
+                        </div>
+                    </dl>
+
+                    <h3 id="heading-pack-1">Licensed route update</h3>
+
+                    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+                        <div class="nhsuk-summary-list__row" id="first-section">
+                            <dt class="nhsuk-summary-list__key update-width" id="new-details-title">Licensed route</dt>
+                            <dd class="nhsuk-summary-list__value" id="new-details">Dental<br>Oral</dd>
+
+                        </div>
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key" id="reason-for-change">
+                                Reason for change
+                            </dt>
+                            <dd class="nhsuk-summary-list__value" id="display-reason">New way has been added to take the drug</dd>
+
+                        </div>
+
+                    </dl>
+                </div>
+            </div>
+    <div class="nhsuk-tabs__panel" id="tab-uploads" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab4">
+        <div class="nhsuk-tabs-panel-inner">
+                    <h2 class="nhsuk-u-margin-bottom-6">Uploads</h2>
+                    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-6" id="hide-table">
+                        <caption class="nhsuk-table__caption">SmPC or Data Sheet file uploads</caption>
+                        <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                File name
+                            </th>
+                            <th role="columnheader" class="file-size-width" scope="col">
+                                File size
+                            </th>
+
+                        </tr>
+                        </thead>
+                        <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row" id="smpc-first-file">
+                            <td role="cell" class="nhsuk-table__cell" id="smpc-file-upload-name">
+                                <span class="nhsuk-table-responsive__heading">File name</span>
+                                <a class="nhsuk-link nhsuk-link--no-visited-state word-break-file" href="#">test-SmPC.docx</a>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">File size </span>8.25 MB
+                            </td>
+                        </tr>
+                        <tr role="row" class="nhsuk-table__row" id="smpc-second-file">
+                            <td role="cell" class="nhsuk-table__cell" id="smpc-file-upload-name-2">
+                                <span class="nhsuk-table-responsive__heading">File name</span>
+                                <a class="nhsuk-link nhsuk-link--no-visited-state word-break-file" href="#">test-SmPC-other.doc</a>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">File size </span>3.77 MB
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
