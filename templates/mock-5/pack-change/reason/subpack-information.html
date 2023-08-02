@@ -151,7 +151,7 @@ Select a reason | Submit a product change | Portal | NHSBSA
       if (radio.checked) {
         localStorage.setItem("subpack-change", radio.value);
         if (radio.value == 'delete' && summaryPage != "yes") {
-          buttonLink.href = "does-have-artwork";
+          buttonLink.href = "reason-for-change";
         } else if (radio.value == 'delete' && summaryPage == "yes") {
           buttonLink.href = "../summary";
         } else if (radio.value == 'amend') {

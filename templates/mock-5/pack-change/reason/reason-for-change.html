@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% block title %}
+What is the reason for changing the licensing authority? | Submit a product change: licensing authority | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="licensed-route" id="back-link">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to manage the licensed routes</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading" id="product-name-title">
+        <span class="nhsuk-caption-l">
+                Submit a product change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        <span id="heading-reason">What is the reason for changing the licensed route?</span>
+      </h1>
+    </legend>
+
+
+
+    <div class="nhsuk-form-group">
+      <label class="nhsuk-label" for="reason-text">
+        Provide your reason
+      </label>
+      <textarea class="nhsuk-textarea" name="example" rows="5" id="reason-text"></textarea>
+    </div>
+  </fieldset>
+</div>
+
+  <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeReason()"
+     href="../summary" id="continue-button" type="submit">
+    Save and continue
+  </a>
+
+<script>
+  console.log(localStorage);
+
+  window.onload = function() {
+    let packChangeReason = localStorage.getItem("pack-change-reason");
+
+    if (packChangeReason == 'legal category') {
+    document.getElementById("back-link").setAttribute('href', "legal-category");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to detail the change to the legal category";
+    }
+
+    if (packChangeReason == 'GTIN') {
+    document.getElementById("back-link").setAttribute('href', "GTIN");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to detail the change to the GTIN";
+    document.getElementById("continue-button").href = "does-have-artwork";
+    }
+
+    if (packChangeReason == 'subpack information' && localStorage.getItem("subpack-change") == "delete") {
+    document.getElementById("back-link").setAttribute('href', "subpack-information");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to detail the change to the subpack information";
+    document.getElementById("continue-button").href = "does-have-artwork";
+    }
+
+    if (packChangeReason == 'subpack information' && (localStorage.getItem("subpack-change") == "amend" || localStorage.getItem("subpack-change") == "add")) {
+    document.getElementById("back-link").setAttribute('href', "pack-subpack-confirmation");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to confirm subpack size";
+    document.getElementById("continue-button").href = "does-have-artwork";
+    }
+
+    if (packChangeReason == 'availability restrictions') {
+    document.getElementById("back-link").setAttribute('href', "availability-restrictions");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to detail the change to the availability restrictions";
+    document.getElementById("continue-button").href = "have-got-smpc";
+    }
+
+    if (packChangeReason == 'storage conditions') {
+    document.getElementById("back-link").setAttribute('href', "storage-conditions");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to detail the change in storage conditions";
+    document.getElementById("continue-button").href = "have-got-smpc";
+    }
+
+};
+
+  let packChangeReason = localStorage.getItem("pack-change-reason");
+  let productTitle = document.getElementById("product-name-title");
+
+  if (packChangeReason || packChangeReason != null || packChangeReason != "") {
+    productTitle.innerHTML = '<span class="nhsuk-caption-l">Submit a pack change' + ': ' + packChangeReason + '<span class="nhsuk-u-visually-hidden"> - </span></span>What is the reason for changing the ' + packChangeReason;
+  }
+
+  function storeReason() {
+    var reasonText = document.getElementById("reason-text");
+
+    localStorage.setItem("reason-for-change", reasonText.value);
+
+    if (localStorage.getItem("summary-page") == "yes") {
+      document.getElementById("continue-button").href = "../summary";
+     }
+   }
+
+  var getReasonForChange = localStorage.getItem("reason-for-change");
+  var reasonTextValue = document.querySelector("#reason-text");
+
+  if (reasonTextValue != null) {
+    if (getReasonForChange != null) {
+        reasonTextValue.defaultValue = getReasonForChange;
+    }
+  }
+
+</script>
+
+{% endblock %}

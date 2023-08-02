@@ -217,8 +217,8 @@ let artworkChange = localStorage.getItem("pack-should-display-artwork");
 
 window.onload = function() {
     if (packChange == 'legal category') {
-    document.getElementById("back-link").setAttribute('href', "reason/legal-category");
-    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to detail the change to the legal category";
+    document.getElementById("back-link").setAttribute('href', "reason/reason-for-change");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to reason for changing the legal category";
     } else if (packChange == 'availability restrictions' || packChange == 'storage conditions') {
     document.getElementById("back-link").setAttribute('href', "reason/product-file-upload-success");
     document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to SmPC ot Data Sheet upload";
@@ -280,7 +280,7 @@ if (packChangeReason != null || packChangeReason != "") {
    document.getElementById("heading-pack-1").innerHTML = capitaliseReason + ' update';
 }
 
-let reasonForChangeLegalCat = localStorage.getItem("legal-category-reason");
+let reasonForChangeLegalCat = localStorage.getItem("reason-for-change");
 
 if (packChangeReason == "legal category") {
   document.getElementById("has-artwork").style.display = "none";
@@ -291,9 +291,7 @@ if (packChangeReason == "legal category") {
   document.getElementById("new-details").innerHTML = localStorage.getItem("legal-category");
   document.getElementById("new-details-change").href = "reason/legal-category";
 
-  document.getElementById("link-reason").href = "reason/legal-category-reason";
-
-  console.log('reasonForChangeLegalCat', reasonForChangeLegalCat);
+  document.getElementById("link-reason").href = "reason/reason-for-change";
 
   if (reasonForChangeLegalCat) {
    document.getElementById("display-reason").innerHTML = reasonForChangeLegalCat;
@@ -303,7 +301,7 @@ if (packChangeReason == "legal category") {
 }
 
 if (packChangeReason == "GTIN") {
-   let reasonForChangeGTIN = localStorage.getItem("GTIN-reason");
+   let reasonForChangeGTIN = localStorage.getItem("reason-for-change");
 
   document.getElementById("has-smpc").style.display = "none";
 
@@ -338,7 +336,7 @@ if (packChangeReason == "GTIN") {
   document.getElementById("new-details").innerHTML = '00012345678905' + '<br>' + '00012345678906';
   document.getElementById("new-details-change").href = "reason/GTIN";
 
-  document.getElementById("link-reason").href = "reason/GTIN-reason";
+  document.getElementById("link-reason").href = "reason/reason-for-change";
 
   if (reasonForChangeGTIN) {
    document.getElementById("display-reason").innerHTML = reasonForChangeGTIN;
@@ -348,7 +346,7 @@ if (packChangeReason == "GTIN") {
 }
 
 if (packChangeReason == "subpack information") {
-   let reasonForChangeSubpack = localStorage.getItem("subpack-reason");
+   let reasonForChangeSubpack = localStorage.getItem("reason-for-change");
 
   document.getElementById("has-smpc").style.display = "none";
 
@@ -394,7 +392,7 @@ if (packChangeReason == "subpack information") {
 
 
 
-  document.getElementById("link-reason").href = "reason/subpack-reason";
+  document.getElementById("link-reason").href = "reason/reason-for-change";
 
   if (reasonForChangeSubpack) {
    document.getElementById("display-reason").innerHTML = reasonForChangeSubpack;
@@ -404,6 +402,9 @@ if (packChangeReason == "subpack information") {
 }
 
 if (packChangeReason == "availability restrictions") {
+
+  let reasonForChangeAvailRestrict = localStorage.getItem("reason-for-change");
+
   document.getElementById("has-artwork").style.display = "none";
   document.getElementById("awaiting-artwork").style.display = "none";
 
@@ -417,11 +418,11 @@ if (packChangeReason == "availability restrictions") {
  }
 
   document.getElementById("new-details-change").href = "reason/availability-restrictions";
-  document.getElementById("link-reason").href = "reason/avail-restrict-reason";
+  document.getElementById("link-reason").href = "reason/reason-for-change";
 
 
-  if (reasonForChangeLegalCat) {
-   document.getElementById("display-reason").innerHTML = reasonForChangeLegalCat;
+  if (reasonForChangeAvailRestrict) {
+   document.getElementById("display-reason").innerHTML = reasonForChangeAvailRestrict;
 } else {
    document.getElementById("display-reason").innerHTML = 'No reason provided';
     }
@@ -459,6 +460,9 @@ console.log(getProductLink);
  }
 
  if (packChangeReason == "storage conditions") {
+
+  let reasonForChangeStorageConds = localStorage.getItem("reason-for-change");
+
   document.getElementById("has-artwork").style.display = "none";
   document.getElementById("awaiting-artwork").style.display = "none";
 
@@ -470,11 +474,11 @@ console.log(getProductLink);
   }
 
   document.getElementById("new-details-change").href = "reason/storage-conditions";
-  document.getElementById("link-reason").href = "reason/storage-conditions-reason";
+  document.getElementById("link-reason").href = "reason/reason-for-change";
 
 
-  if (reasonForChangeLegalCat) {
-   document.getElementById("display-reason").innerHTML = reasonForChangeLegalCat;
+  if (reasonForChangeStorageConds) {
+   document.getElementById("display-reason").innerHTML = reasonForChangeStorageConds;
 } else {
    document.getElementById("display-reason").innerHTML = 'No reason provided';
     }
