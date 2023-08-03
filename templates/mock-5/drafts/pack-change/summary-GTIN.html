@@ -1,0 +1,174 @@
+{% extends "base.html" %}
+{% block title %}
+Review details | Submit a product change | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+  <a class="nhsuk-back-link__link" href="../pack-change-drafts">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to pack change drafts</a>
+</div>
+
+<h1><span class="nhsuk-caption-l">
+    Submit a pack change: GTIN
+  <span class="nhsuk-u-visually-hidden"> - </span>
+</span>
+  Summary</h1>
+
+<p>Check your answers before completing your submission. If you are not ready to submit you can store the information to return later.</p>
+
+<dl class="nhsuk-summary-list nhsuk-u-margin-top-6">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Effective date
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-effective-date">1 June 2024
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="#">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; effective date</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Pack details
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-name">
+      Product name:<br>
+      Aciclovir 200mg dispersible tablets
+      <br><br>
+      Pack size: 56
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="#">
+        Change<span class="nhsuk-u-visually-hidden"> pack details</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Pack change
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-change-reason">
+      Change to the GTIN
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="#">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp; the pack change cause</span>
+      </a>
+
+    </dd>
+
+  </div>
+  
+</dl>
+
+<h2 id="heading-pack-1">GTIN update</h2>
+
+<dl class="nhsuk-summary-list">
+
+  <div class="nhsuk-summary-list__row" id="first-section">
+    <dt class="nhsuk-summary-list__key" id="new-details-title">
+      GTIN
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="new-details">
+      00012345678905<br>
+      00012345678906
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="#" id="new-details-change">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;what has changed</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key" id="reason-for-change">
+      Reason for change
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="display-reason">This is an example of a reason for changing the GTIN
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="initial-pack/pack-file-upload-success" id="link-reason">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;reason for change</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" id="has-artwork">
+    <dt class="nhsuk-summary-list__key">
+      Packaging images provided
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-has-artwork">
+      Yes
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="#">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;if pack has packaging images</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row" id="awaiting-artwork">
+    <dt class="nhsuk-summary-list__key">
+      Packaging images uploaded file
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="pack-upload-artwork">
+      5a2ae7fadb68181c8f184d65.jpg<br>
+      158057329905066666666666666665555555555555555555555555544444444444444444444444444.jpg
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="pack-artwork-upload-success">
+        Change<span class="nhsuk-u-visually-hidden">&nbsp;uploaded packaging images</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+</dl>
+
+
+
+<a class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-right-5" href="confirmation"
+   type="submit">
+  Submit pack change
+</a>
+
+<a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-3"
+   id="save-alert" href="draft-confirmation">
+  Save as draft
+</a>
+
+{% endblock %}

@@ -195,24 +195,36 @@ if (fileSuccess) {
     var fileUploadSplit = getUploadFile.split("\\");
     var fileUploadFileName = fileUploadSplit[fileUploadSplit.length - 1];
     var fileName = document.getElementById("file-upload-name");
-    fileName.innerHTML = fileUploadFileName;
+    fileName.innerHTML =
+    '<span class="nhsuk-table-responsive__heading">File name </span>'
+    +
+    '<span class="word-break-file">' + fileUploadFileName + '</span>';
     removeRowTwo.style.display = "none";
   } else if (getUploadFile2 && getUploadFile == null) {
     var fileUploadSplit2 = getUploadFile2.split("\\");
     var fileUploadFileName2 = fileUploadSplit2[fileUploadSplit2.length - 1];
     var fileName2 = document.getElementById("file-upload-name-2");
-    fileName2.innerHTML = fileUploadFileName2;
+    fileName2.innerHTML =
+    '<span class="nhsuk-table-responsive__heading">File name </span>'
+                                +
+    '<span class="word-break-file">' + fileUploadFileName2 + '</span>';
     removeRowOne.style.display = "none";
   } else if (getUploadFile2 && getUploadFile) {
     var fileUploadSplit = getUploadFile.split("\\");
     var fileUploadFileName = fileUploadSplit[fileUploadSplit.length - 1];
     var fileName = document.getElementById("file-upload-name");
-    fileName.innerHTML = fileUploadFileName;
+    fileName.innerHTML =
+    '<span class="nhsuk-table-responsive__heading">File name </span>'
+    +
+    '<span class="word-break-file">' + fileUploadFileName + '</span>';
 
     var fileUploadSplit2 = getUploadFile2.split("\\");
     var fileUploadFileName2 = fileUploadSplit2[fileUploadSplit2.length - 1];
     var fileName2 = document.getElementById("file-upload-name-2");
-    fileName2.innerHTML = fileUploadFileName2;
+    fileName2.innerHTML =
+    '<span class="nhsuk-table-responsive__heading">File name </span>'
+    +
+    '<span class="word-break-file">' + fileUploadFileName2 + '</span>';
 
     addAnotherLink.style.display = "none";
   }
@@ -660,7 +672,11 @@ if (artworkLimit) {
     var artworkOneFileName = artworkOneSplit[artworkOneSplit.length - 1];
     console.log(artworkOneFileName);
     var fileName = document.getElementById("file-upload-name");
-    fileName.innerHTML = artworkOneFileName;
+    fileName.innerHTML =
+    '<span class="nhsuk-table-responsive__heading">File name </span>'
+                                    +
+    '<span class="word-break-file">' + artworkOneFileName + '</span>';
+
   } else {
     removeRowOne.style.display = "none";
   }
@@ -669,7 +685,10 @@ if (artworkLimit) {
     var artworkTwoSplit = artworkTwo.split("\\");
     var artworkTwoFileName = artworkTwoSplit[artworkTwoSplit.length - 1];
     var fileName = document.getElementById("file-upload-name-2");
-    fileName.innerHTML = artworkTwoFileName;
+    fileName.innerHTML =
+    '<span class="nhsuk-table-responsive__heading">File name </span>'
+    +
+    '<span class="word-break-file">' + artworkTwoFileName + '</span>';
   } else {
     removeRowTwo.style.display = "none";
   }
@@ -678,7 +697,10 @@ if (artworkLimit) {
     var artworkThreeSplit = artworkThree.split("\\");
     var artworkThreeFileName = artworkThreeSplit[artworkThreeSplit.length - 1];
     var fileName = document.getElementById("file-upload-name-3");
-    fileName.innerHTML = artworkThreeFileName;
+    fileName.innerHTML =
+    '<span class="nhsuk-table-responsive__heading">File name </span>'
+    +
+    '<span class="word-break-file">' + artworkThreeFileName + '</span>';
   } else {
     removeRowThree.style.display = "none";
   }
@@ -687,7 +709,10 @@ if (artworkLimit) {
     var artworkFourSplit = artworkFour.split("\\");
     var artworkFourFileName = artworkFourSplit[artworkFourSplit.length - 1];
     var fileName = document.getElementById("file-upload-name-4");
-    fileName.innerHTML = artworkFourFileName;
+    fileName.innerHTML =
+    '<span class="nhsuk-table-responsive__heading">File name </span>'
+    +
+    '<span class="word-break-file">' + artworkFourFileName + '</span>';
 
     var addLink = document.getElementById("add-link");
     addLink.style.display = "none";
@@ -696,7 +721,6 @@ if (artworkLimit) {
     removeRowFour.style.display = "none";
   }
 
-  console.log(removeLinkOne);
   removeLinkOne.addEventListener("click", function (e) {
     // e.target was the clicked element
     removeLinkOne.setAttribute('href', "pack-artwork-upload-success");
