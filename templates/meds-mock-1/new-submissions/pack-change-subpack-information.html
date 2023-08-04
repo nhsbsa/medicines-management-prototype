@@ -7,7 +7,7 @@
     Go back to summary of new submissions</a>
 </div>
 
-<h1>Product change submission</h1>
+<h1>Pack change submission</h1>
 
 <div class="nhsuk-tabs" data-module="nhsuk-tabs">
     <h2 class="nhsuk-tabs__title">Contents</h2>
@@ -25,23 +25,34 @@
                         <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key update-width"> Submission Type</dt>
-                                <dd class="nhsuk-summary-list__value">Product change</dd>
+                                <dd class="nhsuk-summary-list__value">Pack change</dd>
                             </div>
+
                             <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key"> Product name</dt>
-                                <dd class="nhsuk-summary-list__value">Bupenorphine 100mg capsules</dd>
+                                <dt class="nhsuk-summary-list__key">
+                                    Pack details
+                                </dt>
+                                <dd class="nhsuk-summary-list__value" id="product-name-submission">
+                                    Product name:<br>
+                                    Bupenorphine 100mg capsules
+                                    <br><br>
+                                    Pack size: 28
+                                    <br><br>
+                                    Subpack: 2 × 14 capsules
+                                </dd>
+
                             </div>
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key"> Reference</dt>
-                                <dd class="nhsuk-summary-list__value">79856123</dd>
+                                <dd class="nhsuk-summary-list__value">78965325</dd>
                             </div>
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key">Date received</dt>
-                                <dd class="nhsuk-summary-list__value">14 June 2022</dd>
+                                <dd class="nhsuk-summary-list__value">28 July 2022</dd>
                             </div>
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key"> Effective date</dt>
-                                <dd class="nhsuk-summary-list__value">30 July 2022</dd>
+                                <dd class="nhsuk-summary-list__value">29 August 2024</dd>
                             </div>
                             <div class="nhsuk-summary-list__row">
                                 <dt class="nhsuk-summary-list__key"> Supplier</dt>
@@ -56,13 +67,18 @@
                                 <dd class="nhsuk-summary-list__value"><p>jane.smith@example.com</p></dd>
                             </div>
                             <div class="nhsuk-summary-list__row">
-                                <dt class="nhsuk-summary-list__key"> Submission status</dt>
-                                <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--green">
-                                    Ready </strong></dd>
+                                <dt class="nhsuk-summary-list__key">
+                                    Submission status
+                                </dt>
+                                <dd class="nhsuk-summary-list__value">
+                                    <strong class="nhsuk-tag nhsuk-tag--white"
+                                    >More detail
+                                    </strong>
+                                </dd>
                             </div>
                         </dl>
                         <div class="nhsuk-action-link nhsuk-u-margin-top-4"><a class="nhsuk-action-link__link"
-                                                                               href="product-change/update-submission-status" onclick="setProductChange()">
+                                                                               href="pack-change/update-submission-status" onclick="setPackChange()">
                             <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
                                  viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
                                 <path d="M0 0h24v24H0z" fill="none"></path>
@@ -115,7 +131,7 @@
                         </details>
                         <!-- <p><a href="update-submission-notes-detail">Create a new message category</a></p>-->
                         <div class="nhsuk-action-link nhsuk-u-margin-top-6">
-                            <a class="nhsuk-action-link__link" href="product-change/update-submission-notes-detail" onclick="setProductChangeMessageOnly()">
+                            <a class="nhsuk-action-link__link" href="pack-change/update-submission-notes-detail" onclick="setPackChangeMessageOnly()">
                             <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg"
                                  viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
                                 <path d="M0 0h24v24H0z" fill="none"></path>
@@ -137,40 +153,41 @@
                         <dt class="nhsuk-summary-list__key update-width">
                             Effective date
                         </dt>
-                        <dd class="nhsuk-summary-list__value" id="pack-effective-date">30 July 2022</dd>
+                        <dd class="nhsuk-summary-list__value" id="pack-effective-date">29 August 2024</dd>
 
                     </div>
 
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Product name
+                            Pack details
                         </dt>
-                        <dd class="nhsuk-summary-list__value" id="product-name">Bupenorphine 100mg capsules</dd>
+                        <dd class="nhsuk-summary-list__value" id="product-name">
+                            Product name:<br>
+                            Bupenorphine 100mg capsules
+                            <br><br>
+                            Pack size: 28
+                            <br><br>
+                            Subpack: 2 × 14 capsules
+                        </dd>
 
                     </div>
 
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Product change
+                            Pack change
                         </dt>
-                        <dd class="nhsuk-summary-list__value" id="product-change-reason">Change to the licensing authority</dd>
+                        <dd class="nhsuk-summary-list__value" id="product-change-reason">Change to the subpack information</dd>
 
                     </div>
                 </dl>
 
-                <h3 id="heading-pack-1">Licensing authority update</h3>
+                <h3 id="heading-pack-1">Subpack information update</h3>
 
                 <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
 
                     <div class="nhsuk-summary-list__row" id="first-section">
-                        <dt class="nhsuk-summary-list__key update-width" id="new-details-title">Licensing authority</dt>
-                        <dd class="nhsuk-summary-list__value" id="new-details">Licensed</dd>
-
-                    </div>
-
-                    <div class="nhsuk-summary-list__row" id="second-section">
-                        <dt class="nhsuk-summary-list__key update-width" id="new-details-title-second">Legal category</dt>
-                        <dd class="nhsuk-summary-list__value" id="new-details-second">P (Pharmacy Only)</dd>
+                        <dt class="nhsuk-summary-list__key update-width" id="new-details-title">Subpack information</dt>
+                        <dd class="nhsuk-summary-list__value" id="new-details">7 &times; 4 capsules</dd>
 
                     </div>
 
@@ -178,7 +195,7 @@
                         <dt class="nhsuk-summary-list__key" id="reason-for-change">
                             Reason for change
                         </dt>
-                        <dd class="nhsuk-summary-list__value" id="display-reason">Drug is now licensed</dd>
+                        <dd class="nhsuk-summary-list__value" id="display-reason">This is where the reason for changing the subpack information is provided</dd>
 
                     </div>
 
@@ -186,74 +203,19 @@
                     </div>
                 </div>
 
-        <div class="nhsuk-tabs__panel" id="tab-uploads">
-            <div class="tabs-panel-inner">
-                <div class="nhsuk-grid-row">
-                    <div class="nhsuk-grid-column-full"><h2 class="nhsuk-u-margin-bottom-6">Uploads</h2>
-                        <table role="table" class="nhsuk-table-responsive" id="hide-table">
-                            <caption class="nhsuk-table__caption">SmPC or Data Sheet file uploads</caption>
-                            <thead role="rowgroup" class="nhsuk-table__head">
-                            <tr role="row">
-                                <th role="columnheader" class="" scope="col"> File name</th>
-                                <th role="columnheader" class="file-size-width" scope="col"> File size</th>
-                            </tr>
-                            </thead>
-                            <tbody class="nhsuk-table__body">
-                            <tr role="row" class="nhsuk-table__row" id="hide-first-file">
+    <div class="nhsuk-tabs__panel" id="tab-uploads">
+        <div class="tabs-panel-inner">
+            <h2 class="nhsuk-u-margin-bottom-6">Uploads</h2>
 
-                                <td role="cell" class="nhsuk-table__cell" id="file-upload-name">
-                                    <span class="nhsuk-table-responsive__heading">File name</span>
-                                    <a href="#">test-SmPC.doc</a>
-                                    </td>
-                                <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">File size </span>8.25
-                                    MB
-                                </td>
-                            </tr>
-                            <tr role="row" class="nhsuk-table__row" id="hide-second-file">
-                                <td role="cell" class="nhsuk-table__cell" id="file-upload-name-2">
-                                    <span class="nhsuk-table-responsive__heading">File name</span>
-                                    <a href="#">test-SmPC-other.doc</a>
-                                  </td>
-                                <td role="cell" class="nhsuk-table__cell">
-                                    <span class="nhsuk-table-responsive__heading">File size </span>3.77
-                                    MB
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-6" id="hide-table-two">
-                            <caption class="nhsuk-table__caption">Artwork file uploads</caption>
-                            <thead role="rowgroup" class="nhsuk-table__head">
-                            <tr role="row">
-                                <th role="columnheader" class="" scope="col"> File name</th>
-                                <th role="columnheader" class="file-size-width" scope="col"> File size</th>
-                            </tr>
-                            </thead>
-                            <tbody class="nhsuk-table__body">
-                            <tr role="row" class="nhsuk-table__row" id="hide-first-file-two">
-                                <td role="cell" class="nhsuk-table__cell" id="file-image-upload-name">
-                                    <span class="nhsuk-table-responsive__heading">File name</span>
-                                    <a href="#">test-image.png</a>
-                                    </td>
-                                <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">File size </span>8.25
-                                    MB
-                                </td>
-                            </tr>
-                            <tr role="row" class="nhsuk-table__row" id="hide-second-file-two">
-                                <td role="cell" class="nhsuk-table__cell" id="file-image-upload-name-2">
-                                    <span class="nhsuk-table-responsive__heading">File name</span>
-                                    <a href="#">test-image-other.jpg</a>
-                                    </td>
-                                <td role="cell" class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">File size </span>3.77
-                                    MB
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+
+            <h3 class="nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-0 nhsuk-heading-s" id="no-images-heading">Images of packaging file
+                uploads</h3>
+
+            <p class="nhsuk-u-margin-bottom-6 nhsuk-u-margin-top-3" id="no-images">There are no
+                uploads for images of packaging.</p>
                 </div>
-            </div>
-        </div>
+    </div>
+
     </div>
 
 <script>
@@ -265,17 +227,18 @@
     }
 };
 
-    function setProductChange() {
-      localStorage.setItem("product-change", "licensing auth licensed");
-      localStorage.removeItem("product-change-message-only");
+   function setPackChange() {
+      localStorage.setItem("pack-change", "subpack information");
+      localStorage.removeItem("pack-change-message-only");
    };
 
-   function setProductChangeMessageOnly() {
-      localStorage.setItem("product-change-message-only", "licensing auth licensed");
-      localStorage.removeItem("product-change");
+   function setPackChangeMessageOnly() {
+      localStorage.setItem("pack-change-message-only", "subpack information");
+      localStorage.removeItem("pack-change");
       localStorage.removeItem("product-notes-require");
       localStorage.removeItem("submission-status");
    };
+
 
 </script>
 
