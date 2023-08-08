@@ -6,12 +6,12 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 {% block content %}
 
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-    <a class="nhsuk-back-link__link" id="back-link" href="product-submissions-main">
+    <a class="nhsuk-back-link__link" id="back-link" href="submissions">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
              aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
-        Go back to complete submissions</a>
+        Go back to summary of complete submissions</a>
 </div>
 
 <h1>Pack change submission</h1>
@@ -28,6 +28,9 @@ Submit a new product: pack size and strength | Portal | NHSBSA
             board</a></li>
         <li class="nhsuk-tabs__list-item" id="heading-tab-summary" role="presentation"><a
                 class="nhsuk-tabs__tab" href="#tab-summary" role="tab" id="summary-panel">Summary</a>
+        </li>
+        <li class="nhsuk-tabs__list-item" id="heading-tab-uploads" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-uploads" role="tab" id="uploads-panel">Uploads</a>
         </li>
     </ul>
 
@@ -66,7 +69,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                                 Reference
                             </dt>
                             <dd class="nhsuk-summary-list__value"
-                            >78965300
+                            >78965325
                             </dd>
                         </div>
 
@@ -75,7 +78,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                                 Date received
                             </dt>
                             <dd class="nhsuk-summary-list__value"
-                            >23 July 2022
+                            >28 July 2022
                             </dd>
 
                         </div>
@@ -85,7 +88,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                                 Effective date
                             </dt>
                             <dd class="nhsuk-summary-list__value"
-                            >26 August 2024
+                            >29 August 2024
                             </dd>
 
                         </div>
@@ -95,8 +98,8 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                                 Submission status
                             </dt>
                             <dd class="nhsuk-summary-list__value">
-                                <strong class="nhsuk-tag nhsuk-tag--purple"
-                                >Cancelled
+                                <strong class="nhsuk-tag nhsuk-tag--red"
+                                >Rejected
                                 </strong>
                             </dd>
                         </div>
@@ -175,7 +178,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                             <dt class="nhsuk-summary-list__key update-width">
                                 Effective date
                             </dt>
-                            <dd class="nhsuk-summary-list__value" id="pack-effective-date">19 November 2023</dd>
+                            <dd class="nhsuk-summary-list__value" id="pack-effective-date">29 August 2024</dd>
 
                         </div>
 
@@ -198,18 +201,18 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                             <dt class="nhsuk-summary-list__key">
                                 Pack change
                             </dt>
-                            <dd class="nhsuk-summary-list__value" id="product-change-reason">Change to the legal category</dd>
+                            <dd class="nhsuk-summary-list__value" id="product-change-reason">Change to the subpack information</dd>
 
                         </div>
                     </dl>
 
-                    <h3 id="heading-pack-1">Legal category update</h3>
+                    <h3 id="heading-pack-1">Subpack information update</h3>
 
                     <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
 
                         <div class="nhsuk-summary-list__row" id="first-section">
-                            <dt class="nhsuk-summary-list__key update-width" id="new-details-title">Legal category </dt>
-                            <dd class="nhsuk-summary-list__value" id="new-details">Pharmacy (P)</dd>
+                            <dt class="nhsuk-summary-list__key update-width" id="new-details-title">Subpack information</dt>
+                            <dd class="nhsuk-summary-list__value" id="new-details">7 &times; 4 capsules</dd>
 
                         </div>
 
@@ -217,23 +220,86 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                             <dt class="nhsuk-summary-list__key" id="reason-for-change">
                                 Reason for change
                             </dt>
-                            <dd class="nhsuk-summary-list__value" id="display-reason">This is where the reason for changing the legal category is provided</dd>
+                            <dd class="nhsuk-summary-list__value" id="display-reason">This is where the reason for changing the subpack information is provided</dd>
 
                         </div>
 
                     </dl>
                 </div>
             </div>
+    <div class="nhsuk-tabs__panel" id="tab-uploads" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab4">
+        <div class="nhsuk-tabs-panel-inner">
+            <div class="nhsuk-grid-row">
+                <div class="nhsuk-grid-column-full">
+                    <h2 class="nhsuk-u-margin-bottom-6">Uploads</h2>
+
+
+                    <h3 class="nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-0 nhsuk-heading-s" id="no-images-heading">Images of packaging file
+                        uploads</h3>
+
+                    <p class="nhsuk-u-margin-bottom-6 nhsuk-u-margin-top-3" id="no-images">There are currently no
+                        uploads for images of packaging.</p>
+
+
+                    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-6" id="artwork-table">
+                        <caption class="nhsuk-table__caption">Images of packaging file uploads
+                        </caption>
+                        <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                File name
+                            </th>
+                            <th role="columnheader" class="file-size-width" scope="col">
+                                File size
+                            </th>
+
+                        </tr>
+                        </thead>
+                        <tbody class="nhsuk-table__body" id="artwork-table-body">
+                        <!--                        <tr role="row" class="nhsuk-table__row" id="artwork-first-file">-->
+                        <!--                            <td role="cell" class="nhsuk-table__cell" id="file-upload-name">-->
+                        <!--                                <span class="nhsuk-table-responsive__heading">File name</span>-->
+                        <!--                                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">786876868.jpg</a>-->
+                        <!--                            </td>-->
+                        <!--                            <td role="cell" class="nhsuk-table__cell">-->
+                        <!--                                <span class="nhsuk-table-responsive__heading">File size </span>1.35 MB-->
+                        <!--                            </td>-->
+                        <!--                        </tr>-->
+                        <!--                        <tr role="row" class="nhsuk-table__row" id="artwork-second-file">-->
+                        <!--                            <td role="cell" class="nhsuk-table__cell" id="file-upload-name-2">-->
+                        <!--                                <span class="nhsuk-table-responsive__heading">File name</span>-->
+                        <!--                                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">images.pdf</a>-->
+                        <!--                            </td>-->
+                        <!--                            <td role="cell" class="nhsuk-table__cell">-->
+                        <!--                                <span class="nhsuk-table-responsive__heading">File size </span>2 MB-->
+                        <!--                            </td>-->
+                        <!--                        </tr>-->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
 let artworkTable = document.getElementById("artwork-table");
 let artworkTableBody = document.getElementById("artwork-table-body");
 let noImagesText = document.getElementById("no-images");
+let noImagesHeading = document.getElementById("no-images-heading");
 
 console.log(localStorage);
 
-localStorage.setItem("product-change", "product-name");
+localStorage.setItem("pack-change", "subpack information");
+
+<!--if (!localStorage.getItem("pack-upload-artwork")) {-->
+<!--localStorage.setItem("pack-upload-artwork", "C:\\fakepath\\786876868.jpg");-->
+<!--  }-->
+
+<!--if (!localStorage.getItem("pack-upload-artwork-2")) {-->
+<!--localStorage.setItem("pack-upload-artwork-2", "C:\\fakepath\\images.pdf");-->
+<!--  }-->
 
 let artworkArray = [];
 
@@ -243,8 +309,10 @@ filterArtworkArray = artworkArray.filter(item => item !== null);
 if (filterArtworkArray.length < 1) {
    artworkTable.style.display = "none";
    noImagesText.style.display = "block";
+   noImagesHeading.style.display = "block";
 } else {
   noImagesText.style.display = "none";
+  noImagesHeading.style.display = "none";
   artworkTable.style.display = "table";
   for (let i = 0; i < filterArtworkArray.length; i++) {
      var uploadArtworkSplit = filterArtworkArray[i].split("\\");
