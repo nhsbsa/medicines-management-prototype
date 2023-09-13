@@ -84,9 +84,10 @@ What is the reason for changing the licensing authority? | Submit a product chan
 
   let packChangeReason = localStorage.getItem("pack-change-reason");
   let productTitle = document.getElementById("product-name-title");
+  let updateGtin = packChangeReason === "GTIN" ? " update" : "";
 
   if (packChangeReason || packChangeReason != null || packChangeReason != "") {
-    productTitle.innerHTML = '<span class="nhsuk-caption-l">Submit a pack change' + ': ' + packChangeReason + '<span class="nhsuk-u-visually-hidden"> - </span></span>What is the reason for changing the ' + packChangeReason;
+    productTitle.innerHTML = '<span class="nhsuk-caption-l">Submit a pack change' + ': ' + packChangeReason + '<span class="nhsuk-u-visually-hidden"> - </span></span>What is the reason for changing the ' + packChangeReason + updateGtin;
   }
 
   function storeReason() {
