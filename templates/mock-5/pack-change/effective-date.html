@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %}
-What is the effective date of the product? | Submit a product change | Portal | NHSBSA
+What is the effective date of the pack? | Submit a pack change | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
@@ -8,7 +8,7 @@ What is the effective date of the product? | Submit a product change | Portal | 
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to checklist</a>
+    Go back to submit a pack change</a>
 </div>
 
 <div class="nhsuk-form-group">
@@ -16,14 +16,14 @@ What is the effective date of the product? | Submit a product change | Portal | 
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
         <span class="nhsuk-caption-l">
-                Submit a product change
+                Submit a pack change
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        What is the effective date of the pack?
+        What is the effective date of the change?
       </h1>
     </legend>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-hint">
-      The date the pack is available in the warehouse and cannot be in the past. It can take up to 2 full weeks to show on dm+d. The extract day for dm+d is usually every Thursday.
+      The date cannot be in the past. It can take up to 2 full weeks to show on dm+d. The extract day for dm+d is usually every Thursday.
     </div>
 
     <div class="nhsuk-hint nhsuk-u-margin-bottom-5" id="format-hint">Enter each element of the date as a number in the format <strong>dd mm yyyy</strong>.</div>
@@ -66,7 +66,7 @@ What is the effective date of the product? | Submit a product change | Portal | 
   console.log(localStorage);
 
 
-  var preSummaryPage = localStorage.getItem("product-change-summary");
+  var preSummaryPage = localStorage.getItem("pack-change-summary");
   let summaryPage = localStorage.getItem("summary-page");
 
   var continueButton = document.getElementById("continue-button");
