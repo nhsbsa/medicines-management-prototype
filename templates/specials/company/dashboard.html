@@ -1,0 +1,123 @@
+{% extends "supplier-navbar-base.html" %}
+{% block title %}
+Portal dashboard | Medicines Management design prototype | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+    <div class="nhsuk-card" style="color: #ffffff; background-color: #005eb8; text-align: center">
+      <div class="nhsuk-card__content">
+        <h1 class="nhsuk-card__heading">
+          Specials dashboard
+        </h1>
+      </div>
+    </div>
+
+    <p>Create and track specials requests through the specials dashboard.</p>
+<!--    <p><a class="nhsuk-card__link nhsuk-link&#45;&#45;no-visited-state" href="portfolio">Visit your portfolio </a>to view your products held on dictionary of medicines and devices (dm+d).</p>-->
+
+    <h2>Requests</h2>
+
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state"
+                 href="submit-new-product/product/product-check-list">New requests</a>
+            </h2>
+            <p class="nhsuk-card__description">Submit a new specials request.</p>
+          </div>
+        </div>
+
+      </li>
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state"
+                 href="product-change/checklist">Edit request</a>
+            </h2>
+            <p class="nhsuk-card__description">Change a request which has been rejected, or which has been submitted but is not in progress.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <h2>Track my requests</h2>
+
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="product-submissions/ongoing/product-submissions-main">Ongoing requests</a>
+            </h2>
+            <p class="nhsuk-card__description">A list of requests which are under review or awaiting further information.</p>
+          </div>
+        </div>
+
+      </li>
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="product-submissions/complete/product-submissions-main">Complete requests</a>
+            </h2>
+            <p class="nhsuk-card__description">A list of requests which do not need further action.</p>
+          </div>
+        </div>
+
+      </li>
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state"
+                 href="drafts/drafts-dashboard">All drafts</a>
+            </h2>
+            <p class="nhsuk-card__description">View or update drafts which have not been submitted.</p>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+
+    <h2>Administration</h2>
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="supplier-users/supplier-users">Specials users</a>
+        </h2>
+        <p class="nhsuk-card__description">View or update portal users.</p>
+      </div>
+    </div>
+  </li>
+
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="supplier-users/view-company-details">Company details</a>
+        </h2>
+        <p class="nhsuk-card__description">View or update company contacts. </p>
+      </div>
+    </div>
+  </li>
+</ul>
+  </div>
+</div>
+
+<script>
+  localStorage.clear();
+  console.log(localStorage);
+</script>
+{% endblock %}
