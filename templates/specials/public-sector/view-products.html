@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block title %}
+Portal dashboard | Medicines Management design prototype | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="grid-row">
+
+    <div class="column-two-thirds">
+
+        <div class="nhsuk-card" style="color: #ffffff; background-color: #005eb8; text-align: center">
+            <div class="nhsuk-card__content">
+                <h1 class="nhsuk-card__heading">
+                    Specials dashboard
+                </h1>
+            </div>
+        </div>
+
+        <h2>Submissions</h2>
+        <p>A submission includes adding a new product or a changing an existing product (including stock level updates). You can action new submissions or submissions which have been re-submitted as requiring more information, as well as viewing approved submissions.</p>
+
+<!--        <ul class="nhsuk-grid-row nhsuk-card-group">-->
+
+<!--            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">-->
+
+<!--                <div class="nhsuk-card nhsuk-card&#45;&#45;clickable">-->
+<!--                    <div class="nhsuk-card__content">-->
+<!--                        <h2 class="nhsuk-card__heading nhsuk-heading-m">-->
+<!--                <span class="nhsuk-card__link">-->
+<!--                  <span class="nhsuk-u-font-size-32">19</span>-->
+<!--                  <br>-->
+<!--                  <a class="nhsuk-card__link nhsuk-u-font-size-19 nhsuk-link&#45;&#45;no-visited-state"-->
+<!--                     href="new-submissions/submissions">new or ongoing submissions</a>-->
+<!--                </span>-->
+<!--                        </h2>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </li>-->
+<!--            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">-->
+
+<!--                <div class="nhsuk-card nhsuk-card&#45;&#45;clickable">-->
+<!--                    <div class="nhsuk-card__content">-->
+<!--                        <h2 class="nhsuk-card__heading nhsuk-heading-m">-->
+<!--                <span class="nhsuk-card__link">-->
+<!--                  <span class="nhsuk-u-font-size-32">19</span>-->
+<!--                  <br>-->
+<!--                    <a class="nhsuk-card__link nhsuk-u-font-size-19 nhsuk-link&#45;&#45;no-visited-state"-->
+<!--                       href="complete-submissions/submissions">approved submissions in last 30 days</a>-->
+<!--                </span>-->
+<!--                        </h2>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </li>-->
+<!--            <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">-->
+
+<!--                <div class="nhsuk-card nhsuk-card&#45;&#45;clickable">-->
+<!--                    <div class="nhsuk-card__content">-->
+<!--                        <h2 class="nhsuk-card__heading nhsuk-heading-m">-->
+<!--                <span class="nhsuk-card__link">-->
+<!--                  <span class="nhsuk-u-font-size-32">All</span>-->
+<!--                  <br>-->
+<!--                  <span class="nhsuk-u-font-size-19">-->
+<!--                    <a class="nhsuk-card__link nhsuk-link&#45;&#45;no-visited-state"-->
+<!--                       href="all-submissions/search">select from a date range to view all submissions</a>-->
+<!--                  </span>-->
+<!--                </span>-->
+<!--                        </h2>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </li>-->
+<!--        </ul>-->
+
+<!--        <h2>Product enquiries</h2>-->
+
+<!--        <ul class="nhsuk-grid-row nhsuk-card-group">-->
+
+<!--            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">-->
+<!--                <div class="nhsuk-card nhsuk-card&#45;&#45;clickable">-->
+<!--                    <div class="nhsuk-card__content">-->
+<!--                        <h2 class="nhsuk-card__heading nhsuk-heading-m">-->
+<!--                            <a class="nhsuk-card__link nhsuk-link&#45;&#45;no-visited-state" href="company-directory/directory.html">Special product enquiries</a>-->
+<!--                        </h2>-->
+<!--                        <p class="nhsuk-card__description">View enquiries from companies regarding special products outside their portfolio.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </li>-->
+<!--        </ul>-->
+
+<!--        <h2>Other areas</h2>-->
+
+<!--        <ul class="nhsuk-grid-row nhsuk-card-group">-->
+
+<!--            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">-->
+<!--                <div class="nhsuk-card nhsuk-card&#45;&#45;clickable">-->
+<!--                    <div class="nhsuk-card__content">-->
+<!--                        <h2 class="nhsuk-card__heading nhsuk-heading-m">-->
+<!--                            <a class="nhsuk-card__link nhsuk-link&#45;&#45;no-visited-state" href="company-directory/directory.html">Special products</a>-->
+<!--                        </h2>-->
+<!--                        <p class="nhsuk-card__description">View and search for special products from all registered companies.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </li>-->
+<!--            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">-->
+<!--                <div class="nhsuk-card nhsuk-card&#45;&#45;clickable">-->
+<!--                    <div class="nhsuk-card__content">-->
+<!--                        <h2 class="nhsuk-card__heading nhsuk-heading-m">-->
+<!--                            <a class="nhsuk-card__link nhsuk-link&#45;&#45;no-visited-state" href="#">Manage users</a>-->
+<!--                        </h2>-->
+<!--                        <p class="nhsuk-card__description">Manage users. For example, edit a user's name or update their permissions.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </li>-->
+<!--            <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">-->
+<!--                <div class="nhsuk-card nhsuk-card&#45;&#45;clickable">-->
+<!--                    <div class="nhsuk-card__content">-->
+<!--                        <h2 class="nhsuk-card__heading nhsuk-heading-m">-->
+<!--                            <a class="nhsuk-card__link nhsuk-link&#45;&#45;no-visited-state"-->
+<!--                               href="company-request/new-company-requests.html">New company requests</a>-->
+<!--                        </h2>-->
+<!--                        <p class="nhsuk-card__description">View all company requests.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </li>-->
+<!--        </ul>-->
+
+    </div>
+</div>
+
+{% endblock %}
