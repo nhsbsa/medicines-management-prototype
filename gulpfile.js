@@ -75,7 +75,7 @@ gulp.task('nhs-toolkit-install-js', () => {
 });
 
 gulp.task('nhs-toolkit-install-css', () => {
-  return gulp.src('node_modules/nhsuk-frontend/dist/nhsuk-7.0.0.min.css')
+  return gulp.src('node_modules/nhsuk-frontend/dist/nhsuk-7.0.0.min.css', {"allowEmpty": true})
   .pipe(rename("nhsuk.min.css"))
   .pipe(gulp.dest('./public/css'));
 });
