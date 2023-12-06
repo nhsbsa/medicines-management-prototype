@@ -81,17 +81,17 @@ gulp.task('nhs-toolkit-install-css', () => {
 });
 
 gulp.task('nhs-toolkit-install-favicons', () => {
-  return gulp.src('node_modules/nhsuk-frontend/packages/assets/favicons/*')
+  return gulp.src('node_modules/nhsuk-frontend/packages/assets/favicons/*', {"allowEmpty": true})
   .pipe(gulp.dest('./public/images/favicons/'));
 });
 
 gulp.task('nhs-toolkit-install-icons', () => {
-  return gulp.src('node_modules/nhsuk-frontend/packages/assets/icons/*')
+  return gulp.src('node_modules/nhsuk-frontend/packages/assets/icons/*', {"allowEmpty": true})
   .pipe(gulp.dest('./public/images/icons/'));
 });
 
 gulp.task('nhs-toolkit-install-logos', () => {
-  return gulp.src('node_modules/nhsuk-frontend/packages/assets/logos/*')
+  return gulp.src('node_modules/nhsuk-frontend/packages/assets/logos/*', {"allowEmpty": true})
   .pipe(gulp.dest('./public/images/logos/'));
 });
 
