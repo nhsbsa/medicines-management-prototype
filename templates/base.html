@@ -83,7 +83,7 @@
   {% block navbar %}{% endblock %}
 </header>
 
-<div class="nhsuk-width-container">
+<div class="nhsuk-width-container app-width-container">
   <main id="main-content" role="main" class="nhsuk-main-wrapper">
   {% block content %}{% endblock %}
   </main>
@@ -117,10 +117,6 @@
   <script src="/js/nhsuk.min.js"></script>
   <script src="/js/gov.js"></script>
   <script src="/js/moj.min.js"></script>
-  <script>
-    window.GOVUKFrontend.initAll();
-    window.MOJFrontend.initAll();
-  </script>
 </footer>
 </body>
 </html>
