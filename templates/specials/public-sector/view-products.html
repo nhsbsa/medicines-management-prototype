@@ -5,7 +5,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 {% block content %}
 
 
-<div class="nhsuk-back-link">
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
     <a class="nhsuk-back-link__link" href="dashboard">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
              aria-hidden="true" height="24" width="24">
@@ -19,9 +19,9 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 <!--  View a specials profile product-->
 <!--</span>-->
 
-<h1>View products</h1>
+<h1>Special products</h1>
 
-<p>Special products content from all registered companies</p>
+<p>View special products from all registered NHS manufacturers.</p>
 
 <details class="nhsuk-details nhsuk-u-margin-bottom-9">
     <summary class="nhsuk-details__summary">
@@ -34,7 +34,13 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <label class="nhsuk-label" for="example">
                 Enter a product name
             </label>
-            <input class="nhsuk-input" id="example" name="example" type="text">
+            <input class="nhsuk-input nhsuk-u-margin-bottom-5" id="example" name="example" type="text">
+            <button class="nhsuk-button nhsuk-u-margin-right-4 nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                Search for product
+            </button>
+            <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                Reset search
+            </button>
         </div>
 
         <div class="nhsuk-form-group ">
@@ -94,8 +100,13 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
     </div>
 </details>
 
-<table class="nhsuk-table nhsuk-table-responsive">
-    <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Table of products</caption>
+<div class="nhsuk-body-m flex--space-between" style="display: flex">
+    <div class="nhsuk-u-visually-hidden">Currently viewing</div>
+    <div id="pageAndResultCount">Page 1 of 1 (5 results)</div>
+</div>
+
+<table class="nhsuk-table nhsuk-table-responsive nhsuk-u-margin-bottom-4">
+    <caption class="nhsuk-table__caption">A list of special products from all NHS manufacturers</caption>
     <thead role="rowgroup" class="nhsuk-table__head">
     <tr role="row">
         <th role="columnheader" class="" scope="col">
@@ -170,5 +181,35 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
     </tbody>
 </table>
 
-
+<nav class="govuk-pagination" role="navigation" aria-label="results">
+    <div class="govuk-pagination__prev">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            <span class="govuk-pagination__link-title">Previous</span></a>
+    </div>
+    <ul class="govuk-pagination__list">
+        <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                1
+            </a>
+        </li>
+        <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+                2
+            </a>
+        </li>
+        <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                3
+            </a>
+        </li>
+    </ul>
+    <div class="govuk-pagination__next">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg></a>
+    </div>
+</nav>
 {% endblock %}
