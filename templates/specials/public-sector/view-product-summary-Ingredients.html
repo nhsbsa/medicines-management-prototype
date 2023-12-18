@@ -3,19 +3,24 @@
 Portal dashboard | Medicines Management design prototype | NHSBSA
 {% endblock %}
 {% block content %}
-<div class="grid-row">
-
-    <div class="column-two-thirds">
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+    <a class="nhsuk-back-link__link" href="view-products">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to special products</a>
+</div>
 
 
         <h1>
-            View product Summary
+            General information for Brilliant green and Crystal violet paint
         </h1>
         <h2>Product summary</h2>
 
-        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-8">
 
-            <div class="nhsuk-summary-list__row ">
+            <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                     Product name
                 </dt>
@@ -31,8 +36,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                 <dd class="nhsuk-summary-list__value">
                     Bonneys Blue
                 </dd>
-
-                <dd class="nhsuk-summary-list__actions">
             </div>
 
             <div class="nhsuk-summary-list__row">
@@ -90,15 +93,13 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 
         </dl>
 
-        <hr aria-hidden="true">
-
         <h2>Ingredients</h2>
-        <table class="nhsuk-table">
+        <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
             <caption class="nhsuk-table__caption"></caption>
             <thead role="rowgroup" class="nhsuk-table__head">
             <tr role="row">
                 <th role="columnheader" class="" scope="col">
-                    Ingredients
+                    Ingredient
                 </th>
                 <th role="columnheader" class="" scope="col">
                     Strength
@@ -107,48 +108,47 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             </thead>
             <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Brilliant green</td>
-                <td class="nhsuk-table__cell ">0.5%s</td>
+                <td class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Ingredient </span>
+                    Brilliant green</td>
+                <td class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">Strength </span>
+                    0.5%</td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Crystal violet</td>
-                <td class="nhsuk-table__cell ">0.5%</td>
+                <td class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Ingredient </span>
+                    Crystal violet</td>
+                <td class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">Strength </span>
+                    0.5%</td>
             </tr>
             </tbody>
         </table>
 
 
-        <h2>Route/routes</h2>
-        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+        <h2>Routes</h2>
+<p>The following route is used for this product.</p>
+<ul class="nhsuk-list nhsuk-list--bullet">
+    <li>Topical</li>
+</ul>
 
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key">
-                    Route
-                </dt>
-                <dd class="nhsuk-summary-list__value">
-                    Topical
-                </dd>
-            </div>
-        </dl>
-
-        <hr aria-hidden="true">
-
-        <h2>Summary information</h2>
-        <table class="nhsuk-table">
+<h2 class="nhsuk-u-margin-top-8">NHS Manufacturers offering this product</h2>
+        <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-6">
             <caption class="nhsuk-table__caption"></caption>
             <thead role="rowgroup" class="nhsuk-table__head">
             <tr role="row">
                 <th role="columnheader" class="" scope="col">
-                    NHS Manufacturer name
+                    NHS Manufacturer
                 </th>
                 <th role="columnheader" class="" scope="col">
-                    current availablitiy
+                    Available
                 </th>
                 <th role="columnheader" class="" scope="col">
-                    Shelf life days
+                    Shelf life (SL)
                 </th>
                 <th role="columnheader" class="" scope="col">
-                    validation
+                    SL validation
                 </th>
                 <th role="columnheader" class="" scope="col">
                     Action
@@ -157,32 +157,59 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             </thead>
             <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">East Suffolk and North Essex NHS Foundation trust (ESNEFT)-Colchester and Ipswich Hospital sites</td>
-                <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">Yes</strong></td>
-                <td class="nhsuk-table__cell ">730</td>
-                <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">yes</strong></td>
-                <td class="nhsuk-table__cell " ><a href="view-summary-details-2.html">View</ahref></a></td>
+                <td class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">NHS Manufacturer</span>
+                    East Suffolk and North Essex NHS Foundation trust (ESNEFT)-Colchester and Ipswich Hospital sites</td>
+                <td class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">Available</span>
+                    <strong class="nhsuk-tag nhsuk-tag--green">Yes</strong></td>
+                <td class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">Shelf life (SL)</span>
+                    730 days</td>
+                <td class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">SL validation</span>
+                    <strong class="nhsuk-tag nhsuk-tag--green">Yes</strong></td>
+                <td class="nhsuk-table__cell " >
+                    <span class="nhsuk-table-responsive__heading">Action</span>
+                    <a href="view-summary-details-2.html">View</a></td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Newcastle Specials Pharmacy Production unit-Royal Victoria Infirmary</td>
-                <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">yes</strong></td>
-                <td class="nhsuk-table__cell ">365</td>
-                <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--red">No</strong></td>
-                <td class="nhsuk-table__cell " ><a href="#">View</ahref></a></td>
+                <td class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">NHS Manufacturer</span>
+                    Newcastle Specials Pharmacy Production unit-Royal Victoria Infirmary</td>
+                <td class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">Available</span>
+                    <strong class="nhsuk-tag nhsuk-tag--green">Yes</strong></td>
+                <td class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">Shelf life (SL)</span>
+                    365 days</td>
+                <td class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">SL validation</span>
+                    <strong class="nhsuk-tag nhsuk-tag--red">No</strong></td>
+                <td class="nhsuk-table__cell " >
+                    <span class="nhsuk-table-responsive__heading">Action</span>
+                    <a href="#">View</a></td>
             </tr>
             <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">Northwick park hospital pharmacy technical services</td>
-                <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">Yes</strong></td>
-                <td class="nhsuk-table__cell ">365</td>
-                <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--red">No</strong></td>
-                <td class="nhsuk-table__cell " ><a href="#">View</ahref></a></td>
+                <td class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">NHS Manufacturer</span>
+                    Northwick park hospital pharmacy technical services</td>
+                <td class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">Available</span>
+                    <strong class="nhsuk-tag nhsuk-tag--green">Yes</strong></td>
+                <td class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">Shelf life (SL)</span>
+                    365 days</td>
+                <td class="nhsuk-table__cell ">
+                    <span class="nhsuk-table-responsive__heading">SL validation</span>
+                    <strong class="nhsuk-tag nhsuk-tag--red">No</strong></td>
+                <td class="nhsuk-table__cell " >
+                    <span class="nhsuk-table-responsive__heading">Action</span>
+                    <a href="#">View</a></td>
             </tr>
 
             </tbody>
         </table>
 
-
-    </div>
-</div>
 
 {% endblock %}
