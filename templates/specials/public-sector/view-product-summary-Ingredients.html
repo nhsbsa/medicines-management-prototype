@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% block title %}
+Portal dashboard | Medicines Management design prototype | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="grid-row">
+
+    <div class="column-two-thirds">
+
+
+        <h1>
+            View product Summary
+        </h1>
+        <h2>Product summary</h2>
+
+        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+            <div class="nhsuk-summary-list__row ">
+                <dt class="nhsuk-summary-list__key">
+                    Product name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Brilliant green and Crystal violet paint
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Alternative name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Bonneys Blue
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Category
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Non-sterile
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Form
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Paint
+                </dd>
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    BNF listed
+                </dt>
+                <dd class="nhsuk-summary-list__value"> <strong class="nhsuk-tag nhsuk-tag--red">No</strong>
+
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    BP monograph exists
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <strong class="nhsuk-tag nhsuk-tag--red">No</strong>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Accredited
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <strong class="nhsuk-tag nhsuk-tag--red">No</strong>
+                </dd>
+            </div>
+<!--if accredited is true then show-->
+<!--            <div class="nhsuk-summary-list__row">-->
+<!--                <dt class="nhsuk-summary-list__key">-->
+<!--                    Which accreditation-->
+<!--                </dt>-->
+<!--                <dd class="nhsuk-summary-list__value">-->
+
+<!--                </dd>-->
+<!--            </div>-->
+
+        </dl>
+
+        <hr aria-hidden="true">
+
+        <h2>Ingredients</h2>
+        <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption"></caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                    Ingredients
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Strength
+                </th>
+            </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Brilliant green</td>
+                <td class="nhsuk-table__cell ">0.5%s</td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Crystal violet</td>
+                <td class="nhsuk-table__cell ">0.5%</td>
+            </tr>
+            </tbody>
+        </table>
+
+
+        <h2>Route/routes</h2>
+        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Route
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Topical
+                </dd>
+            </div>
+        </dl>
+
+        <hr aria-hidden="true">
+
+        <h2>Summary information</h2>
+        <table class="nhsuk-table">
+            <caption class="nhsuk-table__caption"></caption>
+            <thead role="rowgroup" class="nhsuk-table__head">
+            <tr role="row">
+                <th role="columnheader" class="" scope="col">
+                    NHS Manufacturer name
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    current availablitiy
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Shelf life days
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    validation
+                </th>
+                <th role="columnheader" class="" scope="col">
+                    Action
+                </th>
+            </tr>
+            </thead>
+            <tbody class="nhsuk-table__body">
+            <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">East Suffolk and North Essex NHS Foundation trust (ESNEFT)-Colchester and Ipswich Hospital sites</td>
+                <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">Yes</strong></td>
+                <td class="nhsuk-table__cell ">730</td>
+                <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">yes</strong></td>
+                <td class="nhsuk-table__cell " ><a href="view-summary-details-2.html">View</ahref></a></td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Newcastle Specials Pharmacy Production unit-Royal Victoria Infirmary</td>
+                <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">yes</strong></td>
+                <td class="nhsuk-table__cell ">365</td>
+                <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--red">No</strong></td>
+                <td class="nhsuk-table__cell " ><a href="#">View</ahref></a></td>
+            </tr>
+            <tr role="row" class="nhsuk-table__row">
+                <td class="nhsuk-table__cell">Northwick park hospital pharmacy technical services</td>
+                <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--green">Yes</strong></td>
+                <td class="nhsuk-table__cell ">365</td>
+                <td class="nhsuk-table__cell "><strong class="nhsuk-tag nhsuk-tag--red">No</strong></td>
+                <td class="nhsuk-table__cell " ><a href="#">View</ahref></a></td>
+            </tr>
+
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+{% endblock %}
