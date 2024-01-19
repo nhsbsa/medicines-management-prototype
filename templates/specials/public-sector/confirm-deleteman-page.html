@@ -4,30 +4,16 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 {% endblock %}
 {% block content %}
 
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
 
-
-
-
-
-<div class="nhsuk-back-link">
-
-    <a class="nhsuk-back-link__link" href="edit-ordering-info.html">
-        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+    <a class="nhsuk-back-link__link" href="nhs-manu-details.html">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
-        Go back to edit ordering contact details</a>
+        Go back to manufacturers details</a>
 </div>
 
-<div class="nhsuk-width-container">
-    <!--    <div class="nhsuk-grid-row">-->
-    <!--        <div class="nhsuk-grid-column-full">-->
-
-    <h1>
-
-    </h1>
-
-
-    <main class="nhsuk-main-wrapper" id="maincontent" role="main">
         <div class="nhsuk-width-container">
 
             <div class="nhsuk-form-group">
@@ -37,7 +23,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
   Barts Pharmaceuticals
 </span>
                         <h1 class="nhsuk-fieldset__heading">
-                            Do you want to delete this manufacturer?
+                            Do you want to remove this manufacturer?
                         </h1>
                     </legend>
 
@@ -49,7 +35,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                                 Yes
                             </label>
                             <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                                This will delete the manufacturer and cannot be undone.
+                                This will remove the manufacturer and cannot be undone.
                             </div>
                         </div>
 
@@ -59,7 +45,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                                 No
                             </label>
                             <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-2-item-hint">
-                                Do not delete this manufacturer and return to edit ordering contact details.
+                                Do not remove this manufacturer and return to Barts Pharmaceuticals.
                             </div>
                         </div>
 
@@ -69,8 +55,5 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <a class="nhsuk-button" href="nhs-manufacturers-directory.html" id="redirectButton"
                onclick="redirectToSelectedPage()">Save and continue</a>
         </div>
-    </main>
-
-</div>
 
 {% endblock %}
