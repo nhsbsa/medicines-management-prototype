@@ -3,7 +3,7 @@
 Portal dashboard | Medicines Management design prototype | NHSBSA
 {% endblock %}
 {% block content %}
-<div class="nhsuk-back-link">
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
 
     <a class="nhsuk-back-link__link" href="nhs-manu-details.html">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -13,18 +13,17 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         Go back to manufacturers details</a>
 </div>
 
-<div class="nhsuk-width-container">
-    <main class="nhsuk-main-wrapper" id="maincontent" role="main">
         <div class="nhsuk-width-container">
 
             <div class="nhsuk-form-group">
                 <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
                         <h1 class="nhsuk-fieldset__heading">
-                            Do you want to change Manufacturer's/importer's licence (MIA) status
+                            <span class="nhsuk-caption-l">
+                                     Barts Pharmaceuticals</span>
+                            Does the manufacturer have a Manufacturer's/Importer's Licence (MIA)?
                         </h1>
                     </legend>
-                    <h2> Select which status the manufacturer currently has</h2>
                     <div class="nhsuk-radios">
 
                         <div class="nhsuk-radios__item">
@@ -34,18 +33,18 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                                 <strong>Yes</strong>
                             </label>
                             <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
-                                The manufacturer has a valid (MIA) licence.
+                                The manufacturer has a valid MIA.
                             </div>
                         </div>
 
                         <div class="nhsuk-radios__item">
                             <input class="nhsuk-radios__input" id="example-hints-2" name="example-hints" type="radio"
-                                   value="no" aria-describedby="example-hints-2-item-hint">
+                                   value="no" aria-describedby="example-hints-2-item-hint" checked="checked">
                             <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
                                 <strong>No</strong>
                             </label>
                             <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-2-item-hint">
-                                The manufacturer <strong>does not</strong> have a valid (MIA) licence.
+                                The manufacturer <strong>does not</strong> have a valid MIA.
                             </div>
                         </div>
 
@@ -53,11 +52,8 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                 </fieldset>
             </div>
 
-            <a class="nhsuk-button" href="#" id="continue-button"
-               onclick="deleteUser()">Save and continue</a>
+            <a class="nhsuk-button" href="nhs-manu-details" id="continue-button">Save and continue</a>
 
-    </main>
-</div>
 
 {% endblock %}
 
