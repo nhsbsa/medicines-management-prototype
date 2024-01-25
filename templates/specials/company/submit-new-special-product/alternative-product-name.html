@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: effective date | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+  <a class="nhsuk-back-link__link" href="product-name">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    <span id="back-link-text">Go back to what is the product name</span></a>
+</div>
+
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-4">
+            <span class="nhsuk-caption-l">
+                Submit a new special product
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+            Do you have an alternative product name?
+          </h1>
+        </legend>
+
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="contact-1" name="alt-prod-name" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+              Yes
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+
+            <div class="nhsuk-form-group">
+              <label class="nhsuk-label" for="alt-prod-name-detail">
+                Alternative product name
+              </label>
+              <input class="nhsuk-input nhsuk-u-width-two-thirds" id="alt-prod-name-detail" name="email" type="text">
+            </div>
+
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="contact-2" name="alt-prod-name" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+    </div>
+
+  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeAltProdName()" href="category" id="continue-button" type="submit">
+    Save and continue
+  </a>
+
+<script>
+  console.log(localStorage);
+
+  var radioButtons = document.getElementsByName("alt-prod-name");
+  let summaryPage = localStorage.getItem("supplier-summary");
+
+   if (radioButtons) {
+    var getSuppName = localStorage.getItem("alt-special-product-advised");
+    var buttonLink = document.getElementById("continue-button");
+    if (getSuppName != null) {
+        for (var radio of radioButtons) {
+            if (getSuppName === radio.value) {
+                radio.checked = true;
+            }
+            if (radio.value == 'yes' && summaryPage != null) {
+                buttonLink.href = "product-summary";
+            }
+        }
+      }
+   };
+
+   var contactName = document.getElementById("alt-prod-name-detail");
+   if (localStorage.getItem("alt-special-product-name")) {
+      contactName.value = localStorage.getItem("alt-special-product-name");
+   }
+
+function storeAltProdName() {
+    var radioButtons = document.getElementsByName("alt-prod-name");
+    var buttonLink = document.getElementById("continue-button");
+
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+            localStorage.setItem("alt-special-product-advised", radio.value);
+            if (radio.value == 'yes') {
+              var contactName = document.getElementById("alt-prod-name-detail");
+              localStorage.setItem("alt-special-product-name", contactName.value);
+            } else if (radio.value == 'no') {
+              localStorage.removeItem("alt-special-product-name");
+            }
+        }
+    }
+}
+</script>
+
+{% endblock %}
