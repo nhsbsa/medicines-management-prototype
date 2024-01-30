@@ -4,30 +4,23 @@
 Submit a new product: spc or Data Sheet | Portal | NHSBSA
 {% endblock %}
 {% block content %}
-<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
-    <a class="nhsuk-back-link__link" href="list-of-users.html">
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+    <a class="nhsuk-back-link__link" href="user-info">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
-        Go back to list of users</a>
+        Go back to user details</a>
 </div>
-<span class="nhsuk-caption-l">
-   John Smith
-</span>
+
 <div class="nhsuk-form-group">
-    <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <fieldset class="nhsuk-fieldset" role="group">
         <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
             <h1 class="nhsuk-fieldset__heading">
                 Edit user information
             </h1>
         </legend>
 
-        <p>Choose to edit one or more elements of this user record. Please note, if you do not submit these changes then any amendments made will not be saved. </p>
-
-        <div class="nhsuk-inset-text">
-            <span class="nhsuk-u-visually-hidden">Information: </span>
-            <p>If you need to remove all access you can <a class="nhsuk-link nhsuk-link--no-visited-state" href="confirm-delete-list-user.html">delete this user from the portal</a>.</p>
-        </div>
+        <p class="nhsuk-u-margin-bottom-6">Choose to edit one or more elements of this user record. Please note, if you do not submit these changes then any amendments made will not be saved. </p>
 
         <dl class="nhsuk-summary-list">
 
@@ -61,6 +54,23 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 
                     <a href="edit-user-last-name.html">
                         Edit<span class="nhsuk-u-visually-hidden"> last name</span>
+                    </a>
+
+                </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Organisation
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    NHSBSA
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="#">
+                        Edit<span class="nhsuk-u-visually-hidden"> organisation</span>
                     </a>
 
                 </dd>
@@ -142,16 +152,8 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
         </dl>
     </fieldset>
 </div>
-<div class="nhsuk-action-link">
-    <a class="nhsuk-action-link__link" href="view-user-activity.html">
-        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
-            <path d="M0 0h24v24H0z" fill="none"></path>
-            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
-        </svg>
-        <span class="nhsuk-action-link__text">View user activity </span>
-    </a>
-</div>
-<a href="../supplier-users" class="nhsuk-button nhsuk-u-margin-right-4"
+
+<a href="user-info" class="nhsuk-button nhsuk-u-margin-right-4"
    id="next"
 >Submit changes
 </a>
