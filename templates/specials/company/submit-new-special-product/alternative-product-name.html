@@ -27,7 +27,7 @@ Submit a new product: effective date | Portal | NHSBSA
         <div class="nhsuk-radios nhsuk-radios--conditional">
 
           <div class="nhsuk-radios__item nhsuk-u-margin-bottom-3">
-            <input class="nhsuk-radios__input" id="contact-1" name="alt-prod-name" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="false">
+            <input class="nhsuk-radios__input" id="contact-1" name="alt-prod-name" type="radio" value="Yes" aria-controls="conditional-contact-1" aria-expanded="false">
             <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
               Yes
             </label>
@@ -45,7 +45,7 @@ Submit a new product: effective date | Portal | NHSBSA
           </div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="contact-2" name="alt-prod-name" type="radio" value="no" aria-controls="conditional-contact-2" aria-expanded="false">
+            <input class="nhsuk-radios__input" id="contact-2" name="alt-prod-name" type="radio" value="No" aria-controls="conditional-contact-2" aria-expanded="false">
             <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
               No
             </label>
@@ -92,10 +92,10 @@ function storeAltProdName() {
     for (var radio of radioButtons) {
         if (radio.checked) {
             localStorage.setItem("alt-special-product-advised", radio.value);
-            if (radio.value == 'yes') {
+            if (radio.value == 'Yes') {
               var contactName = document.getElementById("alt-prod-name-detail");
               localStorage.setItem("alt-special-product-name", contactName.value);
-            } else if (radio.value == 'no') {
+            } else if (radio.value == 'No') {
               localStorage.removeItem("alt-special-product-name");
             }
         }
