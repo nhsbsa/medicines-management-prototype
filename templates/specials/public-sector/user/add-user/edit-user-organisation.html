@@ -20,7 +20,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
                 <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
                     <h1 class="nhsuk-fieldset__heading">
-                        Add the role of the user?
+                        Add the organisation of the user?
                     </h1>
                 </legend>
                 <div class="nhsuk-hint nhsuk-u-margin-bottom-5" id="data-sheet-hint">
@@ -33,15 +33,23 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                         <input class="nhsuk-radios__input" id="no-longer-manufactured" name="data-spc" type="radio"
                                value="admin"/>
                         <label class="nhsuk-label nhsuk-radios__label" for="no-longer-manufactured">
-                            Administrator
+                            NHSBSA
                         </label>
                     </div>
 
-                    <div class="nhsuk-radios__item">
+                    <div class="nhsuk-radios__item nhsuk-u-margin-bottom-5">
                         <input class="nhsuk-radios__input" id="temporarily-out-of-stock" name="data-spc" type="radio"
                                value="user"/>
                         <label class="nhsuk-label nhsuk-radios__label" for="temporarily-out-of-stock">
-                            User
+                            NHSE
+                        </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item nhsuk-u-margin-bottom-5">
+                        <input class="nhsuk-radios__input" id="no-longer-manufactured" name="data-spc" type="radio"
+                               value="admin"/>
+                        <label class="nhsuk-label nhsuk-radios__label" for="no-longer-manufactured">
+                            DHSC
                         </label>
                     </div>
 
@@ -49,9 +57,8 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             </fieldset>
         </div>
 
-        <a href="add-user-status.html" class="nhsuk-button nhsuk-u-margin-top-3"
+        <a href="add-user-role.html" class="nhsuk-button nhsuk-u-margin-top-3"
            value="Continue"
-           id="next"
         >Save change and review
         </a>
 

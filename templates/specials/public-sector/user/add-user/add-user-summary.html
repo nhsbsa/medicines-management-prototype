@@ -5,7 +5,7 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
-    <a class="nhsuk-back-link__link" href="user-info">
+    <a class="nhsuk-back-link__link" href="../user-info">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
@@ -15,12 +15,11 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 <div class="nhsuk-form-group">
     <fieldset class="nhsuk-fieldset" role="group">
         <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
-            <h1 class="nhsuk-fieldset__heading">
-                Edit user information
+            <h1 class="nhsuk-fieldset__heading">Summary of user information
             </h1>
         </legend>
 
-        <p class="nhsuk-u-margin-bottom-6">Choose to edit one or more elements of this user record. Please note, if you do not submit these changes then any amendments made will not be saved. </p>
+        <p class="nhsuk-u-margin-bottom-6">Check to confirm you have added the correct details. you can edit an entry if required at this point. Please note, if you do not save user details then any amendments made will not be saved. </p>
 
         <dl class="nhsuk-summary-list">
 
@@ -29,12 +28,12 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
                     First name
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                    John
+                    Joe
                 </dd>
 
                 <dd class="nhsuk-summary-list__actions">
 
-                    <a href="edit-user-name.html">
+                    <a href="../edit-user-name.html">
                         Edit<span class="nhsuk-u-visually-hidden"> first name</span>
                     </a>
 
@@ -47,35 +46,37 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
                     Last name
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                    Smith
+                    Bloggs
                 </dd>
 
                 <dd class="nhsuk-summary-list__actions">
 
-                    <a href="edit-user-last-name.html">
+                    <a href="../edit-user-last-name.html">
                         Edit<span class="nhsuk-u-visually-hidden"> last name</span>
                     </a>
 
                 </dd>
 
             </div>
+
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                    Organisation
+                    Email
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                    NHSBSA
+                    joe.bloggs@dhsc.net
                 </dd>
 
                 <dd class="nhsuk-summary-list__actions">
 
-                    <a href="add-user/edit-user-organisation.html">
-                        Edit<span class="nhsuk-u-visually-hidden"> organisation</span>
+                    <a href="../edit-user-email.html">
+                        Edit<span class="nhsuk-u-visually-hidden"> email</span>
                     </a>
 
                 </dd>
 
             </div>
+
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                     Telephone
@@ -86,25 +87,26 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 
                 <dd class="nhsuk-summary-list__actions">
 
-                    <a href="edit-user-telephone.html">
+                    <a href="../edit-user-telephone.html">
                         Edit<span class="nhsuk-u-visually-hidden">Telephone number</span>
                     </a>
 
                 </dd>
 
             </div>
+
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
-                    Email
+                    Organisation
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                    johnsmith@nhs.net
+                    DHSC
                 </dd>
 
                 <dd class="nhsuk-summary-list__actions">
 
-                    <a href="edit-user-email.html">
-                        Edit<span class="nhsuk-u-visually-hidden"> email</span>
+                    <a href="../add-user/edit-user-organisation.html">
+                        Edit<span class="nhsuk-u-visually-hidden"> organisation</span>
                     </a>
 
                 </dd>
@@ -116,18 +118,19 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
                     Role
                 </dt>
                 <dd class="nhsuk-summary-list__value">
-                    <p>Administrator</p>
+                    <p>User</p>
                 </dd>
 
                 <dd class="nhsuk-summary-list__actions">
 
-                    <a href="edit-user-role.html">
+                    <a href="../edit-user-role.html">
                         Edit<span class="nhsuk-u-visually-hidden"> role</span>
                     </a>
 
                 </dd>
 
             </div>
+
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key">
                     Account status
@@ -141,7 +144,7 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 
                 <dd class="nhsuk-summary-list__actions">
 
-                    <a class="nhsuk-link" href="edit-user-account-status.html" id="account-status-action">
+                    <a class="nhsuk-link" href="../edit-user-account-status.html" id="account-status-action">
                         Edit<span class="nhsuk-u-visually-hidden"> account status</span>
                     </a>
 
@@ -153,9 +156,9 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
     </fieldset>
 </div>
 
-<a href="user-info" class="nhsuk-button nhsuk-u-margin-right-4"
+<a href="../new-user-added-list.html" class="nhsuk-button nhsuk-u-margin-right-4"
    id="next"
->Submit changes
+>Save user details
 </a>
 
 <script>

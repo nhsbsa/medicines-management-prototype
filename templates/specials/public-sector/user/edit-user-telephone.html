@@ -11,17 +11,52 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </svg>
         Go back to edit list of users</a>
 </div>
-
-<h1>
-    Edit user telephone number
-</h1>
-
 <div class="nhsuk-form-group">
-    <label class="nhsuk-label" for="input-width-20">
-        Telephone number
-    </label>
-    <input class="nhsuk-input nhsuk-input--width-20 nhsuk-u-margin-bottom-4" id="input-width-20" name="test-width-20" type="text" value="Currently no number recorded ">
+
+    <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+            <h1 class="nhsuk-fieldset__heading">
+                Does the user have a telephone number
+            </h1>
+        </legend>
+
+        <div class="nhsuk-hint nhsuk-u-margin-bottom-5" id="contact-hint ">
+            Select one option
+        </div>
+
+        <div class="nhsuk-radios nhsuk-radios--conditional">
+
+            <div class="nhsuk-radios__item nhsuk-u-margin-bottom-5">
+                <input class="nhsuk-radios__input" id="contact-1" name="contact" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="false">
+                <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                    Yes
+                </label>
+            </div>
+
+            <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+
+                <div class="nhsuk-form-group nhsuk-u-margin-bottom-5">
+                    <label class="nhsuk-label" for="email">
+                        Add telephone number
+                    </label>
+                    <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+                </div>
+
+            </div>
+
+            <div class="nhsuk-radios__item nhsuk-u-margin-bottom-5">
+                <input class="nhsuk-radios__input" name="data-spc" type="radio"
+                       value="no"/>
+                <label class="nhsuk-label nhsuk-radios__label" for="no-longer-manufactured">
+                    No
+                </label>
+            </div>
+
+        </div>
+    </fieldset>
+
 </div>
+
 
 <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="edit-list-of-users.html">
     Save and continue
