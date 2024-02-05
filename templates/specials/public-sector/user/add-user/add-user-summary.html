@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: spc or Data Sheet | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+
+    <a class="nhsuk-back-link__link" href="add-user-status.html ">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to what is the status of the user</a>
+</div>
+
+
+<div class="nhsuk-form-group">
+    <fieldset class="nhsuk-fieldset" role="group">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+            <h1 class="nhsuk-fieldset__heading"><span class="nhsuk-caption-l">
+    Add new user account
+  <span class="nhsuk-u-visually-hidden"> - </span>
+</span>Review new user account
+            </h1>
+        </legend>
+
+        <p class="nhsuk-u-margin-bottom-6">Before saving the new user account, check you have added the correct details. </p>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    First name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Joe
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="edit-new-user-name.html">
+                        Edit<span class="nhsuk-u-visually-hidden"> first name</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Last name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Bloggs
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+
+                        Edit<span class="nhsuk-u-visually-hidden"> last name</span>
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Email
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    joe.bloggs@dhsc.net
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                        Edit<span class="nhsuk-u-visually-hidden"> email</span>
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Telephone
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Currently no number recorded
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                        Edit<span class="nhsuk-u-visually-hidden">Telephone number</span>
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Organisation
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    DHSC
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                        Edit<span class="nhsuk-u-visually-hidden"> organisation</span>
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Role
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <p>User</p>
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                        Edit<span class="nhsuk-u-visually-hidden"> role</span>
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Account status
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <strong class="nhsuk-tag nhsuk-tag--white
+" id="account-status-tag">
+                        Active
+                    </strong>
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+
+                        Edit<span class="nhsuk-u-visually-hidden"> account status</span>
+
+                </dd>
+
+            </div>
+
+        </dl>
+    </fieldset>
+</div>
+
+<p class="nhsuk-u-margin-bottom-6">If you no longer require this new user, you can <a href="../list-of-users.html">exit to the user accounts with saving</a></p>
+
+<a href="../new-user-added-list.html" class="nhsuk-button nhsuk-u-margin-right-4"
+   id="next"
+>Save user account
+</a>
+
+<script>
+  // console.log(localStorage);
+  //
+  // let twoFATag = document.getElementById("2fa-tag");
+  // let twoFAAction = document.getElementById("2fa-action");
+  // let twoFANoAction = document.getElementById("2fa-no-action");
+  // let twoFADeactivated = localStorage.getItem("2fa-deactivated")
+  //
+  // if (twoFADeactivated == 'yes') {
+  // twoFATag.className = "nhsuk-tag nhsuk-tag--blue";
+  // twoFATag.innerHTML = "Requires set up";
+  // twoFAAction.style.display = "none";
+  // twoFANoAction.style.display = "block";
+  // } else if (twoFADeactivated == 'no' || !twoFADeactivated) {
+  // twoFATag.className = "nhsuk-tag nhsuk-tag--green";
+  // twoFATag.innerHTML = "Activated";
+  // twoFAAction.style.display = "block";
+  // twoFANoAction.style.display = "none";
+  // }
+  //
+  // let accountStatusTag = document.getElementById("account-status-tag");
+  // let accountStatusAction = document.getElementById("account-status-action");
+  // let accountStatusDeactivated = localStorage.getItem("account-deactivated")
+  // let accountStatusActivated = localStorage.getItem("account-activated")
+  //
+  // if (accountStatusDeactivated == 'yes' || accountStatusActivated == 'no') {
+  // accountStatusTag.className = "nhsuk-tag nhsuk-tag--grey";
+  // accountStatusTag.innerHTML = "Inactive";
+  // }
+  // if (accountStatusDeactivated == 'no' || accountStatusActivated == 'yes') {
+  // accountStatusTag.className = "nhsuk-tag nhsuk-tag--white";
+  // accountStatusTag.innerHTML = "Active";
+  // }
+
+</script>
+
+{% endblock %}
+
+
