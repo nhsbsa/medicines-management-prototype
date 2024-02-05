@@ -11,22 +11,21 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
              aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
-        Go back to user details</a>
+        Go back to user account</a>
 </div>
-
-<div class="nhsuk-width-container">
-    <!--    <div class="nhsuk-grid-row">-->
-    <!--        <div class="nhsuk-grid-column-full">-->
-    <span class="nhsuk-caption-l">
-  Manage users
-</span>
-<!--    this is a place holder for future further development once agreed -->
+<!--    this is a placeholder for future further development once agreed -->
 
 
 
     <h1>
-        View user activity
+        User activity
     </h1>
+
+<div class="nhsuk-body-m flex--space-between" style="display: flex">
+    <div class="nhsuk-u-visually-hidden">Currently viewing</div>
+    <div id="pageAndResultCount">Page 1 of 1 (2 results)</div>
+</div>
+
     <table class="nhsuk-table nhsuk-table-responsive nhsuk-u-margin-bottom-5">
         <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of users for specials profile replacement
         </caption>
@@ -59,7 +58,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             </td>
             <td class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Activity</span>
-                <strong class="nhsuk-tag nhsuk-tag--orange" id="account-status-tag">Data modification</strong></td>
+                <strong class="nhsuk-tag nhsuk-tag--orange" id="account-status-tag-1">Data modification</strong></td>
             <td class="nhsuk-table__cell ">
                 <span class="nhsuk-table-responsive__heading">IP address</span> 192.158.1.38
             </td>
@@ -79,7 +78,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             </td>
             <td class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Activity</span>
-                <strong class="nhsuk-tag nhsuk-tag--blue" id="account-status-tag">profile update</strong></td>
+                <strong class="nhsuk-tag nhsuk-tag--blue" id="account-status-tag-2">profile update</strong></td>
             <td class="nhsuk-table__cell ">
                 <span class="nhsuk-table-responsive__heading">IP address</span> 192.158.1.38
             </td>
@@ -92,8 +91,5 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </tr>
         </tbody>
     </table>
-
-</div>
-
 
 {% endblock %}
