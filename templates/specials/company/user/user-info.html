@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: spc or Data Sheet | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+    <a class="nhsuk-back-link__link" href="list-of-users.html">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to user accounts</a>
+</div>
+
+<div class="nhsuk-form-group">
+    <fieldset class="nhsuk-fieldset" role="group">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+            <h1 class="nhsuk-fieldset__heading">
+                User account
+            </h1>
+        </legend>
+
+        <h2>User information</h2>
+
+        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    First name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    John
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Last name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Smith
+                </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Department
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Technical queries
+                </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Email
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    john.smith@example.com
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Telephone
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    02088692295
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Role
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <p>Administrator</p>
+                </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Account status
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <strong class="nhsuk-tag nhsuk-tag--white
+" id="account-status-tag">
+                        Active
+                    </strong>
+                </dd>
+            </div>
+
+        </dl>
+    </fieldset>
+</div>
+
+<h2>Actions</h2>
+
+<ul class="nhsuk-list nhsuk-u-margin-bottom-6">
+    <li><a class="nhsuk-link nhsuk-link--no-visited-state" href="edit-list-of-users">Edit user information</a></li>
+    <li><a class="nhsuk-link nhsuk-link--no-visited-state" href="confirm-delete-list-user.html">Remove user</a></li>
+    <li><a class="nhsuk-link nhsuk-link--no-visited-state" href="view-user-activity.html">View user activity</a></li>
+</ul>
+
+<!--<div class="nhsuk-inset-text nhsuk-u-margin-top-0">-->
+<!--    <span class="nhsuk-u-visually-hidden">Information: </span>-->
+<!--    <p>If you need to remove all access you can <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="confirm-delete-list-user.html">delete this user from the portal</a>.</p>-->
+<!--    <p>If you need to change any of the user information you can <a href="edit-list-of-users">edit the user</a></p>-->
+<!--</div>-->
+
+<!--<div class="nhsuk-action-link">-->
+<!--    <a class="nhsuk-action-link__link" href="view-user-activity.html">-->
+<!--        <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">-->
+<!--            <path d="M0 0h24v24H0z" fill="none"></path>-->
+<!--            <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>-->
+<!--        </svg>-->
+<!--        <span class="nhsuk-action-link__text">View user activity </span>-->
+<!--    </a>-->
+<!--</div>-->
+
+
+{% endblock %}
+
+
