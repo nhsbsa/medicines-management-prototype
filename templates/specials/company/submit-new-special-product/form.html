@@ -50,7 +50,7 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
 </div>
 
 <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeForm()"
-   href="#" id="continue-button"
+   href="accreditation" id="continue-button"
    type="submit">
   Save and continue
 </a>
@@ -83,7 +83,7 @@ accessibleAutocomplete.enhanceSelectElement({
 function storeForm() {
 
         var prodForm = document.getElementById("product-form");
-        localStorage.setItem("product-form", prodForm.value);
+        localStorage.setItem("special-product-form", prodForm.value);
 
         console.log(localStorage);
 
