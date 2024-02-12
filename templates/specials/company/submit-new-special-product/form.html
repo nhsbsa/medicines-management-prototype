@@ -26,7 +26,6 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
     <label class="nhsuk-label" for="product-form">
       Form
     </label>
-
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-uom-hint">
       If the form required is not found, choose 'Other' and continue to the next stage to capture this.
     </div>
@@ -42,7 +41,7 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
       <option value="Nasal Powder">Nasal Powder</option>
       <option value="Oral Liquid - Suspension">Oral Liquid - Suspension</option>
       <option value="Solution">Solution</option>
-      <option value="other">Other</option>
+      <option value="Other">Other</option>
     </select>
 
 
@@ -87,10 +86,10 @@ function storeForm() {
 
         console.log(localStorage);
 
-        if (prodForm.value == "Other") {
+        if (prodForm.value === "Other") {
             document.getElementById("continue-button").setAttribute('href', "form-other");
         }
-    };
+    }
 
 
 </script>
