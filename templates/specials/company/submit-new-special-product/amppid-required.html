@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: effective date | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+  <a class="nhsuk-back-link__link" href="add-gtin">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    <span id="back-link-text">Go back to add GTIN</span></a>
+</div>
+
+<div class="nhsuk-form-group">
+  <div class="nhsuk-form-group">
+
+    <fieldset class="nhsuk-fieldset ">
+      <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
+        <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-5"><span class="nhsuk-caption-l">
+                Submit a new special product
+              <span class="nhsuk-u-visually-hidden  "> - </span>
+            </span>
+          Do you want to add an actual medical product pack identity (AMPPID) ?
+        </h1>
+      </legend>
+
+      <div class="nhsuk-radios">
+
+        <div class="nhsuk-radios__item nhsuk-u-margin-bottom-5">
+          <input class="nhsuk-radios__input" id="yesRadio" name="agree" type="radio" value="yes">
+          <label class="nhsuk-label nhsuk-radios__label" for="yesRadio">
+            Yes i would like to add a AMPPID
+          </label>
+        </div>
+
+        <div class="nhsuk-radios__item">
+          <input class="nhsuk-radios__input" id="noRadio" name="agree" type="radio" value="no">
+          <label class="nhsuk-label nhsuk-radios__label" for="noRadio">
+            No I dont want to add a AMPPID
+          </label>
+        </div>
+
+      </div>
+    </fieldset>
+
+  </div>
+
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-5" onclick="goToPage()"   id="continue-button" type="submit">
+  Submit
+</a>
+
+<script>
+   function goToPage() {
+    var yesRadio = document.getElementById("yesRadio");
+    var noRadio = document.getElementById("noRadio");
+
+    if (yesRadio.checked) {
+      window.location.href = "add-amppid.html";
+    } else if (noRadio.checked) {
+      window.location.href = "add-container-summary.html";
+
+    }
+  }
+</script>
+
+{% endblock %}
