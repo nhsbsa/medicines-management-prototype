@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Add market authorisation (MA) number | Submit a product change: market authorisation number | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+  <a class="nhsuk-back-link__link" href="require-ingredient">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    <span id="back-link-text">Go back to do you need to add ingredients to the product</span></a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-uom-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading"><span class="nhsuk-caption-l">
+                Submit a new special product
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        What is the ingredient name?
+      </h1>
+    </legend>
+
+    <label class="nhsuk-label" for="product-ingredient">
+      Ingredient name
+    </label>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-uom-hint">
+      If the ingredient required is not found, choose 'Other' and continue to the next stage to capture this.
+    </div>
+
+    <select class="nhsuk-select" id="product-ingredient" name="type">
+      <option value=""></option>
+      <option value="Acetone">Acetone</option>
+      <option value="Benzylpenicillin sodium">Benzylpenicillin sodium</option>
+      <option value="Bupivacaine hydrochloride">Bupivacaine hydrochloride</option>
+      <option value="Diphenylcyclopropenone">Diphenylcyclopropenone</option>
+      <option value="Hypromellose">Hypromellose</option>
+      <option value="Keltrol">Keltrol</option>
+      <option value="Methacholine chloride">Methacholine chloride</option>
+      <option value="Prednisolone Sodium Phosphate">Prednisolone Sodium Phosphate</option>
+      <option value="Salicylic Acid BP">Salicylic Acid BP</option>
+      <option value="Sodium Chloride">Sodium Chloride</option>
+      <option value="White Soft Paraffin">White Soft Paraffin</option>
+      <option value="Zinc Sulfate">Zinc Sulfate</option>
+      <option value="Other">Other</option>
+    </select>
+
+
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeIngredient()"
+   href="require-ingredient-strength" id="continue-button"
+   type="submit">
+  Save and continue
+</a>
+
+<script src="/js/gov.min.js"></script>
+
+<script>
+console.log(localStorage);
+
+let allSelectIds = document.querySelectorAll('select[id]');
+let allInputIds = document.querySelectorAll('input[id]');
+
+
+accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: "",
+            autoselect: true,
+            showAllValues: true,
+            confirmOnBlur: false,
+            showNoOptionsFound: true,
+            selectElement: document.querySelector("#product-ingredient"),
+        });
+
+        let parentDiv = document.querySelector("#product-ingredient").parentNode;
+        let newLabel = document.createElement("label");
+        newLabel.innerHTML = "Ingredient";
+        newLabel.style.display = "none";
+        newLabel.setAttribute("for", document.querySelector("#product-ingredient-select").id);
+        parentDiv.appendChild(newLabel);
+
+function storeIngredient() {
+
+        var prodIngredient = document.getElementById("product-ingredient");
+        localStorage.setItem("special-product-ingredient", prodIngredient.value);
+
+        console.log(localStorage);
+
+        if (prodIngredient.value === "Other") {
+            document.getElementById("continue-button").setAttribute('href', "ingredient-other");
+        }
+    }
+
+
+</script>
+{% endblock %}

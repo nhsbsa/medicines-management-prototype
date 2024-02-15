@@ -44,7 +44,7 @@ Submit a new product: effective date | Portal | NHSBSA
 
     </div>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeRequireIngredient()" href="#" id="continue-button" type="submit">
+  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeRequireIngredient()" href="ingredient-name" id="continue-button" type="submit">
     Save and continue
   </a>
 
@@ -64,10 +64,12 @@ Submit a new product: effective date | Portal | NHSBSA
             }
             if (radio.value === 'Yes' && summaryPage != null) {
                 buttonLink.href = "product-summary";
+            } else if (radio.value === 'No') {
+              buttonLink.href = "product-routes";
             }
         }
       }
-   };
+   }
 
 function storeRequireIngredient() {
     var radioButtons = document.getElementsByName("require-ingredient");
@@ -77,7 +79,7 @@ function storeRequireIngredient() {
         if (radio.checked) {
             localStorage.setItem("special-product-require-ingredient", radio.value);
             if (radio.value === 'Yes') {
-              buttonLink.href = "ingredient-details";
+              buttonLink.href = "ingredient-name";
             }
         }
     }
