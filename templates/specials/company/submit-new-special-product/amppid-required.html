@@ -47,20 +47,23 @@ Submit a new product: effective date | Portal | NHSBSA
 
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-5" onclick="goToPage()"   id="continue-button" type="submit">
+<a class="nhsuk-button nhsuk-u-margin-top-5" onclick="amppidRequired()"
+   id="continue-button" type="submit">
   Save and continue
 </a>
 
 <script>
-   function goToPage() {
+  console.log(localStorage);
+  function amppidRequired() {
     var yesRadio = document.getElementById("yesRadio");
     var noRadio = document.getElementById("noRadio");
 
     if (yesRadio.checked) {
-      window.location.href = "add-amppid.html";
+      localStorage.setItem("special-product-amppid-required", "yes");
+      document.getElementById("continue-button").href = "add-amppid.html";
     } else if (noRadio.checked) {
-      window.location.href = "add-container-summary.html";
-
+      localStorage.setItem("special-product-amppid-required", "no");
+      document.getElementById("continue-button").href = "add-container-summary.html";
     }
   }
 </script>

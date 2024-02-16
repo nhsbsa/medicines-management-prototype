@@ -35,7 +35,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeForm()"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storePackQuantity()"
    href="gtin-required" id="continue-button"
    type="submit">
   Save and continue
@@ -43,9 +43,10 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
 <script>
 
-  function storeLicensedRoute() {
-        var licRoute = document.getElementById("product-form");
-        localStorage.setItem("product-form", licRoute.value);
-    };
+  function storePackQuantity() {
+        var packQuantity = document.getElementById("pack-quantity");
+        localStorage.setItem("special-product-pack-quantity", packQuantity.value);
+    }
+
 </script>
 {% endblock %}
