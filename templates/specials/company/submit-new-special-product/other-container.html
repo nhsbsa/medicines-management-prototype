@@ -24,25 +24,25 @@ Submit a new product: pack size and strength | Portal | NHSBSA
     </legend>
 
 
-    <label class="nhsuk-label" for="product-form">
+    <label class="nhsuk-label" for="container-other">
       New container name
     </label>
-    <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="product-form" name="size" type="text">
+    <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="container-other" name="size" type="text">
 
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeForm()"
-   href="container-pack-size-strength" id="continue-button"
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storePackOther()"
+   href="pack-quantity" id="continue-button"
    type="submit">
   Save and continue
 </a>
 
 <script>
 
-  function storeLicensedRoute() {
-        var licRoute = document.getElementById("product-form");
-        localStorage.setItem("product-form", licRoute.value);
-    };
+  function storePackOther() {
+        var packOther = document.getElementById("container-other");
+        localStorage.setItem("special-product-pack-type", packOther.value);
+    }
 </script>
 {% endblock %}

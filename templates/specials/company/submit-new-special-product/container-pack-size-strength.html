@@ -96,9 +96,35 @@ accessibleAutocomplete.enhanceSelectElement({
         parentDiv.appendChild(newLabel);
 
 
+var packTy = document.querySelector("#pack-type");
+
+
+  var getPackSize = localStorage.getItem("special-product-pack-size");
+
+  var packSi = document.querySelector("#pack-size");
+  if (getPackSize != null) {
+    packSi.defaultValue = getPackSize;
+  }
+
+  var getPackType = localStorage.getItem("special-product-pack-type");
+
+  if (getPackType != null) {
+    packTy.value = getPackType;
+  }
+
+  function storeSizeAndStrength() {
+    var packSize = document.getElementById("pack-size");
+    localStorage.setItem("special-product-pack-size", packSize.value);
+
+    var packType = document.getElementById("pack-type");
+    localStorage.setItem("special-product-pack-type", packType.value);
+
+    if (packType.value === "other") {
+      document.getElementById("continue-button").setAttribute('href', "other-container");
+    }
+  }
+
 
 </script>
-
-<script src="/js/newProduct.js"></script>
 
 {% endblock %}
