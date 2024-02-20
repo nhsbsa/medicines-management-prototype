@@ -577,3 +577,34 @@ fill-blue{
   word-break: break-all;
 }
 
+.nhsuk-input__suffix {
+    font-weight: 400;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+    background-color: #d8dde0;
+    border: 2px solid #4c6272;
+    box-sizing: border-box;
+    cursor: default;
+    display: inline-block;
+    flex: 0 0 auto;
+    height: 40px;
+    min-width: 2.5rem;
+    padding: 4px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+@media (min-width: 40.0625em) {
+    .nhsuk-input__suffix {
+        font-size: 19px;
+        font-size: 1.1875rem;
+        line-height: 1.47368;
+    }
+}
+
+@media (min-width: 20em) {
+    .nhsuk-input__suffix {
+        border-left: 0;
+    }
+}
