@@ -64,8 +64,6 @@ Submit a new product: effective date | Portal | NHSBSA
             }
             if (radio.value === 'Yes' && summaryPage != null) {
                 buttonLink.href = "product-summary";
-            } else if (radio.value === 'No') {
-              buttonLink.href = "product-routes";
             }
         }
       }
@@ -80,6 +78,8 @@ function storeRequireIngredient() {
             localStorage.setItem("special-product-require-ingredient", radio.value);
             if (radio.value === 'Yes') {
               buttonLink.href = "ingredient-name";
+            } else if (radio.value === 'No') {
+              buttonLink.href = "../excipient/excipient-required";
             }
         }
     }
