@@ -19,18 +19,18 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
                 Submit a new special product
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        What is the excipient?
+        What is the excipient name?
       </h1>
     </legend>
 
-    <label class="nhsuk-label" for="product-form">
+    <label class="nhsuk-label" for="product-excipient">
       Excipient
     </label>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-uom-hint">
-      If the excipients required is not found, choose 'Other' and continue to the next stage to capture this.
+      If the excipient required is not found, choose 'Other' and continue to the next stage to capture this.
     </div>
 
-    <select class="nhsuk-select" id="product-form" name="type">
+    <select class="nhsuk-select" id="product-excipient" name="type">
       <option value=""></option>
       <option value="Other">Other</option>
       <option value="Benzalkonium Chloride">Benzalkonium Chloride</option>
@@ -52,7 +52,7 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeForm()"
+<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeExcipient()"
    href="manage-excipients.html" id="continue-button"
    type="submit">
   Save and continue
@@ -73,24 +73,24 @@ accessibleAutocomplete.enhanceSelectElement({
             showAllValues: true,
             confirmOnBlur: false,
             showNoOptionsFound: true,
-            selectElement: document.querySelector("#product-form"),
+            selectElement: document.querySelector("#product-excipient"),
         });
 
-        let parentDiv = document.querySelector("#product-form").parentNode;
+        let parentDiv = document.querySelector("#product-excipient").parentNode;
         let newLabel = document.createElement("label");
         newLabel.innerHTML = "Form";
         newLabel.style.display = "none";
-        newLabel.setAttribute("for", document.querySelector("#product-form-select").id);
+        newLabel.setAttribute("for", document.querySelector("#product-excipient-select").id);
         parentDiv.appendChild(newLabel);
 
-function storeForm() {
+function storeExcipient() {
 
-        var prodForm = document.getElementById("product-form");
-        localStorage.setItem("product-form", prodForm.value);
+        var prodExcipient = document.getElementById("product-excipient");
+        localStorage.setItem("special-product-excipient", prodExcipient.value);
 
         console.log(localStorage);
 
-        if (prodForm.value === "Other") {
+        if (prodExcipient.value === "Other") {
             document.getElementById("continue-button").setAttribute('href', "excipient-other.html");
         }
     }

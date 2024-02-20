@@ -29,14 +29,14 @@ Submit a new product: effective date | Portal | NHSBSA
           <div class="nhsuk-radios__item nhsuk-u-margin-bottom-5">
             <input class="nhsuk-radios__input" id="yes" name="choose-yes" type="radio" value="yes">
             <label class="nhsuk-label nhsuk-radios__label" for="yes">
-              Yes. i want to add an excipient.
+              Yes, I want to add an excipient.
             </label>
           </div>
 
           <div class="nhsuk-radios__item">
             <input class="nhsuk-radios__input" id="no" name="choose-yes" type="radio" value="yes">
             <label class="nhsuk-label nhsuk-radios__label" for="no">
-              No. I dont want to add an excipient.
+              No, I do not want to add an excipient.
             </label>
           </div>
 
@@ -46,7 +46,7 @@ Submit a new product: effective date | Portal | NHSBSA
     </div>
 
   <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="redirectToSelectedPage()" href="#" id="continue-button" type="submit">
-    Continue
+    Save and continue
   </a>
 
 <script>
@@ -56,12 +56,11 @@ Submit a new product: effective date | Portal | NHSBSA
 
         function redirectToSelectedPage() {
             if (link1Radio.checked) {
-                window.location.href = "choose-excipient.html";
+                document.getElementById("continue-button").href = "choose-excipient.html";
             } else if (link2Radio.checked) {
                 window.location.href = "#";
             }
         }
-
 
 </script>
 
