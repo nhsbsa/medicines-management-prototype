@@ -48,5 +48,18 @@ Submit a new product: pack size and strength | Portal | NHSBSA
         localStorage.setItem("special-product-pack-quantity", packQuantity.value);
     }
 
+  var summaryPage = localStorage.getItem("summary-page");
+  var getPackQuantity = localStorage.getItem("special-product-pack-quantity");
+  var packQuantity = document.querySelector("#pack-quantity");
+
+  if (packQuantity != null) {
+    if (getPackQuantity != null) {
+      packQuantity.defaultValue = getPackQuantity;
+    }
+    if (getPackQuantity != null && summaryPage != null) {
+      document.getElementById("continue-button").href = "product-summary";
+    }
+  }
+
 </script>
 {% endblock %}

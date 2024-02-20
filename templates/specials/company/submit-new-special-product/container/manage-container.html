@@ -4,11 +4,11 @@ Submit a new product: name | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
-    <a class="nhsuk-back-link__link" href="check-list">
+    <a class="nhsuk-back-link__link" href="../accreditation.html">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
-        Go back to checklist</a>
+        Go back to does the product have an accreditation</a>
 </div>
 
 <div class="nhsuk-form-group">
@@ -19,7 +19,7 @@ Submit a new product: name | Portal | NHSBSA
                 Submit a new special product
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-                Manage Containers
+                Containers
             </h1>
         </legend>
 
@@ -38,26 +38,5 @@ Submit a new product: name | Portal | NHSBSA
         <span class="nhsuk-action-link__text">Add container</span>
     </a>
 </div>
-
-
-<script>
-  function storeName() {
-    var productName = document.getElementById("product-name");
-    localStorage.setItem("special-product-name", productName.value);
-}
-
-var getProductName = localStorage.getItem("special-product-name");
-var prodName = document.querySelector("#product-name");
-
-if (prodName != null) {
-    if (getProductName != null) {
-        prodName.defaultValue = getProductName;
-    }
-    if (getProductName != null && summaryPage != null) {
-        getContinueButton.href = "product-summary";
-    }
-}
-
-</script>
 
 {% endblock %}

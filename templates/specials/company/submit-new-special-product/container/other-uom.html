@@ -19,13 +19,13 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                 Submit a new special product
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        What is the new Unit of measure (UOM) name?
+        What is the new UOM?
       </h1>
     </legend>
 
 
     <label class="nhsuk-label" for="product-form">
-      New container name
+      UOM
     </label>
     <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="product-form" name="size" type="text">
 
@@ -33,7 +33,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 </div>
 
 <a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeForm()"
-   href="container-pack-size-strength" id="continue-button"
+   href="pack-quantity" id="continue-button"
    type="submit">
   Save and continue
 </a>
@@ -43,6 +43,6 @@ Submit a new product: pack size and strength | Portal | NHSBSA
   function storeLicensedRoute() {
         var licRoute = document.getElementById("product-form");
         localStorage.setItem("product-form", licRoute.value);
-    };
+    }
 </script>
 {% endblock %}
