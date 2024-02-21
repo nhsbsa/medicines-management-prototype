@@ -5,12 +5,12 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
 
-    <a class="nhsuk-back-link__link" href="product-submissions-main">
+    <a class="nhsuk-back-link__link" href="product-complete-requests">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
              aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
-        Go back to ongoing special requests</a>
+        Go back to complete special requests</a>
 </div>
 <h1>
     Lidocaine hydrochloride 10% Nebuliser Solution
@@ -58,8 +58,8 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                         Status
                     </dt>
                     <dd class="nhsuk-summary-list__value">
-                        <strong class="nhsuk-tag nhsuk-tag--grey">
-                            Submitted
+                        <strong class="nhsuk-tag nhsuk-tag--green">
+                            Approved
                         </strong>
                     </dd>
 
@@ -69,7 +69,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                         Reference
                     </dt>
                     <dd class="nhsuk-summary-list__value">
-                        202312015S
+                        SR-20231201
                     </dd>
 
                 </div>
@@ -231,6 +231,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
     </div>
 
 
+    <!--                    Inventory-->
     <div class="nhsuk-tabs__panel" id="Inventory" role="tabpanel" tabindex="-1"
          aria-labelledby="tab3">
         <div class="nhsuk-tabs-panel-inner">
@@ -418,32 +419,32 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                     </td>
                 </tr>
 
-<!--                <tr role="row" class="nhsuk-table__row">-->
-<!--                    <td role="cell" class="nhsuk-table__cell">-->
-<!--                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag&#45;&#45;purple">-->
-<!--                        In progress-->
-<!--                    </strong>-->
-<!--                    </td>-->
-<!--                    <td role="cell" class="nhsuk-table__cell">-->
-<!--                        <span class="nhsuk-table-responsive__heading">Date and time </span>13 Dec 2023 at 15:03-->
-<!--                    </td>-->
-<!--                    <td role="cell" class="nhsuk-table__cell">-->
-<!--                        <span class="nhsuk-table-responsive__heading">Updated by</span>Matt Proctor-Leake (NHSBSA)-->
-<!--                    </td>-->
-<!--                </tr>-->
-<!--                <tr role="row" class="nhsuk-table__row">-->
-<!--                    <td role="cell" class="nhsuk-table__cell">-->
-<!--                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag&#45;&#45;green">-->
-<!--                        Approved-->
-<!--                    </strong>-->
-<!--                    </td>-->
-<!--                    <td role="cell" class="nhsuk-table__cell">-->
-<!--                        <span class="nhsuk-table-responsive__heading">Date and time </span>13 Dec 2023 at 15:33-->
-<!--                    </td>-->
-<!--                    <td role="cell" class="nhsuk-table__cell">-->
-<!--                        <span class="nhsuk-table-responsive__heading">Updated by</span>Matt Proctor-Leake (NHSBSA)-->
-<!--                    </td>-->
-<!--                </tr>-->
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--purple">
+                        In progress
+                    </strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date and time </span>13 Dec 2023 at 15:03
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Updated by</span>Matt Proctor-Leake (NHSBSA)
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--green">
+                        Approved
+                    </strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date and time </span>13 Dec 2023 at 15:33
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Updated by</span>Matt Proctor-Leake (NHSBSA)
+                    </td>
+                </tr>
 
                 </tbody>
             </table>
@@ -452,36 +453,36 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <h3>Message board</h3>
             <!--                          what is the email address for suppliers to contact in reply to a message? MPL 20DEC22-->
             <p>Messages from NHSBSA or NHS England will appear here. For example, this can be to communicate a status update or if more information is required.</p>
-<!--            <details class="nhsuk-details nhsuk-expander">-->
-<!--                <summary class="nhsuk-details__summary">-->
-<!--                                <span class="nhsuk-details__summary-text">-->
-<!--                                    13 Dec 2023 at 15:03 | Status update-->
-<!--                                </span>-->
-<!--                </summary>-->
-<!--                <div class="nhsuk-details__text">-->
-<!--                    <p>The status has been changed to 'In progress'. At this stage we do not require any further-->
-<!--                        action on your behalf.</p>-->
+            <details class="nhsuk-details nhsuk-expander">
+                <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    13 Dec 2023 at 15:03 | Status update
+                                </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                    <p>The status has been changed to 'In progress'. At this stage we do not require any further
+                        action on your behalf.</p>
 
-<!--                    <hr class="nhsuk-section-break nhsuk-section-break&#45;&#45;m nhsuk-section-break&#45;&#45;visible">-->
-<!--                    <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-3"-->
-<!--                        style="color: #4c6272; font-weight: 400;">Further comments</h3>-->
-<!--                </div>-->
-<!--            </details>-->
-<!--            <details class="nhsuk-details nhsuk-expander">-->
-<!--                <summary class="nhsuk-details__summary">-->
-<!--                                <span class="nhsuk-details__summary-text">-->
-<!--                                    13 Dec 2023 at 15:33 | Status update-->
-<!--                                </span>-->
-<!--                </summary>-->
-<!--                <div class="nhsuk-details__text">-->
-<!--                    <p>The status has been changed to 'Approved'. At this stage we do not require any further-->
-<!--                        action on your behalf.</p>-->
+                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                    <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-3"
+                        style="color: #4c6272; font-weight: 400;">Further comments</h3>
+                </div>
+            </details>
+            <details class="nhsuk-details nhsuk-expander">
+                <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    13 Dec 2023 at 15:33 | Status update
+                                </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                    <p>The status has been changed to 'Approved'. At this stage we do not require any further
+                        action on your behalf.</p>
 
-<!--                    <hr class="nhsuk-section-break nhsuk-section-break&#45;&#45;m nhsuk-section-break&#45;&#45;visible">-->
-<!--                    <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-3"-->
-<!--                        style="color: #4c6272; font-weight: 400;">Further comments</h3>-->
-<!--                </div>-->
-<!--            </details>-->
+                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                    <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-3"
+                        style="color: #4c6272; font-weight: 400;">Further comments</h3>
+                </div>
+            </details>
 
 
         </div>
