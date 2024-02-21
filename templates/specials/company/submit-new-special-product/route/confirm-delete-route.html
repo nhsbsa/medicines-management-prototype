@@ -4,7 +4,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 {% endblock %}
 {% block content %}
 
-<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
 
     <a class="nhsuk-back-link__link" href="manage-excipients">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -20,8 +20,11 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
             <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
 
-                <h1 class="nhsuk-fieldset__heading">
-                    Do you want to remove Methyl hydroxybenzoate?
+                <h1 class="nhsuk-fieldset__heading"><span class="nhsuk-caption-l">
+                Submit a new special product
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+                    Do you want to remove Oral route?
                 </h1>
             </legend>
 
@@ -30,21 +33,21 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                 <div class="nhsuk-radios__item nhsuk-u-margin-bottom-5">
                     <input class="nhsuk-radios__input" id="yes" name="example-hints" type="radio" value="yes" aria-describedby="example-hints-1-item-hint">
                     <label class="nhsuk-label nhsuk-radios__label" for="yes">
-                        Yes, I want to remove this excipient
+                        Yes, I want to remove this route
                     </label>
                 </div>
 
                 <div class="nhsuk-radios__item">
                     <input class="nhsuk-radios__input" id="no" name="example-hints" type="radio" value="no" aria-describedby="example-hints-2-item-hint">
                     <label class="nhsuk-label nhsuk-radios__label" for="no">
-                        No, I do not want to remove this excipient
+                        No, I do not want to remove this route
                     </label>
                 </div>
 
             </div>
         </fieldset>
     </div>
-    <a class="nhsuk-button nhsuk-u-margin-top-4" href="manage-excipients" id="redirectButton"
+    <a class="nhsuk-button nhsuk-u-margin-top-4" href="manage-routes" id="redirectButton"
        onclick="redirectToSelectedPage()">Save and continue</a>
 </div>
 
@@ -55,9 +58,9 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 
         function redirectToSelectedPage() {
             if (link1Radio.checked) {
-                document.getElementById("continue-button").href = "manage-excipients-updated.html";
+                document.getElementById("continue-button").href = "manage-routes.html";
             } else if (link2Radio.checked) {
-                document.getElementById("continue-button").href = "manage-excipients.html";
+                document.getElementById("continue-button").href = "manage-routes.html";
             }
         }
 

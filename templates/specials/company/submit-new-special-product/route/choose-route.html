@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-{% extends "base.html" %}
+{% extends "specials-logo-base.html" %}
 {% block title %}
 Add market authorisation (MA) number | Submit a product change: market authorisation number | Portal | NHSBSA
 {% endblock %}
 {% block content %}
-<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
-  <a class="nhsuk-back-link__link" href="category">
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+  <a class="nhsuk-back-link__link" href="route-required.html">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    <span id="back-link-text">Go back to what is the category</span></a>
+    <span id="back-link-text">Go back to do you need to add a route to the product</span></a>
 </div>
 
 <div class="nhsuk-form-group">
@@ -19,28 +18,30 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
                 Submit a new special product
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        What is the form?
+        What is the route?
       </h1>
     </legend>
 
-    <label class="nhsuk-label" for="product-form">
-      Form
+    <label class="nhsuk-label" for="product-route">
+      Route
     </label>
     <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-uom-hint">
-      If the form required is not found, choose 'Other' and continue to the next stage to capture this.
+      If the route required is not found, choose 'Other' and continue to the next stage to capture this.
     </div>
 
-    <select class="nhsuk-select" id="product-form" name="type">
+    <select class="nhsuk-select" id="product-route" name="type">
       <option value=""></option>
-      <option value="Cream">Cream</option>
-      <option value="Eye drops">Eye drops</option>
-      <option value="Gel">Gel</option>
-      <option value="Infusion (Parenteral)">Infusion (Parenteral)</option>
-      <option value="Injection">Injection</option>
-      <option value="Lotion">Lotion</option>
-      <option value="Nasal Powder">Nasal Powder</option>
-      <option value="Oral Liquid - Suspension">Oral Liquid - Suspension</option>
-      <option value="Solution">Solution</option>
+      <option value="Epidural">Epidural</option>
+      <option value="Intracameral">Intracameral</option>
+      <option value="Intra-muscular">Intra-muscular</option>
+      <option value="Intra-ocular">Intra-ocular</option>
+      <option value="Intra-thecal">Intra-thecal</option>
+      <option value="Intra-venous">Intra-venous</option>
+      <option value="Nasal">Nasal</option>
+      <option value="Ocular">Ocular</option>
+      <option value="Oral">Oral</option>
+      <option value="Respiratory">Respiratory</option>
+      <option value="Topical">Topical</option>
       <option value="Other">Other</option>
     </select>
 
@@ -48,8 +49,8 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeForm()"
-   href="has-BNF" id="continue-button"
+<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeRoute()"
+   href="manage-routes.html" id="continue-button"
    type="submit">
   Save and continue
 </a>
@@ -69,25 +70,23 @@ accessibleAutocomplete.enhanceSelectElement({
             showAllValues: true,
             confirmOnBlur: false,
             showNoOptionsFound: true,
-            selectElement: document.querySelector("#product-form"),
+            selectElement: document.querySelector("#product-route"),
         });
 
-        let parentDiv = document.querySelector("#product-form").parentNode;
+        let parentDiv = document.querySelector("#product-route").parentNode;
         let newLabel = document.createElement("label");
         newLabel.innerHTML = "Form";
         newLabel.style.display = "none";
-        newLabel.setAttribute("for", document.querySelector("#product-form-select").id);
+        newLabel.setAttribute("for", document.querySelector("#product-route-select").id);
         parentDiv.appendChild(newLabel);
 
-function storeForm() {
+function storeRoute() {
 
-        var prodForm = document.getElementById("product-form");
-        localStorage.setItem("special-product-form", prodForm.value);
+        var prodRoute = document.getElementById("product-route");
+        localStorage.setItem("special-product-route", prodRoute.value);
 
-        console.log(localStorage);
-
-        if (prodForm.value === "Other") {
-            document.getElementById("continue-button").setAttribute('href', "form-other");
+        if (prodRoute.value === "Other") {
+            document.getElementById("continue-button").setAttribute('href', "route-other.html");
         }
     }
 

@@ -11,8 +11,8 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
       </div>
     </div>
 
-    <h2>Submissions</h2>
-    <p>A submission includes adding a new product or a changing an existing product (including stock level updates). You can action new submissions or submissions which have been re-submitted as requiring more information, as well as viewing approved submissions.</p>
+    <h2>Requests</h2>
+    <p>Various requests sent in by Pharmaceutical Manufacturer Unit (PMU) categorised as new or ongoing, approved and authored.</p>
 
     <ul class="nhsuk-grid-row nhsuk-card-group">
 
@@ -81,7 +81,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
       </li>
     </ul>
 
-    <h2>Other areas</h2>
+    <h2>Pharmaceutical Manufacturer Units (PMUs)</h2>
 
     <ul class="nhsuk-grid-row nhsuk-card-group">
 
@@ -91,17 +91,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
               <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="view-products">Special products</a>
             </h2>
-            <p class="nhsuk-card__description">View and search for special products from all registered companies.</p>
-          </div>
-        </div>
-      </li>
-      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
-        <div class="nhsuk-card nhsuk-card--clickable">
-          <div class="nhsuk-card__content">
-            <h2 class="nhsuk-card__heading nhsuk-heading-m">
-              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="user/list-of-users.html">User accounts</a>
-            </h2>
-            <p class="nhsuk-card__description">View and manage user accounts for all organisations.</p>
+            <p class="nhsuk-card__description">View and search for special products from all registered PMUs.</p>
           </div>
         </div>
       </li>
@@ -110,24 +100,38 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
               <a class="nhsuk-card__link nhsuk-link--no-visited-state"
-                 href="company-request/new-company-requests.html">New company requests</a>
+                 href="nhs-manufacturers-directory.html">PMU directory</a>
             </h2>
-            <p class="nhsuk-card__description">View all company requests.</p>
+            <p class="nhsuk-card__description">Scan a list of all registered PMUs, as well as the ability to view in more detail.</p>
           </div>
         </div>
       </li>
-
       <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
         <div class="nhsuk-card nhsuk-card--clickable">
           <div class="nhsuk-card__content">
             <h2 class="nhsuk-card__heading nhsuk-heading-m">
               <a class="nhsuk-card__link nhsuk-link--no-visited-state"
-                 href="nhs-manufacturers-directory.html">Manufacturers Directory</a>
+                 href="company-request/new-company-requests.html">New PMU requests</a>
             </h2>
-            <p class="nhsuk-card__description">View all Manufacturers Information.</p>
+            <p class="nhsuk-card__description">View new PMU requests.</p>
           </div>
         </div>
       </li>
     </ul>
+
+<h2>Administration</h2>
+
+<ul class="nhsuk-grid-row nhsuk-card-group">
+<li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+  <div class="nhsuk-card nhsuk-card--clickable">
+    <div class="nhsuk-card__content">
+      <h2 class="nhsuk-card__heading nhsuk-heading-m">
+        <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="user/list-of-users.html">User accounts</a>
+      </h2>
+      <p class="nhsuk-card__description">View and manage user accounts for all registered public sector organisations.</p>
+    </div>
+  </div>
+</li>
+</ul>
 
 {% endblock %}

@@ -4,11 +4,11 @@ Submit a new product: effective date | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
-  <a class="nhsuk-back-link__link" href="../ingredient/manage-ingredients.html">
+  <a class="nhsuk-back-link__link" href="../excipient/manage-excipients.html">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    <span id="back-link-text">Go back to ingredients</span></a>
+    <span id="back-link-text">Go back to excipients</span></a>
 </div>
 
     <div class="nhsuk-form-group">
@@ -20,7 +20,7 @@ Submit a new product: effective date | Portal | NHSBSA
                 Submit a new special product
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-            Do you need to add excipients to the product?
+            Do you need to add a route to the product?
           </h1>
         </legend>
 
@@ -29,14 +29,14 @@ Submit a new product: effective date | Portal | NHSBSA
           <div class="nhsuk-radios__item nhsuk-u-margin-bottom-5">
             <input class="nhsuk-radios__input" id="yes" name="choose-yes" type="radio" value="yes">
             <label class="nhsuk-label nhsuk-radios__label" for="yes">
-              Yes, I want to add an excipient.
+              Yes, I want to add a route.
             </label>
           </div>
 
           <div class="nhsuk-radios__item">
             <input class="nhsuk-radios__input" id="no" name="choose-yes" type="radio" value="yes">
             <label class="nhsuk-label nhsuk-radios__label" for="no">
-              No, I do not want to add an excipient.
+              No, I do not want to add a route.
             </label>
           </div>
 
@@ -45,7 +45,7 @@ Submit a new product: effective date | Portal | NHSBSA
 
     </div>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="redirectToSelectedPage()" href="#" id="continue-button" type="submit">
+  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="redirectToSelectedPage()" href="../available" id="continue-button" type="submit">
     Save and continue
   </a>
 
@@ -56,9 +56,9 @@ Submit a new product: effective date | Portal | NHSBSA
 
         function redirectToSelectedPage() {
             if (link1Radio.checked) {
-                document.getElementById("continue-button").href = "choose-excipient.html";
+                document.getElementById("continue-button").href = "choose-route.html";
             } else if (link2Radio.checked) {
-              document.getElementById("continue-button").href = "../route/route-required";
+              document.getElementById("continue-button").href = "../available";
             }
         }
 
