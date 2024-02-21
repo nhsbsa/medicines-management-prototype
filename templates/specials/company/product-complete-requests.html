@@ -12,13 +12,17 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         Go back to specials dashboard</a>
 </div>
 
-<h1>Complete requests</h1>
+<h1>Complete special requests</h1>
 
-<p class="nhsuk-u-margin-bottom-8">The table shows complete requests.</p>
+<p class="nhsuk-u-margin-bottom-8">The table shows product requests which have been completed. You can view, but not edit, requests.</p>
 
+<div class="nhsuk-body-m flex--space-between" style="display: flex">
+    <div class="nhsuk-u-visually-hidden">Currently viewing</div>
+    <div id="pageAndResultCount">Page 1 of 1 (5 results)</div>
+</div>
 
-<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
-    <caption class="nhsuk-table__caption">Complete requests</caption>
+<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+    <caption class="nhsuk-table__caption">Complete requests from all PMUs</caption>
     <thead role="rowgroup" class="nhsuk-table__head">
     <tr role="row">
         <th role="columnheader" class="" scope="col">
@@ -27,9 +31,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <th role="columnheader" class="" scope="col">
             Product name
         </th>
-<!--        <th role="columnheader" class="" scope="col">-->
-<!--            Manufacturer-->
-<!--        </th>-->
         <th role="columnheader" cl`ass="" scope="col">
             Status
         </th>
@@ -67,9 +68,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Product name </span>Anaphylaxis Kit (Guy's and St Thomas' PMU)
         </td>
-        <!--        <td role="cell" class="nhsuk-table__cell">-->
-        <!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Stepping Hill Hospital - Stockport Pharmaceuticals-->
-        <!--        </td>-->
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Status</span>
             <strong class="nhsuk-tag nhsuk-tag--green">
@@ -78,7 +76,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Reference</span>
-            <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">202312021S</a>
+            202312021S
         </td>
     </tr>
     <tr role="row" class="nhsuk-table__row">
@@ -88,9 +86,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Product name </span>Morphine Sulfate 2.5mg in 50ml Glucose 10% w/v Injection
         </td>
-<!--        <td role="cell" class="nhsuk-table__cell">-->
-<!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Huddersfield Royal Infirmary Pharmacy Manufacturing Unit T/A Huddersfield Pharmacy Specials-->
-<!--        </td>-->
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Status</span>
             <strong class="nhsuk-tag nhsuk-tag--blue">
@@ -99,7 +94,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Reference</span>
-            <a class="nhsuk-link nhsuk-link--no-visited-state"href="#">202312034S</a>
+            202312034S
         </td>
     </tr>
     <tr role="row" class="nhsuk-table__row">
@@ -109,9 +104,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Product name </span>Brilliant Green and Crystal Violet Paint
         </td>
-<!--        <td role="cell" class="nhsuk-table__cell">-->
-<!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Huddersfield Royal Infirmary Pharmacy Manufacturing Unit T/A Huddersfield Pharmacy Specials-->
-<!--        </td>-->
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Status</span>
             <strong class="nhsuk-tag nhsuk-tag--green">
@@ -120,7 +112,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Reference</span>
-            <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">202312101S</a>
+            202312101S
         </td>
     </tr>
     <tr role="row" class="nhsuk-table__row">
@@ -130,9 +122,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Product name </span>Trometamol (THAM, TRIS) 3.6% Injection
         </td>
-<!--        <td role="cell" class="nhsuk-table__cell">-->
-<!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Huddersfield Royal Infirmary Pharmacy Manufacturing Unit T/A Huddersfield Pharmacy Specials-->
-<!--        </td>-->
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Status</span>
             <strong class="nhsuk-tag nhsuk-tag--red">
@@ -141,10 +130,44 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Reference</span>
-            <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">202312111S</a>
+            202312111S
         </td>
     </tr>
     </tbody>
 </table>
+
+<!-- <nav> only required if over 20 results MPL 30JAN24  -->
+
+<!--    <nav class="govuk-pagination" role="navigation" aria-label="results">-->
+<!--        <div class="govuk-pagination__prev">-->
+<!--            <a class="govuk-link govuk-pagination__link" href="#" rel="prev">-->
+<!--                <svg class="govuk-pagination__icon govuk-pagination__icon&#45;&#45;prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">-->
+<!--                    <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>-->
+<!--                </svg>-->
+<!--                <span class="govuk-pagination__link-title">Previous</span></a>-->
+<!--        </div>-->
+<!--        <ul class="govuk-pagination__list">-->
+<!--            <li class="govuk-pagination__item">-->
+<!--                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">-->
+<!--                    1-->
+<!--                </a>-->
+<!--            </li>-->
+<!--            <li class="govuk-pagination__item govuk-pagination__item&#45;&#45;current">-->
+<!--                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">-->
+<!--                    2-->
+<!--                </a>-->
+<!--            </li>-->
+<!--            <li class="govuk-pagination__item">-->
+<!--                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">-->
+<!--                    3-->
+<!--                </a>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--        <div class="govuk-pagination__next">-->
+<!--            <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon&#45;&#45;next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">-->
+<!--                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>-->
+<!--            </svg></a>-->
+<!--        </div>-->
+<!--    </nav>-->
 
 {% endblock %}
