@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: spc or Data Sheet | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+  <a class="nhsuk-back-link__link" href="../public-sector/nhs-manufacturers-directory">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to manufacturer directory</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <span class="nhsuk-caption-l">
+        Add a new manufacturer
+</span>
+      <h1 class="nhsuk-fieldset__heading" id="heading">
+        Do you want to change the status of this manufacturer to &#39;Inactive&#39;?
+      </h1>
+    </legend>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="example-hint">
+      Setting a manufacturer to &#39;Inactive&#39; will suspend their account, but it does not delete their information. If you need to delete the manufacturer, you need to return to the manufacturer's information.
+    </div>
+
+    <div class="nhsuk-radios">
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+          Yes
+        </label>
+      </div>
+
+      <div class="nhsuk-radios__item">
+        <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+          No
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+<a class="nhsuk-button nhsuk-u-margin-top-3" href="summary-manufacturer" onclick="requireYesOrNo()"
+   id="continue-button">Save change</a>
+
+<script>
+    var radioButtons = document.getElementsByName("example");
+    let heading = document.getElementById("heading");
+    let hintText = document.getElementById("data-sheet-hint");
+
+    let isAccountDeactivated = localStorage.getItem("account-deactivated");
+    let isAccountActivated = localStorage.getItem("account-activated");
+
+    if (isAccountDeactivated == 'no' || !isAccountDeactivated) {
+
+    function requireYesOrNo() {
+    var buttonLink = document.getElementById("continue-button");
+
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+        localStorage.setItem("account-deactivated", radio.value);
+        localStorage.removeItem("account-activated");
+       }
+     }
+    }
+  }
+
+   if (isAccountDeactivated == 'yes'|| isAccountActivated == 'no') {
+      heading.innerHTML = 'Do you want to change the status of this user&#39;s account to &#39;Active&#39;?';
+      hintText.innerHTML = 'Setting a user&#39;s account to &#39;Active&#39; will allow the user to access their account.'
+
+       function requireYesOrNo() {
+        var buttonLink = document.getElementById("continue-button");
+
+        for (var radio of radioButtons) {
+              if (radio.checked) {
+                   localStorage.setItem("account-activated", radio.value);
+                   localStorage.removeItem("account-deactivated");
+              }
+           }
+         }
+      }
+
+
+
+
+</script>
+
+{% endblock %}
+
+
