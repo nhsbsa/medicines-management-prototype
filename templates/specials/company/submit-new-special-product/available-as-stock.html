@@ -4,38 +4,38 @@ Submit a new product: effective date | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
-  <a class="nhsuk-back-link__link" href="accreditation">
+  <a class="nhsuk-back-link__link" href="available">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    <span id="back-link-text">Go back to does the product have an accreditation</span></a>
+    <span id="back-link-text">Go back to is the product available</span></a>
 </div>
 
     <div class="nhsuk-form-group">
 
-      <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+      <fieldset class="nhsuk-fieldset">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
           <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-4">
             <span class="nhsuk-caption-l">
                 Submit a new special product
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-            Do you need to add ingredients to the product?
+            Is the product available as stock?
           </h1>
         </legend>
 
         <div class="nhsuk-radios">
 
           <div class="nhsuk-radios__item nhsuk-u-margin-bottom-3">
-            <input class="nhsuk-radios__input" id="contact-1" name="require-ingredient" type="radio" value="Yes">
-            <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+            <input class="nhsuk-radios__input" id="yes-available" name="availability-as-stock" type="radio" value="Yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="yes-available">
               Yes
             </label>
           </div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="contact-2" name="require-ingredient" type="radio" value="No">
-            <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+            <input class="nhsuk-radios__input" id="not-available" name="availability-as-stock" type="radio" value="No">
+            <label class="nhsuk-label nhsuk-radios__label" for="not-available">
               No
             </label>
           </div>
@@ -44,44 +44,38 @@ Submit a new product: effective date | Portal | NHSBSA
 
     </div>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeRequireIngredient()" href="#" id="continue-button" type="submit">
+  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeAvailabilityAsStock()" href="shelf-life" id="continue-button" type="submit">
     Save and continue
   </a>
 
 <script>
   console.log(localStorage);
 
-  var radioButtons = document.getElementsByName("require-ingredient");
+  var radioButtons = document.getElementsByName("availability-as-stock");
   let summaryPage = localStorage.getItem("supplier-summary");
 
    if (radioButtons) {
-    var getRequireIngredient = localStorage.getItem("special-product-require-ingredient");
+    var getCategory = localStorage.getItem("special-product-available-as-stock");
     var buttonLink = document.getElementById("continue-button");
-    if (getRequireIngredient != null) {
+    if (getCategory != null) {
         for (var radio of radioButtons) {
-            if (getRequireIngredient === radio.value) {
+            if (getCategory === radio.value) {
                 radio.checked = true;
-            }
-            if (radio.value === 'Yes' && summaryPage != null) {
-                buttonLink.href = "product-summary";
             }
         }
       }
    };
 
-function storeRequireIngredient() {
-    var radioButtons = document.getElementsByName("require-ingredient");
-    var buttonLink = document.getElementById("continue-button");
+function storeAvailabilityAsStock() {
+    var radioButtons = document.getElementsByName("availability-as-stock");
 
     for (var radio of radioButtons) {
         if (radio.checked) {
-            localStorage.setItem("special-product-require-ingredient", radio.value);
-            if (radio.value === 'Yes') {
-              buttonLink.href = "ingredient-details";
-            }
-        }
-    }
-}
+            localStorage.setItem("special-product-available-as-stock", radio.value);
+          }
+      }
+  }
+
 </script>
 
 {% endblock %}

@@ -23,6 +23,10 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
     <h2 class="nhsuk-tabs__title">Contents</h2>
     <ul class="nhsuk-tabs__list">
         <li class="nhsuk-tabs__list-item nhsuk-tabs__lt-item--selected"
+            id="heading-tab-request"
+            role="presentation"><a class="nhsuk-tabs__tab" href="#tab-request" role="tab"
+                                   id="request-panel" aria-selected="true">Request</a></li>
+        <li class="nhsuk-tabs__list-item nhsuk-tabs__lt-item--selected"
             id="heading-tab-submission"
             role="presentation"><a class="nhsuk-tabs__tab" href="#tab-submission" role="tab"
                                    id="submission-panel" aria-selected="true">Product</a></li>
@@ -40,11 +44,10 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 
     </ul>
 
-    <div class="nhsuk-tabs__panel" id="tab-submission" role="tabpanel" tabindex="-1"
+    <div class="nhsuk-tabs__panel" id="tab-request" role="tabpanel" tabindex="-1"
          aria-labelledby="tab1">
         <div class="nhsuk-tabs-panel-inner">
-            <h2 class="nhsuk-u-margin-bottom-6">Product</h2>
-            <h3>Request information</h3>
+            <h2 class="nhsuk-u-margin-bottom-6">Request</h2>
             <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-8">
 
                 <div class="nhsuk-summary-list__row">
@@ -98,6 +101,13 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 
                 </div>
             </dl>
+        </div>
+    </div>
+
+    <div class="nhsuk-tabs__panel" id="tab-submission" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab1">
+        <div class="nhsuk-tabs-panel-inner">
+            <h2 class="nhsuk-u-margin-bottom-6">Product</h2>
 
             <h3>Product detail</h3>
             <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-8">
@@ -173,39 +183,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                 </div>
             </dl>
 
-            <h3>Ingredients</h3>
-
-            <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
-                <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of ingredients for Lidocaine hydrochloride 10% Nebuliser Solution</caption>
-                <thead role="rowgroup" class="nhsuk-table__head">
-                <tr role="row">
-                    <th role="columnheader" class="" scope="col">
-                        Ingredient
-                    </th>
-                    <th role="columnheader" class="" scope="col">
-                       Strength
-                    </th>
-
-                </tr>
-                </thead>
-                <tbody class="nhsuk-table__body">
-                <tr role="row" class="nhsuk-table__row">
-                    <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Ingredient </span>Lidocaine hydrochloride
-                    </td>
-                    <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">Strength</span>10%
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-
-            <h3>Routes</h3>
-            <p>The following routes are used.</p>
-            <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-8">
-                <li>Respiratory</li>
-            </ul>
-
             <h3 id="heading-pack-1">Containers</h3>
 
             <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
@@ -268,8 +245,41 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                 </tbody>
             </table>
 
+            <h3>Ingredients</h3>
+
+            <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
+                <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of ingredients for Lidocaine hydrochloride 10% Nebuliser Solution</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        Ingredient
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                       Strength
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Ingredient </span>Lidocaine hydrochloride
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Strength</span>10%
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
             <h3>Excipients</h3>
             <p>No excipients exist.</p>
+
+            <h3>Routes</h3>
+            <p>The following routes are used.</p>
+            <ul class="nhsuk-list nhsuk-list--bullet nhsuk-u-margin-bottom-8">
+                <li>Respiratory</li>
+            </ul>
         </div>
     </div>
     <div class="nhsuk-tabs__panel" id="tab-summary" role="tabpanel" tabindex="-1"
@@ -315,26 +325,21 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 
                 </div>
 
-                <div class="nhsuk-summary-list__row">
-                    <dt class="nhsuk-summary-list__key update-width">
-                        Additional Information
-                    </dt>
-                    <dd class="nhsuk-summary-list__value">Label Image available<br>Sugar Free<br>Preservative Free<br>Colour Free</dd>
-
-                </div>
-
             </dl>
 
-            <h3 class="nhsuk-u-margin-bottom-4">Inventory uploads</h3>
+            <h3 class="nhsuk-u-margin-bottom-4">Attributes</h3>
             <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
                 <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of ingredients for Lidocaine hydrochloride 10% Nebuliser Solution</caption>
                 <thead role="rowgroup" class="nhsuk-table__head">
                 <tr role="row">
                     <th role="columnheader" class="" scope="col">
-                        File upload type
+                        Attribute
                     </th>
                     <th role="columnheader" class="" scope="col">
-                        File upload name
+                        Present
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        File upload
                     </th>
 
                 </tr>
@@ -342,11 +347,80 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                 <tbody class="nhsuk-table__body">
                 <tr role="row" class="nhsuk-table__row">
                     <td role="cell" class="nhsuk-table__cell">
-                        <span class="nhsuk-table-responsive__heading">File upload type </span>Label
+                        <span class="nhsuk-table-responsive__heading">Attribute </span>Certificate of Analysis (CoA)
+                    </td><td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--red">
+                    No
+                </strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">File upload name</span>
+                        <span class="nhsuk-u-visually-hidden">No file uploaded</span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Attribute </span>Patient Information Leaflet (PIL) image
+                    </td><td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--green">
+                    Yes
+                </strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">File upload name</span>
+                        <span>No file uploaded</span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Attribute </span>Label image
+                    </td><td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--green">
+                    Yes
+                </strong>
                     </td>
                     <td role="cell" class="nhsuk-table__cell">
                         <span class="nhsuk-table-responsive__heading">File upload name</span>
                         <a href="#">Lidocaine 10% Nebuliser Solution.jpg</a>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Attribute </span>Sugar free
+                    </td><td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--red">
+                    No
+                </strong>
+                </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">File upload name</span>
+                        <span class="nhsuk-u-visually-hidden">No upload required</span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Attribute </span>Preservative free
+                    </td><td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--green">
+                    Yes
+                </strong>
+                </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">File upload name</span>
+                        <span>No upload required</span>
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Attribute </span>Colour free
+                    </td><td role="cell" class="nhsuk-table__cell">
+                    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--red">
+                    No
+                </strong>
+                </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">File upload name</span>
+                        <span class="nhsuk-u-visually-hidden">No upload required</span>
                     </td>
                 </tr>
 
