@@ -4,7 +4,7 @@ Submit a new product: effective date | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
-  <a class="nhsuk-back-link__link" href="../excipient/manage-excipients.html">
+  <a class="nhsuk-back-link__link" href="../excipient/manage-excipients.html" id="back-link">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
@@ -27,14 +27,14 @@ Submit a new product: effective date | Portal | NHSBSA
         <div class="nhsuk-radios">
 
           <div class="nhsuk-radios__item nhsuk-u-margin-bottom-5">
-            <input class="nhsuk-radios__input" id="yes" name="choose-yes" type="radio" value="yes">
+            <input class="nhsuk-radios__input" id="yes" name="route-required" type="radio" value="Yes">
             <label class="nhsuk-label nhsuk-radios__label" for="yes">
               Yes, I want to add a route.
             </label>
           </div>
 
           <div class="nhsuk-radios__item">
-            <input class="nhsuk-radios__input" id="no" name="choose-yes" type="radio" value="yes">
+            <input class="nhsuk-radios__input" id="no" name="route-required" type="radio" value="No">
             <label class="nhsuk-label nhsuk-radios__label" for="no">
               No, I do not want to add a route.
             </label>
@@ -45,21 +45,51 @@ Submit a new product: effective date | Portal | NHSBSA
 
     </div>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="redirectToSelectedPage()" href="../available" id="continue-button" type="submit">
+  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeRouteRequired()" href="../available" id="continue-button" type="submit">
     Save and continue
   </a>
 
 <script>
 
-        const link1Radio = document.getElementById("yes");
-        const link2Radio = document.getElementById("no");
+  window.onload = function() {
+    if (localStorage.getItem("special-product-require-excipient") === 'No') {
+      document.getElementById("back-link").setAttribute('href', "../excipient/excipient-required");
+      document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to do you need to add excipients to the product?";
+    }
+  };
 
-        function redirectToSelectedPage() {
-            if (link1Radio.checked) {
-                document.getElementById("continue-button").href = "choose-route.html";
-            } else if (link2Radio.checked) {
-              document.getElementById("continue-button").href = "../available";
+        console.log(localStorage);
+
+        var radioButtons = document.getElementsByName("route-required");
+        let summaryPage = localStorage.getItem("supplier-summary");
+
+        if (radioButtons) {
+          var getRequireRoute= localStorage.getItem("special-product-require-route");
+          var buttonLink = document.getElementById("continue-button");
+          if (getRequireRoute != null) {
+            for (var radio of radioButtons) {
+              if (getRequireRoute === radio.value) {
+                radio.checked = true;
+              }
+              if (radio.value === 'Yes' && summaryPage != null) {
+                buttonLink.href = "product-summary";
+              }
             }
+          }
+        }
+
+        function storeRouteRequired() {
+          var radioButtons = document.getElementsByName("route-required");
+          var buttonLink = document.getElementById("continue-button");
+
+          for (var radio of radioButtons) {
+            if (radio.checked) {
+              localStorage.setItem("special-product-require-route", radio.value);
+              if (radio.value === 'Yes') {
+                buttonLink.href = "choose-route.html";
+              }
+            }
+          }
         }
 
 </script>

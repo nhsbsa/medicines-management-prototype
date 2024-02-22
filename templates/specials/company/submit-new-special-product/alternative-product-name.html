@@ -66,37 +66,36 @@ Submit a new product: effective date | Portal | NHSBSA
   let summaryPage = localStorage.getItem("supplier-summary");
 
    if (radioButtons) {
-    var getSuppName = localStorage.getItem("alt-special-product-advised");
+    var getSuppName = localStorage.getItem("special-product-alt-name-advised");
     var buttonLink = document.getElementById("continue-button");
     if (getSuppName != null) {
         for (var radio of radioButtons) {
             if (getSuppName === radio.value) {
                 radio.checked = true;
             }
-            if (radio.value == 'yes' && summaryPage != null) {
+            if (radio.value === 'yes' && summaryPage != null) {
                 buttonLink.href = "product-summary";
             }
         }
       }
-   };
+   }
 
    var contactName = document.getElementById("alt-prod-name-detail");
-   if (localStorage.getItem("alt-special-product-name")) {
-      contactName.value = localStorage.getItem("alt-special-product-name");
+   if (localStorage.getItem("special-product-alt-name")) {
+      contactName.value = localStorage.getItem("special-product-alt-name");
    }
 
 function storeAltProdName() {
     var radioButtons = document.getElementsByName("alt-prod-name");
-    var buttonLink = document.getElementById("continue-button");
 
     for (var radio of radioButtons) {
         if (radio.checked) {
-            localStorage.setItem("alt-special-product-advised", radio.value);
-            if (radio.value == 'Yes') {
+            localStorage.setItem("special-product-alt-name-advised", radio.value);
+            if (radio.value === 'Yes') {
               var contactName = document.getElementById("alt-prod-name-detail");
-              localStorage.setItem("alt-special-product-name", contactName.value);
-            } else if (radio.value == 'No') {
-              localStorage.removeItem("alt-special-product-name");
+              localStorage.setItem("special-product-alt-name", contactName.value);
+            } else if (radio.value === 'No') {
+              localStorage.removeItem("special-product-alt-name");
             }
         }
     }
