@@ -52,7 +52,10 @@ Submit a new product: effective date | Portal | NHSBSA
   console.log(localStorage);
 
   var radioButtons = document.getElementsByName("shelf-life");
-  let summaryPage = localStorage.getItem("supplier-summary");
+
+  if (localStorage.getItem("summary-page") === "yes") {
+    document.getElementById("continue-button").href = "product-summary";
+  }
 
    if (radioButtons) {
     var getValidShelfLife = localStorage.getItem("special-product-shelf-life-valid");

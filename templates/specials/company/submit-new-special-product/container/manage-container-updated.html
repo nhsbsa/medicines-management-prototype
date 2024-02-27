@@ -83,23 +83,10 @@ Submit a new product: name | Portal | NHSBSA
 
 <script>
     localStorage.removeItem("add-container-summary");
-  function storeName() {
-    var productName = document.getElementById("product-name");
-    localStorage.setItem("special-product-name", productName.value);
-}
 
-var getProductName = localStorage.getItem("special-product-name");
-var prodName = document.querySelector("#product-name");
-
-if (prodName != null) {
-    if (getProductName != null) {
-        prodName.defaultValue = getProductName;
+    if (localStorage.getItem("summary-page") === "yes") {
+        document.getElementById("next").href = "../product-summary";
     }
-    if (getProductName != null && summaryPage != null) {
-        getContinueButton.href = "product-summary";
-    }
-}
-
 </script>
 
 {% endblock %}

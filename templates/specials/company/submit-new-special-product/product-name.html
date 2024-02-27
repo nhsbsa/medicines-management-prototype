@@ -36,7 +36,7 @@ Submit a new product: name | Portal | NHSBSA
 
   <a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeName()"
      href="alternative-product-name" id="continue-button" type="submit">
-    Continue
+    Save and continue
   </a>
 
 <script>
@@ -47,15 +47,13 @@ Submit a new product: name | Portal | NHSBSA
 
 var summaryPage = localStorage.getItem("summary-page");
 var getProductName = localStorage.getItem("special-product-name");
-var prodName = document.querySelector("#product-name");
+var productName = document.getElementById("product-name");
 
-if (prodName != null) {
     if (getProductName != null) {
-        prodName.defaultValue = getProductName;
+      productName.defaultValue = getProductName;
     }
-    if (getProductName != null && summaryPage != null) {
-        getContinueButton.href = "product-summary";
-    }
+    if (getProductName != null && summaryPage === "yes") {
+        document.getElementById("continue-button").href = "product-summary";
 }
 
 </script>

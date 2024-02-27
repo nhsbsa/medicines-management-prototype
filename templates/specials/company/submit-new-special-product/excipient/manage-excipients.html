@@ -78,4 +78,10 @@ Submit a new product: effective date | Portal | NHSBSA
     </fieldset>
 </div>
 
+<script>
+    if (localStorage.getItem("summary-page") === "yes") {
+        document.getElementById("continue-button").href = "../product-summary";
+    }
+</script>
+
 {% endblock %}

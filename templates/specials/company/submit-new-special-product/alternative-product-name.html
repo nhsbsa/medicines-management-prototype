@@ -63,7 +63,7 @@ Submit a new product: effective date | Portal | NHSBSA
   console.log(localStorage);
 
   var radioButtons = document.getElementsByName("alt-prod-name");
-  let summaryPage = localStorage.getItem("supplier-summary");
+  let summaryPage = localStorage.getItem("summary-page");
 
    if (radioButtons) {
     var getSuppName = localStorage.getItem("special-product-alt-name-advised");
@@ -73,10 +73,10 @@ Submit a new product: effective date | Portal | NHSBSA
             if (getSuppName === radio.value) {
                 radio.checked = true;
             }
-            if (radio.value === 'yes' && summaryPage != null) {
+            if (summaryPage === "yes") {
                 buttonLink.href = "product-summary";
             }
-        }
+         }
       }
    }
 
@@ -91,6 +91,9 @@ function storeAltProdName() {
     for (var radio of radioButtons) {
         if (radio.checked) {
             localStorage.setItem("special-product-alt-name-advised", radio.value);
+            if (localStorage.getItem("summary-page")) {
+              document.getElementById("continue-button").href = "product-summary"
+            }
             if (radio.value === 'Yes') {
               var contactName = document.getElementById("alt-prod-name-detail");
               localStorage.setItem("special-product-alt-name", contactName.value);
