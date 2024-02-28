@@ -559,29 +559,6 @@ if (getShelfLifeValidated === "Yes") {
   document.getElementById("has-shelf-life-valid").textContent = "Yes";
 }
 
-// old code starts here
-
-
-var getGtin = localStorage.getItem("pack-gtin");
-var getGtin2 = localStorage.getItem("pack-gtin-2");
-var getGtin3 = localStorage.getItem("pack-gtin-3");
-
-var gtinArray = [];
-
-gtinArray.push(getGtin, getGtin2, getGtin3);
-
-var filteredGtin = gtinArray.filter(function (el) {
-return el != null;
-});
-
-for (let i = 0; i < filteredGtin.length; i++) {
-var splitUpGtin = filteredGtin[i].split("\\");
-var gtinForm = splitUpGtin[splitUpGtin.length - 1] + "<br>";
-document.getElementById("pack-gtin").innerHTML += gtinForm;
-}
-
-
-
 console.log(localStorage);
 
 </script>
