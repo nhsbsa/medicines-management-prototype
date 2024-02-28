@@ -89,12 +89,16 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
         var prodForm = document.getElementById("product-form");
         localStorage.setItem("special-product-form", prodForm.value);
 
-        console.log(localStorage);
+        console.log(prodForm.value);
 
         if (prodForm.value === "Other") {
             document.getElementById("continue-button").setAttribute('href', "form-other");
         }
 
+    }
+
+    if (localStorage.getItem("special-product-form")) {
+        document.getElementById("product-form").value = localStorage.getItem("special-product-form");
     }
 
 
