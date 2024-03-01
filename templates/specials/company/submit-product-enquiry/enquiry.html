@@ -3,17 +3,17 @@
 Portal dashboard | Medicines Management design prototype | NHSBSA
 {% endblock %}
 {% block content %}
-<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
 
-  <a class="nhsuk-back-link__link" href="add-user-email">
+  <a class="nhsuk-back-link__link" href="../dashboard.html">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
-        Go back</a>
+        Go back to specials dashboard</a>
 </div>
 
   <div class="nhsuk-form-group">
-        <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+        <fieldset class="nhsuk-fieldset">
           <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
             <h1 class="nhsuk-fieldset__heading"><span class="nhsuk-caption-l">
               Submit a product enquiry
@@ -52,10 +52,10 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
           <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-3">
                   
             <div class="nhsuk-form-group">
-              <label class="nhsuk-label" for="mobile">
+              <label class="nhsuk-label" for="reason-for-product-enquiry">
                 Give reason
               </label>
-            <input class="nhsuk-input nhsuk-u-width-two-thirds" id="mobile" name="mobile" type="text">
+            <input class="nhsuk-input" id="reason-for-product-enquiry" name="reason" type="text">
             </div>
                   
           </div>
@@ -63,6 +63,11 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
       </div>
         </fieldset>
                   
-  <a href="product-name" class="nhsuk-button nhsuk-u-margin-top-6" value="Continue" id="next">Save and continue</a>
+  <a href="product-name" class="nhsuk-button nhsuk-u-margin-top-4" id="next">Save and continue</a>
   </div>
+
+<script>
+    console.log(localStorage);
+</script>
+
 {% endblock %}

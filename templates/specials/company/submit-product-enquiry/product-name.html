@@ -4,11 +4,11 @@ Submit a new product: name | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
-  <a class="nhsuk-back-link__link" href="add-host-organisation">
+  <a class="nhsuk-back-link__link" href="enquiry">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to add host organisation</a>
+    Go back to what is the reason for the product enquiry</a>
 </div>
 
 <div class="nhsuk-form-group">
@@ -16,36 +16,37 @@ Submit a new product: name | Portal | NHSBSA
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
         <span class="nhsuk-caption-l">
-          Add a new manufacturer
+            Submit a product enquiry
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        What is the Unit?
+        What is the Product name?
       </h1>
     </legend>
 
-<!--    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="name-hint-detail">-->
-<!--      The product name can be taken from the packaging or from Part 1 of the SmPC. This includes the name, amount, measurement and presentation / form. For example, &#39;Product Name 200mg tablets&#39;.-->
-<!--    </div>-->
+<!--      Do we need hint text on this page? MPL 29FEB24-->
+ <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="name-hint-detail">
+     The product name should include the name, amount, measurement and presentation / form. For example, &#39;Product Name 200mg tablets&#39;.
+  </div>
 
   <label class="nhsuk-label" for="product-name">
-    Unit name
+    Product name
   </label>
   <input class="nhsuk-input" id="product-name" name="example" type="text">
   </fieldset>
 </div>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeName()"
-     href="add-ms-licenses" id="continue-button" type="submit">
-    Continue
+  <a class="nhsuk-button nhsuk-u-margin-top-4" onclick="storeName()"
+     href="product-notes" id="continue-button" type="submit">
+     Save and continue
   </a>
 
 <script>
   function storeName() {
     var productName = document.getElementById("product-name");
-    localStorage.setItem("special-product-name", productName.value);
+    localStorage.setItem("special-product-enquiry-name", productName.value);
 }
 
-var getProductName = localStorage.getItem("special-product-name");
+var getProductName = localStorage.getItem("special-product-enquiry-name");
 var prodName = document.querySelector("#product-name");
 
 if (prodName != null) {
