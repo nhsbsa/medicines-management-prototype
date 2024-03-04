@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}
+Portal dashboard | Medicines Management design prototype | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+    <a class="nhsuk-back-link__link" id="back-link" href="update-status">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to what is the new status?</a>
+</div>
+
+<fieldset class="nhsuk-fieldset">
+
+    <div class="nhsuk-form-group">
+
+        <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
+            <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+                <h1><span class="nhsuk-caption-l" id="discontinue-reason">
+                	Update status
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+                    Would you like to add a message for the manufacturer?
+                </h1>
+            </legend>
+
+            <div class="nhsuk-radios">
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="contact-1" name="notes" type="radio" value="Yes" aria-controls="conditional-contact-1" aria-expanded="false">
+                    <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                        Yes
+                    </label>
+                </div>
+
+                <div class="nhsuk-radios__item">
+                    <input class="nhsuk-radios__input" id="contact-2" name="notes" type="radio" value="No" aria-controls="conditional-contact-2" aria-expanded="false">
+                    <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                        No
+                    </label>
+                </div>
+
+            </div>
+        </fieldset>
+
+    </div>
+
+</fieldset>
+
+<a class="nhsuk-button nhsuk-u-margin-top-4" href="update-submission-notes"
+   onclick="requireNotes()" id="continue-button" type="submit">
+    Continue
+</a>
+
+<script>
+
+    var radioButtons = document.getElementsByName("notes");
+
+    function requireNotes() {
+    var buttonLink = document.getElementById("continue-button");
+
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+        localStorage.setItem("product-notes-require", radio.value);
+        if (radio.value == 'No') {
+           buttonLink.href = "update-submission-review";
+        } else {
+           buttonLink.href = "update-submission-notes";
+        }
+      }
+    }
+}
+
+if (localStorage.getItem("product-notes-require") != null) {
+    for (var radio of radioButtons) {
+             if (localStorage.getItem("product-notes-require") === radio.value) {
+                 radio.checked = true;
+             }
+         }
+       }
+</script>
+
+{% endblock %}

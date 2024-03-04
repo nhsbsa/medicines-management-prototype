@@ -1,0 +1,150 @@
+{% extends "base.html" %}
+{% block title %}
+Portal dashboard | Medicines Management design prototype | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+    <a class="nhsuk-back-link__link" href="../public-sector/dashboard">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to specials dashboard</a>
+</div>
+
+<h1>View Product enquiry list</h1>
+
+<p class="nhsuk-u-margin-bottom-8">The table shows special requests from all manufacturers. You can start reviewing any requests that are showing as &#39;Ready&#39;. Any requests with a status of &#39;In progress&#39; or &#39;More detail&#39; have been initiated.</p>
+
+
+<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
+    <caption class="nhsuk-table__caption">Special product requests from all manufacturers</caption>
+    <thead role="rowgroup" class="nhsuk-table__head">
+    <tr role="row">
+        <th role="columnheader" class="" scope="col">
+            Date received
+        </th>
+        <th role="columnheader" class="" scope="col">
+            Product name
+        </th>
+<!--        <th role="columnheader" class="" scope="col">-->
+<!--            Manufacturer-->
+<!--        </th>-->
+        <th role="columnheader" class="" scope="col">
+            Status
+        </th>
+        <th role="columnheader" class="" scope="col">
+            Reference
+        </th>
+    </tr>
+    </thead>
+    <tbody class="nhsuk-table__body">
+    <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date received </span>dd mm yyyy
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Product name </span>Add a product name <br> (eg: Lidocaine hydrochloride 10% Nebuliser Solution)</br>
+        </td>
+<!--        <td role="cell" class="nhsuk-table__cell">-->
+<!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Stepping Hill Hospital - Stockport Pharmaceuticals-->
+<!--        </td>-->
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Status</span>
+            <strong class="nhsuk-tag nhsuk-tag--blue">
+                Submitted
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Reference</span>
+            <a href="update-request" class="nhsuk-link nhsuk-link--no-visited-state">202312015S</a>
+        </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date received </span>02 Dec 2023
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Product name </span>Anaphylaxis Kit (Guy's and St Thomas' PMU)
+        </td>
+        <!--        <td role="cell" class="nhsuk-table__cell">-->
+        <!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Stepping Hill Hospital - Stockport Pharmaceuticals-->
+        <!--        </td>-->
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Status</span>
+            <strong class="nhsuk-tag nhsuk-tag--blue">
+                Submitted
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Reference</span>
+            <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">202312021S</a>
+        </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date received </span>03 Dec 2023
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Product name </span>Morphine Sulfate 2.5mg in 50ml Glucose 10% w/v Injection
+        </td>
+<!--        <td role="cell" class="nhsuk-table__cell">-->
+<!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Huddersfield Royal Infirmary Pharmacy Manufacturing Unit T/A Huddersfield Pharmacy Specials-->
+<!--        </td>-->
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Status</span>
+            <strong class="nhsuk-tag nhsuk-tag--green">
+                In progress
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Reference</span>
+            <a class="nhsuk-link nhsuk-link--no-visited-state"href="#">202312034S</a>
+        </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date received </span>10 Dec 2023
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Product name </span>Brilliant Green and Crystal Violet Paint
+        </td>
+<!--        <td role="cell" class="nhsuk-table__cell">-->
+<!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Huddersfield Royal Infirmary Pharmacy Manufacturing Unit T/A Huddersfield Pharmacy Specials-->
+<!--        </td>-->
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Status</span>
+            <strong class="nhsuk-tag nhsuk-tag--yellow">
+                Responded
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Reference</span>
+            <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">202312101S</a>
+        </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date received </span>11 Dec 2023
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Product name </span>Trometamol (THAM, TRIS) 3.6% Injection
+        </td>
+<!--        <td role="cell" class="nhsuk-table__cell">-->
+<!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Huddersfield Royal Infirmary Pharmacy Manufacturing Unit T/A Huddersfield Pharmacy Specials-->
+<!--        </td>-->
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Status</span>
+            <strong class="nhsuk-tag nhsuk-tag--yellow">
+                Responded
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Reference</span>
+            <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">202312111S</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+{% endblock %}
