@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+{% block title %}
+Portal dashboard | Medicines Management design prototype | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+
+    <a class="nhsuk-back-link__link" href="list-of-requests">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to list of requests</a>
+</div>
+<h1>
+    Lidocaine hydrochloride 10% Nebuliser Solution
+</h1>
+
+<div class="nhsuk-tabs" data-module="nhsuk-tabs">
+    <h2 class="nhsuk-tabs__title">
+        Contents
+    </h2>
+
+    <ul class="nhsuk-tabs__list">
+
+        <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+            <a class="nhsuk-tabs__tab" href="#request">
+                Request
+            </a>
+        </li>
+        <li class="nhsuk-tabs__list-item">
+            <a class="nhsuk-tabs__tab" href="#product-enquiry">
+                Product enquiry
+            </a>
+        </li>
+        <li class="nhsuk-tabs__list-item">
+            <a class="nhsuk-tabs__tab" href="#tab-messages">
+                Status and messages
+            </a>
+        </li>
+
+    </ul>
+
+    <div class="nhsuk-tabs__panel" id="request">
+
+        <h1>Summary
+        </h1>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Enquiry reason
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Availability
+                </dd>
+
+               <!-- <dd class="nhsuk-summary-list__actions">
+
+                    <a href="edit-enquiry">
+                        Edit<span class="nhsuk-u-visually-hidden"> Enquiry reason</span>
+                    </a>
+
+                </dd>-->
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Product name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Product name 200mg tablets
+                </dd>
+
+               <!-- <dd class="nhsuk-summary-list__actions">
+
+                    <a href="edit-product-name">
+                        Edit<span class="nhsuk-u-visually-hidden"> Product name</span>
+                    </a>
+
+                </dd>-->
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Product enquiry message
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Message Title<br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.<br>
+                </dd>
+
+               <!-- <dd class="nhsuk-summary-list__actions">
+
+                    <a href="edit-product-notes">
+                        Edit<span class="nhsuk-u-visually-hidden"> Product enquiry message </span>
+                    </a>
+
+                </dd>-->
+
+            </div>
+
+
+        </dl>
+
+    </div>
+
+    <div class="nhsuk-tabs__panel" id="product-enquiry">
+        <h2>Product enquiry</h2>
+
+        <h3 class="nhsuk-u-margin-top-6">Detail</h3>
+
+        <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-8">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Product name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Lidocaine hydrochloride 10% Nebuliser Solution
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Alternative name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Lido, Lidocaine
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Category
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Sterile
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Form
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Nebuliser
+                </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    BNF listed
+                </dt>
+                <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--red">No</strong>
+
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    BP monograph exists
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <strong class="nhsuk-tag nhsuk-tag--red">No</strong>
+                </dd>
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Accredited
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <strong class="nhsuk-tag nhsuk-tag--red">No</strong>
+                </dd>
+            </div>
+
+        </dl>
+
+        <h3>Ingredients</h3>
+        <p class="nhsuk-u-margin-bottom-5">There are currently no ingredients listed </p>
+
+        <h3>Routes</h3>
+        <p>The following route is used for this product.</p>
+        <ul class="nhsuk-list nhsuk-list--bullet">
+            <li>Nasal</li>
+        </ul>
+
+    </div>
+
+    <div class="nhsuk-tabs__panel" id="tab-messages" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab2">
+        <div class="nhsuk-tabs-panel-inner">
+            <h2 class="nhsuk-u-margin-bottom-7">Status and messages</h2>
+
+
+            <h3>Record of status updates</h3>
+            <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
+                <caption class="nhsuk-u-visually-hidden">Record of status updates</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        Status
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Date and time
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Updated by
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--grey">
+                        Submitted
+                    </strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date and time </span>01 Dec 2023 at 09:47
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Updated by</span>John Smith (Technical Queries)
+                    </td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--purple">
+                        In progress
+                    </strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date and time </span>13 Dec 2023 at 15:03
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Updated by</span>Matt Proctor-Leake (NHSBSA)
+                    </td>
+                </tr>
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--green">
+                        Approved
+                    </strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date and time </span>13 Dec 2023 at 15:33
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Updated by</span>Matt Proctor-Leake (NHSBSA)
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+
+            <h3>Message board</h3>
+            <!--                          what is the email address for suppliers to contact in reply to a message? MPL 20DEC22-->
+            <p>Messages from NHSBSA or NHS England will appear here. For example, this can be to communicate a status update or if more information is required.</p>
+            <details class="nhsuk-details nhsuk-expander">
+                <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    13 Dec 2023 at 15:03 | Status update
+                                </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                    <p>The status has been changed to 'In progress'. At this stage we do not require any further
+                        action on your behalf.</p>
+
+                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                    <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-3"
+                        style="color: #4c6272; font-weight: 400;">Further comments</h3>
+                </div>
+            </details>
+            <details class="nhsuk-details nhsuk-expander">
+                <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    13 Dec 2023 at 15:33 | Status update
+                                </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                    <p>The status has been changed to 'Approved'. At this stage we do not require any further
+                        action on your behalf.</p>
+
+                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                    <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-3"
+                        style="color: #4c6272; font-weight: 400;">Further comments</h3>
+                </div>
+            </details>
+
+
+        </div>
+    </div>
+
+
+
+</div>
+
+{% endblock %}
