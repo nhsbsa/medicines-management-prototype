@@ -1,0 +1,362 @@
+{% extends "base.html" %}
+{% block title %}
+Portal dashboard | Medicines Management design prototype | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+    <a class="nhsuk-back-link__link" id="back-link" href="view-list-special-product">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to view list of special product</a>
+</div>
+
+<h1><span class="nhsuk-caption-l" id="discontinue-reason">
+                	Add a Manufacturer name
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+    Add a product name</h1>
+
+<div class="nhsuk-tabs" data-module="nhsuk-tabs">
+    <h2 class="nhsuk-tabs__title">Contents</h2>
+    <ul class="nhsuk-tabs__list">
+        <li class="nhsuk-tabs__list-item nhsuk-tabs__lt-item--selected"
+            id="heading-tab-request"
+            role="presentation"><a class="nhsuk-tabs__tab" href="#tab-request" role="tab"
+                                   id="request-panel" aria-selected="true">Request</a></li>
+        <li class="nhsuk-tabs__list-item nhsuk-tabs__lt-item--selected"
+            id="heading-tab-submission"
+            role="presentation"><a class="nhsuk-tabs__tab" href="#tab-submission" role="tab"
+                                   id="submission-panel" aria-selected="true">Product enquiry</a></li>
+        
+        </li>
+<!--        <li class="nhsuk-tabs__list-item" id="heading-tab-uploads" role="presentation"><a-->
+<!--                class="nhsuk-tabs__tab" href="#tab-uploads" role="tab" id="uploads-panel">Uploads</a>-->
+<!--        </li>-->
+        <li class="nhsuk-tabs__list-item" id="heading-tab-messages" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-messages" role="tab" id="message-panel">Status and messages</a></li>
+        <li class="nhsuk-tabs__list-item" id="heading-tab-company" role="presentation"><a
+                class="nhsuk-tabs__tab" href="#tab-company" role="tab" id="company-panel">Manufacturer</a>
+        </li>
+
+    </ul>
+
+    <div class="nhsuk-tabs__panel" id="tab-request" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab1">
+        <div class="nhsuk-tabs-panel-inner">
+            <h2 class="nhsuk-u-margin-bottom-6">Request</h2>
+            <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-8">
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Status
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        <strong class="nhsuk-tag nhsuk-tag--blue">
+                            In progress
+                        </strong>
+                    </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Reference
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        SR-20231201
+                    </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Date received
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        01 December 2023
+                    </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Submitted by
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        Jane Smith
+                    </dd>
+
+                </div>
+
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Email
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        jane.smith@stockport.nhs.uk
+                    </dd>
+
+                </div>
+            </dl>
+        </div>
+    </div>
+
+    <div class="nhsuk-tabs__panel" id="tab-submission" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab1">
+        <div class="nhsuk-tabs-panel-inner">
+            <h2 class="nhsuk-u-margin-bottom-6">Product enquiry</h2>
+
+            <h3>Summary</h3>
+            <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-8">
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Enquiry reason
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        State a reason(stock availability /stock level /other)
+                    </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Product name
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        Add a product name
+                    </dd>
+
+                </div>
+                <div class="nhsuk-summary-list__row">
+                    <dt class="nhsuk-summary-list__key">
+                        Product enquiry messages
+                    </dt>
+                    <dd class="nhsuk-summary-list__value">
+                        Message title<br>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</br>
+                    </dd>
+
+                </div>
+            </dl>
+        </div>
+        
+    
+    </div>
+
+
+    <div class="nhsuk-tabs__panel" id="tab-messages" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab2">
+        <div class="nhsuk-tabs-panel-inner">
+            <h2 class="nhsuk-u-margin-bottom-7">Status and messages</h2>
+
+
+            <h3>Record of status updates</h3>
+            <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+                <caption class="nhsuk-u-visually-hidden">Record of status updates</caption>
+                <thead role="rowgroup" class="nhsuk-table__head">
+                <tr role="row">
+                    <th role="columnheader" class="" scope="col">
+                        Status
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Date changed
+                    </th>
+                    <th role="columnheader" class="" scope="col">
+                        Updated by
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody class="nhsuk-table__body">
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--grey">
+                        Ready
+                    </strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date changed</span>01 Dec 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Updated by</span>Stepping Hill Hospital - Stockport Pharmaceuticals
+                    </td>
+                </tr>
+
+                <tr role="row" class="nhsuk-table__row">
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--blue">
+                        In progress
+                    </strong>
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Date changed</span>13 Dec 2023
+                    </td>
+                    <td role="cell" class="nhsuk-table__cell">
+                        <span class="nhsuk-table-responsive__heading">Updated by</span>Matt Proctor-Leake (MATPL)
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+            <div class="nhsuk-action-link nhsuk-u-margin-bottom-9">
+                <a class="nhsuk-action-link__link nhsuk-link--no-visited-state" href="update-status">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">Update status</span>
+                </a>
+            </div>
+
+            <h3>Message board</h3>
+            <!-- what is the email address for suppliers to contact in reply to a message? MPL 20DEC22-->
+            <p>Use the message board to communicate with the manufacturer. Messages can be created when you update the status, or they can be added separately to this process.</p>
+            <details class="nhsuk-details nhsuk-expander">
+                <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    10 Dec 2023 at 15:03 | Status update
+                                </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                    <p>The status has been changed to 'actioned'. At this stage we do not require any further
+                        action on your behalf.</p>
+
+                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                    <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-3"
+                        style="color: #4c6272; font-weight: 400;">Further comments</h3>
+                    <p style="color: #4c6272; font-weight: 400;"
+                       class="nhsuk-u-font-size-16 nhsuk-u-margin-bottom-2">Here is an example of a comment and
+                        how it will be presented to the user (comment left on 22 September at 2024 15:19).</p>
+                    <p style="color: #4c6272; font-weight: 400;"
+                       class="nhsuk-u-font-size-16 nhsuk-u-margin-bottom-3">Here is another example of a comment
+                        and how it will be presented to the user if more than one comment is left (comment left
+                        on 21 September 2024 at 11:10).</p>
+                </div>
+
+            </details>
+
+            <details class="nhsuk-details nhsuk-expander">
+                <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    03 Dec 2023 at 10:01 | More information required
+                                </span>
+                </summary>
+                <div class="nhsuk-details__text">
+                    <p>Thank you for clarifying the reason for no price and confirming the number of subpacks.
+                        We also require more images of artwork. </p>
+                    <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                    <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-3"
+                        style="color: #4c6272; font-weight: 400;">Further comments</h3>
+                    <p style="color: #4c6272; font-weight: 400;"
+                       class="nhsuk-u-font-size-16 nhsuk-u-margin-bottom-3">No comments at present.</p>
+                </div>
+            </details>
+
+            <div class="nhsuk-action-link nhsuk-u-margin-top-5">
+                <a class="nhsuk-action-link__link" href="#">
+                    <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
+                        <path d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
+                    </svg>
+                    <span class="nhsuk-action-link__text">Create a message post only</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+    <div class="nhsuk-tabs__panel" id="tab-company" role="tabpanel" tabindex="-1"
+         aria-labelledby="tab4">
+        <div class="nhsuk-tabs-panel-inner">
+                    <h2 class="nhsuk-u-margin-bottom-6">Manufacturer</h2>
+                    <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-8">
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Host organisation
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                Stockport NHS Foundation Trust
+                            </dd>
+
+                        </div>
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Unit
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                Stepping Hill Hospital - Stockport Pharmaceuticals
+                            </dd>
+
+                        </div>
+
+                        <div class="nhsuk-summary-list__row">
+                            <dt class="nhsuk-summary-list__key">
+                                Homepage
+                            </dt>
+                            <dd class="nhsuk-summary-list__value">
+                                <a class="nhsuk-link nhsuk-link--no-visited-state" href="http://www.stockportpharmaceuticals.nhs.uk" target="_blank">
+                                    http://www.stockportpharmaceuticals.nhs.uk</a>
+                            </dd>
+
+                        </div>
+                    </dl>
+
+                    <h3>Contact information</h3>
+
+                    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
+                        <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of ingredients for Lidocaine hydrochloride 10% Nebuliser Solution</caption>
+                        <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Department
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Email
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Telephone
+                            </th>
+
+                        </tr>
+                        </thead>
+                        <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Department </span>Ordering
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Email</span>sppu.orders@stockport.nhs.uk
+                            </td><td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Telephone</span>0161 419 5666
+                            </td>
+                        </tr>
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Department </span>Technical Queries
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Email</span>sppu.orders@stockport.nhs.uk
+                            </td><td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Telephone</span>0161 419 5666
+                            </td>
+                        </tr>
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Department </span>Quality Assurance Queries
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Email</span>robert.anslow@stockport.nhs.uk
+                            </td><td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Telephone</span>0161 419 5666
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+            
+    </div>
+
+</div>
+
+{% endblock %}
