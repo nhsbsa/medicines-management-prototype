@@ -52,15 +52,16 @@ Submit a new product: name | Portal | NHSBSA
     localStorage.setItem("special-product-shelf-life", shelfLife.value);
 }
 
+  if (localStorage.getItem("summary-page") === "yes") {
+    document.getElementById("continue-button").href = "product-summary";
+  }
+
 var getShelfLife = localStorage.getItem("special-product-shelf-life");
 var shelfLifeDetail = document.querySelector("#shelf-life");
 
 if (shelfLifeDetail != null) {
     if (getShelfLife != null) {
       shelfLifeDetail.defaultValue = getShelfLife;
-    }
-    if (getShelfLife != null && summaryPage != null) {
-        getContinueButton.href = "product-summary";
     }
 }
 

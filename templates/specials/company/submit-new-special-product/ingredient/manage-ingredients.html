@@ -103,6 +103,8 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 
 
 <script>
-    console.log(localStorage);
+    if (localStorage.getItem("summary-page") === "yes") {
+        document.getElementById("continue-button").href = "../product-summary";
+    }
 </script>
 {% endblock %}

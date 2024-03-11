@@ -3,23 +3,23 @@
 Submit a new product: name | Portal | NHSBSA
 {% endblock %}
 {% block content %}
-<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
-  <a class="nhsuk-back-link__link" href="check-list">
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+  <a class="nhsuk-back-link__link" href="add-host-organisation">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to checklist</a>
+    Go back to what is the host organisation name</a>
 </div>
 
 <div class="nhsuk-form-group">
-  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+  <fieldset class="nhsuk-fieldset">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
         <span class="nhsuk-caption-l">
-                Submit a new special product
+          Add a new PMU
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        What is the product name?
+        What is the unit name?
       </h1>
     </legend>
 
@@ -28,15 +28,15 @@ Submit a new product: name | Portal | NHSBSA
 <!--    </div>-->
 
   <label class="nhsuk-label" for="product-name">
-    Product name
+    Unit name
   </label>
   <input class="nhsuk-input" id="product-name" name="example" type="text">
   </fieldset>
 </div>
 
   <a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeName()"
-     href="alternative-product-name" id="continue-button" type="submit">
-    Save and continue
+     href="add-ms-licenses" id="continue-button" type="submit">
+    Continue
   </a>
 
 <script>
@@ -45,15 +45,16 @@ Submit a new product: name | Portal | NHSBSA
     localStorage.setItem("special-product-name", productName.value);
 }
 
-var summaryPage = localStorage.getItem("summary-page");
 var getProductName = localStorage.getItem("special-product-name");
-var productName = document.getElementById("product-name");
+var prodName = document.querySelector("#product-name");
 
+if (prodName != null) {
     if (getProductName != null) {
-      productName.defaultValue = getProductName;
+        prodName.defaultValue = getProductName;
     }
-    if (getProductName != null && summaryPage === "yes") {
-        document.getElementById("continue-button").href = "product-summary";
+    if (getProductName != null && summaryPage != null) {
+        getContinueButton.href = "product-summary";
+    }
 }
 
 </script>

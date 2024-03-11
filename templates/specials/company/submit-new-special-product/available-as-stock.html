@@ -52,7 +52,10 @@ Submit a new product: effective date | Portal | NHSBSA
   console.log(localStorage);
 
   var radioButtons = document.getElementsByName("availability-as-stock");
-  let summaryPage = localStorage.getItem("supplier-summary");
+
+  if (localStorage.getItem("summary-page") === "yes") {
+    document.getElementById("continue-button").href = "product-summary";
+  }
 
    if (radioButtons) {
     var getCategory = localStorage.getItem("special-product-available-as-stock");
@@ -64,7 +67,7 @@ Submit a new product: effective date | Portal | NHSBSA
             }
         }
       }
-   };
+   }
 
 function storeAvailabilityAsStock() {
     var radioButtons = document.getElementsByName("availability-as-stock");
