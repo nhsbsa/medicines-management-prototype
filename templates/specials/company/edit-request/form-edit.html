@@ -10,7 +10,7 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
              aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
-        <span id="back-link-text">Go back to summary edit</span></a>
+        <span id="back-link-text">Go back to summary</span></a>
 </div>
 
 <div class="nhsuk-form-group">
@@ -52,7 +52,7 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
 <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeForm()"
    href="product-summary-edit" id="button"
    type="submit">
-    Save edit
+    Save and continue
 </a>
 
 <script src="/js/gov.min.js"></script>
@@ -79,6 +79,9 @@ Add market authorisation (MA) number | Submit a product change: market authorisa
     newLabel.style.display = "none";
     newLabel.setAttribute("for", document.querySelector("#product-form-select").id);
     parentDiv.appendChild(newLabel);
+
+    let getInputValue = document.querySelector("#product-form");
+    getInputValue.value = "Lotion";
 
     function storeForm() {
 
