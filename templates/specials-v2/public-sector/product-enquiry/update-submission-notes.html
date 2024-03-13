@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: pack size and strength | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-4">
+    <a class="nhsuk-back-link__link" id="back-link" href="add-message">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to would you like to add a message</a>
+</div>
+
+<h1>Message content</h1>
+
+<div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="example-with-hint-text">
+        What is the title of the message?
+    </label>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="example-with-hint-text">
+        This title will appear on the message in order to determine the category.
+    </div>
+    <div class="nhsuk-radios nhsuk-radios--conditional">
+
+        <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="contact-1" name="notes-title" type="radio" value="Status update" aria-controls="conditional-contact-1" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                Status update
+            </label>
+        </div>
+
+        <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="contact-2" name="notes-title" type="radio" value="More information required" aria-controls="conditional-contact-2" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+                More information required
+            </label>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="nhsuk-form-group">
+    <label class="nhsuk-label" for="example-with-hint-text">
+        What is the content of the message?
+    </label>
+    <textarea class="nhsuk-textarea" id="notes-detail" name="example" rows="5" aria-describedby="example-hint"></textarea>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-4" href="product-enquiry-view-page.html#tab-messages"
+   onclick="storeNotes()" id="continue-button" type="submit">
+    Continue
+</a>
+
+<script>
+    window.onload = function() {
+    if (localStorage.getItem("submission-status") == null) {
+    document.getElementById("back-link").setAttribute('href', "submission-view");
+    document.getElementById("back-link").innerHTML = "<svg class='nhsuk-icon nhsuk-icon__chevron-left' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' aria-hidden='true' height='24' width='24'><path d='M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z'></path></svg>Go back to view submission";
+    }
+};
+
+    var radioButtons = document.getElementsByName("notes-title");
+    let notesDetail = document.getElementById("notes-detail");
+
+    function storeNotes() {
+    var notesTitle = document.getElementById("notes-title");
+    let notesTitleOther = document.getElementById("notes-title-other");
+
+    localStorage.setItem("notes-detail", notesDetail.value);
+
+     for (var radio of radioButtons) {
+        if (radio.checked) {
+            localStorage.setItem("notes-title", radio.value);
+            if (localStorage.getItem("notes-title") == 'other') {
+                localStorage.setItem("notes-title-other", notesTitleOther.value);
+            }
+          }
+       }
+    }
+
+    var getNotesTitle = localStorage.getItem("notes-title");
+
+    if (getNotesTitle != null) {
+    for (var radio of radioButtons) {
+             if (getNotesTitle === radio.value) {
+                 radio.checked = true;
+             }
+         }
+       }
+
+    var getNotesDetail = localStorage.getItem("notes-detail");
+
+    if (getNotesDetail != null) {
+      notesDetail.defaultValue = getNotesDetail;
+    }
+</script>
+
+{% endblock %}

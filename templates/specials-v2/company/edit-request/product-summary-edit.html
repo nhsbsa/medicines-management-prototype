@@ -1,0 +1,582 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: product summary | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+  <a class="nhsuk-back-link__link" href="../more-info.html">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to new special product - Lidocaine hydrochloride 10% Nebuliser Solution </a>
+</div>
+
+<h1><span class="nhsuk-caption-l">
+               Submit a new special product
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>Summary</h1>
+
+<!-- When editing an already submitted product, you should not have 'save as draft' option MPL 12MAR24 -->
+
+<p class="nhsuk-u-margin-bottom-5">Check your answers before completing your submission.</p>
+
+<dl class="nhsuk-summary-list">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product name
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-name">
+      Test Product Name goes here
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-name-edit">
+        Edit <span class="nhsuk-u-visually-hidden">&nbsp;product name</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Alternative product name
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="alternative-product-name">
+      No alternative product name
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="alternative-product-name-edit">
+        Edit <span class="nhsuk-u-visually-hidden">&nbsp; alternative product name</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Category
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-category">
+      Sterile
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="category-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp;category</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Form
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-form">
+      Lotion
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="form-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; form</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product listed on the British National Formulary (BNF)
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-on-bnf">
+      <strong class="nhsuk-tag nhsuk-tag--red" id="on-bnf">
+        No
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="has-BNF-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product listed on the British National Formulary (BNF)</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product has a British Pharmacopoeia (BP) monograph
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-has-BP">
+      <strong class="nhsuk-tag nhsuk-tag--red" id="has-BP">
+        No
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="has-BP-monograph-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has a British Pharmacopoeia (BP) monograph</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product has an accreditation
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-has-accreditation">
+      <strong class="nhsuk-tag nhsuk-tag--red" id="has-accreditation">
+        No
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="accreditation-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has an accreditation</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-u-visually-hidden" id="accreditation-body">
+    <dt class="nhsuk-summary-list__key">
+      Accreditation body
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="accreditation-body-detail">
+      British Association of Dermatologists
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="accreditation-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has an accreditation</span>
+      </a>
+
+    </dd>
+
+  </div>
+</dl>
+
+<!-- will need to add in reference to pack on visually hidden -->
+
+<h2 class="nhsuk-u-margin-top-8">Containers</h2>
+
+<p>If you need to make changes to the containers you can <a href="container/manage-container-updated"> edit, add or remove containers here</a></p>
+
+<table class="nhsuk-table nhsuk-table-responsive nhsuk-u-margin-bottom-8">
+  <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Container information</caption>
+  <thead role="rowgroup" class="nhsuk-table__head">
+  <tr role="row">
+    <th role="columnheader" class="" scope="col">
+      Container
+    </th>
+    <th role="columnheader" class="" scope="col">
+      Pack
+    </th>
+    <th role="columnheader" class="" scope="col">
+      Pack quantity
+    </th>
+    <th role="columnheader" class="" scope="col">
+      GTIN
+    </th>
+    <th role="columnheader" class="" scope="col">
+      AMPPID
+    </th>
+  </thead>
+  <tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Container</span>Bottle-Amber glass</td>
+    <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Pack</span>10ml</td>
+    <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Pack quantity</span>10</td>
+    <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">GTIN</span>5020850100014</td>
+    <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">AMPPID</span>22369611000001102</td>
+  </tr>
+  </tbody>
+</table>
+
+<!--<h2>Ingredients</h2>-->
+
+<!--&lt;!&ndash;<p>If you need to make changes to the ingredients you can <a href="ingredient-name-edit.html"> edit, add or remove ingredients here</a></p>&ndash;&gt;-->
+
+<!--<table class="nhsuk-table nhsuk-table-responsive nhsuk-u-margin-bottom-8">-->
+<!--  <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of users for specials profile replacement</caption>-->
+<!--  <thead role="rowgroup" class="nhsuk-table__head">-->
+<!--  <tr role="row">-->
+<!--    <th role="columnheader" class="" scope="col">-->
+<!--      Ingredient name-->
+<!--    </th>-->
+<!--    <th role="columnheader" class="" scope="col">-->
+<!--      Strength-->
+<!--    </th>-->
+<!--    <th role="columnheader" class="" scope="col">-->
+<!--      Action-->
+<!--    </th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody class="nhsuk-table__body">-->
+<!--  <tr role="row" class="nhsuk-table__row">-->
+<!--    <td class="nhsuk-table__cell">-->
+<!--      <span class="nhsuk-table-responsive__heading">Ingredient name</span>Prednisolone Sodium Phosphate</td>-->
+<!--    <td class="nhsuk-table__cell ">-->
+<!--      <span class="nhsuk-table-responsive__heading">Strength</span>0.5%</td>-->
+<!--    <td role="cell" class="nhsuk-table__cell">-->
+<!--      <span class="nhsuk-table-responsive__heading">File upload name</span>-->
+<!--      <a href="manage-ingredients-edit.html">Edit</a>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--  <tr role="row" class="nhsuk-table__row">-->
+<!--    <td class="nhsuk-table__cell">-->
+<!--      <span class="nhsuk-table-responsive__heading">Ingredient name</span>Salicylic Acid BP</td>-->
+<!--    <td class="nhsuk-table__cell ">-->
+<!--      <span class="nhsuk-table-responsive__heading">Strength</span>10%</td>-->
+<!--    <td role="cell" class="nhsuk-table__cell">-->
+<!--      <span class="nhsuk-table-responsive__heading">File upload name</span>-->
+<!--      <a href="#">Edit</a>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+<!--<h2>Excipients</h2>-->
+
+<!--&lt;!&ndash; if no excipients exist then add the following: &ndash;&gt;-->
+
+<!--&lt;!&ndash;<p>No excipients exist. To change this you can <a href="#"> add excipients to the product</a></p>&ndash;&gt;-->
+
+<!--<dl class="nhsuk-summary-list">-->
+
+<!--  <div class="nhsuk-summary-list__row">-->
+<!--    <dt class="nhsuk-summary-list__key">-->
+<!--      Excipients-->
+<!--    </dt>-->
+<!--    <dd class="nhsuk-summary-list__value" id="excipient-name">-->
+<!--      Methyl hydroxybenzoate-->
+<!--&lt;!&ndash;      if more than 1 excipient then these to appear underneath in the same <dd> MPL 27FEB24   &ndash;&gt;-->
+<!--    </dd>-->
+
+<!--    <dd class="nhsuk-summary-list__actions">-->
+
+<!--      <a href="manage-excipients-edit.html">-->
+<!--        Edit <span class="nhsuk-u-visually-hidden">&nbsp;excipients</span>-->
+<!--      </a>-->
+
+<!--    </dd>-->
+
+<!--  </div>-->
+<!--</dl>-->
+
+<h2 class="nhsuk-u-margin-top-8">Routes</h2>
+
+<!-- if no routes exist then add the following: -->
+
+<!--<p>No routes exist. To change this you can <a href="#"> add routes to the product</a></p>-->
+
+<dl class="nhsuk-summary-list">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Routes
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="route-name">
+      Oral
+      <!--      if more than 1 route then these to appear underneath in the same <dd> MPL 27FEB24   -->
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="manage-route-edit.html">
+        Edit <span class="nhsuk-u-visually-hidden">&nbsp;routes</span>
+      </a>
+
+    </dd>
+
+  </div>
+</dl>
+
+<h2 class="nhsuk-u-margin-top-8">Inventory</h2>
+
+<dl class="nhsuk-summary-list">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Is the product available?
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-available">
+      <strong class="nhsuk-tag nhsuk-tag--red" id="has-availability">
+        No
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="available-edit">
+        Edit <span class="nhsuk-u-visually-hidden">&nbsp;if the product is available</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Is the product available as stock?
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-available-as-stock">
+      <strong class="nhsuk-tag nhsuk-tag--red" id="on-available-as-stock">
+        No
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="available-as-stock-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product is available as stock</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Shelf life
+    </dt>
+    <dd class="nhsuk-summary-list__value" >
+      <span id="product-shelf-life">365</span> days
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="shelf-life-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp;shelf life</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Is the shelf life validated?
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-shelf-life-valid">
+      <strong class="nhsuk-tag nhsuk-tag--red" id="has-shelf-life-valid">
+        No
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="shelf-life-validated-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product shelf life is validated</span>
+      </a>
+    </dd>
+  </div>
+</dl>
+
+<h2 class="nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-8">Attributes</h2>
+
+<p>If you need make changes to the attributes you can <a href="attributes"> edit, add or remove attributes here</a></p>
+
+<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
+  <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of ingredients for Lidocaine hydrochloride 10% Nebuliser Solution</caption>
+  <thead role="rowgroup" class="nhsuk-table__head">
+  <tr role="row">
+    <th role="columnheader" class="" scope="col">
+      Attribute
+    </th>
+    <th role="columnheader" class="" scope="col">
+      Present
+    </th>
+    <th role="columnheader" class="" scope="col">
+      File upload
+    </th>
+
+  </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Attribute </span>Certificate of Analysis (CoA)
+    </td><td role="cell" class="nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--red">
+    No
+  </strong>
+  </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">File upload name</span>
+      <span class="nhsuk-u-visually-hidden">No file uploaded</span>
+    </td>
+  </tr>
+  <tr role="row" class="nhsuk-table__row">
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Attribute </span>Patient Information Leaflet (PIL) image
+    </td><td role="cell" class="nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--green">
+    Yes
+  </strong>
+  </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">File upload name</span>
+      <span>No file uploaded</span>
+    </td>
+  </tr>
+  <tr role="row" class="nhsuk-table__row">
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Attribute </span>Label image
+    </td><td role="cell" class="nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--green">
+    Yes
+  </strong>
+  </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">File upload name</span>
+      <a href="#">Lidocaine 10% Nebuliser Solution.jpg</a>
+    </td>
+  </tr>
+  <tr role="row" class="nhsuk-table__row">
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Attribute </span>Sugar free
+    </td><td role="cell" class="nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--red">
+    No
+  </strong>
+  </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">File upload name</span>
+      <span class="nhsuk-u-visually-hidden">No upload required</span>
+    </td>
+  </tr>
+  <tr role="row" class="nhsuk-table__row">
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Attribute </span>Preservative free
+    </td><td role="cell" class="nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--green">
+    Yes
+  </strong>
+  </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">File upload name</span>
+      <span>No upload required</span>
+    </td>
+  </tr>
+  <tr role="row" class="nhsuk-table__row">
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Attribute </span>Colour free
+    </td><td role="cell" class="nhsuk-table__cell">
+    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--red">
+    No
+  </strong>
+  </td>
+    <td role="cell" class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">File upload name</span>
+      <span class="nhsuk-u-visually-hidden">No upload required</span>
+    </td>
+  </tr>
+
+  </tbody>
+</table>
+
+<a class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-right-5" href="confirmation"
+   type="submit">
+  Submit new special product
+</a>
+
+<script>
+let summaryPage = localStorage.getItem("summary-page");
+
+if (!summaryPage) {
+  localStorage.setItem("summary-page", "yes");
+}
+
+var getProductName = localStorage.getItem("special-product-name");
+if (getProductName) {
+  document.getElementById("product-name").innerHTML = getProductName;
+}
+
+var getHasAltProductName = localStorage.getItem("special-product-alt-name-advised");
+var getAltProductName = localStorage.getItem("special-product-alt-name");
+
+if (getHasAltProductName === "Yes" && getAltProductName) {
+  if (getAltProductName !== "") {
+    document.getElementById("alternative-product-name").innerHTML = getAltProductName;
+  }
+}
+
+var getProductCategory = localStorage.getItem("special-product-category");
+if (getProductCategory) {
+  document.getElementById("product-category").innerHTML = getProductCategory;
+}
+
+var getProductForm = localStorage.getItem("special-product-form");
+if (getProductForm) {
+  document.getElementById("product-form").innerHTML = getProductForm;
+}
+
+var getOnBNF = localStorage.getItem("special-product-bnf");
+if (getOnBNF === "Yes") {
+   document.getElementById("on-bnf").classList.remove("nhsuk-tag--red");
+   document.getElementById("on-bnf").classList.add("nhsuk-tag--green");
+   document.getElementById("on-bnf").textContent = "Yes";
+}
+
+var getHasBP = localStorage.getItem("special-product-bp-monograph");
+if (getHasBP === "Yes") {
+   document.getElementById("has-BP").classList.remove("nhsuk-tag--red");
+   document.getElementById("has-BP").classList.add("nhsuk-tag--green");
+   document.getElementById("has-BP").textContent = "Yes";
+}
+
+var getHasAccreditation = localStorage.getItem("special-product-has-accreditation");
+var getAccreditationBody = localStorage.getItem("special-product-accreditation");
+
+if (getHasAccreditation === "Yes") {
+  document.getElementById("accreditation-body-detail").innerHTML = getAccreditationBody;
+  document.getElementById("has-accreditation").classList.remove("nhsuk-tag--red");
+  document.getElementById("has-accreditation").classList.add("nhsuk-tag--green");
+  document.getElementById("has-accreditation").textContent = "Yes";
+  document.getElementById("accreditation-body").classList.remove("nhsuk-u-visually-hidden");
+}
+
+var getIsAvailable = localStorage.getItem("special-product-available");
+if (getIsAvailable === "Yes") {
+  document.getElementById("has-availability").classList.remove("nhsuk-tag--red");
+  document.getElementById("has-availability").classList.add("nhsuk-tag--green");
+  document.getElementById("has-availability").textContent = "Yes";
+}
+
+var getIsAvailableAsStock = localStorage.getItem("special-product-available-as-stock");
+if (getIsAvailableAsStock === "Yes") {
+  document.getElementById("on-available-as-stock").classList.remove("nhsuk-tag--red");
+  document.getElementById("on-available-as-stock").classList.add("nhsuk-tag--green");
+  document.getElementById("on-available-as-stock").textContent = "Yes";
+}
+
+var getShelfLife = localStorage.getItem("special-product-shelf-life");
+if (getShelfLife) {
+  document.getElementById("product-shelf-life").innerHTML = getShelfLife;
+}
+
+var getShelfLifeValidated = localStorage.getItem("special-product-shelf-life-valid");
+if (getShelfLifeValidated === "Yes") {
+  document.getElementById("has-shelf-life-valid").classList.remove("nhsuk-tag--red");
+  document.getElementById("has-shelf-life-valid").classList.add("nhsuk-tag--green");
+  document.getElementById("has-shelf-life-valid").textContent = "Yes";
+}
+
+console.log(localStorage);
+
+</script>
+{% endblock %}

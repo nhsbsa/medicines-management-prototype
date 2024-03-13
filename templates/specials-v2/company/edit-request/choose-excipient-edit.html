@@ -1,0 +1,100 @@
+{% extends "specials-logo-base.html" %}
+{% block title %}
+Add market authorisation (MA) number | Submit a product change: market authorisation number | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+  <a class="nhsuk-back-link__link" href="product-summary-edit.html">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    <span id="back-link-text">Go back to summary edit </span></a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-uom-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading"><span class="nhsuk-caption-l">
+                Edit a new special product
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Edit the excipient name?
+      </h1>
+    </legend>
+
+
+    <label class="nhsuk-label" for="product-excipient">
+      Excipient
+    </label>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-uom-hint">
+      If the excipient required is not found, choose 'Other' and continue to the next stage to capture this.
+    </div>
+
+    <select class="nhsuk-select" id="product-excipient" name="type">
+      <option value=""></option>
+      <option value="Other">Other</option>
+      <option value="Benzalkonium Chloride">Benzalkonium Chloride</option>
+      <option value="Cherry/Raspberry flavour">Cherry/Raspberry flavour</option>
+      <option value="Citric acid">Citric acid</option>
+      <option value="Disodium Edetate">Disodium Edetate</option>
+      <option value="Distilled water">Distilled water</option>
+      <option value="Ethanol">Ethanol</option>
+      <option value="Maltitol">Maltitol</option>
+      <option value="Methyl hydroxybenzoate">Methyl hydroxybenzoate</option>
+      <option value="Propyl hydroxybenzoate">Propyl hydroxybenzoate</option>
+      <option value="Sodium Acid Phosphate">Sodium Acid Phosphate</option>
+      <option value="Sodium Chloride">Sodium Chloride</option>
+      <option value="Sodium phosphate">Sodium phosphate</option>
+      <option value="Water for Injections">Water for Injections</option>
+    </select>
+
+
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeExcipient()"
+   href="manage-excipients.html" id="continue-button"
+   type="submit">
+  Save and continue
+</a>
+
+<script src="/js/gov.min.js"></script>
+
+<script>
+console.log(localStorage);
+
+let allSelectIds = document.querySelectorAll('select[id]');
+let allInputIds = document.querySelectorAll('input[id]');
+
+
+accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: "",
+            autoselect: true,
+            showAllValues: true,
+            confirmOnBlur: false,
+            showNoOptionsFound: true,
+            selectElement: document.querySelector("#product-excipient"),
+        });
+
+        let parentDiv = document.querySelector("#product-excipient").parentNode;
+        let newLabel = document.createElement("label");
+        newLabel.innerHTML = "Form";
+        newLabel.style.display = "none";
+        newLabel.setAttribute("for", document.querySelector("#product-excipient-select").id);
+        parentDiv.appendChild(newLabel);
+
+function storeExcipient() {
+
+        var prodExcipient = document.getElementById("product-excipient");
+        localStorage.setItem("special-product-excipient", prodExcipient.value);
+
+        console.log(localStorage);
+
+        if (prodExcipient.value === "Other") {
+            document.getElementById("continue-button").setAttribute('href', "excipient-other-edit.html");
+        }
+    }
+
+
+</script>
+{% endblock %}
