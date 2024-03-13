@@ -59,7 +59,7 @@ Submit a new product: effective date | Portal | NHSBSA
 
 
 
-  <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeAltProdName()" href="product-summary-edit.html" id="button" type="submit">
+  <a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeAltProdName()" href="product-summary-edit.html" id="continue-button" type="submit">
     Save and continue
   </a>
 
@@ -78,7 +78,7 @@ Submit a new product: effective date | Portal | NHSBSA
                 radio.checked = true;
             }
             if (summaryPage === "yes") {
-                buttonLink.href = "product-summary";
+                buttonLink.href = "product-summary-edit";
             }
          }
       }
@@ -96,7 +96,7 @@ function storeAltProdName() {
         if (radio.checked) {
             localStorage.setItem("special-product-alt-name-advised", radio.value);
             if (localStorage.getItem("summary-page")) {
-              document.getElementById("continue-button").href = "product-summary"
+              document.getElementById("continue-button").href = "product-summary-edit"
             }
             if (radio.value === 'Yes') {
               var contactName = document.getElementById("alt-prod-name-detail");
