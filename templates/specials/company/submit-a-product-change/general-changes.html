@@ -1,0 +1,177 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: product summary | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+  <a class="nhsuk-back-link__link" href="choose-product">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to choose a product</a>
+</div>
+
+<h1><span class="nhsuk-caption-l">
+               Submit a special product change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>Product detail</h1>
+
+<!-- When editing an already submitted product, you should not have 'save as draft' option MPL 12MAR24 -->
+
+<p class="nhsuk-u-margin-bottom-5">If any changes need to be made to the product detail, use the relevant &#39;Edit&#39; links. If no changes need to be made to this section, use the &#39;Save and continue&#39; button to move to the next stage.</p>
+
+<dl class="nhsuk-summary-list">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product name
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-name">
+      Test Product Name goes here
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-name-edit">
+        Edit <span class="nhsuk-u-visually-hidden">&nbsp;product name</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Alternative product name
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="alternative-product-name">
+      No alternative product name
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="alternative-product-name-edit">
+        Edit <span class="nhsuk-u-visually-hidden">&nbsp; alternative product name</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Category
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-category">
+      Sterile
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="category-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp;category</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Form
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-form">
+      Lotion
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="form-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; form</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product listed on the British National Formulary (BNF)
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-on-bnf">
+      <strong class="nhsuk-tag nhsuk-tag--red" id="on-bnf">
+        No
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="has-BNF-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product listed on the British National Formulary (BNF)</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product has a British Pharmacopoeia (BP) monograph
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-has-BP">
+      <strong class="nhsuk-tag nhsuk-tag--red" id="has-BP">
+        No
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="has-BP-monograph-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has a British Pharmacopoeia (BP) monograph</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product has an accreditation
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-has-accreditation">
+      <strong class="nhsuk-tag nhsuk-tag--red" id="has-accreditation">
+        No
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="accreditation-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has an accreditation</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row nhsuk-u-visually-hidden" id="accreditation-body">
+    <dt class="nhsuk-summary-list__key">
+      Accreditation body
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="accreditation-body-detail">
+      British Association of Dermatologists
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="accreditation-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has an accreditation</span>
+      </a>
+
+    </dd>
+
+  </div>
+</dl>
+
+<a class="nhsuk-button nhsuk-u-margin-top-2"
+   href="container/manage-container-updated" id="button" type="submit">
+  Save and continue
+</a>
+
+{% endblock %}

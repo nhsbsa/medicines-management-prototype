@@ -4,21 +4,19 @@ Submit a new product: product summary | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
-  <a class="nhsuk-back-link__link" href="../more-info.html">
+  <a class="nhsuk-back-link__link" href="product-submissions-main-edit.html">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to new special product - Lidocaine hydrochloride 10% Nebuliser Solution </a>
+    Go back to ongoing special requests </a>
 </div>
 
 <h1><span class="nhsuk-caption-l">
-               Submit a new special product
+                Submit a new special product
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>Summary</h1>
 
-<!-- When editing an already submitted product, you should not have 'save as draft' option MPL 12MAR24 -->
-
-<p class="nhsuk-u-margin-bottom-5">Check your answers before completing your submission.</p>
+<p class="nhsuk-u-margin-bottom-5">Check your answers before completing your submission. If you are not ready to submit you can store the information to return later.</p>
 
 <dl class="nhsuk-summary-list">
 
@@ -28,14 +26,6 @@ Submit a new product: product summary | Portal | NHSBSA
     </dt>
     <dd class="nhsuk-summary-list__value" id="product-name">
       Test Product Name goes here
-    </dd>
-
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="product-name-edit">
-        Edit <span class="nhsuk-u-visually-hidden">&nbsp;product name</span>
-      </a>
-
     </dd>
 
   </div>
@@ -48,14 +38,6 @@ Submit a new product: product summary | Portal | NHSBSA
       No alternative product name
     </dd>
 
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="alternative-product-name-edit">
-        Edit <span class="nhsuk-u-visually-hidden">&nbsp; alternative product name</span>
-      </a>
-
-    </dd>
-
   </div>
 
   <div class="nhsuk-summary-list__row">
@@ -64,14 +46,6 @@ Submit a new product: product summary | Portal | NHSBSA
     </dt>
     <dd class="nhsuk-summary-list__value" id="product-category">
       Sterile
-    </dd>
-
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="category-edit">
-        Edit<span class="nhsuk-u-visually-hidden">&nbsp;category</span>
-      </a>
-
     </dd>
 
   </div>
@@ -83,14 +57,6 @@ Submit a new product: product summary | Portal | NHSBSA
       Lotion
     </dd>
 
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="form-edit">
-        Edit<span class="nhsuk-u-visually-hidden">&nbsp; form</span>
-      </a>
-
-    </dd>
-
   </div>
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -100,14 +66,6 @@ Submit a new product: product summary | Portal | NHSBSA
       <strong class="nhsuk-tag nhsuk-tag--red" id="on-bnf">
         No
       </strong>
-    </dd>
-
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="has-BNF-edit">
-        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product listed on the British National Formulary (BNF)</span>
-      </a>
-
     </dd>
 
   </div>
@@ -122,14 +80,6 @@ Submit a new product: product summary | Portal | NHSBSA
       </strong>
     </dd>
 
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="has-BP-monograph-edit">
-        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has a British Pharmacopoeia (BP) monograph</span>
-      </a>
-
-    </dd>
-
   </div>
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
@@ -141,14 +91,6 @@ Submit a new product: product summary | Portal | NHSBSA
       </strong>
     </dd>
 
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="accreditation-edit">
-        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has an accreditation</span>
-      </a>
-
-    </dd>
-
   </div>
   <div class="nhsuk-summary-list__row nhsuk-u-visually-hidden" id="accreditation-body">
     <dt class="nhsuk-summary-list__key">
@@ -158,14 +100,6 @@ Submit a new product: product summary | Portal | NHSBSA
       British Association of Dermatologists
     </dd>
 
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="accreditation-edit">
-        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has an accreditation</span>
-      </a>
-
-    </dd>
-
   </div>
 </dl>
 
@@ -173,7 +107,6 @@ Submit a new product: product summary | Portal | NHSBSA
 
 <h2 class="nhsuk-u-margin-top-8">Containers</h2>
 
-<p>If you need to make changes to the containers you can <a href="container/manage-container-updated"> edit, add or remove containers here</a></p>
 
 <table class="nhsuk-table nhsuk-table-responsive nhsuk-u-margin-bottom-8">
   <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">Container information</caption>
@@ -206,76 +139,57 @@ Submit a new product: product summary | Portal | NHSBSA
   </tbody>
 </table>
 
-<!--<h2>Ingredients</h2>-->
+<h2>Ingredients</h2>
 
-<!--&lt;!&ndash;<p>If you need to make changes to the ingredients you can <a href="ingredient-name-edit.html"> edit, add or remove ingredients here</a></p>&ndash;&gt;-->
+<table class="nhsuk-table nhsuk-table-responsive nhsuk-u-margin-bottom-8">
+  <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of users for specials profile replacement</caption>
+  <thead role="rowgroup" class="nhsuk-table__head">
+  <tr role="row">
+    <th role="columnheader" class="" scope="col">
+      Ingredient name
+    </th>
+    <th role="columnheader" class="" scope="col">
+      Strength
+    </th>
+  </tr>
+  </thead>
+  <tbody class="nhsuk-table__body">
+  <tr role="row" class="nhsuk-table__row">
+    <td class="nhsuk-table__cell">
+      <span class="nhsuk-table-responsive__heading">Ingredient name</span>Prednisolone Sodium Phosphate</td>
+    <td class="nhsuk-table__cell ">
+      <span class="nhsuk-table-responsive__heading">Strength</span>0.05%</td>
+  </tr>
+  </tbody>
+</table>
 
-<!--<table class="nhsuk-table nhsuk-table-responsive nhsuk-u-margin-bottom-8">-->
-<!--  <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of users for specials profile replacement</caption>-->
-<!--  <thead role="rowgroup" class="nhsuk-table__head">-->
-<!--  <tr role="row">-->
-<!--    <th role="columnheader" class="" scope="col">-->
-<!--      Ingredient name-->
-<!--    </th>-->
-<!--    <th role="columnheader" class="" scope="col">-->
-<!--      Strength-->
-<!--    </th>-->
-<!--    <th role="columnheader" class="" scope="col">-->
-<!--      Action-->
-<!--    </th>-->
-<!--  </tr>-->
-<!--  </thead>-->
-<!--  <tbody class="nhsuk-table__body">-->
-<!--  <tr role="row" class="nhsuk-table__row">-->
-<!--    <td class="nhsuk-table__cell">-->
-<!--      <span class="nhsuk-table-responsive__heading">Ingredient name</span>Prednisolone Sodium Phosphate</td>-->
-<!--    <td class="nhsuk-table__cell ">-->
-<!--      <span class="nhsuk-table-responsive__heading">Strength</span>0.5%</td>-->
-<!--    <td role="cell" class="nhsuk-table__cell">-->
-<!--      <span class="nhsuk-table-responsive__heading">File upload name</span>-->
-<!--      <a href="manage-ingredients-edit.html">Edit</a>-->
-<!--    </td>-->
-<!--  </tr>-->
-<!--  <tr role="row" class="nhsuk-table__row">-->
-<!--    <td class="nhsuk-table__cell">-->
-<!--      <span class="nhsuk-table-responsive__heading">Ingredient name</span>Salicylic Acid BP</td>-->
-<!--    <td class="nhsuk-table__cell ">-->
-<!--      <span class="nhsuk-table-responsive__heading">Strength</span>10%</td>-->
-<!--    <td role="cell" class="nhsuk-table__cell">-->
-<!--      <span class="nhsuk-table-responsive__heading">File upload name</span>-->
-<!--      <a href="#">Edit</a>-->
-<!--    </td>-->
-<!--  </tr>-->
-<!--  </tbody>-->
-<!--</table>-->
+<h2>Excipients</h2>
 
-<!--<h2>Excipients</h2>-->
+<!-- if no excipients exist then add the following: -->
 
-<!--&lt;!&ndash; if no excipients exist then add the following: &ndash;&gt;-->
+<!--<p>No excipients exist. To change this you can <a href="#"> add excipients to the product</a></p>-->
 
-<!--&lt;!&ndash;<p>No excipients exist. To change this you can <a href="#"> add excipients to the product</a></p>&ndash;&gt;-->
+<dl class="nhsuk-summary-list">
 
-<!--<dl class="nhsuk-summary-list">-->
-
-<!--  <div class="nhsuk-summary-list__row">-->
-<!--    <dt class="nhsuk-summary-list__key">-->
-<!--      Excipients-->
-<!--    </dt>-->
-<!--    <dd class="nhsuk-summary-list__value" id="excipient-name">-->
-<!--      Methyl hydroxybenzoate-->
-<!--&lt;!&ndash;      if more than 1 excipient then these to appear underneath in the same <dd> MPL 27FEB24   &ndash;&gt;-->
-<!--    </dd>-->
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Excipients
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="excipient-name">
+      Methyl hydroxybenzoate
+<!--      if more than 1 excipient then these to appear underneath in the same <dd> MPL 27FEB24   -->
+    </dd>
 
 <!--    <dd class="nhsuk-summary-list__actions">-->
 
-<!--      <a href="manage-excipients-edit.html">-->
+<!--      <a href="excipient/manage-excipients">-->
 <!--        Edit <span class="nhsuk-u-visually-hidden">&nbsp;excipients</span>-->
 <!--      </a>-->
 
 <!--    </dd>-->
 
-<!--  </div>-->
-<!--</dl>-->
+  </div>
+</dl>
 
 <h2 class="nhsuk-u-margin-top-8">Routes</h2>
 
@@ -292,14 +206,6 @@ Submit a new product: product summary | Portal | NHSBSA
     <dd class="nhsuk-summary-list__value" id="route-name">
       Oral
       <!--      if more than 1 route then these to appear underneath in the same <dd> MPL 27FEB24   -->
-    </dd>
-
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="manage-route-edit.html">
-        Edit <span class="nhsuk-u-visually-hidden">&nbsp;routes</span>
-      </a>
-
     </dd>
 
   </div>
@@ -319,14 +225,6 @@ Submit a new product: product summary | Portal | NHSBSA
       </strong>
     </dd>
 
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="available-edit">
-        Edit <span class="nhsuk-u-visually-hidden">&nbsp;if the product is available</span>
-      </a>
-
-    </dd>
-
   </div>
 
   <div class="nhsuk-summary-list__row">
@@ -339,14 +237,6 @@ Submit a new product: product summary | Portal | NHSBSA
       </strong>
     </dd>
 
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="available-as-stock-edit">
-        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product is available as stock</span>
-      </a>
-
-    </dd>
-
   </div>
 
   <div class="nhsuk-summary-list__row">
@@ -357,19 +247,11 @@ Submit a new product: product summary | Portal | NHSBSA
       <span id="product-shelf-life">365</span> days
     </dd>
 
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="shelf-life-edit">
-        Edit<span class="nhsuk-u-visually-hidden">&nbsp;shelf life</span>
-      </a>
-
-    </dd>
-
   </div>
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
-      Is the shelf life validated?
+      Is the shelf life valid?
     </dt>
     <dd class="nhsuk-summary-list__value" id="product-shelf-life-valid">
       <strong class="nhsuk-tag nhsuk-tag--red" id="has-shelf-life-valid">
@@ -377,18 +259,12 @@ Submit a new product: product summary | Portal | NHSBSA
       </strong>
     </dd>
 
-    <dd class="nhsuk-summary-list__actions">
-
-      <a href="shelf-life-validated-edit">
-        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product shelf life is validated</span>
-      </a>
-    </dd>
   </div>
 </dl>
 
 <h2 class="nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-8">Attributes</h2>
 
-<p>If you need make changes to the attributes you can <a href="attributes"> edit, add or remove attributes here</a></p>
+<!--<p>If you need make changes to the attributes you can <a href="attributes"> edit, add or remove attributes here</a></p>-->
 
 <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
   <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of ingredients for Lidocaine hydrochloride 10% Nebuliser Solution</caption>
@@ -489,9 +365,13 @@ Submit a new product: product summary | Portal | NHSBSA
   </tbody>
 </table>
 
-<a class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-right-5" href="confirmation"
+<a class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-right-5" href="../../confirmation"
    type="submit">
   Submit new special product
+</a>
+
+<a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-3" href="../../draft-confirmation">
+  Save as draft
 </a>
 
 <script>
@@ -509,10 +389,8 @@ if (getProductName) {
 var getHasAltProductName = localStorage.getItem("special-product-alt-name-advised");
 var getAltProductName = localStorage.getItem("special-product-alt-name");
 
-if (getHasAltProductName === "Yes" && getAltProductName) {
-  if (getAltProductName !== "") {
-    document.getElementById("alternative-product-name").innerHTML = getAltProductName;
-  }
+if (getHasAltProductName === "Yes") {
+  document.getElementById("alternative-product-name").innerHTML = getAltProductName;
 }
 
 var getProductCategory = localStorage.getItem("special-product-category");
