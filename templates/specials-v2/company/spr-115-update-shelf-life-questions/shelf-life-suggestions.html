@@ -18,7 +18,7 @@ Submit a new product | Portal | NHSBSA
         <span class="nhsuk-caption-l">
                 Submit a new product
             </span>
-            Is the opened shelf life same to the unopened shelf life?
+            Is the opened shelf life same as the unopened shelf life?
             
       </h1>
     </legend>
@@ -32,15 +32,15 @@ Submit a new product | Portal | NHSBSA
   <div class="nhsuk-radios">
 
     <div class="nhsuk-radios__item nhsuk-u-margin-bottom-3">
-    <input class="nhsuk-radios__input" id="shelf-life" name="example" type="radio" value="yes">
-    <label class="nhsuk-label nhsuk-radios__label" for="shelf-life">
+    <input class="nhsuk-radios__input" id="shelf-validated" name="example" type="radio" value="yes">
+    <label class="nhsuk-label nhsuk-radios__label" for="shelf-validated">
                 Yes
     </label>
     </div>
      
     <div class="nhsuk-radios__item">
-    <input class="nhsuk-radios__input" id="validated" name="example" type="radio" value="No">
-    <label class="nhsuk-label nhsuk-radios__label" for="validated">
+    <input class="nhsuk-radios__input" id="shelf-days" name="example" type="radio" value="No">
+    <label class="nhsuk-label nhsuk-radios__label" for="shelf-days">
                 No
     </label>
     </div>
@@ -49,7 +49,7 @@ Submit a new product | Portal | NHSBSA
   </fieldset>
 </div>    
  
-    <a class="nhsuk-button nhsuk-u-margin-top-4" id="continue-button" name="shelf-life" href="yes-shelf-life">Save and continue</a>
+    <a class="nhsuk-button nhsuk-u-margin-top-4" id="continue-button" name="shelf-life" href="shelf-life-validated">Save and continue</a>
      
     <script type="text/javascript">
         var radioButtons = document.getElementsByName("example");
@@ -58,12 +58,12 @@ Submit a new product | Portal | NHSBSA
         function updateButtonLink() {
             for (var radio of radioButtons) {
                 if (radio.checked && radio.value === 'No') {
-                    buttonLink.href = "shelf-life-validated";
+                    buttonLink.href = "shelf-life-days";
                     return; // exit loop early if 'No' is found
                 }
             }
             // If 'No' is not selected or no radio button is checked, default link
-            buttonLink.href = "yes-shelf-life";
+            buttonLink.href = "shelf-life-validated";
         }
 
 // Call the function when the page loads to set the initial state
