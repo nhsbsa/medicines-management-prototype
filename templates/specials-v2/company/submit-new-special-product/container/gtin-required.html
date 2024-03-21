@@ -48,7 +48,7 @@ Submit a new product: effective date | Portal | NHSBSA
 </div>
 
 <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="gtinRequired()"
-   id="continue-button" type="submit">
+   id="continue-button" type="submit" href="amppid-required">
     Save and continue
 </a>
 
@@ -61,9 +61,6 @@ Submit a new product: effective date | Portal | NHSBSA
     if (yesRadio.checked) {
         localStorage.setItem("special-product-gtin-required", "yes");
         document.getElementById("continue-button").href = "add-gtin.html";
-    } else if (noRadio.checked) {
-        localStorage.setItem("special-product-gtin-required", "no");
-        document.getElementById("continue-button").href = "amppid-required.html";
     }
   }
 </script>
