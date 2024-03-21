@@ -48,7 +48,7 @@ Submit a new product: effective date | Portal | NHSBSA
 </div>
 
 <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="amppidRequired()"
-   id="continue-button" type="submit">
+   id="continue-button" type="submit" href="add-container-summary">
   Save and continue
 </a>
 
@@ -63,9 +63,6 @@ Submit a new product: effective date | Portal | NHSBSA
     if (yesRadio.checked) {
       localStorage.setItem("special-product-amppid-required", "yes");
       document.getElementById("continue-button").href = "add-amppid.html";
-    } else if (noRadio.checked) {
-      localStorage.setItem("special-product-amppid-required", "no");
-      document.getElementById("continue-button").href = "add-container-summary.html";
     }
   }
 </script>
