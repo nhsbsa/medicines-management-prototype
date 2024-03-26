@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+  <a class="nhsuk-back-link__link" href="notes-request.html">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to do you want to add any notes to this request?</a>
+</div>
+
+<h2 class="nhsuk-u-margin-top-8">Summary</h2>
+
+<dl class="nhsuk-summary-list">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Is there a Product specification sheet to upload
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-on-bnf">
+        <strong class="nhsuk-tag nhsuk-tag--green" id="on-bnf">
+          Yes
+        </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+      <a href="#">
+        Edit <span class="nhsuk-u-visually-hidden">&nbsp;product name</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product specification sheet form
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="alternative-product-name">
+      form-file.pdf
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+      <a href="#">
+        Edit <span class="nhsuk-u-visually-hidden">&nbsp; alternative product name</span>
+      </a>
+    </dd>
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Is there any other files to upload?
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-on-bnf">
+        <strong class="nhsuk-tag nhsuk-tag--red" id="on-bnf">
+          No
+        </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+      <a href="#">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp;category</span>
+      </a>
+    </dd>
+  </div>
+
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product 
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-has-BP">
+      <strong class="nhsuk-tag nhsuk-tag--red" id="has-BP">
+        No
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+      <a href="#">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has a British Pharmacopoeia (BP) monograph</span>
+      </a>
+    </dd>
+  </div>
+
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product has an accreditation
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-has-accreditation">
+      <strong class="nhsuk-tag nhsuk-tag--green" id="has-accreditation">
+        Yes
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+      <a href="#">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has an accreditation</span>
+      </a>
+    </dd>
+  </div>
+  
+</dl>
+
+<!-- Notes section -->
+
+<h2 class="nhsuk-u-margin-top-8">Notes</h2>
+
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+     Lorem Ipsum has been the industry's standard dummy text ever since the 1500s </p>
+  <p><a href="edit-notes.html"> Edit</a></p>
+
+<!-- Button section -->
+
+<a class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-right-5" href="confirmation"
+   type="submit">
+  Save and Submit 
+</a>
+
+<!-- Javascript section -->
+
+<script>
+let summaryPage = localStorage.getItem("summary-page");
+
+if (!summaryPage) {
+  localStorage.setItem("summary-page", "yes");
+}
+
+var getProductName = localStorage.getItem("special-product-name");
+if (getProductName) {
+  document.getElementById("product-name").innerHTML = getProductName;
+}
+
+var getHasAltProductName = localStorage.getItem("special-product-alt-name-advised");
+var getAltProductName = localStorage.getItem("special-product-alt-name");
+
+if (getHasAltProductName === "Yes" && getAltProductName) {
+  if (getAltProductName !== "") {
+    document.getElementById("alternative-product-name").innerHTML = getAltProductName;
+  }
+}
+
+var getProductCategory = localStorage.getItem("special-product-category");
+if (getProductCategory) {
+  document.getElementById("product-category").innerHTML = getProductCategory;
+}
+
+var getProductForm = localStorage.getItem("special-product-form");
+if (getProductForm) {
+  document.getElementById("product-form").innerHTML = getProductForm;
+}
+
+var getOnBNF = localStorage.getItem("special-product-bnf");
+if (getOnBNF === "Yes") {
+   document.getElementById("on-bnf").classList.remove("nhsuk-tag--red");
+   document.getElementById("on-bnf").classList.add("nhsuk-tag--green");
+   document.getElementById("on-bnf").textContent = "Yes";
+}
+
+var getHasBP = localStorage.getItem("special-product-bp-monograph");
+if (getHasBP === "Yes") {
+   document.getElementById("has-BP").classList.remove("nhsuk-tag--red");
+   document.getElementById("has-BP").classList.add("nhsuk-tag--green");
+   document.getElementById("has-BP").textContent = "Yes";
+}
+
+var getHasAccreditation = localStorage.getItem("special-product-has-accreditation");
+var getAccreditationBody = localStorage.getItem("special-product-accreditation");
+
+if (getHasAccreditation === "Yes") {
+  document.getElementById("accreditation-body-detail").innerHTML = getAccreditationBody;
+  document.getElementById("has-accreditation").classList.remove("nhsuk-tag--red");
+  document.getElementById("has-accreditation").classList.add("nhsuk-tag--green");
+  document.getElementById("has-accreditation").textContent = "Yes";
+  document.getElementById("accreditation-body").classList.remove("nhsuk-u-visually-hidden");
+}
+
+var getIsAvailable = localStorage.getItem("special-product-available");
+if (getIsAvailable === "Yes") {
+  document.getElementById("has-availability").classList.remove("nhsuk-tag--red");
+  document.getElementById("has-availability").classList.add("nhsuk-tag--green");
+  document.getElementById("has-availability").textContent = "Yes";
+}
+
+var getIsAvailableAsStock = localStorage.getItem("special-product-available-as-stock");
+if (getIsAvailableAsStock === "Yes") {
+  document.getElementById("on-available-as-stock").classList.remove("nhsuk-tag--red");
+  document.getElementById("on-available-as-stock").classList.add("nhsuk-tag--green");
+  document.getElementById("on-available-as-stock").textContent = "Yes";
+}
+
+var getShelfLife = localStorage.getItem("special-product-shelf-life");
+if (getShelfLife) {
+  document.getElementById("product-shelf-life").innerHTML = getShelfLife;
+}
+
+var getShelfLifeValidated = localStorage.getItem("special-product-shelf-life-valid");
+if (getShelfLifeValidated === "Yes") {
+  document.getElementById("has-shelf-life-valid").classList.remove("nhsuk-tag--red");
+  document.getElementById("has-shelf-life-valid").classList.add("nhsuk-tag--green");
+  document.getElementById("has-shelf-life-valid").textContent = "Yes";
+}
+
+console.log(localStorage);
+
+</script>
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+  <a class="nhsuk-back-link__link" href="upload-required" id="back-link">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    <span id="back-link-text">Go back do you have any other files to upload?</span></a>
+</div>
+
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-4">
+            <span class="nhsuk-caption-l">
+                Submit a new product
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+            Do you want to add any notes to this request?
+          </h1>
+        </legend>
+
+  <div class="nhsuk-radios">
+    <div class="nhsuk-radios__item">
+    <input class="nhsuk-radios__input" id="add-notes" name="example" type="radio" value="yes">
+    <label class="nhsuk-label nhsuk-radios__label" for="add-notes">
+                Yes
+    </label>
+    </div>
+     
+        <div class="nhsuk-radios__item nhsuk-u-margin-top-3">
+    <input class="nhsuk-radios__input" id="summary" name="example" type="radio" value="No">
+    <label class="nhsuk-label nhsuk-radios__label" for="summary">
+                No
+    </label>
+    </div>
+    
+</fieldset>  
+</div>  
+    
+<a class="nhsuk-button nhsuk-u-margin-top-5" id="continue-button" name="add-notes" href="add-notes.html">Save and continue</a>
+  
+  
+    <script type="text/javascript">
+        var radioButtons = document.getElementsByName("example");
+        let buttonLink = document.getElementById("continue-button");
+     
+        function updateButtonLink() {
+            for (var radio of radioButtons) {
+                if (radio.checked && radio.value === 'No') {
+                    buttonLink.href = "summary.html";
+                    return; // exit loop early if 'No' is found
+                }
+            }
+            // If 'No' is not selected or no radio button is checked, default link
+            buttonLink.href = "add-notes.html";
+        }
+     
+        // Call the function when the page loads to set the initial state
+        updateButtonLink();
+     
+        // Add event listeners to each radio button to respond to changes
+        radioButtons.forEach(function(radio) {
+            radio.addEventListener('change', updateButtonLink);
+        });
+    </script>
+
+{% endblock %}
