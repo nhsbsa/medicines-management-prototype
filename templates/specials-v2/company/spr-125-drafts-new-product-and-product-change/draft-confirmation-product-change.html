@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-card" style="color: #ffffff; background-color: #005eb8;">
+  <div class="nhsuk-card__content">
+    <h1 class="nhsuk-card__heading" style="text-align: center">
+      Your draft has been saved
+    </h1>
+    <h2 style="text-align: center">Reference SR-202403011</h2>
+  </div>
+</div>
+
+<h2>Next Steps</h2>
+<p>Your product change request has been saved as a draft and no submission has been made. You can return to the draft to edit and submit at any point through the dashboard.</p>
+
+<p><a href="../dashboard.html">Return to the portal dashboard</a></p>
+
+<script>
+
+var getProductName = localStorage.getItem("product-name");
+var getProductStrength = localStorage.getItem("product-strength");
+var getProductMeasurement = localStorage.getItem("product-measurement");
+document.getElementById("product-name").innerHTML = getProductName;
+
+
+
+</script>
+
+
+{% endblock %}
