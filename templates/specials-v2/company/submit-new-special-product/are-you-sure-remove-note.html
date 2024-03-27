@@ -20,7 +20,7 @@ Submit a new product | Portal | NHSBSA
                 Submit a new product
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-            Are you sure you want to remove notes?
+            Are you sure you want to remove product notes?
           </h1>
         </legend>
 
@@ -38,11 +38,11 @@ Submit a new product | Portal | NHSBSA
                 No
     </label>
     </div>
-    
+  </div>
 </fieldset>  
 </div>  
     
-<a class="nhsuk-button nhsuk-u-margin-top-5" id="continue-button" name="summary" href="../spr-118-add-notes-section/summary.html">Save and continue</a>
+<a class="nhsuk-button nhsuk-u-margin-top-5" id="continue-button" href="product-summary.html">Save and continue</a>
   
   
     <script type="text/javascript">
@@ -52,12 +52,12 @@ Submit a new product | Portal | NHSBSA
         function updateButtonLink() {
             for (var radio of radioButtons) {
                 if (radio.checked && radio.value === 'No') {
-                    buttonLink.href = "../spr-118-add-notes-section/edit-notes.html";
+                    buttonLink.href = "edit-notes.html";
                     return; // exit loop early if 'No' is found
                 }
             }
             // If 'No' is not selected or no radio button is checked, default link
-            buttonLink.href = "../spr-118-add-notes-section/summary.html";
+            buttonLink.href = "product-summary.html";
         }
      
         // Call the function when the page loads to set the initial state
