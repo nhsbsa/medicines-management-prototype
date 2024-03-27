@@ -5,18 +5,18 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
 {% endblock %}
 {% block content %}
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
-  <a class="nhsuk-back-link__link" href="PIL-file-upload">
+  <a class="nhsuk-back-link__link" href="label-file-upload">
     <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
       <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
     </svg>
-    Go back to upload a document</a>
+    Go back to upload the label image</a>
 </div>
 
 <div class="nhsuk-form-group" id="file-success">
   <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
-        Other uploads
+        Label image upload
       </h1>
     </legend>
 
@@ -69,9 +69,9 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
   </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="uploadPILFile()"
+<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="uploadLabelFile()"
    id="continue-button"
-   href="notes-request"
+   href="PIL-upload-required"
    type="submit">
   Continue
 </a>
@@ -80,7 +80,7 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
 <script>
 
   let uploadFile = document.getElementById("file-upload-1");
-  let getUploadFile = localStorage.getItem("special-product-upload-PIL");
+  let getUploadFile = localStorage.getItem("special-product-upload-label");
 
   if (getUploadFile) {
     var fileUploadSplit = getUploadFile.split("\\");
@@ -92,7 +92,7 @@ Submit a new product: spc link or file upload | Portal | NHSBSA
             '<span class="word-break-file">' + fileUploadFileName + '</span>';
   }
 
-  function uploadPILFile() {
+  function uploadLabelFile() {
     let summaryPage = localStorage.getItem("summary-page");
     if (getUploadFile && summaryPage) {
       document.getElementById("continue-button").href = "product-summary";

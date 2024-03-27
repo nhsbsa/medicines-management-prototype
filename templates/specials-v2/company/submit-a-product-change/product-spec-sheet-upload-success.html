@@ -86,26 +86,11 @@ Submit a new product | Portal | NHSBSA
 
 
 <script>
+     let summaryPage = localStorage.getItem("summary-page");
 
-  let uploadFile = document.getElementById("file-upload-1");
-  let getUploadFile = localStorage.getItem("special-product-upload-CoA");
-
-  if (getUploadFile) {
-    var fileUploadSplit = getUploadFile.split("\\");
-    var fileUploadFileName = fileUploadSplit[fileUploadSplit.length - 1];
-    var fileName = document.getElementById("file-upload-name");
-    fileName.innerHTML =
-            '<span class="nhsuk-table-responsive__heading">File name </span>'
-            +
-            '<span class="word-break-file">' + fileUploadFileName + '</span>';
-  }
-
-  function uploadCoAFile() {
-    let summaryPage = localStorage.getItem("summary-page");
-    if (getUploadFile && summaryPage) {
-      document.getElementById("continue-button").href = "product-summary";
-    }
-  }
+     if (summaryPage) {
+       document.getElementById("continue-button").href = "product-summary-edit";
+     }
 </script>
 {% endblock %}
 

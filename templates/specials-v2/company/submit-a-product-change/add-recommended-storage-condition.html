@@ -17,7 +17,7 @@ Submit a new product | Portal | NHSBSA
     <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
       <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-4">
         <span class="nhsuk-caption-l">
-            Submit a new product
+            Submit a product change
         </span>
         What are the recommended storage conditions for the product?
       </h1>
@@ -50,7 +50,15 @@ Submit a new product | Portal | NHSBSA
     
   
   </fieldset>
-<a class="nhsuk-button nhsuk-u-margin-top-6" href="general-changes">Save and continue</a>
+<a class="nhsuk-button nhsuk-u-margin-top-6" href="general-changes" id="continue-button">Save and continue</a>
 
 </div>
+
+<script>
+  let summaryPage = localStorage.getItem("summary-page");
+
+  if (summaryPage) {
+    document.getElementById("continue-button").href = "product-summary-edit";
+  }
+</script>
 {% endblock %}
