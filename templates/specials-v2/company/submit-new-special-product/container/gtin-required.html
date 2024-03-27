@@ -48,12 +48,27 @@ Submit a new product: effective date | Portal | NHSBSA
 </div>
 
 <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="gtinRequired()"
-   id="continue-button" type="submit" href="amppid-required">
+   id="continue-button" type="submit" href="add-container-summary">
     Save and continue
 </a>
 
 <script>
     console.log(localStorage);
+
+    let radioButtons = document.getElementsByName("agree");
+
+    if (radioButtons) {
+        var getGTINRequired = localStorage.getItem("special-product-gtin-required");
+        if (getGTINRequired != null) {
+            for (var radio of radioButtons) {
+                if (getGTINRequired === radio.value) {
+                    radio.checked = true;
+                }
+            }
+        }
+    }
+
+
    function gtinRequired() {
     var yesRadio = document.getElementById("yesRadio");
     var noRadio = document.getElementById("noRadio");
@@ -61,6 +76,8 @@ Submit a new product: effective date | Portal | NHSBSA
     if (yesRadio.checked) {
         localStorage.setItem("special-product-gtin-required", "yes");
         document.getElementById("continue-button").href = "add-gtin.html";
+    } else if (noRadio.checked) {
+        localStorage.setItem("special-product-gtin-required", "no");
     }
   }
 </script>

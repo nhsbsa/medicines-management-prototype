@@ -4,7 +4,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 {% endblock %}
 {% block content %}
 
-<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
 
     <a class="nhsuk-back-link__link" href="view-product-summary-ingredients">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
@@ -27,34 +27,27 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             </h2>
 
             <ul class="nhsuk-tabs__list">
-
-                <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
-                    <a class="nhsuk-tabs__tab" href="#product-details">
-                        Product
-                    </a>
+                <li class="nhsuk-tabs__list-item nhsuk-tabs__lt-item--selected"
+                    id="heading-tab-submission"
+                    role="presentation"><a class="nhsuk-tabs__tab" href="#tab-submission" role="tab"
+                                           id="submission-panel" aria-selected="true">Product</a></li>
+                <li class="nhsuk-tabs__list-item" id="heading-tab-summary" role="presentation"><a
+                        class="nhsuk-tabs__tab" href="#tab-summary" role="tab" id="summary-panel">Uploads</a>
                 </li>
-
-                <li class="nhsuk-tabs__list-item">
-                    <a class="nhsuk-tabs__tab" href="#Inventory">
-                        Inventory
-                    </a>
-                </li>
-
-                <li class="nhsuk-tabs__list-item">
-                    <a class="nhsuk-tabs__tab" href="#uploads">
-                        Uploads
-                    </a>
-                </li>
-
-                <li class="nhsuk-tabs__list-item">
-                    <a class="nhsuk-tabs__tab" href="#Manufacturer">
-                        Manufacturer
-                    </a>
+                <!--        <li class="nhsuk-tabs__list-item" id="heading-tab-uploads" role="presentation"><a-->
+                <!--                class="nhsuk-tabs__tab" href="#tab-uploads" role="tab" id="uploads-panel">Uploads</a>-->
+                <!--        </li>-->
+                <li class="nhsuk-tabs__list-item" id="heading-tab-messages" role="presentation"><a
+                        class="nhsuk-tabs__tab" href="#tab-messages" role="tab" id="message-panel">Status and messages</a></li>
+                <li class="nhsuk-tabs__list-item" id="heading-tab-company" role="presentation"><a
+                        class="nhsuk-tabs__tab" href="#tab-company" role="tab" id="company-panel">Manufacturer</a>
                 </li>
 
             </ul>
 
-            <div class="nhsuk-tabs__panel" id="product-details">
+            <div class="nhsuk-tabs__panel" id="tab-submission" role="tabpanel" tabindex="-1"
+                 aria-labelledby="tab1">
+                <div class="nhsuk-tabs-panel-inner">
                 <h2>Product</h2>
 
                 <h3 class="nhsuk-u-margin-top-6">Detail</h3>
@@ -98,125 +91,48 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                     </div>
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
+                            Recommended storage conditions
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            Ambient
+                        </dd>
+
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
                             BNF listed
                         </dt>
                         <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--red">No</strong>
 
                         </dd>
                     </div>
-                </dl>
-
-                    <h3>Ingredients</h3>
-                <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
-                    <caption class="nhsuk-table__caption"></caption>
-                    <thead role="rowgroup" class="nhsuk-table__head">
-                    <tr role="row">
-                        <th role="columnheader" class="" scope="col">
-                            Ingredient
-                        </th>
-                        <th role="columnheader" class="" scope="col">
-                            Strength
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody class="nhsuk-table__body">
-                    <tr role="row" class="nhsuk-table__row">
-                        <td class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Ingredient </span>
-                            Brilliant green</td>
-                        <td class="nhsuk-table__cell ">
-                            <span class="nhsuk-table-responsive__heading">Strength </span>
-                            0.5%</td>
-                    </tr>
-                    <tr role="row" class="nhsuk-table__row">
-                        <td class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Ingredient </span>
-                            Crystal violet</td>
-                        <td class="nhsuk-table__cell ">
-                            <span class="nhsuk-table-responsive__heading">Strength </span>
-                            0.5%</td>
-                    </tr>
-                    </tbody>
-                </table>
-
-
-                <h3>Routes</h3>
-                <p>The following route is used for this product.</p>
-                <ul class="nhsuk-list nhsuk-list--bullet">
-                    <li>Topical</li>
-                </ul>
-            </div>
-
-
-            <!--                    Inventory-->
-            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="Inventory">
-
-                <h2>Inventory</h2>
-                <h3 class="nhsuk-u-margin-top-6">Summary</h3>
-
-                <dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
-
-                    <div class="nhsuk-summary-list__row ">
-                        <dt class="nhsuk-summary-list__key">
-                            Available
-                        </dt>
-                        <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--green">Yes</strong>
-                        </dd>
-                    </div>
-
-                    <div class="nhsuk-summary-list__row ">
-                        <dt class="nhsuk-summary-list__key">
-                            Available as stock
-                        </dt>
-                        <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--green">Yes</strong>
-                        </dd>
-                    </div>
-
-                    <div class="nhsuk-summary-list__row ">
-                        <dt class="nhsuk-summary-list__key">
-                            Shelf life
-                        </dt>
-                        <dd class="nhsuk-summary-list__value">730 days</dd>
-                    </div>
-
-                    <div class="nhsuk-summary-list__row ">
-                        <dt class="nhsuk-summary-list__key">
-                            Shelf life validated
-                        </dt>
-                        <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--green">Yes</strong>
-                        </dd>
-                    </div>
-
-
-                    <div class="nhsuk-summary-list__row ">
-                        <dt class="nhsuk-summary-list__key">
-                            Additional Information
-                        </dt>
-                        <!--                        Info to be presented only if true -->
-                        <dd class="nhsuk-summary-list__value">Label image available
-
-
-                            <!--                            <br>Preservative free-->
-                            <!--                            <br>Colour free-->
-                            <!--                            <br>Patient Information Leaflet-->
-                            <!--                            <br>Certificate of analysis available-->
-                            <!--                            <br>PIL image available</dd>-->
-                        </dd>
-                    </div>
-
                     <div class="nhsuk-summary-list__row">
                         <dt class="nhsuk-summary-list__key">
-                            Details last reviewed on
+                            BP monograph exists
                         </dt>
-                        <dd class="nhsuk-summary-list__value">21 August 2020</dd>
-                    </div>
+                        <dd class="nhsuk-summary-list__value">
+                            <strong class="nhsuk-tag nhsuk-tag--red">
+                                No
+                            </strong>
+                        </dd>
 
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key">
+                            Accredited
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">
+                            <strong class="nhsuk-tag nhsuk-tag--red">
+                                No
+                            </strong>
+                        </dd>
+                    </div>
                 </dl>
 
-                <h3 class="nhsuk-u-margin-top-7">Containers</h3>
+                <h3 id="heading-pack-1">Containers</h3>
 
-                <table role="table" class="nhsuk-table-responsive">
-                    <caption class="nhsuk-table__caption"></caption>
+                <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
+                    <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of ingredients for Lidocaine hydrochloride 10% Nebuliser Solution</caption>
                     <thead role="rowgroup" class="nhsuk-table__head">
                     <tr role="row">
                         <th role="columnheader" class="" scope="col">
@@ -226,99 +142,278 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                             Pack size
                         </th>
                         <th role="columnheader" class="" scope="col">
-                            Pack quantity
+                            Number of packs per box
                         </th>
                         <th role="columnheader" class="" scope="col">
                             GTIN
                         </th>
-                        <th role="columnheader" class="" scope="col">
-                            AMPP ID
-                        </th>
+                        <!--                    <th role="columnheader" class="" scope="col">-->
+                        <!--                    AMPP ID-->
+                        <!--                </th>-->
                     </tr>
                     </thead>
                     <tbody class="nhsuk-table__body">
                     <tr role="row" class="nhsuk-table__row">
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Container</span>Bottle-Amber
-                            glass
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Container </span>Bottle - Amber Glass
                         </td>
-                        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Pack size </span>10ml
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Pack size</span>10ml
                         </td>
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Pack quantity </span>10
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">Number of packs per box</span>1
                         </td>
-                        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">GTIN </span>5020850100014
+                        <td role="cell" class="nhsuk-table__cell">
+                            <span class="nhsuk-table-responsive__heading">GTIN</span>
+                            <span>5020850100014</span>
                         </td>
-                        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">AMPP ID</span>22369611000001102
-                        </td>
+                        <!--                    <td role="cell" class="nhsuk-table__cell">-->
+                        <!--                        <span class="nhsuk-table-responsive__heading">AMPP ID</span>24546811000001108-->
+                        <!--                    </td>-->
                     </tr>
                     </tbody>
                 </table>
 
-                <h3 class="nhsuk-u-margin-top-8">Excipients</h3>
-                <p>The following excipient is used for this product.</p>
+                <h3>Routes</h3>
+                <p>The following route is used for this product.</p>
                 <ul class="nhsuk-list nhsuk-list--bullet">
-                    <li>Industrial methylated spirits </li>
+                    <li>Topical</li>
                 </ul>
 
-                <h3 class="nhsuk-u-margin-top-7">Notes</h3>
-                <p>There are currently no notes available</p>
+                <h3 class="nhsuk-u-margin-top-6 nhsuk-u-margin-bottom-4">Inventory</h3>
+                <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-8">
 
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key update-width">
+                            Available
+                        </dt>
+                        <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--green">
+                            Yes
+                        </strong></dd>
+
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key update-width">
+                            Available as stock
+                        </dt>
+                        <dd class="nhsuk-summary-list__value" id="pack-effective-date"><strong class="nhsuk-tag nhsuk-tag--green">
+                            Yes
+                        </strong></dd>
+
+                    </div>
+
+
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key update-width">
+                            Unopened shelf life
+                        </dt>
+                        <dd class="nhsuk-summary-list__value">730 days</dd>
+
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key update-width">
+                            Identical opened shelf life
+                        </dt>
+                        <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--green">
+                            Yes
+                        </strong></dd>
+                        <!--                    If opened shelf life is different then the number of days needs to be specified MPL 15MAR24-->
+
+                    </div>
+                    <div class="nhsuk-summary-list__row">
+                        <dt class="nhsuk-summary-list__key update-width">
+                            Shelf life validated
+                        </dt>
+                        <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--green">
+                            Yes
+                        </strong></dd>
+
+                    </div>
+
+                </dl>
+
+                <h3>Free from preservatives</h3>
+                <p>No free from preservatives exist.</p>
+
+                <h3 class="nhsuk-u-margin-top-6">Notes</h3>
+                <p>No notes exist.</p>
 
             </div>
-
-            <!--            Uploads-->
-            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="uploads">
-                <h2>Uploads</h2>
-                <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-top-6">
-                    <caption class="nhsuk-table__caption">Uploaded files</caption>
-                    <thead role="rowgroup" class="nhsuk-table__head">
-                    <tr role="row">
-                        <th role="columnheader" class="" scope="col">
-                            Type
-                        </th>
-                        <th role="columnheader" class="" scope="col">
-                            File name
-                        </th>
-                    </tr>
-                    </thead>
-                    <tbody class="nhsuk-table__body">
-                    <tr role="row" class="nhsuk-table__row">
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>Label
-                        </td>
-                        <td class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">File name</span>
-                            <a href="#">Bottle label.pdf</a></td>
-                    </tr>
-                    <tr role="row" class="nhsuk-table__row">
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>Label
-                        </td>
-                        <td class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">File name</span>
-                            <a href="#">Carton Label.pdf</a></td>
-                    </tr>
-                    <tr role="row" class="nhsuk-table__row">
-                        <td class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">Type</span>Certificate of Analysis (COA)
-                        </td>
-                        <td class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">File name</span>
-                            <a href="#">Certificate of Analysis.pdf</a></td>
-                    </tr>
-                    <tr role="row" class="nhsuk-table__row">
-                        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Type</span>Product specification
-                        </td>
-                        <td class="nhsuk-table__cell">
-                            <span class="nhsuk-table-responsive__heading">File name</span>
-                            <a href="#">Product specification.pdf</a></td>
-                    </tr>
-                    </tbody>
-                </table>
             </div>
 
+            <div class="nhsuk-tabs__panel" id="tab-summary" role="tabpanel" tabindex="-1"
+                 aria-labelledby="tab3">
+                <div class="nhsuk-tabs-panel-inner">
+
+
+                    <h2 class="nhsuk-u-margin-bottom-6">Uploads</h2>
+                    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
+                        <caption class="nhsuk-table__caption ">List of uploads</caption>
+                        <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Upload title
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Upload file name
+                            </th>
+
+                        </tr>
+                        </thead>
+                        <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Upload title </span>Product Specification Sheet
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Upload file name</span>
+                                <span><a href="#">product-spec-sheet.pdf</a></span>
+                            </td>
+                        </tr>
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Upload title </span>Certificate of Analysis (CoA)
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Upload file name</span>
+                                <span>No file uploaded</span>
+                            </td>
+                        </tr>
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Upload title </span>Label image
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Upload file name</span>
+                                <a href="#">Lidocaine 10% Nebuliser Solution.jpg</a>
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <div class="nhsuk-tabs__panel" id="tab-messages" role="tabpanel" tabindex="-1"
+                 aria-labelledby="tab2">
+                <div class="nhsuk-tabs-panel-inner">
+                    <h2 class="nhsuk-u-margin-bottom-6">Status and messages</h2>
+
+
+                    <h3>Record of status updates</h3>
+                    <table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-5">
+                        <caption class="nhsuk-u-visually-hidden">Record of status updates</caption>
+                        <thead role="rowgroup" class="nhsuk-table__head">
+                        <tr role="row">
+                            <th role="columnheader" class="" scope="col">
+                                Request
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Status
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Date changed
+                            </th>
+                            <th role="columnheader" class="" scope="col">
+                                Updated by
+                            </th>
+
+                        </tr>
+                        </thead>
+                        <tbody class="nhsuk-table__body">
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Request </span>
+                                New special product
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--grey">
+                                Ready
+                            </strong>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Date changed</span>01 Dec 2023
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Updated by</span>Stepping Hill Hospital - Stockport Pharmaceuticals
+                            </td>
+                        </tr>
+
+                        <tr role="row" class="nhsuk-table__row">
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Request </span>
+                                New special product
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Status </span><strong class="nhsuk-tag nhsuk-tag--blue">
+                                In progress
+                            </strong>
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Date changed</span>13 Dec 2023
+                            </td>
+                            <td role="cell" class="nhsuk-table__cell">
+                                <span class="nhsuk-table-responsive__heading">Updated by</span>Matt Proctor-Leake (MATPL)
+                            </td>
+                        </tr>
+
+                        </tbody>
+                    </table>
+
+                    <h3>Message board</h3>
+                    <!--                          what is the email address for suppliers to contact in reply to a message? MPL 20DEC22-->
+                    <p>Use the message board to communicate with the manufacturer. Messages can be created when you update the status, or they can be added separately to this process.</p>
+                    <details class="nhsuk-details nhsuk-expander">
+                        <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    10 Dec 2023 at 15:03 | Status update
+                                </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+                            <p>The status has been changed to 'actioned'. At this stage we do not require any further
+                                action on your behalf.</p>
+
+                            <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                            <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-3"
+                                style="color: #4c6272; font-weight: 400;">Further comments</h3>
+                            <p style="color: #4c6272; font-weight: 400;"
+                               class="nhsuk-u-font-size-16 nhsuk-u-margin-bottom-2">Here is an example of a comment and
+                                how it will be presented to the user (comment left on 22 September at 2024 15:19).</p>
+                            <p style="color: #4c6272; font-weight: 400;"
+                               class="nhsuk-u-font-size-16 nhsuk-u-margin-bottom-3">Here is another example of a comment
+                                and how it will be presented to the user if more than one comment is left (comment left
+                                on 21 September 2024 at 11:10).</p>
+                        </div>
+
+                    </details>
+
+                    <details class="nhsuk-details nhsuk-expander">
+                        <summary class="nhsuk-details__summary">
+                                <span class="nhsuk-details__summary-text">
+                                    03 Dec 2023 at 10:01 | More information required
+                                </span>
+                        </summary>
+                        <div class="nhsuk-details__text">
+                            <p>Thank you for clarifying the reason for no price and confirming the number of subpacks.
+                                We also require more images of artwork. </p>
+                            <hr class="nhsuk-section-break nhsuk-section-break--m nhsuk-section-break--visible">
+                            <h3 class="nhsuk-heading-xs nhsuk-u-margin-bottom-3"
+                                style="color: #4c6272; font-weight: 400;">Further comments</h3>
+                            <p style="color: #4c6272; font-weight: 400;"
+                               class="nhsuk-u-font-size-16 nhsuk-u-margin-bottom-3">No comments at present.</p>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
 
             <!--            Manufacturer-->
-            <div class="nhsuk-tabs__panel nhsuk-tabs__panel--hidden" id="Manufacturer">
+            <div class="nhsuk-tabs__panel" id="tab-company" role="tabpanel" tabindex="-1"
+                 aria-labelledby="tab2">
+                <div class="nhsuk-tabs-panel-inner">
 
-                <h2 class="nhsuk-u-margin-bottom-6">Manufacturer</h2>
+                <h2 class="nhsuk-u-margin-bottom-6">PMU</h2>
                 <dl class="nhsuk-summary-list nhsuk-summary-list--no-border nhsuk-u-margin-bottom-8">
 
                     <div class="nhsuk-summary-list__row">
@@ -409,6 +504,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 
 
             </div>
+        </div>
         </div>
 
         {% endblock %}

@@ -3,7 +3,7 @@
 Portal dashboard | Medicines Management design prototype | NHSBSA
 {% endblock %}
 {% block content %}
-<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
     <a class="nhsuk-back-link__link" href="view-products">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
              aria-hidden="true" height="24" width="24">
@@ -93,62 +93,28 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 
         </dl>
 
-        <h2>Ingredients</h2>
-        <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
-            <caption class="nhsuk-table__caption"></caption>
-            <thead role="rowgroup" class="nhsuk-table__head">
-            <tr role="row">
-                <th role="columnheader" class="" scope="col">
-                    Ingredient
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    Strength
-                </th>
-            </tr>
-            </thead>
-            <tbody class="nhsuk-table__body">
-            <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Ingredient </span>
-                    Brilliant green</td>
-                <td class="nhsuk-table__cell ">
-                    <span class="nhsuk-table-responsive__heading">Strength </span>
-                    0.5%</td>
-            </tr>
-            <tr role="row" class="nhsuk-table__row">
-                <td class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">Ingredient </span>
-                    Crystal violet</td>
-                <td class="nhsuk-table__cell ">
-                    <span class="nhsuk-table-responsive__heading">Strength </span>
-                    0.5%</td>
-            </tr>
-            </tbody>
-        </table>
-
-
         <h2>Routes</h2>
 <p>The following route is used for this product.</p>
 <ul class="nhsuk-list nhsuk-list--bullet">
     <li>Topical</li>
 </ul>
 
-<h2 class="nhsuk-u-margin-top-8">NHS Manufacturers offering this product</h2>
+<h2 class="nhsuk-u-margin-top-8">Pharmaceutical Manufacturing Units (PMUs)</h2>
         <table class="nhsuk-table-responsive nhsuk-u-margin-bottom-6">
             <caption class="nhsuk-table__caption"></caption>
             <thead role="rowgroup" class="nhsuk-table__head">
             <tr role="row">
                 <th role="columnheader" class="" scope="col">
-                    NHS Manufacturer
+                    PMU offering this product
                 </th>
                 <th role="columnheader" class="" scope="col">
                     Available
                 </th>
+<!--                <th role="columnheader" class="" scope="col">-->
+<!--                    Shelf life (SL)-->
+<!--                </th>-->
                 <th role="columnheader" class="" scope="col">
-                    Shelf life (SL)
-                </th>
-                <th role="columnheader" class="" scope="col">
-                    SL validation
+                    In stock?
                 </th>
                 <th role="columnheader" class="" scope="col">
                     Action
@@ -158,16 +124,16 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">NHS Manufacturer</span>
+                    <span class="nhsuk-table-responsive__heading">PMU offering this product</span>
                     East Suffolk and North Essex NHS Foundation trust (ESNEFT)-Colchester and Ipswich Hospital sites</td>
                 <td class="nhsuk-table__cell ">
                     <span class="nhsuk-table-responsive__heading">Available</span>
                     <strong class="nhsuk-tag nhsuk-tag--green">Yes</strong></td>
+<!--                <td class="nhsuk-table__cell ">-->
+<!--                    <span class="nhsuk-table-responsive__heading">Shelf life (SL)</span>-->
+<!--                    730 days</td>-->
                 <td class="nhsuk-table__cell ">
-                    <span class="nhsuk-table-responsive__heading">Shelf life (SL)</span>
-                    730 days</td>
-                <td class="nhsuk-table__cell ">
-                    <span class="nhsuk-table-responsive__heading">SL validation</span>
+                    <span class="nhsuk-table-responsive__heading">In stock?</span>
                     <strong class="nhsuk-tag nhsuk-tag--green">Yes</strong></td>
                 <td class="nhsuk-table__cell " >
                     <span class="nhsuk-table-responsive__heading">Action</span>
@@ -175,16 +141,16 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             </tr>
             <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">NHS Manufacturer</span>
+                    <span class="nhsuk-table-responsive__heading">PMU offering this product</span>
                     Newcastle Specials Pharmacy Production unit-Royal Victoria Infirmary</td>
                 <td class="nhsuk-table__cell ">
                     <span class="nhsuk-table-responsive__heading">Available</span>
                     <strong class="nhsuk-tag nhsuk-tag--green">Yes</strong></td>
+<!--                <td class="nhsuk-table__cell ">-->
+<!--                    <span class="nhsuk-table-responsive__heading">Shelf life (SL)</span>-->
+<!--                    365 days</td>-->
                 <td class="nhsuk-table__cell ">
-                    <span class="nhsuk-table-responsive__heading">Shelf life (SL)</span>
-                    365 days</td>
-                <td class="nhsuk-table__cell ">
-                    <span class="nhsuk-table-responsive__heading">SL validation</span>
+                    <span class="nhsuk-table-responsive__heading">In stock?</span>
                     <strong class="nhsuk-tag nhsuk-tag--red">No</strong></td>
                 <td class="nhsuk-table__cell " >
                     <span class="nhsuk-table-responsive__heading">Action</span>
@@ -192,16 +158,16 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             </tr>
             <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell">
-                    <span class="nhsuk-table-responsive__heading">NHS Manufacturer</span>
+                    <span class="nhsuk-table-responsive__heading">PMU offering this product</span>
                     Northwick park hospital pharmacy technical services</td>
                 <td class="nhsuk-table__cell ">
                     <span class="nhsuk-table-responsive__heading">Available</span>
                     <strong class="nhsuk-tag nhsuk-tag--green">Yes</strong></td>
+<!--                <td class="nhsuk-table__cell ">-->
+<!--                    <span class="nhsuk-table-responsive__heading">Shelf life (SL)</span>-->
+<!--                    365 days</td>-->
                 <td class="nhsuk-table__cell ">
-                    <span class="nhsuk-table-responsive__heading">Shelf life (SL)</span>
-                    365 days</td>
-                <td class="nhsuk-table__cell ">
-                    <span class="nhsuk-table-responsive__heading">SL validation</span>
+                    <span class="nhsuk-table-responsive__heading">In stock?</span>
                     <strong class="nhsuk-tag nhsuk-tag--red">No</strong></td>
                 <td class="nhsuk-table__cell " >
                     <span class="nhsuk-table-responsive__heading">Action</span>View</td>

@@ -18,16 +18,16 @@ Submit a new product: pack size and strength | Portal | NHSBSA
                 Submit a new special product
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
-        What is the pack quantity?
+        How many packs are in each box?
       </h1>
     </legend>
 
 
     <label class="nhsuk-label" for="pack-quantity">
-      Pack quantity
+      Number of packs per box
     </label>
     <div class="nhsuk-hint" id="pack-quantity-hint">
-      For example, if there is a box of 10 just enter 10.
+      For example, if each box contains 10 packs just enter 10.
     </div>
     <input class="nhsuk-input nhsuk-input--width-10 nhsuk-u-margin-bottom-3" id="pack-quantity" name="size" type="text">
 
@@ -54,9 +54,6 @@ Submit a new product: pack size and strength | Portal | NHSBSA
   if (packQuantity != null) {
     if (getPackQuantity != null) {
       packQuantity.defaultValue = getPackQuantity;
-    }
-    if (getPackQuantity != null && summaryPage != null) {
-      document.getElementById("continue-button").href = "product-summary";
     }
   }
 
