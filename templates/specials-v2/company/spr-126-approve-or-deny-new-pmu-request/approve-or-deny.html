@@ -43,12 +43,12 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
 </fieldset>
 </div>
 
-<a class="nhsuk-button nhsuk-u-margin-top-4" id="continue-button" name="CoA-file" href="approved.html">Save and continue</a>
-         
+<a class="nhsuk-button nhsuk-u-margin-top-4" id="continue-button" href="approved.html">Save and continue</a>
+
         <script type="text/javascript">
             var radioButtons = document.getElementsByName("example");
             let buttonLink = document.getElementById("continue-button");
-         
+
             function updateButtonLink() {
                 for (var radio of radioButtons) {
                     if (radio.checked && radio.value === 'No') {
@@ -59,10 +59,10 @@ Submit a new product: spc or Data Sheet | Portal | NHSBSA
                 // If 'No' is not selected or no radio button is checked, default link
                 buttonLink.href = "approved.html";
             }
-         
+
             // Call the function when the page loads to set the initial state
             updateButtonLink();
-         
+
             // Add event listeners to each radio button to respond to changes
             radioButtons.forEach(function(radio) {
                 radio.addEventListener('change', updateButtonLink);
