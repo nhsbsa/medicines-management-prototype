@@ -12,13 +12,13 @@ Submit a new product: product summary | Portal | NHSBSA
 </div>
 
 <h1><span class="nhsuk-caption-l">
-               Submit a new special product
+                Submit a new special product
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>Summary</h1>
 
-<!-- When editing an already submitted product, you should not have 'save as draft' option MPL 12MAR24 -->
+<p class="nhsuk-u-margin-bottom-5">Check your answers before completing your submission. If you are not ready to submit you can store the information to return later.</p>
 
-<p class="nhsuk-u-margin-bottom-5">Check your answers before completing your submission.</p>
+<h2>Product detail</h2>
 
 <dl class="nhsuk-summary-list">
 
@@ -32,7 +32,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="product-name-edit">
+      <a href="product-name">
         Edit <span class="nhsuk-u-visually-hidden">&nbsp;product name</span>
       </a>
 
@@ -50,7 +50,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="alternative-product-name-edit">
+      <a href="alternative-product-name">
         Edit <span class="nhsuk-u-visually-hidden">&nbsp; alternative product name</span>
       </a>
 
@@ -68,7 +68,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="category-edit">
+      <a href="category">
         Edit<span class="nhsuk-u-visually-hidden">&nbsp;category</span>
       </a>
 
@@ -85,8 +85,42 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="form-edit">
+      <a href="form">
         Edit<span class="nhsuk-u-visually-hidden">&nbsp; form</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Product Specification Sheet upload
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-specification-sheet">
+      product-spec-sheet.pdf
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-spec-sheet-upload-success">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; the Product Specification Sheet</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Recommended storage conditions
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-storage-conds">
+      Ambient
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="add-recommended-storage-condition">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; the recommended storage conditions</span>
       </a>
 
     </dd>
@@ -104,7 +138,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="has-BNF-edit">
+      <a href="has-BNF">
         Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product listed on the British National Formulary (BNF)</span>
       </a>
 
@@ -124,7 +158,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="has-BP-monograph-edit">
+      <a href="has-BP-monograph">
         Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has a British Pharmacopoeia (BP) monograph</span>
       </a>
 
@@ -143,7 +177,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="accreditation-edit">
+      <a href="accreditation">
         Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has an accreditation</span>
       </a>
 
@@ -160,7 +194,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="accreditation-edit">
+      <a href="accreditation">
         Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product has an accreditation</span>
       </a>
 
@@ -186,96 +220,25 @@ Submit a new product: product summary | Portal | NHSBSA
       Pack
     </th>
     <th role="columnheader" class="" scope="col">
-      Pack quantity
+      Number of packs per box
     </th>
     <th role="columnheader" class="" scope="col">
       GTIN
     </th>
-    <th role="columnheader" class="" scope="col">
-      AMPPID
-    </th>
+    <!--    <th role="columnheader" class="" scope="col">-->
+    <!--      AMPPID-->
+    <!--    </th>-->
   </thead>
   <tbody class="nhsuk-table__body">
   <tr role="row" class="nhsuk-table__row">
     <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Container</span>Bottle-Amber glass</td>
     <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Pack</span>10ml</td>
-    <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Pack quantity</span>10</td>
+    <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Number of packs per box</span>10</td>
     <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">GTIN</span>5020850100014</td>
-    <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">AMPPID</span>22369611000001102</td>
+    <!--    <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">AMPPID</span>22369611000001102</td>-->
   </tr>
   </tbody>
 </table>
-
-<!--<h2>Ingredients</h2>-->
-
-<!--&lt;!&ndash;<p>If you need to make changes to the ingredients you can <a href="ingredient-name-edit.html"> edit, add or remove ingredients here</a></p>&ndash;&gt;-->
-
-<!--<table class="nhsuk-table nhsuk-table-responsive nhsuk-u-margin-bottom-8">-->
-<!--  <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of users for specials profile replacement</caption>-->
-<!--  <thead role="rowgroup" class="nhsuk-table__head">-->
-<!--  <tr role="row">-->
-<!--    <th role="columnheader" class="" scope="col">-->
-<!--      Ingredient name-->
-<!--    </th>-->
-<!--    <th role="columnheader" class="" scope="col">-->
-<!--      Strength-->
-<!--    </th>-->
-<!--    <th role="columnheader" class="" scope="col">-->
-<!--      Action-->
-<!--    </th>-->
-<!--  </tr>-->
-<!--  </thead>-->
-<!--  <tbody class="nhsuk-table__body">-->
-<!--  <tr role="row" class="nhsuk-table__row">-->
-<!--    <td class="nhsuk-table__cell">-->
-<!--      <span class="nhsuk-table-responsive__heading">Ingredient name</span>Prednisolone Sodium Phosphate</td>-->
-<!--    <td class="nhsuk-table__cell ">-->
-<!--      <span class="nhsuk-table-responsive__heading">Strength</span>0.5%</td>-->
-<!--    <td role="cell" class="nhsuk-table__cell">-->
-<!--      <span class="nhsuk-table-responsive__heading">File upload name</span>-->
-<!--      <a href="manage-ingredients-edit.html">Edit</a>-->
-<!--    </td>-->
-<!--  </tr>-->
-<!--  <tr role="row" class="nhsuk-table__row">-->
-<!--    <td class="nhsuk-table__cell">-->
-<!--      <span class="nhsuk-table-responsive__heading">Ingredient name</span>Salicylic Acid BP</td>-->
-<!--    <td class="nhsuk-table__cell ">-->
-<!--      <span class="nhsuk-table-responsive__heading">Strength</span>10%</td>-->
-<!--    <td role="cell" class="nhsuk-table__cell">-->
-<!--      <span class="nhsuk-table-responsive__heading">File upload name</span>-->
-<!--      <a href="#">Edit</a>-->
-<!--    </td>-->
-<!--  </tr>-->
-<!--  </tbody>-->
-<!--</table>-->
-
-<!--<h2>Excipients</h2>-->
-
-<!--&lt;!&ndash; if no excipients exist then add the following: &ndash;&gt;-->
-
-<!--&lt;!&ndash;<p>No excipients exist. To change this you can <a href="#"> add excipients to the product</a></p>&ndash;&gt;-->
-
-<!--<dl class="nhsuk-summary-list">-->
-
-<!--  <div class="nhsuk-summary-list__row">-->
-<!--    <dt class="nhsuk-summary-list__key">-->
-<!--      Excipients-->
-<!--    </dt>-->
-<!--    <dd class="nhsuk-summary-list__value" id="excipient-name">-->
-<!--      Methyl hydroxybenzoate-->
-<!--&lt;!&ndash;      if more than 1 excipient then these to appear underneath in the same <dd> MPL 27FEB24   &ndash;&gt;-->
-<!--    </dd>-->
-
-<!--    <dd class="nhsuk-summary-list__actions">-->
-
-<!--      <a href="manage-excipients-edit.html">-->
-<!--        Edit <span class="nhsuk-u-visually-hidden">&nbsp;excipients</span>-->
-<!--      </a>-->
-
-<!--    </dd>-->
-
-<!--  </div>-->
-<!--</dl>-->
 
 <h2 class="nhsuk-u-margin-top-8">Routes</h2>
 
@@ -296,7 +259,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="manage-route-edit.html">
+      <a href="route/manage-routes">
         Edit <span class="nhsuk-u-visually-hidden">&nbsp;routes</span>
       </a>
 
@@ -321,7 +284,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="available-edit">
+      <a href="available">
         Edit <span class="nhsuk-u-visually-hidden">&nbsp;if the product is available</span>
       </a>
 
@@ -331,7 +294,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
-      Is the product available as stock?
+      Is the product in stock?
     </dt>
     <dd class="nhsuk-summary-list__value" id="product-available-as-stock">
       <strong class="nhsuk-tag nhsuk-tag--red" id="on-available-as-stock">
@@ -341,7 +304,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="available-as-stock-edit">
+      <a href="available-as-stock">
         Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product is available as stock</span>
       </a>
 
@@ -351,7 +314,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
-      Shelf life
+      Unopened shelf life
     </dt>
     <dd class="nhsuk-summary-list__value" >
       <span id="product-shelf-life">365</span> days
@@ -359,7 +322,7 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="shelf-life-edit">
+      <a href="shelf-life">
         Edit<span class="nhsuk-u-visually-hidden">&nbsp;shelf life</span>
       </a>
 
@@ -369,7 +332,27 @@ Submit a new product: product summary | Portal | NHSBSA
 
   <div class="nhsuk-summary-list__row">
     <dt class="nhsuk-summary-list__key">
-      Is the shelf life validated?
+      Is the opened shelf life the same?
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-opened-shelf-life">
+      <strong class="nhsuk-tag nhsuk-tag--green" id="on-opened-shelf-life">
+        Yes
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="available-as-stock">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product is available as stock</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Is the shelf life valid?
     </dt>
     <dd class="nhsuk-summary-list__value" id="product-shelf-life-valid">
       <strong class="nhsuk-tag nhsuk-tag--red" id="has-shelf-life-valid">
@@ -379,115 +362,149 @@ Submit a new product: product summary | Portal | NHSBSA
 
     <dd class="nhsuk-summary-list__actions">
 
-      <a href="shelf-life-validated-edit">
-        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product shelf life is validated</span>
+      <a href="shelf-life-validated">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product shelf life is valid</span>
       </a>
     </dd>
   </div>
 </dl>
 
-<h2 class="nhsuk-u-margin-bottom-4 nhsuk-u-margin-top-8">Attributes</h2>
+<h2 class="nhsuk-u-margin-top-8">Free from preservatives</h2>
+<!--            If there are no free from preservatives then just a paragraph advising 'No free from preservatives exist.'  MPL 15MAR24   -->
 
-<p>If you need make changes to the attributes you can <a href="attributes"> edit, add or remove attributes here</a></p>
+<p>If you need to make changes to the free from preservatives you can <a href="attributes"> edit, add or remove free from preservatives here</a></p>
 
-<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
-  <caption class="nhsuk-table__caption nhsuk-u-visually-hidden">List of ingredients for Lidocaine hydrochloride 10% Nebuliser Solution</caption>
-  <thead role="rowgroup" class="nhsuk-table__head">
-  <tr role="row">
-    <th role="columnheader" class="" scope="col">
-      Attribute
-    </th>
-    <th role="columnheader" class="" scope="col">
-      Present
-    </th>
-    <th role="columnheader" class="" scope="col">
-      File upload
-    </th>
+<p>The following free from preservatives are listed.</p>
+<ul class="nhsuk-list nhsuk-list--bullet">
+  <li>Sugar free</li>
+  <li>Colour free</li>
+  <li>Preservative free</li>
+</ul>
 
-  </tr>
-  </thead>
-  <tbody class="nhsuk-table__body">
-  <tr role="row" class="nhsuk-table__row">
-    <td role="cell" class="nhsuk-table__cell">
-      <span class="nhsuk-table-responsive__heading">Attribute </span>Certificate of Analysis (CoA)
-    </td><td role="cell" class="nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--red">
-    No
-  </strong>
-  </td>
-    <td role="cell" class="nhsuk-table__cell">
-      <span class="nhsuk-table-responsive__heading">File upload name</span>
-      <span class="nhsuk-u-visually-hidden">No file uploaded</span>
-    </td>
-  </tr>
-  <tr role="row" class="nhsuk-table__row">
-    <td role="cell" class="nhsuk-table__cell">
-      <span class="nhsuk-table-responsive__heading">Attribute </span>Patient Information Leaflet (PIL) image
-    </td><td role="cell" class="nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--green">
-    Yes
-  </strong>
-  </td>
-    <td role="cell" class="nhsuk-table__cell">
-      <span class="nhsuk-table-responsive__heading">File upload name</span>
-      <span>No file uploaded</span>
-    </td>
-  </tr>
-  <tr role="row" class="nhsuk-table__row">
-    <td role="cell" class="nhsuk-table__cell">
-      <span class="nhsuk-table-responsive__heading">Attribute </span>Label image
-    </td><td role="cell" class="nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--green">
-    Yes
-  </strong>
-  </td>
-    <td role="cell" class="nhsuk-table__cell">
-      <span class="nhsuk-table-responsive__heading">File upload name</span>
-      <a href="#">Lidocaine 10% Nebuliser Solution.jpg</a>
-    </td>
-  </tr>
-  <tr role="row" class="nhsuk-table__row">
-    <td role="cell" class="nhsuk-table__cell">
-      <span class="nhsuk-table-responsive__heading">Attribute </span>Sugar free
-    </td><td role="cell" class="nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--red">
-    No
-  </strong>
-  </td>
-    <td role="cell" class="nhsuk-table__cell">
-      <span class="nhsuk-table-responsive__heading">File upload name</span>
-      <span class="nhsuk-u-visually-hidden">No upload required</span>
-    </td>
-  </tr>
-  <tr role="row" class="nhsuk-table__row">
-    <td role="cell" class="nhsuk-table__cell">
-      <span class="nhsuk-table-responsive__heading">Attribute </span>Preservative free
-    </td><td role="cell" class="nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--green">
-    Yes
-  </strong>
-  </td>
-    <td role="cell" class="nhsuk-table__cell">
-      <span class="nhsuk-table-responsive__heading">File upload name</span>
-      <span>No upload required</span>
-    </td>
-  </tr>
-  <tr role="row" class="nhsuk-table__row">
-    <td role="cell" class="nhsuk-table__cell">
-      <span class="nhsuk-table-responsive__heading">Attribute </span>Colour free
-    </td><td role="cell" class="nhsuk-table__cell">
-    <span class="nhsuk-table-responsive__heading">Present </span><strong class="nhsuk-tag nhsuk-tag--red">
-    No
-  </strong>
-  </td>
-    <td role="cell" class="nhsuk-table__cell">
-      <span class="nhsuk-table-responsive__heading">File upload name</span>
-      <span class="nhsuk-u-visually-hidden">No upload required</span>
-    </td>
-  </tr>
 
-  </tbody>
-</table>
+<h2 class="nhsuk-u-margin-top-6">Uploads</h2>
+
+<dl class="nhsuk-summary-list">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Is there a CoA upload
+    </dt>
+    <dd class="nhsuk-summary-list__value" >
+      <strong class="nhsuk-tag nhsuk-tag--green" id="CoA-upload">
+        Yes
+      </strong>
+    </dd>
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-name">
+        Edit <span class="nhsuk-u-visually-hidden">&nbsp;if there is a CoA upload</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      CoA upload
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="CoA-upload-detail">
+      test-file.pdf
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="category">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp;CoA upload</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Is there a label image upload
+    </dt>
+    <dd class="nhsuk-summary-list__value" >
+      <strong class="nhsuk-tag nhsuk-tag--green" id="label-image-upload">
+        Yes
+      </strong>
+    </dd>
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-name">
+        Edit <span class="nhsuk-u-visually-hidden">&nbsp;if there is a label image upload</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Label image upload
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="label-image-upload-detail">
+      test-file.pdf
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="category">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp;CoA upload</span>
+      </a>
+
+    </dd>
+
+  </div>
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Are there any other uploads
+    </dt>
+    <dd class="nhsuk-summary-list__value" >
+      <strong class="nhsuk-tag nhsuk-tag--green" id="other-uploads">
+        Yes
+      </strong>
+    </dd>
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="product-name">
+        Edit <span class="nhsuk-u-visually-hidden">&nbsp;if there are any other uploads</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">Other uploads
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="other-uploads-detail">
+      test-file.pdf
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="category">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp;other upload</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+</dl>
+
+<!--Notes section-->
+
+<h2>Notes</h2>
+
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+</p>
+
+<p><a href="edit-notes">Edit or remove notes</a></p>
 
 <a class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-right-5" href="confirmation"
    type="submit">
