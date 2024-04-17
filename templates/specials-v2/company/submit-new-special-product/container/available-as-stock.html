@@ -44,7 +44,7 @@ Submit a new special product - Is the product in stock? |  Specials Profile Repl
 
     </div>
 
-  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeAvailabilityAsStock()" href="unopened-shelf-product" id="continue-button" type="submit">
+  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeAvailabilityAsStock()" href="add-container-summary" id="continue-button" type="submit">
     Save and continue
   </a>
 
@@ -53,9 +53,9 @@ Submit a new special product - Is the product in stock? |  Specials Profile Repl
 
   var radioButtons = document.getElementsByName("availability-as-stock");
 
-  if (localStorage.getItem("summary-page") === "yes") {
-    document.getElementById("continue-button").href = "product-summary";
-  }
+  // if (localStorage.getItem("summary-page") === "yes") {
+  //   document.getElementById("continue-button").href = "product-summary";
+  // }
 
    if (radioButtons) {
     var getCategory = localStorage.getItem("special-product-available-as-stock");
