@@ -14,6 +14,58 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 
 <h1>Portfolio</h1>
 
+<!-- Filter section starts here -->
+
+<h3>Refine results</h3>
+<div class="nhsuk-form-group">
+    <p class="">You may refine the products by choosing from one of the following categories.</p>
+    <fieldset class="nhsuk-grid-row nhsuk-fieldset nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-5">
+
+        <div class="nhsuk-radios nhsuk-radios--inline">
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes" checked>
+                <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                    Show all
+                </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    Sterile
+                </label>
+            </div>
+
+            <div class="nhsuk-radios__item">
+                <input class="nhsuk-radios__input" id="example-3" name="example" type="radio" value="no">
+                <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                    Non Sterile
+                </label>
+            </div>
+        </div>
+    </fieldset>
+
+</div>
+
+<div class="nhsuk-form-group">
+    <p class="">You can also search for a specific term or product.</p>
+    <label class="nhsuk-label" for="example">Search term or product</label>
+    <input class="nhsuk-input" id="example" name="example" type="text">
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-right-4" href="#"
+   type="submit">
+    Refine portfolio results
+</a>
+
+<a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-3" href="#">
+    Reset
+</a>
+
+<!-- Filter section ends here -->
+
+<!-- Portfolio of special products table section starts here -->
+
 <div class="nhsuk-body-m flex--space-between" style="display: flex">
     <div class="nhsuk-u-visually-hidden">Currently viewing</div>
     <div id="pageAndResultCount">Page 1 of 1 (5 results)</div>
@@ -33,9 +85,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             Form
         </th>
         <th role="columnheader" class="" scope="col">
-            In stock
-        </th>
-        <th role="columnheader" class="" scope="col">
             Action
         </th>
     </tr>
@@ -53,11 +102,8 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <span class="nhsuk-table-responsive__heading">Form </span>Inhaler
         </td>
         <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">In stock </span>No
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Reference</span>
-            <a href="view-product-summary-details" class="nhsuk-link nhsuk-link--no-visited-state">View</a>
+            <a href="././spr-138-Filter-portfolio-required/product-details.html" class="nhsuk-link nhsuk-link--no-visited-state">View</a>
         </td>
     </tr>
 
@@ -73,9 +119,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Form </span>Topical solution
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">In stock </span>Yes
         </td>
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Reference</span>
@@ -97,9 +140,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <span class="nhsuk-table-responsive__heading">Form </span>Syringe
         </td>
         <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">In stock </span>Yes
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Reference</span>
             <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">View</a>
         </td>
@@ -117,9 +157,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Form </span>Bucket
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">In stock </span>Yes
         </td>
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Reference</span>
@@ -142,14 +179,13 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <span class="nhsuk-table-responsive__heading">Form </span>Syringe
         </td>
         <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">In stock </span>No
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Reference</span>
             <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">View</a>
         </td>
     </tbody>
 </table>
+
+<!-- Portfolio of special products table section ends here -->
 
 <nav class="govuk-pagination" role="navigation" aria-label="results">
     <div class="govuk-pagination__prev">
