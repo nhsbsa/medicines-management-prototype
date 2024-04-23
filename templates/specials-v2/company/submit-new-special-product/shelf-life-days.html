@@ -16,7 +16,7 @@ Submit a new special product - What is the shelf life of the product? |  Special
     <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
       <h1 class="nhsuk-fieldset__heading">
         <span class="nhsuk-caption-l">
-                Submit a new product
+                Submit a new special product: inventory
               <span class="nhsuk-u-visually-hidden"> - </span>
             </span>
         What is the opened shelf life of the product?
@@ -38,22 +38,22 @@ Submit a new special product - What is the shelf life of the product? |  Special
   </fieldset>
 </div>
 
-  <a class="nhsuk-button" onclick="storeShelfLife()"
+  <a class="nhsuk-button" onclick="storeOpenedShelfLife()"
      href="shelf-life-validated" id="continue-button" type="submit">
     Save and Continue
   </a>
 
 <script>
-  function storeShelfLife() {
+  function storeOpenedShelfLife() {
     var shelfLife = document.getElementById("shelf-life");
-    localStorage.setItem("special-product-shelf-life", shelfLife.value);
+    localStorage.setItem("special-product-opened-shelf-life", shelfLife.value);
 }
 
   if (localStorage.getItem("summary-page") === "yes") {
     document.getElementById("continue-button").href = "product-summary";
   }
 
-var getShelfLife = localStorage.getItem("special-product-shelf-life");
+var getShelfLife = localStorage.getItem("special-product-opened-shelf-life");
 var shelfLifeDetail = document.querySelector("#shelf-life");
 
 if (shelfLifeDetail != null) {
