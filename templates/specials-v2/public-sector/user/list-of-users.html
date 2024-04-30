@@ -14,11 +14,81 @@ Submit a new special product -  User accounts |  Specials Profile Replacement | 
 </div>
 
 <div class="nhsuk-width-container">
-    <!--    <div class="nhsuk-grid-row">-->
-    <!--        <div class="nhsuk-grid-column-full">-->
     <h1>
         User accounts
     </h1>
+
+    <!-- Filter section starts here -->
+<!--    If any selections are chosen and the filter is used, please make sure the details component appears as expanded so the user is aware of this selection MPL 30APR24   -->
+
+    <details class="nhsuk-details nhsuk-u-margin-bottom-9">
+        <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Filter user accounts
+    </span>
+        </summary>
+        <div class="nhsuk-details__text">
+            <div class="nhsuk-form-group">
+                <p class="">You may refine the user accounts by role. If you want to search for every role, keep all boxes empty.</p>
+                <fieldset class="nhsuk-grid-row nhsuk-fieldset nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-5">
+
+                    <form>
+
+                        <div class="nhsuk-form-group">
+
+                            <fieldset class="nhsuk-fieldset">
+                                <div class="nhsuk-checkboxes">
+
+                                    <div class="nhsuk-checkboxes__item">
+                                        <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="admin">
+                                        <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+                                            Admin
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-checkboxes__item">
+                                        <input class="nhsuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="user">
+                                        <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-2">
+                                            User
+                                        </label>
+                                    </div>
+
+                                    <div class="nhsuk-checkboxes__item">
+                                        <input class="nhsuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="browse">
+                                        <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-3">
+                                            Browse
+                                        </label>
+                                    </div>
+
+                                </div>
+                            </fieldset>
+
+                        </div>
+
+                    </form>
+                </fieldset>
+
+            </div>
+
+            <div class="nhsuk-form-group">
+                <p class="">You can also search for a specific term or the name of a user.</p>
+                <label class="nhsuk-label" for="example">Search</label>
+                <input class="nhsuk-input" id="example" name="example" type="text">
+            </div>
+
+            <a class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-right-4" href="#"
+               type="submit">
+                Filter user accounts
+            </a>
+
+            <a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-3" href="#">
+                Reset filter
+            </a>
+
+        </div>
+    </details>
+
+    <!-- Filter section ends here -->
 
     <div class="nhsuk-body-m flex--space-between" style="display: flex">
         <div class="nhsuk-u-visually-hidden">Currently viewing</div>
@@ -36,7 +106,10 @@ Submit a new special product -  User accounts |  Specials Profile Replacement | 
                 Organisation
             </th>
             <th role="columnheader" class="" scope="col">
-                Email
+                Role
+            </th>
+            <th role="columnheader" class="" scope="col">
+                Status
             </th>
             <th role="columnheader" class="" scope="col">
                 Action
@@ -46,31 +119,60 @@ Submit a new special product -  User accounts |  Specials Profile Replacement | 
         <tbody class="nhsuk-table__body">
         <tr role="row" class="nhsuk-table__row">
             <td class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">name</span>John Smith</td>
+                <span class="nhsuk-table-responsive__heading">name</span>Jane Jones</td>
             <td class="nhsuk-table__cell ">
                 <span class="nhsuk-table-responsive__heading">organisation</span>NHSBSA</td>
             <td class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Email</span>
-                john.smith@nhsbsa.nhs.uk</td>
+                <span class="nhsuk-table-responsive__heading">Role</span>
+                Admin</td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status</span>
+                <strong class="nhsuk-tag nhsuk-tag--white" id="account-status-tag">
+                    Active
+                </strong></td>
             <td class="nhsuk-table__cell ">
                 <span class="nhsuk-table-responsive__heading">Action</span>
                 <a class="nhsuk-link nhsuk-link--no-visited-state" href="user-info.html">
                     View
-                    <span class="nhsuk-u-visually-hidden"> information for John Smith</span></a>
+                    <span class="nhsuk-u-visually-hidden"> information for Jane Jones</span></a>
             </td>
         </tr>
         <tr role="row" class="nhsuk-table__row">
             <td class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">name</span>Jane Jones</td>
+                <span class="nhsuk-table-responsive__heading">name</span>John Smith</td>
             <td class="nhsuk-table__cell ">
                 <span class="nhsuk-table-responsive__heading">organisation</span>NHS England</td>
             <td class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Email</span>
-                jane.jones@nhs.net</td>
+                <span class="nhsuk-table-responsive__heading">Role</span>
+                User</td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status</span>
+                <strong class="nhsuk-tag nhsuk-tag--grey" id="account-status-tag-inactive">
+                    Inactive
+                </strong></td>
             <td class="nhsuk-table__cell ">
                 <span class="nhsuk-table-responsive__heading">Action</span>
                     View
-                    <span class="nhsuk-u-visually-hidden"> information for Jane Jones</span>
+                    <span class="nhsuk-u-visually-hidden"> information for John Smith</span>
+            </td>
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">name</span>Louise McDonald</td>
+            <td class="nhsuk-table__cell ">
+                <span class="nhsuk-table-responsive__heading">organisation</span>Hospital member</td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Role</span>
+                Browse</td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Status</span>
+                <strong class="nhsuk-tag nhsuk-tag--white" id="account-status-tag-active">
+                    Active
+                </strong></td>
+            <td class="nhsuk-table__cell ">
+                <span class="nhsuk-table-responsive__heading">Action</span>
+                    View
+                    <span class="nhsuk-u-visually-hidden"> information for Louise McDonald</span>
             </td>
         </tr>
         </tbody>
