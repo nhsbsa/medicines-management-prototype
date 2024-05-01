@@ -20,7 +20,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 </h1>
 
 <div class="nhsuk-action-link">
-    <a class="nhsuk-action-link__link" href="edit-request/product-summary-edit">
+    <a class="nhsuk-action-link__link" href="edit-request/product-summary-edit-more-info">
         <svg class="nhsuk-icon nhsuk-icon__arrow-right-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" width="36" height="36">
             <path d="M0 0h24v24H0z" fill="none"></path>
             <path d="M12 2a10 10 0 0 0-9.95 9h11.64L9.74 7.05a1 1 0 0 1 1.41-1.41l5.66 5.65a1 1 0 0 1 0 1.42l-5.66 5.65a1 1 0 0 1-1.41 0 1 1 0 0 1 0-1.41L13.69 13H2.05A10 10 0 1 0 12 2z"></path>
@@ -228,23 +228,25 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
                     Pack size
                 </th>
                 <th role="columnheader" class="" scope="col">
-                    Number of packs per box
+                    Packs per box
                 </th>
                 <th role="columnheader" class="" scope="col">
                     GTIN
                 </th>
-<!--                <th role="columnheader" class="" scope="col">-->
-<!--                    AMPP ID-->
-<!--                </th>-->
+                <th role="columnheader" class="" scope="col">
+                    In stock?
+                </th>
             </tr>
             </thead>
             <tbody class="nhsuk-table__body">
             <tr role="row" class="nhsuk-table__row">
                 <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Container</span>Ampoule</td>
                 <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Pack size </span>5ml</td>
-                <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Number of packs per box </span>10</td>
+                <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Packs per box </span>10</td>
                 <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">GTIN </span><span class="nhsuk-u-visually-hidden">NO GTIN exists</span></td>
-<!--                <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">AMPP ID </span>21497711000001107</td>-->
+                <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">AMPP ID </span><strong class="nhsuk-tag nhsuk-tag--green">
+                    Yes
+                </strong></td>
             </tr>
             </tbody>
         </table>
@@ -269,17 +271,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             </div>
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key update-width">
-                    Available as stock
-                </dt>
-                <dd class="nhsuk-summary-list__value" id="pack-effective-date"><strong class="nhsuk-tag nhsuk-tag--green">
-                    Yes
-                </strong></dd>
-
-            </div>
-
-
-            <div class="nhsuk-summary-list__row">
-                <dt class="nhsuk-summary-list__key update-width">
                     Unopened shelf life
                 </dt>
                 <dd class="nhsuk-summary-list__value">730 days</dd>
@@ -287,7 +278,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             </div>
             <div class="nhsuk-summary-list__row">
                 <dt class="nhsuk-summary-list__key update-width">
-                    Identical opened shelf life
+                    Identical opened shelf life?
                 </dt>
                 <dd class="nhsuk-summary-list__value"><strong class="nhsuk-tag nhsuk-tag--green">
                     Yes
@@ -307,14 +298,14 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 
         </dl>
 
-        <h3>Free from preservatives</h3>
+        <h3>Free from</h3>
         <!--            If there are no free from preservatives then just a paragraph advising 'No free from preservatives exist.'  MPL 15MAR24   -->
 
-        <p>The following free from preservatives are listed.</p>
+        <p>The product is:</p>
         <ul class="nhsuk-list nhsuk-list--bullet">
-            <li>Sugar free</li>
-            <li>Colour free</li>
-            <li>Preservative free</li>
+            <li>sugar free</li>
+            <li>colour free</li>
+            <li>preservative free</li>
         </ul>
 
         <h3 class="nhsuk-u-margin-top-6">Notes</h3>
