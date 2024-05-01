@@ -18,7 +18,61 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             </span>
     Choose a product</h1>
 
-<p class="nhsuk-u-margin-bottom-7">Choose a product from your portfolio that you need to change. </p>
+<p class="nhsuk-u-margin-bottom-5">Choose a product from your portfolio that you need to change. </p>
+<details class="nhsuk-details nhsuk-u-margin-bottom-9">
+    <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      You can filter your products here
+    </span>
+    </summary>
+    <div class="nhsuk-details__text">
+        <div class="nhsuk-form-group">
+            <p class="">You may refine the products by choosing from one of the following categories.</p>
+            <fieldset class="nhsuk-grid-row nhsuk-fieldset nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-5">
+
+                <div class="nhsuk-radios nhsuk-radios--inline">
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes" checked>
+                        <label class="nhsuk-label nhsuk-radios__label" for="example-1">
+                            Show all
+                        </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">
+                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                            Sterile
+                        </label>
+                    </div>
+
+                    <div class="nhsuk-radios__item">
+                        <input class="nhsuk-radios__input" id="example-3" name="example" type="radio" value="no">
+                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">
+                            Non Sterile
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+
+        </div>
+
+        <div class="nhsuk-form-group">
+            <p class="">You can also search for a specific term or product.</p>
+            <label class="nhsuk-label" for="example">Search term or product</label>
+            <input class="nhsuk-input" id="example" name="example" type="text">
+        </div>
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-right-4" href="#"
+           type="submit">
+            Filter portfolio results
+        </a>
+
+        <a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-3" href="#">
+            Reset filter
+        </a>
+
+    </div>
+</details>
 
 <div class="nhsuk-body-m flex--space-between" style="display: flex">
     <div class="nhsuk-u-visually-hidden">Currently viewing</div>
@@ -44,6 +98,41 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
     </tr>
     </thead>
     <tbody class="nhsuk-table__body">
+
+    <tr role="row" class="nhsuk-table__row">
+
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Product name </span>Anaphylaxis Kit (Guy's and St Thomas' PMU)
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Category </span>Non sterile
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Form </span>Topical solution
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Action</span>
+            <a href="#">Select</a>
+        </td>
+    </tr>
+
+    <tr role="row" class="nhsuk-table__row">
+
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Product name </span>Brilliant Green and Crystal Violet Paint
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Category </span>Non sterile
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Form </span>Bucket
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Action</span>
+            <a href="#">Select</a>
+        </td>
+    </tr>
+
     <tr role="row" class="nhsuk-table__row">
 
         <td role="cell" class="nhsuk-table__cell">
@@ -61,26 +150,6 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </td>
     </tr>
 
-
-
-    <tr role="row" class="nhsuk-table__row">
-
-        <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Product name </span>Anaphylaxis Kit (Guy's and St Thomas' PMU)
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Category </span>Non sterile
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Form </span>Topical solution
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Action</span>Select
-        </td>
-    </tr>
-
-
-
     <tr role="row" class="nhsuk-table__row">
 
         <td role="cell" class="nhsuk-table__cell">
@@ -94,26 +163,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Action</span>
-            <span class="nhsuk-table-responsive__heading">Action</span>Select
-        </td>
-    </tr>
-
-
-
-    <tr role="row" class="nhsuk-table__row">
-
-        <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Product name </span>Brilliant Green and Crystal Violet Paint
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Category </span>Non sterile
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Form </span>Bucket
-        </td>
-        <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Action</span>
-            <span class="nhsuk-table-responsive__heading">Action</span>Select
+            <a href="#">Select</a>
         </td>
     </tr>
 
@@ -133,7 +183,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Action</span>
-            <span class="nhsuk-table-responsive__heading">Action</span>Select
+            <a href="#">Select</a>
         </td>
     </tbody>
 </table>

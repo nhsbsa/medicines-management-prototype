@@ -5,16 +5,16 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
 {% block content %}
 
 <div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
-    <a class="nhsuk-back-link__link" href="../dashboard.html">
+    <a class="nhsuk-back-link__link" href="../../dashboard.html">
         <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
             <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
         </svg>
         Go back to dashboard</a>
 </div>
 
-<h1>PMU requests</h1>
+<h1>Browse user requests</h1>
 
-<p class="nhsuk-u-margin-bottom-8">New and historical PMU requests appear here. You can approve or deny new requests or view previous requests.</p>
+<p class="nhsuk-u-margin-bottom-8">New and historical browse user requests appear here. You can approve or deny new requests or view previous requests.</p>
 
 <div class="nhsuk-body-m flex--space-between" style="display: flex">
     <div class="nhsuk-u-visually-hidden">Currently viewing</div>
@@ -29,11 +29,11 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             Date of request
         </th>
         <th role="columnheader" class="" scope="col">
-            Company name
+            Name
         </th>
-<!--        <th role="columnheader" class="" scope="col">-->
-<!--            Manufacturer-->
-<!--        </th>-->
+        <th role="columnheader" class="" scope="col">
+            Organisation
+        </th>
         <th role="columnheader" class="" scope="col">
             Status
         </th>
@@ -48,9 +48,11 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <span class="nhsuk-table-responsive__heading">Date of request </span>12 Dec 2023
         </td>
         <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Company name </span>Barts Health NHS Trust
+            <span class="nhsuk-table-responsive__heading">Name </span>Adam Little
         </td>
-
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Organisation </span>Organisation name
+        </td>
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Status</span>
             <strong class="nhsuk-tag nhsuk-tag--grey">
@@ -59,7 +61,7 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
         </td>
         <td role="cell" class="nhsuk-table__cell">
             <span class="nhsuk-table-responsive__heading">Action</span>
-            <a href="view-details.html" class="nhsuk-link nhsuk-link--no-visited-state">Update</a>
+            <a href="user-info" class="nhsuk-link nhsuk-link--no-visited-state">Update</a>
         </td>
     </tr>
     <tr role="row" class="nhsuk-table__row">
@@ -67,7 +69,10 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <span class="nhsuk-table-responsive__heading">Date of request </span>10 Dec 2023
         </td>
         <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Company name </span>Guy's and St Thomas' PMU
+            <span class="nhsuk-table-responsive__heading">Name </span>Claire Brown
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Organisation </span>Organisation name
         </td>
       
         <td role="cell" class="nhsuk-table__cell">
@@ -86,7 +91,10 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <span class="nhsuk-table-responsive__heading">Date of request </span>09 Dec 2023
         </td>
         <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Company name </span>Stepping Hill Hospital - Stockport Pharmaceuticals
+            <span class="nhsuk-table-responsive__heading">Name </span>Deborah Walker
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Organisation </span>Organisation name
         </td>
 
         <td role="cell" class="nhsuk-table__cell">
@@ -105,7 +113,10 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <span class="nhsuk-table-responsive__heading">Date of request </span>09 Dec 2023
         </td>
         <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Company name </span>Manufacturing Unit T/A Huddersfield Pharmacy Special
+            <span class="nhsuk-table-responsive__heading">Name </span>Neil Williams
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Organisation </span>Organisation name
         </td>
 
         <td role="cell" class="nhsuk-table__cell">
@@ -124,7 +135,10 @@ Portal dashboard | Medicines Management design prototype | NHSBSA
             <span class="nhsuk-table-responsive__heading">Date of request </span>01 Dec 2023
         </td>
         <td role="cell" class="nhsuk-table__cell">
-            <span class="nhsuk-table-responsive__heading">Company name </span>Manufacturer</span>Huddersfield Royal Infirmary Pharmacy
+            <span class="nhsuk-table-responsive__heading">Name </span>Owen Jones
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Organisation </span>Organisation name
         </td>
 
         <td role="cell" class="nhsuk-table__cell">
