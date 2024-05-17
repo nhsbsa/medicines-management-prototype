@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block title %}
+Submit a new special product - Edit user Information |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+    <a class="nhsuk-back-link__link" href="user-info">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to user information</a>
+</div>
+
+<div class="nhsuk-form-group">
+    <fieldset class="nhsuk-fieldset" role="group">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+            <h1 class="nhsuk-fieldset__heading">
+                Edit user information
+            </h1>
+        </legend>
+
+        <p class="nhsuk-u-margin-bottom-6">Choose to edit one or more elements of this user account. Please note, if you do not submit these changes then any amendments made will not be saved. </p>
+
+        <dl class="nhsuk-summary-list">
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    First name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Jane
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="edit-user-name.html">
+                        Edit<span class="nhsuk-u-visually-hidden"> first name</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Last name
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Jones
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="edit-user-last-name.html">
+                        Edit<span class="nhsuk-u-visually-hidden"> last name</span>
+                    </a>
+
+                </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Department
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    Department name
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="edit-user-organisation.html">
+                        Edit<span class="nhsuk-u-visually-hidden"> organisation</span>
+                    </a>
+
+                </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Email
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    jane.jones@example.com
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="edit-user-email.html">
+                        Edit<span class="nhsuk-u-visually-hidden"> email</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Telephone
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    01234 56789
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="edit-user-telephone.html">
+                        Edit<span class="nhsuk-u-visually-hidden">Telephone number</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Role
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <p>Administrator</p>
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a href="edit-user-role.html">
+                        Edit<span class="nhsuk-u-visually-hidden"> role</span>
+                    </a>
+
+                </dd>
+
+            </div>
+            <div class="nhsuk-summary-list__row">
+                <dt class="nhsuk-summary-list__key">
+                    Account status
+                </dt>
+                <dd class="nhsuk-summary-list__value">
+                    <strong class="nhsuk-tag nhsuk-tag--white
+" id="account-status-tag">
+                        Active
+                    </strong>
+                </dd>
+
+                <dd class="nhsuk-summary-list__actions">
+
+                    <a class="nhsuk-link" href="edit-user-account-status.html" id="account-status-action">
+                        Edit<span class="nhsuk-u-visually-hidden"> account status</span>
+                    </a>
+
+                </dd>
+
+            </div>
+
+        </dl>
+    </fieldset>
+</div>
+
+<a href="user-info" class="nhsuk-button nhsuk-u-margin-right-4"
+   id="next"
+>Submit changes
+</a>
+
+<script>
+  console.log(localStorage);
+
+  let twoFATag = document.getElementById("2fa-tag");
+  let twoFAAction = document.getElementById("2fa-action");
+  let twoFANoAction = document.getElementById("2fa-no-action");
+  let twoFADeactivated = localStorage.getItem("2fa-deactivated")
+
+  if (twoFADeactivated == 'yes') {
+  twoFATag.className = "nhsuk-tag nhsuk-tag--blue";
+  twoFATag.innerHTML = "Requires set up";
+  twoFAAction.style.display = "none";
+  twoFANoAction.style.display = "block";
+  } else if (twoFADeactivated == 'no' || !twoFADeactivated) {
+  twoFATag.className = "nhsuk-tag nhsuk-tag--green";
+  twoFATag.innerHTML = "Activated";
+  twoFAAction.style.display = "block";
+  twoFANoAction.style.display = "none";
+  }
+
+  let accountStatusTag = document.getElementById("account-status-tag");
+  let accountStatusAction = document.getElementById("account-status-action");
+  let accountStatusDeactivated = localStorage.getItem("account-deactivated")
+  let accountStatusActivated = localStorage.getItem("account-activated")
+
+  if (accountStatusDeactivated == 'yes' || accountStatusActivated == 'no') {
+  accountStatusTag.className = "nhsuk-tag nhsuk-tag--grey";
+  accountStatusTag.innerHTML = "Inactive";
+  }
+  if (accountStatusDeactivated == 'no' || accountStatusActivated == 'yes') {
+  accountStatusTag.className = "nhsuk-tag nhsuk-tag--white";
+  accountStatusTag.innerHTML = "Active";
+  }
+
+</script>
+
+{% endblock %}
+
+

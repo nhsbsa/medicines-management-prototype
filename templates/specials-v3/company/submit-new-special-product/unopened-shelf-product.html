@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new special product - What the unopened shelf life of the product? |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+  <a class="nhsuk-back-link__link" href="available">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to is the product available</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading">
+        <span class="nhsuk-caption-l">
+                Submit a new special product: inventory
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+            What is the unopened shelf life of the product?
+      </h1>
+    </legend>
+
+<!--    using gov text box as was having trouble updating frontend toolkit to version 8. Use version 8 in dev MPL 16FEB24-->
+    <div class="govuk-form-group">
+      <label class="nhsuk-label" for="shelf-life">
+        Unopened shelf life in days
+      </label>
+      <div class="govuk-input__wrapper">
+        <input class="govuk-input govuk-input--width-10" id="shelf-life" name="weight" type="text" spellcheck="false" style="border-color: #4c6272">
+        <div class="govuk-input__suffix" aria-hidden="true" style="background-color: #d8dde0; border-color: #4c6272;
+    box-sizing: border-box; font-family: Frutiger W01,Arial,Sans-serif;">days</div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+  <a class="nhsuk-button" onclick="storeShelfLife()"
+     href="shelf-life-suggestions" id="continue-button" type="submit">
+    Save and continue
+  </a>
+
+<script>
+  function storeShelfLife() {
+    var shelfLife = document.getElementById("shelf-life");
+    localStorage.setItem("special-product-shelf-life", shelfLife.value);
+}
+
+  if (localStorage.getItem("summary-page") === "yes") {
+    document.getElementById("continue-button").href = "product-summary";
+  }
+
+var getShelfLife = localStorage.getItem("special-product-shelf-life");
+var shelfLifeDetail = document.querySelector("#shelf-life");
+
+if (shelfLifeDetail != null) {
+    if (getShelfLife != null) {
+      shelfLifeDetail.defaultValue = getShelfLife;
+    }
+}
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,216 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new special product - Special products |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+    <a class="nhsuk-back-link__link" href="dashboard">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to specials dashboard</a>
+</div>
+
+
+<!--<span class="nhsuk-caption-l">-->
+<!--  View a specials profile product-->
+<!--</span>-->
+
+<h1>Special products</h1>
+
+<p>View special products from all registered PMUs. To view specific information, including which PMUs offer the product, select the &#39;View&#39; link on the relevant product from the table.</p>
+
+<details class="nhsuk-details nhsuk-u-margin-bottom-9">
+    <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      You can filter your products here
+    </span>
+    </summary>
+    <div class="nhsuk-details__text">
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="example">
+                Enter a product name
+            </label>
+            <input class="nhsuk-input nhsuk-u-margin-bottom-5" id="example" name="example" type="text">
+            <button class="nhsuk-button nhsuk-u-margin-right-4 nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                Search for product
+            </button>
+            <button class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-bottom-0" data-module="nhsuk-button" type="submit">
+                Reset search
+            </button>
+        </div>
+
+        <div class="nhsuk-form-group ">
+
+<!--            this has been commented out pending user input-->
+<!--            <fieldset class="nhsuk-fieldset">-->
+<!--                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;l">-->
+<!--                    <h5 class="nhsuk-fieldset__heading">-->
+<!--                        Choose a catogory-->
+<!--                    </h5>-->
+<!--                </legend>-->
+<!--                <div class="nhsuk-radios">-->
+<!--                    <div class="nhsuk-radios__item">-->
+<!--                        <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">-->
+<!--                        <label class="nhsuk-label nhsuk-radios__label" for="example-1">-->
+<!--                            Sterile-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="nhsuk-radios__item nhsuk-u-margin-bottom-5">-->
+<!--                        <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">-->
+<!--                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">-->
+<!--                            Non-sterile-->
+<!--                        </label>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </fieldset>-->
+<!--            <fieldset class="nhsuk-fieldset">-->
+<!--                <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend&#45;&#45;l">-->
+<!--                    <h5 class="nhsuk-fieldset__heading">-->
+<!--                        Choose stock category-->
+<!--                    </h5>-->
+<!--                </legend>-->
+<!--                <div class="nhsuk-radios">-->
+<!--                    <div class="nhsuk-radios__item">-->
+<!--                        <input class="nhsuk-radios__input" id="example-1" name="example" type="radio" value="yes">-->
+<!--                        <label class="nhsuk-label nhsuk-radios__label" for="example-1">-->
+<!--                            In-stock-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="nhsuk-radios__item">-->
+<!--                        <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">-->
+<!--                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">-->
+<!--                            Out of stock-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="nhsuk-radios__item">-->
+<!--                        <input class="nhsuk-radios__input" id="example-2" name="example" type="radio" value="no">-->
+<!--                        <label class="nhsuk-label nhsuk-radios__label" for="example-2">-->
+<!--                            TBA-->
+<!--                        </label>-->
+<!--                    </div>-->
+
+<!--                </div>-->
+<!--            </fieldset>-->
+        </div>
+    </div>
+</details>
+
+<div class="nhsuk-body-m flex--space-between" style="display: flex">
+    <div class="nhsuk-u-visually-hidden">Currently viewing</div>
+    <div id="pageAndResultCount">Page 1 of 1 (5 results)</div>
+</div>
+
+<table class="nhsuk-table nhsuk-table-responsive nhsuk-u-margin-bottom-4">
+    <caption class="nhsuk-table__caption">A list of special products from all PMUs</caption>
+    <thead role="rowgroup" class="nhsuk-table__head">
+    <tr role="row">
+        <th role="columnheader" class="" scope="col">
+            Product name
+        </th>
+        <th role="columnheader" class="" scope="col">
+            Category
+        </th>
+<!--        this has been commented out pending user input-->
+        <!--                <th role="columnheader" class="" scope="col">-->
+        <!--                    Form-->
+        <!--                </th>-->
+        <th role="columnheader" class="" scope="col">
+            Form
+        </th>
+        <th role="columnheader" class="" scope="col">
+            Action
+        </th>
+    </tr>
+    </thead>
+    <tbody class="nhsuk-table__body">
+    <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Product name </span>Anaphylaxis Kit
+        </td>
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Category </span>Non-sterile</td>
+        <!--                <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Form </span>Other</td>-->
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Form</span>Other</td>
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">View product</span>
+            <a href="#">View</a></td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Product name </span>Brilliant Green
+            and Crystal Violet Paint
+        </td>
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Category </span>Non-sterile</td>
+        <!--                <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Form </span>Paint</td>-->
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Form </span>Paint</td>
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">View product </span><a class="nhsuk-link nhsuk-link--no-visited-state" href="view-product-summary-ingredients">View</a>
+        </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Product name </span>Lidocaine
+            hydrochloride 10% Nebuliser Solution
+        </td>
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Category </span>Sterile</td>
+        <!--                <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Form </span>Nebuliser solution</td>-->
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Form</span>Nebuliser Solution</td>
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">View product </span>
+            <a href="#">View</a>
+        </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Product name </span>Morphine Sulfate
+            2.5mg in 50ml gloucose 10% w/v injection
+        </td>
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Category </span>Sterile</td>
+        <!--                <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Form </span>Injection</td>-->
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Form </span>Injection</td>
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">View product </span>
+            <a href="#">View</a>
+        </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+        <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Product name </span>Trometamol
+            (THAM, TRIS) 3.6% injection
+        </td>
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Category </span>Sterile</td>
+        <!--                <td class="nhsuk-table__cell"><span class="nhsuk-table-responsive__heading">Form </span>Intra-venous</td>-->
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">Form</span>Injection</td>
+        <td class="nhsuk-table__cell "><span class="nhsuk-table-responsive__heading">View product </span><a class="nhsuk-link nhsuk-link--no-visited-state" href="view-product-summary">View</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<nav class="govuk-pagination" role="navigation" aria-label="results">
+    <div class="govuk-pagination__prev">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            <span class="govuk-pagination__link-title">Previous</span></a>
+    </div>
+    <ul class="govuk-pagination__list">
+        <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                1
+            </a>
+        </li>
+        <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+                2
+            </a>
+        </li>
+        <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                3
+            </a>
+        </li>
+    </ul>
+    <div class="govuk-pagination__next">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg></a>
+    </div>
+</nav>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: product confirmation | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-panel govuk-panel--confirmation nhsuk-u-margin-bottom-5">
+  <h1 class="govuk-panel__title" id="submission-detail">
+    The submission has been updated
+  </h1>
+  <div class="govuk-panel__body">
+    Reference <strong>SR-20231201</strong>
+  </div>
+</div>
+
+<h2>Next Steps</h2>
+<p>If the status changes to 'More detail' then you can <a class="nhsuk-link nhsuk-link--no-visited-state" href="new-or-ongoing-requests">view the request in new or ongoing submissions</a>.</p>
+<p>If the status changes to anything else then you can <a class="nhsuk-link nhsuk-link--no-visited-state" href="completed">view the request in approved, authored and rejected requests in last 30 days</a>.</p>
+<p>If the status is not changed and only a message is added, the location of the submission will not change.</p>
+
+<p><a href="dashboard" class="nhsuk-link nhsuk-link--no-visited-state">
+  Return to portal dashboard
+</a></p>
+
+
+{% endblock %}

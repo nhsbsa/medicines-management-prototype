@@ -1,0 +1,95 @@
+{% extends "specials-logo-base.html" %}
+{% block title %}
+Submit a new special product - Edit the route |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+  <a class="nhsuk-back-link__link" href="manage-route-edit.html">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    <span id="back-link-text">Go back to manage route</span></a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-uom-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading"><span class="nhsuk-caption-l">
+                Edit a new special product
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Edit the route
+      </h1>
+    </legend>
+
+    <label class="nhsuk-label" for="product-route">
+      Route
+    </label>
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-uom-hint">
+      If the route required is not found, choose 'Other' and continue to the next stage to capture this.
+    </div>
+
+    <select class="nhsuk-select" id="product-route" name="type">
+      <option value=""></option>
+      <option value="Epidural">Epidural</option>
+      <option value="Intracameral">Intracameral</option>
+      <option value="Intra-muscular">Intra-muscular</option>
+      <option value="Intra-ocular">Intra-ocular</option>
+      <option value="Intra-thecal">Intra-thecal</option>
+      <option value="Intra-venous">Intra-venous</option>
+      <option value="Nasal">Nasal</option>
+      <option value="Ocular">Ocular</option>
+      <option value="Oral">Oral</option>
+      <option value="Respiratory">Respiratory</option>
+      <option value="Topical">Topical</option>
+      <option value="Other">Other</option>
+    </select>
+
+
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-3" onclick="storeRoute()"
+   href="manage-route-edit.html" id="continue-button"
+   type="submit">
+  Save and continue
+</a>
+
+<script src="/js/gov.min.js"></script>
+
+<script>
+console.log(localStorage);
+
+let allSelectIds = document.querySelectorAll('select[id]');
+let allInputIds = document.querySelectorAll('input[id]');
+
+
+accessibleAutocomplete.enhanceSelectElement({
+            defaultValue: "",
+            autoselect: true,
+            showAllValues: true,
+            confirmOnBlur: false,
+            showNoOptionsFound: true,
+            selectElement: document.querySelector("#product-route"),
+        });
+
+        let parentDiv = document.querySelector("#product-route").parentNode;
+        let newLabel = document.createElement("label");
+        newLabel.innerHTML = "Form";
+        newLabel.style.display = "none";
+        newLabel.setAttribute("for", document.querySelector("#product-route-select").id);
+        parentDiv.appendChild(newLabel);
+
+function storeRoute() {
+
+        var prodRoute = document.getElementById("product-route");
+        localStorage.setItem("product-summary-edit.html", prodRoute.value);
+
+        if (prodRoute.value === "Other") {
+            document.getElementById("continue-button").setAttribute('href', "route-other-edit.html");
+        }
+    }
+
+
+</script>
+{% endblock %}

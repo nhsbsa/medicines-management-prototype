@@ -1,0 +1,61 @@
+{% extends "specials-logo-base.html" %}
+{% block title %}
+Submit a new special product -   How many packs in each box? |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+  <a class="nhsuk-back-link__link" href="container-pack-size-strength.html">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to pack size and UOM</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset"  role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading" id="heading"><span class="nhsuk-caption-l">
+                Submit a new special product: containers
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        How many packs are in each box?
+      </h1>
+    </legend>
+
+
+    <label class="nhsuk-label" for="pack-quantity">
+      Number of packs per box
+    </label>
+    <div class="nhsuk-hint" id="pack-quantity-hint">
+      For example, if each box contains 10 packs just enter 10.
+    </div>
+    <input class="nhsuk-input nhsuk-input--width-10 nhsuk-u-margin-bottom-3" id="pack-quantity" name="size" type="text">
+
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storePackQuantity()"
+   href="gtin-required" id="continue-button"
+   type="submit">
+  Save and continue
+</a>
+
+<script>
+
+  function storePackQuantity() {
+        var packQuantity = document.getElementById("pack-quantity");
+        localStorage.setItem("special-product-pack-quantity", packQuantity.value);
+    }
+
+  var summaryPage = localStorage.getItem("summary-page");
+  var getPackQuantity = localStorage.getItem("special-product-pack-quantity");
+  var packQuantity = document.querySelector("#pack-quantity");
+
+  if (packQuantity != null) {
+    if (getPackQuantity != null) {
+      packQuantity.defaultValue = getPackQuantity;
+    }
+  }
+
+</script>
+{% endblock %}

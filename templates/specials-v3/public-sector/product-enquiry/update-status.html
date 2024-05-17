@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new special product - Update status |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+    <a class="nhsuk-back-link__link" id="back-link" href="product-enquiry-view-page#tab-messages">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to the product enquiry</a>
+</div>
+
+<fieldset class="nhsuk-fieldset">
+    <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+        <h1>
+            <span class="nhsuk-caption-l" id="discontinue-reason">
+                	Update status
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+            Do you want to change to status to 'Responded'?'
+        </h1>
+    </legend>
+
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4">
+        The current status of the submission is <strong class="nhsuk-tag nhsuk-tag--purple">
+        In progress
+    </strong>
+    </div>
+
+    
+    <div class="nhsuk-form-group">
+      
+          <div class="nhsuk-radios">
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="yes" name="require-ingredient" type="radio" value="Add message">
+              <label class="nhsuk-label nhsuk-radios__label" for="yes">
+                Yes
+              </label>
+            </div>
+      
+            <div class="nhsuk-radios__item">
+              <input class="nhsuk-radios__input" id="No" name="require-ingredient" type="radio" value="Product enquiry list">
+              <label class="nhsuk-label nhsuk-radios__label" for="No">
+                No
+              </label>
+            </div>
+      
+          </div>
+      
+      </div>
+</fieldset>
+
+<!-- javascript starts here -->
+
+<a class="nhsuk-button nhsuk-u-margin-top-4" 
+   onclick="localStorage()" id="continue-button" name="require-ingredient" href="add-message.html">
+    Save and continue
+</a>
+
+<script type="text/javascript">
+
+var radioButtons = document.getElementsByName("require-ingredient");
+let buttonLink = document.getElementById("continue-button");
+ 
+    for (var radio of radioButtons) {
+          if (radio.checked) {
+            if (radio.value === 'No') {
+                buttonLink.href = "product-enquiry-view-page.html";
+            }
+        }
+     }
+
+</script>
+
+{% endblock %}

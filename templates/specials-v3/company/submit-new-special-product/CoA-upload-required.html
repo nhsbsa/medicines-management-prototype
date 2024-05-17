@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new special product - Do you have a file to upload for the Certificate of analysis (CoA)? |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+  <a class="nhsuk-back-link__link" href="attributes">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    <span id="back-link-text">Go back to free from preservatives does the product contain</span></a>
+</div>
+
+    <div class="nhsuk-form-group">
+
+      <fieldset class="nhsuk-fieldset">
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <h1 class="nhsuk-fieldset__heading nhsuk-u-margin-bottom-4">
+            <span class="nhsuk-caption-l">
+                Submit a new special product: uploads
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+            Do you have a file to upload for Certificate of Analysis (CoA)?
+          </h1>
+        </legend>
+
+        <div class="nhsuk-radios">
+
+          <div class="nhsuk-radios__item nhsuk-u-margin-bottom-3">
+            <input class="nhsuk-radios__input" id="contact-1" name="CoA-upload" type="radio" value="Yes">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+              Yes
+            </label>
+          </div>
+
+          <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" id="contact-2" name="CoA-upload" type="radio" value="No">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-2">
+              No
+            </label>
+          </div>
+        </div>
+      </fieldset>
+
+    </div>
+
+  <a class="nhsuk-button nhsuk-u-margin-top-5" onclick="storeCoAUploadRequired()" href="label-upload-required" id="continue-button" type="submit">
+    Save and continue
+  </a>
+
+<script>
+  console.log(localStorage);
+
+  var radioButtons = document.getElementsByName("CoA-upload");
+  let summaryPage = localStorage.getItem("supplier-summary");
+
+   if (radioButtons) {
+    var getCoAUploadRequired = localStorage.getItem("special-product-CoA-upload-required");
+    var buttonLink = document.getElementById("continue-button");
+    if (getCoAUploadRequired != null) {
+        for (var radio of radioButtons) {
+            if (getCoAUploadRequired === radio.value) {
+                radio.checked = true;
+            }
+        }
+      }
+   };
+
+function storeCoAUploadRequired() {
+    var radioButtons = document.getElementsByName("CoA-upload");
+    var buttonLink = document.getElementById("continue-button");
+
+    for (var radio of radioButtons) {
+        if (radio.checked) {
+          localStorage.setItem("special-product-CoA-upload-required", radio.value);
+          if (radio.value === "Yes") {
+            buttonLink.href = "CoA-file-upload";
+          }
+        }
+      }
+  }
+
+</script>
+
+{% endblock %}

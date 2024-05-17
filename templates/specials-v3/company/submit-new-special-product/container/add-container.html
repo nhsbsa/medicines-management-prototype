@@ -1,0 +1,120 @@
+{% extends "specials-logo-base.html" %}
+{% block title %}
+Submit a new special product -   What is the type of Container? |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+    <a class="nhsuk-back-link__link" href="manage-container">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to containers</a>
+</div>
+
+<div class="nhsuk-form-group">
+    <fieldset class="nhsuk-fieldset" aria-describedby="example-uom-hint" role="group">
+        <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+            <h1 class="nhsuk-fieldset__heading"><span class="nhsuk-caption-l">
+                Submit a new special product: containers
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+                What is the type of container?
+            </h1>
+        </legend>
+
+        <label class="nhsuk-label" for="add-container">
+            Container type
+        </label>
+
+        <div class="nhsuk-hint nhsuk-u-margin-bottom-3" id="example-uom-hint">
+            If the container required is not found, choose 'Other' and continue to the next stage to capture this.
+        </div>
+
+        <select class="nhsuk-select" id="add-container" name="type">
+            <option value=""></option>
+            <option value="ampoule">Ampoule</option>
+            <option value="Ampoule - Double wrapped">Ampoule - Double wrapped</option>
+            <option value="Ampoule - Single wrapped">Ampoule - Single wrapped</option>
+            <option value="Bottle - Amber glass">Bottle - Amber glass</option>
+            <option value="Bottle - Amber glass with spray">Bottle - Amber glass with spray</option>
+            <option value="Bottle - Amber Plastic">Bottle - Amber Plastic</option>
+            <option value="Bottle - Amber Plastic with spray">Bottle - Amber Plastic with spray</option>
+            <option value="Bottle - Clear glass">Bottle - Clear glass</option>
+            <option value="Bottle - Clear glass with spray">Bottle - Clear glass with spray</option>
+            <option value="Bottle - Clear Plastic">Bottle - Clear Plastic</option>
+            <option value="Bottle - Clear Plastic with spray">Bottle - Clear Plastic with spray</option>
+            <option value="Bottle - Infusion glass">Bottle - Infusion glass</option>
+            <option value="Bottle - Infusion plastic">Bottle - Infusion plastic</option>
+            <option value="Bottle - Irrigation glass">Bottle - Irrigation glass</option>
+            <option value="Bottle - Irrigation plastic">Bottle - Irrigation plastic</option>
+            <option value="Carton">Carton</option>
+            <option value="Cassette pump">Cassette pump</option>
+            <option value="Elastomeric device">Elastomeric device</option>
+            <option value="Eye drop bottle - Glass screw cap">Eye drop bottle - Glass screw cap</option>
+            <option value="Eye drop bottle - Glass with dropper">Eye drop bottle - Glass with dropper</option>
+            <option value="Eye drop bottle - Plastic">Eye drop bottle - Plastic</option>
+            <option value="Infusion bag">Infusion bag</option>
+            <option value="Jar - glass">Jar - Glass</option>
+            <option value="Jar - Plastic">Jar - Plastic</option>
+            <option value="PCA">PCA</option>
+            <option value="Pre filled syringe">Pre filled syringe</option>
+            <option value="Tube">Tube</option>
+            <option value="Vial">Vial</option>
+            <option value="Other">Other</option>
+        </select>
+
+
+    </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeContainerType()"
+   href="container-pack-size-strength" id="continue-button" type="submit">
+    Save and Continue
+</a>
+
+<script>
+    console.log(localStorage);
+
+    let allSelectIds = document.querySelectorAll('select[id]');
+    let allInputIds = document.querySelectorAll('input[id]');
+
+
+    accessibleAutocomplete.enhanceSelectElement({
+        defaultValue: "",
+        autoselect: true,
+        showAllValues: true,
+        confirmOnBlur: false,
+        showNoOptionsFound: true,
+        selectElement: document.querySelector("#add-container"),
+    });
+
+    let parentDiv = document.querySelector("#add-container").parentNode;
+    let newLabel = document.createElement("label");
+    newLabel.innerHTML = "Form";
+    newLabel.style.display = "none";
+    newLabel.setAttribute("for", document.querySelector("#add-container-select").id);
+    parentDiv.appendChild(newLabel);
+
+    function storeContainerType() {
+        var containerType = document.getElementById("add-container");
+        localStorage.setItem("special-product-container-type", containerType.value);
+
+        if (containerType.value === "Other") {
+            document.getElementById("continue-button").setAttribute('href', "other-container");
+        }
+    }
+
+    var getContainerType = localStorage.getItem("special-product-container-type");
+    var addContainer = document.querySelector("#add-container");
+
+
+    if (addContainer != null) {
+        if (getContainerType != null) {
+            addContainer.defaultValue = getContainerType;
+        }
+    }
+
+</script>
+
+{% endblock %}

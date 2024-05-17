@@ -1,0 +1,154 @@
+{% extends "supplier-navbar-base.html" %}
+{% block title %}
+Portal dashboard | Medicines Management design prototype | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="grid-row">
+
+  <div class="column-two-thirds">
+    <div class="nhsuk-card" style="color: #ffffff; background-color: #005eb8; text-align: center">
+      <div class="nhsuk-card__content">
+        <h1 class="nhsuk-card__heading">
+          Specials dashboard
+        </h1>
+      </div>
+    </div>
+
+
+    <p>Create and track Specials requests through the Specials dashboard.</p>
+    <p><a class="nhsuk-card__link nhsuk-link--no-visited-state" href="portfolio">Visit your specials product portfolio </a>to view your Special products. To make changes to any product in your portfolio, including updating stock levels, visit the Submissions section of the dashboard.</p>
+
+
+    <h2 class="govuk-!-padding-bottom-2">Requests</h2>
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state"
+                 href="submit-new-special-product/check-list">Submit a new special product</a>
+            </h2>
+            <p class="nhsuk-card__description">Submit a request for a new special product.</p>
+          </div>
+        </div>
+
+      </li>
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state"
+                 href="product-change/checklist">Submit a special product change</a>
+            </h2>
+            <p class="nhsuk-card__description">Submit a request to change an existing special product.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state"
+                 href="drafts/drafts-dashboard">All drafts</a>
+            </h2>
+            <p class="nhsuk-card__description">View or update drafts which have not been submitted.</p>
+          </div>
+        </div>
+      </li>
+
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state"
+                 href="product-change/checklist">View and edit stock levels</a>
+            </h2>
+            <p class="nhsuk-card__description">View product stock levels and update if required.</p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <h2>Track my requests</h2>
+
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="product-submissions-main-edit">Ongoing special requests</a>
+            </h2>
+            <p class="nhsuk-card__description">A list of requests which are under review or awaiting further information.</p>
+          </div>
+        </div>
+
+      </li>
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="product-complete-requests">Complete special requests</a>
+            </h2>
+            <p class="nhsuk-card__description">A list of requests which do not need further action.</p>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+
+    <h2>Product enquiries</h2>
+
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+        <div class="nhsuk-card nhsuk-card--clickable">
+          <div class="nhsuk-card__content">
+            <h2 class="nhsuk-card__heading nhsuk-heading-m">
+              <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="product-submissions/ongoing/product-submissions-main">Submit a product enquiry</a>
+            </h2>
+            <p class="nhsuk-card__description">Enquire about the availability of a specific special product.</p>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+
+    <h2>Administration</h2>
+    <ul class="nhsuk-grid-row nhsuk-card-group">
+      <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="user/list-of-users">User accounts</a>
+        </h2>
+        <p class="nhsuk-card__description">View, update and manage portal user accounts
+    </div>
+  </li>
+
+  <li class="nhsuk-grid-column-one-half nhsuk-card-group__item">
+    <div class="nhsuk-card nhsuk-card--clickable">
+      <div class="nhsuk-card__content">
+        <h2 class="nhsuk-card__heading nhsuk-heading-m">
+          <a class="nhsuk-card__link nhsuk-link--no-visited-state" href="supplier-users/view-company-details">PMU details</a>
+        </h2>
+        <p class="nhsuk-card__description">View or update PMU contacts. </p>
+      </div>
+    </div>
+  </li>
+</ul>
+  </div>
+</div>
+
+<script>
+  localStorage.clear();
+  console.log(localStorage);
+</script>
+{% endblock %}

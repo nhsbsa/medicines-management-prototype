@@ -1,0 +1,47 @@
+{% extends "specials-logo-base.html" %}
+{% block title %}
+Submit a new special product - Detail the excipient name |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+  <a class="nhsuk-back-link__link" href="choose-excipient">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to what is the excipient</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset"  role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading" id="heading"><span class="nhsuk-caption-l">
+                Submit a new special product
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>
+        Detail the excipient name
+      </h1>
+    </legend>
+
+
+    <label class="nhsuk-label" for="product-form">
+      Excipient
+    </label>
+    <input class="nhsuk-input nhsuk-u-margin-bottom-3" id="product-form" name="size" type="text">
+
+  </fieldset>
+</div>
+
+<a class="nhsuk-button nhsuk-u-margin-top-2" onclick="storeForm()"
+   href="manage-excipients.html" id="continue-button"
+   type="submit">
+  Save and continue
+</a>
+
+<script>
+
+  function storeLicensedRoute() {
+        var licRoute = document.getElementById("product-form");
+        localStorage.setItem("product-form", licRoute.value);
+    };
+</script>
+{% endblock %}

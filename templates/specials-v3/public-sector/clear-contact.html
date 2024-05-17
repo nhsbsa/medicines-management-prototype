@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}
+Portal dashboard | Medicines Management design prototype | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+
+    <a class="nhsuk-back-link__link" href="edit-ordering-info">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to Ordering department contact details</a>
+</div>
+
+        <div class="nhsuk-width-container">
+
+            <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+                        <h1 class="nhsuk-fieldset__heading">
+                            <span class="nhsuk-caption-l">
+                                     Barts Pharmaceuticals</span>
+                            Do you want to clear the information for the Ordering department?
+                        </h1>
+                    </legend>
+                    <div class="nhsuk-radios">
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="example-hints-1" name="example-hints" type="radio"
+                                   value="yes" aria-describedby="example-hints-1-item-hint">
+                            <label class="nhsuk-label nhsuk-radios__label" for="example-hints-1">
+                                <strong>Yes</strong>
+                            </label>
+                            <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-1-item-hint">
+                                This will clear the information from the Ordering department.
+                            </div>
+                        </div>
+
+                        <div class="nhsuk-radios__item">
+                            <input class="nhsuk-radios__input" id="example-hints-2" name="example-hints" type="radio"
+                                   value="no" aria-describedby="example-hints-2-item-hint" >
+                            <label class="nhsuk-label nhsuk-radios__label" for="example-hints-2">
+                                <strong>No</strong>
+                            </label>
+                            <div class="nhsuk-hint nhsuk-radios__hint" id="example-hints-2-item-hint">
+                                The current contact information will remain.
+                            </div>
+                        </div>
+
+                    </div>
+                </fieldset>
+            </div>
+
+            <a class="nhsuk-button" href="nhs-manu-details" id="continue-button">Save and continue</a>
+
+
+{% endblock %}
+

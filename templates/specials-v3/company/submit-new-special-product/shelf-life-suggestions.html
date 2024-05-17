@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new special product - Is the opened shelf life same as the unopened shelf life? |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+  <a class="nhsuk-back-link__link" href="unopened-shelf-product">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to what is the unopened shelf life of the product?</a>
+</div>
+
+<div class="nhsuk-form-group">
+  <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+    <legend class="nhsuk-fieldset__legend nhsuk-label--xl">
+      <h1 class="nhsuk-fieldset__heading margin-bottom-5">
+        <span class="nhsuk-caption-l">
+                Submit a new special product: inventory
+            </span>
+            Is the opened shelf life same as the unopened shelf life?
+            
+      </h1>
+    </legend>
+
+    <div class="nhsuk-hint nhsuk-u-margin-bottom-4" id="example-error-hint">
+        The unopened shelf life for this special product is 765 days.
+      </div>
+
+<!--    using gov text box as was having trouble updating frontend toolkit to version 8. Use version 8 in dev MPL 16FEB24-->
+
+  <div class="nhsuk-radios">
+
+    <div class="nhsuk-radios__item nhsuk-u-margin-bottom-3">
+    <input class="nhsuk-radios__input" id="shelf-validated" name="example" type="radio" value="yes">
+    <label class="nhsuk-label nhsuk-radios__label" for="shelf-validated">
+                Yes
+    </label>
+    </div>
+     
+    <div class="nhsuk-radios__item">
+    <input class="nhsuk-radios__input" id="shelf-days" name="example" type="radio" value="No">
+    <label class="nhsuk-label nhsuk-radios__label" for="shelf-days">
+                No
+    </label>
+    </div>
+  </div>
+
+  </fieldset>
+</div>    
+ 
+    <a class="nhsuk-button nhsuk-u-margin-top-4" id="continue-button" name="shelf-life" href="shelf-life-validated">Save and continue</a>
+     
+    <script type="text/javascript">
+        var radioButtons = document.getElementsByName("example");
+        let buttonLink = document.getElementById("continue-button");
+     
+        function updateButtonLink() {
+            for (var radio of radioButtons) {
+                if (radio.checked && radio.value === 'No') {
+                    buttonLink.href = "shelf-life-days";
+                    return; // exit loop early if 'No' is found
+                }
+            }
+            // If 'No' is not selected or no radio button is checked, default link
+            buttonLink.href = "shelf-life-validated";
+        }
+
+// Call the function when the page loads to set the initial state
+updateButtonLink();
+ 
+ // Add event listeners to each radio button to respond to changes
+ radioButtons.forEach(function(radio) {
+     radio.addEventListener('change', updateButtonLink);
+ });
+</script>
+
+{% endblock %}

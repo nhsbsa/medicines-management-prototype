@@ -1,0 +1,206 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new special product - Approved and authored requests in the last 30 days |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+    <a class="nhsuk-back-link__link" href="dashboard">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to specials dashboard</a>
+</div>
+
+<h1>Approved, authored and rejected requests in last 30 days</h1>
+
+<p class="nhsuk-u-margin-bottom-8">The table shows approved, authored and rejected requests from the last 30 days. Access the request from the reference to view in more detail, or to update the status from approved to authored.</p>
+
+<div class="nhsuk-body-m flex--space-between" style="display: flex">
+    <div class="nhsuk-u-visually-hidden">Currently viewing</div>
+    <div id="pageAndResultCount">Page 1 of 1 (5 results)</div>
+</div>
+
+
+<table role="table" class="nhsuk-table-responsive nhsuk-u-margin-bottom-8">
+    <caption class="nhsuk-table__caption">Special requests from all PMUs</caption>
+    <thead role="rowgroup" class="nhsuk-table__head">
+    <tr role="row">
+        <th role="columnheader" class="" scope="col">
+            Date approved
+        </th>
+        <th role="columnheader" class="" scope="col">
+            Request
+        </th>
+        <th role="columnheader" class="" scope="col">
+            Product name
+        </th>
+<!--        <th role="columnheader" class="" scope="col">-->
+<!--            Manufacturer-->
+<!--        </th>-->
+        <th role="columnheader" class="" scope="col">
+            Status
+        </th>
+        <th role="columnheader" class="" scope="col">
+            Authored
+        </th>
+        <th role="columnheader" class="" scope="col">
+            Reference
+        </th>
+    </tr>
+    </thead>
+    <tbody class="nhsuk-table__body">
+    <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date approved </span>12 Dec 2023
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Request </span>New product
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Product name </span>Emulsifying Wax 3% in Water
+        </td>
+<!--        <td role="cell" class="nhsuk-table__cell">-->
+<!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Stepping Hill Hospital - Stockport Pharmaceuticals-->
+<!--        </td>-->
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Status</span>
+            <strong class="nhsuk-tag nhsuk-tag--green">
+                Approved
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Authored</span>
+            <strong class="nhsuk-tag nhsuk-tag--red">
+                No
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Reference</span>
+            <a href="#" class="nhsuk-link nhsuk-link--no-visited-state">202312101S</a>
+        </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date approved </span>09 Dec 2023
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Request </span>Product change
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Product name </span>Mannitol 2.5% oral solution
+        </td>
+        <!--        <td role="cell" class="nhsuk-table__cell">-->
+        <!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Stepping Hill Hospital - Stockport Pharmaceuticals-->
+        <!--        </td>-->
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Status</span>
+            <strong class="nhsuk-tag nhsuk-tag--green">
+                Approved
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Authored</span>
+            <strong class="nhsuk-tag nhsuk-tag--green">
+                Yes
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Reference</span>
+            <a href="#">202312021S</a>
+        </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date approved </span>08 Dec 2023
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Request </span>Product change
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Product name </span>	Bevacizumab 1% (40mg in 4ml) Eye Drops
+        </td>
+<!--        <td role="cell" class="nhsuk-table__cell">-->
+<!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Huddersfield Royal Infirmary Pharmacy Manufacturing Unit T/A Huddersfield Pharmacy Specials-->
+<!--        </td>-->
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Status</span>
+            <strong class="nhsuk-tag nhsuk-tag--green">
+                Approved
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Authored</span>
+            <strong class="nhsuk-tag nhsuk-tag--green">
+                Yes
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Reference</span>
+            <a href="#">202312037S</a>
+        </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date approved </span>07 Dec 2023
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Request </span>New product
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Product name </span>Oral Rehydration Salts, Potassium-free, Queen's Hospital Burton Formula
+        </td>
+<!--        <td role="cell" class="nhsuk-table__cell">-->
+<!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Huddersfield Royal Infirmary Pharmacy Manufacturing Unit T/A Huddersfield Pharmacy Specials-->
+<!--        </td>-->
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Status</span>
+            <strong class="nhsuk-tag nhsuk-tag--red">
+                Rejected
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Authored</span>
+            <strong class="nhsuk-tag nhsuk-tag--red">
+                No
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Reference</span>
+            <a href="#">202312126S</a>
+        </td>
+    </tr>
+    <tr role="row" class="nhsuk-table__row">
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Date approved </span>06 Dec 2023
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Request </span>New product
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Product name </span>Gabapentin 10%w/w Gel
+        </td>
+<!--        <td role="cell" class="nhsuk-table__cell">-->
+<!--            <span class="nhsuk-table-responsive__heading">Manufacturer</span>Huddersfield Royal Infirmary Pharmacy Manufacturing Unit T/A Huddersfield Pharmacy Specials-->
+<!--        </td>-->
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Status</span>
+            <strong class="nhsuk-tag nhsuk-tag--green">
+                Approved
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Authored</span>
+            <strong class="nhsuk-tag nhsuk-tag--red">
+                No
+            </strong>
+        </td>
+        <td role="cell" class="nhsuk-table__cell">
+            <span class="nhsuk-table-responsive__heading">Reference</span>
+            <a href="#">202312125S</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+{% endblock %}

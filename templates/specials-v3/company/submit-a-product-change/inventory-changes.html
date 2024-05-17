@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new product: product summary | Portal | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+  <a class="nhsuk-back-link__link" href="manage-route-edit">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to routes</a>
+</div>
+
+<h1><span class="nhsuk-caption-l">
+               Submit a special product change
+              <span class="nhsuk-u-visually-hidden"> - </span>
+            </span>Inventory</h1>
+
+<!-- When editing an already submitted product, you should not have 'save as draft' option MPL 12MAR24 -->
+
+<p class="nhsuk-u-margin-bottom-5">If any changes need to be made to the inventory, use the relevant &#39;Edit&#39; links. If no changes need to be made to this section, use the &#39;Save and continue&#39; button to move to the next stage.</p>
+
+<dl class="nhsuk-summary-list">
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Is the product available?
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-available">
+      <strong class="nhsuk-tag nhsuk-tag--red" id="has-availability">
+        No
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="available-edit">
+        Edit <span class="nhsuk-u-visually-hidden">&nbsp;if the product is available</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Unopened shelf life
+    </dt>
+    <dd class="nhsuk-summary-list__value" >
+      <span id="product-shelf-life">365</span> days
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="shelf-life-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp;Unopened shelf life</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Is the opened shelf life the same?
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-available-as-stock">
+      <strong class="nhsuk-tag nhsuk-tag--green" id="on-available-as-stock">
+        Yes
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="shelf-life-suggestions">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp;Is the opened shalf life the same?</span>
+      </a>
+
+    </dd>
+
+  </div>
+
+  <div class="nhsuk-summary-list__row">
+    <dt class="nhsuk-summary-list__key">
+      Is the shelf life validated?
+    </dt>
+    <dd class="nhsuk-summary-list__value" id="product-shelf-life-valid">
+      <strong class="nhsuk-tag nhsuk-tag--red" id="has-shelf-life-valid">
+        No
+      </strong>
+    </dd>
+
+    <dd class="nhsuk-summary-list__actions">
+
+      <a href="shelf-life-validated-edit">
+        Edit<span class="nhsuk-u-visually-hidden">&nbsp; if product shelf life is validated</span>
+      </a>
+    </dd>
+  </div>
+</dl>
+
+<a class="nhsuk-button nhsuk-u-margin-top-2"
+   href="attributes" id="button" type="submit">
+  Save and continue
+</a>
+
+<script>
+  console.log(localStorage);
+</script>
+
+{% endblock %}
