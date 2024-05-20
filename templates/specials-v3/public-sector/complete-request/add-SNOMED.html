@@ -27,13 +27,19 @@ Submit a new special product -  what is the department email address? |  Special
         <div class="nhsuk-hint" id="example-with-hint-text-hint">
             The SNOMED must be detailed exactly as per the Common Drug Reference (CDR) database.
         </div>
-        <input class="nhsuk-input nhsuk-input--width-10 nhsuk-u-margin-bottom-4" id="input-width-10" name="test-width-20" type="text" value="">
+        <input class="nhsuk-input nhsuk-input--width-10 nhsuk-u-margin-bottom-4" id="add-SNOMED" name="test-width-20" type="text" value="">
     </div>
 
-    <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="add-message">
+    <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="add-message" onclick="saveSNOMED()">
         Save and continue
     </a>
 
 </div>
+
+<script>
+    function saveSNOMED() {
+        localStorage.setItem("SNOMED", document.getElementById("add-SNOMED").value);
+    }
+</script>
 
 {% endblock %}

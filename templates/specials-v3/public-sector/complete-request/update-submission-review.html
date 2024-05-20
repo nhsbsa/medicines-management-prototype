@@ -31,6 +31,17 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
     </div>
 
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Status
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="SNOMED-update">
+            546465423656569
+        </dd>
+
+    </div>
+
+
     <div class="nhsuk-summary-list__row" id="hide-note-title">
         <dt class="nhsuk-summary-list__key">
             Message title
@@ -80,7 +91,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
             Request type
         </dt>
         <dd class="nhsuk-summary-list__value">
-            New product
+            New special product
         </dd>
 
     </div>
@@ -90,7 +101,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
             Product name
         </dt>
         <dd class="nhsuk-summary-list__value">
-            Lidocaine hydrochloride 10% Nebuliser Solution
+            Emulsifying Wax 3% in Water
         </dd>
 
     </div>
@@ -137,7 +148,7 @@ Submit a new product: pack size and strength | Portal | NHSBSA
 
 
 
-<a class="nhsuk-button nhsuk-u-margin-top-4" href="confirmation" id="continue-button" type="submit">
+<a class="nhsuk-button nhsuk-u-margin-top-4" href="review-request-ready-SNOMED" id="continue-button" type="submit">
     Save and notify
 </a>
 
@@ -215,7 +226,9 @@ Submit a new product: pack size and strength | Portal | NHSBSA
        commentDetail.classList.add("nhsuk-u-visually-hidden");
     }
 
-
+    if (localStorage.getItem("SNOMED")) {
+        document.getElementById("SNOMED-update").innerHTML = localStorage.getItem("SNOMED");
+    }
 
 
 </script>

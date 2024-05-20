@@ -608,3 +608,7 @@ fill-blue{
         border-left: 0;
     }
 }
+
+.nhsbsa-u-whitespace__normal{
+    white-space: normal;
+}
