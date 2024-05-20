@@ -209,9 +209,12 @@ Submit a new product: pack size and strength | Portal | NHSBSA
      statusView.style["display"] = "none";
     }
 
-    if (localStorage.getItem("notes-title") != null) {
+    if (localStorage.getItem("notes-title") != null && (!localStorage.getItem("notes-title-other")) ) {
     notesTitleInput.innerHTML = localStorage.getItem("notes-title");
     notesDetailInput.innerHTML = localStorage.getItem("notes-detail");
+    } else if (localStorage.getItem("notes-title") != null && (localStorage.getItem("notes-title-other") != null)) {
+        notesTitleInput.innerHTML = localStorage.getItem("notes-title-other");
+        notesDetailInput.innerHTML = localStorage.getItem("notes-detail");
     }
 
     if (localStorage.getItem("notes-title") == null || localStorage.getItem("product-notes-require") == 'No') {
