@@ -1,5 +1,7 @@
 # Medicines Management Prototype
 
+### *** If adding code to Profile, use specials-v3 folder
+
 &ensp;
 ## Project Setup
 ### Cloning the project
