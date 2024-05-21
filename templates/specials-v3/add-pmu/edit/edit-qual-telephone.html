@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new special product - Edit ordering telephone number |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-9">
+    <a class="nhsuk-back-link__link" href="edit-ordering-info.html">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to do you have a Quality assurance queries department email address</a>
+</div>
+
+<div class="nhsuk-width-container">
+  <span class="nhsuk-caption-l">
+   Register as a PMU for Specials
+</span>
+
+    <h1>
+        Do you have a Quality assurance queries department telephone number?
+    </h1>
+
+    <div class="nhsuk-radios nhsuk-radios--conditional nhsuk-u-margin-bottom-6">
+
+        <div class="nhsuk-radios__item nhsuk-u-margin-bottom-3">
+            <input class="nhsuk-radios__input" id="contact-1" name="has-telephone" type="radio" value="yes" aria-controls="conditional-contact-1" aria-expanded="false">
+            <label class="nhsuk-label nhsuk-radios__label" for="contact-1">
+                Yes
+            </label>
+        </div>
+
+        <div class="nhsuk-radios__conditional nhsuk-radios__conditional--hidden" id="conditional-contact-1">
+
+            <div class="nhsuk-form-group nhsuk-u-margin-bottom-4">
+                <label class="nhsuk-label" for="email">
+                    Telephone number
+                </label>
+                <input class="nhsuk-input nhsuk-u-width-two-thirds" id="email" name="email" type="text">
+            </div>
+
+        </div>
+
+        <div class="nhsuk-radios__item">
+            <input class="nhsuk-radios__input" name="has-telephone" type="radio" id="no-tel"
+                   value="no"/>
+            <label class="nhsuk-label nhsuk-radios__label" for="no-tel">
+                No
+            </label>
+        </div>
+    </div>
+</div>
+
+        <a class="nhsuk-button" data-module="nhsuk-button" type="submit" href="../summary-manufacturer-v2.html">
+        Save and continue
+    </a>
+
+
+
+{% endblock %}
