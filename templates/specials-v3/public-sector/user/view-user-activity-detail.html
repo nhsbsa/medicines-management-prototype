@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new special product - User activity |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-8">
+
+    <a class="nhsuk-back-link__link" href="view-user-activity.html">
+        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             aria-hidden="true" height="24" width="24">
+            <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+        </svg>
+        Go back to user activity</a>
+</div>
+<!--    this is a placeholder for future further development once agreed -->
+
+    <h1>
+        Activity for John Smith on 25 Jan 2024 at 09:15
+    </h1>
+
+
+<dl class="nhsuk-summary-list nhsuk-summary-list--no-border">
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Name
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            John Smith
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Activity date and time
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            25 Jan 2024 at 09:15
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Activity type
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            Insert
+        </dd>
+
+    </div>
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            Activity detail
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            Submitted a new special product request
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            User role
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            User
+        </dd>
+
+    </div>
+
+    <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+            IP address
+        </dt>
+        <dd class="nhsuk-summary-list__value">
+            192.158.1.38
+        </dd>
+
+    </div>
+
+</dl>
+
+<a href="#" class="nhsuk-button">Download user activity as CSV</a>
+
+{% endblock %}

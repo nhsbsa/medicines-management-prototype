@@ -15,15 +15,92 @@ Submit a new special product - User activity |  Specials Profile Replacement | N
 </div>
 <!--    this is a placeholder for future further development once agreed -->
 
-
-
     <h1>
-        User activity
+        User activity for John Smith
     </h1>
+
+<details class="nhsuk-details nhsuk-u-margin-bottom-9">
+    <summary class="nhsuk-details__summary">
+    <span class="nhsuk-details__summary-text">
+      Filter user activity
+    </span>
+    </summary>
+    <div class="nhsuk-details__text">
+        <div class="nhsuk-form-group">
+            <p class="">You may refine the results by activity. If you want to search for all activity types, keep all boxes empty.</p>
+            <fieldset class="nhsuk-grid-row nhsuk-fieldset nhsuk-u-margin-bottom-5 nhsuk-u-margin-top-5">
+
+                <form>
+
+                    <div class="nhsuk-form-group">
+
+                        <fieldset class="nhsuk-fieldset">
+                            <div class="nhsuk-checkboxes">
+
+                                <div class="nhsuk-checkboxes__item">
+                                    <input class="nhsuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="admin">
+                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact">
+                                        Insert
+                                    </label>
+                                </div>
+
+                                <div class="nhsuk-checkboxes__item">
+                                    <input class="nhsuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="user">
+                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-2">
+                                        Update
+                                    </label>
+                                </div>
+
+                                <div class="nhsuk-checkboxes__item">
+                                    <input class="nhsuk-checkboxes__input" id="contact-3" name="contact" type="checkbox" value="browse">
+                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-3">
+                                        Approval
+                                    </label>
+                                </div>
+                                <div class="nhsuk-checkboxes__item">
+                                    <input class="nhsuk-checkboxes__input" id="contact-4" name="contact" type="checkbox" value="browse">
+                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-3">
+                                        Rejection
+                                    </label>
+                                </div>
+                                <div class="nhsuk-checkboxes__item">
+                                    <input class="nhsuk-checkboxes__input" id="contact-5" name="contact" type="checkbox" value="browse">
+                                    <label class="nhsuk-label nhsuk-checkboxes__label" for="contact-3">
+                                        Deletion
+                                    </label>
+                                </div>
+
+                            </div>
+                        </fieldset>
+
+                    </div>
+
+                </form>
+            </fieldset>
+
+        </div>
+
+        <div class="nhsuk-form-group">
+            <p class="">You can also search for a specific term.</p>
+            <label class="nhsuk-label" for="example">Search</label>
+            <input class="nhsuk-input" id="example" name="example" type="text">
+        </div>
+
+        <a class="nhsuk-button nhsuk-u-margin-top-3 nhsuk-u-margin-right-4" href="#"
+           type="submit">
+            Filter user activity
+        </a>
+
+        <a class="nhsuk-button nhsuk-button--secondary nhsuk-u-margin-top-3" href="#">
+            Reset filter
+        </a>
+
+    </div>
+</details>
 
 <div class="nhsuk-body-m flex--space-between" style="display: flex">
     <div class="nhsuk-u-visually-hidden">Currently viewing</div>
-    <div id="pageAndResultCount">Page 1 of 1 (2 results)</div>
+    <div id="pageAndResultCount">Page 1 of 1 (11 results)</div>
 </div>
 
     <table class="nhsuk-table nhsuk-table-responsive nhsuk-u-margin-bottom-5">
@@ -31,65 +108,257 @@ Submit a new special product - User activity |  Specials Profile Replacement | N
         </caption>
         <thead role="rowgroup" class="nhsuk-table__head">
         <tr role="row">
-            <th role="columnheader" class="" scope="col">
-                Date and time of activity
-            </th>
-            <th role="columnheader" class="" scope="col">
-                User name / ID
+            <th role="columnheader" class="nhsbsa-u-whitespace__normal" scope="col">
+                Activity date and time
             </th>
             <th role="columnheader" class="" scope="col">
                 Activity
             </th>
             <th role="columnheader" class="" scope="col">
-                IP address / location
+                Description
             </th>
             <th role="columnheader" class="" scope="col">
-                Action
+                IP address
             </th>
         </tr>
         </thead>
         <tbody class="nhsuk-table__body">
         <tr role="row" class="nhsuk-table__row">
             <td class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Dates and time</span>25 Jan 2024 at 09:15
-            </td>
-            <td class="nhsuk-table__cell ">
-                <span class="nhsuk-table-responsive__heading">User name/id</span>John Smith
+                <span class="nhsuk-table-responsive__heading">Activity date and time</span>25 Jan 2024 at 09:15
             </td>
             <td class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Activity</span>
-                <strong class="nhsuk-tag nhsuk-tag--orange" id="account-status-tag-1">Data modification</strong></td>
-            <td class="nhsuk-table__cell ">
-                <span class="nhsuk-table-responsive__heading">IP address</span> 192.158.1.38
+                <strong class="nhsuk-tag nhsuk-tag--purple" id="account-status-tag-1">Insert</strong>
+            </td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Description</span>
+                New product
             </td>
             <td class="nhsuk-table__cell ">
-                <span class="nhsuk-table-responsive__heading">action</span>
-                <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">
-                   View
-                    <span class="nhsuk-u-visually-hidden"> user</span></a>
+                <span class="nhsuk-table-responsive__heading">IP address</span>192.158.1.38
             </td>
+<!--            <td class="nhsuk-table__cell ">-->
+<!--                <span class="nhsuk-table-responsive__heading">action</span>-->
+<!--                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="view-user-activity-detail">-->
+<!--                   View-->
+<!--                    <span class="nhsuk-u-visually-hidden"> user</span></a>-->
+<!--            </td>-->
         </tr>
         <tr role="row" class="nhsuk-table__row">
             <td class="nhsuk-table__cell">
-                <span class="nhsuk-table-responsive__heading">Dates and time</span>10 Jan 2024 at 09:15
-            </td>
-            <td class="nhsuk-table__cell ">
-                <span class="nhsuk-table-responsive__heading">User name/id</span>John Smith
+                <span class="nhsuk-table-responsive__heading">Activity date and time</span>25 Jan 2024 at 09:15
             </td>
             <td class="nhsuk-table__cell">
                 <span class="nhsuk-table-responsive__heading">Activity</span>
-                <strong class="nhsuk-tag nhsuk-tag--blue" id="account-status-tag-2">profile update</strong></td>
+                <strong class="nhsuk-tag nhsuk-tag--blue">Update</strong>
+            </td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Description</span>
+                Product change
+            </td>
+            <td class="nhsuk-table__cell ">
+                <span class="nhsuk-table-responsive__heading">IP address</span>192.158.1.38
+            </td>
+<!--            <td class="nhsuk-table__cell ">-->
+<!--                <span class="nhsuk-table-responsive__heading">action</span>-->
+<!--                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="view-user-activity-detail">-->
+<!--                   View-->
+<!--                    <span class="nhsuk-u-visually-hidden"> user</span></a>-->
+<!--            </td>-->
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity date and time</span>10 Jan 2024 at 09:15
+            </td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity</span>
+                <strong class="nhsuk-tag nhsuk-tag--blue" id="account-status-tag-2">Update</strong></td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Description</span>
+                Stock availability
+            </td>
+            <td class="nhsuk-table__cell ">
+                <span class="nhsuk-table-responsive__heading">IP address</span>192.158.1.38
+            </td>
+<!--            <td class="nhsuk-table__cell ">-->
+<!--                <span class="nhsuk-table-responsive__heading">action</span>-->
+<!--                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">-->
+<!--                    View-->
+<!--                    <span class="nhsuk-u-visually-hidden"> user</span></a>-->
+<!--            </td>-->
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity date and time</span>10 Jan 2024 at 09:15
+            </td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity</span>
+                <strong class="nhsuk-tag nhsuk-tag--green" id="account-status-tag-3">Approval</strong></td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Description</span>
+                New product
+            </td>
             <td class="nhsuk-table__cell ">
                 <span class="nhsuk-table-responsive__heading">IP address</span> 192.158.1.38
             </td>
-            <td class="nhsuk-table__cell ">
-                <span class="nhsuk-table-responsive__heading">action</span>
-                <a class="nhsuk-link nhsuk-link--no-visited-state" href="#">
-                    View
-                    <span class="nhsuk-u-visually-hidden"> user</span></a>
+<!--            <td class="nhsuk-table__cell ">-->
+<!--                <span class="nhsuk-table-responsive__heading">action</span>-->
+<!--                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">-->
+<!--                    View-->
+<!--                    <span class="nhsuk-u-visually-hidden"> user</span></a>-->
+<!--            </td>-->
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity date and time</span>10 Jan 2024 at 09:15
             </td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity</span>
+                <strong class="nhsuk-tag nhsuk-tag--green">Approval</strong></td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Description</span>
+                Product change
+            </td>
+            <td class="nhsuk-table__cell ">
+                <span class="nhsuk-table-responsive__heading">IP address</span> 192.158.1.38
+            </td>
+<!--            <td class="nhsuk-table__cell ">-->
+<!--                <span class="nhsuk-table-responsive__heading">action</span>-->
+<!--                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">-->
+<!--                    View-->
+<!--                    <span class="nhsuk-u-visually-hidden"> user</span></a>-->
+<!--            </td>-->
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity date and time</span>10 Jan 2024 at 09:15
+            </td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity</span>
+                <strong class="nhsuk-tag nhsuk-tag--red" id="account-status-tag-4">Rejection</strong></td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Description</span>
+                New product
+        </td>
+            <td class="nhsuk-table__cell ">
+                <span class="nhsuk-table-responsive__heading">IP address</span> 192.158.1.38
+            </td>
+<!--            <td class="nhsuk-table__cell ">-->
+<!--                <span class="nhsuk-table-responsive__heading">action</span>-->
+<!--                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">-->
+<!--                    View-->
+<!--                    <span class="nhsuk-u-visually-hidden"> user</span></a>-->
+<!--            </td>-->
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity date and time</span>10 Jan 2024 at 09:15
+            </td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity</span>
+                <strong class="nhsuk-tag nhsuk-tag--red" >Rejection</strong></td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Description</span>
+                Product change
+        </td>
+            <td class="nhsuk-table__cell ">
+                <span class="nhsuk-table-responsive__heading">IP address</span> 192.158.1.38
+            </td>
+<!--            <td class="nhsuk-table__cell ">-->
+<!--                <span class="nhsuk-table-responsive__heading">action</span>-->
+<!--                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">-->
+<!--                    View-->
+<!--                    <span class="nhsuk-u-visually-hidden"> user</span></a>-->
+<!--            </td>-->
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity date and time</span>10 Jan 2024 at 09:15
+            </td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity</span>
+                <strong class="nhsuk-tag nhsuk-tag--red" >Rejection</strong></td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Description</span>
+                PMU request
+        </td>
+            <td class="nhsuk-table__cell ">
+                <span class="nhsuk-table-responsive__heading">IP address</span> 192.158.1.38
+            </td>
+<!--            <td class="nhsuk-table__cell ">-->
+<!--                <span class="nhsuk-table-responsive__heading">action</span>-->
+<!--                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">-->
+<!--                    View-->
+<!--                    <span class="nhsuk-u-visually-hidden"> user</span></a>-->
+<!--            </td>-->
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity date and time</span>10 Jan 2024 at 09:15
+            </td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity</span>
+                <strong class="nhsuk-tag nhsuk-tag--red" >Rejection</strong></td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Description</span>
+                Browse user request
+            </td>
+            <td class="nhsuk-table__cell ">
+                <span class="nhsuk-table-responsive__heading">IP address</span> 192.158.1.38
+            </td>
+            <!--            <td class="nhsuk-table__cell ">-->
+            <!--                <span class="nhsuk-table-responsive__heading">action</span>-->
+            <!--                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">-->
+            <!--                    View-->
+            <!--                    <span class="nhsuk-u-visually-hidden"> user</span></a>-->
+            <!--            </td>-->
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity date and time</span>05 Jan 2024 at 15.17
+            </td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity</span>
+                <strong class="nhsuk-tag nhsuk-tag--orange" id="account-status-tag-5">Deletion</strong></td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity</span>
+                User
+            </td>
+            <td class="nhsuk-table__cell ">
+                <span class="nhsuk-table-responsive__heading">IP address</span> 192.158.1.38
+            </td>
+<!--            <td class="nhsuk-table__cell ">-->
+<!--                <span class="nhsuk-table-responsive__heading">action</span>-->
+<!--                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">-->
+<!--                    View-->
+<!--                    <span class="nhsuk-u-visually-hidden"> user</span></a>-->
+<!--            </td>-->
+        </tr>
+        <tr role="row" class="nhsuk-table__row">
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity date and time</span>05 Jan 2024 at 15.17
+            </td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity</span>
+                <strong class="nhsuk-tag nhsuk-tag--orange">Deletion</strong></td>
+            <td class="nhsuk-table__cell">
+                <span class="nhsuk-table-responsive__heading">Activity</span>
+                PMU
+            </td>
+            <td class="nhsuk-table__cell ">
+                <span class="nhsuk-table-responsive__heading">IP address</span> 192.158.1.38
+            </td>
+<!--            <td class="nhsuk-table__cell ">-->
+<!--                <span class="nhsuk-table-responsive__heading">action</span>-->
+<!--                <a class="nhsuk-link nhsuk-link&#45;&#45;no-visited-state" href="#">-->
+<!--                    View-->
+<!--                    <span class="nhsuk-u-visually-hidden"> user</span></a>-->
+<!--            </td>-->
         </tr>
         </tbody>
     </table>
+
+<a href="#" class="nhsuk-button">Download user activity as CSV</a>
 
 {% endblock %}
