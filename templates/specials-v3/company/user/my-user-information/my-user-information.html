@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+{% block title %}
+Submit a new special product - Summary |  Specials Profile Replacement | NHSBSA
+{% endblock %}
+{% block content %}
+<div class="nhsuk-back-link nhsuk-u-margin-bottom-6">
+  <a class="nhsuk-back-link__link" href="../../dashboard.html">
+    <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg"
+         viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+      <path
+          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+    </svg>
+    Go back to specials dashboard</a>
+</div>
+
+<h1>Your PMU account</h1>
+<div class="nhsuk-width-container">
+  <main class="nhsuk-main-wrapper">
+    <dl class="nhsuk-summary-list">
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          First name
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="product-name">
+          John
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="../my-user-information/my-first-name.html">
+            Edit <span class="nhsuk-u-visually-hidden">&nbsp;first name</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Last name
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="alternative-product-name">
+          Smith
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="../my-user-information/my-last-name.html">
+            Edit <span class="nhsuk-u-visually-hidden"> last name</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Telephone number
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="product-category">
+          0191 2345678
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="../my-user-information/my-telephone-number.html">
+            Edit<span class="nhsuk-u-visually-hidden">&nbsp;telephone number</span>
+          </a>
+
+        </dd>
+
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Email
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="product-form">
+          john.smith@gmail.com
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="../my-user-information/my-email.html">
+            Edit<span class="nhsuk-u-visually-hidden"> email</span>
+          </a>
+
+        </dd>
+
+      </div>
+      <div class="nhsuk-summary-list__row">
+        <dt class="nhsuk-summary-list__key">
+          Job title
+        </dt>
+        <dd class="nhsuk-summary-list__value" id="product-specification-sheet">
+          product specialist
+        </dd>
+
+        <dd class="nhsuk-summary-list__actions">
+
+          <a href="../my-user-information/my-job-title.html">
+            Edit<span class="nhsuk-u-visually-hidden">&nbsp; job title</span>
+          </a>
+
+        </dd>
+
+      </div>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group govuk-!-margin-top-5">
+        <li class="nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                <a href="#" class="nhsuk-card__link">Login settings</a>
+              </h2>
+              <p class="nhsuk-card__description"> Manage the details you use to log in to SPR </p>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </dl>
+  </main>
+</div>
+
+<script>
+  let summaryPage = localStorage.getItem("summary-page");
+
+  if (!summaryPage) {
+    localStorage.setItem("summary-page", "yes");
+  }
+
+  var getProductName = localStorage.getItem("special-product-name");
+  if (getProductName) {
+    document.getElementById("product-name").innerHTML = getProductName;
+  }
+
+  var getHasAltProductName = localStorage.getItem("special-product-alt-name-advised");
+  var getAltProductName = localStorage.getItem("special-product-alt-name");
+
+  if (getHasAltProductName === "Yes") {
+    document.getElementById("alternative-product-name").innerHTML = getAltProductName;
+  }
+
+  var getProductCategory = localStorage.getItem("special-product-category");
+  if (getProductCategory) {
+    document.getElementById("product-category").innerHTML = getProductCategory;
+  }
+
+  var getProductForm = localStorage.getItem("special-product-form");
+  if (getProductForm) {
+    document.getElementById("product-form").innerHTML = getProductForm;
+  }
+
+  var getOnBNF = localStorage.getItem("special-product-bnf");
+  if (getOnBNF === "Yes") {
+    document.getElementById("on-bnf").classList.remove("nhsuk-tag--red");
+    document.getElementById("on-bnf").classList.add("nhsuk-tag--green");
+    document.getElementById("on-bnf").textContent = "Yes";
+  }
+
+  var getHasBP = localStorage.getItem("special-product-bp-monograph");
+  if (getHasBP === "Yes") {
+    document.getElementById("has-BP").classList.remove("nhsuk-tag--red");
+    document.getElementById("has-BP").classList.add("nhsuk-tag--green");
+    document.getElementById("has-BP").textContent = "Yes";
+  }
+
+  var getHasAccreditation = localStorage.getItem("special-product-has-accreditation");
+  var getAccreditationBody = localStorage.getItem("special-product-accreditation");
+
+  if (getHasAccreditation === "Yes") {
+    document.getElementById("accreditation-body-detail").innerHTML = getAccreditationBody;
+    document.getElementById("has-accreditation").classList.remove("nhsuk-tag--red");
+    document.getElementById("has-accreditation").classList.add("nhsuk-tag--green");
+    document.getElementById("has-accreditation").textContent = "Yes";
+    document.getElementById("accreditation-body").classList.remove("nhsuk-u-visually-hidden");
+  }
+
+  var getIsAvailable = localStorage.getItem("special-product-available");
+  if (getIsAvailable === "Yes") {
+    document.getElementById("has-availability").classList.remove("nhsuk-tag--red");
+    document.getElementById("has-availability").classList.add("nhsuk-tag--green");
+    document.getElementById("has-availability").textContent = "Yes";
+  }
+
+  var getIsAvailableAsStock = localStorage.getItem("special-product-available-as-stock");
+  if (getIsAvailableAsStock === "Yes") {
+    document.getElementById("on-available-as-stock").classList.remove("nhsuk-tag--red");
+    document.getElementById("on-available-as-stock").classList.add("nhsuk-tag--green");
+    document.getElementById("on-available-as-stock").textContent = "Yes";
+  }
+
+  var getShelfLife = localStorage.getItem("special-product-shelf-life");
+  if (getShelfLife) {
+    document.getElementById("product-shelf-life").innerHTML = getShelfLife;
+  }
+
+  var getShelfLifeValidated = localStorage.getItem("special-product-shelf-life-valid");
+  if (getShelfLifeValidated === "Yes") {
+    document.getElementById("has-shelf-life-valid").classList.remove("nhsuk-tag--red");
+    document.getElementById("has-shelf-life-valid").classList.add("nhsuk-tag--green");
+    document.getElementById("has-shelf-life-valid").textContent = "Yes";
+  }
+
+  console.log(localStorage);
+
+</script>
+{% endblock %}
